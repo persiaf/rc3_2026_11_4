@@ -30,7 +30,8 @@ def write_manifest():
         if path.is_symlink() or not path.resolve().is_relative_to(ROOT):
             raise ValueError('Unexpected link or path outside repository')
         records[name] = {'sha256': digest(path), 'bytes': path.stat().st_size}
-    result = {'schema': 'rc3-git-content-manifest-v1', 'version': '2026.11.04-g23-closeout',
+    version = json.loads((ROOT / 'PROJECT_VERSION.json').read_text(encoding='utf-8'))['version']
+    result = {'schema': 'rc3-git-content-manifest-v1', 'version': version,
               'files': records, 'excluded_self_referential_metadata': sorted(EXCLUDED),
               'file_count': len(records), 'total_bytes': sum(e['bytes'] for e in records.values()),
               'scope': 'Original working-tree bytes after Git LFS checkout, not LFS pointers; no research execution.'}

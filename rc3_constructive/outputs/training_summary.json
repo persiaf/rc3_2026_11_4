@@ -1,0 +1,30 @@
+{
+  "schema": "rc3-constructive-c2-run-v1",
+  "seed": 1142026,
+  "device": "cuda",
+  "updates": 512,
+  "sampled_trajectories": 16384,
+  "baseline_greedy_trajectories": 16384,
+  "cpu_validation_greedy_trajectories": 432,
+  "calibration_greedy_trajectories": 64,
+  "training_wall_limit_s": 5885,
+  "actual_elapsed_s": 798.2749626999994,
+  "stopped_for_wall_limit": false,
+  "training_maps": 24,
+  "distinct_training_task_seeds": 16384,
+  "selected_checkpoint": "outputs/checkpoints/update0128.pt",
+  "selected_update": 128,
+  "selection": {
+    "update": 128,
+    "mean_raw_J": 373.3147224072083,
+    "mean_post_J": 296.56433539914997,
+    "checkpoint": "outputs/checkpoints/update0128.pt"
+  },
+  "changed_parameter_tensors": 26,
+  "total_parameter_tensors": 26,
+  "protocol_sha256": "061cb6799d68ae813f1173c46aa0894d18ce8d0fb17314233c8ccf866a1a80d4",
+  "history_sha256": "b771a2a5e751edddc250553bc757111f111ca011308df05ace00fb75daa8d521",
+  "stored_sampled_routes_sha256": "4091ae3adf8045fadd0653ada804521ae1decfbcfb397d5f4cf7a54eb5020774",
+  "c3_started": false,
+  "counts_scope": "Trajectory counts include repeated maps; sampled main trajectories are at most 16384. Calibration is greedy only; validation and baseline forwards counted separately."
+}

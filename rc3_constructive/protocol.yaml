@@ -1,0 +1,39 @@
+{
+  "schema": "rc3-constructive-c012-v1",
+  "date": "2026-11-04",
+  "base_commit": "f7a057d92252427bdd76ab0d88247404685d49e5",
+  "scope": "C0+C1 then one capped C2; no automatic C3, no old-route retraining, no IK",
+  "objective": {"formula": "J=L+0.75*K", "penalty": 0.75, "closed_depot_tour": true, "gamma": 1},
+  "training": {
+    "seed": 1142026, "max_updates": 512, "batch_size": 32, "max_sampled_trajectories": 16384,
+    "hidden": 64, "message_layers": 2, "learning_rate": 0.0001, "gradient_clip": 1.0,
+    "algorithm": "REINFORCE with frozen greedy rollout; summed trajectory log likelihood; constant loss scale 100",
+    "prior": "learnable log(gain/(travel+penalty)) bias initialized to weight 4; attention query initialized zero; initial checkpoint retained as prior control",
+    "baseline_update_every": 128, "baseline_update_rule": "paired one-sided t-test p<0.05 and lower mean raw cost on development set",
+    "checkpoint_every": 128, "selection_rule": "lowest mean postprocessed J on the 48 selection scenes, tie earlier",
+    "scene_shape": [10,10], "map_bank_size": 24, "mode_cycle": ["regular","mixed","blocked"],
+    "map_seed_start": 7100000000, "task_seed_start": 7200000000,
+    "map_reuse": "24 training map seeds; new independent task seed for each sampled trajectory; navigation cached in memory only",
+    "wall_limit_rule": "freeze after throughput calibration, before any optimizer step: min(7200,max(1800,ceil(512*max_probe_update_s*2+600))); soft boundary between updates",
+    "checkpoint_128": "report loss/gradient/throughput/validation, abort only numerical invalidity, invalid training routes, OOM or wall limit; no outcome-driven retuning"
+  },
+  "splits": {
+    "development": {"seed_start": 7300000000, "count": 24},
+    "selection": {"seed_start": 7400000000, "count": 48},
+    "small_exact": {"seed_start": 7500000000, "task_counts": [6,10,14], "per_count": 4, "shape": [4,3], "each_exact_soft_limit_s": 30},
+    "throughput_only": {"seed_start": 7600000000, "count": 32},
+    "future_test_reserved_unqueried": {"seed_start": 7700000000, "count": 60}
+  },
+  "evaluation": {
+    "methods": ["fixed3","detour8","detour16","insertion","prior","initial","model"],
+    "reference": "detour16", "repetitions": 2, "cache_modes": ["cold","hot"],
+    "cpu_threads": 1, "deployment_device": "cpu", "training_device": "cuda_if_available",
+    "postprocess": "at most two rounds of coverage redundancy deletion and 60-pass 2-opt; same for insertion/prior/model",
+    "fairness": "standing process, model load separate; per-request preparation, inference, postprocess, path expansion/final independent validation included; offline raw-plan research audit, input JSON generation and output serialization separately excluded and disclosed",
+    "fallback": "none for constructive methods; failures reported, never silently repaired with Fixed3",
+    "primary": {"mean_relative_J_degradation_one_sided_95_upper_max_percent": 0.5, "median_complete_time_ratio_max": 0.7, "p95_time_ratio_max": 1.0, "all_raw_and_final_plans_valid": true},
+    "c2_continuation_signal": {"selection_mean_post_J_reduction_from_initial_min_percent": 1.0, "paired_95_lower_above_zero": true, "development_cold_median_time_ratio_vs_detour16_max": 0.9, "all_saved_routes_valid": true},
+    "uncertainty": "scene-paired bootstrap 10000, fixed seed 114; timing repetitions averaged inside scene; one training seed is not stability evidence",
+    "claims": "C2 only tests feasibility/learning trend/practical signal; no confirmed superiority, relational novelty or cross-scale claim without C3 controls"
+  }
+}

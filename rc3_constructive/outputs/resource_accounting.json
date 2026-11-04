@@ -1,0 +1,67 @@
+{
+  "optimizer_updates": 512,
+  "stochastic_trajectories": {
+    "c2_optimizer_rollouts": 16384,
+    "c1_contract_checks": 7
+  },
+  "all_stochastic_trajectories": 16391,
+  "greedy_trajectories": {
+    "training_rollout_baseline": 16384,
+    "training_validation": 432,
+    "calibration_forward_backward_probes": 64,
+    "calibration_single_instance_latency_probes": 2,
+    "c1_contract_checks": 12,
+    "final_development_initial_and_selected": 192,
+    "cli_example": 1
+  },
+  "all_greedy_trajectories": 17087,
+  "sampled_route_replays": 16384,
+  "replayed_service_transitions": 1584734,
+  "saved_geometry_rechecks": 541,
+  "final_verification_geometry_certificates": 544,
+  "first_attempt_geometry_certificates": 543,
+  "all_verification_geometry_certificates": 1087,
+  "new_case_measurements": {
+    "c0_development": 480,
+    "c2_development": 672,
+    "small_exact": 12,
+    "full_and_restricted_dp_calls": 24
+  },
+  "training_input_preparation_wall_s": 261.60453940000843,
+  "training_loop_elapsed_s": 798.2749626999994,
+  "baseline_replacement_directional_p": [
+    {
+      "update": 128,
+      "candidate_lower": true,
+      "improvement_direction_p": 0.037772117163594035,
+      "replaced": true
+    },
+    {
+      "update": 256,
+      "candidate_lower": true,
+      "improvement_direction_p": 0.03429518080202479,
+      "replaced": true
+    },
+    {
+      "update": 384,
+      "candidate_lower": false,
+      "improvement_direction_p": 0.918215545999815,
+      "replaced": false
+    },
+    {
+      "update": 512,
+      "candidate_lower": false,
+      "improvement_direction_p": 0.9656155862098735,
+      "replaced": false
+    }
+  ],
+  "notes": [
+    "C2 cap refers to optimizer sampling: 16384. Seven earlier C1 stochastic test trajectories are reported separately, so total stochastic calls are not claimed to be 16384.",
+    "C1 inference counts are posthoc from two executed six-test runs and the final seven-test run: 7 stochastic and 12 greedy trajectories, not independent training scenes.",
+    "The training-summary calibration field counts only 64 forward/backward probe trajectories. Two additional single-instance timing probes are included here.",
+    "Original baseline-update log stores two-sided p/2 even if candidate mean worsens. The actual replacement always also requires a lower mean; directional p is corrected here for interpretation without changing original logs or decisions.",
+    "All counts are trajectories/episodes, not individual batched forward invocations. Numeric stored-route replays and geometric rechecks are additional verification work, without new optimization or neural inference.",
+    "Development and selection are reused for screening; reserved independent test and cross-scale scenes were not queried.",
+    "Verifier first attempt completed all numeric replays and543 geometry certificates, then hit default GBK decoding of UTF8 CLI data. Explicit completion rechecked544 certificates without repeating numeric environment replays. Both attempts/logs and posthoc recovery provenance retained;1087 actual verification certificates are not1087 independent scenarios."
+  ]
+}

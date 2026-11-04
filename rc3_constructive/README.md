@@ -1,0 +1,60 @@
+# 独立构造式研究：C0／C1／C2
+
+本轮新用户任务授权启动独立构造式路线。已完成 C0、C1 和一次封顶 C2；旧局部窗口＋STOP路线仍已收尾，默认规划器仍为 Fixed3／Detour。新模型在给定覆盖与导航约束下逐点构造完整路线，任务全完成后自动返航，无提前成功STOP，无隐藏Fixed3回退。
+
+**当前结果：速度部分达标，质量未达标，不进入C3。** 一种子512更新／16,384条优化采样，选择第128次检查点。开发集相对Detour16平均场景配对J劣化8.5826%，单侧95%上界9.7604%，高于0.5%门槛。冷、热完整中位耗时约为Detour16的0.5604、0.3699倍；汇总质量与中位时间均被Fixed3支配。选择集相对初始网络的post均值下降0.9637%，未达到登记的1%继续信号。尚无独立测试、跨种子、跨规模或CSP／BC／关系消融证据。
+
+完整结果：[REPORT_C012.md](REPORT_C012.md)。数据与预算：[protocol.yaml](protocol.yaml)、[事前计划](paper/EXPERIMENT_PLAN.md)。开源依据及实际适配边界：[OPEN_SOURCE_NOTES.md](OPEN_SOURCE_NOTES.md)。独立审查见 `EXPERIMENT_RESULT_TO_CLAIM.md` 和 `paper/review-traces/`。
+
+## 直接运行研究模型
+
+从仓库根目录使用既有Python3.10环境；模型权重已纳入Git LFS，克隆后需 `git lfs pull`。
+
+```powershell
+.\rc3_learning\.venv\Scripts\python.exe -B -m rc3_constructive.plan --scale 10x10 --mode regular --seed 7300000000 --output outputs/constructive.json
+```
+
+默认加载 `outputs/training_summary.json` 指定的 `outputs/checkpoints/update0128.pt`，也可用 `--checkpoint` 显式指定。本机已实际执行上述入口，保存的首个开发案例在 `outputs/cli_example.json` 及同名CSV。
+
+输出JSON包含完整底盘折线、服务顺序、逐任务服务候选与合法执行臂、最终独立验证、raw/final J和时间分解；CSV提供服务表。模型加载单列。每请求时间不含进程启动、输入生成／读取和文件序列化。该入口只做构造、统一后处理和最终终验；研究用原始方案审计另行执行，不隐藏在部署管线里。
+
+`--scene` 可接收既有场景JSON；外部 planning/audit 表沿用v5逐臂共同约束及导出验证。训练与性能结果只针对当前固定升降高度、独立顺序单臂任务和二维静态代理环境；没有IK、真实双臂同步、升降优化或硬实时结论。支持可变节点数量的接口不等于已验证跨规模性能。
+
+## 代码与重放
+
+| 模块 | 内容 |
+| --- | --- |
+| `problem.py` | 冻结几何／可达／导航适配；24容量静态导航内存缓存；任务种子采样；全量原候选ID |
+| `env.py` | 合法服务掩码、覆盖更新、终点返程奖励、padding与重放 |
+| `model.py` | 64维、2层二部图编码、动态未完成任务聚合、导航注意力与已声明规则先验 |
+| `baselines.py` | 覆盖最便宜插入、确定性先验、统一后处理、原强规则及不重叠计时 |
+| `diagnose.py` | 事前登记、完整／受限全局DP、无optimizer吞吐校准及壁钟登记 |
+| `train.py` | 一种子REINFORCE、冻结贪心rollout、512更新上限、全采样路线流、检查点保护 |
+| `assess.py` | 训练后7方法同一轮冷热交错测量，保留C0原始测量 |
+| `verify.py` | 保存路线按种子重放、几何／分配检查；显式UTF8错误恢复完成模式 |
+| `analyze.py`、`resources.py`、`report.py` | 保存记录的统计、完整资源账与报告，无新训练 |
+| `plan.py` | 研究模型推理及JSON／CSV输出 |
+
+合同测试与保存结果复算：
+
+```powershell
+python -B -m unittest rc3_constructive.test_contract -v
+python -B -m rc3_constructive.analyze
+python -B -m rc3_constructive.resources
+python -B -m rc3_constructive.report
+```
+
+合同测试含少量随机策略轨迹，重复执行会产生新的测试调用，应另记账；报告中的资源数对应已保存的本轮执行。训练／测时／重放工具拒绝隐式重复运行，不要删除原输出后静默重训。本轮所有训练与评测已经完成；若用户另行要求复现训练，应另建源码实验目录、独立输出及明确预算，依次运行 register、exact、references、calibrate、train、assess、verify。已完成目录仅用于推理和保存记录复算。
+
+## 证据与限制
+
+- 小规模12个完整问题和12个受限问题均求到最优；6例严格证明基线已选集合外的候选有价值，不代表Fixed3本身不能换点，也不证明模型已利用该价值。
+- 24个开发场景参与rollout基线更新与诊断；48个选择场景用于选权重。672次最终测量不是672个独立场景，C0的480次也不增加独立样本数。60个保留测试场景未查询。
+- 优化只使用10×10桌场景；24训练地图种子重复利用，16,384个任务种子不同。不在磁盘保存重复导航距离矩阵。
+- 完整轨迹log概率求和，损失仅除固定常数100；没有PPO、critic或BC预训练。CSP-Attention／AM／RL4CO用于方法和接口参考，本轮没有冒称完整复现外部模型。
+- 全部16,384条采样路线、1,584,734次服务转移完成数值重放。首轮在最后CLI样例的GBK／UTF8读取处失败，保留日志和原源码。显式完成模式只重做几何／文件检查，没有重复数值重放；两轮共1087份实际验证证书并非独立场景数。
+- C2优化采样16,384条之外，C1合同测试另有7条随机、12条贪心轨迹；校准64条贪心前反向之外还有2条单例延时探针。全部神经前向涉及33,478条输入轨迹，分类见 `outputs/resource_accounting.json`。
+- 原始baseline日志的双侧p/2只在均值降低时用于替换；真正下降方向p另存资源账，较差候选不能按小p解释成改善。
+- 根目录的旧冻结约定继续适用；本轮用户新任务单独授权C0–C2。新的阶段和额外训练仍需新的明确任务，当前不扩展C3。
+
+本轮没有生成整包备份。学习曲线、质量—时间矢量图与表格位于 `figures/`，临时图形缓存会清除。

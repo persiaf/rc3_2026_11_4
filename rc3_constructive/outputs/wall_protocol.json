@@ -1,0 +1,23 @@
+{
+  "protocol_sha256": "061cb6799d68ae813f1173c46aa0894d18ce8d0fb17314233c8ccf866a1a80d4",
+  "execution_sources_sha256": "31df6459883f6d8bbb797af94386d35ad758009e44a9ed68be5bd9ff5802430c",
+  "device": "cuda",
+  "greedy_forward_backward_probe_s": [
+    1.5781346000003396,
+    0.4215487999999823
+  ],
+  "input_preparation_32_s": 3.582353499999954,
+  "estimated_cold_update_upper_s": 5.160488100000293,
+  "training_wall_limit_s": 5885,
+  "registration_before_optimizer": true,
+  "optimizer_updates": 0,
+  "probe_greedy_trajectories": 64,
+  "deployment_device": "cpu",
+  "single_instance_initial_inference_s": {
+    "cpu": 0.0727219000000332,
+    "cuda": 0.1966355000004114
+  },
+  "peak_cuda_allocated_bytes": 2195044352,
+  "rule": "Predeclared min(7200,max(1800,ceil(512*max_probe_update_s*2+600))); entire measured 32-case preparation included conservatively.",
+  "note": "No optimizer step and no sampled trajectory in calibration; gradients discarded; two greedy backward passes only."
+}
