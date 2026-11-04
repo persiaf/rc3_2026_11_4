@@ -7,7 +7,9 @@
 1. **Git＋Git LFS**：保存清理后的完整研究项目，包括源码、模型、训练及测试记录、保存方案、论文资料、机器人资产和原始交付／审查包。克隆后运行 `git lfs pull`，再用 `tools/verify_project_archive.py` 核对文件清单。`PROJECT_VERSION.json` 指明默认方法和冻结边界。
 2. **本机清理前完整快照**：`project_backups/2026-11-04_g23-closeout/full_before_cleanup.zip`。这是按内容 SHA256 去重的 ZIP，`SNAPSHOT_MANIFEST.json` 映射原路径到 `objects/SHA256`，保留清理前的缓存、临时副本和本机环境。所有独立内容对象都验证后才允许清理；哈希和数量记录在 `snapshot_receipt.json`。本机快照不上传 Git。
 
-另提供清理后的标准目录 ZIP：同目录的 `rc3_2026_11_4_project.zip`，包括所有已版本管理的实际文件内容与模型，直接解压到新目录即可使用；不包含 Git 内部数据和本机虚拟环境。包内 `ARCHIVE_SNAPSHOT.json` 记录对应提交；包外 `project_archive_receipt.json` 记录包 SHA256 与全部成员校验结果。该 ZIP 由 `tools/build_project_archive.py` 在工作树干净、提交完成后生成，避免生成到一半的记录进入备份。
+前轮曾生成标准目录 ZIP `rc3_2026_11_4_project.zip`，包含已版本管理的实际文件内容与模型，并通过全部成员校验。按用户随后“删除本地多余备份”的要求，该重复包及无用操作日志已删除；对应校验与发布记录归入 `backup_retention_20261104.json`。需要当前项目时，使用 Git＋Git LFS 获取。完整清理前快照继续保留，因为其中还包含未在 Git 保存的历史缓存和本机环境。
+
+后续任务按根目录 `AGENTS.md` 维护 GitHub；默认不额外生成整包 ZIP 或完整快照。归档工具仍保留，供用户明确要求备份时使用。冻结标签 `snapshot-2026-11-04-g23-closeout` 保持原指向，后续维护使用新的 Git 提交。
 
 恢复清理前的全部文件到一个新的空目录：
 
