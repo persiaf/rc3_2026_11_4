@@ -48,7 +48,9 @@ G2.3 测试包含 6 个独立场景、180 份输出；多步模型共 36 次测�
 
 ## 备份与清理
 
-清理前的完整本机快照位于本机 `project_backups/2026-11-04_g23-closeout/`，采用 ZIP 内 SHA256 内容去重存储，包含当时的原始文件和本机 Python 环境。它不进入 Git，以免把多份临时解压副本与可重建计算缓存再次上传。快照收据和清理清单见 `project_management/`。
+清理后的标准项目包为本机 `project_backups/2026-11-04_g23-closeout/rc3_2026_11_4_project.zip`，包含实际模型／数据内容，解压即可取得项目文件，不需再还原 LFS 指针。包内 `ARCHIVE_SNAPSHOT.json` 记录对应提交，包外 `project_archive_receipt.json` 记录完整 SHA256。
+
+清理前的完整本机快照位于同目录的 `full_before_cleanup.zip`，采用 ZIP 内 SHA256 内容去重存储，包含当时的原始文件和本机 Python 环境。两种本机备份不进入 Git，以免重复上传项目、临时解压副本与可重建计算缓存。快照收据和清理清单见 `project_management/`。
 
 清理仅针对可重建计算缓存、迁移测试解压副本和解释器字节码缓存。源码、已保存路径、检查点、训练日志、协议、审查材料、原始 ZIP、机器人资产及本机 Python 环境保留。训练缓存重建方法见 [清理与恢复说明](project_management/ARCHIVE_AND_RESTORE.md)。
 

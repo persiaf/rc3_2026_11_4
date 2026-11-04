@@ -19,8 +19,8 @@
       "bytes": 676
     },
     "README.md": {
-      "sha256": "418001247fed8f0a78211b3e7f99167f13afa24df56c97b6d17a7b8bceb79b1d",
-      "bytes": 4158
+      "sha256": "90cad664206d994da2c4c1969fbaed8316e1c624a8f2f2b9a6327b356f585030",
+      "bytes": 4481
     },
     "chatgpt生成文件.zip": {
       "sha256": "8f544e2a684f60bbaa594bb49532166210d6b589fbb9d0f6209e5adfb60c1806",
@@ -359,12 +359,32 @@
       "bytes": 1446
     },
     "project_management/ARCHIVE_AND_RESTORE.md": {
-      "sha256": "1c66254cb70a1d5df9d5068c0db93e464e24ee5bbd200a838654289e821e65d6",
-      "bytes": 3454
+      "sha256": "c946e1da0ccb817e7cfa0e40a3380701082d82ed6962ea51d0f018e48dd721c3",
+      "bytes": 3960
+    },
+    "project_management/LFS_INVENTORY.json": {
+      "sha256": "80c8813a9ccc20d1c8d849a7d1f664f670abc1e7eb74279868d2a8e6aa2f2d84",
+      "bytes": 59714
+    },
+    "project_management/SNAPSHOT_RECEIPT.json": {
+      "sha256": "93de99e5931be5ce8ae336814954545493a398233a7e5ba97ae4eb235795a9c4",
+      "bytes": 560
     },
     "project_management/cleanup_plan.json": {
       "sha256": "5877473fe1a6f121b0a97cc5914d1e0b382f39ce436499225b8c19ecd75b11ac",
       "bytes": 4545
+    },
+    "project_management/cleanup_precheck.json": {
+      "sha256": "d4049152b6c85b8e113c84558c2e84ac6939dba0d414bb1f68c0215bfd928c8f",
+      "bytes": 384
+    },
+    "project_management/cleanup_receipt.json": {
+      "sha256": "aaa41319a228d4cef14cd83b8d33c0ed70f25ee020a5dbbf5206f53ae63d935d",
+      "bytes": 3972
+    },
+    "project_management/final_archive_checks.json": {
+      "sha256": "218a071bf7c18ea52808f9d9b8fda2555b848190cd0b0dee4ea9461f81f91ded",
+      "bytes": 373
     },
     "project_management/prepublication_scan.json": {
       "sha256": "99445db82538c89a74418450f74e9369db632eb0c51cc893226b6473e81246e1",
@@ -373,6 +393,10 @@
     "project_management/restore_tool_check.json": {
       "sha256": "f5a9963c1998b016e81b90f8df174f0ca5f7f3700e7d9f1f3b2556993847225f",
       "bytes": 324
+    },
+    "project_management/retention_check.json": {
+      "sha256": "5dce533ef1b0f7c92a1665ce817b0ff99eef59ae89544d18dc55a622f750a759",
+      "bytes": 731
     },
     "rc3_baseline/README.md": {
       "sha256": "6adb1b401f32ebe47b60851118da5c2731c2309eaf3c479b2ed809d86b8197fa",
@@ -28750,9 +28774,13 @@
       "sha256": "0901d94faa949a2378af99b8314580b77669fe666a807fc55a89d7b3a97a4d81",
       "bytes": 81542583
     },
+    "tools/build_project_archive.py": {
+      "sha256": "991fba485387ff961ff3e11e003b1d6da0dd48a5e0e04f023d8bd62d6a0426e7",
+      "bytes": 4169
+    },
     "tools/check_cleanup_backup.py": {
-      "sha256": "7df1091436b965f916175e7e1a3a9278d65ff7929d37f350feeb922bb8ea45f6",
-      "bytes": 3253
+      "sha256": "30e871ef9782c26e574d8c1aaba385925d686a001d8e2d911ef519316ed27993",
+      "bytes": 3796
     },
     "tools/clean_experiment_residue.ps1": {
       "sha256": "4d46b8f58d44382d009b9a72800f6a8e1913af5bb3f555c27bda917b54572300",
@@ -28765,6 +28793,10 @@
     "tools/restore_project_backup.py": {
       "sha256": "e4a7dbf16934f55141ec7ad38691376b78d91ab5074bfbaea1ea3d42d98ee78a",
       "bytes": 3018
+    },
+    "tools/verify_cleanup_retention.py": {
+      "sha256": "c7cf754c72818d3cadacf91e7c57abe88ac15b7418d8dd7c19e6ca6cf5ce6629",
+      "bytes": 2986
     },
     "tools/verify_project_archive.py": {
       "sha256": "f7e102d54dd7a14d602d25979e7b434e24dc9c9af4926f03f31e707ccd2c769e",
@@ -28815,7 +28847,7 @@
     "project_management/GIT_MANIFEST.json",
     "project_management/PUBLISH_RECEIPT.json"
   ],
-  "file_count": 7202,
-  "total_bytes": 2837580299,
+  "file_count": 7210,
+  "total_bytes": 2837654560,
   "scope": "Original working-tree bytes after Git LFS checkout, not LFS pointers; no research execution."
 }

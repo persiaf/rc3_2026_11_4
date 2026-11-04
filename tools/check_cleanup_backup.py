@@ -29,6 +29,13 @@ def main():
         raise ValueError('Backup ZIP checksum mismatch')
     with zipfile.ZipFile(archive) as z:
         entries = {e['path']: e for e in json.loads(z.read('SNAPSHOT_MANIFEST.json'))['files']}
+    protected = set()
+    frozen_archives = list(ROOT.glob('rc3_*delivery*.zip')) + [
+        ROOT / 'rc3_v5_1_maintenance.zip', ROOT / 'rc3_paper_figures_v1.zip',
+        ROOT / 'rc3_rl_research/outputs/rc3_rl_research_g01.zip']
+    for frozen in frozen_archives:
+        with zipfile.ZipFile(frozen) as z:
+            protected.update(name for name in z.namelist() if not name.endswith('/') and (ROOT / name).is_file())
     # Compare exact live files to backup; reject extra or altered files before deletion.
     checked = 0
     total = 0
@@ -45,6 +52,8 @@ def main():
             if file.is_symlink() or not file.resolve().is_relative_to(path if path.is_dir() else path.parent):
                 raise ValueError('Unexpected cleanup link')
             name = file.relative_to(ROOT).as_posix()
+            if name in protected:
+                raise ValueError('Refusing to delete frozen archive payload: ' + name)
             original = entries.get(name)
             if not original or file.stat().st_size != original['bytes'] or digest(file) != original['sha256']:
                 raise ValueError('File is not safely backed up: ' + name)
