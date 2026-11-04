@@ -1,0 +1,27 @@
+{
+  "scope": "Read-only v5 external adapter audit; no calibration or IK",
+  "unit_tests_run": 28,
+  "unit_tests_passed": 28,
+  "original_v4_external_tests": 9,
+  "previous_review_regressions": 11,
+  "new_v5_common_coverage_and_guard_tests": 8,
+  "cli_checks_run": 5,
+  "cli_checks_passed": 5,
+  "counterexample_records": [
+    {
+      "file": "common_arm_counterexample.json",
+      "all_nontiming_fields_equal": true
+    },
+    {
+      "file": "canonicalization_counterexample.json",
+      "all_nontiming_fields_equal": true
+    }
+  ],
+  "common_relation_trace_passed": true,
+  "instrumented_complete_plans": 4,
+  "source_unchanged": true,
+  "torch_imported": false,
+  "bugs_found_in_reviewed_supported_flow": [],
+  "user_deferred_robot_calibration_and_ik_respected": true,
+  "conclusion": "v5 closes both known conservative rejection cases using F & A throughout; physical evidence and completeness are outside the claim."
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "rc3-g21-prepared-evaluation-receipt-v1",
+  "created_utc": "2026-11-03T13:22:27.453001+00:00",
+  "status": "prepared_not_end_to_end_validated",
+  "files": {
+    "baselines.py": "9149a623b81cb33f6c1f04134014e3971062bd95ce9d0b2b969bd1319e68bb6d",
+    "test_baselines.py": "71bd7f1fd9c76dfd3b1452a46b9368ceb632ea05fba70a01c718217714c13a7b",
+    "evaluate_g21.py": "0109ac4b0194ee804a7a76bbd2df49f3de1276a0e20f62328582bcb43b0e75a6",
+    "test_evaluate_g21.py": "614fbf9ba57ca2b949f29cfc8d5181985a6a4bfba4641be71d21d77678c006cc",
+    "BASELINES.md": "369c200a608885d74f3d7fa532c727e480b3234a023c254572d0b6aef997ba75"
+  },
+  "tests": {
+    "command": ".\\rc3_learning\\.venv\\Scripts\\python.exe -B -m unittest rc3_rl_g21.test_evaluate_g21 rc3_rl_g21.test_baselines",
+    "passed": 37,
+    "failed": 0,
+    "scope": "Synthetic dictionaries, temporary JSON fixtures, and mocked environment/prepare boundaries only"
+  },
+  "new_environment_queries": 0,
+  "new_scene_preparations": 0,
+  "ppo_actions": 0,
+  "rule_dev_runs": 0,
+  "validation_runs": 0,
+  "frozen_g2_modified": false,
+  "downstream_authorized": false,
+  "limitations": [
+    "No end-to-end real-scene run, cache timing measurement, or learned checkpoint inference performed by this subtask.",
+    "Four-setting rule grid remains unselected and unfrozen.",
+    "Gate failures reported by parent prohibit all environment evaluation and PPO.",
+    "Cold shared-method timings include safe prepared-cache serialization; original solvers retain uncached preparation timing.",
+    "Warm shared-method timing is not cold scene-to-plan latency."
+  ],
+  "optimizer_updates_in_this_preparation": 0,
+  "model_loads_in_synthetic_guard_tests": 0,
+  "separate_zero_update_checkpoint_replay": "checkpoint_replay.json"
+}

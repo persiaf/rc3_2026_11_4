@@ -1,0 +1,1671 @@
+{
+  "scene": {
+    "schema_version": 2,
+    "parameter_status": "DEMONSTRATION_ONLY_NOT_MEASURED",
+    "nx": 3,
+    "ny": 2,
+    "seed": 840027,
+    "start": [
+      0.0,
+      0.0
+    ],
+    "robot": {
+      "base_radius": 0.32,
+      "clearance": 0.08,
+      "arm_forward_offset": 0.12,
+      "arm_spacing": 0.36,
+      "arm_min_reach": 0.1,
+      "arm_max_reach": 0.9,
+      "arm_sector_half_angle_deg": 100.0,
+      "shoulder_height": 0.75,
+      "fixed_lift_height": 0.4
+    },
+    "geometry": {
+      "table_width": 0.9234227654379503,
+      "table_depth": 0.6549269531981277,
+      "aisle_gap": 1.5694354535680872,
+      "table_height": 0.75,
+      "dock_gap": 0.5,
+      "task_margin": 0.04
+    },
+    "table_width": 0.9234227654379503,
+    "table_depth": 0.6549269531981277,
+    "aisle_gap": 1.5694354535680872,
+    "x_lines": [
+      0.0,
+      2.4928582190060373,
+      4.985716438012075,
+      7.478574657018112
+    ],
+    "y_lines": [
+      0.0,
+      2.2243624067662147,
+      4.448724813532429
+    ],
+    "tables": [
+      {
+        "id": 0,
+        "ix": 0,
+        "iy": 0,
+        "cx": 1.230700486584794,
+        "cy": 1.1163287006341438,
+        "xmin": 0.7488508475496334,
+        "xmax": 1.7125501256199545,
+        "ymin": 0.777429634507994,
+        "ymax": 1.4552277667602938,
+        "z": 0.75
+      },
+      {
+        "id": 1,
+        "ix": 1,
+        "iy": 0,
+        "cx": 3.7241368580811374,
+        "cy": 1.1383110974454935,
+        "xmin": 3.282421250390433,
+        "xmax": 4.165852465771842,
+        "ymin": 0.8091674554792567,
+        "ymax": 1.4674547394117303,
+        "z": 0.75
+      },
+      {
+        "id": 2,
+        "ix": 2,
+        "iy": 0,
+        "cx": 6.204613528743123,
+        "cy": 1.1088355616741363,
+        "xmin": 5.721078688210705,
+        "xmax": 6.688148369275542,
+        "ymin": 0.769569491085327,
+        "ymax": 1.4481016322629456,
+        "z": 0.75
+      },
+      {
+        "id": 3,
+        "ix": 0,
+        "iy": 1,
+        "cx": 1.2313715938330787,
+        "cy": 3.3394410153991156,
+        "xmin": 0.749927167169741,
+        "xmax": 1.7128160204964165,
+        "ymin": 3.024923755720296,
+        "ymax": 3.6539582750779354,
+        "z": 0.75
+      },
+      {
+        "id": 4,
+        "ix": 1,
+        "iy": 1,
+        "cx": 3.774766754336824,
+        "cy": 3.371288545968328,
+        "xmin": 3.3286455144417837,
+        "xmax": 4.220887994231864,
+        "ymin": 3.050232461396039,
+        "ymax": 3.6923446305406173,
+        "z": 0.75
+      },
+      {
+        "id": 5,
+        "ix": 2,
+        "iy": 1,
+        "cx": 6.246448057501868,
+        "cy": 3.32281453442076,
+        "xmin": 5.764876752388785,
+        "xmax": 6.728019362614951,
+        "ymin": 2.9984252105578415,
+        "ymax": 3.647203858283678,
+        "z": 0.75
+      }
+    ],
+    "tasks": [
+      {
+        "id": 0,
+        "table_id": 3,
+        "x": 1.212679492314229,
+        "y": 3.5950339487043412,
+        "z": 0.75
+      },
+      {
+        "id": 1,
+        "table_id": 3,
+        "x": 1.592976651242331,
+        "y": 3.257425065349151,
+        "z": 0.75
+      }
+    ],
+    "candidates": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 0.9897756670672136,
+        "y": 0.27742963450799385,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.9897756670672136,
+          0.0
+        ]
+      },
+      {
+        "id": 1,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.471625306102374,
+        "y": 0.27742963450799385,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.471625306102374,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "table_id": 0,
+        "side": "top",
+        "x": 0.9897756670672136,
+        "y": 1.9552277667602938,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.9897756670672136,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 3,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.471625306102374,
+        "y": 1.9552277667602938,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.471625306102374,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 4,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.24885084754963338,
+        "y": 0.9468791675710688,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          0.9468791675710688
+        ]
+      },
+      {
+        "id": 5,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.24885084754963338,
+        "y": 1.2857782336972188,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          1.2857782336972188
+        ]
+      },
+      {
+        "id": 6,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.2125501256199547,
+        "y": 0.9468791675710688,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          0.9468791675710688
+        ]
+      },
+      {
+        "id": 7,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.2125501256199547,
+        "y": 1.2857782336972188,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          1.2857782336972188
+        ]
+      },
+      {
+        "id": 8,
+        "table_id": 1,
+        "side": "bottom",
+        "x": 3.5032790542357852,
+        "y": 0.3091674554792567,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.5032790542357852,
+          0.0
+        ]
+      },
+      {
+        "id": 9,
+        "table_id": 1,
+        "side": "bottom",
+        "x": 3.9449946619264895,
+        "y": 0.3091674554792567,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.9449946619264895,
+          0.0
+        ]
+      },
+      {
+        "id": 10,
+        "table_id": 1,
+        "side": "top",
+        "x": 3.5032790542357852,
+        "y": 1.9674547394117303,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.5032790542357852,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 11,
+        "table_id": 1,
+        "side": "top",
+        "x": 3.9449946619264895,
+        "y": 1.9674547394117303,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.9449946619264895,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 12,
+        "table_id": 1,
+        "side": "left",
+        "x": 2.782421250390433,
+        "y": 0.9737392764623751,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          0.9737392764623751
+        ]
+      },
+      {
+        "id": 13,
+        "table_id": 1,
+        "side": "left",
+        "x": 2.782421250390433,
+        "y": 1.302882918428612,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          1.302882918428612
+        ]
+      },
+      {
+        "id": 14,
+        "table_id": 1,
+        "side": "right",
+        "x": 4.665852465771842,
+        "y": 0.9737392764623751,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          0.9737392764623751
+        ]
+      },
+      {
+        "id": 15,
+        "table_id": 1,
+        "side": "right",
+        "x": 4.665852465771842,
+        "y": 1.302882918428612,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          1.302882918428612
+        ]
+      },
+      {
+        "id": 16,
+        "table_id": 2,
+        "side": "bottom",
+        "x": 5.9628461084769135,
+        "y": 0.269569491085327,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          5.9628461084769135,
+          0.0
+        ]
+      },
+      {
+        "id": 17,
+        "table_id": 2,
+        "side": "bottom",
+        "x": 6.446380949009333,
+        "y": 0.269569491085327,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          6.446380949009333,
+          0.0
+        ]
+      },
+      {
+        "id": 18,
+        "table_id": 2,
+        "side": "top",
+        "x": 5.9628461084769135,
+        "y": 1.9481016322629456,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          5.9628461084769135,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 19,
+        "table_id": 2,
+        "side": "top",
+        "x": 6.446380949009333,
+        "y": 1.9481016322629456,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          6.446380949009333,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 20,
+        "table_id": 2,
+        "side": "left",
+        "x": 5.221078688210705,
+        "y": 0.9392025263797317,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          0.9392025263797317
+        ]
+      },
+      {
+        "id": 21,
+        "table_id": 2,
+        "side": "left",
+        "x": 5.221078688210705,
+        "y": 1.278468596968541,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          1.278468596968541
+        ]
+      },
+      {
+        "id": 22,
+        "table_id": 2,
+        "side": "right",
+        "x": 7.188148369275542,
+        "y": 0.9392025263797317,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          7.478574657018112,
+          0.9392025263797317
+        ]
+      },
+      {
+        "id": 23,
+        "table_id": 2,
+        "side": "right",
+        "x": 7.188148369275542,
+        "y": 1.278468596968541,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          7.478574657018112,
+          1.278468596968541
+        ]
+      },
+      {
+        "id": 24,
+        "table_id": 3,
+        "side": "bottom",
+        "x": 0.9906493805014098,
+        "y": 2.524923755720296,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.9906493805014098,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 25,
+        "table_id": 3,
+        "side": "bottom",
+        "x": 1.4720938071647476,
+        "y": 2.524923755720296,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.4720938071647476,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 26,
+        "table_id": 3,
+        "side": "top",
+        "x": 0.9906493805014098,
+        "y": 4.153958275077935,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.9906493805014098,
+          4.448724813532429
+        ]
+      },
+      {
+        "id": 27,
+        "table_id": 3,
+        "side": "top",
+        "x": 1.4720938071647476,
+        "y": 4.153958275077935,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.4720938071647476,
+          4.448724813532429
+        ]
+      },
+      {
+        "id": 28,
+        "table_id": 3,
+        "side": "left",
+        "x": 0.24992716716974095,
+        "y": 3.182182385559706,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          3.182182385559706
+        ]
+      },
+      {
+        "id": 29,
+        "table_id": 3,
+        "side": "left",
+        "x": 0.24992716716974095,
+        "y": 3.4966996452385253,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          3.4966996452385253
+        ]
+      },
+      {
+        "id": 30,
+        "table_id": 3,
+        "side": "right",
+        "x": 2.2128160204964162,
+        "y": 3.182182385559706,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          3.182182385559706
+        ]
+      },
+      {
+        "id": 31,
+        "table_id": 3,
+        "side": "right",
+        "x": 2.2128160204964162,
+        "y": 3.4966996452385253,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          3.4966996452385253
+        ]
+      },
+      {
+        "id": 32,
+        "table_id": 4,
+        "side": "bottom",
+        "x": 3.551706134389304,
+        "y": 2.550232461396039,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.551706134389304,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 33,
+        "table_id": 4,
+        "side": "bottom",
+        "x": 3.9978273742843444,
+        "y": 2.550232461396039,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.9978273742843444,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 34,
+        "table_id": 4,
+        "side": "top",
+        "x": 3.551706134389304,
+        "y": 4.192344630540617,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.551706134389304,
+          4.448724813532429
+        ]
+      },
+      {
+        "id": 35,
+        "table_id": 4,
+        "side": "top",
+        "x": 3.9978273742843444,
+        "y": 4.192344630540617,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          3.9978273742843444,
+          4.448724813532429
+        ]
+      },
+      {
+        "id": 36,
+        "table_id": 4,
+        "side": "left",
+        "x": 2.828645514441784,
+        "y": 3.2107605036821836,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          3.2107605036821836
+        ]
+      },
+      {
+        "id": 37,
+        "table_id": 4,
+        "side": "left",
+        "x": 2.828645514441784,
+        "y": 3.5318165882544728,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4928582190060373,
+          3.5318165882544728
+        ]
+      },
+      {
+        "id": 38,
+        "table_id": 4,
+        "side": "right",
+        "x": 4.720887994231864,
+        "y": 3.2107605036821836,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          3.2107605036821836
+        ]
+      },
+      {
+        "id": 39,
+        "table_id": 4,
+        "side": "right",
+        "x": 4.720887994231864,
+        "y": 3.5318165882544728,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          3.5318165882544728
+        ]
+      },
+      {
+        "id": 40,
+        "table_id": 5,
+        "side": "bottom",
+        "x": 6.005662404945326,
+        "y": 2.4984252105578415,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          6.005662404945326,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 41,
+        "table_id": 5,
+        "side": "bottom",
+        "x": 6.48723371005841,
+        "y": 2.4984252105578415,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          6.48723371005841,
+          2.2243624067662147
+        ]
+      },
+      {
+        "id": 42,
+        "table_id": 5,
+        "side": "top",
+        "x": 6.005662404945326,
+        "y": 4.147203858283678,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          6.005662404945326,
+          4.448724813532429
+        ]
+      },
+      {
+        "id": 43,
+        "table_id": 5,
+        "side": "top",
+        "x": 6.48723371005841,
+        "y": 4.147203858283678,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          6.48723371005841,
+          4.448724813532429
+        ]
+      },
+      {
+        "id": 44,
+        "table_id": 5,
+        "side": "left",
+        "x": 5.264876752388785,
+        "y": 3.160619872489301,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          3.160619872489301
+        ]
+      },
+      {
+        "id": 45,
+        "table_id": 5,
+        "side": "left",
+        "x": 5.264876752388785,
+        "y": 3.4850091963522187,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          4.985716438012075,
+          3.4850091963522187
+        ]
+      },
+      {
+        "id": 46,
+        "table_id": 5,
+        "side": "right",
+        "x": 7.228019362614951,
+        "y": 3.160619872489301,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          7.478574657018112,
+          3.160619872489301
+        ]
+      },
+      {
+        "id": 47,
+        "table_id": 5,
+        "side": "right",
+        "x": 7.228019362614951,
+        "y": 3.4850091963522187,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          7.478574657018112,
+          3.4850091963522187
+        ]
+      }
+    ],
+    "model_scope": "fixed-height spherical-sector arm proxy; independent sequential one-arm tasks; no IK, joint path, or hardware validation",
+    "complexity": "blocked",
+    "density_profile": 0,
+    "obstacles": [
+      {
+        "xmin": 3.679287328509056,
+        "xmax": 3.799287328509056,
+        "ymin": 2.0243624067662145,
+        "ymax": 2.424362406766215
+      }
+    ],
+    "layout_description": "Individual table scale 0.95-1.05; position jitter +/-0.04 m; horizontal aisle blockers on alternating rows."
+  },
+  "feasibility": [
+    {
+      "task_id": 0,
+      "left": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "right": [
+        26,
+        27,
+        29,
+        31
+      ]
+    },
+    {
+      "task_id": 1,
+      "left": [
+        25,
+        26,
+        27,
+        30,
+        31
+      ],
+      "right": [
+        24,
+        25,
+        27,
+        30,
+        31
+      ]
+    }
+  ],
+  "plans": {
+    "fixed3": {
+      "method": "fixed3",
+      "status": "complete",
+      "selected_candidate_ids": [
+        28,
+        24
+      ],
+      "visit_order_candidate_ids": [
+        28,
+        24
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 28,
+          "arm": "L"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 24,
+          "arm": "R"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 28,
+          "pose": {
+            "x": 0.24992716716974095,
+            "y": 3.182182385559706,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 3.4321095528,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 24,
+          "pose": {
+            "x": 0.9906493805014098,
+            "y": 2.524923755720296,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.9310674282,
+          "tasks": [
+            {
+              "task_id": 1,
+              "arm": "R"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.2499271672,
+          3.1821823856
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.9897756671,
+          2.2243624068
+        ],
+        [
+          0.9906493805,
+          2.2243624068
+        ],
+        [
+          0.9906493805,
+          2.5249237557
+        ],
+        [
+          0.9906493805,
+          2.2243624068
+        ],
+        [
+          0.9897756671,
+          2.2243624068
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        3.4321095528,
+        2.4989578754,
+        3.5155731362000004
+      ],
+      "route_length_m": 9.4466405644,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 10.9466405644,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 9.4466405644,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    },
+    "table_order": {
+      "method": "table_order",
+      "status": "complete",
+      "selected_candidate_ids": [
+        26
+      ],
+      "visit_order_candidate_ids": [
+        26
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 26,
+          "arm": "L"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 26,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 26,
+          "pose": {
+            "x": 0.9906493805014098,
+            "y": 4.153958275077935,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.7341407324,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            },
+            {
+              "task_id": 1,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          3.4966996452
+        ],
+        [
+          0.0,
+          4.4487248135
+        ],
+        [
+          0.9906493805,
+          4.4487248135
+        ],
+        [
+          0.9906493805,
+          4.1539582751
+        ],
+        [
+          0.9906493805,
+          4.4487248135
+        ],
+        [
+          0.0,
+          4.4487248135
+        ],
+        [
+          0.0,
+          3.4966996452
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        5.7341407324,
+        5.734140732399999
+      ],
+      "route_length_m": 11.4682814648,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 12.2182814648,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 11.468281464800002,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    },
+    "joint_exact": {
+      "method": "joint_exact",
+      "status": "complete",
+      "selected_candidate_ids": [
+        28,
+        24
+      ],
+      "visit_order_candidate_ids": [
+        28,
+        24
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 28,
+          "arm": "L"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 24,
+          "arm": "R"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 28,
+          "pose": {
+            "x": 0.24992716716974095,
+            "y": 3.182182385559706,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 3.4321095528,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 24,
+          "pose": {
+            "x": 0.9906493805014098,
+            "y": 2.524923755720296,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.9310674282,
+          "tasks": [
+            {
+              "task_id": 1,
+              "arm": "R"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.2499271672,
+          3.1821823856
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.9897756671,
+          2.2243624068
+        ],
+        [
+          0.9906493805,
+          2.2243624068
+        ],
+        [
+          0.9906493805,
+          2.5249237557
+        ],
+        [
+          0.9906493805,
+          2.2243624068
+        ],
+        [
+          0.9897756671,
+          2.2243624068
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        3.4321095528,
+        2.4989578754,
+        3.5155731362000004
+      ],
+      "route_length_m": 9.4466405644,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 10.9466405644,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 9.4466405644,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    },
+    "fixed_set_exact_order": {
+      "method": "fixed_set_exact_order",
+      "status": "complete",
+      "selected_candidate_ids": [
+        26
+      ],
+      "visit_order_candidate_ids": [
+        26
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 26,
+          "arm": "L"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 26,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 26,
+          "pose": {
+            "x": 0.9906493805014098,
+            "y": 4.153958275077935,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.7341407324,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            },
+            {
+              "task_id": 1,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          3.4966996452
+        ],
+        [
+          0.0,
+          4.4487248135
+        ],
+        [
+          0.9906493805,
+          4.4487248135
+        ],
+        [
+          0.9906493805,
+          4.1539582751
+        ],
+        [
+          0.9906493805,
+          4.4487248135
+        ],
+        [
+          0.0,
+          4.4487248135
+        ],
+        [
+          0.0,
+          3.4966996452
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        5.7341407324,
+        5.734140732399999
+      ],
+      "route_length_m": 11.4682814648,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 12.2182814648,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 11.468281464800002,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    },
+    "detour8": {
+      "method": "detour",
+      "status": "complete",
+      "selected_candidate_ids": [
+        28,
+        24
+      ],
+      "visit_order_candidate_ids": [
+        28,
+        24
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 28,
+          "arm": "L"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 24,
+          "arm": "R"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 28,
+          "pose": {
+            "x": 0.24992716716974095,
+            "y": 3.182182385559706,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 3.4321095528,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 24,
+          "pose": {
+            "x": 0.9906493805014098,
+            "y": 2.524923755720296,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.9310674282,
+          "tasks": [
+            {
+              "task_id": 1,
+              "arm": "R"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.2499271672,
+          3.1821823856
+        ],
+        [
+          0.0,
+          3.1821823856
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.9897756671,
+          2.2243624068
+        ],
+        [
+          0.9906493805,
+          2.2243624068
+        ],
+        [
+          0.9906493805,
+          2.5249237557
+        ],
+        [
+          0.9906493805,
+          2.2243624068
+        ],
+        [
+          0.9897756671,
+          2.2243624068
+        ],
+        [
+          0.0,
+          2.2243624068
+        ],
+        [
+          0.0,
+          1.2857782337
+        ],
+        [
+          0.0,
+          0.9468791676
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        3.4321095528,
+        2.4989578754,
+        3.5155731362000004
+      ],
+      "route_length_m": 9.4466405644,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 10.9466405644,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 9.4466405644,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    }
+  },
+  "diagnostics": {
+    "fixed3": {
+      "info": {
+        "status": "complete",
+        "method": "fixed3",
+        "reference": "fixed3",
+        "reference_objective_m": 10.9466405644,
+        "winning_reference_recipe": 0,
+        "objective_m": 10.9466405644,
+        "cost_nonincreasing": true,
+        "attempts": 0,
+        "dp_calls": 0,
+        "accepted": 0,
+        "provisional_improvements": 0,
+        "fallback_used": false,
+        "failures": [],
+        "stop_reason": "reference_only",
+        "budget_exhausted": false,
+        "deadline_exceeded": false,
+        "time_overrun_s": 0.0,
+        "time_limit_s": null,
+        "planning_s": 0.0008884999997462728,
+        "elapsed_s": 0.0008884999997462728,
+        "reference_s": 0.0008832999992591795,
+        "feature_s": 0.0,
+        "model_s": 0.0,
+        "repair_s": 0.0,
+        "final_validation_s": 0.0,
+        "trace": [
+          {
+            "event": "validated_reference",
+            "reference": "fixed3",
+            "recipe": 0,
+            "objective_m": 10.9466405644
+          }
+        ],
+        "guarantee_scope": "Only the returned independently verified plan is certified. Cost is bounded by the verified reference under the discrete proxy model. Deadline is soft, not hard real time."
+      },
+      "elapsed_s": 0.0009049000000231899
+    },
+    "table_order": {
+      "info": {
+        "status": "heuristic"
+      },
+      "elapsed_s": 0.0002767999994830461
+    },
+    "joint_exact": {
+      "info": {
+        "status": "optimal",
+        "optimal": true,
+        "route": [
+          0,
+          29,
+          25,
+          0
+        ],
+        "objective": 10.9466405644,
+        "lower_bound": 10.9466405644,
+        "relative_gap": 0.0,
+        "elapsed_s": 0.0010560000000623404,
+        "expanded_masks": 2,
+        "metric_verified": true,
+        "reason": null,
+        "scope": "Global for the supplied discrete coverage and nonnegative metric distances only; float64 numerical tolerance, no continuous/IK claim."
+      },
+      "elapsed_s": 0.0020941000002494548
+    },
+    "fixed_set_exact_order": {
+      "info": {
+        "status": "optimal",
+        "optimal": true,
+        "route": [
+          0,
+          1,
+          0
+        ],
+        "objective": 12.2182814648,
+        "lower_bound": 12.2182814648,
+        "relative_gap": 0.0,
+        "elapsed_s": 0.0001646999999138643,
+        "expanded_masks": 0,
+        "metric_verified": true,
+        "reason": null,
+        "scope": "Exact visit order for the fixed table-baseline stop set only; task/arm assignment fixed."
+      },
+      "elapsed_s": 0.0006857999997009756
+    },
+    "detour8": {
+      "info": {
+        "status": "complete",
+        "method": "detour",
+        "reference": "fixed3",
+        "reference_objective_m": 10.9466405644,
+        "winning_reference_recipe": 0,
+        "objective_m": 10.9466405644,
+        "cost_nonincreasing": true,
+        "attempts": 2,
+        "dp_calls": 2,
+        "accepted": 0,
+        "provisional_improvements": 0,
+        "fallback_used": false,
+        "failures": [],
+        "stop_reason": "no_legal_action",
+        "budget_exhausted": false,
+        "deadline_exceeded": false,
+        "time_overrun_s": 0.0,
+        "time_limit_s": null,
+        "planning_s": 0.001910400000269874,
+        "elapsed_s": 0.001910400000269874,
+        "reference_s": 0.0008142999995470745,
+        "feature_s": 0.00043740000000980217,
+        "model_s": 1.0800000382005237e-05,
+        "repair_s": 0.00048749999950814527,
+        "final_validation_s": 0.0,
+        "trace": [
+          {
+            "event": "validated_reference",
+            "reference": "fixed3",
+            "recipe": 0,
+            "objective_m": 10.9466405644
+          },
+          {
+            "event": "provisional_repair",
+            "action": 0,
+            "accepted": false,
+            "objective_m": 10.9466405644,
+            "independently_certified": false,
+            "elapsed_s": 0.0016472999996040016
+          },
+          {
+            "event": "provisional_repair",
+            "action": 1,
+            "accepted": false,
+            "objective_m": 10.9466405644,
+            "independently_certified": false,
+            "elapsed_s": 0.0019081000000369386
+          }
+        ],
+        "guarantee_scope": "Only the returned independently verified plan is certified. Cost is bounded by the verified reference under the discrete proxy model. Deadline is soft, not hard real time."
+      },
+      "elapsed_s": 0.0019185000001016306
+    }
+  }
+}

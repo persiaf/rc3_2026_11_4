@@ -1,0 +1,53 @@
+{
+  "status": "pass",
+  "package_sha256": "f3f36efc8eebb2fa51b970db8ba0c42dd6d167dd35d65bc8a60f51d00ba61c13",
+  "portable_bundle_directory": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v3_bundle_smoke",
+  "command": [
+    "D:\\tools\\anocaonda\\python.exe",
+    "-B",
+    "-m",
+    "rc3_v3.plan",
+    "--method",
+    "learned",
+    "--scale",
+    "4x3",
+    "--mode",
+    "blocked",
+    "--seed",
+    "771990",
+    "--output",
+    "demo/scene_plan.json"
+  ],
+  "planning": {
+    "status": "complete",
+    "timing": {
+      "preprocessing_s": 0.006714399998600129,
+      "planning_s": 0.052068799999688054,
+      "total_s": 0.05955270000049495,
+      "cache_hit": false
+    },
+    "objective": 57.580222581600005,
+    "reference": 63.0968340836,
+    "calls": 3,
+    "stop_reason": "policy_stop"
+  },
+  "independent": {
+    "model_source": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v3_bundle_smoke\\rc3_v3\\model.py",
+    "torch_imported": false,
+    "checks": [
+      {
+        "file": "scene_plan.json",
+        "method": "learned",
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 46.33022258159998,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    ]
+  },
+  "scope": "Code and deployment model extracted from final ZIP, executed in a separate working directory with default Python without Torch."
+}

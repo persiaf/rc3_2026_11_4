@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "runs": [
+    {
+      "seed": 17,
+      "bc_val_gain": 0.7757268736575611,
+      "ppo_val_gain": 0.8408733026052655,
+      "bc_epoch": 50,
+      "ppo_epoch": 10,
+      "bc_checkpoint": "seed17_bc.pt",
+      "ppo_checkpoint": "seed17_ppo.pt"
+    },
+    {
+      "seed": 29,
+      "bc_val_gain": 0.7292996560779748,
+      "ppo_val_gain": 0.7932346795054128,
+      "bc_epoch": 10,
+      "ppo_epoch": 5,
+      "bc_checkpoint": "seed29_bc.pt",
+      "ppo_checkpoint": "seed29_ppo.pt"
+    },
+    {
+      "seed": 43,
+      "bc_val_gain": 0.6565587272675962,
+      "ppo_val_gain": 0.734615762900188,
+      "bc_epoch": 10,
+      "ppo_epoch": 20,
+      "bc_checkpoint": "seed43_bc.pt",
+      "ppo_checkpoint": "seed43_ppo.pt"
+    }
+  ],
+  "selected_bc_seed": 17,
+  "selected_ppo_seed": 17,
+  "recommended_stage": "ppo",
+  "training_instances": 96,
+  "validation_instances": 24,
+  "bc_positive_scenes": 96,
+  "total_optimizer_updates": 4320,
+  "total_environment_steps": 23040,
+  "training_s": 345.1090737000013,
+  "config": {
+    "data": "rc3_improve\\data_20261102",
+    "output": "rc3_improve\\run_20261102",
+    "bc_epochs": 100,
+    "rl_epochs": 30,
+    "episodes": 32,
+    "horizon": 8,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "device": "cuda"
+  },
+  "torch": "2.12.1+cu126",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "checkpoints": {
+    "bc_best.pt": "fb27c0040117f461837a36e7a10070c3accd52809c90f630b8ac9b81d7bfdaf5",
+    "ppo_best.pt": "0f91fa6797b1fbc1f2ce36bfcaa4e423b582d0f6de902ccf29f711d8956448a2"
+  }
+}

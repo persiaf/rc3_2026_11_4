@@ -1,0 +1,135 @@
+{
+  "status": "complete",
+  "seed": 77,
+  "scales": [
+    [
+      1,
+      1
+    ]
+  ],
+  "modes": [
+    "regular",
+    "mixed",
+    "blocked"
+  ],
+  "recipes": [
+    {
+      "name": "nearest",
+      "alpha": 0.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain0.5_offset0.75",
+      "alpha": 0.5,
+      "beta": 0.75
+    },
+    {
+      "name": "gain0.5_offset2",
+      "alpha": 0.5,
+      "beta": 2.0
+    },
+    {
+      "name": "gain0.5_offset6",
+      "alpha": 0.5,
+      "beta": 6.0
+    },
+    {
+      "name": "gain1_offset0.75",
+      "alpha": 1.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain1_offset2",
+      "alpha": 1.0,
+      "beta": 2.0
+    },
+    {
+      "name": "gain1_offset6",
+      "alpha": 1.0,
+      "beta": 6.0
+    },
+    {
+      "name": "gain2_offset0.75",
+      "alpha": 2.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain2_offset2",
+      "alpha": 2.0,
+      "beta": 2.0
+    },
+    {
+      "name": "gain2_offset6",
+      "alpha": 2.0,
+      "beta": 6.0
+    },
+    {
+      "name": "gain4_offset0.75",
+      "alpha": 4.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain4_offset2",
+      "alpha": 4.0,
+      "beta": 2.0
+    },
+    {
+      "name": "gain4_offset6",
+      "alpha": 4.0,
+      "beta": 6.0
+    }
+  ],
+  "feature_names": [
+    "log_tables",
+    "aspect",
+    "tasks_per_table",
+    "empty_fraction",
+    "one_fraction",
+    "two_fraction",
+    "three_fraction",
+    "table_width_mean",
+    "table_width_std",
+    "table_depth_mean",
+    "table_depth_std",
+    "aisle_gap",
+    "obstacles_per_table",
+    "navigable_fraction",
+    "candidate_cover_mean",
+    "candidate_cover_std",
+    "candidate_cover_max",
+    "task_options_mean",
+    "task_options_std",
+    "task_options_min",
+    "both_arms_fraction",
+    "distance_mean",
+    "distance_std",
+    "distance_q25",
+    "distance_q75",
+    "detour_ratio_mean",
+    "detour_ratio_std",
+    "task_x_mean",
+    "task_y_mean",
+    "task_x_std",
+    "task_y_std",
+    "task_xy_cov",
+    "row_work_std",
+    "column_work_std",
+    "task_options_q25",
+    "task_options_q75",
+    "single_dock_table_fraction",
+    "coverage_density"
+  ],
+  "penalty": 0.75,
+  "search_passes": 2,
+  "splits": {
+    "train": 6,
+    "validation": 3,
+    "test": 3
+  },
+  "source_sha256": {
+    "solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "features.py": "b4b209d3ea0f25de9370308fed7776df7c5b2f97b652202ea2d9f2a1827a3ce3"
+  },
+  "generation_s": 0.03250409999964177
+}

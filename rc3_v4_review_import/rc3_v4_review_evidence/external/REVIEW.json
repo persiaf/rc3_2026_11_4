@@ -1,0 +1,61 @@
+{
+  "scope": "第四版外部可达性接口、独立记录复验和失败回退；未验证真实机器人运动",
+  "original_tests": {
+    "run": 20,
+    "passed": true,
+    "torch_imported": false
+  },
+  "package_integrity": {
+    "checked": 270,
+    "matched": 270
+  },
+  "findings": [
+    {
+      "id": "EXT-001",
+      "kind": "confirmed_conservative_false_rejection",
+      "summary": "F允许左右臂而A只允许右臂时，原导出L优先会拒绝同路线可行分配。",
+      "invalid_plan_acceptance": false,
+      "original_reproduction": "alternate_arm_completeness.json",
+      "isolated_patch": "../external_patch/external_common_arm.patch",
+      "status": "fixed_in_isolated_patch_only"
+    },
+    {
+      "id": "EXT-002",
+      "kind": "documented_trust_boundary",
+      "summary": "证书绑定内容与声明资产摘要，不自动证明物理正确性、实际资产存在或生产者独立性。",
+      "security_bypass": false
+    },
+    {
+      "id": "EXT-003",
+      "kind": "scope_boundary",
+      "summary": "离散高度服务状态、单臂独立任务、二维圆底盘导航；不含升降过渡、机械臂连续运动和双臂同时协作。"
+    },
+    {
+      "id": "EXT-004",
+      "kind": "positive_verification",
+      "summary": "回调实际运行，False和异常拒绝；已有认证初解时最终改进验证失败回退；无初解则保留任务且不声称物理不可行。"
+    }
+  ],
+  "patch": {
+    "all_passed": true,
+    "tests_run": 20,
+    "original_external_tests": 9,
+    "new_regression_tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "original_external_sha256": "93bc94c1d6d9aa0d9dfea3149b69f2a8976a02ae5d211cc87079e44e3365356f",
+    "patched_external_sha256": "2e96102f2dbb8e527ea5c7650df931eadda5bfd1a8de55f5988464e14c459779",
+    "original_source_unchanged": true,
+    "torch_imported": false,
+    "frozen_evaluation_unchanged": true,
+    "original_counterexample_status": "failed",
+    "patched_status": "complete",
+    "patch_scope": "Assignment uses common permitted arms; final F/A and callback checks unchanged."
+  },
+  "statistical_independence_note": "补丁使用A参与分配，A不能同时被称为决策未见的盲测表。物理独立复核需调用者外部checker及可核验资产。",
+  "completeness_note": "修复只涉及已选停靠点上的用臂分配；候选路线与规范化仍根据F，不保证找到所有可行路线。",
+  "frozen_evaluation_unchanged": true,
+  "counts_note": "原版20项、补丁20项中有9项重复执行；不把两批相加称为40项新增测试。",
+  "recommendation": "冻结现有算法证据，单独记录接口补丁，补齐AlohaMini1一致资产和真实可达见证后做小规模跨章节验证；不为该补丁重训。"
+}

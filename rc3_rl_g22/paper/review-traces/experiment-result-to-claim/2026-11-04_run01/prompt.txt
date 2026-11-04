@@ -1,0 +1,18 @@
+Paper architect/reviewer task: RESULT-TO-CLAIM EVALUATION
+
+You are the independently delegated reviewer, not the paper executor. Follow C:/Users/Administrator/.codex/skills/experiment-result-to-claim/SKILL.md.
+
+Scope: G2.2 frozen complete-planning evaluation only. Read rc3_rl_g22/inputs/user_request.txt, outputs/protocol.json, paper/EXPERIMENT_PLAN.md, outputs/evaluation/results.json, all evidence.json.gz and plan.json, outputs/summary.json, action_feedback.json and plan_audit.json. Do not assume executor summaries are correct. Recompute saved data with standard library/NumPy only. Do not rerun a scene, search proposal, branch query, model training or PPO. Do not modify old G2/G2.1. Write only G2.2 result/claim and review artifacts. Saved model replay performed by executor may be read as a separate source, not portrayed as your own model forward.
+
+Intended C1: Do frozen learned policies offer useful task-level improvements in these 12 old development scenes? Compare actual J=L+0.75K, L, K, relative Fixed3 gain, paired shared STOP return and complete planning time against original Fixed3, original Detour, shared immediate STOP, fixed early Detour and the matched continued-CE model.
+Intended C2: What actually happened after selecting actions not covered by old finite teacher labels? Separate queried action, unqueried action at exact known state, and unseen full state. Distinguish immediate effect, actual frozen-policy suffix and optimal/finite-teacher Q.
+
+Protocol: 12 previously used hundred-table teacher_extra scenes, 4 per regular/mixed/blocked mode, fixed no-performance-filter selection; 6 methods x 12 = 72 plans; no updates, no PPO, no new teacher branches. Frozen models gain_control and gain_gain; full menu greedy original scores. Shared horizon 16, work cap 2,000,000, lambda_work=.01, work_scale=10,000, potential=0. Early rule max_proposals=4, patience=1, progress_tolerance=1e-12. Complete time measured once per combination with rotated order and resident models; model loads recorded separately; 5 second soft guard not hard real time. Compare original algorithms' returned J/time without inventing shared-work rewards.
+
+Evaluate: claim_supported yes|partial|no; what_results_support; what_results_dont_support; missing_evidence; suggested_claim_revision; next_experiments_needed; confidence high|medium|low. Identify actual unknown-action values, matched baselines, timing limitations, next training signals. Do not call two BC model differences PPO gains or automatically expand training. Verify returned best route versus current route, reward/work ledgers, suffix including terminal/final corrections, and null unknown teacher values. Any retrospective prefix STOP accounting must retain no-final-rollback assumption and not count as a new evaluated method.
+
+If paper/PAPER_CLAIM_AUDIT.json is absent, mark downstream judgment provisional — no paper claim audit available. Route partial to narrowed claims and supplementary design only; the user's current authorization prohibits automatic new experiments/training.
+
+Additional figure review request from executor: inspect figures/quality_time_returns.png, action_outcomes.png, latex_includes.tex plus generation scripts; check comparison scope and captions under paper-figure skill. No new plans. Save figures/REVIEW.md.
+
+Evidence collection outcome independently computed: see recomputed.json and recompute.py in this trace directory. The full reviewer response is raw_response.md; the human-readable project verdict is rc3_rl_g22/EXPERIMENT_RESULT_TO_CLAIM.md. The referenced shared review-tracing.md file was unavailable locally, so preserve the explicit prompt/raw/parsed/routing contract directly.

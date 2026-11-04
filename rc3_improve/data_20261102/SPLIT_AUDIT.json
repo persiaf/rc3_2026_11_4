@@ -1,0 +1,153 @@
+{
+  "status": "pass",
+  "read_scope": "Case metadata and dataset-manifest scene seed fields, CSV seed column only, baseline filenames. No route objectives, rewards, cost arrays, model outputs, or held-out test labels inspected.",
+  "splits": {
+    "train": {
+      "cases": 96,
+      "unique_seeds": 96,
+      "scales": [
+        "10x10"
+      ],
+      "modes": [
+        "blocked",
+        "mixed",
+        "regular"
+      ],
+      "metadata_sha256": "51fa11d4620afd7bff156fc72f0d58d26289ddbea21add26c3191c6e4c4876c7"
+    },
+    "validation": {
+      "cases": 24,
+      "unique_seeds": 24,
+      "scales": [
+        "10x10"
+      ],
+      "modes": [
+        "blocked",
+        "mixed",
+        "regular"
+      ],
+      "metadata_sha256": "f48eea35c06d3d4d03cb12863328bb16a09ec6d7ecf2f98bb1021ebe8ce822bf"
+    },
+    "test": {
+      "cases": 108,
+      "unique_seeds": 108,
+      "scales": [
+        "10x10",
+        "12x12",
+        "14x14",
+        "4x3",
+        "6x6",
+        "8x8"
+      ],
+      "modes": [
+        "blocked",
+        "mixed",
+        "regular"
+      ],
+      "metadata_sha256": "0a188af417327e2eb79b458eb71dee8a5ecbe325bba27d7e88c710fc79f68868"
+    }
+  },
+  "new_split_intersections": {
+    "train__validation": [],
+    "train__test": [],
+    "validation__test": []
+  },
+  "historical_scene_seeds": 2161,
+  "new_vs_historical_intersections": {
+    "train": [],
+    "validation": [],
+    "test": []
+  },
+  "historical_sources": [
+    {
+      "path": "rc3_fast\\data_20261102\\test_cases.json",
+      "scene_seeds": 96,
+      "sha256": "05fc19b8c095c5fb116bc4715c6ebca58b2b8dd4a931ac372735a588f0660fc4"
+    },
+    {
+      "path": "rc3_fast\\data_20261102\\train_cases.json",
+      "scene_seeds": 288,
+      "sha256": "f5e9849243a8a51c5b6faf5a85e07020e658f22fa19a44fb0a9d95b235d14590"
+    },
+    {
+      "path": "rc3_fast\\data_20261102\\validation_cases.json",
+      "scene_seeds": 72,
+      "sha256": "81313395c227ec5c60da525b7bf45f5892d1c6f2dde1e1f03b92958c0fd8a9ad"
+    },
+    {
+      "path": "rc3_fast\\data_extended_20261102\\test_cases.json",
+      "scene_seeds": 192,
+      "sha256": "29b827ecbd01dcf72a7609f68d45d160ca237c47c33fb99d139c9fc031db2f09"
+    },
+    {
+      "path": "rc3_fast\\data_extended_20261102\\train_cases.json",
+      "scene_seeds": 1152,
+      "sha256": "12a707ad514a45019ad5846a0081dd5719e5a34b96e37f0020d7da2e4603d922"
+    },
+    {
+      "path": "rc3_fast\\data_extended_20261102\\validation_cases.json",
+      "scene_seeds": 192,
+      "sha256": "a2490ed4ac96ff99faaf1f356adb1ab569ae374cf65dead6bb488da480f0dd6e"
+    },
+    {
+      "path": "rc3_fast\\ood_cases_20261102.json",
+      "scene_seeds": 24,
+      "sha256": "fe461eadd258198b2a8ffac84fb6eec1874adfc1e0aebccd9945b994fa5ed0bf"
+    },
+    {
+      "path": "rc3_learning\\run_integration\\dataset_manifest.json",
+      "scene_seeds": 15,
+      "sha256": "0d3b544ae1db61f50cec913e4f28c93ce1204e0177c378f4b0a3dbabb995f119"
+    },
+    {
+      "path": "rc3_learning\\run_smoke_20261102\\dataset_manifest.json",
+      "scene_seeds": 92,
+      "sha256": "9dcfacdf99b724e515c1d9267d8e79125e35950301755eab626798511d514677"
+    },
+    {
+      "path": "rc3_learning\\run_verified_20261102\\dataset_manifest.json",
+      "scene_seeds": 92,
+      "sha256": "9dcfacdf99b724e515c1d9267d8e79125e35950301755eab626798511d514677"
+    },
+    {
+      "path": "rc3_learning\\run_verified_20261102_v2\\dataset_manifest.json",
+      "scene_seeds": 92,
+      "sha256": "9dcfacdf99b724e515c1d9267d8e79125e35950301755eab626798511d514677"
+    },
+    {
+      "path": "rc3_review_import\\rc3_reliable\\validation_results\\metrics_new_cpu.csv",
+      "scene_seeds": 20,
+      "sha256": "2065f07189dc0d7f8dff0c737a02155cecbeaa08f7df0a5176982d5712b8ce2a"
+    },
+    {
+      "path": "rc3_review_import\\rc3_reliable\\audits\\learning\\checkpoint_comparison.csv",
+      "scene_seeds": 13,
+      "sha256": "e12e76962c3bcd5575784e516709db27eb6b930c281115ba6b3c79f644a8ce85"
+    },
+    {
+      "path": "rc3_review_import\\rc3_reliable\\audits\\source_metrics\\iid_metrics.csv",
+      "scene_seeds": 192,
+      "sha256": "39144ba46f842b47b83a0e70cf3f4e7ec8088545503104b5a4e087e05411b8d0"
+    },
+    {
+      "path": "rc3_review_import\\rc3_reliable\\audits\\source_metrics\\ood_metrics.csv",
+      "scene_seeds": 24,
+      "sha256": "f72de591f6cb8ee73e4295b271de65449193f7debb94d09ec6276a1c3caa4bef"
+    },
+    {
+      "path": "rc3_review_import\\rc3_reliable\\audits\\exact\\run_12\\metrics.csv",
+      "scene_seeds": 12,
+      "sha256": "26dfc03a460882fdb83462db069ce2fae9b24877311d0d3fae74eb50b3622cca"
+    },
+    {
+      "path": "rc3_baseline\\results",
+      "scene_seeds": 1,
+      "read_scope": "filenames only"
+    },
+    {
+      "path": "rc3_baseline\\results_20261102_v2",
+      "scene_seeds": 5,
+      "read_scope": "filenames only"
+    }
+  ]
+}

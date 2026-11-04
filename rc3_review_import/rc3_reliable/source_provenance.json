@@ -1,0 +1,19 @@
+{
+  "copied_runtime_sha256": {
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230"
+  },
+  "source": "Uploaded current experiment source; copied without modifying the originals.",
+  "scope": "Independent adapter; no new training or robot geometry changes. Uploaded originals remain unchanged.",
+  "delivered_runtime_sha256": {
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_fast/solver.py": "3ca743781ce9182eaf676fdb1920f039ff712c5df5090fcdae2381deec942340",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230"
+  },
+  "adaptation_notes": {
+    "rc3_fast/solver.py": "export_plan adds keyword validate_output=True. Default behavior unchanged; reliable adapter passes False and certifies the full exported plan exactly once in _certify."
+  }
+}

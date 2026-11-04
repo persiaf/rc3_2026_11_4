@@ -1,0 +1,123 @@
+{
+  "schema": "g23-closeout-adoption-v1",
+  "date": "2026-11-04",
+  "recorded_at_utc": "2026-11-04T08:06:01.765526+00:00",
+  "decision": "CLOSE_LOCAL_WINDOW_PLUS_STOP_AS_CURRENT_DRL_CORE",
+  "future_construction_research": "CONDITIONAL_NOTE_ONLY_NOT_STARTED",
+  "default_planners": [
+    "Fixed3",
+    "Detour"
+  ],
+  "input_review": {
+    "zip_sha256": "ce26be6cfd37c923eb8394b8be0fe8d6caac97ffeb3f5fa6a7fec317d21130a7",
+    "manifest_payloads_checked": 11,
+    "archive_members": 12
+  },
+  "frozen_g23": {
+    "zip_sha256": "02df5a5ff9dd896aed60b3fc579b8509855f48a60426b784d868250e013c3473",
+    "manifest_payloads_checked": 282,
+    "all_archive_members": 283,
+    "live_before": {
+      "checked": 283,
+      "matched": 283,
+      "failures": []
+    },
+    "live_after": {
+      "checked": 283,
+      "matched": 283,
+      "failures": []
+    },
+    "fresh_extraction_after": {
+      "checked": 283,
+      "matched": 283,
+      "failures": []
+    }
+  },
+  "frozen_archives": {
+    "before": {
+      "rc3_v4_delivery.zip": "d08e572b582f2e22d855fc2c37e88f0ebaa793296501ed08496325a03d525d76",
+      "rc3_v5_delivery.zip": "0901d94faa949a2378af99b8314580b77669fe666a807fc55a89d7b3a97a4d81",
+      "rc3_v5_1_maintenance.zip": "20559f39164ef20eb79f4850467cb2493c43425aac12bb672bd10154d869070f",
+      "rc3_rl_research/outputs/rc3_rl_research_g01.zip": "92bddb9d6302d9983d329fd37811c54fa84163e159819a8a3cee4750709df1fd",
+      "rc3_rl_g2_delivery.zip": "2fe860781980ccf7bffbe2fdc0d7945efc5b8941a64c7fe0d0ac3b5bfddc2908",
+      "rc3_rl_g21_delivery.zip": "79b0985a1ec459f2a069e6b1c4d4841a6a54d7c609df9f020c25e7414086c50b",
+      "rc3_rl_g22_delivery.zip": "e99f9f8d1a8d46f1d7bc728391237f1000e652f1bcb1f11f79b57415eeb627db",
+      "rc3_rl_g23_delivery.zip": "02df5a5ff9dd896aed60b3fc579b8509855f48a60426b784d868250e013c3473"
+    },
+    "after": {
+      "rc3_v4_delivery.zip": "d08e572b582f2e22d855fc2c37e88f0ebaa793296501ed08496325a03d525d76",
+      "rc3_v5_delivery.zip": "0901d94faa949a2378af99b8314580b77669fe666a807fc55a89d7b3a97a4d81",
+      "rc3_v5_1_maintenance.zip": "20559f39164ef20eb79f4850467cb2493c43425aac12bb672bd10154d869070f",
+      "rc3_rl_research/outputs/rc3_rl_research_g01.zip": "92bddb9d6302d9983d329fd37811c54fa84163e159819a8a3cee4750709df1fd",
+      "rc3_rl_g2_delivery.zip": "2fe860781980ccf7bffbe2fdc0d7945efc5b8941a64c7fe0d0ac3b5bfddc2908",
+      "rc3_rl_g21_delivery.zip": "79b0985a1ec459f2a069e6b1c4d4841a6a54d7c609df9f020c25e7414086c50b",
+      "rc3_rl_g22_delivery.zip": "e99f9f8d1a8d46f1d7bc728391237f1000e652f1bcb1f11f79b57415eeb627db",
+      "rc3_rl_g23_delivery.zip": "02df5a5ff9dd896aed60b3fc579b8509855f48a60426b784d868250e013c3473"
+    },
+    "all_unchanged": true
+  },
+  "executions": [
+    {
+      "audit": "results",
+      "script": "results_audit/audit_g23_results.py",
+      "script_sha256": "50e4ac37d988b6e143b54b2845fdc2f0f42ec0b795f2c809aab1f4cc8879dd07",
+      "returncode": 0,
+      "output": "outputs/results.json",
+      "output_sha256": "145dc31931dd11c99c537e5c4fd36e171fc3b5e625378b4454d38b6c54f5fe8b",
+      "matches_supplied_statistics": true,
+      "normalization": "remove scope.source only"
+    },
+    {
+      "audit": "model_budget",
+      "script": "model_budget_audit/audit_model_budget.py",
+      "script_sha256": "28376eff8238a8419082a0b3be3821be98fd482ccda94defd03cfab31d63f447",
+      "returncode": 0,
+      "output": "outputs/model_budget.json",
+      "output_sha256": "7231ccdd97e19bf0a331d05f3ce88ed6efe56c11c31c4b1a9ad73b35ec4a7895",
+      "matches_supplied_statistics": true,
+      "normalization": "none"
+    }
+  ],
+  "scope": {
+    "new_training_updates": 0,
+    "new_environment_queries": 0,
+    "new_neural_inferences": 0,
+    "new_plans": 0,
+    "new_performance_measurements": 0,
+    "new_geometric_or_IK_checks": 0,
+    "project_code_imported": false,
+    "checkpoint_pickle_executed": false,
+    "method": "Saved-record arithmetic, source text/hash checks and raw ZIP storage hash comparison only"
+  },
+  "joint_quality_time": {
+    "n": 36,
+    "soft_budget_s": 0.8,
+    "strict_J_tolerance": 1e-09,
+    "counts": {
+      "improved_and_on_time": 0,
+      "improved_and_late": 7,
+      "no_improvement_and_on_time": 22,
+      "no_improvement_and_late": 7
+    },
+    "on_time_n": 22,
+    "late_n": 14,
+    "on_time_all_equal_fixed3": true,
+    "scope": "Joint descriptive distribution of all 36 saved runs; no sample exclusion, new acceptance rule or re-scoring."
+  },
+  "updates": {
+    "all_seeds_and_controls": 3840,
+    "each_final_multistep_model": 512
+  },
+  "seed2302_round1": {
+    "saved_rows": 12,
+    "one_multi_suffix_equal": true
+  },
+  "primary_passed": false,
+  "limitations": [
+    "No original planning, training, branch replay, geometry/IK checks, or performance timing rerun.",
+    "Six test scenes; 180 outputs and 36 multistep runs are not independent scene counts.",
+    "Seed differences combine training-data subsampling and training randomness.",
+    "Closeout is an investment decision under the registered conditions, not a universal DRL impossibility claim.",
+    "Historical archive hashes checked; legacy extracted payloads outside G2.3 not exhaustively rehashed."
+  ]
+}

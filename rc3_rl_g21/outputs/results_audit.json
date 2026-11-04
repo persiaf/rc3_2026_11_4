@@ -1,0 +1,4413 @@
+{
+  "schema": "rc3-g21-independent-supervised-result-audit-v1",
+  "all_passed": true,
+  "complete_five_run_scope": true,
+  "completed_runs": [
+    "toy16",
+    "sampling_original",
+    "sampling_root_half",
+    "gain_control",
+    "gain_gain"
+  ],
+  "pending_runs": [],
+  "script_sha256": "8ff73e9fb5ce227d7b04fa3898664663f00e5a30acd421ffe75285a44b5e4d19",
+  "protocol_sha256": "78eff5b44e47934b80fb99bc30103d83fe53e3ecc921d45c3a1908b7c4ace848",
+  "teacher_sources": {
+    "initial": {
+      "split": "initial",
+      "teacher_file": "rc3_rl_g2/outputs/teacher_initial/teacher.pkl",
+      "teacher_sha256": "f53d32640dc6a61f7014a0724bc7565c71c254a2ddc087f244a09e9d62d97ac8",
+      "summary_sha256": "3b318daca233fef50035183d03f0f2a1523cfee87065b274104ca7271decc288",
+      "audit_receipt_sha256": "baec42cf2db32abea93477de4ba1a9b29b9964511d5e8bf2c288de1ca03b56a1",
+      "saved_audit_all_passed": true,
+      "sha_checked_before_pickle": true,
+      "saved_weights_recomputed": true
+    },
+    "extra": {
+      "split": "extra",
+      "teacher_file": "rc3_rl_g2/outputs/teacher_extra/teacher.pkl",
+      "teacher_sha256": "46a7c5133c6b7e4529f207365f49aa0b2e8f839ce1cea46f471fd885105d0a8a",
+      "summary_sha256": "ff3f7220e22d2fcaa5e697558f882a38a3f22703aa7756f0f1dae8b63b0eae51",
+      "audit_receipt_sha256": "99eaa31bf816511c08545677ccabe1004a6ff34b8982f5cfa498812cc0c9b2fc",
+      "saved_audit_all_passed": true,
+      "sha_checked_before_pickle": true,
+      "saved_weights_recomputed": true
+    }
+  },
+  "comparisons": {
+    "sampling": {
+      "same_initial": true,
+      "same_settings": true,
+      "same_updates": true,
+      "same_initial_diagnostic": true
+    },
+    "gain": {
+      "same_initial": true,
+      "same_settings": true,
+      "same_updates": true,
+      "same_initial_diagnostic": true,
+      "same_actual_root_exposure": true
+    }
+  },
+  "runs": {
+    "toy16": {
+      "run": "toy16",
+      "all_passed": true,
+      "stage": "toy",
+      "variant": null,
+      "updates": 512,
+      "initial_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+      "settings": {
+        "updates": 512,
+        "lr": 0.001,
+        "batch_size": 16,
+        "check_every": 32,
+        "grad_clip": 0.5,
+        "gate": "Final update512: evidence near-best >=15/16 AND known-positive continue >=7/8. No best-checkpoint selection.",
+        "failure": "Stop all downstream training and PPO; inspect inputs, gradients and model representation using zero updates."
+      },
+      "checkpoint_sha256": "d99ed55ff031b6efe067e440a7d005511efab7179ffa74dbcc46ad51a8dfead0",
+      "request_sha256": "9afc114af0adf863c203a242d5e6e2ee00d8f53324a565f44406751afef317f0",
+      "receipt_sha256": "ed402d0eff3febc990e40208f6f5d5f12e59f58294a56f8d9ce349f1a8ab3914",
+      "updates_sha256": "d9f85cda27e605ca6f4b4d9295a2cb69810087d4945390e5f644d0612698d691",
+      "final_diagnostic_sha256": "fb81fa3ef35dcd2c95f4b20445d609c38ab3957cbe392cd45aa80a946b7bd700",
+      "extra_diagnostic_sha256": "2036ceaf2b2a5518371e11af1af1afb2b72b309ce2d62c5d3ea092fc502737e9",
+      "exposure": {
+        "root_exposures": 8192,
+        "total_exposures": 8192,
+        "actual_root_fraction": 1.0,
+        "registered_root_mass": 1.0,
+        "exact_seeded_sampler_replay": true
+      },
+      "initial_groups": {
+        "all": {
+          "n": 16,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.5,
+              "n": 16,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5,
+              "n": 16,
+              "count": 8
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 16,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 16,
+              "count": 16
+            },
+            "stop_probability": {
+              "mean": 0.4237830725375334,
+              "n": 16,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3104195575520315,
+              "n": 16,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 16,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 16,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.34668190421699724,
+              "n": 16,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.34668190421699724,
+              "n": 16,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 16,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.5,
+              "n": 16,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5,
+              "n": 16,
+              "count": 8
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 16,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 16,
+              "count": 16
+            },
+            "stop_probability": {
+              "mean": 0.4237830725375334,
+              "n": 16,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3104195575520315,
+              "n": 16,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 16,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 16,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.34668190421699724,
+              "n": 16,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.34668190421699724,
+              "n": 16,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 8,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "stop_probability": {
+              "mean": 0.40325885082561225,
+              "n": 8,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3150289917896918,
+              "n": 8,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.6933638084339945,
+              "n": 8,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.6933638084339945,
+              "n": 8,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 8,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "stop_probability": {
+              "mean": 0.4443072942494546,
+              "n": 8,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3058101233143712,
+              "n": 8,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 8,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 8,
+              "count": null
+            }
+          }
+        }
+      },
+      "final_groups": {
+        "all": {
+          "n": 16,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 16,
+              "count": 16
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.625,
+              "n": 16,
+              "count": 10
+            },
+            "full_greedy_unknown": {
+              "mean": 0.375,
+              "n": 16,
+              "count": 6
+            },
+            "full_greedy_stop": {
+              "mean": 0.1875,
+              "n": 16,
+              "count": 3
+            },
+            "stop_probability": {
+              "mean": 0.21736097325195164,
+              "n": 16,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.35842306617105535,
+              "n": 16,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5,
+              "n": 16,
+              "count": 8
+            },
+            "full_known_positive_continue": {
+              "mean": 0.4375,
+              "n": 16,
+              "count": 7
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 16,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 10,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 16,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 16,
+              "count": 16
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.625,
+              "n": 16,
+              "count": 10
+            },
+            "full_greedy_unknown": {
+              "mean": 0.375,
+              "n": 16,
+              "count": 6
+            },
+            "full_greedy_stop": {
+              "mean": 0.1875,
+              "n": 16,
+              "count": 3
+            },
+            "stop_probability": {
+              "mean": 0.21736097325195164,
+              "n": 16,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.35842306617105535,
+              "n": 16,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5,
+              "n": 16,
+              "count": 8
+            },
+            "full_known_positive_continue": {
+              "mean": 0.4375,
+              "n": 16,
+              "count": 7
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 16,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 10,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 8,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.875,
+              "n": 8,
+              "count": 7
+            },
+            "full_greedy_unknown": {
+              "mean": 0.125,
+              "n": 8,
+              "count": 1
+            },
+            "full_greedy_stop": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "stop_probability": {
+              "mean": 0.0004168910165462125,
+              "n": 8,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.1513570959020243,
+              "n": 8,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "full_known_positive_continue": {
+              "mean": 0.875,
+              "n": 8,
+              "count": 7
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 8,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 7,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 8,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 8,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.375,
+              "n": 8,
+              "count": 3
+            },
+            "full_greedy_unknown": {
+              "mean": 0.625,
+              "n": 8,
+              "count": 5
+            },
+            "full_greedy_stop": {
+              "mean": 0.375,
+              "n": 8,
+              "count": 3
+            },
+            "stop_probability": {
+              "mean": 0.43430505548735715,
+              "n": 8,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.5654890364400864,
+              "n": 8,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 8,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 8,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 3,
+              "count": null
+            }
+          }
+        }
+      },
+      "extra_groups": {
+        "all": {
+          "n": 256,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.328125,
+              "n": 256,
+              "count": 84
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.19921875,
+              "n": 256,
+              "count": 51
+            },
+            "full_greedy_unknown": {
+              "mean": 0.31640625,
+              "n": 256,
+              "count": 81
+            },
+            "full_greedy_stop": {
+              "mean": 0.31640625,
+              "n": 256,
+              "count": 81
+            },
+            "stop_probability": {
+              "mean": 0.35554934578518305,
+              "n": 256,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30474400062870133,
+              "n": 256,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.19921875,
+              "n": 256,
+              "count": 51
+            },
+            "full_known_positive_continue": {
+              "mean": 0.12109375,
+              "n": 256,
+              "count": 31
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.30106862022171443,
+              "n": 256,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.32944647534506627,
+              "n": 175,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 32,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.28125,
+              "n": 32,
+              "count": 9
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.15625,
+              "n": 32,
+              "count": 5
+            },
+            "full_greedy_unknown": {
+              "mean": 0.3125,
+              "n": 32,
+              "count": 10
+            },
+            "full_greedy_stop": {
+              "mean": 0.3125,
+              "n": 32,
+              "count": 10
+            },
+            "stop_probability": {
+              "mean": 0.3491218960184459,
+              "n": 32,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30021919442833966,
+              "n": 32,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.40625,
+              "n": 32,
+              "count": 13
+            },
+            "full_known_positive_continue": {
+              "mean": 0.28125,
+              "n": 32,
+              "count": 9
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.2790415528571941,
+              "n": 32,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.2454046759176457,
+              "n": 22,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 224,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.33482142857142855,
+              "n": 224,
+              "count": 75
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.20535714285714285,
+              "n": 224,
+              "count": 46
+            },
+            "full_greedy_unknown": {
+              "mean": 0.3169642857142857,
+              "n": 224,
+              "count": 71
+            },
+            "full_greedy_stop": {
+              "mean": 0.3169642857142857,
+              "n": 224,
+              "count": 71
+            },
+            "stop_probability": {
+              "mean": 0.3564675528947169,
+              "n": 224,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30539040151446734,
+              "n": 224,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.16964285714285715,
+              "n": 224,
+              "count": 38
+            },
+            "full_known_positive_continue": {
+              "mean": 0.09821428571428571,
+              "n": 224,
+              "count": 22
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3042153441309316,
+              "n": 224,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.3415309170928,
+              "n": 153,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 26,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.15384615384615385,
+              "n": 26,
+              "count": 4
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.07692307692307693,
+              "n": 26,
+              "count": 2
+            },
+            "full_greedy_unknown": {
+              "mean": 0.3076923076923077,
+              "n": 26,
+              "count": 8
+            },
+            "full_greedy_stop": {
+              "mean": 0.2692307692307692,
+              "n": 26,
+              "count": 7
+            },
+            "stop_probability": {
+              "mean": 0.3008085368490165,
+              "n": 26,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.2974313106654577,
+              "n": 26,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5,
+              "n": 26,
+              "count": 13
+            },
+            "full_known_positive_continue": {
+              "mean": 0.34615384615384615,
+              "n": 26,
+              "count": 9
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.33391944967039283,
+              "n": 26,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.28619327056601146,
+              "n": 18,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 6,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.8333333333333334,
+              "n": 6,
+              "count": 5
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5,
+              "n": 6,
+              "count": 3
+            },
+            "full_greedy_unknown": {
+              "mean": 0.3333333333333333,
+              "n": 6,
+              "count": 2
+            },
+            "full_greedy_stop": {
+              "mean": 0.5,
+              "n": 6,
+              "count": 3
+            },
+            "stop_probability": {
+              "mean": 0.5584797857526399,
+              "n": 6,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.31230002406749496,
+              "n": 6,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.04123733333333334,
+              "n": 6,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.06185600000000001,
+              "n": 4,
+              "count": null
+            }
+          }
+        }
+      },
+      "gate": {
+        "passed": true,
+        "composition_valid": true,
+        "evidence_near_best": 16,
+        "positive_continue": 8,
+        "n": 16,
+        "positive_n": 8
+      }
+    },
+    "sampling_original": {
+      "run": "sampling_original",
+      "all_passed": true,
+      "stage": "sampling",
+      "variant": "original",
+      "updates": 2048,
+      "initial_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+      "settings": {
+        "updates": 2048,
+        "lr": 0.0001,
+        "batch_size": 32,
+        "check_every": 256,
+        "grad_clip": 0.5,
+        "variants": [
+          "original",
+          "root_half"
+        ],
+        "same_initial": "frozen G2 bc_initial.pt",
+        "objective": "Evidence-normalized tie CE, unchanged G2 architecture",
+        "root_half": "Equal scene mass; half root, half successors; successor-only routes equally weighted"
+      },
+      "checkpoint_sha256": "7fd9a69cc33f70480616265043fb6ce4dc69154b269913f52fe248b97a866ae4",
+      "request_sha256": "92ddc32cd1b8ce13010a590ad03afb137ac7ac4e74a35fa2ba77dac1ded684cc",
+      "receipt_sha256": "99ee143651713ebcf69b4d221b531d66bb13726551cf8cc5c0545a19aed2e87b",
+      "updates_sha256": "a6170e0d0beb496eba0d21f89850e39f1f8d4b13b4048d9e2a0b858f62fb49db",
+      "final_diagnostic_sha256": "607bc1e06730f8b8601120012fdd7d7611ec210abd2d816a162401b7fe27c34a",
+      "extra_diagnostic_sha256": "40eeda25e26748e7b7024137ca566f49f8850de0981e8cbdd8bd1c04d0659f39",
+      "exposure": {
+        "root_exposures": 3876,
+        "total_exposures": 65536,
+        "actual_root_fraction": 0.05914306640625,
+        "registered_root_mass": 0.0587921626984127,
+        "exact_seeded_sampler_replay": true
+      },
+      "initial_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.552734375,
+              "n": 512,
+              "count": 283
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.552734375,
+              "n": 512,
+              "count": 283
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 512,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 512,
+              "count": 512
+            },
+            "stop_probability": {
+              "mean": 0.41478899855974344,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.31919885661250574,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 512,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 512,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.23394835073439368,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.23394835073439368,
+              "n": 512,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.390625,
+              "n": 64,
+              "count": 25
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.390625,
+              "n": 64,
+              "count": 25
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 64,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 64,
+              "count": 64
+            },
+            "stop_probability": {
+              "mean": 0.40842329447284065,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3056338315687127,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 64,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 64,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.4365856830695616,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.4365856830695616,
+              "n": 64,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.5758928571428571,
+              "n": 448,
+              "count": 258
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5758928571428571,
+              "n": 448,
+              "count": 258
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 448,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 448,
+              "count": 448
+            },
+            "stop_probability": {
+              "mean": 0.41569838485787247,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.32113671733304755,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 448,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 448,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.20500016040079824,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.20500016040079824,
+              "n": 448,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 39,
+              "count": 39
+            },
+            "stop_probability": {
+              "mean": 0.39971637866128507,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3026030995572421,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.7164483004218446,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.7164483004218446,
+              "n": 39,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 25,
+              "count": 25
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 1.0,
+              "n": 25,
+              "count": 25
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 25,
+              "count": 25
+            },
+            "stop_probability": {
+              "mean": 0.4220060831388676,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.31036177350660704,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 25,
+              "count": null
+            }
+          }
+        }
+      },
+      "final_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.64453125,
+              "n": 512,
+              "count": 330
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.537109375,
+              "n": 512,
+              "count": 275
+            },
+            "full_greedy_unknown": {
+              "mean": 0.234375,
+              "n": 512,
+              "count": 120
+            },
+            "full_greedy_stop": {
+              "mean": 0.60546875,
+              "n": 512,
+              "count": 310
+            },
+            "stop_probability": {
+              "mean": 0.37861110885868365,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.350078013014845,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.162109375,
+              "n": 512,
+              "count": 83
+            },
+            "full_known_positive_continue": {
+              "mean": 0.111328125,
+              "n": 512,
+              "count": 57
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.14928532781457032,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.13027076562896733,
+              "n": 392,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.515625,
+              "n": 64,
+              "count": 33
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.40625,
+              "n": 64,
+              "count": 26
+            },
+            "full_greedy_unknown": {
+              "mean": 0.25,
+              "n": 64,
+              "count": 16
+            },
+            "full_greedy_stop": {
+              "mean": 0.546875,
+              "n": 64,
+              "count": 35
+            },
+            "stop_probability": {
+              "mean": 0.337081466249858,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.35211359377238993,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.234375,
+              "n": 64,
+              "count": 15
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15625,
+              "n": 64,
+              "count": 10
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.2550956941246533,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.269589036046692,
+              "n": 48,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.6629464285714286,
+              "n": 448,
+              "count": 297
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5558035714285714,
+              "n": 448,
+              "count": 249
+            },
+            "full_greedy_unknown": {
+              "mean": 0.23214285714285715,
+              "n": 448,
+              "count": 104
+            },
+            "full_greedy_stop": {
+              "mean": 0.6138392857142857,
+              "n": 448,
+              "count": 275
+            },
+            "stop_probability": {
+              "mean": 0.3845439149456587,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3497872157637672,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.15178571428571427,
+              "n": 448,
+              "count": 68
+            },
+            "full_known_positive_continue": {
+              "mean": 0.10491071428571429,
+              "n": 448,
+              "count": 47
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.13416956119884418,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.11083100696602902,
+              "n": 344,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.15384615384615385,
+              "n": 39,
+              "count": 6
+            },
+            "full_greedy_unknown": {
+              "mean": 0.3076923076923077,
+              "n": 39,
+              "count": 12
+            },
+            "full_greedy_stop": {
+              "mean": 0.38461538461538464,
+              "n": 39,
+              "count": 15
+            },
+            "stop_probability": {
+              "mean": 0.26922117369296494,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3473920380411087,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.38461538461538464,
+              "n": 39,
+              "count": 15
+            },
+            "full_known_positive_continue": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.4118470621532773,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.4756376937126376,
+              "n": 27,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.92,
+              "n": 25,
+              "count": 23
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.8,
+              "n": 25,
+              "count": 20
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16,
+              "n": 25,
+              "count": 4
+            },
+            "full_greedy_stop": {
+              "mean": 0.8,
+              "n": 25,
+              "count": 20
+            },
+            "stop_probability": {
+              "mean": 0.4429435226386113,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.35947922071318855,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.010563560000000001,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.004669333333333334,
+              "n": 21,
+              "count": null
+            }
+          }
+        }
+      },
+      "extra_groups": {
+        "all": {
+          "n": 256,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.3515625,
+              "n": 256,
+              "count": 90
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.32421875,
+              "n": 256,
+              "count": 83
+            },
+            "full_greedy_unknown": {
+              "mean": 0.23046875,
+              "n": 256,
+              "count": 59
+            },
+            "full_greedy_stop": {
+              "mean": 0.63671875,
+              "n": 256,
+              "count": 163
+            },
+            "stop_probability": {
+              "mean": 0.4215322071541338,
+              "n": 256,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.33869408672228535,
+              "n": 256,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.09765625,
+              "n": 256,
+              "count": 25
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0703125,
+              "n": 256,
+              "count": 18
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3043133467154924,
+              "n": 256,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.26210446686613914,
+              "n": 197,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 32,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.25,
+              "n": 32,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.21875,
+              "n": 32,
+              "count": 7
+            },
+            "full_greedy_unknown": {
+              "mean": 0.28125,
+              "n": 32,
+              "count": 9
+            },
+            "full_greedy_stop": {
+              "mean": 0.59375,
+              "n": 32,
+              "count": 19
+            },
+            "stop_probability": {
+              "mean": 0.385465563105214,
+              "n": 32,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.34010077847440506,
+              "n": 32,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.25,
+              "n": 32,
+              "count": 8
+            },
+            "full_known_positive_continue": {
+              "mean": 0.125,
+              "n": 32,
+              "count": 4
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3596352158115479,
+              "n": 32,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.3853689103805144,
+              "n": 23,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 224,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.36607142857142855,
+              "n": 224,
+              "count": 82
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.3392857142857143,
+              "n": 224,
+              "count": 76
+            },
+            "full_greedy_unknown": {
+              "mean": 0.22321428571428573,
+              "n": 224,
+              "count": 50
+            },
+            "full_greedy_stop": {
+              "mean": 0.6428571428571429,
+              "n": 224,
+              "count": 144
+            },
+            "stop_probability": {
+              "mean": 0.42668458487540806,
+              "n": 224,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3384931307576968,
+              "n": 224,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.07589285714285714,
+              "n": 224,
+              "count": 17
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0625,
+              "n": 224,
+              "count": 14
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.2964102225589131,
+              "n": 224,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.24581089099929648,
+              "n": 174,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 26,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.07692307692307693,
+              "n": 26,
+              "count": 2
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.038461538461538464,
+              "n": 26,
+              "count": 1
+            },
+            "full_greedy_unknown": {
+              "mean": 0.34615384615384615,
+              "n": 26,
+              "count": 9
+            },
+            "full_greedy_stop": {
+              "mean": 0.5,
+              "n": 26,
+              "count": 13
+            },
+            "stop_probability": {
+              "mean": 0.330559827077069,
+              "n": 26,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3785740348685197,
+              "n": 26,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.3076923076923077,
+              "n": 26,
+              "count": 8
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15384615384615385,
+              "n": 26,
+              "count": 4
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.4426279579219051,
+              "n": 26,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.5213814669854019,
+              "n": 17,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 6,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 6,
+              "count": 6
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 1.0,
+              "n": 6,
+              "count": 6
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 6,
+              "count": 6
+            },
+            "stop_probability": {
+              "mean": 0.6233904192271762,
+              "n": 6,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.17338333409990878,
+              "n": 6,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 6,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 6,
+              "count": null
+            }
+          }
+        }
+      },
+      "gate": {
+        "passed": false,
+        "checks": {
+          "initial_positive_full_known": false,
+          "extra_positive_full_known": false,
+          "initial_clear_stop_full_stop": true,
+          "initial_root_full_unknown": false
+        },
+        "metrics": {
+          "initial_positive_full_known": {
+            "count": 10,
+            "n": 39,
+            "fraction": 0.2564102564102564
+          },
+          "extra_positive_full_known": {
+            "count": 4,
+            "n": 26,
+            "fraction": 0.15384615384615385
+          },
+          "initial_clear_stop_full_stop": {
+            "count": 20,
+            "n": 25,
+            "fraction": 0.8
+          },
+          "initial_root_full_unknown": {
+            "count": 16,
+            "n": 64,
+            "fraction": 0.25
+          }
+        },
+        "scope": "Previously queried finite-depth development labels. Unknown actions are unevaluated, not bad. No new generalization or planner quality claim."
+      }
+    },
+    "sampling_root_half": {
+      "run": "sampling_root_half",
+      "all_passed": true,
+      "stage": "sampling",
+      "variant": "root_half",
+      "updates": 2048,
+      "initial_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+      "settings": {
+        "updates": 2048,
+        "lr": 0.0001,
+        "batch_size": 32,
+        "check_every": 256,
+        "grad_clip": 0.5,
+        "variants": [
+          "original",
+          "root_half"
+        ],
+        "same_initial": "frozen G2 bc_initial.pt",
+        "objective": "Evidence-normalized tie CE, unchanged G2 architecture",
+        "root_half": "Equal scene mass; half root, half successors; successor-only routes equally weighted"
+      },
+      "checkpoint_sha256": "6c8acd487acc11448635ac02fcdd52ec12713a7ae3734bd530ccbbce1ba24f19",
+      "request_sha256": "3693ff7ba894d15994f541525a4f96a9ba359f5b97794f3cae0d3d0fb28274bf",
+      "receipt_sha256": "acf938063eb87c7a50d4c4e3d0817c294361e1f38218e4f2b278e530735d10f8",
+      "updates_sha256": "a135536b6d8fe90b0931423f0df023a1823b9f82a5de22b4944cfed133f81aaa",
+      "final_diagnostic_sha256": "d5e5480915bbecffac0792db53ec9a245303ab0dfd4a14498e9447d177210a92",
+      "extra_diagnostic_sha256": "31da17ecb4533802e0eb08b6953b7af41266ce2f3b7c248474b91a717d730d4c",
+      "exposure": {
+        "root_exposures": 32753,
+        "total_exposures": 65536,
+        "actual_root_fraction": 0.4997711181640625,
+        "registered_root_mass": 0.5,
+        "exact_seeded_sampler_replay": true
+      },
+      "initial_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.552734375,
+              "n": 512,
+              "count": 283
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.552734375,
+              "n": 512,
+              "count": 283
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 512,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 512,
+              "count": 512
+            },
+            "stop_probability": {
+              "mean": 0.41478899855974344,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.31919885661250574,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 512,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 512,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.23394835073439368,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.23394835073439368,
+              "n": 512,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.390625,
+              "n": 64,
+              "count": 25
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.390625,
+              "n": 64,
+              "count": 25
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 64,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 64,
+              "count": 64
+            },
+            "stop_probability": {
+              "mean": 0.40842329447284065,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3056338315687127,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 64,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 64,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.4365856830695616,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.4365856830695616,
+              "n": 64,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.5758928571428571,
+              "n": 448,
+              "count": 258
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5758928571428571,
+              "n": 448,
+              "count": 258
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 448,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 448,
+              "count": 448
+            },
+            "stop_probability": {
+              "mean": 0.41569838485787247,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.32113671733304755,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 448,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 448,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.20500016040079824,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.20500016040079824,
+              "n": 448,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 39,
+              "count": 39
+            },
+            "stop_probability": {
+              "mean": 0.39971637866128507,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3026030995572421,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 39,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.7164483004218446,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.7164483004218446,
+              "n": 39,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 25,
+              "count": 25
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 1.0,
+              "n": 25,
+              "count": 25
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 25,
+              "count": 25
+            },
+            "stop_probability": {
+              "mean": 0.4220060831388676,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.31036177350660704,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 25,
+              "count": null
+            }
+          }
+        }
+      },
+      "final_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.681640625,
+              "n": 512,
+              "count": 349
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.591796875,
+              "n": 512,
+              "count": 303
+            },
+            "full_greedy_unknown": {
+              "mean": 0.171875,
+              "n": 512,
+              "count": 88
+            },
+            "full_greedy_stop": {
+              "mean": 0.6484375,
+              "n": 512,
+              "count": 332
+            },
+            "stop_probability": {
+              "mean": 0.42484577288250613,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3035168617793933,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.181640625,
+              "n": 512,
+              "count": 93
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15234375,
+              "n": 512,
+              "count": 78
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.13504794131358488,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1239604002707889,
+              "n": 424,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.625,
+              "n": 64,
+              "count": 40
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.484375,
+              "n": 64,
+              "count": 31
+            },
+            "full_greedy_unknown": {
+              "mean": 0.21875,
+              "n": 64,
+              "count": 14
+            },
+            "full_greedy_stop": {
+              "mean": 0.53125,
+              "n": 64,
+              "count": 34
+            },
+            "stop_probability": {
+              "mean": 0.36417124389191047,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3196726525307062,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.328125,
+              "n": 64,
+              "count": 21
+            },
+            "full_known_positive_continue": {
+              "mean": 0.234375,
+              "n": 64,
+              "count": 15
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.21705705372333994,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.24100349034779284,
+              "n": 50,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.6897321428571429,
+              "n": 448,
+              "count": 309
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.6071428571428571,
+              "n": 448,
+              "count": 272
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16517857142857142,
+              "n": 448,
+              "count": 74
+            },
+            "full_greedy_stop": {
+              "mean": 0.6651785714285714,
+              "n": 448,
+              "count": 298
+            },
+            "stop_probability": {
+              "mean": 0.4335135627383055,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30120889167206283,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.16071428571428573,
+              "n": 448,
+              "count": 72
+            },
+            "full_known_positive_continue": {
+              "mean": 0.140625,
+              "n": 448,
+              "count": 63
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.12333235382647703,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.10831292833536056,
+              "n": 374,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.41025641025641024,
+              "n": 39,
+              "count": 16
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_unknown": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_stop": {
+              "mean": 0.3333333333333333,
+              "n": 39,
+              "count": 13
+            },
+            "stop_probability": {
+              "mean": 0.2771388448515213,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.312382088571726,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5384615384615384,
+              "n": 39,
+              "count": 21
+            },
+            "full_known_positive_continue": {
+              "mean": 0.38461538461538464,
+              "n": 39,
+              "count": 15
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3519389343152245,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.4155232592203325,
+              "n": 29,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.96,
+              "n": 25,
+              "count": 24
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16,
+              "n": 25,
+              "count": 4
+            },
+            "full_greedy_stop": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "stop_probability": {
+              "mean": 0.49994178639491726,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3310459323067154,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.006641320000000001,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 21,
+              "count": null
+            }
+          }
+        }
+      },
+      "extra_groups": {
+        "all": {
+          "n": 256,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.36328125,
+              "n": 256,
+              "count": 93
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.31640625,
+              "n": 256,
+              "count": 81
+            },
+            "full_greedy_unknown": {
+              "mean": 0.2109375,
+              "n": 256,
+              "count": 54
+            },
+            "full_greedy_stop": {
+              "mean": 0.6953125,
+              "n": 256,
+              "count": 178
+            },
+            "stop_probability": {
+              "mean": 0.4754125710624277,
+              "n": 256,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30109653836282463,
+              "n": 256,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0859375,
+              "n": 256,
+              "count": 22
+            },
+            "full_known_positive_continue": {
+              "mean": 0.04296875,
+              "n": 256,
+              "count": 11
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.290818417036654,
+              "n": 256,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.256344921730242,
+              "n": 202,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 32,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.3125,
+              "n": 32,
+              "count": 10
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.25,
+              "n": 32,
+              "count": 8
+            },
+            "full_greedy_unknown": {
+              "mean": 0.21875,
+              "n": 32,
+              "count": 7
+            },
+            "full_greedy_stop": {
+              "mean": 0.625,
+              "n": 32,
+              "count": 20
+            },
+            "stop_probability": {
+              "mean": 0.41926499137969503,
+              "n": 32,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3126117389187235,
+              "n": 32,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.21875,
+              "n": 32,
+              "count": 7
+            },
+            "full_known_positive_continue": {
+              "mean": 0.125,
+              "n": 32,
+              "count": 4
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3231635840962974,
+              "n": 32,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.3172481410245159,
+              "n": 25,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 224,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.3705357142857143,
+              "n": 224,
+              "count": 83
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.32589285714285715,
+              "n": 224,
+              "count": 73
+            },
+            "full_greedy_unknown": {
+              "mean": 0.20982142857142858,
+              "n": 224,
+              "count": 47
+            },
+            "full_greedy_stop": {
+              "mean": 0.7053571428571429,
+              "n": 224,
+              "count": 158
+            },
+            "stop_probability": {
+              "mean": 0.48343365387424664,
+              "n": 224,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.2994515097119819,
+              "n": 224,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.06696428571428571,
+              "n": 224,
+              "count": 15
+            },
+            "full_known_positive_continue": {
+              "mean": 0.03125,
+              "n": 224,
+              "count": 7
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.2861976788852765,
+              "n": 224,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.24774277211240672,
+              "n": 177,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 26,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.15384615384615385,
+              "n": 26,
+              "count": 4
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.07692307692307693,
+              "n": 26,
+              "count": 2
+            },
+            "full_greedy_unknown": {
+              "mean": 0.2692307692307692,
+              "n": 26,
+              "count": 7
+            },
+            "full_greedy_stop": {
+              "mean": 0.5384615384615384,
+              "n": 26,
+              "count": 14
+            },
+            "stop_probability": {
+              "mean": 0.36634228229886534,
+              "n": 26,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.35575815766660807,
+              "n": 26,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.2692307692307692,
+              "n": 26,
+              "count": 7
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15384615384615385,
+              "n": 26,
+              "count": 4
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3977397958108275,
+              "n": 26,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.41743176450594194,
+              "n": 19,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 6,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 1.0,
+              "n": 6,
+              "count": 6
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 1.0,
+              "n": 6,
+              "count": 6
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 1.0,
+              "n": 6,
+              "count": 6
+            },
+            "stop_probability": {
+              "mean": 0.6485967307299569,
+              "n": 6,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.12564392434455784,
+              "n": 6,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 6,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 6,
+              "count": null
+            }
+          }
+        }
+      },
+      "gate": {
+        "passed": false,
+        "checks": {
+          "initial_positive_full_known": false,
+          "extra_positive_full_known": false,
+          "initial_clear_stop_full_stop": true,
+          "initial_root_full_unknown": false
+        },
+        "metrics": {
+          "initial_positive_full_known": {
+            "count": 15,
+            "n": 39,
+            "fraction": 0.38461538461538464
+          },
+          "extra_positive_full_known": {
+            "count": 4,
+            "n": 26,
+            "fraction": 0.15384615384615385
+          },
+          "initial_clear_stop_full_stop": {
+            "count": 21,
+            "n": 25,
+            "fraction": 0.84
+          },
+          "initial_root_full_unknown": {
+            "count": 14,
+            "n": 64,
+            "fraction": 0.21875
+          }
+        },
+        "scope": "Previously queried finite-depth development labels. Unknown actions are unevaluated, not bad. No new generalization or planner quality claim."
+      }
+    },
+    "gain_control": {
+      "run": "gain_control",
+      "all_passed": true,
+      "stage": "gain",
+      "variant": "control",
+      "updates": 2048,
+      "initial_sha256": "6c8acd487acc11448635ac02fcdd52ec12713a7ae3734bd530ccbbce1ba24f19",
+      "settings": {
+        "updates": 2048,
+        "lr": 0.0001,
+        "batch_size": 32,
+        "check_every": 256,
+        "grad_clip": 0.5,
+        "condition": "Only if sampling_root_half fails opportunity_gate, after a saved gate decision",
+        "variants": [
+          "control",
+          "gain"
+        ],
+        "same_initial": "sampling_root_half final checkpoint",
+        "objective": "Control CE; gain CE plus coefficient1 SmoothL1 on logit(a)-logit(STOP) vs queried delta, roots depth2 only"
+      },
+      "checkpoint_sha256": "18e5a8a8d5f2fd6f8115ab8872288b01b991694be0fa98abfea5f6a933a409c7",
+      "request_sha256": "60367d9ea7c12d2185ba4888777782a980b2ea31c1046d4da099716ab6f72765",
+      "receipt_sha256": "409061179b0e16f6ee41bffff0aa8ca0a9cbe24a3433a655d8915a637a9359e8",
+      "updates_sha256": "a678365413e1d11bad7b0b3d6bfe990071bfe4e25b5e2a7cb15926cb0cccace3",
+      "final_diagnostic_sha256": "aeef779fbafa3c7375e7509051d245402ddfd521bf625379a512634ded9be274",
+      "extra_diagnostic_sha256": "ef1c41c615b20b655861dae943b7fa4e0acde200d823ed171bdde2916ce5f48f",
+      "exposure": {
+        "root_exposures": 32753,
+        "total_exposures": 65536,
+        "actual_root_fraction": 0.4997711181640625,
+        "registered_root_mass": 0.5,
+        "exact_seeded_sampler_replay": true
+      },
+      "initial_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.681640625,
+              "n": 512,
+              "count": 349
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.591796875,
+              "n": 512,
+              "count": 303
+            },
+            "full_greedy_unknown": {
+              "mean": 0.171875,
+              "n": 512,
+              "count": 88
+            },
+            "full_greedy_stop": {
+              "mean": 0.6484375,
+              "n": 512,
+              "count": 332
+            },
+            "stop_probability": {
+              "mean": 0.42484577288250613,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3035168617793933,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.181640625,
+              "n": 512,
+              "count": 93
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15234375,
+              "n": 512,
+              "count": 78
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.13504794131358488,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1239604002707889,
+              "n": 424,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.625,
+              "n": 64,
+              "count": 40
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.484375,
+              "n": 64,
+              "count": 31
+            },
+            "full_greedy_unknown": {
+              "mean": 0.21875,
+              "n": 64,
+              "count": 14
+            },
+            "full_greedy_stop": {
+              "mean": 0.53125,
+              "n": 64,
+              "count": 34
+            },
+            "stop_probability": {
+              "mean": 0.36417124389191047,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3196726525307062,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.328125,
+              "n": 64,
+              "count": 21
+            },
+            "full_known_positive_continue": {
+              "mean": 0.234375,
+              "n": 64,
+              "count": 15
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.21705705372333994,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.24100349034779284,
+              "n": 50,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.6897321428571429,
+              "n": 448,
+              "count": 309
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.6071428571428571,
+              "n": 448,
+              "count": 272
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16517857142857142,
+              "n": 448,
+              "count": 74
+            },
+            "full_greedy_stop": {
+              "mean": 0.6651785714285714,
+              "n": 448,
+              "count": 298
+            },
+            "stop_probability": {
+              "mean": 0.4335135627383055,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30120889167206283,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.16071428571428573,
+              "n": 448,
+              "count": 72
+            },
+            "full_known_positive_continue": {
+              "mean": 0.140625,
+              "n": 448,
+              "count": 63
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.12333235382647703,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.10831292833536056,
+              "n": 374,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.41025641025641024,
+              "n": 39,
+              "count": 16
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_unknown": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_stop": {
+              "mean": 0.3333333333333333,
+              "n": 39,
+              "count": 13
+            },
+            "stop_probability": {
+              "mean": 0.2771388448515213,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.312382088571726,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5384615384615384,
+              "n": 39,
+              "count": 21
+            },
+            "full_known_positive_continue": {
+              "mean": 0.38461538461538464,
+              "n": 39,
+              "count": 15
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3519389343152245,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.4155232592203325,
+              "n": 29,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.96,
+              "n": 25,
+              "count": 24
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16,
+              "n": 25,
+              "count": 4
+            },
+            "full_greedy_stop": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "stop_probability": {
+              "mean": 0.49994178639491726,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3310459323067154,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.006641320000000001,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 21,
+              "count": null
+            }
+          }
+        }
+      },
+      "final_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.767578125,
+              "n": 512,
+              "count": 393
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.654296875,
+              "n": 512,
+              "count": 335
+            },
+            "full_greedy_unknown": {
+              "mean": 0.15234375,
+              "n": 512,
+              "count": 78
+            },
+            "full_greedy_stop": {
+              "mean": 0.587890625,
+              "n": 512,
+              "count": 301
+            },
+            "stop_probability": {
+              "mean": 0.48668898885674367,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.2196897056688043,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.28125,
+              "n": 512,
+              "count": 144
+            },
+            "full_known_positive_continue": {
+              "mean": 0.224609375,
+              "n": 512,
+              "count": 115
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.07892787352753786,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0837700774174155,
+              "n": 434,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.796875,
+              "n": 64,
+              "count": 51
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.640625,
+              "n": 64,
+              "count": 41
+            },
+            "full_greedy_unknown": {
+              "mean": 0.1875,
+              "n": 64,
+              "count": 12
+            },
+            "full_greedy_stop": {
+              "mean": 0.453125,
+              "n": 64,
+              "count": 29
+            },
+            "stop_probability": {
+              "mean": 0.3719367488919195,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.25673467404315276,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.453125,
+              "n": 64,
+              "count": 29
+            },
+            "full_known_positive_continue": {
+              "mean": 0.34375,
+              "n": 64,
+              "count": 22
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.08382474554480422,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0936206214247656,
+              "n": 52,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.7633928571428571,
+              "n": 448,
+              "count": 342
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.65625,
+              "n": 448,
+              "count": 294
+            },
+            "full_greedy_unknown": {
+              "mean": 0.14732142857142858,
+              "n": 448,
+              "count": 66
+            },
+            "full_greedy_stop": {
+              "mean": 0.6071428571428571,
+              "n": 448,
+              "count": 272
+            },
+            "stop_probability": {
+              "mean": 0.5030821659945757,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.21439756732961168,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.25669642857142855,
+              "n": 448,
+              "count": 115
+            },
+            "full_known_positive_continue": {
+              "mean": 0.20758928571428573,
+              "n": 448,
+              "count": 93
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.07822832038221408,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.08242916566772387,
+              "n": 382,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.6923076923076923,
+              "n": 39,
+              "count": 27
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5128205128205128,
+              "n": 39,
+              "count": 20
+            },
+            "full_greedy_unknown": {
+              "mean": 0.20512820512820512,
+              "n": 39,
+              "count": 8
+            },
+            "full_greedy_stop": {
+              "mean": 0.20512820512820512,
+              "n": 39,
+              "count": 8
+            },
+            "stop_probability": {
+              "mean": 0.2174565488749039,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.2338715958379493,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.7435897435897436,
+              "n": 39,
+              "count": 29
+            },
+            "full_known_positive_continue": {
+              "mean": 0.5641025641025641,
+              "n": 39,
+              "count": 22
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.13330130038121718,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1570410423899294,
+              "n": 31,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.96,
+              "n": 25,
+              "count": 24
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16,
+              "n": 25,
+              "count": 4
+            },
+            "full_greedy_stop": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "stop_probability": {
+              "mean": 0.6129258609184639,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.29240107604327,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.006641320000000001,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 21,
+              "count": null
+            }
+          }
+        }
+      },
+      "extra_groups": {
+        "all": {
+          "n": 256,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.4140625,
+              "n": 256,
+              "count": 106
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.34375,
+              "n": 256,
+              "count": 88
+            },
+            "full_greedy_unknown": {
+              "mean": 0.21484375,
+              "n": 256,
+              "count": 55
+            },
+            "full_greedy_stop": {
+              "mean": 0.62109375,
+              "n": 256,
+              "count": 159
+            },
+            "stop_probability": {
+              "mean": 0.5055940086836914,
+              "n": 256,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.23915712602595002,
+              "n": 256,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.16015625,
+              "n": 256,
+              "count": 41
+            },
+            "full_known_positive_continue": {
+              "mean": 0.08984375,
+              "n": 256,
+              "count": 23
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.24311723176963068,
+              "n": 256,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.22867607260396608,
+              "n": 201,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 32,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.3125,
+              "n": 32,
+              "count": 10
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.25,
+              "n": 32,
+              "count": 8
+            },
+            "full_greedy_unknown": {
+              "mean": 0.25,
+              "n": 32,
+              "count": 8
+            },
+            "full_greedy_stop": {
+              "mean": 0.53125,
+              "n": 32,
+              "count": 17
+            },
+            "stop_probability": {
+              "mean": 0.38446216437267633,
+              "n": 32,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.2776546253327922,
+              "n": 32,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.28125,
+              "n": 32,
+              "count": 9
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15625,
+              "n": 32,
+              "count": 5
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.28894869215344654,
+              "n": 32,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.2994532603833145,
+              "n": 24,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 224,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.42857142857142855,
+              "n": 224,
+              "count": 96
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.35714285714285715,
+              "n": 224,
+              "count": 80
+            },
+            "full_greedy_unknown": {
+              "mean": 0.20982142857142858,
+              "n": 224,
+              "count": 47
+            },
+            "full_greedy_stop": {
+              "mean": 0.6339285714285714,
+              "n": 224,
+              "count": 142
+            },
+            "stop_probability": {
+              "mean": 0.5228985578709794,
+              "n": 224,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.23365748326782967,
+              "n": 224,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.14285714285714285,
+              "n": 224,
+              "count": 32
+            },
+            "full_known_positive_continue": {
+              "mean": 0.08035714285714286,
+              "n": 224,
+              "count": 18
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.2365698802862284,
+              "n": 224,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.21907916578642733,
+              "n": 177,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 26,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.19230769230769232,
+              "n": 26,
+              "count": 5
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.11538461538461539,
+              "n": 26,
+              "count": 3
+            },
+            "full_greedy_unknown": {
+              "mean": 0.3076923076923077,
+              "n": 26,
+              "count": 8
+            },
+            "full_greedy_stop": {
+              "mean": 0.46153846153846156,
+              "n": 26,
+              "count": 12
+            },
+            "stop_probability": {
+              "mean": 0.32971807552755716,
+              "n": 26,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3231642114983694,
+              "n": 26,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.34615384615384615,
+              "n": 26,
+              "count": 9
+            },
+            "full_known_positive_continue": {
+              "mean": 0.19230769230769232,
+              "n": 26,
+              "count": 5
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3518908134196264,
+              "n": 26,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.393871180511086,
+              "n": 18,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 6,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.8333333333333334,
+              "n": 6,
+              "count": 5
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.8333333333333334,
+              "n": 6,
+              "count": 5
+            },
+            "full_greedy_unknown": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_greedy_stop": {
+              "mean": 0.8333333333333334,
+              "n": 6,
+              "count": 5
+            },
+            "stop_probability": {
+              "mean": 0.6216865493681928,
+              "n": 6,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.08044641861529106,
+              "n": 6,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.0161995,
+              "n": 6,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0161995,
+              "n": 6,
+              "count": null
+            }
+          }
+        }
+      },
+      "gate": {
+        "passed": false,
+        "checks": {
+          "initial_positive_full_known": false,
+          "extra_positive_full_known": false,
+          "initial_clear_stop_full_stop": true,
+          "initial_root_full_unknown": true
+        },
+        "metrics": {
+          "initial_positive_full_known": {
+            "count": 22,
+            "n": 39,
+            "fraction": 0.5641025641025641
+          },
+          "extra_positive_full_known": {
+            "count": 5,
+            "n": 26,
+            "fraction": 0.19230769230769232
+          },
+          "initial_clear_stop_full_stop": {
+            "count": 21,
+            "n": 25,
+            "fraction": 0.84
+          },
+          "initial_root_full_unknown": {
+            "count": 12,
+            "n": 64,
+            "fraction": 0.1875
+          }
+        },
+        "scope": "Previously queried finite-depth development labels. Unknown actions are unevaluated, not bad. No new generalization or planner quality claim."
+      }
+    },
+    "gain_gain": {
+      "run": "gain_gain",
+      "all_passed": true,
+      "stage": "gain",
+      "variant": "gain",
+      "updates": 2048,
+      "initial_sha256": "6c8acd487acc11448635ac02fcdd52ec12713a7ae3734bd530ccbbce1ba24f19",
+      "settings": {
+        "updates": 2048,
+        "lr": 0.0001,
+        "batch_size": 32,
+        "check_every": 256,
+        "grad_clip": 0.5,
+        "condition": "Only if sampling_root_half fails opportunity_gate, after a saved gate decision",
+        "variants": [
+          "control",
+          "gain"
+        ],
+        "same_initial": "sampling_root_half final checkpoint",
+        "objective": "Control CE; gain CE plus coefficient1 SmoothL1 on logit(a)-logit(STOP) vs queried delta, roots depth2 only"
+      },
+      "checkpoint_sha256": "3887c3dd3505c1f651ec66b35703247a73ff9a8dc1dbe8eac61371083958f421",
+      "request_sha256": "d353d8c9b14a7b41d68b5c1f55b2c9d585d4ffdb1d49fbc35dfaf168b369bd9f",
+      "receipt_sha256": "9551a8d26b8d63c736daee12d1705dba67faa4a24cf929ede63cd2d8fba9ca13",
+      "updates_sha256": "35abb2d3eccdabecbddec60c13dfdcb46f0bbfc0d2216925f0dae40d8abeefb6",
+      "final_diagnostic_sha256": "cba1fc32aa17420a160cf7614c33325ec3b52b4d069108e81cb18d0b38790a71",
+      "extra_diagnostic_sha256": "dc46766059a0bba979bb49bb1eef53a400f743537786738a9b2798e538dcde88",
+      "exposure": {
+        "root_exposures": 32753,
+        "total_exposures": 65536,
+        "actual_root_fraction": 0.4997711181640625,
+        "registered_root_mass": 0.5,
+        "exact_seeded_sampler_replay": true
+      },
+      "initial_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.681640625,
+              "n": 512,
+              "count": 349
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.591796875,
+              "n": 512,
+              "count": 303
+            },
+            "full_greedy_unknown": {
+              "mean": 0.171875,
+              "n": 512,
+              "count": 88
+            },
+            "full_greedy_stop": {
+              "mean": 0.6484375,
+              "n": 512,
+              "count": 332
+            },
+            "stop_probability": {
+              "mean": 0.42484577288250613,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3035168617793933,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.181640625,
+              "n": 512,
+              "count": 93
+            },
+            "full_known_positive_continue": {
+              "mean": 0.15234375,
+              "n": 512,
+              "count": 78
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.13504794131358488,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1239604002707889,
+              "n": 424,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.625,
+              "n": 64,
+              "count": 40
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.484375,
+              "n": 64,
+              "count": 31
+            },
+            "full_greedy_unknown": {
+              "mean": 0.21875,
+              "n": 64,
+              "count": 14
+            },
+            "full_greedy_stop": {
+              "mean": 0.53125,
+              "n": 64,
+              "count": 34
+            },
+            "stop_probability": {
+              "mean": 0.36417124389191047,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3196726525307062,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.328125,
+              "n": 64,
+              "count": 21
+            },
+            "full_known_positive_continue": {
+              "mean": 0.234375,
+              "n": 64,
+              "count": 15
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.21705705372333994,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.24100349034779284,
+              "n": 50,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.6897321428571429,
+              "n": 448,
+              "count": 309
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.6071428571428571,
+              "n": 448,
+              "count": 272
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16517857142857142,
+              "n": 448,
+              "count": 74
+            },
+            "full_greedy_stop": {
+              "mean": 0.6651785714285714,
+              "n": 448,
+              "count": 298
+            },
+            "stop_probability": {
+              "mean": 0.4335135627383055,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.30120889167206283,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.16071428571428573,
+              "n": 448,
+              "count": 72
+            },
+            "full_known_positive_continue": {
+              "mean": 0.140625,
+              "n": 448,
+              "count": 63
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.12333235382647703,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.10831292833536056,
+              "n": 374,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.41025641025641024,
+              "n": 39,
+              "count": 16
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_unknown": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_stop": {
+              "mean": 0.3333333333333333,
+              "n": 39,
+              "count": 13
+            },
+            "stop_probability": {
+              "mean": 0.2771388448515213,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.312382088571726,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5384615384615384,
+              "n": 39,
+              "count": 21
+            },
+            "full_known_positive_continue": {
+              "mean": 0.38461538461538464,
+              "n": 39,
+              "count": 15
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.3519389343152245,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.4155232592203325,
+              "n": 29,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.96,
+              "n": 25,
+              "count": 24
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16,
+              "n": 25,
+              "count": 4
+            },
+            "full_greedy_stop": {
+              "mean": 0.84,
+              "n": 25,
+              "count": 21
+            },
+            "stop_probability": {
+              "mean": 0.49994178639491726,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3310459323067154,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.006641320000000001,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0,
+              "n": 21,
+              "count": null
+            }
+          }
+        }
+      },
+      "final_groups": {
+        "all": {
+          "n": 512,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.732421875,
+              "n": 512,
+              "count": 375
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.64453125,
+              "n": 512,
+              "count": 330
+            },
+            "full_greedy_unknown": {
+              "mean": 0.123046875,
+              "n": 512,
+              "count": 63
+            },
+            "full_greedy_stop": {
+              "mean": 0.65234375,
+              "n": 512,
+              "count": 334
+            },
+            "stop_probability": {
+              "mean": 0.30320491697671564,
+              "n": 512,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.363631497953706,
+              "n": 512,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.2421875,
+              "n": 512,
+              "count": 124
+            },
+            "full_known_positive_continue": {
+              "mean": 0.205078125,
+              "n": 512,
+              "count": 105
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.08773844497921852,
+              "n": 512,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0909247731360534,
+              "n": 449,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 64,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.671875,
+              "n": 64,
+              "count": 43
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.375,
+              "n": 64,
+              "count": 24
+            },
+            "full_greedy_unknown": {
+              "mean": 0.453125,
+              "n": 64,
+              "count": 29
+            },
+            "full_greedy_stop": {
+              "mean": 0.0625,
+              "n": 64,
+              "count": 4
+            },
+            "stop_probability": {
+              "mean": 0.06688238769005724,
+              "n": 64,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.49420181492421644,
+              "n": 64,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.546875,
+              "n": 64,
+              "count": 35
+            },
+            "full_known_positive_continue": {
+              "mean": 0.390625,
+              "n": 64,
+              "count": 25
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.07597799000307565,
+              "n": 64,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1019542595818514,
+              "n": 35,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 448,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.7410714285714286,
+              "n": 448,
+              "count": 332
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.6830357142857143,
+              "n": 448,
+              "count": 306
+            },
+            "full_greedy_unknown": {
+              "mean": 0.07589285714285714,
+              "n": 448,
+              "count": 34
+            },
+            "full_greedy_stop": {
+              "mean": 0.7366071428571429,
+              "n": 448,
+              "count": 330
+            },
+            "stop_probability": {
+              "mean": 0.33696527830338113,
+              "n": 448,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.34497859552934734,
+              "n": 448,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.19866071428571427,
+              "n": 448,
+              "count": 89
+            },
+            "full_known_positive_continue": {
+              "mean": 0.17857142857142858,
+              "n": 448,
+              "count": 80
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.08941850997581036,
+              "n": 448,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.08999232862976614,
+              "n": 414,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 39,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.8205128205128205,
+              "n": 39,
+              "count": 32
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.5641025641025641,
+              "n": 39,
+              "count": 22
+            },
+            "full_greedy_unknown": {
+              "mean": 0.2564102564102564,
+              "n": 39,
+              "count": 10
+            },
+            "full_greedy_stop": {
+              "mean": 0.05128205128205128,
+              "n": 39,
+              "count": 2
+            },
+            "stop_probability": {
+              "mean": 0.055929506402479796,
+              "n": 39,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.4562911218389705,
+              "n": 39,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.8974358974358975,
+              "n": 39,
+              "count": 35
+            },
+            "full_known_positive_continue": {
+              "mean": 0.6410256410256411,
+              "n": 39,
+              "count": 25
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.07569307911191792,
+              "n": 39,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.10176652018499308,
+              "n": 29,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 25,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.44,
+              "n": 25,
+              "count": 11
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.08,
+              "n": 25,
+              "count": 2
+            },
+            "full_greedy_unknown": {
+              "mean": 0.76,
+              "n": 25,
+              "count": 19
+            },
+            "full_greedy_stop": {
+              "mean": 0.08,
+              "n": 25,
+              "count": 2
+            },
+            "stop_probability": {
+              "mean": 0.08396888249867804,
+              "n": 25,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.5533424961372,
+              "n": 25,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 25,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.07642245099328172,
+              "n": 25,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.10286166666666668,
+              "n": 6,
+              "count": null
+            }
+          }
+        }
+      },
+      "extra_groups": {
+        "all": {
+          "n": 256,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.390625,
+              "n": 256,
+              "count": 100
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.34765625,
+              "n": 256,
+              "count": 89
+            },
+            "full_greedy_unknown": {
+              "mean": 0.14453125,
+              "n": 256,
+              "count": 37
+            },
+            "full_greedy_stop": {
+              "mean": 0.67578125,
+              "n": 256,
+              "count": 173
+            },
+            "stop_probability": {
+              "mean": 0.31847032264487735,
+              "n": 256,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3585760015537076,
+              "n": 256,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.14453125,
+              "n": 256,
+              "count": 37
+            },
+            "full_known_positive_continue": {
+              "mean": 0.09765625,
+              "n": 256,
+              "count": 25
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.24430643256878978,
+              "n": 256,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.2452836740223355,
+              "n": 219,
+              "count": null
+            }
+          }
+        },
+        "roots": {
+          "n": 32,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.34375,
+              "n": 32,
+              "count": 11
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.21875,
+              "n": 32,
+              "count": 7
+            },
+            "full_greedy_unknown": {
+              "mean": 0.34375,
+              "n": 32,
+              "count": 11
+            },
+            "full_greedy_stop": {
+              "mean": 0.0625,
+              "n": 32,
+              "count": 2
+            },
+            "stop_probability": {
+              "mean": 0.07017122606576404,
+              "n": 32,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.4915544595565835,
+              "n": 32,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.5625,
+              "n": 32,
+              "count": 18
+            },
+            "full_known_positive_continue": {
+              "mean": 0.375,
+              "n": 32,
+              "count": 12
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.14596554334308834,
+              "n": 32,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1418408299269197,
+              "n": 21,
+              "count": null
+            }
+          }
+        },
+        "successors": {
+          "n": 224,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.39732142857142855,
+              "n": 224,
+              "count": 89
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.36607142857142855,
+              "n": 224,
+              "count": 82
+            },
+            "full_greedy_unknown": {
+              "mean": 0.11607142857142858,
+              "n": 224,
+              "count": 26
+            },
+            "full_greedy_stop": {
+              "mean": 0.7633928571428571,
+              "n": 224,
+              "count": 171
+            },
+            "stop_probability": {
+              "mean": 0.3539416221561792,
+              "n": 224,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.3395790789818682,
+              "n": 224,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.08482142857142858,
+              "n": 224,
+              "count": 19
+            },
+            "full_known_positive_continue": {
+              "mean": 0.05803571428571429,
+              "n": 224,
+              "count": 13
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.2583551310296043,
+              "n": 224,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.2562548847597281,
+              "n": 198,
+              "count": null
+            }
+          }
+        },
+        "positive_roots": {
+          "n": 26,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.3076923076923077,
+              "n": 26,
+              "count": 8
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.19230769230769232,
+              "n": 26,
+              "count": 5
+            },
+            "full_greedy_unknown": {
+              "mean": 0.38461538461538464,
+              "n": 26,
+              "count": 10
+            },
+            "full_greedy_stop": {
+              "mean": 0.0,
+              "n": 26,
+              "count": 0
+            },
+            "stop_probability": {
+              "mean": 0.06435126667778877,
+              "n": 26,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.4964860821422005,
+              "n": 26,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.6923076923076923,
+              "n": 26,
+              "count": 18
+            },
+            "full_known_positive_continue": {
+              "mean": 0.46153846153846156,
+              "n": 26,
+              "count": 12
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.1631228610376472,
+              "n": 26,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.1593096517790821,
+              "n": 16,
+              "count": null
+            }
+          }
+        },
+        "clear_stop_roots": {
+          "n": 6,
+          "metrics": {
+            "evidence_greedy_near_best_hit": {
+              "mean": 0.5,
+              "n": 6,
+              "count": 3
+            },
+            "full_legal_greedy_observed_near_best_hit": {
+              "mean": 0.3333333333333333,
+              "n": 6,
+              "count": 2
+            },
+            "full_greedy_unknown": {
+              "mean": 0.16666666666666666,
+              "n": 6,
+              "count": 1
+            },
+            "full_greedy_stop": {
+              "mean": 0.3333333333333333,
+              "n": 6,
+              "count": 2
+            },
+            "stop_probability": {
+              "mean": 0.09539105008032349,
+              "n": 6,
+              "count": null
+            },
+            "unknown_probability_mass": {
+              "mean": 0.4701840950189098,
+              "n": 6,
+              "count": null
+            },
+            "evidence_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "full_known_positive_continue": {
+              "mean": 0.0,
+              "n": 6,
+              "count": 0
+            },
+            "evidence_greedy_Q_gap": {
+              "mean": 0.07161716666666666,
+              "n": 6,
+              "count": null
+            },
+            "observed_full_greedy_Q_gap": {
+              "mean": 0.0859406,
+              "n": 5,
+              "count": null
+            }
+          }
+        }
+      },
+      "gate": {
+        "passed": false,
+        "checks": {
+          "initial_positive_full_known": false,
+          "extra_positive_full_known": false,
+          "initial_clear_stop_full_stop": false,
+          "initial_root_full_unknown": false
+        },
+        "metrics": {
+          "initial_positive_full_known": {
+            "count": 25,
+            "n": 39,
+            "fraction": 0.6410256410256411
+          },
+          "extra_positive_full_known": {
+            "count": 12,
+            "n": 26,
+            "fraction": 0.46153846153846156
+          },
+          "initial_clear_stop_full_stop": {
+            "count": 2,
+            "n": 25,
+            "fraction": 0.08
+          },
+          "initial_root_full_unknown": {
+            "count": 29,
+            "n": 64,
+            "fraction": 0.453125
+          }
+        },
+        "scope": "Previously queried finite-depth development labels. Unknown actions are unevaluated, not bad. No new generalization or planner quality claim."
+      }
+    }
+  },
+  "new_environment_queries": 0,
+  "torch_used": false,
+  "limitations": [
+    "Recorded chosen actions audited against frozen finite-depth teacher labels; no inference reproduced.",
+    "Probabilities are range/partition checked and reaggregated, not regenerated without saved logits.",
+    "Checkpoint SHA and lineage receipts checked; tensors not deserialized.",
+    "Existing teacher states are development data, not unseen generalization or planner-quality evidence."
+  ]
+}

@@ -1,0 +1,425 @@
+{
+  "scope": "Validation-only training diagnostic. Full residual DP enumeration used only to diagnose stopped states, never counted as deployable policy inference.",
+  "checkpoint": "rc3_v3\\run_v3_20261102\\attention_seed17.pt",
+  "checkpoint_sha256": "947de6eafd5b38f4f0689d10bec1ecb45212022e60145625625f983cd0a59218",
+  "horizon": 8,
+  "summary": {
+    "validation_cases": 18,
+    "original_mean_gain_pct": 0.7467694284204213,
+    "without_stop_mean_gain_pct": 0.9134565952787597,
+    "original_mean_calls": 5.611111111111111,
+    "without_stop_mean_calls": 8.0,
+    "stopped_cases": 13,
+    "stops_with_positive_residual": 12,
+    "stop_probabilities": [
+      0.15591570734977722,
+      0.31874099373817444,
+      0.21644826233386993,
+      0.1221456527709961,
+      0.18167059123516083,
+      0.1535114347934723,
+      0.07098553329706192,
+      0.11724160611629486,
+      0.13719245791435242,
+      0.10020797699689865,
+      0.06438404321670532,
+      0.2797480523586273,
+      0.06913875788450241
+    ]
+  },
+  "cases": [
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "original_stop": {
+        "gain_pct": 0.5726953630149472,
+        "calls": 8,
+        "cost": 269.1,
+        "stop": null
+      },
+      "without_stop": {
+        "gain_pct": 0.5726953630149472,
+        "calls": 8,
+        "cost": 269.1,
+        "stop": null
+      }
+    },
+    {
+      "scene": 1,
+      "seed": 581642321,
+      "original_stop": {
+        "gain_pct": 0.0,
+        "calls": 3,
+        "cost": 295.04999999999995,
+        "stop": {
+          "step": 3,
+          "legal_actions": 90,
+          "stop_probability": 0.15591570734977722,
+          "stop_logit": 0.8103594183921814,
+          "best_action_logit": 0.3545528054237366,
+          "positive_remaining_actions": 8,
+          "best_remaining_gain_pct": 0.5253346890357413
+        }
+      },
+      "without_stop": {
+        "gain_pct": 0.0,
+        "calls": 8,
+        "cost": 295.04999999999995,
+        "stop": null
+      }
+    },
+    {
+      "scene": 2,
+      "seed": 777931079,
+      "original_stop": {
+        "gain_pct": 1.0683760683760688,
+        "calls": 3,
+        "cost": 277.7999999999999,
+        "stop": {
+          "step": 3,
+          "legal_actions": 88,
+          "stop_probability": 0.31874099373817444,
+          "stop_logit": 0.9868181943893433,
+          "best_action_logit": -1.153948187828064,
+          "positive_remaining_actions": 11,
+          "best_remaining_gain_pct": 0.40954415954417184
+        }
+      },
+      "without_stop": {
+        "gain_pct": 1.8162393162393453,
+        "calls": 8,
+        "cost": 275.6999999999998,
+        "stop": null
+      }
+    },
+    {
+      "scene": 3,
+      "seed": 1432654736,
+      "original_stop": {
+        "gain_pct": 0.0,
+        "calls": 3,
+        "cost": 242.44999999999993,
+        "stop": {
+          "step": 3,
+          "legal_actions": 80,
+          "stop_probability": 0.21644826233386993,
+          "stop_logit": 0.9788756370544434,
+          "best_action_logit": 0.6848347187042236,
+          "positive_remaining_actions": 0,
+          "best_remaining_gain_pct": 0.0
+        }
+      },
+      "without_stop": {
+        "gain_pct": 0.0,
+        "calls": 8,
+        "cost": 242.44999999999993,
+        "stop": null
+      }
+    },
+    {
+      "scene": 4,
+      "seed": 446139775,
+      "original_stop": {
+        "gain_pct": 1.4477017734346727,
+        "calls": 4,
+        "cost": 272.29999999999995,
+        "stop": {
+          "step": 4,
+          "legal_actions": 87,
+          "stop_probability": 0.1221456527709961,
+          "stop_logit": 1.1296876668930054,
+          "best_action_logit": 0.8944399356842041,
+          "positive_remaining_actions": 2,
+          "best_remaining_gain_pct": 0.8143322475570034
+        }
+      },
+      "without_stop": {
+        "gain_pct": 2.2620340209916763,
+        "calls": 8,
+        "cost": 270.04999999999995,
+        "stop": null
+      }
+    },
+    {
+      "scene": 5,
+      "seed": 458581588,
+      "original_stop": {
+        "gain_pct": 0.2822580645161245,
+        "calls": 3,
+        "cost": 247.29999999999998,
+        "stop": {
+          "step": 3,
+          "legal_actions": 79,
+          "stop_probability": 0.18167059123516083,
+          "stop_logit": 0.9286537766456604,
+          "best_action_logit": 0.7745863199234009,
+          "positive_remaining_actions": 1,
+          "best_remaining_gain_pct": 0.060483870967744234
+        }
+      },
+      "without_stop": {
+        "gain_pct": 0.2822580645161245,
+        "calls": 8,
+        "cost": 247.29999999999998,
+        "stop": null
+      }
+    },
+    {
+      "scene": 6,
+      "seed": 700647362,
+      "original_stop": {
+        "gain_pct": 0.386415843431357,
+        "calls": 5,
+        "cost": 310.57902829759996,
+        "stop": {
+          "step": 5,
+          "legal_actions": 78,
+          "stop_probability": 0.1535114347934723,
+          "stop_logit": 0.8050633668899536,
+          "best_action_logit": 0.20079901814460754,
+          "positive_remaining_actions": 18,
+          "best_remaining_gain_pct": 0.9569610072971393
+        }
+      },
+      "without_stop": {
+        "gain_pct": 1.5955696564253778,
+        "calls": 8,
+        "cost": 306.8090824666,
+        "stop": null
+      }
+    },
+    {
+      "scene": 7,
+      "seed": 2048557680,
+      "original_stop": {
+        "gain_pct": 0.00962033435996808,
+        "calls": 6,
+        "cost": 344.8280905734,
+        "stop": {
+          "step": 6,
+          "legal_actions": 114,
+          "stop_probability": 0.07098553329706192,
+          "stop_logit": 0.5440693497657776,
+          "best_action_logit": 0.4433717429637909,
+          "positive_remaining_actions": 14,
+          "best_remaining_gain_pct": 0.5187675800154623
+        }
+      },
+      "without_stop": {
+        "gain_pct": 0.06732093771027062,
+        "calls": 8,
+        "cost": 344.6291035414,
+        "stop": null
+      }
+    },
+    {
+      "scene": 8,
+      "seed": 1988403149,
+      "original_stop": {
+        "gain_pct": 0.491320820221594,
+        "calls": 6,
+        "cost": 244.1120937986,
+        "stop": {
+          "step": 6,
+          "legal_actions": 61,
+          "stop_probability": 0.11724160611629486,
+          "stop_logit": 0.41606801748275757,
+          "best_action_logit": -0.08837917447090149,
+          "positive_remaining_actions": 13,
+          "best_remaining_gain_pct": 0.6279597376187803
+        }
+      },
+      "without_stop": {
+        "gain_pct": 0.491320820221594,
+        "calls": 8,
+        "cost": 244.1120937986,
+        "stop": null
+      }
+    },
+    {
+      "scene": 9,
+      "seed": 172405326,
+      "original_stop": {
+        "gain_pct": 1.2492389594931446,
+        "calls": 4,
+        "cost": 334.78521107280005,
+        "stop": {
+          "step": 4,
+          "legal_actions": 79,
+          "stop_probability": 0.13719245791435242,
+          "stop_logit": 0.6478000283241272,
+          "best_action_logit": -0.10304528474807739,
+          "positive_remaining_actions": 10,
+          "best_remaining_gain_pct": 0.6631968167366135
+        }
+      },
+      "without_stop": {
+        "gain_pct": 1.2492389594931446,
+        "calls": 8,
+        "cost": 334.78521107280005,
+        "stop": null
+      }
+    },
+    {
+      "scene": 10,
+      "seed": 2032356671,
+      "original_stop": {
+        "gain_pct": 0.34722267553089314,
+        "calls": 6,
+        "cost": 278.73717679379996,
+        "stop": {
+          "step": 6,
+          "legal_actions": 75,
+          "stop_probability": 0.10020797699689865,
+          "stop_logit": 0.7441785931587219,
+          "best_action_logit": 0.5730363726615906,
+          "positive_remaining_actions": 8,
+          "best_remaining_gain_pct": 0.6250545237908246
+        }
+      },
+      "without_stop": {
+        "gain_pct": 0.34722267553089314,
+        "calls": 8,
+        "cost": 278.73717679379996,
+        "stop": null
+      }
+    },
+    {
+      "scene": 11,
+      "seed": 488840541,
+      "original_stop": {
+        "gain_pct": 1.5008560225844898,
+        "calls": 8,
+        "cost": 269.63813668939997,
+        "stop": null
+      },
+      "without_stop": {
+        "gain_pct": 1.5008560225844898,
+        "calls": 8,
+        "cost": 269.63813668939997,
+        "stop": null
+      }
+    },
+    {
+      "scene": 12,
+      "seed": 1728920484,
+      "original_stop": {
+        "gain_pct": 1.3266552114153347,
+        "calls": 6,
+        "cost": 389.1587565663998,
+        "stop": {
+          "step": 6,
+          "legal_actions": 102,
+          "stop_probability": 0.06438404321670532,
+          "stop_logit": 0.476416677236557,
+          "best_action_logit": 0.23410961031913757,
+          "positive_remaining_actions": 23,
+          "best_remaining_gain_pct": 0.5193869719487704
+        }
+      },
+      "without_stop": {
+        "gain_pct": 1.3266552114153347,
+        "calls": 8,
+        "cost": 389.1587565663998,
+        "stop": null
+      }
+    },
+    {
+      "scene": 13,
+      "seed": 397643615,
+      "original_stop": {
+        "gain_pct": 1.2992846589117621,
+        "calls": 7,
+        "cost": 208.67554965620008,
+        "stop": {
+          "step": 7,
+          "legal_actions": 58,
+          "stop_probability": 0.2797480523586273,
+          "stop_logit": 1.0992969274520874,
+          "best_action_logit": 0.28008905053138733,
+          "positive_remaining_actions": 7,
+          "best_remaining_gain_pct": 0.02466967127937095
+        }
+      },
+      "without_stop": {
+        "gain_pct": 1.3134557179648814,
+        "calls": 8,
+        "cost": 208.64558884460007,
+        "stop": null
+      }
+    },
+    {
+      "scene": 14,
+      "seed": 2136803537,
+      "original_stop": {
+        "gain_pct": 0.19791915763515797,
+        "calls": 8,
+        "cost": 368.25396542759995,
+        "stop": null
+      },
+      "without_stop": {
+        "gain_pct": 0.19791915763515797,
+        "calls": 8,
+        "cost": 368.25396542759995,
+        "stop": null
+      }
+    },
+    {
+      "scene": 15,
+      "seed": 737123377,
+      "original_stop": {
+        "gain_pct": 0.5679016175039401,
+        "calls": 8,
+        "cost": 329.9219575368,
+        "stop": null
+      },
+      "without_stop": {
+        "gain_pct": 0.5679016175039401,
+        "calls": 8,
+        "cost": 329.9219575368,
+        "stop": null
+      }
+    },
+    {
+      "scene": 16,
+      "seed": 1511644165,
+      "original_stop": {
+        "gain_pct": 0.9014778722172755,
+        "calls": 8,
+        "cost": 350.18298971519977,
+        "stop": null
+      },
+      "without_stop": {
+        "gain_pct": 0.9014778722172755,
+        "calls": 8,
+        "cost": 350.18298971519977,
+        "stop": null
+      }
+    },
+    {
+      "scene": 17,
+      "seed": 1895125488,
+      "original_stop": {
+        "gain_pct": 1.7929052689208522,
+        "calls": 5,
+        "cost": 337.4467437822,
+        "stop": {
+          "step": 5,
+          "legal_actions": 81,
+          "stop_probability": 0.06913875788450241,
+          "stop_logit": 0.32944992184638977,
+          "best_action_logit": 0.11909833550453186,
+          "positive_remaining_actions": 21,
+          "best_remaining_gain_pct": 0.8800477985116446
+        }
+      },
+      "without_stop": {
+        "gain_pct": 1.9500533015532195,
+        "calls": 8,
+        "cost": 336.9067716748,
+        "stop": null
+      }
+    }
+  ],
+  "seconds": 14.978681000000506
+}

@@ -1,0 +1,81 @@
+"""Write the independent audit narrative from its completed evidence JSON."""
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+
+def table(headers,rows):
+    return '\n'.join(['| '+' | '.join(headers)+' |','| '+' | '.join(['---']*len(headers))+' |']+
+                     ['| '+' | '.join(str(v) for v in row)+' |' for row in rows])
+
+def main():
+    source=ROOT/'outputs/g2_audit.json'
+    report=json.loads(source.read_text(encoding='utf-8'))
+    if report['status']!='complete' or not report['all_requested_checks_passed']:
+        raise ValueError('Completed independent audit required')
+    if 'checkpoints' not in report or 'actual_replay' not in report:
+        raise ValueError('Physical replay and checkpoint review required for this report')
+    iterations=report['ppo_iterations'];episodes=report['completed_episodes'];saved=report['saved_evaluations']
+    check=report['checkpoints'];replay=report['actual_replay'];interruption=report['interruption']
+    teachers=[report['teacher'][name] for name in ['teacher_initial','teacher_extra']]
+    saved_count=sum(v['rows'] for v in saved['datasets'].values())
+    lines=['# G2 独立复核记录\n',
+      '**本次请求的审计检查均通过。** 这说明保存的训练、奖励、方案与恢复记录在限定范围内一致，'
+      '不意味着 PPO 已优于基线。性能与论文主张另见 `EXPERIMENT_RESULT_TO_CLAIM.md`。',
+      '\n## 本轮实际执行范围\n',
+      table(['检查','实际范围','证据类型'],[
+        ['协议与生产源',f"{report['protocol']['production_files_verified']} 个生产文件；{report['protocol']['distinct_seeds']} 个互斥注册种子",'源码／元数据与哈希检查'],
+        ['正式教师',f"{sum(t['cases'] for t in teachers)} 场景、{sum(t['samples'] for t in teachers)} 状态、{sum(t['queries'] for t in teachers)} 查询记录",'全部标签、证据掩码及物理工作日志离线复算；未重新搜索全部教师树'],
+        ['PPO',f"{iterations['iterations']} rollout、{iterations['actual_actions']:,} 已提交动作、{iterations['optimizer_updates']} 已提交更新",'全部逐轮及已结束回合账本复算'],
+        ['完整回合',f"{episodes['completed_episodes']:,} 条；覆盖 {episodes['unique_training_scenes']} 个训练场景",'episode 并非独立新场景；保留 8 个未结束 worker'],
+        ['保存评测',f'{saved_count} 份阶段／最终方法记录','全部保存 JSON、奖励、任务状态、路线长度和成本摘要复算；不是全部重新规划'],
+        ['实际方案重放',f"{len(replay['saved_plan_replays'])} 份",'验证 case 0、1 × 冻结 BC／继续 BC 2048／PPO32768'],
+        ['恢复采样',f"worker {replay['restored_worker']}，两次独立恢复",'每次至多 3 个动作，遇自然终止即停止；采样序列逐项一致'],
+        ['规则参数',f"{report['rule_selection']['query_runs']} 份原开发记录",'12 开发场景 × 4 组 ILS 设置离线复算；未使用验证集选择']]),
+      '\n复核由单独审计代理进行，继承了项目上下文并复用了现有审计工具，因此不是零上下文的外部审稿。'
+      '本次没有重新训练模型，没有扩大验证集，也没有新增教师查询。审计脚本哈希记录在 `outputs/g2_audit.json`。',
+      '\n## 中断、恢复与真实计算量\n']
+    if interruption['interrupted']:
+        lo,hi=interruption['physical_actions_interval'];ulo,uhi=interruption['unknown_discarded_optimizer_updates_interval']
+        lines+=[f"训练在已提交 {interruption['retained_boundary']:,} 动作之后中断，从原字节保留检查点恢复。"
+          f"最终 {iterations['actual_actions']:,} 动作和 {iterations['optimizer_updates']} 更新是参与有效恢复链的已提交记录。"
+          f"被杀进程可能另执行 0～256 个未落盘环境动作及 {ulo}～{uhi} 个未提交优化步骤；"
+          f"所以正式训练尝试的物理动作总数只能界定为 [{lo:,}, {hi:,}]，不能声称恰好 {lo:,} 次。",
+          '未知尾段不进入恢复后的参数、actor 数据或已提交更新，但已经消耗的物理工作／时间无法完整重建。'
+          '训练累计 elapsed_s 不含中断空档和未知尾段时间；episode complete_s 还包含等待优化器／其他 worker／验证的时间。'
+          '这些时间均不得用作部署规划延迟。',
+          '恢复检查绑定原 checkpoint SHA、协议、BC 父检查点、日志原前缀 SHA 和 8 个 worker 的回合序号。'
+          '恢复后首回合的认证计数分成保存的逻辑前缀与重新载入后的物理 cache delta；两者分别核验，'
+          '没有把 load/reset 的额外认证、准备工作或未知尾段冒称为零。累计准备计数仅描述保留的 episode 链。']
+    lines+=['\n另外，两轮历史管线调试共 '+str(report['bc']['all_preparatory_pipeline_actual_actions'])+
+      ' 个动作与正式 PPO 分开。已中断教师 v1 的 2,496 个已知查询及未知尾段也独立保留，未进入正式教师。',
+      '\n## 奖励、工作量与终止\n',
+      f"已结束回合的质量奖励、工作罚、实际返回成本和动作计数全部闭合；old/new log-prob 最大重算差为 "
+      f"{iterations['max_old_new_logp_error']:.8g}，所有记录的优势与梯度有限。回退 {episodes['fallback_count']} 次。",
+      '保存评测检查了末尾事件恰好一次并入最后真实 actor 样本、零动作截止只记指标，以及 STOP／预算／horizon 的最终回报。'
+      '采集批次的边界没有自行终止环境。最终 8 个 worker 仍保持未结束状态，未为补齐回合而额外执行动作。',
+      '工作费使用当前环境定义的代理单位，不是 FLOPs 或毫秒。原 Fixed3／Detour 的行不伪造 G2 work 或 reward。'
+      '最终独立验证仍采用相同给定模型的约束与几何检查，不等于真实机械臂标签或 IK 验证。',
+      '\n## 六份实际重放\n']
+    lines.append(table(['case','方法','重放动作','提案／改变路线','J','回报','工作量','模型内验证'],[
+        [r['case_index'],r['method'],r['actual_actions'],f"{r['proposal_calls']}／{r['changed_proposals']}",f"{r['J']:.6f}",f"{r['return_value']:.6f}",r['work'],r['validated']]
+        for r in replay['saved_plan_replays']]))
+    lines+=['\n每份重放从保存的场景／适配器数据重新构建环境，独立校验状态，重建图观察，'
+      '复现贪心动作、log-prob、value、修复工作和完整返回方案。最终验证器在本轮实际重新执行。'
+      '这 6 份由评测前的固定规则选择，不是按好结果挑选。',
+      '\n这批重放实际包含 '+str(sum(r['proposal_calls'] for r in replay['saved_plan_replays']))+
+      ' 次提案，其中 '+str(sum(r['changed_proposals'] for r in replay['saved_plan_replays']))+
+      ' 次改变了 current 路线。它不是覆盖所有搜索机制的额外消融；非平凡状态转移还需结合既有合同回归与保存的教师／环境证据判断。',
+      '\nworker 0 的两次恢复保留相同策略 RNG 和环境状态，实际采样动作数分别为 '+
+      '、'.join(str(len(x['trace'])) for x in json.loads((ROOT/'outputs/replay_audit_trace.json').read_text(encoding='utf-8'))['worker_duplicate_traces'])+
+      '。观察、动作、奖励、终止标志、路线与记忆一致。审计产生的重放动作是额外复核工作，不计入正式训练。',
+      '\n## 限定结论\n',
+      '本轮支持：训练接口和保存记录可复核；正确恢复同一条已提交训练链；给定模型内的已返回方案保持可行。'
+      '它不支持：总物理训练成本被完整精确记账、全部评测路径被重新执行、32,768 动作无中断连续运行、'
+      '跨训练种子的稳定优势、真实机器人可执行性或 400 ms 硬实时。',
+      '\n模型效果、配对统计、停止退化及下一阶段门槛，应依据完整最终比较和独立主张判定，不能由“审计通过”替代。\n']
+    (ROOT/'G2_AUDIT.md').write_text('\n\n'.join(lines),encoding='utf-8')
+    print(json.dumps(dict(output=str(ROOT/'G2_AUDIT.md'),saved_evaluations=saved_count,
+                         actual_plan_replays=len(replay['saved_plan_replays']))))
+
+if __name__=='__main__':main()

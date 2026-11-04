@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-03",
+  "claim_supported": "partial",
+  "document_numeric_scope_audit": "PASS",
+  "blocking_data_issues": [],
+  "claims": {
+    "common_constraint_maintenance": {"claim_supported": "yes", "scope": "Saved synthetic counterexamples and regression evidence under the supplied finite F/A service model, not unseen-label or physical validation."},
+    "legacy_mlp_stable_advantage": {"claim_supported": "partial", "scope": "Positive descriptive point estimates on the same 18 original scenes, platform-separated; Windows CI crosses zero."},
+    "static_cache_maintenance": {"claim_supported": "yes", "scope": "18 static validation scenes: saved head/action equality, within-scene complete-plan equality, and measured local timing reduction."},
+    "structured_formal_adoption": {"claim_supported": "no", "scope": "Original main-100 fixed-eight Control CI crosses zero and original median-time ratio 1.555019423973947 exceeds 1.25; cache diagnostics do not replace the gate."},
+    "robot_assets_and_input_preflight": {"claim_supported": "yes", "scope": "Two pinned URDFs, 19 meshes, explicit blocked_inputs result."},
+    "real_robot_ik_collision_execution": {"claim_supported": "no", "scope": "Physical runtime configuration and independent IK/collision/service witnesses remain absent."}
+  },
+  "what_results_support": [
+    "Finite-model common-constraint repair and saved cost bounds with certified initial plans.",
+    "Windows legacy MLP paired reduction 0.26050724125498376%, CI [-0.008684172045571278, 0.5295448093375277]; Linux 0.28802467245942004%, CI [0.026772984319286836, 0.5818043144140944], separately reported.",
+    "Cache correctness: 144 saved decision checks and 36 plans; separate profile phase: 108 plans and zero head checks.",
+    "Cache median planning times 486.59014999975625 to 441.8709499996112 ms; reduction from group medians 9.190321670129887%, median paired reduction 8.452804669706149%.",
+    "19 STL files totaling 15108946 bytes; 13 bounded zero-limit joints; 135 input blockers; physical IK/collision flags false."
+  ],
+  "what_results_dont_support": [
+    "Universal or stable MLP superiority, independent cross-platform scene replication, hard 400 ms deadlines, or real task-time reduction.",
+    "New training benefit, effective STOP, general graph-input contribution, dynamic task/map handling, or retrospective Structured adoption.",
+    "Continuous/global optimality beyond the supported discrete small instances or physical robot execution."
+  ],
+  "missing_evidence": [
+    "Valid calibrated robot runtime inputs and independent IK/collision/trajectory/service witnesses.",
+    "Prospectively frozen independent evidence for broad learning or efficiency claims, including applicable training/host uncertainty.",
+    "Complete paper-to-evidence claim audit."
+  ],
+  "suggested_claim_revision": "Retain the current scoped wording: engineering maintenance and descriptive platform-separated supplements; preserve the Windows zero-crossing interval and all original adoption decisions.",
+  "next_experiments_needed": "No additional same-test-set search is needed for this maintenance delivery. Future physical integration or general efficiency/learning claims require valid inputs and a new frozen protocol.",
+  "confidence": "high",
+  "confidence_scope": "High for saved-data arithmetic and limits of present claims; no claim of high confidence in new-environment or physical generalization.",
+  "routing_action": "confirm scoped maintenance; narrow learning claims; retain Fixed3/Detour default and legacy optional mode; physical integration remains a future input-dependent stage",
+  "paper_claim_audit": "unavailable",
+  "provisional": true,
+  "provisional_reason": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "review_type": "Internal independent reviewer subagent, not feature/model implementer and not an external zero-context audit.",
+  "numeric_audit": {"path": "numeric_audit.json", "checks": 559, "all_passed": true, "performance_rerun": false, "experiment_or_source_modified": false},
+  "experiment_notes": "rc3_v5/claims_review.md"
+}

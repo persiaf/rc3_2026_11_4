@@ -1,0 +1,136 @@
+{
+  "scenarios": 45,
+  "independent_scenes": 27,
+  "independently_valid_plans": 225,
+  "exact_status_counts": {
+    "optimal": 44,
+    "unsupported": 1
+  },
+  "aggregates": [
+    {
+      "nonempty_only": false,
+      "method": "table_order",
+      "n": 26,
+      "mean_optimal_gap_pct": 10.511861745668899,
+      "max_gap_pct": 57.43243243243245,
+      "optimal_count": 12
+    },
+    {
+      "nonempty_only": false,
+      "method": "fixed_set_exact_order",
+      "n": 26,
+      "mean_optimal_gap_pct": 5.979428419237038,
+      "max_gap_pct": 57.43243243243242,
+      "optimal_count": 14
+    },
+    {
+      "nonempty_only": false,
+      "method": "fixed3",
+      "n": 26,
+      "mean_optimal_gap_pct": 0.432481587893891,
+      "max_gap_pct": 8.563535911602212,
+      "optimal_count": 23
+    },
+    {
+      "nonempty_only": false,
+      "method": "detour8",
+      "n": 26,
+      "mean_optimal_gap_pct": 0.09778357235984149,
+      "max_gap_pct": 2.542372881355923,
+      "optimal_count": 25
+    },
+    {
+      "nonempty_only": true,
+      "method": "table_order",
+      "n": 25,
+      "mean_optimal_gap_pct": 10.932336215495653,
+      "max_gap_pct": 57.43243243243245,
+      "optimal_count": 11
+    },
+    {
+      "nonempty_only": true,
+      "method": "fixed_set_exact_order",
+      "n": 25,
+      "mean_optimal_gap_pct": 6.21860555600652,
+      "max_gap_pct": 57.43243243243242,
+      "optimal_count": 13
+    },
+    {
+      "nonempty_only": true,
+      "method": "fixed3",
+      "n": 25,
+      "mean_optimal_gap_pct": 0.44978085140964663,
+      "max_gap_pct": 8.563535911602212,
+      "optimal_count": 22
+    },
+    {
+      "nonempty_only": true,
+      "method": "detour8",
+      "n": 25,
+      "mean_optimal_gap_pct": 0.10169491525423517,
+      "max_gap_pct": 2.542372881355923,
+      "optimal_count": 24
+    }
+  ],
+  "sensitivity": [
+    {
+      "method": "table_order",
+      "scenes": 9,
+      "unchanged_visit_order": 9,
+      "unchanged_selected_set": 9
+    },
+    {
+      "method": "fixed_set_exact_order",
+      "scenes": 9,
+      "unchanged_visit_order": 8,
+      "unchanged_selected_set": 9
+    },
+    {
+      "method": "fixed3",
+      "scenes": 9,
+      "unchanged_visit_order": 9,
+      "unchanged_selected_set": 9
+    },
+    {
+      "method": "detour8",
+      "scenes": 9,
+      "unchanged_visit_order": 9,
+      "unchanged_selected_set": 9
+    },
+    {
+      "method": "joint_exact",
+      "scenes": 9,
+      "unchanged_visit_order": 5,
+      "unchanged_selected_set": 6
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "rc3_v4/small_benchmark.py",
+      "matches": true
+    },
+    {
+      "path": "rc3_v4/exact.py",
+      "matches": true
+    },
+    {
+      "path": "rc3_fast/solver.py",
+      "matches": true
+    },
+    {
+      "path": "rc3_v3/runtime.py",
+      "matches": true
+    },
+    {
+      "path": "rc3_improve/repair.py",
+      "matches": true
+    }
+  ],
+  "exact_unit_tests": {
+    "executed": 7,
+    "passed": 7,
+    "scope": "Original seven meaningful tests executed separately, including exhaustive permutations and timeout bounds."
+  },
+  "elapsed_s": 0.576659472000074,
+  "scope": "Rebuilt feasibility/nav from saved scenes, independently revalidated all small plans, and reran exact DP; no training or new scene sampling. Recorded original timing is not retimed as a speed benchmark."
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "path": "outputs\\deployment\\policy_ppo.pt",
+    "bytes": 273816,
+    "sha256": "4c18e3d1bd8241fc769764fd4352af8af342f35e7eb304946df342bdbe129d43",
+    "source_checkpoint_sha256": "b73718cf1cabbb1741d5f3d04109b95dedbda07de660f8e638975e82e78de5f3",
+    "parameters": 65602,
+    "tensor_equality": true,
+    "architecture": {
+      "kind": "graph",
+      "hidden": 64,
+      "message_steps": 2
+    },
+    "role": "Predeclared 32768-action research endpoint; not selected by validation"
+  },
+  {
+    "path": "outputs\\deployment\\policy_bc_frozen.pt",
+    "bytes": 273432,
+    "sha256": "450a55e7798a8b6c6de3855dba3818911b3156a702f7e9e15135a914af93d8e5",
+    "source_checkpoint_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+    "parameters": 65602,
+    "tensor_equality": true,
+    "architecture": {
+      "kind": "graph",
+      "hidden": 64,
+      "message_steps": 2
+    },
+    "role": "Same initial BC used by both continuation branches"
+  },
+  {
+    "path": "outputs\\deployment\\policy_bc_continued.pt",
+    "bytes": 273496,
+    "sha256": "e1bc4c060f59384f8018dde2e2e5cb2d4ae965bbc70984e603516ad79f0a27c9",
+    "source_checkpoint_sha256": "ed503eee23420b3332dc19e5077f793f2bdaa8a161f2faadc0bc116a423496af",
+    "parameters": 65602,
+    "tensor_equality": true,
+    "architecture": {
+      "kind": "graph",
+      "hidden": 64,
+      "message_steps": 2
+    },
+    "role": "Predeclared 2048-extra-update supervised control"
+  }
+]

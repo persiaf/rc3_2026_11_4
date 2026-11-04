@@ -1,0 +1,86 @@
+{
+  "all_passed": true,
+  "reports": [
+    {
+      "kind": "mlp",
+      "actual_actions": 256,
+      "updates": 16,
+      "completed_episodes": 21,
+      "all_episode_ledgers_verified": true,
+      "restore_sampling_identical": true,
+      "parameters_changed": true,
+      "elapsed_s": 10.33960450000086,
+      "iterations": [
+        {
+          "updates": 16,
+          "old_new_logp_error": 0.0,
+          "early_kl_stop": false,
+          "loss": 0.16789822152350098,
+          "approx_kl": 1.4097313396632671e-05,
+          "clip_fraction": 0.0,
+          "grad_norm_max": 3.5732250213623047,
+          "optimizer_s": 0.331669499999407,
+          "advantages_finite": true,
+          "gradients_finite": true,
+          "actual_actions": 256,
+          "collect_s": 6.5228459000027215
+        }
+      ]
+    },
+    {
+      "kind": "graph",
+      "actual_actions": 768,
+      "updates": 48,
+      "completed_episodes": 82,
+      "all_episode_ledgers_verified": true,
+      "restore_sampling_identical": true,
+      "parameters_changed": true,
+      "elapsed_s": 31.35103589999926,
+      "iterations": [
+        {
+          "updates": 16,
+          "old_new_logp_error": 0.0,
+          "early_kl_stop": false,
+          "loss": 0.33051662193611264,
+          "approx_kl": 4.514586180448532e-06,
+          "clip_fraction": 0.0,
+          "grad_norm_max": 11.55974006652832,
+          "optimizer_s": 2.4835652000001573,
+          "advantages_finite": true,
+          "gradients_finite": true,
+          "actual_actions": 256,
+          "collect_s": 6.663623799999186
+        },
+        {
+          "updates": 16,
+          "old_new_logp_error": 0.0,
+          "early_kl_stop": false,
+          "loss": 0.11053969932254404,
+          "approx_kl": 5.389680154621601e-06,
+          "clip_fraction": 0.0,
+          "grad_norm_max": 2.5309395790100098,
+          "optimizer_s": 2.703925200003141,
+          "advantages_finite": true,
+          "gradients_finite": true,
+          "actual_actions": 256,
+          "collect_s": 6.662532499998633
+        },
+        {
+          "updates": 16,
+          "old_new_logp_error": 0.0,
+          "early_kl_stop": false,
+          "loss": 0.10456066799815744,
+          "approx_kl": 6.734393537044525e-06,
+          "clip_fraction": 0.0,
+          "grad_norm_max": 1.9680087566375732,
+          "optimizer_s": 2.5189433000014105,
+          "advantages_finite": true,
+          "gradients_finite": true,
+          "actual_actions": 256,
+          "collect_s": 6.632968800000526
+        }
+      ]
+    }
+  ],
+  "scope": "Numerical/interaction correctness only; not superiority evidence"
+}

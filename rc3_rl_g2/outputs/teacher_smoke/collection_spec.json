@@ -1,0 +1,40 @@
+{
+  "schema": "rc3-g2-finite-return-teacher-v1",
+  "cases": [
+    {
+      "case_id": "smoke0",
+      "nx": 2,
+      "ny": 2,
+      "mode": "regular",
+      "seed": 2026110351
+    }
+  ],
+  "config": {
+    "epsilon": 0.02,
+    "horizon": 16,
+    "work_budget": 2000000,
+    "work_scale": 10000.0,
+    "lambda_work": 0.01,
+    "potential_weight": 0.0,
+    "max_tasks": 8,
+    "max_candidates": 80,
+    "max_width": 4,
+    "max_actions": 16,
+    "physical_scale": 2.2,
+    "cache_enabled": false
+  },
+  "depth": 1,
+  "branch_limit": 3,
+  "tie_tolerance": 0.001,
+  "source_sha256": {
+    "env_g2.py": "8ef9e226b139c6605ecd74b5053f74355602755a37334d3e49a3aae6460d3e2d",
+    "action_memory.py": "f46ff9537a64a76a36a68929f47e56763a1f9cf3e5886862b3bff01b119b524b",
+    "adapter_g2.py": "4af17cff865cc923b7938cb622ad44be2e4a654c62710261a962e845940b4703",
+    "graph_observation.py": "0398c9534404819ee1983daae0ae6418230d3c0669786350670130d5909fa8de",
+    "teacher_dataset.py": "737ed783e224b66ee3dc46f7eec116212b8b185a17314843b43f4ecd7c02ccfc"
+  },
+  "branch_rule": "first 7 or fewer valid non-STOP semantic menu actions and STOP",
+  "weighting": "equal scene mass, equal current-route mass within each scene, divided among repeated-route states",
+  "unknown_action_semantics": "zero numeric placeholder, evidence_mask=False; not a negative sample",
+  "training_use": "actor supervision only; no finite-depth critic targets or PPO reuse"
+}

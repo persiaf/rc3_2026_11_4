@@ -1,0 +1,103 @@
+{
+  "plan_checks": {
+    "all_passed": true,
+    "errors": [],
+    "scenes": 60,
+    "repeated_plans": 2583,
+    "valid_complete": 2583,
+    "checked_bounds": 2583,
+    "method_budget_cases": 861,
+    "failed_metric_cases": 0,
+    "reproduced_metric_means": 861,
+    "scenes_per_scale": {
+      "12": 9,
+      "36": 9,
+      "64": 9,
+      "100": 9,
+      "144": 9,
+      "196": 9,
+      "256": 3,
+      "400": 3
+    },
+    "elapsed_s": 144.477115756,
+    "scope": "Every saved plan independently checked with unchanged standard-library geometric/bookkeeping validator. No optimizer rerun; reference bound against independently checked saved Fixed3 plans. No physical IK/trajectory or hardware claim.",
+    "validator_sha256": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1"
+  },
+  "unit_tests": {
+    "run": 16,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "torch_available": false,
+    "scope": "Runtime and teacher-data tests only; torch gradient/export parity suite not rerun."
+  },
+  "package_hashes": {
+    "files": 203,
+    "matched": 203,
+    "unmatched": []
+  },
+  "run_denominators": {
+    "total_run_records": 2583,
+    "failed_run_records": 0,
+    "failure_keys": [],
+    "run_plan_denominator_mismatches": [],
+    "penalty_values": [
+      0.75
+    ]
+  },
+  "frozen_manifest_hashes": {
+    "matched": 31,
+    "total": 31,
+    "unmatched": []
+  },
+  "portable_replay": {
+    "all_passed": true,
+    "architecture": "mlp",
+    "phase": "gain_supervised",
+    "schema": "rc3-v3-budget28",
+    "stop_rule": "binary_threshold",
+    "stop_threshold": 0.9,
+    "portable": {
+      "complete": true,
+      "full_plan_equal": true,
+      "cache_hit_sequence": [
+        false,
+        true,
+        false
+      ],
+      "empty_zero_success": true,
+      "default_fixed3": true,
+      "wrong_phase_rejected": true,
+      "torch_not_imported": true
+    },
+    "failure_probes": [
+      {
+        "case": "unreachable_task",
+        "passed": true,
+        "code": "no_service_candidate",
+        "tasks_preserved": 128
+      },
+      {
+        "case": "blocked_depot",
+        "passed": true,
+        "code": "unsupported_input",
+        "tasks_preserved": 128
+      },
+      {
+        "case": "variable_lift",
+        "passed": true,
+        "code": "unsupported_input",
+        "tasks_preserved": 128
+      },
+      {
+        "case": "invalid_task_ids",
+        "passed": true,
+        "code": "unsupported_input",
+        "tasks_preserved": 128
+      }
+    ],
+    "replayed_plans": 8
+  },
+  "source_modified": false,
+  "scope": "Static discrete proxy model, independent sequential one-arm point tasks, fixed lift metadata, no IK or physical execution claim. No algorithm changes or retraining performed."
+}

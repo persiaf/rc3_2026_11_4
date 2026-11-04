@@ -1,0 +1,55 @@
+{
+  "schema": "rc3-g22-portable-smoke-v1",
+  "archive_sha256": "e99f9f8d1a8d46f1d7bc728391237f1000e652f1bcb1f11f79b57415eeb627db",
+  "all_passed": true,
+  "dependencies": {
+    "rc3_rl_g2_delivery.zip": "2fe860781980ccf7bffbe2fdc0d7945efc5b8941a64c7fe0d0ac3b5bfddc2908",
+    "rc3_rl_g21_delivery.zip": "79b0985a1ec459f2a069e6b1c4d4841a6a54d7c609df9f020c25e7414086c50b"
+  },
+  "selected_dependency_files": {
+    "rc3_rl_g2_delivery.zip": 172,
+    "rc3_rl_g21_delivery.zip": 153
+  },
+  "new_members": 213,
+  "verified_new_payloads": 212,
+  "checks": [
+    {
+      "name": "new_tests",
+      "passed": true,
+      "exit_code": 0,
+      "tests": 16
+    },
+    {
+      "name": "saved_plan_audit",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "model_input_replay",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "evaluation_only_authority",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "refuse_duplicate_plans",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "name": "old_g21_gate_still_closed",
+      "passed": true,
+      "exit_code": 1
+    }
+  ],
+  "stage": "rc3_rl_g22/outputs/portable_check/1793758519517780400",
+  "additional_plans": 0,
+  "additional_search_proposals": 0,
+  "optimizer_updates": 0,
+  "ppo_actions": 0,
+  "scope": "Fresh ZIP extraction, synthetic tests, saved plan and model-input verification, duplicate-plan rejection, and unchanged old gate; no scene planning re-executed",
+  "archive_unchanged": true
+}

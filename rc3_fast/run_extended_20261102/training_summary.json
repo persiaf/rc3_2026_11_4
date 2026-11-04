@@ -1,0 +1,224 @@
+{
+  "status": "complete",
+  "selected": "seed43",
+  "epochs_per_seed": 500,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "training_instances": 1152,
+  "validation_instances": 192,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "python": "3.10.20",
+  "torch": "2.12.1+cu126",
+  "numpy": "2.2.6",
+  "hidden": 64,
+  "optimizer_updates": 27000,
+  "training_s": 51.85582380000051,
+  "fixed_portfolios": {
+    "top1": [
+      1
+    ],
+    "top3": [
+      0,
+      1,
+      7
+    ]
+  },
+  "fixed_validation_regret_pct": {
+    "top1": 3.7511657633669415,
+    "top3": 1.1348398101185289
+  },
+  "export_max_abs_error": 4.76837158203125e-07,
+  "candidates": [
+    {
+      "name": "seed17",
+      "member_ids": [
+        0
+      ],
+      "epoch": 2,
+      "metrics": {
+        "top1_regret_pct": 4.029896149993056,
+        "top1_objective": 159.65848990955,
+        "top3_regret_pct": 1.6400467846956417,
+        "top3_objective": 155.75286285025416
+      }
+    },
+    {
+      "name": "seed29",
+      "member_ids": [
+        1
+      ],
+      "epoch": 15,
+      "metrics": {
+        "top1_regret_pct": 4.286819139186678,
+        "top1_objective": 159.46553950194686,
+        "top3_regret_pct": 1.629059530244497,
+        "top3_objective": 155.51087603082604
+      }
+    },
+    {
+      "name": "seed43",
+      "member_ids": [
+        2
+      ],
+      "epoch": 2,
+      "metrics": {
+        "top1_regret_pct": 4.162459194131963,
+        "top1_objective": 159.33862067858956,
+        "top3_regret_pct": 1.475783910235525,
+        "top3_objective": 155.3428824532552
+      }
+    },
+    {
+      "name": "ensemble",
+      "member_ids": [
+        0,
+        1,
+        2
+      ],
+      "epoch": null,
+      "metrics": {
+        "top1_regret_pct": 4.314627394302465,
+        "top1_objective": 159.45441408624998,
+        "top3_regret_pct": 1.5841801905350035,
+        "top3_objective": 155.32016902344586
+      }
+    }
+  ],
+  "data_hashes": {
+    "manifest.json": "c761062f9a3ea763f3510c895fa343927327dfe5d4a7aca901c0f875b1c88d4d",
+    "train.npz": "266812c26eb44fec326247f36c462f373f6def50f97daa23b620bb234f702aee",
+    "validation.npz": "599683490ed113c0cb3d131456facc7b355ba261eaf417f7ddf10f243719445f"
+  },
+  "source_sha256": "16a89a3e0f6903c866b3193ded6e7bdd0ce974363628e95f0c81918ee5443c70",
+  "metadata": {
+    "feature_names": [
+      "log_tables",
+      "aspect",
+      "tasks_per_table",
+      "empty_fraction",
+      "one_fraction",
+      "two_fraction",
+      "three_fraction",
+      "table_width_mean",
+      "table_width_std",
+      "table_depth_mean",
+      "table_depth_std",
+      "aisle_gap",
+      "obstacles_per_table",
+      "navigable_fraction",
+      "candidate_cover_mean",
+      "candidate_cover_std",
+      "candidate_cover_max",
+      "task_options_mean",
+      "task_options_std",
+      "task_options_min",
+      "both_arms_fraction",
+      "distance_mean",
+      "distance_std",
+      "distance_q25",
+      "distance_q75",
+      "detour_ratio_mean",
+      "detour_ratio_std",
+      "task_x_mean",
+      "task_y_mean",
+      "task_x_std",
+      "task_y_std",
+      "task_xy_cov",
+      "row_work_std",
+      "column_work_std",
+      "task_options_q25",
+      "task_options_q75",
+      "single_dock_table_fraction",
+      "coverage_density"
+    ],
+    "recipes": [
+      {
+        "name": "nearest",
+        "alpha": 0.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain0.5_offset0.75",
+        "alpha": 0.5,
+        "beta": 0.75
+      },
+      {
+        "name": "gain0.5_offset2",
+        "alpha": 0.5,
+        "beta": 2.0
+      },
+      {
+        "name": "gain0.5_offset6",
+        "alpha": 0.5,
+        "beta": 6.0
+      },
+      {
+        "name": "gain1_offset0.75",
+        "alpha": 1.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain1_offset2",
+        "alpha": 1.0,
+        "beta": 2.0
+      },
+      {
+        "name": "gain1_offset6",
+        "alpha": 1.0,
+        "beta": 6.0
+      },
+      {
+        "name": "gain2_offset0.75",
+        "alpha": 2.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain2_offset2",
+        "alpha": 2.0,
+        "beta": 2.0
+      },
+      {
+        "name": "gain2_offset6",
+        "alpha": 2.0,
+        "beta": 6.0
+      },
+      {
+        "name": "gain4_offset0.75",
+        "alpha": 4.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain4_offset2",
+        "alpha": 4.0,
+        "beta": 2.0
+      },
+      {
+        "name": "gain4_offset6",
+        "alpha": 4.0,
+        "beta": 6.0
+      }
+    ],
+    "selected": "seed43",
+    "selected_member_ids": [
+      2
+    ],
+    "fixed_portfolios": {
+      "top1": [
+        1
+      ],
+      "top3": [
+        0,
+        1,
+        7
+      ]
+    },
+    "checkpoint_criterion": "validation top3 relative regret; tie-break top1",
+    "target": "relative recipe cost; lower is better",
+    "penalty": 0.75,
+    "search_passes": 2
+  }
+}

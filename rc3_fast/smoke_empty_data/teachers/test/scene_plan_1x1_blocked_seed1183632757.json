@@ -1,0 +1,356 @@
+{
+  "scene": {
+    "schema_version": 2,
+    "parameter_status": "DEMONSTRATION_ONLY_NOT_MEASURED",
+    "nx": 1,
+    "ny": 1,
+    "seed": 1183632757,
+    "start": [
+      0.0,
+      0.0
+    ],
+    "robot": {
+      "base_radius": 0.32,
+      "clearance": 0.08,
+      "arm_forward_offset": 0.12,
+      "arm_spacing": 0.36,
+      "arm_min_reach": 0.1,
+      "arm_max_reach": 0.9,
+      "arm_sector_half_angle_deg": 100.0,
+      "shoulder_height": 0.75,
+      "fixed_lift_height": 0.4
+    },
+    "geometry": {
+      "table_width": 0.8796345180959052,
+      "table_depth": 0.7317407396585796,
+      "aisle_gap": 1.5456483577753857,
+      "table_height": 0.75,
+      "dock_gap": 0.5,
+      "task_margin": 0.04
+    },
+    "table_width": 0.8796345180959052,
+    "table_depth": 0.7317407396585796,
+    "aisle_gap": 1.5456483577753857,
+    "x_lines": [
+      0.0,
+      2.4252828758712908
+    ],
+    "y_lines": [
+      0.0,
+      2.2773890974339652
+    ],
+    "tables": [
+      {
+        "id": 0,
+        "ix": 0,
+        "iy": 0,
+        "cx": 1.1759920483183472,
+        "cy": 1.1206531426806259,
+        "xmin": 0.7288668602795906,
+        "xmax": 1.6231172363571038,
+        "ymin": 0.7584569111887842,
+        "ymax": 1.4828493741724675,
+        "z": 0.75
+      }
+    ],
+    "tasks": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "x": 1.396941160885597,
+        "y": 1.43882854356744,
+        "z": 0.75
+      },
+      {
+        "id": 1,
+        "table_id": 0,
+        "x": 1.5777358415083989,
+        "y": 1.3851958780546487,
+        "z": 0.75
+      },
+      {
+        "id": 2,
+        "table_id": 0,
+        "x": 1.5192869269853644,
+        "y": 0.8995634712707964,
+        "z": 0.75
+      }
+    ],
+    "candidates": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 0.952429454298969,
+        "y": 0.2584569111887842,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.952429454298969,
+          0.0
+        ]
+      },
+      {
+        "id": 1,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.3995546423377256,
+        "y": 0.2584569111887842,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.3995546423377256,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "table_id": 0,
+        "side": "top",
+        "x": 0.952429454298969,
+        "y": 1.9828493741724675,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.952429454298969,
+          2.2773890974339652
+        ]
+      },
+      {
+        "id": 3,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.3995546423377256,
+        "y": 1.9828493741724675,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.3995546423377256,
+          2.2773890974339652
+        ]
+      },
+      {
+        "id": 4,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.2288668602795907,
+        "y": 0.939555026934705,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          0.939555026934705
+        ]
+      },
+      {
+        "id": 5,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.2288668602795907,
+        "y": 1.3017512584265467,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          1.3017512584265467
+        ]
+      },
+      {
+        "id": 6,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.123117236357104,
+        "y": 0.939555026934705,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4252828758712908,
+          0.939555026934705
+        ]
+      },
+      {
+        "id": 7,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.123117236357104,
+        "y": 1.3017512584265467,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.4252828758712908,
+          1.3017512584265467
+        ]
+      }
+    ],
+    "model_scope": "fixed-height spherical-sector arm proxy; independent sequential one-arm tasks; no IK, joint path, or hardware validation",
+    "complexity": "blocked",
+    "density_profile": 2,
+    "obstacles": [],
+    "layout_description": "Individual table scale 0.95-1.05; position jitter +/-0.04 m; horizontal aisle blockers on alternating rows."
+  },
+  "feasibility": [
+    {
+      "task_id": 0,
+      "left": [
+        2,
+        3,
+        7
+      ],
+      "right": [
+        2,
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "task_id": 1,
+      "left": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "right": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "task_id": 2,
+      "left": [
+        1,
+        6,
+        7
+      ],
+      "right": [
+        0,
+        1,
+        6,
+        7
+      ]
+    }
+  ],
+  "plans": {
+    "portfolio_teacher": {
+      "method": "portfolio_teacher",
+      "status": "complete",
+      "selected_candidate_ids": [
+        6
+      ],
+      "visit_order_candidate_ids": [
+        6
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 6,
+          "arm": "R"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 6,
+          "arm": "R"
+        },
+        {
+          "task_id": 2,
+          "candidate_id": 6,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 6,
+          "pose": {
+            "x": 2.123117236357104,
+            "y": 0.939555026934705,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 3.6670035422999994,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "R"
+            },
+            {
+              "task_id": 1,
+              "arm": "R"
+            },
+            {
+              "task_id": 2,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.9524294543,
+          0.0
+        ],
+        [
+          1.3995546423,
+          0.0
+        ],
+        [
+          2.4252828759,
+          0.0
+        ],
+        [
+          2.4252828759,
+          0.9395550269
+        ],
+        [
+          2.1231172364,
+          0.9395550269
+        ],
+        [
+          2.4252828759,
+          0.9395550269
+        ],
+        [
+          2.4252828759,
+          0.0
+        ],
+        [
+          1.3995546423,
+          0.0
+        ],
+        [
+          0.9524294543,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        3.6670035422999994,
+        3.667003542299999
+      ],
+      "route_length_m": 7.334007084599998,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 8.084007084599998,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 7.334007084599999,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    }
+  }
+}

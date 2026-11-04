@@ -1,0 +1,150 @@
+{
+  "schema": "rc3-g21-final-offline-decision-v1",
+  "finalized_client_date": "2026-11-04",
+  "created_utc": "2026-11-04T00:59:26.341523+00:00",
+  "protocol_sha256": "78eff5b44e47934b80fb99bc30103d83fe53e3ecc921d45c3a1908b7c4ace848",
+  "completed_offline_runs": 5,
+  "optimizer_updates": 8704,
+  "new_environment_queries": 0,
+  "new_ppo_committed_actions": 0,
+  "toy_passed": true,
+  "opportunity_passed": false,
+  "decision": "Finish bounded offline G2.1; do not start PPO, rule_dev or new scene evaluations in this round",
+  "reason": "All prescribed final supervised candidates fail at least one preregistered full-action opportunity threshold",
+  "run_receipt_sha256": {
+    "toy16": "ed402d0eff3febc990e40208f6f5d5f12e59f58294a56f8d9ce349f1a8ab3914",
+    "sampling_original": "99ee143651713ebcf69b4d221b531d66bb13726551cf8cc5c0545a19aed2e87b",
+    "sampling_root_half": "acf938063eb87c7a50d4c4e3d0817c294361e1f38218e4f2b278e530735d10f8",
+    "gain_control": "409061179b0e16f6ee41bffff0aa8ca0a9cbe24a3433a655d8915a637a9359e8",
+    "gain_gain": "9551a8d26b8d63c736daee12d1705dba67faa4a24cf929ede63cd2d8fba9ca13"
+  },
+  "gate_results": {
+    "sampling_original": {
+      "passed": false,
+      "checks": {
+        "initial_positive_full_known": false,
+        "extra_positive_full_known": false,
+        "initial_clear_stop_full_stop": true,
+        "initial_root_full_unknown": false
+      },
+      "metrics": {
+        "initial_positive_full_known": {
+          "count": 10,
+          "n": 39,
+          "fraction": 0.2564102564102564
+        },
+        "extra_positive_full_known": {
+          "count": 4,
+          "n": 26,
+          "fraction": 0.15384615384615385
+        },
+        "initial_clear_stop_full_stop": {
+          "count": 20,
+          "n": 25,
+          "fraction": 0.8
+        },
+        "initial_root_full_unknown": {
+          "count": 16,
+          "n": 64,
+          "fraction": 0.25
+        }
+      }
+    },
+    "sampling_root_half": {
+      "passed": false,
+      "checks": {
+        "initial_positive_full_known": false,
+        "extra_positive_full_known": false,
+        "initial_clear_stop_full_stop": true,
+        "initial_root_full_unknown": false
+      },
+      "metrics": {
+        "initial_positive_full_known": {
+          "count": 15,
+          "n": 39,
+          "fraction": 0.38461538461538464
+        },
+        "extra_positive_full_known": {
+          "count": 4,
+          "n": 26,
+          "fraction": 0.15384615384615385
+        },
+        "initial_clear_stop_full_stop": {
+          "count": 21,
+          "n": 25,
+          "fraction": 0.84
+        },
+        "initial_root_full_unknown": {
+          "count": 14,
+          "n": 64,
+          "fraction": 0.21875
+        }
+      }
+    },
+    "gain_control": {
+      "passed": false,
+      "checks": {
+        "initial_positive_full_known": false,
+        "extra_positive_full_known": false,
+        "initial_clear_stop_full_stop": true,
+        "initial_root_full_unknown": true
+      },
+      "metrics": {
+        "initial_positive_full_known": {
+          "count": 22,
+          "n": 39,
+          "fraction": 0.5641025641025641
+        },
+        "extra_positive_full_known": {
+          "count": 5,
+          "n": 26,
+          "fraction": 0.19230769230769232
+        },
+        "initial_clear_stop_full_stop": {
+          "count": 21,
+          "n": 25,
+          "fraction": 0.84
+        },
+        "initial_root_full_unknown": {
+          "count": 12,
+          "n": 64,
+          "fraction": 0.1875
+        }
+      }
+    },
+    "gain_gain": {
+      "passed": false,
+      "checks": {
+        "initial_positive_full_known": false,
+        "extra_positive_full_known": false,
+        "initial_clear_stop_full_stop": false,
+        "initial_root_full_unknown": false
+      },
+      "metrics": {
+        "initial_positive_full_known": {
+          "count": 25,
+          "n": 39,
+          "fraction": 0.6410256410256411
+        },
+        "extra_positive_full_known": {
+          "count": 12,
+          "n": 26,
+          "fraction": 0.46153846153846156
+        },
+        "initial_clear_stop_full_stop": {
+          "count": 2,
+          "n": 25,
+          "fraction": 0.08
+        },
+        "initial_root_full_unknown": {
+          "count": 29,
+          "n": 64,
+          "fraction": 0.453125
+        }
+      }
+    }
+  },
+  "deployment": "Frozen Fixed3/Detour; none of the five new checkpoints recommended for deployment",
+  "unknown_scope": "Unqueried actions have unknown quality; no zero/negative imputation and no claim of physical infeasibility",
+  "next_research": "Separately preregister STOP/action-score calibration or a shared-encoder hierarchical policy with matched controls; no automatic extra training"
+}

@@ -1,0 +1,71 @@
+{
+  "scope": "Training-device engineering probe only, not a planning or learning performance comparison. Reuses G01 development cases; all optimizer updates are disposable.",
+  "raw_observations": 8,
+  "distinct_state_keys": 8,
+  "preparation_environment_queries": 8,
+  "torch_threads": 1,
+  "results": [
+    {
+      "device": "cpu",
+      "batch_size": 64,
+      "message_steps": 2,
+      "parameters": 65602,
+      "warmup_updates": 3,
+      "timed_updates": 10,
+      "mean_complete_update_s": 0.1666108500001428,
+      "losses": [
+        0.14253146946430206,
+        0.1424478143453598,
+        0.14155083894729614,
+        0.14203833043575287,
+        0.14151066541671753,
+        0.1411210000514984,
+        0.14141049981117249,
+        0.14108394086360931,
+        0.14075307548046112,
+        0.1409345120191574
+      ],
+      "memory_before": {
+        "process_rss": 734244864,
+        "available_system": 1934082048
+      },
+      "memory_after": {
+        "process_rss": 738422784,
+        "available_system": 1948913664
+      }
+    },
+    {
+      "device": "cuda",
+      "batch_size": 64,
+      "message_steps": 2,
+      "parameters": 65602,
+      "warmup_updates": 3,
+      "timed_updates": 10,
+      "mean_complete_update_s": 0.0755311699998856,
+      "losses": [
+        0.14226345717906952,
+        0.142556294798851,
+        0.14146903157234192,
+        0.14192338287830353,
+        0.14149241149425507,
+        0.1409689038991928,
+        0.14125052094459534,
+        0.14097431302070618,
+        0.14056026935577393,
+        0.14070633053779602
+      ],
+      "memory_before": {
+        "process_rss": 1778577408,
+        "available_system": 1008619520
+      },
+      "memory_after": {
+        "process_rss": 1778606080,
+        "available_system": 1129861120
+      },
+      "cuda_peak_allocated_bytes": 119505920,
+      "cuda_peak_reserved_bytes": 159383552,
+      "cuda_allocated_bytes": 18109440,
+      "cuda_reserved_bytes": 159383552
+    }
+  ]
+}

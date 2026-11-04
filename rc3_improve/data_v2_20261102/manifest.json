@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "feature_names": [
+    "route_stops_log",
+    "relative_position",
+    "window_stops",
+    "required_tasks",
+    "candidate_count",
+    "tasks_per_stop",
+    "local_travel",
+    "direct_distance",
+    "detour_excess",
+    "detour_fraction",
+    "edge_mean",
+    "edge_std",
+    "edge_max",
+    "coverage_mean",
+    "coverage_max",
+    "options_mean",
+    "options_min",
+    "retained_coverage_fraction",
+    "x_span",
+    "y_span",
+    "centroid_x_fraction",
+    "centroid_y_fraction",
+    "both_arms_fraction",
+    "exact_supported"
+  ],
+  "splits": {
+    "train": 96,
+    "validation": 24,
+    "test": 108
+  },
+  "seed": 6241130,
+  "training_scales": [
+    "10x10"
+  ],
+  "test_frozen_before_training": true,
+  "objective_definition": "canonical route cost matching export_plan; zero-new-coverage stops removed before scoring",
+  "seconds": 75.62776420000046,
+  "teacher_positive_windows": 475
+}

@@ -1,0 +1,31 @@
+test_actor_critic_update_has_finite_nonzero_gradients (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_actual_sequential_transitions_are_monotone_and_refresh_windows (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_attempted_signature_is_masked_after_zero_gain (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_checkpoint_roundtrip_preserves_scores_and_action (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_empty_and_horizon_terminal_never_query_policy (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_padding_and_other_batch_sizes_do_not_change_valid_scores (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_redundant_stop_canonicalization_matches_export_and_reward (rc3_improve.test_learning.ImprovementLearningTests) ... ok
+test_collected_multistep_observations_replay_exactly (rc3_improve.test_ppo.PPOImplementationTests) ... ok
+test_real_ppo_update_is_finite_and_changes_actor_and_critic (rc3_improve.test_ppo.PPOImplementationTests) ... ok
+test_terminal_gae_matches_hand_computation_and_resets_between_episodes (rc3_improve.test_ppo.PPOImplementationTests) ... ok
+test_budget_and_independent_cost_monotonicity (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_disconnected_failure_keeps_denominator (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_empty_tasks_are_successful_zero_cost (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_invalid_candidate_cannot_replace_validated_anchor (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_invalid_input_can_be_serialized_as_failure (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_no_service_failure_keeps_every_task_and_method (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_scorer_failure_retains_anchor (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_worsening_but_complete_candidate_is_rejected (rc3_improve.test_reliability.ReliabilityTests) ... ok
+test_caps_preserve_original_and_do_not_drop_tasks (rc3_improve.test_repair.RepairTests) ... ok
+test_complex_scenes_preserve_coverage_and_validate_export (rc3_improve.test_repair.RepairTests) ... ok
+test_disconnected_alternative_cannot_replace_valid_incumbent (rc3_improve.test_repair.RepairTests) ... ok
+test_empty_route_and_malformed_inputs (rc3_improve.test_repair.RepairTests) ... ok
+test_exact_dp_matches_exhaustive_full_and_fixed_endpoints (rc3_improve.test_repair.RepairTests) ... ok
+test_joint_replacement_improves_over_incumbent (rc3_improve.test_repair.RepairTests) ... ok
+test_observable_features_and_window_tail (rc3_improve.test_repair.RepairTests) ... ok
+test_redundant_segment_can_be_removed (rc3_improve.test_repair.RepairTests) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 3.106s
+
+OK

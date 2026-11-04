@@ -1,0 +1,27 @@
+{
+  "scope": "Independent synthetic contract probes; no formal training, dataset use, or superiority measurement.",
+  "checks": [
+    {
+      "name": "T-major batch, true terminal reset masking, GAE and collector continuation",
+      "passed": true
+    },
+    {
+      "name": "Unknown teacher action absent from normalization and negative gradient",
+      "passed": true,
+      "unknown_logit": 1000.0,
+      "unknown_gradient": 0.0
+    },
+    {
+      "name": "Three branches loaded from one checkpoint have exactly identical initial parameters",
+      "passed": true,
+      "synthetic_checkpoint_sha256": "ff1710c96293fa37c4afa970d5b5d1860da4075bc2036018f3b717dcd081249a"
+    }
+  ],
+  "all_passed": true,
+  "inspected_source_hashes": {
+    "train_ppo.py": "5af8a30aeb5526156b88fba6bac960012afd9ddd3849e7ba8b757daeeb18227e",
+    "collector.py": "5963ae57a6543b8ef089b937f084fc8bc59a3a0a99bf8aa6531eeb33137cc6f9",
+    "worker.py": "ec648a8a14ea533970983f1ebc891bbe64b9874fac8e646e299fb35e918a3189",
+    "checkpoints.py": "fddeb244a5f822548fe5254a22123ea57d09da4e084f30cd401cb7eb9ad7354f"
+  }
+}

@@ -1,0 +1,1133 @@
+{
+  "states": 144,
+  "improvable": 136,
+  "all_zero": 8,
+  "oracle_mean_gain_pct": 0.6632509904835994,
+  "methods": {
+    "rank": {
+      "mean_selected_gain_pct": 0.12520221629018774,
+      "positive_selection_rate_on_improvable": 0.3235294117647059,
+      "mean_per_state_fraction_of_oracle": 0.1735938790085039,
+      "total_gain_fraction_of_oracle": 0.18877049274950716,
+      "exact_best_on_improvable": 12
+    },
+    "rank_stop": {
+      "mean_selected_gain_pct": 0.12520221629018774,
+      "positive_selection_rate_on_improvable": 0.3235294117647059,
+      "mean_per_state_fraction_of_oracle": 0.1735938790085039,
+      "total_gain_fraction_of_oracle": 0.18877049274950716,
+      "exact_best_on_improvable": 12
+    },
+    "gain": {
+      "mean_selected_gain_pct": 0.0818916322915947,
+      "positive_selection_rate_on_improvable": 0.25735294117647056,
+      "mean_per_state_fraction_of_oracle": 0.12203709299935586,
+      "total_gain_fraction_of_oracle": 0.12347004899590826,
+      "exact_best_on_improvable": 1
+    },
+    "positive": {
+      "mean_selected_gain_pct": 0.08247963299188636,
+      "positive_selection_rate_on_improvable": 0.27205882352941174,
+      "mean_per_state_fraction_of_oracle": 0.13005859754125967,
+      "total_gain_fraction_of_oracle": 0.12435659226343196,
+      "exact_best_on_improvable": 6
+    },
+    "detour": {
+      "mean_selected_gain_pct": 0.1980606531077582,
+      "positive_selection_rate_on_improvable": 0.4632352941176471,
+      "mean_per_state_fraction_of_oracle": 0.27544233053365885,
+      "total_gain_fraction_of_oracle": 0.2986209684562179,
+      "exact_best_on_improvable": 21
+    },
+    "random_expected": {
+      "mean_selected_gain_pct": 0.040136492823674215,
+      "positive_selection_rate_on_improvable": 0.1628968047643744,
+      "mean_per_state_fraction_of_oracle": 0.057753494144095474,
+      "total_gain_fraction_of_oracle": 0.060514787613674424,
+      "exact_best_on_improvable": null
+    }
+  },
+  "stop": {
+    "predicted": 0,
+    "true_positive": 0,
+    "false_positive": 0,
+    "false_negative": 8,
+    "true_negative": 136,
+    "probabilities_all": [
+      3.644043062958934e-05,
+      0.0019869620126371397,
+      0.01114537450194963,
+      0.059327981047640053,
+      0.13458519142883976,
+      0.3415274213946815,
+      0.40150650622846734
+    ],
+    "probabilities_zero": [
+      0.0054957131765090384,
+      0.024143680679131817,
+      0.07503347513028265,
+      0.16908966940291503,
+      0.23638158114509472,
+      0.27728166979200425,
+      0.28182612408610536
+    ],
+    "probabilities_improvable": [
+      3.644043062958934e-05,
+      0.0019236933223213408,
+      0.009898608947632094,
+      0.05790883450996315,
+      0.12593233582091817,
+      0.3421077016923417,
+      0.40150650622846734
+    ]
+  },
+  "rollouts": [
+    {
+      "scene_id": 0,
+      "seed": 806477264,
+      "mode": "regular",
+      "calls": 8,
+      "gain_pct": 1.200812857934602,
+      "label_calls": 150,
+      "trace": [
+        {
+          "step": 0,
+          "action": 62,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 37,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 27,
+          "reward": 0.5726953630149472,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 61,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 42,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 52,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 50,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 51,
+          "reward": 0.6281174949196547,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "scene_id": 1,
+      "seed": 581642321,
+      "mode": "regular",
+      "calls": 8,
+      "gain_pct": 0.0,
+      "label_calls": 93,
+      "trace": [
+        {
+          "step": 0,
+          "action": 4,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 51,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 8,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 33,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 88,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 58,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 1,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 2,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 2,
+      "seed": 777931079,
+      "mode": "regular",
+      "calls": 8,
+      "gain_pct": 1.834045584045597,
+      "label_calls": 356,
+      "trace": [
+        {
+          "step": 0,
+          "action": 48,
+          "reward": 0.40954415954417184,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 54,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 57,
+          "reward": 0.017806267806251618,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 54,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 68,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 69,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 21,
+          "reward": 1.068376068376089,
+          "accepted": true
+        },
+        {
+          "step": 7,
+          "action": 19,
+          "reward": 0.3383190883190844,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "scene_id": 3,
+      "seed": 1432654736,
+      "mode": "regular",
+      "calls": 8,
+      "gain_pct": 0.0,
+      "label_calls": 83,
+      "trace": [
+        {
+          "step": 0,
+          "action": 79,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 72,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 70,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 7,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 71,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 75,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 69,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 68,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 4,
+      "seed": 446139775,
+      "mode": "regular",
+      "calls": 8,
+      "gain_pct": 1.4296055012667557,
+      "label_calls": 256,
+      "trace": [
+        {
+          "step": 0,
+          "action": 37,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 69,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 59,
+          "reward": 0.8143322475570034,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 71,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 70,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 38,
+          "reward": 0.6152732537097524,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 41,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 68,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 5,
+      "seed": 458581588,
+      "mode": "regular",
+      "calls": 8,
+      "gain_pct": 0.2822580645161245,
+      "label_calls": 160,
+      "trace": [
+        {
+          "step": 0,
+          "action": 35,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 73,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 48,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 39,
+          "reward": 0.2822580645161245,
+          "accepted": true
+        },
+        {
+          "step": 4,
+          "action": 39,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 38,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 35,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 47,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 6,
+      "seed": 700647362,
+      "mode": "mixed",
+      "calls": 8,
+      "gain_pct": 1.3677911573333021,
+      "label_calls": 321,
+      "trace": [
+        {
+          "step": 0,
+          "action": 61,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 5,
+          "reward": 0.386415843431357,
+          "accepted": true
+        },
+        {
+          "step": 2,
+          "action": 46,
+          "reward": 0.0244143066047694,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 48,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 6,
+          "reward": 0.9569610072971757,
+          "accepted": true
+        },
+        {
+          "step": 5,
+          "action": 59,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 70,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 7,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 7,
+      "seed": 2048557680,
+      "mode": "mixed",
+      "calls": 8,
+      "gain_pct": 0.3510796655701177,
+      "label_calls": 234,
+      "trace": [
+        {
+          "step": 0,
+          "action": 14,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 13,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 11,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 22,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 12,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 43,
+          "reward": 0.3510796655701177,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 44,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 10,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 8,
+      "seed": 1988403149,
+      "mode": "mixed",
+      "calls": 8,
+      "gain_pct": 0.5528213035291547,
+      "label_calls": 313,
+      "trace": [
+        {
+          "step": 0,
+          "action": 29,
+          "reward": 1.6035553023358459e-06,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 14,
+          "reward": 0.18904411843707958,
+          "accepted": true
+        },
+        {
+          "step": 2,
+          "action": 22,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 26,
+          "reward": 0.035658640947808594,
+          "accepted": true
+        },
+        {
+          "step": 4,
+          "action": 26,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 21,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 16,
+          "reward": 0.30125060640328943,
+          "accepted": true
+        },
+        {
+          "step": 7,
+          "action": 32,
+          "reward": 0.026866334185674808,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "scene_id": 9,
+      "seed": 172405326,
+      "mode": "mixed",
+      "calls": 8,
+      "gain_pct": 1.8526229972684667,
+      "label_calls": 321,
+      "trace": [
+        {
+          "step": 0,
+          "action": 45,
+          "reward": 0.6407213714865232,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 12,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 50,
+          "reward": 1.1937229665688187,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 46,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 61,
+          "reward": 0.018178659213124698,
+          "accepted": true
+        },
+        {
+          "step": 5,
+          "action": 62,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 61,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 69,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 10,
+      "seed": 2032356671,
+      "mode": "mixed",
+      "calls": 8,
+      "gain_pct": 1.2438559071802575,
+      "label_calls": 316,
+      "trace": [
+        {
+          "step": 0,
+          "action": 71,
+          "reward": 0.34722267553089314,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 32,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 29,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 41,
+          "reward": 0.6250545237908246,
+          "accepted": true
+        },
+        {
+          "step": 4,
+          "action": 59,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 60,
+          "reward": 0.27157870785853994,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 71,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 13,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 11,
+      "seed": 488840541,
+      "mode": "mixed",
+      "calls": 8,
+      "gain_pct": 1.5055085903487784,
+      "label_calls": 356,
+      "trace": [
+        {
+          "step": 0,
+          "action": 31,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 74,
+          "reward": 1.0026219517738155,
+          "accepted": true
+        },
+        {
+          "step": 2,
+          "action": 78,
+          "reward": 0.4982340708106744,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 78,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 25,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 19,
+          "reward": 0.004652567764288414,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 19,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 70,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 12,
+      "seed": 1728920484,
+      "mode": "blocked",
+      "calls": 8,
+      "gain_pct": 0.8464899137401469,
+      "label_calls": 510,
+      "trace": [
+        {
+          "step": 0,
+          "action": 41,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 78,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 100,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 81,
+          "reward": 0.03301819701877639,
+          "accepted": true
+        },
+        {
+          "step": 4,
+          "action": 73,
+          "reward": 0.8055868392847307,
+          "accepted": true
+        },
+        {
+          "step": 5,
+          "action": 86,
+          "reward": 0.00020530018996263433,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 88,
+          "reward": 0.007679577246677176,
+          "accepted": true
+        },
+        {
+          "step": 7,
+          "action": 93,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 13,
+      "seed": 397643615,
+      "mode": "blocked",
+      "calls": 8,
+      "gain_pct": 1.307078250724255,
+      "label_calls": 302,
+      "trace": [
+        {
+          "step": 0,
+          "action": 14,
+          "reward": 0.3478875954503494,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 22,
+          "reward": 0.19662517863790105,
+          "accepted": true
+        },
+        {
+          "step": 2,
+          "action": 32,
+          "reward": 0.014171059053119358,
+          "accepted": true
+        },
+        {
+          "step": 3,
+          "action": 13,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 23,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 17,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 27,
+          "reward": 0.7483944175828853,
+          "accepted": true
+        },
+        {
+          "step": 7,
+          "action": 27,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 14,
+      "seed": 2136803537,
+      "mode": "blocked",
+      "calls": 8,
+      "gain_pct": 2.183805896395679,
+      "label_calls": 354,
+      "trace": [
+        {
+          "step": 0,
+          "action": 25,
+          "reward": 0.5320786238693037,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 25,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 66,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 33,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 77,
+          "reward": 1.1097730526630394,
+          "accepted": true
+        },
+        {
+          "step": 5,
+          "action": 80,
+          "reward": 0.5419542198633359,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 80,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 78,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 15,
+      "seed": 737123377,
+      "mode": "blocked",
+      "calls": 8,
+      "gain_pct": 0.8233607147022491,
+      "label_calls": 334,
+      "trace": [
+        {
+          "step": 0,
+          "action": 57,
+          "reward": 0.2554590971983262,
+          "accepted": true
+        },
+        {
+          "step": 1,
+          "action": 39,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 76,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 51,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 1,
+          "reward": 0.004080391232534599,
+          "accepted": true
+        },
+        {
+          "step": 5,
+          "action": 3,
+          "reward": 0.5638212262713884,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 3,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 36,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 16,
+      "seed": 1511644165,
+      "mode": "blocked",
+      "calls": 8,
+      "gain_pct": 0.5890900851332967,
+      "label_calls": 175,
+      "trace": [
+        {
+          "step": 0,
+          "action": 62,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 83,
+          "reward": 0.5890900851332967,
+          "accepted": true
+        },
+        {
+          "step": 2,
+          "action": 83,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 6,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 71,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 5,
+          "action": 7,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 6,
+          "action": 86,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 8,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "scene_id": 17,
+      "seed": 1895125488,
+      "mode": "blocked",
+      "calls": 8,
+      "gain_pct": 0.6588925706754473,
+      "label_calls": 247,
+      "trace": [
+        {
+          "step": 0,
+          "action": 10,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 1,
+          "action": 5,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 2,
+          "action": 9,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 3,
+          "action": 11,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 4,
+          "action": 57,
+          "reward": 0.632763150796004,
+          "accepted": true
+        },
+        {
+          "step": 5,
+          "action": 12,
+          "reward": 0.026129419879443245,
+          "accepted": true
+        },
+        {
+          "step": 6,
+          "action": 11,
+          "reward": 0.0,
+          "accepted": false
+        },
+        {
+          "step": 7,
+          "action": 12,
+          "reward": 0.0,
+          "accepted": false
+        }
+      ]
+    }
+  ],
+  "selected_validation_gain_pct": 1.0016177255757908,
+  "stored_selected_validation_gain_pct": 1.0016177255757908,
+  "label_repair_calls": 4881
+}

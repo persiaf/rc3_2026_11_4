@@ -1,0 +1,55 @@
+RESULT-TO-CLAIM EVALUATION
+
+Judge the preregistered G2 pilot against C1/C2; separate correctness from learned planning advantage. Compare frozen BC, continued BC, shared STOP/rules, and original Fixed3/Detour. Do not treat repeated validation rows as new scenes. Include the interrupted rollout cost uncertainty and teacher-fit diagnostic limitations. Return yes/partial/no, supported and unsupported claims, missing evidence, revised claim, next experiments, confidence, and routing.
+
+Original plan:
+# G2 单种子受控小试
+
+## 两个限定研究问题
+
+C1：策略是否能从新的在线交互中学到与实际总回报一致的多步搜索和停止，而不仅模仿最低路径成本的展示序列？最低证据是正确概率重算/GAE/回报闭合、参数确实更新，并比较同一 BC 初始化的冻结、继续监督及 PPO。
+
+C2：这种增量是否值得相同工作和完整时间条件下的开销？用共享去重、修复、接受界和验证的 detour-memory/ILS、随机、共同菜单 STOP，以及原 Fixed3/Detour 参照回答。非单调机制是待验证选项，不以变差比例提升作为成功标准。
+
+单种子、24 个反复查看的验证场景只提供开发信号，不承担最终稳定优势或跨规模泛化结论。
+
+## 固定预算与数据
+
+正式协议 `outputs/protocol.json` 在验证前保存并绑定 SHA256。按可发现历史记录排除 2,946 个种子，划分互斥的新百桌场景：初始教师64、追加教师32、训练池384、验证24(3模式各8)、规则开发12(各4)、管线6。
+
+重新采 G2 深度2、至多8分支(含STOP)教师，目标为已查分支最大剩余回报，包含末尾事件。证据 mask 与合法 mask 分离，未知不作负样本；每场景等权，同一路线重复权重均摊。监督只更新actor，不用有限深度值训练horizon16 critic。
+
+MLP256动作＋图模型768动作检查闭环。正式graph为hidden64、2次稀疏消息传递、无dropout/BatchNorm。BC初始400更新；从同一文件分叉冻结BC、继续BC2048更新、PPO32768真实环境动作。继续BC使用固定额外32教师，数据/求解/优化时间单列，不能声称等算力。
+
+PPO：8环境×32步rollout，4epoch、minibatch64、gamma1、GAE lambda .95、lr1e-4、clip.2、entropy .01、value coefficient .5、grad norm .5、targetKL .02。固定8192/16384/32768动作验证；最终交付32768检查点，不根据验证挑最佳，不自动扩展65536或3种子。
+
+## 执行门槛
+
+1. G2恢复/外部事件/记忆补位/认证复用回归通过，旧数据不修改。
+2. 教师目标、所有query工作、evidence mask和标签独立核对；基线参数只在rule_dev选择。
+3. 管线1024动作检查old/new logp、有效梯度、保存恢复、完整回合总账。失败先修复，不当作模型成绩。
+4. 初始BC、冻结对照、继续BC与正式PPO按预定预算运行；所有模型使用同一验证集、全部逐场景结果保存。
+5. 分开比较固定工作和400ms完整软时间预算；cold model load另列。原Fixed3不付共享菜单费，原Detour不能伪造G2 work/return。
+
+## 效率与归因
+
+CPU/显存实测指导设备与实现选择，不依据验证收益选择。宿主16GB、可用约2GB，优先避免大缓存或CUDA宿主context造成换页；8个环境worker只用NumPy/SciPy，各限1线程。训练固定问题准备缓存可复用，但首次准备、载入和部署fresh计时必须区分。评估每方法fresh adapter，最终认证保持独立。
+
+教师v1在发现接受界拒绝仍可能重复后中止并完整保留可得日志，现按同一64种子使用统一失败屏蔽v2重采。无场景替换、无改工作罚、未查看验证。该准备修复与已花调试查询单列，不计为正式训练数据。
+
+## 继续或收敛
+
+只有相对冻结/继续BC在至少两个检查点(含最终)出现一致信号，且对共享强规则有分布在多个模式的开发收益、验证/记账无故障、完整时间合理，才建议后续多种子。否则如实给出无稳定收益或负结果，分析停止/教师偏差/开销；本轮不以调奖励强迫非单调或挑好看检查点。
+
+产物：模型权重、恢复状态、逐更新日志、场景/教师清单、三检查点验证、匹配控制、工作/时间分解、原始方案、完整性和独立结果到主张判定。
+
+
+Evidence identities:
+{
+  "outputs/g2_audit.json": "40978d315cf185941ff4e29ac6a2d8be5142e43a19425540d1ca61ef96cd9db8",
+  "outputs/final_evaluation/summary.json": "7bef1603203269e3a8727310358abfea50a1c1503fce9388fdec58b3e6b4be51",
+  "outputs/final_evaluation/rows.csv": "2f704f38bcf72ae7c43f532919d3cc28d5b7289711703485ceb13e9a213a2d7c",
+  "outputs/teacher_fit_diagnostic/summary.json": "d090a3d40775d51401040a164524007ffac3063321352ea6ac7e60fb39c0f8d5",
+  "outputs/interruption_receipt.json": "72efc09b38c80949106a11262caf06731a642e2b0995ac6c07e07f25169912b6",
+  "design/EXPERIMENT_PLAN.md": "8323e55388ee5ad95f5523691a66a2384739451aabdab038962190566bcdc9c2"
+}

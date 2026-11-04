@@ -1,0 +1,232 @@
+{
+  "schema": "rc3-g2-evaluation-v1",
+  "cases": [
+    {
+      "case_id": 0,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 431014569,
+      "mode": "regular"
+    },
+    {
+      "case_id": 1,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 25824512,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 2,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 845157113,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 3,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1777005513,
+      "mode": "regular"
+    },
+    {
+      "case_id": 4,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 3040069,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 5,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1642783487,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 6,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 999495378,
+      "mode": "regular"
+    },
+    {
+      "case_id": 7,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1667158197,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 8,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 298637717,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 9,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1655429762,
+      "mode": "regular"
+    },
+    {
+      "case_id": 10,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 849320701,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 11,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 362067955,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 12,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 211953026,
+      "mode": "regular"
+    },
+    {
+      "case_id": 13,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1895160634,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 14,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 671100386,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 15,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 535236339,
+      "mode": "regular"
+    },
+    {
+      "case_id": 16,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1929060566,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 17,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 895362954,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 18,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 2016000044,
+      "mode": "regular"
+    },
+    {
+      "case_id": 19,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 335579717,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 20,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 686624156,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 21,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 79003958,
+      "mode": "regular"
+    },
+    {
+      "case_id": 22,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 919645120,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 23,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1444386212,
+      "mode": "blocked"
+    }
+  ],
+  "config": {
+    "epsilon": 0.02,
+    "horizon": 16,
+    "work_budget": 2000000,
+    "work_scale": 10000.0,
+    "lambda_work": 0.01,
+    "potential_weight": 0.0,
+    "max_tasks": 8,
+    "max_candidates": 80,
+    "max_width": 4,
+    "max_actions": 16,
+    "physical_scale": 2.2,
+    "cache_enabled": false
+  },
+  "time_limit_s": null,
+  "policy_kwargs": {},
+  "method_setup": {
+    "ppo_16384": {
+      "model": {
+        "sha256": "98ce9b33372e61d6ba0061db5a56209abeecbd9066ee82a39d2069abcece33e2",
+        "architecture": {
+          "kind": "graph",
+          "hidden": 64,
+          "message_steps": 2
+        },
+        "parameters": 65602
+      },
+      "cpu_copy_and_setup_s": 0.0027310000004945323,
+      "cold_load_s": null,
+      "cold_load_scope": "Caller supplied an already loaded model; measure disk loading separately."
+    }
+  },
+  "method_order": "rotated by case list position",
+  "scene_generation_timed": false,
+  "serialization_timed": false
+}

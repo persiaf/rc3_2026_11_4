@@ -1,0 +1,20 @@
+{
+  "schema": "rc3-g2-interruption-v1",
+  "observed_utc": "2026-11-03T12:08:03.253352+00:00",
+  "reason": "Codex turn aborted; unified exec session and Python processes no longer exist",
+  "checkpoint": "rc3_rl_g2\\outputs\\training\\interruption_18432.pt",
+  "checkpoint_sha256": "ff1948116c1463bcd9657da5a2b5d24d857e31ff6ee6448ec58c5b89ffbf183f",
+  "iteration": 72,
+  "committed_actual_actions": 18432,
+  "optimizer_updates": 1147,
+  "completed_episode_rows": 17413,
+  "workers": 8,
+  "checkpoint_log_counts_match": true,
+  "source_and_protocol_match": true,
+  "possible_unlogged_physical_actions_interval": [
+    0,
+    256
+  ],
+  "unknown_tail_excluded_from_updates_and_final_committed_budget": true,
+  "scope": "A killed uncommitted rollout is not persisted. Exact cumulative physical calls cannot be asserted. Restore registered checkpoint; no reward, data or hyperparameter change. Persisted/on-policy action total target remains32768. Interruption idle time and unlogged tail time are not in trainer elapsed_s."
+}

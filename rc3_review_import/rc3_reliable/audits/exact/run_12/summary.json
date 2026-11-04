@@ -1,0 +1,136 @@
+{
+  "cases": 12,
+  "checks": {
+    "exhaustive_synthetic_cost": 5.5,
+    "exhaustive_synthetic_match": true,
+    "empty_cost": 0.0,
+    "empty_valid": true
+  },
+  "skipped_candidates": [
+    {
+      "nx": 3,
+      "ny": 2,
+      "seed": 3100000003,
+      "tasks": 13,
+      "reason": "audit conditions on 1 <= N <= 12; task layout unchanged"
+    },
+    {
+      "nx": 3,
+      "ny": 2,
+      "seed": 3100000004,
+      "tasks": 14,
+      "reason": "audit conditions on 1 <= N <= 12; task layout unchanged"
+    }
+  ],
+  "fixed_portfolios": {
+    "top1": [
+      1
+    ],
+    "top3": [
+      0,
+      1,
+      7
+    ]
+  },
+  "recipes": [
+    {
+      "name": "nearest",
+      "alpha": 0.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain0.5_offset0.75",
+      "alpha": 0.5,
+      "beta": 0.75
+    },
+    {
+      "name": "gain0.5_offset2",
+      "alpha": 0.5,
+      "beta": 2.0
+    },
+    {
+      "name": "gain0.5_offset6",
+      "alpha": 0.5,
+      "beta": 6.0
+    },
+    {
+      "name": "gain1_offset0.75",
+      "alpha": 1.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain1_offset2",
+      "alpha": 1.0,
+      "beta": 2.0
+    },
+    {
+      "name": "gain1_offset6",
+      "alpha": 1.0,
+      "beta": 6.0
+    },
+    {
+      "name": "gain2_offset0.75",
+      "alpha": 2.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain2_offset2",
+      "alpha": 2.0,
+      "beta": 2.0
+    },
+    {
+      "name": "gain2_offset6",
+      "alpha": 2.0,
+      "beta": 6.0
+    },
+    {
+      "name": "gain4_offset0.75",
+      "alpha": 4.0,
+      "beta": 0.75
+    },
+    {
+      "name": "gain4_offset2",
+      "alpha": 4.0,
+      "beta": 2.0
+    },
+    {
+      "name": "gain4_offset6",
+      "alpha": 4.0,
+      "beta": 6.0
+    }
+  ],
+  "sampling": "alternating 2x2 and 3x2, sequential audit seeds >= 3100000000; conditioned on 1<=tasks<=12",
+  "task_generation": "original make_scene, independent uniform count 0..3 per table; no task resampling",
+  "exactness_scope": "current discrete candidate/feasibility/roadmap model only; oracle13 is a finite-portfolio reference",
+  "timing_scope": "new CPU timings only; solve includes route construction/DP; shared preprocessing and export/validation excluded",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_sha256": {
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693"
+  },
+  "all_plans_valid": true,
+  "fixed1": {
+    "mean_gap_pct": 3.5018479378808323,
+    "max_gap_pct": 17.249999999999986,
+    "exact_match_cases": 8,
+    "mean_solver_s": 0.0006522936666707816
+  },
+  "fixed3": {
+    "mean_gap_pct": 2.0643479378808336,
+    "max_gap_pct": 9.594882729211097,
+    "exact_match_cases": 9,
+    "mean_solver_s": 0.0015545201666687565
+  },
+  "oracle13": {
+    "mean_gap_pct": 2.0643479378808336,
+    "max_gap_pct": 9.594882729211097,
+    "exact_match_cases": 9,
+    "mean_solver_s": 0.006149380916648776
+  },
+  "exact": {
+    "mean_solver_s": 0.008948901166670945,
+    "max_solver_s": 0.04048523999995268
+  }
+}

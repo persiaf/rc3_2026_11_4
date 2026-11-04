@@ -1,0 +1,204 @@
+{
+  "scene": {
+    "schema_version": 2,
+    "parameter_status": "DEMONSTRATION_ONLY_NOT_MEASURED",
+    "nx": 1,
+    "ny": 1,
+    "seed": 718232789,
+    "start": [
+      0.0,
+      0.0
+    ],
+    "robot": {
+      "base_radius": 0.32,
+      "clearance": 0.08,
+      "arm_forward_offset": 0.12,
+      "arm_spacing": 0.36,
+      "arm_min_reach": 0.1,
+      "arm_max_reach": 0.9,
+      "arm_sector_half_angle_deg": 100.0,
+      "shoulder_height": 0.75,
+      "fixed_lift_height": 0.4
+    },
+    "geometry": {
+      "table_width": 0.9416657498490874,
+      "table_depth": 0.7210749047317759,
+      "aisle_gap": 1.5516772547132314,
+      "table_height": 0.75,
+      "dock_gap": 0.5,
+      "task_margin": 0.04
+    },
+    "table_width": 0.9416657498490874,
+    "table_depth": 0.7210749047317759,
+    "aisle_gap": 1.5516772547132314,
+    "x_lines": [
+      0.0,
+      2.493343004562319
+    ],
+    "y_lines": [
+      0.0,
+      2.272752159445007
+    ],
+    "tables": [
+      {
+        "id": 0,
+        "ix": 0,
+        "iy": 0,
+        "cx": 1.2640120458942072,
+        "cy": 1.159702939664957,
+        "xmin": 0.7698049959378709,
+        "xmax": 1.7582190958505435,
+        "ymin": 0.8106247615701336,
+        "ymax": 1.5087811177597803,
+        "z": 0.75
+      }
+    ],
+    "tasks": [],
+    "candidates": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.0169085209160391,
+        "y": 0.31062476157013363,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.0169085209160391,
+          0.0
+        ]
+      },
+      {
+        "id": 1,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.5111155708723754,
+        "y": 0.31062476157013363,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.5111155708723754,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.0169085209160391,
+        "y": 2.0087811177597805,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.0169085209160391,
+          2.272752159445007
+        ]
+      },
+      {
+        "id": 3,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.5111155708723754,
+        "y": 2.0087811177597805,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.5111155708723754,
+          2.272752159445007
+        ]
+      },
+      {
+        "id": 4,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.269804995937871,
+        "y": 0.9851638506175453,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          0.9851638506175453
+        ]
+      },
+      {
+        "id": 5,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.269804995937871,
+        "y": 1.3342420287123686,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          1.3342420287123686
+        ]
+      },
+      {
+        "id": 6,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.2582190958505435,
+        "y": 0.9851638506175453,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.493343004562319,
+          0.9851638506175453
+        ]
+      },
+      {
+        "id": 7,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.2582190958505435,
+        "y": 1.3342420287123686,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.493343004562319,
+          1.3342420287123686
+        ]
+      }
+    ],
+    "model_scope": "fixed-height spherical-sector arm proxy; independent sequential one-arm tasks; no IK, joint path, or hardware validation",
+    "complexity": "mixed",
+    "density_profile": 2,
+    "obstacles": [],
+    "layout_description": "Individual table scale 0.95-1.05; position jitter +/-0.04 m; horizontal aisle blockers on alternating rows."
+  },
+  "feasibility": [],
+  "plans": {
+    "portfolio_teacher": {
+      "method": "portfolio_teacher",
+      "status": "complete",
+      "selected_candidate_ids": [],
+      "visit_order_candidate_ids": [],
+      "assignments": [],
+      "service_stops": [],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        0.0
+      ],
+      "route_length_m": 0.0,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 0.0,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 0.0,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    }
+  }
+}

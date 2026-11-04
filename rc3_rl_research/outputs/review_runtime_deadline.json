@@ -1,0 +1,2849 @@
+{
+  "schema": "rc3-rl-g01-v1",
+  "adapter": {
+    "schema": "rc3-rl-g01-v1",
+    "source": {
+      "kind": "proxy",
+      "scene": {
+        "schema_version": 2,
+        "parameter_status": "DEMONSTRATION_ONLY_NOT_MEASURED",
+        "nx": 2,
+        "ny": 2,
+        "seed": 202611035,
+        "start": [
+          0.0,
+          0.0
+        ],
+        "robot": {
+          "base_radius": 0.32,
+          "clearance": 0.08,
+          "arm_forward_offset": 0.12,
+          "arm_spacing": 0.36,
+          "arm_min_reach": 0.1,
+          "arm_max_reach": 0.9,
+          "arm_sector_half_angle_deg": 100.0,
+          "shoulder_height": 0.75,
+          "fixed_lift_height": 0.4
+        },
+        "geometry": {
+          "table_width": 1.0,
+          "table_depth": 0.7,
+          "aisle_gap": 1.2,
+          "table_height": 0.75,
+          "dock_gap": 0.5,
+          "task_margin": 0.04
+        },
+        "table_width": 1.0,
+        "table_depth": 0.7,
+        "aisle_gap": 1.2,
+        "x_lines": [
+          0.0,
+          2.2,
+          4.4
+        ],
+        "y_lines": [
+          0.0,
+          1.9,
+          3.8
+        ],
+        "tables": [
+          {
+            "id": 0,
+            "ix": 0,
+            "iy": 0,
+            "cx": 1.1,
+            "cy": 0.95,
+            "xmin": 0.6000000000000001,
+            "xmax": 1.6,
+            "ymin": 0.6,
+            "ymax": 1.2999999999999998,
+            "z": 0.75
+          },
+          {
+            "id": 1,
+            "ix": 1,
+            "iy": 0,
+            "cx": 3.3000000000000003,
+            "cy": 0.95,
+            "xmin": 2.8000000000000003,
+            "xmax": 3.8000000000000003,
+            "ymin": 0.6,
+            "ymax": 1.2999999999999998,
+            "z": 0.75
+          },
+          {
+            "id": 2,
+            "ix": 0,
+            "iy": 1,
+            "cx": 1.1,
+            "cy": 2.85,
+            "xmin": 0.6000000000000001,
+            "xmax": 1.6,
+            "ymin": 2.5,
+            "ymax": 3.2,
+            "z": 0.75
+          },
+          {
+            "id": 3,
+            "ix": 1,
+            "iy": 1,
+            "cx": 3.3000000000000003,
+            "cy": 2.85,
+            "xmin": 2.8000000000000003,
+            "xmax": 3.8000000000000003,
+            "ymin": 2.5,
+            "ymax": 3.2,
+            "z": 0.75
+          }
+        ],
+        "tasks": [
+          {
+            "id": 0,
+            "table_id": 0,
+            "x": 1.3491968973547586,
+            "y": 0.8675225085801352,
+            "z": 0.75
+          },
+          {
+            "id": 1,
+            "table_id": 1,
+            "x": 3.239385158261746,
+            "y": 0.959517357021296,
+            "z": 0.75
+          },
+          {
+            "id": 2,
+            "table_id": 1,
+            "x": 3.0750202627281826,
+            "y": 0.6485877515263149,
+            "z": 0.75
+          },
+          {
+            "id": 3,
+            "table_id": 2,
+            "x": 0.9422171771262814,
+            "y": 3.0176772463883887,
+            "z": 0.75
+          },
+          {
+            "id": 4,
+            "table_id": 3,
+            "x": 3.2019627276437137,
+            "y": 2.770733110798368,
+            "z": 0.75
+          },
+          {
+            "id": 5,
+            "table_id": 3,
+            "x": 3.092906931980676,
+            "y": 2.6684014987806814,
+            "z": 0.75
+          }
+        ],
+        "candidates": [
+          {
+            "id": 0,
+            "table_id": 0,
+            "side": "bottom",
+            "x": 0.8500000000000001,
+            "y": 0.09999999999999998,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.8500000000000001,
+              0.0
+            ]
+          },
+          {
+            "id": 1,
+            "table_id": 0,
+            "side": "bottom",
+            "x": 1.35,
+            "y": 0.09999999999999998,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              1.35,
+              0.0
+            ]
+          },
+          {
+            "id": 2,
+            "table_id": 0,
+            "side": "top",
+            "x": 0.8500000000000001,
+            "y": 1.7999999999999998,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.8500000000000001,
+              1.9
+            ]
+          },
+          {
+            "id": 3,
+            "table_id": 0,
+            "side": "top",
+            "x": 1.35,
+            "y": 1.7999999999999998,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              1.35,
+              1.9
+            ]
+          },
+          {
+            "id": 4,
+            "table_id": 0,
+            "side": "left",
+            "x": 0.10000000000000009,
+            "y": 0.7749999999999999,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.0,
+              0.7749999999999999
+            ]
+          },
+          {
+            "id": 5,
+            "table_id": 0,
+            "side": "left",
+            "x": 0.10000000000000009,
+            "y": 1.125,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.0,
+              1.125
+            ]
+          },
+          {
+            "id": 6,
+            "table_id": 0,
+            "side": "right",
+            "x": 2.1,
+            "y": 0.7749999999999999,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              0.7749999999999999
+            ]
+          },
+          {
+            "id": 7,
+            "table_id": 0,
+            "side": "right",
+            "x": 2.1,
+            "y": 1.125,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              1.125
+            ]
+          },
+          {
+            "id": 8,
+            "table_id": 1,
+            "side": "bottom",
+            "x": 3.0500000000000003,
+            "y": 0.09999999999999998,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.0500000000000003,
+              0.0
+            ]
+          },
+          {
+            "id": 9,
+            "table_id": 1,
+            "side": "bottom",
+            "x": 3.5500000000000003,
+            "y": 0.09999999999999998,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.5500000000000003,
+              0.0
+            ]
+          },
+          {
+            "id": 10,
+            "table_id": 1,
+            "side": "top",
+            "x": 3.0500000000000003,
+            "y": 1.7999999999999998,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.0500000000000003,
+              1.9
+            ]
+          },
+          {
+            "id": 11,
+            "table_id": 1,
+            "side": "top",
+            "x": 3.5500000000000003,
+            "y": 1.7999999999999998,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.5500000000000003,
+              1.9
+            ]
+          },
+          {
+            "id": 12,
+            "table_id": 1,
+            "side": "left",
+            "x": 2.3000000000000003,
+            "y": 0.7749999999999999,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              0.7749999999999999
+            ]
+          },
+          {
+            "id": 13,
+            "table_id": 1,
+            "side": "left",
+            "x": 2.3000000000000003,
+            "y": 1.125,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              1.125
+            ]
+          },
+          {
+            "id": 14,
+            "table_id": 1,
+            "side": "right",
+            "x": 4.300000000000001,
+            "y": 0.7749999999999999,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              4.4,
+              0.7749999999999999
+            ]
+          },
+          {
+            "id": 15,
+            "table_id": 1,
+            "side": "right",
+            "x": 4.300000000000001,
+            "y": 1.125,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              4.4,
+              1.125
+            ]
+          },
+          {
+            "id": 16,
+            "table_id": 2,
+            "side": "bottom",
+            "x": 0.8500000000000001,
+            "y": 2.0,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.8500000000000001,
+              1.9
+            ]
+          },
+          {
+            "id": 17,
+            "table_id": 2,
+            "side": "bottom",
+            "x": 1.35,
+            "y": 2.0,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              1.35,
+              1.9
+            ]
+          },
+          {
+            "id": 18,
+            "table_id": 2,
+            "side": "top",
+            "x": 0.8500000000000001,
+            "y": 3.7,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.8500000000000001,
+              3.8
+            ]
+          },
+          {
+            "id": 19,
+            "table_id": 2,
+            "side": "top",
+            "x": 1.35,
+            "y": 3.7,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              1.35,
+              3.8
+            ]
+          },
+          {
+            "id": 20,
+            "table_id": 2,
+            "side": "left",
+            "x": 0.10000000000000009,
+            "y": 2.6750000000000003,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.0,
+              2.6750000000000003
+            ]
+          },
+          {
+            "id": 21,
+            "table_id": 2,
+            "side": "left",
+            "x": 0.10000000000000009,
+            "y": 3.025,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              0.0,
+              3.025
+            ]
+          },
+          {
+            "id": 22,
+            "table_id": 2,
+            "side": "right",
+            "x": 2.1,
+            "y": 2.6750000000000003,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              2.6750000000000003
+            ]
+          },
+          {
+            "id": 23,
+            "table_id": 2,
+            "side": "right",
+            "x": 2.1,
+            "y": 3.025,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              3.025
+            ]
+          },
+          {
+            "id": 24,
+            "table_id": 3,
+            "side": "bottom",
+            "x": 3.0500000000000003,
+            "y": 2.0,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.0500000000000003,
+              1.9
+            ]
+          },
+          {
+            "id": 25,
+            "table_id": 3,
+            "side": "bottom",
+            "x": 3.5500000000000003,
+            "y": 2.0,
+            "theta": 1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.5500000000000003,
+              1.9
+            ]
+          },
+          {
+            "id": 26,
+            "table_id": 3,
+            "side": "top",
+            "x": 3.0500000000000003,
+            "y": 3.7,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.0500000000000003,
+              3.8
+            ]
+          },
+          {
+            "id": 27,
+            "table_id": 3,
+            "side": "top",
+            "x": 3.5500000000000003,
+            "y": 3.7,
+            "theta": -1.5707963267948966,
+            "h": 0.4,
+            "corridor_anchor": [
+              3.5500000000000003,
+              3.8
+            ]
+          },
+          {
+            "id": 28,
+            "table_id": 3,
+            "side": "left",
+            "x": 2.3000000000000003,
+            "y": 2.6750000000000003,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              2.6750000000000003
+            ]
+          },
+          {
+            "id": 29,
+            "table_id": 3,
+            "side": "left",
+            "x": 2.3000000000000003,
+            "y": 3.025,
+            "theta": 0.0,
+            "h": 0.4,
+            "corridor_anchor": [
+              2.2,
+              3.025
+            ]
+          },
+          {
+            "id": 30,
+            "table_id": 3,
+            "side": "right",
+            "x": 4.300000000000001,
+            "y": 2.6750000000000003,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              4.4,
+              2.6750000000000003
+            ]
+          },
+          {
+            "id": 31,
+            "table_id": 3,
+            "side": "right",
+            "x": 4.300000000000001,
+            "y": 3.025,
+            "theta": 3.141592653589793,
+            "h": 0.4,
+            "corridor_anchor": [
+              4.4,
+              3.025
+            ]
+          }
+        ],
+        "model_scope": "fixed-height spherical-sector arm proxy; independent sequential one-arm tasks; no IK, joint path, or hardware validation"
+      },
+      "penalty": 0.75
+    },
+    "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+    "anchor_route": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "anchor_cost": 15.099999999999998
+  },
+  "initial_state": {
+    "schema": "rc3-rl-g01-v1",
+    "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+    "config": {
+      "epsilon": 0.02,
+      "horizon": 3,
+      "work_budget": 2000000,
+      "work_scale": 10000.0,
+      "lambda_work": 0.01,
+      "potential_weight": 0.0,
+      "max_tasks": 8,
+      "max_candidates": 80,
+      "max_width": 4,
+      "max_actions": 16,
+      "physical_scale": 2.2,
+      "cache_enabled": false
+    },
+    "seed": 73,
+    "anchor_certificate": {
+      "route": [
+        0,
+        1,
+        13,
+        29,
+        21,
+        0
+      ],
+      "plan": {
+        "method": "rl_fixed3_anchor",
+        "status": "complete",
+        "selected_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "visit_order_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "assignments": [
+          {
+            "task_id": 0,
+            "candidate_id": 0,
+            "arm": "R"
+          },
+          {
+            "task_id": 1,
+            "candidate_id": 12,
+            "arm": "L"
+          },
+          {
+            "task_id": 2,
+            "candidate_id": 12,
+            "arm": "R"
+          },
+          {
+            "task_id": 4,
+            "candidate_id": 28,
+            "arm": "L"
+          },
+          {
+            "task_id": 5,
+            "candidate_id": 28,
+            "arm": "R"
+          },
+          {
+            "task_id": 3,
+            "candidate_id": 20,
+            "arm": "L"
+          }
+        ],
+        "service_stops": [
+          {
+            "sequence": 1,
+            "candidate_id": 0,
+            "pose": {
+              "x": 0.8500000000000001,
+              "y": 0.09999999999999998,
+              "theta": 1.5707963267948966,
+              "h": 0.4
+            },
+            "arrival_distance_m": 0.95,
+            "tasks": [
+              {
+                "task_id": 0,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "candidate_id": 12,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 0.7749999999999999,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 3.2749999999999995,
+            "tasks": [
+              {
+                "task_id": 1,
+                "arm": "L"
+              },
+              {
+                "task_id": 2,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 3,
+            "candidate_id": 28,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 5.374999999999998,
+            "tasks": [
+              {
+                "task_id": 4,
+                "arm": "L"
+              },
+              {
+                "task_id": 5,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 4,
+            "candidate_id": 20,
+            "pose": {
+              "x": 0.10000000000000009,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 9.324999999999998,
+            "tasks": [
+              {
+                "task_id": 3,
+                "arm": "L"
+              }
+            ]
+          }
+        ],
+        "unserved_task_ids": [],
+        "unserved_reasons": [],
+        "route_polyline": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            0.85,
+            0.1
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            1.35,
+            0.0
+          ],
+          [
+            2.2,
+            0.0
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.3,
+            0.775
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.2,
+            1.125
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.3,
+            2.675
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            1.35,
+            1.9
+          ],
+          [
+            0.85,
+            1.9
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.1,
+            2.675
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            1.125
+          ],
+          [
+            0.0,
+            0.775
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "route_leg_costs_m": [
+          0.95,
+          2.3249999999999997,
+          2.099999999999999,
+          3.9499999999999997,
+          2.775
+        ],
+        "route_length_m": 12.099999999999998,
+        "stop_penalty_equivalent_m": 0.75,
+        "objective_length_plus_stops_m": 15.099999999999998,
+        "validation": {
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 12.1,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      },
+      "cost": 15.099999999999998,
+      "diagnostics": {
+        "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+        "scope": "2D static navigation and supplied reachability; no physical IK",
+        "recipe": 0,
+        "reference_failures": []
+      }
+    },
+    "best_certificate": {
+      "route": [
+        0,
+        1,
+        13,
+        29,
+        21,
+        0
+      ],
+      "plan": {
+        "method": "rl_fixed3_anchor",
+        "status": "complete",
+        "selected_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "visit_order_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "assignments": [
+          {
+            "task_id": 0,
+            "candidate_id": 0,
+            "arm": "R"
+          },
+          {
+            "task_id": 1,
+            "candidate_id": 12,
+            "arm": "L"
+          },
+          {
+            "task_id": 2,
+            "candidate_id": 12,
+            "arm": "R"
+          },
+          {
+            "task_id": 4,
+            "candidate_id": 28,
+            "arm": "L"
+          },
+          {
+            "task_id": 5,
+            "candidate_id": 28,
+            "arm": "R"
+          },
+          {
+            "task_id": 3,
+            "candidate_id": 20,
+            "arm": "L"
+          }
+        ],
+        "service_stops": [
+          {
+            "sequence": 1,
+            "candidate_id": 0,
+            "pose": {
+              "x": 0.8500000000000001,
+              "y": 0.09999999999999998,
+              "theta": 1.5707963267948966,
+              "h": 0.4
+            },
+            "arrival_distance_m": 0.95,
+            "tasks": [
+              {
+                "task_id": 0,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "candidate_id": 12,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 0.7749999999999999,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 3.2749999999999995,
+            "tasks": [
+              {
+                "task_id": 1,
+                "arm": "L"
+              },
+              {
+                "task_id": 2,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 3,
+            "candidate_id": 28,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 5.374999999999998,
+            "tasks": [
+              {
+                "task_id": 4,
+                "arm": "L"
+              },
+              {
+                "task_id": 5,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 4,
+            "candidate_id": 20,
+            "pose": {
+              "x": 0.10000000000000009,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 9.324999999999998,
+            "tasks": [
+              {
+                "task_id": 3,
+                "arm": "L"
+              }
+            ]
+          }
+        ],
+        "unserved_task_ids": [],
+        "unserved_reasons": [],
+        "route_polyline": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            0.85,
+            0.1
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            1.35,
+            0.0
+          ],
+          [
+            2.2,
+            0.0
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.3,
+            0.775
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.2,
+            1.125
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.3,
+            2.675
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            1.35,
+            1.9
+          ],
+          [
+            0.85,
+            1.9
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.1,
+            2.675
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            1.125
+          ],
+          [
+            0.0,
+            0.775
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "route_leg_costs_m": [
+          0.95,
+          2.3249999999999997,
+          2.099999999999999,
+          3.9499999999999997,
+          2.775
+        ],
+        "route_length_m": 12.099999999999998,
+        "stop_penalty_equivalent_m": 0.75,
+        "objective_length_plus_stops_m": 15.099999999999998,
+        "validation": {
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 12.1,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      },
+      "cost": 15.099999999999998,
+      "diagnostics": {
+        "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+        "scope": "2D static navigation and supplied reachability; no physical IK",
+        "recipe": 0,
+        "reference_failures": []
+      }
+    },
+    "returned_certificate": null,
+    "anchor": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "current": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "best": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "anchor_cost": 15.099999999999998,
+    "current_cost": 15.099999999999998,
+    "best_cost": 15.099999999999998,
+    "steps": 0,
+    "work_used": 0,
+    "history": [],
+    "menu": null,
+    "terminated": false,
+    "stop_reason": null,
+    "finalization": null,
+    "transitions": [],
+    "events": [],
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 289574060437291183585594597111235572357,
+        "inc": 173597405176857737877318840511332489317
+      },
+      "has_uint32": 0,
+      "uinteger": 0
+    },
+    "total_reward": 0.0,
+    "total_quality_reward": 0.0,
+    "total_work_penalty": 0.0,
+    "total_shaping_reward": 0.0,
+    "counters": {
+      "menu_builds": 0,
+      "menu_work": 0,
+      "proposal_calls": 0,
+      "proposal_work": 0,
+      "certification_calls": 0,
+      "accepted": 0,
+      "best_improvements": 0,
+      "work_count_incomplete": false
+    },
+    "timings": {
+      "menu_s": 0.0,
+      "proposal_s": 0.0,
+      "certification_s": 0.0,
+      "final_validation_s": 0.0
+    }
+  },
+  "state": {
+    "schema": "rc3-rl-g01-v1",
+    "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+    "config": {
+      "epsilon": 0.02,
+      "horizon": 3,
+      "work_budget": 2000000,
+      "work_scale": 10000.0,
+      "lambda_work": 0.01,
+      "potential_weight": 0.0,
+      "max_tasks": 8,
+      "max_candidates": 80,
+      "max_width": 4,
+      "max_actions": 16,
+      "physical_scale": 2.2,
+      "cache_enabled": false
+    },
+    "seed": 73,
+    "anchor_certificate": {
+      "route": [
+        0,
+        1,
+        13,
+        29,
+        21,
+        0
+      ],
+      "plan": {
+        "method": "rl_fixed3_anchor",
+        "status": "complete",
+        "selected_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "visit_order_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "assignments": [
+          {
+            "task_id": 0,
+            "candidate_id": 0,
+            "arm": "R"
+          },
+          {
+            "task_id": 1,
+            "candidate_id": 12,
+            "arm": "L"
+          },
+          {
+            "task_id": 2,
+            "candidate_id": 12,
+            "arm": "R"
+          },
+          {
+            "task_id": 4,
+            "candidate_id": 28,
+            "arm": "L"
+          },
+          {
+            "task_id": 5,
+            "candidate_id": 28,
+            "arm": "R"
+          },
+          {
+            "task_id": 3,
+            "candidate_id": 20,
+            "arm": "L"
+          }
+        ],
+        "service_stops": [
+          {
+            "sequence": 1,
+            "candidate_id": 0,
+            "pose": {
+              "x": 0.8500000000000001,
+              "y": 0.09999999999999998,
+              "theta": 1.5707963267948966,
+              "h": 0.4
+            },
+            "arrival_distance_m": 0.95,
+            "tasks": [
+              {
+                "task_id": 0,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "candidate_id": 12,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 0.7749999999999999,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 3.2749999999999995,
+            "tasks": [
+              {
+                "task_id": 1,
+                "arm": "L"
+              },
+              {
+                "task_id": 2,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 3,
+            "candidate_id": 28,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 5.374999999999998,
+            "tasks": [
+              {
+                "task_id": 4,
+                "arm": "L"
+              },
+              {
+                "task_id": 5,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 4,
+            "candidate_id": 20,
+            "pose": {
+              "x": 0.10000000000000009,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 9.324999999999998,
+            "tasks": [
+              {
+                "task_id": 3,
+                "arm": "L"
+              }
+            ]
+          }
+        ],
+        "unserved_task_ids": [],
+        "unserved_reasons": [],
+        "route_polyline": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            0.85,
+            0.1
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            1.35,
+            0.0
+          ],
+          [
+            2.2,
+            0.0
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.3,
+            0.775
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.2,
+            1.125
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.3,
+            2.675
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            1.35,
+            1.9
+          ],
+          [
+            0.85,
+            1.9
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.1,
+            2.675
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            1.125
+          ],
+          [
+            0.0,
+            0.775
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "route_leg_costs_m": [
+          0.95,
+          2.3249999999999997,
+          2.099999999999999,
+          3.9499999999999997,
+          2.775
+        ],
+        "route_length_m": 12.099999999999998,
+        "stop_penalty_equivalent_m": 0.75,
+        "objective_length_plus_stops_m": 15.099999999999998,
+        "validation": {
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 12.1,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      },
+      "cost": 15.099999999999998,
+      "diagnostics": {
+        "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+        "scope": "2D static navigation and supplied reachability; no physical IK",
+        "recipe": 0,
+        "reference_failures": []
+      }
+    },
+    "best_certificate": {
+      "route": [
+        0,
+        1,
+        13,
+        29,
+        21,
+        0
+      ],
+      "plan": {
+        "method": "rl_fixed3_anchor",
+        "status": "complete",
+        "selected_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "visit_order_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "assignments": [
+          {
+            "task_id": 0,
+            "candidate_id": 0,
+            "arm": "R"
+          },
+          {
+            "task_id": 1,
+            "candidate_id": 12,
+            "arm": "L"
+          },
+          {
+            "task_id": 2,
+            "candidate_id": 12,
+            "arm": "R"
+          },
+          {
+            "task_id": 4,
+            "candidate_id": 28,
+            "arm": "L"
+          },
+          {
+            "task_id": 5,
+            "candidate_id": 28,
+            "arm": "R"
+          },
+          {
+            "task_id": 3,
+            "candidate_id": 20,
+            "arm": "L"
+          }
+        ],
+        "service_stops": [
+          {
+            "sequence": 1,
+            "candidate_id": 0,
+            "pose": {
+              "x": 0.8500000000000001,
+              "y": 0.09999999999999998,
+              "theta": 1.5707963267948966,
+              "h": 0.4
+            },
+            "arrival_distance_m": 0.95,
+            "tasks": [
+              {
+                "task_id": 0,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "candidate_id": 12,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 0.7749999999999999,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 3.2749999999999995,
+            "tasks": [
+              {
+                "task_id": 1,
+                "arm": "L"
+              },
+              {
+                "task_id": 2,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 3,
+            "candidate_id": 28,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 5.374999999999998,
+            "tasks": [
+              {
+                "task_id": 4,
+                "arm": "L"
+              },
+              {
+                "task_id": 5,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 4,
+            "candidate_id": 20,
+            "pose": {
+              "x": 0.10000000000000009,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 9.324999999999998,
+            "tasks": [
+              {
+                "task_id": 3,
+                "arm": "L"
+              }
+            ]
+          }
+        ],
+        "unserved_task_ids": [],
+        "unserved_reasons": [],
+        "route_polyline": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            0.85,
+            0.1
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            1.35,
+            0.0
+          ],
+          [
+            2.2,
+            0.0
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.3,
+            0.775
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.2,
+            1.125
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.3,
+            2.675
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            1.35,
+            1.9
+          ],
+          [
+            0.85,
+            1.9
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.1,
+            2.675
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            1.125
+          ],
+          [
+            0.0,
+            0.775
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "route_leg_costs_m": [
+          0.95,
+          2.3249999999999997,
+          2.099999999999999,
+          3.9499999999999997,
+          2.775
+        ],
+        "route_length_m": 12.099999999999998,
+        "stop_penalty_equivalent_m": 0.75,
+        "objective_length_plus_stops_m": 15.099999999999998,
+        "validation": {
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 12.1,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      },
+      "cost": 15.099999999999998,
+      "diagnostics": {
+        "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+        "scope": "2D static navigation and supplied reachability; no physical IK",
+        "recipe": 0,
+        "reference_failures": []
+      }
+    },
+    "returned_certificate": {
+      "route": [
+        0,
+        1,
+        13,
+        29,
+        21,
+        0
+      ],
+      "plan": {
+        "method": "rl_search_final",
+        "status": "complete",
+        "selected_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "visit_order_candidate_ids": [
+          0,
+          12,
+          28,
+          20
+        ],
+        "assignments": [
+          {
+            "task_id": 0,
+            "candidate_id": 0,
+            "arm": "R"
+          },
+          {
+            "task_id": 1,
+            "candidate_id": 12,
+            "arm": "L"
+          },
+          {
+            "task_id": 2,
+            "candidate_id": 12,
+            "arm": "R"
+          },
+          {
+            "task_id": 4,
+            "candidate_id": 28,
+            "arm": "L"
+          },
+          {
+            "task_id": 5,
+            "candidate_id": 28,
+            "arm": "R"
+          },
+          {
+            "task_id": 3,
+            "candidate_id": 20,
+            "arm": "L"
+          }
+        ],
+        "service_stops": [
+          {
+            "sequence": 1,
+            "candidate_id": 0,
+            "pose": {
+              "x": 0.8500000000000001,
+              "y": 0.09999999999999998,
+              "theta": 1.5707963267948966,
+              "h": 0.4
+            },
+            "arrival_distance_m": 0.95,
+            "tasks": [
+              {
+                "task_id": 0,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 2,
+            "candidate_id": 12,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 0.7749999999999999,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 3.2749999999999995,
+            "tasks": [
+              {
+                "task_id": 1,
+                "arm": "L"
+              },
+              {
+                "task_id": 2,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 3,
+            "candidate_id": 28,
+            "pose": {
+              "x": 2.3000000000000003,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 5.374999999999998,
+            "tasks": [
+              {
+                "task_id": 4,
+                "arm": "L"
+              },
+              {
+                "task_id": 5,
+                "arm": "R"
+              }
+            ]
+          },
+          {
+            "sequence": 4,
+            "candidate_id": 20,
+            "pose": {
+              "x": 0.10000000000000009,
+              "y": 2.6750000000000003,
+              "theta": 0.0,
+              "h": 0.4
+            },
+            "arrival_distance_m": 9.324999999999998,
+            "tasks": [
+              {
+                "task_id": 3,
+                "arm": "L"
+              }
+            ]
+          }
+        ],
+        "unserved_task_ids": [],
+        "unserved_reasons": [],
+        "route_polyline": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            0.85,
+            0.1
+          ],
+          [
+            0.85,
+            0.0
+          ],
+          [
+            1.35,
+            0.0
+          ],
+          [
+            2.2,
+            0.0
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.3,
+            0.775
+          ],
+          [
+            2.2,
+            0.775
+          ],
+          [
+            2.2,
+            1.125
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.3,
+            2.675
+          ],
+          [
+            2.2,
+            2.675
+          ],
+          [
+            2.2,
+            1.9
+          ],
+          [
+            1.35,
+            1.9
+          ],
+          [
+            0.85,
+            1.9
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.1,
+            2.675
+          ],
+          [
+            0.0,
+            2.675
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            1.125
+          ],
+          [
+            0.0,
+            0.775
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "route_leg_costs_m": [
+          0.95,
+          2.3249999999999997,
+          2.099999999999999,
+          3.9499999999999997,
+          2.775
+        ],
+        "route_length_m": 12.099999999999998,
+        "stop_penalty_equivalent_m": 0.75,
+        "objective_length_plus_stops_m": 15.099999999999998,
+        "validation": {
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 12.1,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      },
+      "cost": 15.099999999999998,
+      "diagnostics": {
+        "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+        "scope": "2D static navigation and supplied reachability; no physical IK"
+      }
+    },
+    "anchor": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "current": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "best": [
+      0,
+      1,
+      13,
+      29,
+      21,
+      0
+    ],
+    "anchor_cost": 15.099999999999998,
+    "current_cost": 15.099999999999998,
+    "best_cost": 15.099999999999998,
+    "steps": 0,
+    "work_used": 264,
+    "history": [],
+    "menu": null,
+    "terminated": true,
+    "stop_reason": "external_deadline",
+    "finalization": {
+      "reason": "external_deadline",
+      "fallback_used": false,
+      "failure_reason": null,
+      "returned_cost": 15.099999999999998,
+      "best_cost": 15.099999999999998,
+      "quality_correction": 0.0,
+      "work_overrun": 0
+    },
+    "transitions": [],
+    "events": [
+      {
+        "event": "runtime_termination",
+        "reason": "external_deadline",
+        "reward": -0.000264,
+        "quality_reward": 0.0,
+        "shaping_reward": -0.0,
+        "work_penalty": 0.000264,
+        "menu_work_units": 264,
+        "after_steps": 0,
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 289574060437291183585594597111235572357,
+            "inc": 173597405176857737877318840511332489317
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "finalization": {
+          "reason": "external_deadline",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 15.099999999999998,
+          "best_cost": 15.099999999999998,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        }
+      }
+    ],
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 289574060437291183585594597111235572357,
+        "inc": 173597405176857737877318840511332489317
+      },
+      "has_uint32": 0,
+      "uinteger": 0
+    },
+    "total_reward": -0.000264,
+    "total_quality_reward": 0.0,
+    "total_work_penalty": 0.000264,
+    "total_shaping_reward": 0.0,
+    "counters": {
+      "menu_builds": 1,
+      "menu_work": 264,
+      "proposal_calls": 0,
+      "proposal_work": 0,
+      "certification_calls": 1,
+      "accepted": 0,
+      "best_improvements": 0,
+      "work_count_incomplete": false
+    },
+    "timings": {
+      "menu_s": 0.0007350000014412217,
+      "proposal_s": 0.0,
+      "certification_s": 0.0,
+      "final_validation_s": 0.0006563999995705672
+    }
+  },
+  "policy": {
+    "name": "detour"
+  },
+  "diagnostics": {
+    "schema": "rc3-rl-g01-v1",
+    "status": "complete",
+    "method": "greedy",
+    "algorithm_scope": "G1 shared-menu non-learning reference; not trained PPO",
+    "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+    "config": {
+      "epsilon": 0.02,
+      "horizon": 3,
+      "work_budget": 2000000,
+      "work_scale": 10000.0,
+      "lambda_work": 0.01,
+      "potential_weight": 0.0,
+      "max_tasks": 8,
+      "max_candidates": 80,
+      "max_width": 4,
+      "max_actions": 16,
+      "physical_scale": 2.2,
+      "cache_enabled": false
+    },
+    "seed": 73,
+    "anchor_cost": 15.099999999999998,
+    "current_cost": 15.099999999999998,
+    "best_cost": 15.099999999999998,
+    "returned_cost": 15.099999999999998,
+    "cost_nonincreasing": true,
+    "finalization": {
+      "reason": "external_deadline",
+      "fallback_used": false,
+      "failure_reason": null,
+      "returned_cost": 15.099999999999998,
+      "best_cost": 15.099999999999998,
+      "quality_correction": 0.0,
+      "work_overrun": 0
+    },
+    "failures": [],
+    "stop_reason": "external_deadline",
+    "steps": 0,
+    "work_used": 264,
+    "remaining_work": 1999736,
+    "counters": {
+      "menu_builds": 1,
+      "menu_work": 264,
+      "proposal_calls": 0,
+      "proposal_work": 0,
+      "certification_calls": 1,
+      "accepted": 0,
+      "best_improvements": 0,
+      "work_count_incomplete": false
+    },
+    "total_reward": -0.000264,
+    "quality_reward": 0.0,
+    "work_penalty": 0.000264,
+    "shaping_reward": 0.0,
+    "timing": {
+      "menu_s": 0.0007350000014412217,
+      "proposal_s": 0.0,
+      "certification_s": 0.0,
+      "final_validation_s": 0.0006563999995705672,
+      "selection_s": 0.030220200002077036,
+      "preparation_s": 0.0,
+      "complete_s": 0.03260280000176863,
+      "scope": "prepared_adapter_to_plan"
+    },
+    "time_limit_s": 0.02,
+    "time_overrun_s": 0.012602800001768628,
+    "policy_initial_state": {
+      "name": "detour"
+    },
+    "policy_state": {
+      "name": "detour"
+    },
+    "guarantee_scope": "Certified under supplied static discrete proxy/common constraints; no physical IK or hard real-time guarantee."
+  },
+  "plan": {
+    "method": "rl_search_final",
+    "status": "complete",
+    "selected_candidate_ids": [
+      0,
+      12,
+      28,
+      20
+    ],
+    "visit_order_candidate_ids": [
+      0,
+      12,
+      28,
+      20
+    ],
+    "assignments": [
+      {
+        "task_id": 0,
+        "candidate_id": 0,
+        "arm": "R"
+      },
+      {
+        "task_id": 1,
+        "candidate_id": 12,
+        "arm": "L"
+      },
+      {
+        "task_id": 2,
+        "candidate_id": 12,
+        "arm": "R"
+      },
+      {
+        "task_id": 4,
+        "candidate_id": 28,
+        "arm": "L"
+      },
+      {
+        "task_id": 5,
+        "candidate_id": 28,
+        "arm": "R"
+      },
+      {
+        "task_id": 3,
+        "candidate_id": 20,
+        "arm": "L"
+      }
+    ],
+    "service_stops": [
+      {
+        "sequence": 1,
+        "candidate_id": 0,
+        "pose": {
+          "x": 0.8500000000000001,
+          "y": 0.09999999999999998,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 0.95,
+        "tasks": [
+          {
+            "task_id": 0,
+            "arm": "R"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "candidate_id": 12,
+        "pose": {
+          "x": 2.3000000000000003,
+          "y": 0.7749999999999999,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 3.2749999999999995,
+        "tasks": [
+          {
+            "task_id": 1,
+            "arm": "L"
+          },
+          {
+            "task_id": 2,
+            "arm": "R"
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "candidate_id": 28,
+        "pose": {
+          "x": 2.3000000000000003,
+          "y": 2.6750000000000003,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 5.374999999999998,
+        "tasks": [
+          {
+            "task_id": 4,
+            "arm": "L"
+          },
+          {
+            "task_id": 5,
+            "arm": "R"
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "candidate_id": 20,
+        "pose": {
+          "x": 0.10000000000000009,
+          "y": 2.6750000000000003,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 9.324999999999998,
+        "tasks": [
+          {
+            "task_id": 3,
+            "arm": "L"
+          }
+        ]
+      }
+    ],
+    "unserved_task_ids": [],
+    "unserved_reasons": [],
+    "route_polyline": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.85,
+        0.0
+      ],
+      [
+        0.85,
+        0.1
+      ],
+      [
+        0.85,
+        0.0
+      ],
+      [
+        1.35,
+        0.0
+      ],
+      [
+        2.2,
+        0.0
+      ],
+      [
+        2.2,
+        0.775
+      ],
+      [
+        2.3,
+        0.775
+      ],
+      [
+        2.2,
+        0.775
+      ],
+      [
+        2.2,
+        1.125
+      ],
+      [
+        2.2,
+        1.9
+      ],
+      [
+        2.2,
+        2.675
+      ],
+      [
+        2.3,
+        2.675
+      ],
+      [
+        2.2,
+        2.675
+      ],
+      [
+        2.2,
+        1.9
+      ],
+      [
+        1.35,
+        1.9
+      ],
+      [
+        0.85,
+        1.9
+      ],
+      [
+        0.0,
+        1.9
+      ],
+      [
+        0.0,
+        2.675
+      ],
+      [
+        0.1,
+        2.675
+      ],
+      [
+        0.0,
+        2.675
+      ],
+      [
+        0.0,
+        1.9
+      ],
+      [
+        0.0,
+        1.125
+      ],
+      [
+        0.0,
+        0.775
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "route_leg_costs_m": [
+      0.95,
+      2.3249999999999997,
+      2.099999999999999,
+      3.9499999999999997,
+      2.775
+    ],
+    "route_length_m": 12.099999999999998,
+    "stop_penalty_equivalent_m": 0.75,
+    "objective_length_plus_stops_m": 15.099999999999998,
+    "validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "collision_count": 0,
+      "point_collision_count": 0,
+      "unserved_task_ids": [],
+      "independent_polyline_length_m": 12.1,
+      "errors": [],
+      "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+    }
+  },
+  "selections": [
+    {
+      "observation": {
+        "schema": "rc3-rl-g01-v1",
+        "problem_id": "0011c90d6d0eb58025896ac3c13564edcb27a8981e6141292b35d6c6329950a8",
+        "actions": [
+          {
+            "kind": "improve",
+            "start": 1,
+            "end": 5,
+            "forbidden_node": null,
+            "key": "improve:1:5:-"
+          },
+          {
+            "kind": "replace",
+            "start": 3,
+            "end": 4,
+            "forbidden_node": 29,
+            "key": "replace:3:4:29"
+          },
+          {
+            "kind": "improve",
+            "start": 2,
+            "end": 5,
+            "forbidden_node": null,
+            "key": "improve:2:5:-"
+          },
+          {
+            "kind": "replace",
+            "start": 4,
+            "end": 5,
+            "forbidden_node": 21,
+            "key": "replace:4:5:21"
+          },
+          {
+            "kind": "improve",
+            "start": 3,
+            "end": 5,
+            "forbidden_node": null,
+            "key": "improve:3:5:-"
+          },
+          {
+            "kind": "replace",
+            "start": 1,
+            "end": 2,
+            "forbidden_node": 1,
+            "key": "replace:1:2:1"
+          },
+          {
+            "kind": "improve",
+            "start": 4,
+            "end": 5,
+            "forbidden_node": null,
+            "key": "improve:4:5:-"
+          },
+          {
+            "kind": "replace",
+            "start": 2,
+            "end": 3,
+            "forbidden_node": 13,
+            "key": "replace:2:3:13"
+          },
+          {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          }
+        ],
+        "mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "features": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            4.0,
+            6.0,
+            22.0,
+            5.499999999999998,
+            0.0,
+            5.499999999999998,
+            1.0,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            6.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.5,
+            1.0,
+            2.0,
+            5.0,
+            2.749999999999999,
+            1.954545454545454,
+            0.7954545454545454,
+            0.2892561983471075,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            2.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.25,
+            3.0,
+            5.0,
+            16.0,
+            5.0681818181818175,
+            0.43181818181818177,
+            4.636363636363636,
+            0.914798206278027,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            5.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.75,
+            1.0,
+            1.0,
+            3.0,
+            3.056818181818181,
+            2.261363636363636,
+            0.7954545454545454,
+            0.26022304832713755,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.5,
+            2.0,
+            3.0,
+            10.0,
+            4.011363636363636,
+            1.3977272727272725,
+            2.6136363636363633,
+            0.651558073654391,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            3.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            5.0,
+            1.4886363636363633,
+            1.3977272727272725,
+            0.09090909090909079,
+            0.061068702290076264,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.75,
+            1.0,
+            1.0,
+            4.0,
+            3.056818181818181,
+            2.261363636363636,
+            0.7954545454545454,
+            0.26022304832713755,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.25,
+            1.0,
+            2.0,
+            5.0,
+            2.011363636363636,
+            1.9204545454545452,
+            0.09090909090909058,
+            0.0451977401129942,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            2.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6094379124341003,
+            1.9459101490553132,
+            3.4965075614664802,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "feature_names": [
+          "is_improve",
+          "is_replace",
+          "is_stop",
+          "relative_position",
+          "window_stops",
+          "required_tasks",
+          "candidate_count",
+          "local_travel",
+          "direct_distance",
+          "detour_excess",
+          "detour_fraction",
+          "route_stops_log",
+          "task_count_log",
+          "global_candidate_count_log",
+          "coverage_count_mean",
+          "coverage_count_max",
+          "removed_covered_tasks",
+          "retained_overlap_fraction",
+          "pool_extra_covered_tasks",
+          "remaining_work_fraction",
+          "steps_remaining_fraction",
+          "attempt_history_count"
+        ],
+        "menu_context_key": "ae3b890d73c73dc97b22b879f528d9ade7a498aa9f5cf6ba6372ae913666b95e",
+        "action_context_keys": [
+          "4cb3bfbdb00abb1bf5cfc4dd0d0ff7d21290b375c1f5798e5c95e609a3355828",
+          "16077f2f2cbfdbc5eee4d591e8733fb334959deef84fae42c8d2e74915c7f37b",
+          "d8011018bf328a5156d21709edb67bcf743dac1e77cfa4c2712982099e5f21e4",
+          "6d66bea78d5ce23fc1f7ca19d906a25e14080ab64a12d79b049eaf4080ea4c20",
+          "46ad09c9855fc4e590529e0e0add6640a4b3f58ace610a48aa6f0ab2cb43caca",
+          "c109d1f904e12da3978e9549ef9eec0f493a96ed1ba847961a5d40e44d99b1a1",
+          "dcddaa703340c4fe42f6d0e18d165ad32115b6100aaee523952fc1ad20d3cae8",
+          "b74356af933ef72e7400d41756f3f747064ed9dc7a19f8406e89cc208a51c77f",
+          "a7a9a8d869b876b3fda2b6c59a4094f96f06ee0f09cb142ba099507371ec5292"
+        ],
+        "current": [
+          0,
+          1,
+          13,
+          29,
+          21,
+          0
+        ],
+        "best": [
+          0,
+          1,
+          13,
+          29,
+          21,
+          0
+        ],
+        "anchor": [
+          0,
+          1,
+          13,
+          29,
+          21,
+          0
+        ],
+        "current_cost": 15.099999999999998,
+        "best_cost": 15.099999999999998,
+        "anchor_cost": 15.099999999999998,
+        "current_best_gap": 0.0,
+        "task_coverage_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "task_count": 6,
+        "candidate_count": 32,
+        "steps": 0,
+        "steps_remaining": 3,
+        "remaining_work": 2000000,
+        "work_budget": 2000000,
+        "work_remaining_fraction": 1.0,
+        "pending_menu_work": 264,
+        "work_after_menu": 1999736,
+        "history": [],
+        "terminated": false,
+        "stop_reason": null
+      },
+      "action_id": 0,
+      "rng_before": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 289574060437291183585594597111235572357,
+          "inc": 173597405176857737877318840511332489317
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "rng_after": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 289574060437291183585594597111235572357,
+          "inc": 173597405176857737877318840511332489317
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "transition_index": 0,
+      "executed": false
+    }
+  ]
+}

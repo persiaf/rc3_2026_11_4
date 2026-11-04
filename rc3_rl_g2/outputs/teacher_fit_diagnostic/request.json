@@ -1,0 +1,20 @@
+{
+  "schema": "rc3-g2-teacher-fit-v1",
+  "scope": "Post hoc inference on the already queried supervised teacher states, not a new generalization set. Near-best means best among the queried finite-depth suffixes; unknown legal actions have no quality label. No environment step, repair oracle, finalization or new teacher query is performed.",
+  "batch_size": 8,
+  "device": "cpu",
+  "tool_sha256": "c7176e93f84c63ad5f1d5ad950207ad818cdbfbd42c47c572a010be262409e52",
+  "checkpoint_sha256": {
+    "bc_frozen": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+    "bc_continued_2048": "ed503eee23420b3332dc19e5077f793f2bdaa8a161f2faadc0bc116a423496af",
+    "ppo_final": "b73718cf1cabbb1741d5f3d04109b95dedbda07de660f8e638975e82e78de5f3"
+  },
+  "teacher_sha256": {
+    "initial": "f53d32640dc6a61f7014a0724bc7565c71c254a2ddc087f244a09e9d62d97ac8",
+    "extra": "46a7c5133c6b7e4529f207365f49aa0b2e8f839ce1cea46f471fd885105d0a8a"
+  },
+  "final_comparison_summary_sha256": "7bef1603203269e3a8727310358abfea50a1c1503fce9388fdec58b3e6b4be51",
+  "protocol_sha256": "37037ab87d8c973bd9cb9bcf92b758903b82e6f0dfaac1ca8753709b60cb1557",
+  "new_environment_queries": 0,
+  "expected_rows": 2304
+}

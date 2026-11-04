@@ -1,0 +1,111 @@
+{
+  "scope": "Saved-plan record consistency and declared geometric proxy checks only; no re-solving or modification of historical timing metrics.",
+  "visit_order_check": "Each cumulative navigation-leg length must identify a polyline vertex at the corresponding declared service candidate, followed by the depot.",
+  "saved_plan_checks": [
+    {
+      "file": "scene_plan_10x10_seed0.json",
+      "method": "nearest_feasible",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_10x10_seed0.json",
+      "method": "coverage_cost_2opt",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_4x3_seed0.json",
+      "method": "nearest_feasible",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_4x3_seed0.json",
+      "method": "coverage_cost_2opt",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_6x6_seed0.json",
+      "method": "nearest_feasible",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_6x6_seed0.json",
+      "method": "coverage_cost_2opt",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_8x8_seed0.json",
+      "method": "nearest_feasible",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    },
+    {
+      "file": "scene_plan_8x8_seed0.json",
+      "method": "coverage_cost_2opt",
+      "valid_model_plan": true,
+      "all_tasks_served": true
+    }
+  ],
+  "negative_regressions": [
+    {
+      "case": "unknown_task_id",
+      "rejected_without_exception": true,
+      "errors": [
+        "unknown task assigned",
+        "unserved task bookkeeping mismatch"
+      ]
+    },
+    {
+      "case": "unknown_candidate_assignment",
+      "rejected_without_exception": true,
+      "errors": [
+        "task 0: unknown candidate ID 999999"
+      ]
+    },
+    {
+      "case": "unknown_candidate_in_visit_order",
+      "rejected_without_exception": true,
+      "errors": [
+        "unknown candidate IDs in selected set or visit order: [999999]",
+        "navigation leg count does not match visit order plus return to depot"
+      ]
+    },
+    {
+      "case": "unknown_arm",
+      "rejected_without_exception": true,
+      "errors": [
+        "task 0: unknown arm 'UNKNOWN_ARM'; expected L or R"
+      ]
+    },
+    {
+      "case": "reversed_declared_visit_order",
+      "rejected_without_exception": true,
+      "errors": [
+        "dock 7: declared visit order differs from navigation leg endpoint",
+        "dock 40: declared visit order differs from navigation leg endpoint",
+        "dock 10: declared visit order differs from navigation leg endpoint",
+        "dock 23: declared visit order differs from navigation leg endpoint",
+        "dock 50: declared visit order differs from navigation leg endpoint",
+        "dock 58: declared visit order differs from navigation leg endpoint",
+        "dock 92: declared visit order differs from navigation leg endpoint",
+        "dock 82: declared visit order differs from navigation leg endpoint",
+        "dock 67: declared visit order differs from navigation leg endpoint",
+        "dock 4: declared visit order differs from navigation leg endpoint"
+      ]
+    },
+    {
+      "case": "wrong_leg_boundaries_same_total_length",
+      "rejected_without_exception": true,
+      "errors": [
+        "dock 4: navigation leg endpoint is absent from route polyline"
+      ]
+    }
+  ],
+  "historical_metrics_sha256_unchanged": "1648b316ea423e264365310974cdd13249ea93187b1801826cc55fd1daf7a93b",
+  "all_passed": true
+}

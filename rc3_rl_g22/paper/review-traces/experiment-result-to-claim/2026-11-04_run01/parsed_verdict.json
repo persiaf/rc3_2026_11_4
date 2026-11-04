@@ -1,0 +1,91 @@
+{
+  "experiment_id": "G2.2 frozen-policy complete-planning feedback",
+  "review_date": "2026-11-04",
+  "reviewer_role": "independently delegated paper architect/reviewer",
+  "reviewer_is_executor": false,
+  "reviewer_method": "Independent saved-data arithmetic with standard library and NumPy; no environment/planner/model execution",
+  "claim_supported": "partial",
+  "confidence": "high",
+  "confidence_scope": "Finite-record arithmetic and scoped verdict only; no population superiority or timing-repeatability claim",
+  "claims": {
+    "C1_practical_increment": {
+      "claim_supported": "partial",
+      "reason": "Selected scenes improve versus Fixed3, but neither model establishes stable practical superiority over early Detour or original Detour."
+    },
+    "C2_selected_unknown_outcomes": {
+      "claim_supported": "yes",
+      "scope": "Only executed selected actions and actual frozen trajectories; full-state matching and null unknown values verified."
+    },
+    "PPO_or_DRL_increment": {
+      "claim_supported": "no",
+      "reason": "Not tested; no RL updates or PPO runs. Two checkpoints are matched BC-stage models."
+    },
+    "generalization_physical_feasibility_hard_realtime": {
+      "claim_supported": "no",
+      "reason": "Not tested; old development scenes, proxy validation, one timing per combination."
+    }
+  },
+  "what_results_support": [
+    "72 registered plans completed; all saved route lengths, J, allocations, final-best route identities, shared reward/work ledgers and exact-state teacher categories match source evidence and executor summaries.",
+    "Unqueried selected actions have both beneficial and wasteful outcomes; CE unqueried: 1/4 immediate best improvements; CE+gain: 3/7. Unknown teacher Q remains null.",
+    "CE+gain versus continued CE: J 3 wins/9 ties/0 losses; mean per-scene gain +0.098452 percentage points; mean shared return +0.059850, with higher complete time in 11/12 single observations.",
+    "Relative root STOP mean return: continued CE -0.014086 (1/7/4), CE+gain +0.045764 (5/0/7), early Detour +0.110854 (4/0/8).",
+    "Original Detour J is lower than both learned methods on all 12 cases; early Detour has better mean J/return than CE+gain and is faster on 12/12 single observations.",
+    "Existing trajectories show late-stop accounting gaps, conditional on prefix validation not rolling back. Negative raw suffix alone is not a negative STOP advantage."
+  ],
+  "what_results_dont_support": [
+    "PPO/DRL benefit, independent generalization, broad superiority from a single paired BC checkpoint comparison.",
+    "All unknown actions are poor, zero/negative labels for unknown teacher values, or optimal Q estimates from immediate reward or frozen suffix.",
+    "A deployable optimal stopping policy from hindsight prefix selection, or learned quality safety attributable solely to the policy.",
+    "Stable timing superiority, inherent model-load speed differences, hard real time, 400 ms compliance, IK or physical feasibility."
+  ],
+  "missing_evidence": [
+    "Fixed-budget counterfactual action coverage at identical states, including STOP semantics and horizon/depth definition.",
+    "New held-out scenes distinct from these reused development cases, training seeds/checkpoint replications and repeated complete timings.",
+    "Matched strong-rule, BC and actual RL comparisons before claiming RL increment.",
+    "Real calibration/IK and hard-deadline verification if physical or real-time claims are intended.",
+    "Paper-level claim audit is unavailable."
+  ],
+  "suggested_claim_revision": "On 12 reused development scenes, frozen full-menu policies reveal both useful and wasteful previously unqueried actions; CE+gain improves some outcomes relative to continued CE while leaving action ranking and stopping inefficiencies, without established stable practical advantage over strong rules/planners.",
+  "next_experiments_needed": [
+    "Design only: condition any additional counterfactual feedback on a separately fixed authorized budget; never impute unknown labels.",
+    "Design only: separate net-value prediction from actor confidence, jointly validate continuation ranking and stopping, and retain matched continued-CE data/update control.",
+    "Design only: prospective held-out scenes/repeated time and Fixed3/original Detour/shared STOP/early Detour comparisons.",
+    "Actual RL increment requires a separately authorized RL run with repaired and continued BC, early strong rule and one-step learned controls."
+  ],
+  "paper_claim_audit": "unavailable",
+  "provisional": true,
+  "provisional_label": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "pending_external_review_reason": "The designated reviewer was independently delegated and completed this review; paper audit absence is a separate provisional condition.",
+  "route": "supplement-design-only / narrow-claim",
+  "training_allowed": false,
+  "ppo_allowed": false,
+  "additional_plans_allowed": false,
+  "new_counterfactual_branches_allowed": false,
+  "evidence_recomputation": {
+    "plans": 72,
+    "shared_actions": 95,
+    "model_greedy_decisions_checked_from_saved_logits": 52,
+    "shared_proposals": 47,
+    "original_detour_proposals": 192,
+    "all_passed": true
+  },
+  "reviewer_execution_counts": {
+    "new_plans": 0,
+    "environment_actions": 0,
+    "search_proposals": 0,
+    "teacher_branches": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0,
+    "ppo_actions": 0
+  },
+  "artifacts": [
+    "recompute.py",
+    "recomputed.json",
+    "prompt.txt",
+    "raw_response.md",
+    "routing.json"
+  ],
+  "figure_review": "figures/REVIEW.md: plots agree with independently recomputed data; recommend explicit negative-suffix versus STOP clarification."
+}

@@ -1,0 +1,10 @@
+{
+  "device": "cpu",
+  "torch_threads": 1,
+  "numpy_worker_threads": 1,
+  "workers": 8,
+  "adapter_lru_per_worker": 1,
+  "decision": "CPU model chosen from pre-training probes because only about 2 GiB host RAM was available; CUDA context added about 1 GiB. GPU update benchmark is retained, not used to claim end-to-end speed.",
+  "training_case_sampling": "Each worker permutes its disjoint registered 48-case subset; next permutation after exhaustion. Fresh adapter if not in one-entry LRU.",
+  "pipeline_actions_excluded": true
+}

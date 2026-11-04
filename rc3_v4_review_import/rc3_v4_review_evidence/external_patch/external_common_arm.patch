@@ -1,0 +1,23 @@
+--- a/rc3_v4/external.py
++++ b/rc3_v4/external.py
+@@ -340,13 +340,18 @@
+     from rc3_baseline.baseline import expand_route
+     from rc3_improve.environment import canonical_route
+     route = canonical_route(problem, route)
++    _, audit_F = check_bundle(bundle)
+     left = np.ones(len(problem.F), dtype=bool)
+     order, assignments = [], []
+     for node in route[1:-1]:
+         j = int(node)-1
+         order.append(j)
+-        for i in np.flatnonzero(left & problem.F[:, j].any(1)):
+-            arm = 'L' if problem.F[i, j, 0] else 'R'
++        # Choose only a jointly permitted arm. Tasks rejected here remain
++        # available to later stops; final validation still checks both tables
++        # separately and executes the caller-owned service_checker.
++        common = problem.F[:, j] & audit_F[:, j]
++        for i in np.flatnonzero(left & common.any(1)):
++            arm = 'L' if common[i, 0] else 'R'
+             assignments.append(dict(task_id=int(i), candidate_id=j, arm=arm))
+             left[i] = False
+     _require(not left.any(), 'cannot export an incomplete route')

@@ -1,0 +1,485 @@
+{
+  "scope": "Read-only arithmetic over existing records; zero new plans, queries, inference, training or timing.",
+  "source_results_sha256": "598efffdc218e25cdec7a8525233603fb58fec36dfa16ce9e326d513a1b2e05b",
+  "methods": {
+    "fixed3": {
+      "complete_ms": {
+        "n": 12,
+        "mean": 313.3010416665532,
+        "median": 324.03099999987717,
+        "min": 256.21419999970385,
+        "max": 401.51560000003883,
+        "sum": 3759.6124999986387
+      },
+      "saved_component_ms": {
+        "input_read_s": {
+          "n": 12,
+          "mean": 4.505141666565275,
+          "median": 4.145099999732338,
+          "min": 3.128500000002532,
+          "max": 7.202499999948486,
+          "sum": 54.0616999987833
+        },
+        "prepare_s": {
+          "n": 12,
+          "mean": 192.2389916666892,
+          "median": 195.8959999999479,
+          "min": 161.63490000008096,
+          "max": 222.88720000005924,
+          "sum": 2306.8679000002703
+        }
+      },
+      "component_scope": "Individually recorded fields; not assumed exclusive or exhaustive."
+    },
+    "detour": {
+      "complete_ms": {
+        "n": 12,
+        "mean": 644.0387583332949,
+        "median": 636.0809000000245,
+        "min": 484.7786999998789,
+        "max": 896.7743999996856,
+        "sum": 7728.465099999539
+      },
+      "saved_component_ms": {
+        "input_read_s": {
+          "n": 12,
+          "mean": 10.46523333324482,
+          "median": 4.099549999864394,
+          "min": 3.092499999638676,
+          "max": 82.15130000007775,
+          "sum": 125.58279999893784
+        },
+        "prepare_s": {
+          "n": 12,
+          "mean": 194.97135000002194,
+          "median": 194.76585000006708,
+          "min": 163.54790000013963,
+          "max": 252.41189999997005,
+          "sum": 2339.656200000263
+        }
+      },
+      "component_scope": "Individually recorded fields; not assumed exclusive or exhaustive."
+    },
+    "stop": {
+      "complete_ms": {
+        "n": 12,
+        "mean": 464.93360833327796,
+        "median": 452.4942000000465,
+        "min": 401.40000000019427,
+        "max": 626.5662999999222,
+        "sum": 5579.203299999335
+      },
+      "saved_component_ms": {
+        "input_read_s": {
+          "n": 12,
+          "mean": 4.0797416667146535,
+          "median": 3.977999999960957,
+          "min": 2.919800000199757,
+          "max": 5.2786000001106,
+          "sum": 48.95690000057584
+        },
+        "prepare_and_anchor_s": {
+          "n": 12,
+          "mean": 364.8998166666691,
+          "median": 352.0623000001706,
+          "min": 325.24279999961436,
+          "max": 478.6922999996932,
+          "sum": 4378.797800000029
+        },
+        "graph_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "inference_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "feedback_lookup_s": {
+          "n": 12,
+          "mean": 0.8615250000048036,
+          "median": 0.8251500003098045,
+          "min": 0.6496000000879576,
+          "max": 1.134399999955349,
+          "sum": 10.338300000057643
+        },
+        "selection_s": {
+          "n": 12,
+          "mean": 0.007841666729291319,
+          "median": 0.007200000027296483,
+          "min": 0.006499999926745659,
+          "max": 0.013500000022759195,
+          "sum": 0.09410000075149583
+        },
+        "menu_s": {
+          "n": 12,
+          "mean": 15.323416666584913,
+          "median": 15.886999999793261,
+          "min": 9.460400000079972,
+          "max": 23.85180000010223,
+          "sum": 183.88099999901897
+        },
+        "proposal_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "certification_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "final_validation_s": {
+          "n": 12,
+          "mean": 61.334224999958074,
+          "median": 58.26624999986052,
+          "min": 46.50609999998778,
+          "max": 93.24029999970662,
+          "sum": 736.0106999994969
+        }
+      },
+      "component_scope": "Individually recorded fields; not assumed exclusive or exhaustive.",
+      "work_proxy": {
+        "menu_work": 1672488,
+        "proposal_work": 0,
+        "total_work": 1672488,
+        "menu_fraction": 1.0,
+        "scope": "Deterministic accounting proxy, not a share of wall-clock time."
+      },
+      "policy_decisions": 0
+    },
+    "detour_early": {
+      "complete_ms": {
+        "n": 12,
+        "mean": 547.9485416666042,
+        "median": 543.3851000000232,
+        "min": 445.5066999998962,
+        "max": 661.3384000002043,
+        "sum": 6575.38249999925
+      },
+      "saved_component_ms": {
+        "input_read_s": {
+          "n": 12,
+          "mean": 4.24799999999929,
+          "median": 4.182650000075228,
+          "min": 3.4396999999444233,
+          "max": 5.051800000273943,
+          "sum": 50.97599999999147
+        },
+        "prepare_and_anchor_s": {
+          "n": 12,
+          "mean": 359.5556583333443,
+          "median": 345.0636499999291,
+          "min": 316.7794999999387,
+          "max": 459.74429999978383,
+          "sum": 4314.667900000131
+        },
+        "graph_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "inference_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "feedback_lookup_s": {
+          "n": 12,
+          "mean": 2.2845750000518215,
+          "median": 2.2526499997184146,
+          "min": 1.4765999999326596,
+          "max": 3.4046000000671484,
+          "sum": 27.414900000621856
+        },
+        "selection_s": {
+          "n": 12,
+          "mean": 0.08790000000165794,
+          "median": 0.0957000002017594,
+          "min": 0.047399999402841786,
+          "max": 0.1508999994257465,
+          "sum": 1.0548000000198954
+        },
+        "menu_s": {
+          "n": 12,
+          "mean": 40.864300000028685,
+          "median": 41.69869999986986,
+          "min": 21.343500000057247,
+          "max": 55.703100000300765,
+          "sum": 490.3716000003442
+        },
+        "proposal_s": {
+          "n": 12,
+          "mean": 13.170775000086602,
+          "median": 17.470899999807443,
+          "min": 2.3719000000710366,
+          "max": 20.151800000348885,
+          "sum": 158.04930000103923
+        },
+        "certification_s": {
+          "n": 12,
+          "mean": 36.28409166663005,
+          "median": 52.25064999990536,
+          "min": 1.7650999998295447,
+          "max": 73.63260000010996,
+          "sum": 435.40909999956057
+        },
+        "final_validation_s": {
+          "n": 12,
+          "mean": 59.86445000003945,
+          "median": 58.160799999996016,
+          "min": 44.18149999992238,
+          "max": 90.74740000005477,
+          "sum": 718.3734000004733
+        }
+      },
+      "component_scope": "Individually recorded fields; not assumed exclusive or exhaustive.",
+      "work_proxy": {
+        "menu_work": 4290957,
+        "proposal_work": 159324,
+        "total_work": 4450281,
+        "menu_fraction": 0.9641991146177061,
+        "scope": "Deterministic accounting proxy, not a share of wall-clock time."
+      },
+      "policy_decisions": 0
+    },
+    "continued_ce": {
+      "complete_ms": {
+        "n": 12,
+        "mean": 563.1596333332709,
+        "median": 530.424400000129,
+        "min": 412.31100000004517,
+        "max": 784.1241999999511,
+        "sum": 6757.915599999251
+      },
+      "saved_component_ms": {
+        "input_read_s": {
+          "n": 12,
+          "mean": 4.3355833332346565,
+          "median": 4.359649999742032,
+          "min": 3.3051000000341446,
+          "max": 5.213999999796215,
+          "sum": 52.02699999881588
+        },
+        "prepare_and_anchor_s": {
+          "n": 12,
+          "mean": 361.52034166661906,
+          "median": 353.6667999999281,
+          "min": 315.6291999998757,
+          "max": 450.28229999979885,
+          "sum": 4338.244099999429
+        },
+        "graph_s": {
+          "n": 12,
+          "mean": 26.794808333420406,
+          "median": 15.600899999981266,
+          "min": 12.180000000171276,
+          "max": 64.75770000042758,
+          "sum": 321.53770000104487
+        },
+        "inference_s": {
+          "n": 12,
+          "mean": 9.999908333308364,
+          "median": 2.5281999999151594,
+          "min": 2.237600000171369,
+          "max": 68.0171999997583,
+          "sum": 119.99889999970037
+        },
+        "feedback_lookup_s": {
+          "n": 12,
+          "mean": 1.75516666661224,
+          "median": 0.9909000000334345,
+          "min": 0.7077999998728046,
+          "max": 4.4386000008671544,
+          "sum": 21.06199999934688
+        },
+        "selection_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "menu_s": {
+          "n": 12,
+          "mean": 37.77141666663889,
+          "median": 26.742799999965428,
+          "min": 8.861600000273029,
+          "max": 101.03210000033869,
+          "sum": 453.25699999966673
+        },
+        "proposal_s": {
+          "n": 12,
+          "mean": 6.405416666780184,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 23.40150000009089,
+          "sum": 76.8650000013622
+        },
+        "certification_s": {
+          "n": 12,
+          "mean": 20.754574999955366,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 69.70570000021326,
+          "sum": 249.0548999994644
+        },
+        "final_validation_s": {
+          "n": 12,
+          "mean": 61.28575000006246,
+          "median": 61.01135000017166,
+          "min": 47.77689999991708,
+          "max": 91.55430000009801,
+          "sum": 735.4290000007495
+        }
+      },
+      "component_scope": "Individually recorded fields; not assumed exclusive or exhaustive.",
+      "work_proxy": {
+        "menu_work": 3249657,
+        "proposal_work": 32693,
+        "total_work": 3282350,
+        "menu_fraction": 0.9900397581001417,
+        "scope": "Deterministic accounting proxy, not a share of wall-clock time."
+      },
+      "policy_decisions": 25,
+      "amortized_recorded_ms_per_decision": {
+        "graph": 12.861508000041795,
+        "inference": 4.799955999988015,
+        "scope": "Existing recordings only; includes first-use effects; not a fresh benchmark."
+      }
+    },
+    "ce_gain": {
+      "complete_ms": {
+        "n": 12,
+        "mean": 636.0438666666065,
+        "median": 602.5764499997877,
+        "min": 532.2933000002195,
+        "max": 788.7820000000829,
+        "sum": 7632.5263999992785
+      },
+      "saved_component_ms": {
+        "input_read_s": {
+          "n": 12,
+          "mean": 4.351708333312369,
+          "median": 4.402150000260008,
+          "min": 3.056699999888224,
+          "max": 6.168999999772495,
+          "sum": 52.22049999974843
+        },
+        "prepare_and_anchor_s": {
+          "n": 12,
+          "mean": 412.56840833337566,
+          "median": 407.2555000000193,
+          "min": 341.4486000001489,
+          "max": 476.155800000015,
+          "sum": 4950.820900000508
+        },
+        "graph_s": {
+          "n": 12,
+          "mean": 28.384008333356785,
+          "median": 27.015150000124777,
+          "min": 20.686599999862665,
+          "max": 46.45090000030905,
+          "sum": 340.6081000002814
+        },
+        "inference_s": {
+          "n": 12,
+          "mean": 5.657441666812701,
+          "median": 4.8815499999363965,
+          "min": 4.517599999871891,
+          "max": 10.837499999979627,
+          "sum": 67.88930000175242
+        },
+        "feedback_lookup_s": {
+          "n": 12,
+          "mean": 1.979358333263311,
+          "median": 1.8098499997449835,
+          "min": 1.3951999999335385,
+          "max": 3.3994999994320096,
+          "sum": 23.75229999915973
+        },
+        "selection_s": {
+          "n": 12,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sum": 0.0
+        },
+        "menu_s": {
+          "n": 12,
+          "mean": 33.64122500003456,
+          "median": 31.9126500000948,
+          "min": 19.77000000033513,
+          "max": 54.80889999989813,
+          "sum": 403.69470000041474
+        },
+        "proposal_s": {
+          "n": 12,
+          "mean": 10.407216666635577,
+          "median": 10.423099999570695,
+          "min": 3.3360000002176093,
+          "max": 18.554799999947136,
+          "sum": 124.88659999962692
+        },
+        "certification_s": {
+          "n": 12,
+          "mean": 45.89544166666807,
+          "median": 50.124149999874135,
+          "min": 1.9305000000713335,
+          "max": 157.5676000002204,
+          "sum": 550.7453000000169
+        },
+        "final_validation_s": {
+          "n": 12,
+          "mean": 66.38857500005695,
+          "median": 56.115049999789335,
+          "min": 45.2740000000631,
+          "max": 143.14039999999295,
+          "sum": 796.6629000006833
+        }
+      },
+      "component_scope": "Individually recorded fields; not assumed exclusive or exhaustive.",
+      "work_proxy": {
+        "menu_work": 3692610,
+        "proposal_work": 52969,
+        "total_work": 3745579,
+        "menu_fraction": 0.9858582611660307,
+        "scope": "Deterministic accounting proxy, not a share of wall-clock time."
+      },
+      "policy_decisions": 27,
+      "amortized_recorded_ms_per_decision": {
+        "graph": 12.615114814825237,
+        "inference": 2.514418518583423,
+        "scope": "Existing recordings only; includes first-use effects; not a fresh benchmark."
+      }
+    }
+  },
+  "interpretation_limits": [
+    "Single timing per scene-method; 12 old development scenes.",
+    "Do not infer stable speedup or a causal decomposition from group medians.",
+    "Shared and original solvers use different preparation and validation paths.",
+    "Training work reward does not account for all complete-planning CPU costs.",
+    "Optimizations must be applied fairly to all methods in a new protocol."
+  ]
+}

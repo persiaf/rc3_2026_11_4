@@ -1,0 +1,55 @@
+{
+  "rows": 648,
+  "unique_scenes": 108,
+  "methods_per_scene_counts": {
+    "6": 108
+  },
+  "success": 648,
+  "all_records_valid": true,
+  "all_records_nonincreasing": true,
+  "group_scene_counts": {
+    "all": 108,
+    "in_distribution_100": 24,
+    "smaller_transfer": 72,
+    "larger_transfer": 12,
+    "tables_12": 24,
+    "tables_36": 24,
+    "tables_64": 24,
+    "tables_100": 24,
+    "tables_144": 6,
+    "tables_196": 6
+  },
+  "split_counts": {
+    "train": 96,
+    "validation": 24,
+    "test": 108
+  },
+  "split_scales": {
+    "train": {
+      "10x10": 96
+    },
+    "validation": {
+      "10x10": 24
+    },
+    "test": {
+      "4x3": 24,
+      "6x6": 24,
+      "8x8": 24,
+      "10x10": 24,
+      "12x12": 6,
+      "14x14": 6
+    }
+  },
+  "overlaps": {
+    "train__validation": [],
+    "train__test": [],
+    "validation__test": []
+  },
+  "hash_matches": 24,
+  "hash_total": 24,
+  "mismatched_hashes": [],
+  "bc_ppo_same_cost": 93,
+  "bc_ppo_same_route": 91,
+  "bc_ppo_same_actions": 19,
+  "note": "Statistics use 20,000 scene-paired bootstrap resamples with seed 20261102; frozen model only, no training-seed uncertainty."
+}

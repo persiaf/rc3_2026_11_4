@@ -1,0 +1,20 @@
+{
+  "experiment": "run_v3_stopfix_20261102 + results",
+  "review_date": "2026-11-03",
+  "claim_supported": "partial",
+  "verdict_source": "Explicit internal reviewer response from /root/local_repair; not a zero-context external audit",
+  "normalization_note": "Reviewer supplied the partial verdict and quantitative support/limitations. Remaining context and confidence below were normalized locally by /root/review_archive; the expanded reviewer response had not arrived at packaging time.",
+  "what_results_support": "Verified coverage repair reduced the Fixed3 objective on the frozen generator; the independent verifier checked 2583 plans and bounds. Learning has limited conditional advantages over random selection. Separate 18-validation-scene profiling supports faster Fixed3 engineering at equal cost.",
+  "what_results_dont_support": "Learning does not show a stable advantage over detour under all budgets, a full-planning speed advantage, hard real-time behavior, global optimality, real-arm execution safety, or a new PPO result.",
+  "missing_evidence": "All-seed test uncertainty, more independent layouts and densities, parameter-matched architecture and STOP ablations, stronger coverage-routing solvers, true arm feasibility and hardware checks.",
+  "suggested_claim_revision": "Present a verified Fixed3-based coverage-repair planner with optional gain-supervised window selection; describe quality/time tradeoffs and limited evidence for independent learning benefit.",
+  "next_experiments_needed": "Only in a new separately frozen experiment round: broader intermediate-state training and unseen evaluation, all-seed fixed-budget tests, stronger optimization references, and real reachability integration. Do not tune on the current revealed test set.",
+  "confidence": "medium",
+  "confidence_source": "Local normalization reflecting finite synthetic samples and one selected checkpoint",
+  "paper_claim_audit": "unavailable",
+  "paper_verdict_status": "provisional — no paper claim audit available",
+  "pending_external_review": true,
+  "routing_action": "Narrow current claim; retain default Fixed3 and optional learned mode; supplement only in future independent experiment rounds",
+  "numeric_audit": "numeric_audit.json",
+  "detailed_claim_map": "../../../../claims_review.md"
+}

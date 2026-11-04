@@ -1,0 +1,122 @@
+{
+  "scope": "independent G1 probes on one new 2x2 scene; no performance/training claim",
+  "seed": 202611035,
+  "checks": [
+    {
+      "name": "F_immutable_bytes",
+      "passed": true
+    },
+    {
+      "name": "D_immutable_bytes",
+      "passed": true
+    },
+    {
+      "name": "runtime_greedy",
+      "passed": true,
+      "steps": 3,
+      "work": 11055,
+      "plan_valid": true,
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 3,
+        "work_used": 11055,
+        "total_reward": -0.011055,
+        "finalization": {
+          "reason": "horizon",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 15.099999999999998,
+          "best_cost": 15.099999999999998,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      }
+    },
+    {
+      "name": "runtime_random",
+      "passed": true,
+      "steps": 3,
+      "work": 1051,
+      "plan_valid": true,
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 3,
+        "work_used": 1051,
+        "total_reward": -0.001051,
+        "finalization": {
+          "reason": "horizon",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 15.099999999999998,
+          "best_cost": 15.099999999999998,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      }
+    },
+    {
+      "name": "runtime_alns",
+      "passed": true,
+      "steps": 3,
+      "work": 1733,
+      "plan_valid": true,
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 3,
+        "work_used": 1733,
+        "total_reward": -0.0017330000000000002,
+        "finalization": {
+          "reason": "stop",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 15.099999999999998,
+          "best_cost": 15.099999999999998,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      }
+    },
+    {
+      "name": "reject_tampered_export",
+      "passed": true,
+      "error": "saved exported plan differs from replayed plan"
+    },
+    {
+      "name": "deadline_after_observe_replay",
+      "passed": true,
+      "steps": 0,
+      "work": 264,
+      "initial_failure": "ValueError: runtime finalization replay mismatch",
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 0,
+        "work_used": 264,
+        "total_reward": -0.000264,
+        "finalization": {
+          "reason": "external_deadline",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 15.099999999999998,
+          "best_cost": 15.099999999999998,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      },
+      "retest": "same saved artifact after pending-menu replay fix"
+    }
+  ],
+  "passed": 7,
+  "total": 7
+}

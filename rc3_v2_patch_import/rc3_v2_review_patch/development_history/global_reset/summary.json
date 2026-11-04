@@ -1,0 +1,146 @@
+{
+  "scope": "8 fresh 100-table development scenes by default; exploratory, no new training, no test-set superiority claim.",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "cases": 8,
+  "repeats": 3,
+  "elapsed_s": 63.060266345999935,
+  "plans": 72,
+  "all_valid": true,
+  "summary": [
+    {
+      "method": "v2_fixed1",
+      "n": 8,
+      "mean_cost": 283.9838437228,
+      "median_planning_ms": 54.62381750004397,
+      "median_cold_total_ms": 215.00759600007768,
+      "mean_gain_fixed1_pct": 0.0,
+      "mean_gain_fixed3_pct": -2.1955916627492584
+    },
+    {
+      "method": "v2_fixed3",
+      "n": 8,
+      "mean_cost": 278.15305309215,
+      "median_planning_ms": 164.48842649998596,
+      "median_cold_total_ms": 329.8975705000089,
+      "mean_gain_fixed1_pct": 2.0940073969490145,
+      "mean_gain_fixed3_pct": 0.0
+    },
+    {
+      "method": "efficient_fixed3",
+      "n": 8,
+      "mean_cost": 278.15305309215,
+      "median_planning_ms": 101.2639475000583,
+      "median_cold_total_ms": 263.9335965001237,
+      "mean_gain_fixed1_pct": 2.0940073969490145,
+      "mean_gain_fixed3_pct": 0.0
+    },
+    {
+      "method": "v2_ppo",
+      "n": 8,
+      "mean_cost": 281.22534937812503,
+      "median_planning_ms": 298.27899149995574,
+      "median_cold_total_ms": 457.17617699995117,
+      "mean_gain_fixed1_pct": 0.953121127604207,
+      "mean_gain_fixed3_pct": -1.2216976020878878
+    },
+    {
+      "method": "deferred_ppo_same_mask",
+      "n": 8,
+      "mean_cost": 281.22534937812503,
+      "median_planning_ms": 315.0084029999789,
+      "median_cold_total_ms": 456.6056044999982,
+      "mean_gain_fixed1_pct": 0.953121127604207,
+      "mean_gain_fixed3_pct": -1.2216976020878878
+    },
+    {
+      "method": "refreshed_ppo_fixed1",
+      "n": 8,
+      "mean_cost": 281.784726883625,
+      "median_planning_ms": 314.6481809999955,
+      "median_cold_total_ms": 456.9957925000381,
+      "mean_gain_fixed1_pct": 0.7422102503357636,
+      "mean_gain_fixed3_pct": -1.4351182031858702
+    },
+    {
+      "method": "refreshed_ppo_fixed3",
+      "n": 8,
+      "mean_cost": 276.363089681525,
+      "median_planning_ms": 343.34157100005314,
+      "median_cold_total_ms": 487.8385240000398,
+      "mean_gain_fixed1_pct": 2.6755069118080446,
+      "mean_gain_fixed3_pct": 0.5938548382189679
+    },
+    {
+      "method": "refreshed_bc_fixed3",
+      "n": 8,
+      "mean_cost": 276.45979833615,
+      "median_planning_ms": 353.1892144999347,
+      "median_cold_total_ms": 492.2967935000315,
+      "mean_gain_fixed1_pct": 2.639115306918666,
+      "mean_gain_fixed3_pct": 0.5549400369350226
+    },
+    {
+      "method": "refreshed_detour_fixed3",
+      "n": 8,
+      "mean_cost": 276.752479771,
+      "median_planning_ms": 342.22078400000555,
+      "median_cold_total_ms": 488.4223345000578,
+      "mean_gain_fixed1_pct": 2.589777203461342,
+      "mean_gain_fixed3_pct": 0.5046919032148282
+    }
+  ],
+  "equality_checks": [
+    {
+      "seed": 3701161000,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161001,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161002,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161003,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161004,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161005,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161006,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    },
+    {
+      "seed": 3701161007,
+      "fixed3_cost_unchanged": true,
+      "same_mask_ppo_actions_unchanged": true,
+      "same_mask_ppo_cost_unchanged": true
+    }
+  ],
+  "timing": "Single-process CPU, identical NumPy policy backend on both versions; scene median of repeated full solver/export/certification; preprocessing separate; excludes loading and writing."
+}

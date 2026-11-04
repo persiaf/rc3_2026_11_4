@@ -1,0 +1,272 @@
+{
+  "run": "analysis/current_upload/rc3_learning/run_verified_20261102_v2",
+  "run_status": "complete",
+  "training_seed": 0,
+  "args": {
+    "output": "rc3_learning\\run_verified_20261102_v2",
+    "train_scales": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "eval_scales": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "train_instances": 64,
+    "val_instances": 16,
+    "test_per_scale": 4,
+    "bc_epochs": 15,
+    "rl_epochs": 3,
+    "batch_size": 8,
+    "embed_dim": 128,
+    "layers": 2,
+    "heads": 4,
+    "lr": 0.0001,
+    "stop_penalty": 0.75,
+    "seed": 0,
+    "device": "auto",
+    "config": null,
+    "init_checkpoint": null,
+    "no_plots": false
+  },
+  "total_run_wall_s": 11.911096,
+  "summed_epoch_s": 9.204977600000234,
+  "optimizer_updates": {
+    "bc": 120,
+    "rl": 24
+  },
+  "datasets": {
+    "train": {
+      "instances": 64,
+      "tasks_total": 462,
+      "tasks_min": 2,
+      "tasks_max": 15,
+      "scales": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "teacher_mean": 18.127343749999998
+    },
+    "validation": {
+      "instances": 16,
+      "tasks_total": 139,
+      "tasks_min": 3,
+      "tasks_max": 12,
+      "scales": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "teacher_mean": 20.10625
+    },
+    "test": {
+      "instances": 12,
+      "tasks_total": 141,
+      "tasks_min": 3,
+      "tasks_max": 23,
+      "scales": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "teacher_mean": 26.616666666666667
+    }
+  },
+  "source_hashes": [
+    {
+      "path": "rc3_learning/__init__.py",
+      "expected": "2adc85a5ae796311162f77af8a596a0bdda66deb6ded4a41320ae4e858692f2c",
+      "current": "2adc85a5ae796311162f77af8a596a0bdda66deb6ded4a41320ae4e858692f2c",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/data.py",
+      "expected": "4a53f61328e29831086120308304d94a13db0811d90885e27fdf5ee3b59a2bf1",
+      "current": "4a53f61328e29831086120308304d94a13db0811d90885e27fdf5ee3b59a2bf1",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/env.py",
+      "expected": "fda007f070e64fa7f97af307e43b4dffebac8ed442c9c0a5304f1522d01399c5",
+      "current": "fda007f070e64fa7f97af307e43b4dffebac8ed442c9c0a5304f1522d01399c5",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/evaluate.py",
+      "expected": "0bf5a592d273fe4934a06e13c3c3a2435d000c0c09b783d72c73049eb5fe28a5",
+      "current": "0bf5a592d273fe4934a06e13c3c3a2435d000c0c09b783d72c73049eb5fe28a5",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/model.py",
+      "expected": "498f806c76a458acb68fd24572a8958a62024584a5c7d812a606bb2a21bdd8d1",
+      "current": "498f806c76a458acb68fd24572a8958a62024584a5c7d812a606bb2a21bdd8d1",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/plots.py",
+      "expected": "35dead1172c36aee51ee3271b4d9b7ad43d81da9809812b0ee182d10c5ff1f27",
+      "current": "35dead1172c36aee51ee3271b4d9b7ad43d81da9809812b0ee182d10c5ff1f27",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/test_learning.py",
+      "expected": "1144133c53933c9f27206c7922ac7ab9405533660c0ec2a0c941ef2e230c377d",
+      "current": "1144133c53933c9f27206c7922ac7ab9405533660c0ec2a0c941ef2e230c377d",
+      "match": true
+    },
+    {
+      "path": "rc3_learning/train.py",
+      "expected": "63801930ddc9991245807421f9d81ecfdf6154709ce6d0c633b35ba951a7dac7",
+      "current": "63801930ddc9991245807421f9d81ecfdf6154709ce6d0c633b35ba951a7dac7",
+      "match": true
+    },
+    {
+      "path": "rc3_baseline/baseline.py",
+      "expected": "db163fae14c47b02b55c4b830d45cecff9b9573fe94b456ae19caf2c6155c69e",
+      "current": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+      "match": false
+    },
+    {
+      "path": "rc3_baseline/test_baseline.py",
+      "expected": "9986049f4813d9316f3048283f28481e7bb3652967c8b5f1c507dd5923a433ff",
+      "current": "9986049f4813d9316f3048283f28481e7bb3652967c8b5f1c507dd5923a433ff",
+      "match": true
+    },
+    {
+      "path": "rc3_baseline/validator.py",
+      "expected": "6e4969fe3a7b62fec2b5de093461067850d170ef8da231e6e370457857f7df26",
+      "current": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+      "match": false
+    }
+  ],
+  "checkpoint_comparisons": [
+    {
+      "split": "reload",
+      "scale": "2x2",
+      "instances": 1,
+      "teacher_mean": 13.7,
+      "bc_cost_mean": 13.7,
+      "best_cost_mean": 15.949999999999998,
+      "last_cost_mean": 13.7,
+      "bc_cost_relative_ratio_of_means_pct": 0.0,
+      "bc_cost_mean_instance_relative_pct": 0.0,
+      "best_cost_relative_ratio_of_means_pct": 16.423357664233574,
+      "best_cost_mean_instance_relative_pct": 16.423357664233574,
+      "last_cost_relative_ratio_of_means_pct": 0.0,
+      "last_cost_mean_instance_relative_pct": 0.0
+    },
+    {
+      "split": "reload",
+      "scale": "4x3",
+      "instances": 1,
+      "teacher_mean": 41.6,
+      "bc_cost_mean": 56.14999999999999,
+      "best_cost_mean": 60.10000000000001,
+      "last_cost_mean": 54.75000000000001,
+      "bc_cost_relative_ratio_of_means_pct": 34.97596153846152,
+      "bc_cost_mean_instance_relative_pct": 34.97596153846152,
+      "best_cost_relative_ratio_of_means_pct": 44.471153846153854,
+      "best_cost_mean_instance_relative_pct": 44.471153846153854,
+      "last_cost_relative_ratio_of_means_pct": 31.610576923076938,
+      "last_cost_mean_instance_relative_pct": 31.610576923076938
+    },
+    {
+      "split": "test",
+      "scale": "2x2",
+      "instances": 4,
+      "teacher_mean": 16.2625,
+      "bc_cost_mean": 16.2625,
+      "best_cost_mean": 15.487499999999999,
+      "last_cost_mean": 15.599999999999998,
+      "bc_cost_relative_ratio_of_means_pct": 0.0,
+      "bc_cost_mean_instance_relative_pct": -5.551115123125783e-15,
+      "best_cost_relative_ratio_of_means_pct": -4.765564950038437,
+      "best_cost_mean_instance_relative_pct": -4.489646210596915,
+      "last_cost_relative_ratio_of_means_pct": -4.0737893927747955,
+      "last_cost_mean_instance_relative_pct": -3.701117318435762
+    },
+    {
+      "split": "test",
+      "scale": "3x2",
+      "instances": 4,
+      "teacher_mean": 20.7625,
+      "bc_cost_mean": 22.3875,
+      "best_cost_mean": 23.825,
+      "last_cost_mean": 24.212499999999995,
+      "bc_cost_relative_ratio_of_means_pct": 7.826610475617102,
+      "bc_cost_mean_instance_relative_pct": 7.917219241081791,
+      "best_cost_relative_ratio_of_means_pct": 14.750150511739912,
+      "best_cost_mean_instance_relative_pct": 13.04197679575228,
+      "last_cost_relative_ratio_of_means_pct": 16.61649608669473,
+      "last_cost_mean_instance_relative_pct": 19.120398180247
+    },
+    {
+      "split": "test",
+      "scale": "4x3",
+      "instances": 4,
+      "teacher_mean": 42.825,
+      "bc_cost_mean": 55.6,
+      "best_cost_mean": 61.41250000000001,
+      "last_cost_mean": 56.4625,
+      "bc_cost_relative_ratio_of_means_pct": 29.83070636310565,
+      "bc_cost_mean_instance_relative_pct": 29.973811888917055,
+      "best_cost_relative_ratio_of_means_pct": 43.403385872737886,
+      "best_cost_mean_instance_relative_pct": 43.05410014428529,
+      "last_cost_relative_ratio_of_means_pct": 31.844716870986556,
+      "last_cost_mean_instance_relative_pct": 32.04879263035719
+    }
+  ],
+  "seed_overlap": {
+    "train:validation": 0,
+    "train:test": 0,
+    "validation:test": 0
+  },
+  "bc_best_validation_cost": 21.068749725818634,
+  "rl_best_validation_cost": 20.990624725818634,
+  "rl_improvement_vs_bc_pct": 0.3708098535351719,
+  "independent_replay": {
+    "method": "NumPy independent single-scene forward replay; no PyTorch execution or retraining",
+    "parameters": 383497,
+    "all_recorded_actions_reproduced": true,
+    "all_recorded_costs_reproduced": true,
+    "saved_plan_checks": 84,
+    "all_saved_plans_valid": true
+  }
+}

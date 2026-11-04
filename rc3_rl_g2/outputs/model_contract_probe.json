@@ -1,0 +1,51 @@
+{
+  "scope": "Engineering input/update/throughput probe only. Reuses old development case_01; not G2 validation or model performance.",
+  "source": "rc3_rl_research/outputs/g0/case_01/scene.json",
+  "task_count": 177,
+  "candidate_count": 800,
+  "actions": 17,
+  "graph_tasks": 74,
+  "graph_candidates": 256,
+  "coverage_edges": 394,
+  "navigation_edges": 512,
+  "graph_build_s": 0.02606000000014319,
+  "torch_version": "2.12.1+cu126",
+  "results": [
+    {
+      "device": "cpu",
+      "kind": "mlp",
+      "parameters": 10434,
+      "unchanged_logp_max_error": 0.0,
+      "finite_gradient": true,
+      "actor_updated": true,
+      "warm_eight_input_batch_mean_s": 0.0010430800000904128
+    },
+    {
+      "device": "cpu",
+      "kind": "graph",
+      "parameters": 44994,
+      "unchanged_logp_max_error": 0.0,
+      "finite_gradient": true,
+      "actor_updated": true,
+      "warm_eight_input_batch_mean_s": 0.006165490000057616
+    },
+    {
+      "device": "cuda",
+      "kind": "mlp",
+      "parameters": 10434,
+      "unchanged_logp_max_error": 0.0,
+      "finite_gradient": true,
+      "actor_updated": true,
+      "warm_eight_input_batch_mean_s": 0.0042004800001450345
+    },
+    {
+      "device": "cuda",
+      "kind": "graph",
+      "parameters": 44994,
+      "unchanged_logp_max_error": 0.0,
+      "finite_gradient": true,
+      "actor_updated": true,
+      "warm_eight_input_batch_mean_s": 0.011720409999907134
+    }
+  ]
+}

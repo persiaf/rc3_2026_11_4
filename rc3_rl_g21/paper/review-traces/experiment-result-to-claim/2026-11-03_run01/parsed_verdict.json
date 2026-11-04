@@ -1,0 +1,65 @@
+{
+  "schema": "experiment-result-to-claim-review-v1",
+  "date": "2026-11-03",
+  "role": "delegated paper architect/reviewer",
+  "reviewer": "/root/g21_model_review",
+  "pending_external_review": false,
+  "independence_disclosure": "Reviewer previously contributed input/toy-guard/prepared-harness code; recomputed final evidence independently; not zero-context blind audit",
+  "paper_claim_audit": "unavailable",
+  "downstream_writing_status": "provisional — no paper claim audit available",
+  "claims": [
+    {
+      "id": "C1",
+      "claim_supported": "yes",
+      "confidence": "high",
+      "what_results_support": "Fixed16 evidence near-best16/16 and known-positive evidence continue8/8 at final512; finite-label memorization possible without graph/model changes",
+      "what_results_dont_support": "Full-action deployment, novel-scene generalization, actual route gain or PPO: toy full observed hits10/16 and unknown6/16",
+      "missing_evidence": "Complete-action quality and independent scenes for stronger claims",
+      "suggested_claim_revision": "Keep fixed known finite-depth sample-fitting scope",
+      "next_experiments_needed": "None for this limited claim; no automatic extension",
+      "routing": "confirm_limited"
+    },
+    {
+      "id": "C2",
+      "claim_supported": "partial",
+      "confidence": "high",
+      "what_results_support": "Same-init2048 root-half improves initial64 evidence hits33→40 and full known-positive10→15/39",
+      "what_results_dont_support": "Opportunity repair or broad cause/generalization; extra4/26 unchanged and operational gate fails",
+      "missing_evidence": "Independent scenes, repeated seeds, complete-action quality",
+      "suggested_claim_revision": "Single-seed training-root diagnostic improvement, incomplete opportunity repair",
+      "next_experiments_needed": "Future separately registered study only; stop current round",
+      "routing": "narrow_and_stop_current_round"
+    },
+    {
+      "id": "gain_auxiliary_operational_repair",
+      "claim_supported": "no",
+      "confidence": "high",
+      "what_results_support": "Specific gain loss increases some known-positive detections relative to same-init equal-update CE:22→25/39 and5→12/26",
+      "what_results_dont_support": "Balanced repair: clear-STOP21→2/25, unknown12→29/64; not a refutation of all gain supervision",
+      "missing_evidence": "Independent mechanism tests, fuller action labels, alternative target/scaling/structure designs",
+      "suggested_claim_revision": "Specific loss trades detection against observed STOP behavior and label coverage, fails preregistered gate",
+      "next_experiments_needed": "No more updates or PPO in this round; future redesign requires separate protocol",
+      "routing": "stop_specific_configuration"
+    },
+    {
+      "id": "G21_PPO_effectiveness",
+      "claim_supported": "no",
+      "confidence": "high",
+      "what_results_support": "Prepared harness with10/10pure tests only",
+      "what_results_dont_support": "No new PPO or environment result exists",
+      "missing_evidence": "Passed prerequisites and separately authorized counted runtime validation",
+      "suggested_claim_revision": "PPO not run because preconditions failed",
+      "next_experiments_needed": "None authorized this round",
+      "routing": "retain_prepared_not_executed"
+    }
+  ],
+  "source_evidence_sha256": "1473a019e72cfd0e0c7c0909a51e74858395d704ba189e9f521e721cf85989ae",
+  "shared_trace_template": "Missing at documented location and not found under local skills root; followed explicit SKILL.md trace fields",
+  "claim_supported": "partial",
+  "confidence": "high",
+  "what_results_support": "Fixed16 finite-label learnability; bounded single-seed sampling improvement and gain-loss tradeoffs",
+  "what_results_dont_support": "Full-action opportunity repair, effective new PPO, independent generalization or path-cost superiority",
+  "missing_evidence": "Full legal-action quality and independent operational evaluation; current operational gates failed",
+  "suggested_claim_revision": "Use G21 as a bounded offline diagnosis appendix; retain C1 limited and C2 partial",
+  "next_experiments_needed": "Stop current training/query scope; future redesign needs a separately controlled protocol"
+}

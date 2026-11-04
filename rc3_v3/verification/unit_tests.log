@@ -1,0 +1,28 @@
+test_labels_match_actual_environment_transitions_and_cache (rc3_v3.test_data.DataTests) ... ok
+test_seed_partitions_and_stress_metadata (rc3_v3.test_data.DataTests) ... ok
+test_zero_gain_states_remain_in_compact_dataset (rc3_v3.test_data.DataTests) ... ok
+test_padding_and_numpy_export_both_architectures (rc3_v3.test_model.ModelTests) ... ok
+test_wrong_phase_and_schema_rejected (rc3_v3.test_model.ModelTests) ... ok
+test_zero_gain_states_are_learnable_and_stop_is_legal (rc3_v3.test_model.ModelTests) ... ok
+test_adaptive_stride_and_largest_supported_width (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_budget_features_update_without_recomputing_base_features_in_step (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_dp_budget_monotonic_output_and_cost_identity (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_empty_terminal_and_old_phase_names_rejected (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_external_coverage_context_reopens_failure_without_clearing_cache (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_final_certificate_failure_returns_anchor (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_fixed3_anchor_matches_exact_cheap_recipe_comparison (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_invalid_and_exceptional_repairs_are_not_cached (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_model_errors_and_bad_actions_fall_back_to_verified_anchor (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_model_time_can_exhaust_deadline_before_repair (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_policy_stop_is_not_a_repair_call (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_running_repair_and_final_validation_may_finish_after_soft_deadline (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_zero_deadline_still_returns_a_valid_anchor_without_new_dp (rc3_v3.test_runtime.RuntimeTests) ... ok
+test_binary_threshold_and_mask_are_independent_of_action_scale (rc3_v3.test_stop.StopTests) ... ok
+test_global_stop_bce_has_correct_gradient_for_positive_and_zero_states (rc3_v3.test_stop.StopTests) ... ok
+test_legacy_checkpoint_preserves_categorical_rule_in_torch_and_numpy (rc3_v3.test_stop.StopTests) ... ok
+test_low_global_stop_does_not_compete_with_many_window_logits (rc3_v3.test_stop.StopTests) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.044s
+
+OK

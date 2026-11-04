@@ -1,0 +1,3500 @@
+{
+  "scope": "Offline reanalysis of existing G0 tree logs only. No new planning, training or timing. Finite first-seven action menus, max depth3; whole-monotone means current cost never increases by >1e-8 along a logged path.",
+  "official_metric_mismatches": [],
+  "counts": {
+    "worse_first_beats_one_step": 18,
+    "worse_first_then_record": 26,
+    "nonimproving_first_then_record": 27,
+    "ranking_reversal": 9,
+    "worse_first_beats_all_monotone_first": 2,
+    "strict_witness_positive_return": 10,
+    "any_leaf_beats_stop_return": 24,
+    "any_leaf_beats_whole_monotone_quality": 5,
+    "any_leaf_beats_whole_monotone_return": 1,
+    "best_return_first_worse": 1,
+    "best_return_has_worsening": 1,
+    "best_return_first_stop": 8,
+    "reward_optimal_first_kind_improve": 22,
+    "scenes": 32,
+    "queries": 14592,
+    "menus": 1824,
+    "leaves": 12800,
+    "action_improve": 7296,
+    "action_replace": 5472,
+    "action_stop": 1824,
+    "reward_optimal_first_kind_stop": 8,
+    "reward_optimal_first_kind_replace": 2
+  },
+  "proposal_counts": {
+    "queries": 12768,
+    "accepted": 12752,
+    "changed_route": 8066,
+    "best_improved": 2092,
+    "current_worse": 3531,
+    "current_equal": 5468,
+    "current_better": 3769,
+    "globally_pruned_retained": 1,
+    "repeated_same_route_action_within_path": 894,
+    "unique_route_actions": 3570,
+    "duplicate_route_actions_across_tree": 9198
+  },
+  "kind_changes": {
+    "improve": {
+      "equal": 4686,
+      "route_unchanged": 4686,
+      "better": 2610
+    },
+    "replace": {
+      "worse": 3531,
+      "route_unchanged": 16,
+      "better": 1159,
+      "equal": 782
+    }
+  },
+  "gains": {
+    "best_depth3_gain_vs_anchor_pct": {
+      "n": 32,
+      "mean": 0.8486080029756209,
+      "median": 0.6584321757331689,
+      "min": 0.0,
+      "max": 3.7276387775009128,
+      "p25": 0.34371517238053995,
+      "p75": 1.1852423428444676,
+      "p95": 1.9737590794516437
+    },
+    "best_depth3_gain_vs_one_step_pct": {
+      "n": 32,
+      "mean": 0.3961348297155887,
+      "median": 0.14980141568578004,
+      "min": 0.0,
+      "max": 2.722017133505902,
+      "p25": 0.0,
+      "p75": 0.6121327968188403,
+      "p95": 1.1448940265690042
+    },
+    "best_depth3_gain_vs_whole_monotone_pct": {
+      "n": 32,
+      "mean": 0.04632728030026938,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.923425588893796,
+      "p25": 0.0,
+      "p75": 0.0,
+      "p95": 0.2225650213052829
+    },
+    "best_return_advantage_vs_stop": {
+      "n": 32,
+      "mean": 0.5943824554423067,
+      "median": 0.35518286238531477,
+      "min": 0.0,
+      "max": 3.499819050196816,
+      "p25": 0.02043586626806755,
+      "p75": 0.8795879590920942,
+      "p95": 1.6954288794516439
+    },
+    "best_return_advantage_vs_whole_monotone": {
+      "n": 32,
+      "mean": 0.012644744811492772,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 0.4046318339677687,
+      "p25": 0.0,
+      "p75": 0.0,
+      "p95": 0.0
+    },
+    "best_return_gain_vs_anchor_pct": {
+      "n": 32,
+      "mean": 0.8178261429423066,
+      "median": 0.6584321757331689,
+      "min": 0.0,
+      "max": 3.670695050196816,
+      "p25": 0.19958386626806757,
+      "p75": 1.164768880408672,
+      "p95": 1.9737590794516437
+    },
+    "strict_best_gain_vs_one_step_pct": {
+      "n": 18,
+      "mean": 0.47259369660290346,
+      "median": 0.28485063486479606,
+      "min": 0.010171569936079788,
+      "max": 2.6644785953553733,
+      "p25": 0.1068622469555186,
+      "p75": 0.6068898460020291,
+      "p95": 1.1845835398630302
+    },
+    "strict_best_reward_advantage_vs_stop": {
+      "n": 18,
+      "mean": 0.4171433086344175,
+      "median": 0.06665169824174261,
+      "min": -0.27766696000013047,
+      "max": 3.418318050196816,
+      "p25": -0.17623716915789295,
+      "p75": 0.7234755475668241,
+      "p95": 1.5706587511594283
+    }
+  },
+  "selected_replay_recorded_timings": {
+    "menu_s": {
+      "n": 32,
+      "mean": 0.09080538749992684,
+      "median": 0.08724435000112862,
+      "min": 0.04054550000000745,
+      "max": 0.14690229999905569,
+      "p25": 0.07165524999800255,
+      "p75": 0.11286522500085994,
+      "p95": 0.14189237500195304
+    },
+    "proposal_s": {
+      "n": 32,
+      "mean": 0.05159090000040578,
+      "median": 0.04373730000224896,
+      "min": 0.018751300001895288,
+      "max": 0.1023328000010224,
+      "p25": 0.03123847500228294,
+      "p75": 0.06920950000221637,
+      "p95": 0.09205227999955241
+    },
+    "certification_s": {
+      "n": 32,
+      "mean": 0.21958476562497253,
+      "median": 0.17850904999977502,
+      "min": 0.10755510000308277,
+      "max": 0.388142700001481,
+      "p25": 0.15733004999856348,
+      "p75": 0.2833373500006928,
+      "p95": 0.3542635550029445
+    },
+    "final_validation_s": {
+      "n": 32,
+      "mean": 0.0730454687496831,
+      "median": 0.05996555000092485,
+      "min": 0.035042699997575255,
+      "max": 0.12890649999826564,
+      "p25": 0.05205520000163233,
+      "p75": 0.09029077500053972,
+      "p95": 0.1115336449993265
+    },
+    "selected_replay_elapsed_s": {
+      "n": 32,
+      "mean": 0.5266860375002125,
+      "median": 0.4583380500007479,
+      "min": 0.28643670000019483,
+      "max": 0.8483841999986907,
+      "p25": 0.3925531000004412,
+      "p75": 0.6433871999979601,
+      "p95": 0.8430002050003168
+    },
+    "preparation_s": {
+      "n": 32,
+      "mean": 0.6592000906246085,
+      "median": 0.6283048999994207,
+      "min": 0.42937130000063917,
+      "max": 0.9179093999991892,
+      "p25": 0.5567036000011285,
+      "p75": 0.7800040749998516,
+      "p95": 0.8722931050002444
+    },
+    "tree_elapsed_s": {
+      "n": 32,
+      "mean": 87.23548217812481,
+      "median": 70.74466829999983,
+      "min": 50.21336809999775,
+      "max": 131.1149203999994,
+      "p25": 65.64937057500083,
+      "p75": 114.78484552499958,
+      "p95": 129.40286678999928
+    }
+  },
+  "queried_step_recorded_times": {
+    "improve": {
+      "n": 7296,
+      "mean": 0.11682560068531425,
+      "median": 0.10295245000088471,
+      "min": 0.05002910000257543,
+      "max": 0.3080359999985376,
+      "p25": 0.08547610000096029,
+      "p75": 0.15134439999837923,
+      "p95": 0.18206550000013522
+    },
+    "replace": {
+      "n": 5472,
+      "mean": 0.11910411145833467,
+      "median": 0.10292269999990822,
+      "min": 0.058330299998488044,
+      "max": 0.4816864999993413,
+      "p25": 0.08765902499999356,
+      "p75": 0.15696337499866786,
+      "p95": 0.18316288999994867
+    },
+    "stop": {
+      "n": 1824,
+      "mean": 0.0848081120614436,
+      "median": 0.0717594999987341,
+      "min": 0.03426670000044396,
+      "max": 0.20944170000075246,
+      "p25": 0.06035755000084464,
+      "p75": 0.1125036999974327,
+      "p95": 0.13287736499951278
+    }
+  },
+  "menus": {
+    "total": 1824,
+    "root_pending_work": {
+      "n": 32,
+      "mean": 158973.53125,
+      "median": 152590.5,
+      "min": 81702.0,
+      "max": 233893.0,
+      "p25": 132365.25,
+      "p75": 219675.0,
+      "p95": 229206.15
+    },
+    "valid_nonstop": {
+      "n": 1824,
+      "mean": 16.0,
+      "median": 16.0,
+      "min": 16.0,
+      "max": 16.0,
+      "p25": 16.0,
+      "p75": 16.0,
+      "p95": 16.0
+    },
+    "queried_nonstop": {
+      "n": 1824,
+      "mean": 7.0,
+      "median": 7.0,
+      "min": 7.0,
+      "max": 7.0,
+      "p25": 7.0,
+      "p75": 7.0,
+      "p95": 7.0
+    },
+    "total_action_entries": 29184,
+    "retained_overlap_positive_entries": 4053,
+    "pool_extra_covered_tasks_positive_entries": 6891
+  },
+  "cases": [
+    {
+      "case_id": 0,
+      "mode": "regular",
+      "anchor_cost": 271.04999999999995,
+      "one_step_cost": 265.85,
+      "stop_return": -0.144981,
+      "best_quality": {
+        "path": [
+          0,
+          2,
+          2
+        ],
+        "returned_cost": 265.15,
+        "total_reward": 1.5887351623316652,
+        "work_used": 587985
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          2,
+          2
+        ],
+        "returned_cost": 265.15,
+        "total_reward": 1.5887351623316652,
+        "work_used": 587985
+      },
+      "best_return": {
+        "path": [
+          4,
+          2,
+          16
+        ],
+        "returned_cost": 265.15,
+        "total_reward": 1.7386161623316654,
+        "work_used": 438104
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          2,
+          16
+        ],
+        "returned_cost": 265.15,
+        "total_reward": 1.7386161623316654,
+        "work_used": 438104
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 37,
+            "end": 41,
+            "forbidden_node": null,
+            "key": "improve:37:41:-"
+          },
+          "current": 265.85,
+          "best": 265.85,
+          "return_so_far": 1.769939227817721
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 48,
+            "end": 52,
+            "forbidden_node": null,
+            "key": "improve:48:52:-"
+          },
+          "current": 265.15,
+          "best": 265.15,
+          "return_so_far": 1.8819951623316653
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 265.15,
+          "best": 265.15,
+          "return_so_far": 1.7386161623316654
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 2.176720162331665,
+        "best_depth3_gain_vs_one_step_pct": 0.2633063757758305,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 2.176720162331665,
+        "best_return_advantage_vs_stop": 1.8835971623316654,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 144981,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -5.199999999999932
+    },
+    {
+      "case_id": 1,
+      "mode": "mixed",
+      "anchor_cost": 267.6250420342001,
+      "one_step_cost": 266.34531316460004,
+      "stop_return": -0.171414,
+      "best_quality": {
+        "path": [
+          1,
+          2,
+          2
+        ],
+        "returned_cost": 266.31822166480003,
+        "total_reward": -0.21643027635837486,
+        "work_used": 704733
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          2
+        ],
+        "returned_cost": 266.34531316460004,
+        "total_reward": -0.23780820790248125,
+        "work_used": 715988
+      },
+      "best_return": {
+        "path": [
+          2,
+          16
+        ],
+        "returned_cost": 266.34531316460004,
+        "total_reward": 0.12282579209751876,
+        "work_used": 355354
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          2,
+          16
+        ],
+        "returned_cost": 266.34531316460004,
+        "total_reward": 0.12282579209751876,
+        "work_used": 355354
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 29,
+            "end": 33,
+            "forbidden_node": null,
+            "key": "improve:29:33:-"
+          },
+          "current": 266.34531316460004,
+          "best": 266.34531316460004,
+          "return_so_far": 0.2934387920975188
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 266.34531316460004,
+          "best": 266.34531316460004,
+          "return_so_far": 0.12282579209751876
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": true,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.48830272364162514,
+        "best_depth3_gain_vs_one_step_pct": 0.010171569936079788,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.010171569936079788,
+        "best_return_gain_vs_anchor_pct": 0.47817979209751876,
+        "best_return_advantage_vs_stop": 0.29423979209751877,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.010171569936079788,
+        "strict_best_reward_advantage_vs_stop": -0.04501627635837485
+      },
+      "root_menu_work": 171414,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.279728869600035
+    },
+    {
+      "case_id": 2,
+      "mode": "blocked",
+      "anchor_cost": 440.2783489859999,
+      "one_step_cost": 438.2291247399999,
+      "stop_return": -0.22428,
+      "best_quality": {
+        "path": [
+          0,
+          6,
+          6
+        ],
+        "returned_cost": 438.1049711783999,
+        "total_reward": -0.46085077877268493,
+        "work_used": 954488
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          6,
+          6
+        ],
+        "returned_cost": 438.1049711783999,
+        "total_reward": -0.46085077877268493,
+        "work_used": 954488
+      },
+      "best_return": {
+        "path": [
+          6,
+          16
+        ],
+        "returned_cost": 438.2291247399999,
+        "total_reward": 0.002751341612650088,
+        "work_used": 462687
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          16
+        ],
+        "returned_cost": 438.2291247399999,
+        "total_reward": 0.002751341612650088,
+        "work_used": 462687
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 22,
+            "end": 26,
+            "forbidden_node": null,
+            "key": "improve:22:26:-"
+          },
+          "current": 438.2291247399999,
+          "best": 438.2291247399999,
+          "return_so_far": 0.22863334161265012
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 438.2291247399999,
+          "best": 438.2291247399999,
+          "return_so_far": 0.002751341612650088
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.49363722122731507,
+        "best_depth3_gain_vs_one_step_pct": 0.02833074174922911,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.46543834161265013,
+        "best_return_advantage_vs_stop": 0.2270313416126501,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.02833074174922911,
+        "strict_best_reward_advantage_vs_stop": -0.20764977877268495
+      },
+      "root_menu_work": 224280,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -2.0492242459999943
+    },
+    {
+      "case_id": 3,
+      "mode": "regular",
+      "anchor_cost": 275.75,
+      "one_step_cost": 272.74999999999994,
+      "stop_return": -0.156195,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          4
+        ],
+        "returned_cost": 272.74999999999994,
+        "total_reward": 0.4431189764279446,
+        "work_used": 644823
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          4
+        ],
+        "returned_cost": 272.74999999999994,
+        "total_reward": 0.4431189764279446,
+        "work_used": 644823
+      },
+      "best_return": {
+        "path": [
+          4,
+          16
+        ],
+        "returned_cost": 272.74999999999994,
+        "total_reward": 0.7655189764279446,
+        "work_used": 322423
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          16
+        ],
+        "returned_cost": 272.74999999999994,
+        "total_reward": 0.7655189764279446,
+        "work_used": 322423
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 14,
+            "end": 18,
+            "forbidden_node": null,
+            "key": "improve:14:18:-"
+          },
+          "current": 272.74999999999994,
+          "best": 272.74999999999994,
+          "return_so_far": 0.9233159764279446
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 272.74999999999994,
+          "best": 272.74999999999994,
+          "return_so_far": 0.7655189764279446
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.0879419764279445,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.0879419764279445,
+        "best_return_advantage_vs_stop": 0.9217139764279446,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 156195,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -3.000000000000057
+    },
+    {
+      "case_id": 4,
+      "mode": "mixed",
+      "anchor_cost": 218.25056159399998,
+      "one_step_cost": 216.2566830134,
+      "stop_return": -0.08250299999999999,
+      "best_quality": {
+        "path": [
+          0,
+          4,
+          6
+        ],
+        "returned_cost": 215.0104755414,
+        "total_reward": 1.1370866908748782,
+        "work_used": 347485
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          4,
+          6
+        ],
+        "returned_cost": 215.0104755414,
+        "total_reward": 1.1370866908748782,
+        "work_used": 347485
+      },
+      "best_return": {
+        "path": [
+          4,
+          6,
+          16
+        ],
+        "returned_cost": 215.0104755414,
+        "total_reward": 1.2297226908748784,
+        "work_used": 254849
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          6,
+          16
+        ],
+        "returned_cost": 215.0104755414,
+        "total_reward": 1.2297226908748784,
+        "work_used": 254849
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 34,
+            "end": 38,
+            "forbidden_node": null,
+            "key": "improve:34:38:-"
+          },
+          "current": 216.2566830134,
+          "best": 216.2566830134,
+          "return_so_far": 0.8262851729795454
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 42,
+            "end": 46,
+            "forbidden_node": null,
+            "key": "improve:42:46:-"
+          },
+          "current": 215.0104755414,
+          "best": 215.0104755414,
+          "return_so_far": 1.3106236908748783
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 215.0104755414,
+          "best": 215.0104755414,
+          "return_so_far": 1.2297226908748784
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.4845716908748783,
+        "best_depth3_gain_vs_one_step_pct": 0.5762631030102137,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.4845716908748783,
+        "best_return_advantage_vs_stop": 1.3122256908748784,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.5762631030102137,
+        "strict_best_reward_advantage_vs_stop": 1.2289066908748785
+      },
+      "root_menu_work": 82503,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.9938785805999828
+    },
+    {
+      "case_id": 5,
+      "mode": "blocked",
+      "anchor_cost": 377.1487255326001,
+      "one_step_cost": 376.1839887150001,
+      "stop_return": -0.226683,
+      "best_quality": {
+        "path": [
+          0,
+          2,
+          4
+        ],
+        "returned_cost": 374.13207941700006,
+        "total_reward": -0.13292615762905724,
+        "work_used": 932782
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          2,
+          4
+        ],
+        "returned_cost": 374.13207941700006,
+        "total_reward": -0.13292615762905724,
+        "work_used": 932782
+      },
+      "best_return": {
+        "path": [
+          4,
+          4,
+          16
+        ],
+        "returned_cost": 374.13207941700006,
+        "total_reward": 0.10020984237094277,
+        "work_used": 699646
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          4,
+          16
+        ],
+        "returned_cost": 374.13207941700006,
+        "total_reward": 0.10020984237094277,
+        "work_used": 699646
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 56,
+            "end": 60,
+            "forbidden_node": null,
+            "key": "improve:56:60:-"
+          },
+          "current": 376.1839887150001,
+          "best": 376.1839887150001,
+          "return_so_far": 0.019071448668988883
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 68,
+            "end": 71,
+            "forbidden_node": null,
+            "key": "improve:68:71:-"
+          },
+          "current": 374.13207941700006,
+          "best": 374.13207941700006,
+          "return_so_far": 0.3276938423709428
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 374.13207941700006,
+          "best": 374.13207941700006,
+          "return_so_far": 0.10020984237094277
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.7998558423709428,
+        "best_depth3_gain_vs_one_step_pct": 0.5454536502228959,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.7998558423709428,
+        "best_return_advantage_vs_stop": 0.32689284237094274,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.5454536502228959,
+        "strict_best_reward_advantage_vs_stop": 0.0993938423709427
+      },
+      "root_menu_work": 226683,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.9647368175999986
+    },
+    {
+      "case_id": 6,
+      "mode": "regular",
+      "anchor_cost": 275.69999999999993,
+      "one_step_cost": 275.54999999999995,
+      "stop_return": -0.15138900000000002,
+      "best_quality": {
+        "path": [
+          0,
+          3,
+          6
+        ],
+        "returned_cost": 271.99999999999994,
+        "total_reward": 0.715559447587954,
+        "work_used": 626479
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          3,
+          6
+        ],
+        "returned_cost": 271.99999999999994,
+        "total_reward": 0.715559447587954,
+        "work_used": 626479
+      },
+      "best_return": {
+        "path": [
+          0,
+          3,
+          6
+        ],
+        "returned_cost": 271.99999999999994,
+        "total_reward": 0.715559447587954,
+        "work_used": 626479
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          0,
+          3,
+          6
+        ],
+        "returned_cost": 271.99999999999994,
+        "total_reward": 0.715559447587954,
+        "work_used": 626479
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 5,
+            "end": 9,
+            "forbidden_node": null,
+            "key": "improve:5:9:-"
+          },
+          "current": 275.54999999999995,
+          "best": 275.54999999999995,
+          "return_so_far": -0.10547303590860453
+        },
+        {
+          "action": {
+            "kind": "replace",
+            "start": 60,
+            "end": 61,
+            "forbidden_node": 720,
+            "key": "replace:60:61:720"
+          },
+          "current": 275.4999999999999,
+          "best": 275.4999999999999,
+          "return_so_far": -0.23955538121144526
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 76,
+            "end": 80,
+            "forbidden_node": null,
+            "key": "improve:76:80:-"
+          },
+          "current": 271.99999999999994,
+          "best": 271.99999999999994,
+          "return_so_far": 0.715559447587954
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": false,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.342038447587954,
+        "best_depth3_gain_vs_one_step_pct": 1.2883324260569813,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.342038447587954,
+        "best_return_advantage_vs_stop": 0.866948447587954,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 151389,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.14999999999997726
+    },
+    {
+      "case_id": 7,
+      "mode": "mixed",
+      "anchor_cost": 172.21336790319998,
+      "one_step_cost": 170.43309363099996,
+      "stop_return": -0.081702,
+      "best_quality": {
+        "path": [
+          4,
+          4,
+          6
+        ],
+        "returned_cost": 165.7938756212,
+        "total_reward": 3.382323777500913,
+        "work_used": 345315
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          4,
+          4,
+          6
+        ],
+        "returned_cost": 165.7938756212,
+        "total_reward": 3.382323777500913,
+        "work_used": 345315
+      },
+      "best_return": {
+        "path": [
+          6,
+          4,
+          16
+        ],
+        "returned_cost": 165.8919403318,
+        "total_reward": 3.418117050196816,
+        "work_used": 252578
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          4,
+          16
+        ],
+        "returned_cost": 165.8919403318,
+        "total_reward": 3.418117050196816,
+        "work_used": 252578
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 8,
+            "end": 12,
+            "forbidden_node": null,
+            "key": "improve:8:12:-"
+          },
+          "current": 170.8715792768,
+          "best": 170.8715792768,
+          "return_so_far": 0.6929621308365095
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 23,
+            "end": 27,
+            "forbidden_node": null,
+            "key": "improve:23:27:-"
+          },
+          "current": 165.8919403318,
+          "best": 165.8919403318,
+          "return_so_far": 3.499819050196816
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 165.8919403318,
+          "best": 165.8919403318,
+          "return_so_far": 3.418117050196816
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 3.7276387775009128,
+        "best_depth3_gain_vs_one_step_pct": 2.722017133505902,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 3.670695050196816,
+        "best_return_advantage_vs_stop": 3.499819050196816,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 2.6644785953553733,
+        "strict_best_reward_advantage_vs_stop": 3.418318050196816
+      },
+      "root_menu_work": 81702,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.341788626399989
+    },
+    {
+      "case_id": 8,
+      "mode": "blocked",
+      "anchor_cost": 239.4874078379999,
+      "one_step_cost": 239.39463359979993,
+      "stop_return": -0.146583,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          6
+        ],
+        "returned_cost": 239.39463359979993,
+        "total_reward": -0.6101713293377262,
+        "work_used": 648910
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          6
+        ],
+        "returned_cost": 239.39463359979993,
+        "total_reward": -0.6101713293377262,
+        "work_used": 648910
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 239.4874078379999,
+        "total_reward": -0.146583,
+        "work_used": 146583
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 239.4874078379999,
+        "total_reward": -0.146583,
+        "work_used": 146583
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 239.4874078379999,
+          "best": 239.4874078379999,
+          "return_so_far": -0.146583
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.03873867066227377,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 146583,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 9,
+      "mode": "regular",
+      "anchor_cost": 269.7999999999999,
+      "one_step_cost": 268.14999999999986,
+      "stop_return": -0.149787,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          6
+        ],
+        "returned_cost": 268.14999999999986,
+        "total_reward": -0.01165287842845264,
+        "work_used": 623217
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          6
+        ],
+        "returned_cost": 268.14999999999986,
+        "total_reward": -0.01165287842845264,
+        "work_used": 623217
+      },
+      "best_return": {
+        "path": [
+          6,
+          16
+        ],
+        "returned_cost": 268.14999999999986,
+        "total_reward": 0.30884312157154736,
+        "work_used": 302721
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          16
+        ],
+        "returned_cost": 268.14999999999986,
+        "total_reward": 0.30884312157154736,
+        "work_used": 302721
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 12,
+            "end": 16,
+            "forbidden_node": null,
+            "key": "improve:12:16:-"
+          },
+          "current": 268.14999999999986,
+          "best": 268.14999999999986,
+          "return_so_far": 0.45782912157154737
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 268.14999999999986,
+          "best": 268.14999999999986,
+          "return_so_far": 0.30884312157154736
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.6115641215715474,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.6115641215715474,
+        "best_return_advantage_vs_stop": 0.45863012157154737,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 149787,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.650000000000034
+    },
+    {
+      "case_id": 10,
+      "mode": "mixed",
+      "anchor_cost": 215.6770644692,
+      "one_step_cost": 214.59607662900004,
+      "stop_return": -0.092916,
+      "best_quality": {
+        "path": [
+          0,
+          2,
+          4
+        ],
+        "returned_cost": 213.16499021460004,
+        "total_reward": 0.7731657082082117,
+        "work_used": 391573
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          2,
+          4
+        ],
+        "returned_cost": 213.16499021460004,
+        "total_reward": 0.7731657082082117,
+        "work_used": 391573
+      },
+      "best_return": {
+        "path": [
+          6,
+          4,
+          16
+        ],
+        "returned_cost": 213.2718069004,
+        "total_reward": 0.8245904936045148,
+        "work_used": 290622
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          4,
+          16
+        ],
+        "returned_cost": 213.2718069004,
+        "total_reward": 0.8245904936045148,
+        "work_used": 290622
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 31,
+            "end": 35,
+            "forbidden_node": null,
+            "key": "improve:31:35:-"
+          },
+          "current": 214.84637119040002,
+          "best": 214.84637119040002,
+          "return_so_far": 0.2863030576662977
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 30,
+            "end": 34,
+            "forbidden_node": null,
+            "key": "improve:30:34:-"
+          },
+          "current": 213.2718069004,
+          "best": 213.2718069004,
+          "return_so_far": 0.9175064936045148
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 213.2718069004,
+          "best": 213.2718069004,
+          "return_so_far": 0.8245904936045148
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.1647387082082117,
+        "best_depth3_gain_vs_one_step_pct": 0.6668744540349185,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.1152124936045147,
+        "best_return_advantage_vs_stop": 0.9175064936045148,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.6170987603326343,
+        "strict_best_reward_advantage_vs_stop": 0.8257044936045147
+      },
+      "root_menu_work": 92916,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.8306932787999699
+    },
+    {
+      "case_id": 11,
+      "mode": "blocked",
+      "anchor_cost": 416.41686486839984,
+      "one_step_cost": 413.0804588413999,
+      "stop_return": -0.22347899999999998,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          2
+        ],
+        "returned_cost": 413.0804588413999,
+        "total_reward": -0.10418620396900671,
+        "work_used": 905404
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          2
+        ],
+        "returned_cost": 413.0804588413999,
+        "total_reward": -0.10418620396900671,
+        "work_used": 905404
+      },
+      "best_return": {
+        "path": [
+          2,
+          16
+        ],
+        "returned_cost": 413.0804588413999,
+        "total_reward": 0.3516477960309933,
+        "work_used": 449570
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          2,
+          16
+        ],
+        "returned_cost": 413.0804588413999,
+        "total_reward": 0.3516477960309933,
+        "work_used": 449570
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 76,
+            "end": 80,
+            "forbidden_node": null,
+            "key": "improve:76:80:-"
+          },
+          "current": 413.0804588413999,
+          "best": 413.0804588413999,
+          "return_so_far": 0.5759277960309933
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 413.0804588413999,
+          "best": 413.0804588413999,
+          "return_so_far": 0.3516477960309933
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.8012177960309933,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.8012177960309933,
+        "best_return_advantage_vs_stop": 0.5751267960309933,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 223479,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -3.3364060269999527
+    },
+    {
+      "case_id": 12,
+      "mode": "regular",
+      "anchor_cost": 290.7499999999999,
+      "one_step_cost": 287.6499999999999,
+      "stop_return": -0.153792,
+      "best_quality": {
+        "path": [
+          0,
+          6,
+          3
+        ],
+        "returned_cost": 286.2999999999999,
+        "total_reward": 0.8894435055889907,
+        "work_used": 641081
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          6,
+          3
+        ],
+        "returned_cost": 286.2999999999999,
+        "total_reward": 0.8894435055889907,
+        "work_used": 641081
+      },
+      "best_return": {
+        "path": [
+          0,
+          6,
+          3
+        ],
+        "returned_cost": 286.2999999999999,
+        "total_reward": 0.8894435055889907,
+        "work_used": 641081
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          0,
+          6,
+          3
+        ],
+        "returned_cost": 286.2999999999999,
+        "total_reward": 0.8894435055889907,
+        "work_used": 641081
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 16,
+            "end": 20,
+            "forbidden_node": null,
+            "key": "improve:16:20:-"
+          },
+          "current": 287.6499999999999,
+          "best": 287.6499999999999,
+          "return_so_far": 0.9094350825451305
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 65,
+            "end": 69,
+            "forbidden_node": null,
+            "key": "improve:65:69:-"
+          },
+          "current": 286.9999999999999,
+          "best": 286.9999999999999,
+          "return_so_far": 0.9587018417884785
+        },
+        {
+          "action": {
+            "kind": "replace",
+            "start": 20,
+            "end": 21,
+            "forbidden_node": 704,
+            "key": "replace:20:21:704"
+          },
+          "current": 286.2999999999999,
+          "best": 286.2999999999999,
+          "return_so_far": 0.8894435055889907
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.5305245055889907,
+        "best_depth3_gain_vs_one_step_pct": 0.4693203545976093,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.5305245055889907,
+        "best_return_advantage_vs_stop": 1.0432355055889906,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 153792,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -3.099999999999966
+    },
+    {
+      "case_id": 13,
+      "mode": "mixed",
+      "anchor_cost": 234.52506847820007,
+      "one_step_cost": 233.69897251180004,
+      "stop_return": -0.08490600000000001,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          4
+        ],
+        "returned_cost": 233.69897251180004,
+        "total_reward": -0.0066649255128451435,
+        "work_used": 358907
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          4
+        ],
+        "returned_cost": 233.69897251180004,
+        "total_reward": -0.0066649255128451435,
+        "work_used": 358907
+      },
+      "best_return": {
+        "path": [
+          4,
+          16
+        ],
+        "returned_cost": 233.69897251180004,
+        "total_reward": 0.17820907448715487,
+        "work_used": 174033
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          16
+        ],
+        "returned_cost": 233.69897251180004,
+        "total_reward": 0.17820907448715487,
+        "work_used": 174033
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 17,
+            "end": 21,
+            "forbidden_node": null,
+            "key": "improve:17:21:-"
+          },
+          "current": 233.69897251180004,
+          "best": 233.69897251180004,
+          "return_so_far": 0.2631150744871549
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 233.69897251180004,
+          "best": 233.69897251180004,
+          "return_so_far": 0.17820907448715487
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.3522420744871549,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.3522420744871549,
+        "best_return_advantage_vs_stop": 0.2631150744871549,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 84906,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.8260959664000325
+    },
+    {
+      "case_id": 14,
+      "mode": "blocked",
+      "anchor_cost": 393.68660598040003,
+      "one_step_cost": 393.080108788,
+      "stop_return": -0.22267800000000001,
+      "best_quality": {
+        "path": [
+          1,
+          6,
+          1
+        ],
+        "returned_cost": 389.45030647860006,
+        "total_reward": 0.18195383396776865,
+        "work_used": 894105
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          2
+        ],
+        "returned_cost": 393.080108788,
+        "total_reward": -0.7478221639144289,
+        "work_used": 901878
+      },
+      "best_return": {
+        "path": [
+          1,
+          6,
+          1
+        ],
+        "returned_cost": 389.45030647860006,
+        "total_reward": 0.18195383396776865,
+        "work_used": 894105
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 393.68660598040003,
+        "total_reward": -0.22267800000000001,
+        "work_used": 222678
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "replace",
+            "start": 38,
+            "end": 39,
+            "forbidden_node": 692,
+            "key": "replace:38:39:692"
+          },
+          "current": 394.6269463596,
+          "best": 393.68660598040003,
+          "return_so_far": -0.22352800000000003
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 36,
+            "end": 40,
+            "forbidden_node": null,
+            "key": "improve:36:40:-"
+          },
+          "current": 391.86834895800007,
+          "best": 391.86834895800007,
+          "return_so_far": 0.012312920041792047
+        },
+        {
+          "action": {
+            "kind": "replace",
+            "start": 35,
+            "end": 36,
+            "forbidden_node": 763,
+            "key": "replace:35:36:763"
+          },
+          "current": 389.45030647860006,
+          "best": 389.45030647860006,
+          "return_so_far": 0.18195383396776865
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": true,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": true,
+        "any_leaf_beats_whole_monotone_return": true,
+        "best_return_first_worse": true,
+        "best_return_has_worsening": true,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.0760588339677686,
+        "best_depth3_gain_vs_one_step_pct": 0.923425588893796,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.923425588893796,
+        "best_return_gain_vs_anchor_pct": 1.0760588339677686,
+        "best_return_advantage_vs_stop": 0.4046318339677687,
+        "best_return_advantage_vs_whole_monotone": 0.4046318339677687,
+        "strict_best_gain_vs_one_step_pct": 0.923425588893796,
+        "strict_best_reward_advantage_vs_stop": 0.4046318339677687
+      },
+      "root_menu_work": 222678,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "replace",
+      "reward_optimal_first_current_change": 0.9403403791999949
+    },
+    {
+      "case_id": 15,
+      "mode": "regular",
+      "anchor_cost": 258.2999999999999,
+      "one_step_cost": 257.9999999999999,
+      "stop_return": -0.136971,
+      "best_quality": {
+        "path": [
+          0,
+          6,
+          3
+        ],
+        "returned_cost": 255.74999999999994,
+        "total_reward": 0.4303421579558479,
+        "work_used": 556882
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          6,
+          3
+        ],
+        "returned_cost": 255.74999999999994,
+        "total_reward": 0.4303421579558479,
+        "work_used": 556882
+      },
+      "best_return": {
+        "path": [
+          6,
+          3,
+          16
+        ],
+        "returned_cost": 255.74999999999994,
+        "total_reward": 0.5718801579558479,
+        "work_used": 415344
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          3,
+          16
+        ],
+        "returned_cost": 255.74999999999994,
+        "total_reward": 0.5718801579558479,
+        "work_used": 415344
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 15,
+            "end": 19,
+            "forbidden_node": null,
+            "key": "improve:15:19:-"
+          },
+          "current": 257.9999999999999,
+          "best": 257.9999999999999,
+          "return_so_far": -0.024447981416952577
+        },
+        {
+          "action": {
+            "kind": "replace",
+            "start": 19,
+            "end": 20,
+            "forbidden_node": 309,
+            "key": "replace:19:20:309"
+          },
+          "current": 255.74999999999994,
+          "best": 255.74999999999994,
+          "return_so_far": 0.708851157955848
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 255.74999999999994,
+          "best": 255.74999999999994,
+          "return_so_far": 0.5718801579558479
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.9872241579558481,
+        "best_depth3_gain_vs_one_step_pct": 0.8720930232557923,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.9872241579558481,
+        "best_return_advantage_vs_stop": 0.7088511579558479,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.8720930232557923,
+        "strict_best_reward_advantage_vs_stop": 0.5710701579558479
+      },
+      "root_menu_work": 136971,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.30000000000001137
+    },
+    {
+      "case_id": 16,
+      "mode": "mixed",
+      "anchor_cost": 414.90118577119995,
+      "one_step_cost": 413.55153319719994,
+      "stop_return": -0.20826,
+      "best_quality": {
+        "path": [
+          6,
+          4,
+          6
+        ],
+        "returned_cost": 413.00526948719994,
+        "total_reward": -0.4011558983981297,
+        "work_used": 858112
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          6,
+          4,
+          6
+        ],
+        "returned_cost": 413.00526948719994,
+        "total_reward": -0.4011558983981297,
+        "work_used": 858112
+      },
+      "best_return": {
+        "path": [
+          6,
+          16
+        ],
+        "returned_cost": 413.55153319719994,
+        "total_reward": -0.10137005742437699,
+        "work_used": 426665
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          16
+        ],
+        "returned_cost": 413.55153319719994,
+        "total_reward": -0.10137005742437699,
+        "work_used": 426665
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 37,
+            "end": 41,
+            "forbidden_node": null,
+            "key": "improve:37:41:-"
+          },
+          "current": 413.55153319719994,
+          "best": 413.55153319719994,
+          "return_so_far": 0.108491942575623
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 413.55153319719994,
+          "best": 413.55153319719994,
+          "return_so_far": -0.10137005742437699
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.4569561016018703,
+        "best_depth3_gain_vs_one_step_pct": 0.13209084386093234,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.325294942575623,
+        "best_return_advantage_vs_stop": 0.10688994257562301,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.1257528124679983,
+        "strict_best_reward_advantage_vs_stop": -0.19197331249548366
+      },
+      "root_menu_work": 208260,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.3496525740000038
+    },
+    {
+      "case_id": 17,
+      "mode": "blocked",
+      "anchor_cost": 235.624260982,
+      "one_step_cost": 233.7669188844,
+      "stop_return": -0.086508,
+      "best_quality": {
+        "path": [
+          0,
+          4,
+          0
+        ],
+        "returned_cost": 231.36488118880004,
+        "total_reward": 1.4549650116407176,
+        "work_used": 352735
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          4,
+          0
+        ],
+        "returned_cost": 231.36488118880004,
+        "total_reward": 1.4549650116407176,
+        "work_used": 352735
+      },
+      "best_return": {
+        "path": [
+          0,
+          4,
+          0
+        ],
+        "returned_cost": 231.36488118880004,
+        "total_reward": 1.4549650116407176,
+        "work_used": 352735
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          0,
+          4,
+          0
+        ],
+        "returned_cost": 231.36488118880004,
+        "total_reward": 1.4549650116407176,
+        "work_used": 352735
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 24,
+            "end": 28,
+            "forbidden_node": null,
+            "key": "improve:24:28:-"
+          },
+          "current": 233.7669188844,
+          "best": 233.7669188844,
+          "return_so_far": 0.6995713705105919
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 26,
+            "end": 30,
+            "forbidden_node": null,
+            "key": "improve:26:30:-"
+          },
+          "current": 233.40945553060004,
+          "best": 233.40945553060004,
+          "return_so_far": 0.7626674315004021
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 26,
+            "end": 30,
+            "forbidden_node": null,
+            "key": "improve:26:30:-"
+          },
+          "current": 231.36488118880004,
+          "best": 231.36488118880004,
+          "return_so_far": 1.4549650116407176
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.8077000116407176,
+        "best_depth3_gain_vs_one_step_pct": 1.0275353360788415,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.8077000116407176,
+        "best_return_advantage_vs_stop": 1.5414730116407176,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.25637589341559763,
+        "strict_best_reward_advantage_vs_stop": 0.7742773441038161
+      },
+      "root_menu_work": 86508,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.8573420975999966
+    },
+    {
+      "case_id": 18,
+      "mode": "regular",
+      "anchor_cost": 251.69999999999993,
+      "one_step_cost": 250.39999999999992,
+      "stop_return": -0.130563,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          5
+        ],
+        "returned_cost": 250.3499999999999,
+        "total_reward": -0.0012911990464747891,
+        "work_used": 537644
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          5
+        ],
+        "returned_cost": 250.3499999999999,
+        "total_reward": -0.0012911990464747891,
+        "work_used": 537644
+      },
+      "best_return": {
+        "path": [
+          1,
+          16
+        ],
+        "returned_cost": 250.39999999999992,
+        "total_reward": 0.2529098823996868,
+        "work_used": 263578
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          1,
+          16
+        ],
+        "returned_cost": 250.39999999999992,
+        "total_reward": 0.2529098823996868,
+        "work_used": 263578
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "replace",
+            "start": 69,
+            "end": 70,
+            "forbidden_node": 724,
+            "key": "replace:69:70:724"
+          },
+          "current": 250.39999999999992,
+          "best": 250.39999999999992,
+          "return_so_far": 0.3850748823996868
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 250.39999999999992,
+          "best": 250.39999999999992,
+          "return_so_far": 0.2529098823996868
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.5363528009535252,
+        "best_depth3_gain_vs_one_step_pct": 0.01996805111821541,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.5164878823996868,
+        "best_return_advantage_vs_stop": 0.3834728823996868,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 130563,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "replace",
+      "reward_optimal_first_current_change": -1.3000000000000114
+    },
+    {
+      "case_id": 19,
+      "mode": "mixed",
+      "anchor_cost": 332.716551362,
+      "one_step_cost": 331.1455630678,
+      "stop_return": -0.225081,
+      "best_quality": {
+        "path": [
+          0,
+          4,
+          6
+        ],
+        "returned_cost": 331.0604262842,
+        "total_reward": -0.4451124511629928,
+        "work_used": 942871
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          4,
+          6
+        ],
+        "returned_cost": 331.0604262842,
+        "total_reward": -0.4451124511629928,
+        "work_used": 942871
+      },
+      "best_return": {
+        "path": [
+          4,
+          16
+        ],
+        "returned_cost": 331.1455630678,
+        "total_reward": 0.010668166398105028,
+        "work_used": 461502
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          16
+        ],
+        "returned_cost": 331.1455630678,
+        "total_reward": 0.010668166398105028,
+        "work_used": 461502
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 46,
+            "end": 50,
+            "forbidden_node": null,
+            "key": "improve:46:50:-"
+          },
+          "current": 331.1455630678,
+          "best": 331.1455630678,
+          "return_so_far": 0.23494816639810504
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 331.1455630678,
+          "best": 331.1455630678,
+          "return_so_far": 0.010668166398105028
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.49775854883700726,
+        "best_depth3_gain_vs_one_step_pct": 0.02570977633259236,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.47217016639810505,
+        "best_return_advantage_vs_stop": 0.23574916639810503,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.02570977633259236,
+        "strict_best_reward_advantage_vs_stop": -0.21634245116299275
+      },
+      "root_menu_work": 225081,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.5709882941999922
+    },
+    {
+      "case_id": 20,
+      "mode": "blocked",
+      "anchor_cost": 313.6445887514001,
+      "one_step_cost": 313.6445887514001,
+      "stop_return": -0.155394,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 313.6445887514001,
+        "total_reward": -0.6258570000000001,
+        "work_used": 625857
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 313.6445887514001,
+        "total_reward": -0.6258570000000001,
+        "work_used": 625857
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 313.6445887514001,
+        "total_reward": -0.155394,
+        "work_used": 155394
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 313.6445887514001,
+        "total_reward": -0.155394,
+        "work_used": 155394
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 313.6445887514001,
+          "best": 313.6445887514001,
+          "return_so_far": -0.155394
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": false,
+        "nonimproving_first_then_record": false,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.0,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 155394,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 21,
+      "mode": "regular",
+      "anchor_cost": 288.7499999999999,
+      "one_step_cost": 287.44999999999993,
+      "stop_return": -0.164205,
+      "best_quality": {
+        "path": [
+          4,
+          4,
+          4
+        ],
+        "returned_cost": 285.1499999999999,
+        "total_reward": 0.5570222467532354,
+        "work_used": 689731
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          4,
+          4,
+          4
+        ],
+        "returned_cost": 285.1499999999999,
+        "total_reward": 0.5570222467532354,
+        "work_used": 689731
+      },
+      "best_return": {
+        "path": [
+          4,
+          4,
+          4
+        ],
+        "returned_cost": 285.1499999999999,
+        "total_reward": 0.5570222467532354,
+        "work_used": 689731
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          4,
+          4
+        ],
+        "returned_cost": 285.1499999999999,
+        "total_reward": 0.5570222467532354,
+        "work_used": 689731
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 58,
+            "end": 62,
+            "forbidden_node": null,
+            "key": "improve:58:62:-"
+          },
+          "current": 287.7499999999999,
+          "best": 287.7499999999999,
+          "return_so_far": 0.17598234632034646
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 27,
+            "end": 31,
+            "forbidden_node": null,
+            "key": "improve:27:31:-"
+          },
+          "current": 286.44999999999993,
+          "best": 286.44999999999993,
+          "return_so_far": 0.4482957965367811
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 81,
+            "end": 85,
+            "forbidden_node": null,
+            "key": "improve:81:85:-"
+          },
+          "current": 285.1499999999999,
+          "best": 285.1499999999999,
+          "return_so_far": 0.5570222467532354
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.2467532467532354,
+        "best_depth3_gain_vs_one_step_pct": 0.8001391546355929,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.2467532467532354,
+        "best_return_advantage_vs_stop": 0.7212272467532355,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.10436597669160252,
+        "strict_best_reward_advantage_vs_stop": 0.03390955411254251
+      },
+      "root_menu_work": 164205,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.0
+    },
+    {
+      "case_id": 22,
+      "mode": "mixed",
+      "anchor_cost": 302.67965236660007,
+      "one_step_cost": 301.87418602980006,
+      "stop_return": -0.23229,
+      "best_quality": {
+        "path": [
+          0,
+          3,
+          6
+        ],
+        "returned_cost": 301.368510581,
+        "total_reward": -0.5107579600001305,
+        "work_used": 943936
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          6
+        ],
+        "returned_cost": 301.8161236584001,
+        "total_reward": -0.6633763984474402,
+        "work_used": 948671
+      },
+      "best_return": {
+        "path": [
+          0,
+          16
+        ],
+        "returned_cost": 301.87418602980006,
+        "total_reward": -0.20504217830924326,
+        "work_used": 471154
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          0,
+          16
+        ],
+        "returned_cost": 301.87418602980006,
+        "total_reward": -0.20504217830924326,
+        "work_used": 471154
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 93,
+            "end": 97,
+            "forbidden_node": null,
+            "key": "improve:93:97:-"
+          },
+          "current": 301.87418602980006,
+          "best": 301.87418602980006,
+          "return_so_far": 0.02804882169075673
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 301.87418602980006,
+          "best": 301.87418602980006,
+          "return_so_far": -0.20504217830924326
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": true,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.4331780399998696,
+        "best_depth3_gain_vs_one_step_pct": 0.16751198751062776,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.1483065490254282,
+        "best_return_gain_vs_anchor_pct": 0.26611182169075676,
+        "best_return_advantage_vs_stop": 0.027247821690756735,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.16751198751062776,
+        "strict_best_reward_advantage_vs_stop": -0.27766696000013047
+      },
+      "root_menu_work": 232290,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.8054663368000092
+    },
+    {
+      "case_id": 23,
+      "mode": "blocked",
+      "anchor_cost": 236.817229555,
+      "one_step_cost": 236.817229555,
+      "stop_return": -0.092916,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 236.817229555,
+        "total_reward": -0.378207,
+        "work_used": 378207
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 236.817229555,
+        "total_reward": -0.378207,
+        "work_used": 378207
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 236.817229555,
+        "total_reward": -0.092916,
+        "work_used": 92916
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 236.817229555,
+        "total_reward": -0.092916,
+        "work_used": 92916
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 236.817229555,
+          "best": 236.817229555,
+          "return_so_far": -0.092916
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": false,
+        "nonimproving_first_then_record": false,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.0,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 92916,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 24,
+      "mode": "regular",
+      "anchor_cost": 263.74999999999994,
+      "one_step_cost": 262.3499999999999,
+      "stop_return": -0.144981,
+      "best_quality": {
+        "path": [
+          3,
+          2,
+          4
+        ],
+        "returned_cost": 260.75,
+        "total_reward": 0.5247097582938176,
+        "work_used": 612731
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          3,
+          2,
+          4
+        ],
+        "returned_cost": 260.75,
+        "total_reward": 0.5247097582938176,
+        "work_used": 612731
+      },
+      "best_return": {
+        "path": [
+          4,
+          4,
+          3
+        ],
+        "returned_cost": 260.75,
+        "total_reward": 0.5279137582938176,
+        "work_used": 609527
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          4,
+          4,
+          3
+        ],
+        "returned_cost": 260.75,
+        "total_reward": 0.5279137582938176,
+        "work_used": 609527
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 12,
+            "end": 16,
+            "forbidden_node": null,
+            "key": "improve:12:16:-"
+          },
+          "current": 262.3499999999999,
+          "best": 262.3499999999999,
+          "return_so_far": 0.3824246872038045
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 6,
+            "end": 10,
+            "forbidden_node": null,
+            "key": "improve:6:10:-"
+          },
+          "current": 261.34999999999997,
+          "best": 261.34999999999997,
+          "return_so_far": 0.5928416066350627
+        },
+        {
+          "action": {
+            "kind": "replace",
+            "start": 62,
+            "end": 63,
+            "forbidden_node": 747,
+            "key": "replace:62:63:747"
+          },
+          "current": 260.75,
+          "best": 260.75,
+          "return_so_far": 0.5279137582938176
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.1374407582938175,
+        "best_depth3_gain_vs_one_step_pct": 0.6098723079854811,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.1374407582938175,
+        "best_return_advantage_vs_stop": 0.6728947582938176,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.11435105774726687,
+        "strict_best_reward_advantage_vs_stop": 0.1816257630331712
+      },
+      "root_menu_work": 144981,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -1.400000000000034
+    },
+    {
+      "case_id": 25,
+      "mode": "mixed",
+      "anchor_cost": 310.4246439471999,
+      "one_step_cost": 310.4246439471999,
+      "stop_return": -0.146583,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 310.4246439471999,
+        "total_reward": -0.619425,
+        "work_used": 619425
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 310.4246439471999,
+        "total_reward": -0.619425,
+        "work_used": 619425
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 310.4246439471999,
+        "total_reward": -0.146583,
+        "work_used": 146583
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 310.4246439471999,
+        "total_reward": -0.146583,
+        "work_used": 146583
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 310.4246439471999,
+          "best": 310.4246439471999,
+          "return_so_far": -0.146583
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": false,
+        "nonimproving_first_then_record": false,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.0,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 146583,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 26,
+      "mode": "blocked",
+      "anchor_cost": 291.148098625,
+      "one_step_cost": 291.148098625,
+      "stop_return": -0.220275,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 291.148098625,
+        "total_reward": -0.9209609999999999,
+        "work_used": 920961
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 291.148098625,
+        "total_reward": -0.9209609999999999,
+        "work_used": 920961
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 291.148098625,
+        "total_reward": -0.220275,
+        "work_used": 220275
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 291.148098625,
+        "total_reward": -0.220275,
+        "work_used": 220275
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 291.148098625,
+          "best": 291.148098625,
+          "return_so_far": -0.220275
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": false,
+        "nonimproving_first_then_record": false,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.0,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 220275,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 27,
+      "mode": "regular",
+      "anchor_cost": 247.1499999999999,
+      "one_step_cost": 247.1499999999999,
+      "stop_return": -0.132966,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 247.1499999999999,
+        "total_reward": -0.571485,
+        "work_used": 571485
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 247.1499999999999,
+        "total_reward": -0.571485,
+        "work_used": 571485
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 247.1499999999999,
+        "total_reward": -0.132966,
+        "work_used": 132966
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 247.1499999999999,
+        "total_reward": -0.132966,
+        "work_used": 132966
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 247.1499999999999,
+          "best": 247.1499999999999,
+          "return_so_far": -0.132966
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": false,
+        "worse_first_then_record": false,
+        "nonimproving_first_then_record": false,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.0,
+        "best_depth3_gain_vs_one_step_pct": 0.0,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0
+      },
+      "root_menu_work": 132966,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 28,
+      "mode": "mixed",
+      "anchor_cost": 281.468894955,
+      "one_step_cost": 281.2242310698,
+      "stop_return": -0.233893,
+      "best_quality": {
+        "path": [
+          1,
+          6,
+          4
+        ],
+        "returned_cost": 279.48369419180005,
+        "total_reward": -0.24008977010520952,
+        "work_used": 945390
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          2,
+          4,
+          4
+        ],
+        "returned_cost": 279.48369419180005,
+        "total_reward": -0.24267477010520946,
+        "work_used": 947975
+      },
+      "best_return": {
+        "path": [
+          6,
+          4,
+          16
+        ],
+        "returned_cost": 279.48369419180005,
+        "total_reward": -0.005380770105209487,
+        "work_used": 710681
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          6,
+          4,
+          16
+        ],
+        "returned_cost": 279.48369419180005,
+        "total_reward": -0.005380770105209487,
+        "work_used": 710681
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 13,
+            "end": 17,
+            "forbidden_node": null,
+            "key": "improve:13:17:-"
+          },
+          "current": 281.2242310698,
+          "best": 281.2242310698,
+          "return_so_far": -0.15207104869123692
+        },
+        {
+          "action": {
+            "kind": "improve",
+            "start": 17,
+            "end": 20,
+            "forbidden_node": null,
+            "key": "improve:17:20:-"
+          },
+          "current": 279.48369419180005,
+          "best": 279.48369419180005,
+          "return_so_far": 0.2277112298947905
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 279.48369419180005,
+          "best": 279.48369419180005,
+          "return_so_far": -0.005380770105209487
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.7053002298947905,
+        "best_depth3_gain_vs_one_step_pct": 0.6189142633189177,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 0.7053002298947905,
+        "best_return_advantage_vs_stop": 0.2285122298947905,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.6189142633189177,
+        "strict_best_reward_advantage_vs_stop": -0.006196770105209526
+      },
+      "root_menu_work": 233893,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -0.24466388519999782
+    },
+    {
+      "case_id": 29,
+      "mode": "blocked",
+      "anchor_cost": 398.3239555559999,
+      "one_step_cost": 398.30473959099993,
+      "stop_return": -0.219475,
+      "best_quality": {
+        "path": [
+          3,
+          6,
+          6
+        ],
+        "returned_cost": 397.05674976679995,
+        "total_reward": -0.572029533939305,
+        "work_used": 890164
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          6
+        ],
+        "returned_cost": 398.30473959099993,
+        "total_reward": -0.8991797947941842,
+        "work_used": 904004
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 398.3239555559999,
+        "total_reward": -0.219475,
+        "work_used": 219475
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 398.3239555559999,
+        "total_reward": -0.219475,
+        "work_used": 219475
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 398.3239555559999,
+          "best": 398.3239555559999,
+          "return_so_far": -0.219475
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": true,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.318134466060695,
+        "best_depth3_gain_vs_one_step_pct": 0.3133253763139945,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.3133253763139945,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.3133253763139945,
+        "strict_best_reward_advantage_vs_stop": -0.12902873914512084
+      },
+      "root_menu_work": 219475,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    },
+    {
+      "case_id": 30,
+      "mode": "regular",
+      "anchor_cost": 288.84999999999985,
+      "one_step_cost": 285.1999999999998,
+      "stop_return": -0.153792,
+      "best_quality": {
+        "path": [
+          0,
+          0,
+          3
+        ],
+        "returned_cost": 283.74999999999983,
+        "total_reward": 1.141717295308993,
+        "work_used": 623905
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          3
+        ],
+        "returned_cost": 283.74999999999983,
+        "total_reward": 1.141717295308993,
+        "work_used": 623905
+      },
+      "best_return": {
+        "path": [
+          0,
+          5,
+          16
+        ],
+        "returned_cost": 283.89999999999986,
+        "total_reward": 1.2454142277998932,
+        "work_used": 468278
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          0,
+          5,
+          16
+        ],
+        "returned_cost": 283.89999999999986,
+        "total_reward": 1.2454142277998932,
+        "work_used": 468278
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "improve",
+            "start": 47,
+            "end": 51,
+            "forbidden_node": null,
+            "key": "improve:47:51:-"
+          },
+          "current": 285.1999999999998,
+          "best": 285.1999999999998,
+          "return_so_far": 1.103802642721148
+        },
+        {
+          "action": {
+            "kind": "replace",
+            "start": 56,
+            "end": 57,
+            "forbidden_node": 779,
+            "key": "replace:56:57:779"
+          },
+          "current": 283.89999999999986,
+          "best": 283.89999999999986,
+          "return_so_far": 1.3992062277998931
+        },
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 283.89999999999986,
+          "best": 283.89999999999986,
+          "return_so_far": 1.2454142277998932
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": true,
+        "worse_first_beats_all_monotone_first": false,
+        "strict_witness_positive_return": true,
+        "any_leaf_beats_stop_return": true,
+        "any_leaf_beats_whole_monotone_quality": false,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": false
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 1.7656222953089926,
+        "best_depth3_gain_vs_one_step_pct": 0.5084151472650735,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.0,
+        "best_return_gain_vs_anchor_pct": 1.7136922277998932,
+        "best_return_advantage_vs_stop": 1.3992062277998931,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.4558204768583294,
+        "strict_best_reward_advantage_vs_stop": 1.244601227799893
+      },
+      "root_menu_work": 153792,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "improve",
+      "reward_optimal_first_current_change": -3.650000000000034
+    },
+    {
+      "case_id": 31,
+      "mode": "mixed",
+      "anchor_cost": 226.17265313940004,
+      "one_step_cost": 226.17265313940004,
+      "stop_return": -0.089712,
+      "best_quality": {
+        "path": [
+          1,
+          0,
+          6
+        ],
+        "returned_cost": 225.97533132900003,
+        "total_reward": -0.2896971145606783,
+        "work_used": 376941
+      },
+      "best_whole_monotone_quality": {
+        "path": [
+          0,
+          0,
+          0
+        ],
+        "returned_cost": 226.17265313940004,
+        "total_reward": -0.398655,
+        "work_used": 398655
+      },
+      "best_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 226.17265313940004,
+        "total_reward": -0.089712,
+        "work_used": 89712
+      },
+      "best_whole_monotone_return": {
+        "path": [
+          16
+        ],
+        "returned_cost": 226.17265313940004,
+        "total_reward": -0.089712,
+        "work_used": 89712
+      },
+      "best_return_trace": [
+        {
+          "action": {
+            "kind": "stop",
+            "start": 0,
+            "end": 0,
+            "forbidden_node": null,
+            "key": "stop"
+          },
+          "current": 226.17265313940004,
+          "best": 226.17265313940004,
+          "return_so_far": -0.089712
+        }
+      ],
+      "flags": {
+        "worse_first_beats_one_step": true,
+        "worse_first_then_record": true,
+        "nonimproving_first_then_record": true,
+        "ranking_reversal": false,
+        "worse_first_beats_all_monotone_first": true,
+        "strict_witness_positive_return": false,
+        "any_leaf_beats_stop_return": false,
+        "any_leaf_beats_whole_monotone_quality": true,
+        "any_leaf_beats_whole_monotone_return": false,
+        "best_return_first_worse": false,
+        "best_return_has_worsening": false,
+        "best_return_first_stop": true
+      },
+      "gains": {
+        "best_depth3_gain_vs_anchor_pct": 0.08724388543932166,
+        "best_depth3_gain_vs_one_step_pct": 0.08724388543932166,
+        "best_depth3_gain_vs_whole_monotone_pct": 0.08724388543932166,
+        "best_return_gain_vs_anchor_pct": 0.0,
+        "best_return_advantage_vs_stop": 0.0,
+        "best_return_advantage_vs_whole_monotone": 0.0,
+        "strict_best_gain_vs_one_step_pct": 0.08724388543932166,
+        "strict_best_reward_advantage_vs_stop": -0.1999851145606783
+      },
+      "root_menu_work": 89712,
+      "root_action_count": 17,
+      "reward_optimal_first_kind": "stop",
+      "reward_optimal_first_current_change": 0.0
+    }
+  ]
+}

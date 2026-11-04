@@ -1,0 +1,202 @@
+{
+  "scene": {
+    "schema_version": 2,
+    "parameter_status": "DEMONSTRATION_ONLY_NOT_MEASURED",
+    "nx": 1,
+    "ny": 1,
+    "seed": 767937701,
+    "start": [
+      0.0,
+      0.0
+    ],
+    "robot": {
+      "base_radius": 0.32,
+      "clearance": 0.08,
+      "arm_forward_offset": 0.12,
+      "arm_spacing": 0.36,
+      "arm_min_reach": 0.1,
+      "arm_max_reach": 0.9,
+      "arm_sector_half_angle_deg": 100.0,
+      "shoulder_height": 0.75,
+      "fixed_lift_height": 0.4
+    },
+    "geometry": {
+      "table_width": 1.0,
+      "table_depth": 0.7,
+      "aisle_gap": 1.2,
+      "table_height": 0.75,
+      "dock_gap": 0.5,
+      "task_margin": 0.04
+    },
+    "table_width": 1.0,
+    "table_depth": 0.7,
+    "aisle_gap": 1.2,
+    "x_lines": [
+      0.0,
+      2.2
+    ],
+    "y_lines": [
+      0.0,
+      1.9
+    ],
+    "tables": [
+      {
+        "id": 0,
+        "ix": 0,
+        "iy": 0,
+        "cx": 1.1,
+        "cy": 0.95,
+        "xmin": 0.6000000000000001,
+        "xmax": 1.6,
+        "ymin": 0.6,
+        "ymax": 1.2999999999999998,
+        "z": 0.75
+      }
+    ],
+    "tasks": [],
+    "candidates": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 0.8500000000000001,
+        "y": 0.09999999999999998,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.8500000000000001,
+          0.0
+        ]
+      },
+      {
+        "id": 1,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.35,
+        "y": 0.09999999999999998,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.35,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "table_id": 0,
+        "side": "top",
+        "x": 0.8500000000000001,
+        "y": 1.7999999999999998,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.8500000000000001,
+          1.9
+        ]
+      },
+      {
+        "id": 3,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.35,
+        "y": 1.7999999999999998,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.35,
+          1.9
+        ]
+      },
+      {
+        "id": 4,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.10000000000000009,
+        "y": 0.7749999999999999,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          0.7749999999999999
+        ]
+      },
+      {
+        "id": 5,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.10000000000000009,
+        "y": 1.125,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          1.125
+        ]
+      },
+      {
+        "id": 6,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.1,
+        "y": 0.7749999999999999,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.2,
+          0.7749999999999999
+        ]
+      },
+      {
+        "id": 7,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.1,
+        "y": 1.125,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.2,
+          1.125
+        ]
+      }
+    ],
+    "model_scope": "fixed-height spherical-sector arm proxy; independent sequential one-arm tasks; no IK, joint path, or hardware validation",
+    "complexity": "regular",
+    "obstacles": []
+  },
+  "feasibility": [],
+  "plans": {
+    "portfolio_teacher": {
+      "method": "portfolio_teacher",
+      "status": "complete",
+      "selected_candidate_ids": [],
+      "visit_order_candidate_ids": [],
+      "assignments": [],
+      "service_stops": [],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        0.0
+      ],
+      "route_length_m": 0.0,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 0.0,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 0.0,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    }
+  }
+}

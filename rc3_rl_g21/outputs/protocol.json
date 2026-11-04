@@ -1,0 +1,97 @@
+{
+  "schema": "rc3-g21-offline-gated-v1",
+  "created_utc": "2026-11-03T13:10:11.752258+00:00",
+  "seed": 2026110311,
+  "scope": "Frozen G2 graph actor, supervised diagnostics before any new PPO interactions",
+  "user_request_sha256": "a59e05459afe4b1d174e23d0fbd6b7cf357a38428c157e7a696e14a836fc205c",
+  "supplement_zip_status": "Not present locally; library URL returned cache miss. Body is the task authority; G2_1_TASKS.md unseen.",
+  "selection_sha256": "666bb760aeb528c6ade231fefcec57af2b39fb2d313b3e01dbe9bb5cd5bf135d",
+  "initial_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+  "toy": {
+    "updates": 512,
+    "lr": 0.001,
+    "batch_size": 16,
+    "check_every": 32,
+    "grad_clip": 0.5,
+    "gate": "Final update512: evidence near-best >=15/16 AND known-positive continue >=7/8. No best-checkpoint selection.",
+    "failure": "Stop all downstream training and PPO; inspect inputs, gradients and model representation using zero updates."
+  },
+  "sampling": {
+    "updates": 2048,
+    "lr": 0.0001,
+    "batch_size": 32,
+    "check_every": 256,
+    "grad_clip": 0.5,
+    "variants": [
+      "original",
+      "root_half"
+    ],
+    "same_initial": "frozen G2 bc_initial.pt",
+    "objective": "Evidence-normalized tie CE, unchanged G2 architecture",
+    "root_half": "Equal scene mass; half root, half successors; successor-only routes equally weighted"
+  },
+  "gain": {
+    "updates": 2048,
+    "lr": 0.0001,
+    "batch_size": 32,
+    "check_every": 256,
+    "grad_clip": 0.5,
+    "condition": "Only if sampling_root_half fails opportunity_gate, after a saved gate decision",
+    "variants": [
+      "control",
+      "gain"
+    ],
+    "same_initial": "sampling_root_half final checkpoint",
+    "objective": "Control CE; gain CE plus coefficient1 SmoothL1 on logit(a)-logit(STOP) vs queried delta, roots depth2 only"
+  },
+  "opportunity_gate": {
+    "initial_positive_full_known_min_fraction": 0.7,
+    "extra_positive_full_known_min_fraction": 0.5,
+    "initial_clear_stop_full_stop_min_fraction": 0.75,
+    "initial_root_full_unknown_max_fraction": 0.2,
+    "checkpoint": "Final prescribed update only",
+    "extra_scope": "Previously used G2 extra32 teacher; development diagnostic, not independent confirmation"
+  },
+  "ppo": {
+    "actions_max": 4096,
+    "seeds": 1,
+    "checkpoints": [
+      1024,
+      2048,
+      4096
+    ],
+    "prerequisites": [
+      "toy gate",
+      "full-action opportunity gate",
+      "early-stop rule development freeze",
+      "one-step learned control integration",
+      "dedicated G21 interaction logging/cache"
+    ],
+    "auto_expand": false,
+    "stop_condition": "At checkpoints: known-positive detection fails to improve over chosen BC AND nonSTOP in latest1024 actions <=1%; stop pilot.",
+    "required_logs": [
+      "committed actions",
+      "actual proposals",
+      "episodes with >=2 proposals",
+      "raw STOP/continue advantages",
+      "critic MSE/explained variance",
+      "same-scene return versus STOP",
+      "J",
+      "work",
+      "full planner time"
+    ]
+  },
+  "new_environment_queries_before_opportunity_gate": 0,
+  "references": [
+    {
+      "title": "CleanRL PPO documentation",
+      "url": "https://docs.cleanrl.dev/rl-algorithms/ppo/",
+      "use": "PPO logging, explained variance and implementation reference; not evidence on RC3"
+    },
+    {
+      "title": "The 37 Implementation Details of PPO",
+      "url": "https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/",
+      "use": "Controlled implementation checks; does not establish a cause for STOP collapse"
+    }
+  ]
+}

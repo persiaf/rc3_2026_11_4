@@ -1,0 +1,33 @@
+{
+  "all_passed": true,
+  "archive_sha256": "92bddb9d6302d9983d329fd37811c54fa84163e159819a8a3cee4750709df1fd",
+  "dependency_archive_sha256": "0901d94faa949a2378af99b8314580b77669fe666a807fc55a89d7b3a97a4d81",
+  "copied_frozen_python_files": 72,
+  "checks": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "rc3_rl_research.test_proposal",
+        "rc3_rl_research.test_env",
+        "rc3_rl_research.test_adapter",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "----------------------------------------------------------------------\nRan 43 tests in 0.608s\n\nOK\n"
+    },
+    {
+      "command": [
+        "-m",
+        "rc3_rl_research.runtime_rl",
+        "--replay",
+        "rc3_rl_research/outputs/g0/case_01/selected_replay.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"schema\": \"rc3-rl-g01-v1\", \"replay_valid\": true, \"transitions\": 3, \"work_used\": 704733, \"total_reward\": -0.21643027635837486, \"finalization\": {\"reason\": \"diagnostic_depth\", \"fallback_used\": false, \"failure_reason\": null, \"returned_cost\": 266.31822166480003, \"best_cost\": 266.31822166480003, \"quality_correction\": 0.0, \"work_overrun\": 0}, \"exported_plan_verified\": true, \"policy_state_verified\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Fresh extraction of the delivered supplement beside only original v5 Python dependencies; no training or timing benchmark."
+}

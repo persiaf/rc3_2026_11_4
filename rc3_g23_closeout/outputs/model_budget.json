@@ -1,0 +1,651 @@
+{
+  "schema": "g23-independent-model-budget-audit-v1",
+  "all_saved_record_checks_passed": true,
+  "failures": [],
+  "current_review_scope": {
+    "new_plans": 0,
+    "new_environment_queries": 0,
+    "new_training_updates": 0,
+    "new_model_inferences": 0,
+    "new_performance_measurements": 0,
+    "imports": "Python standard library only; project modules and pickle payloads are not executed."
+  },
+  "resources": {
+    "totals": {
+      "nonstop": 3694,
+      "menus": 3464,
+      "stops": 784,
+      "finalizations": 952,
+      "cold_plans": 252,
+      "optimizer_updates": 3840
+    },
+    "limits": {
+      "nonstop": 8192,
+      "menus": 20000,
+      "stops": 4000,
+      "finalizations": 2000,
+      "cold_plans": 300,
+      "optimizer_updates": 3840
+    },
+    "by_phase": {
+      "alignment": {
+        "cold_plans": 24,
+        "nonstop": 296,
+        "menus": 114,
+        "stops": 10,
+        "finalizations": 12
+      },
+      "seed2301_round0": {
+        "cold_plans": 4,
+        "menus": 171,
+        "stops": 52,
+        "finalizations": 60,
+        "nonstop": 175,
+        "optimizer_updates": 512
+      },
+      "seed2301_round1": {
+        "cold_plans": 4,
+        "menus": 344,
+        "stops": 77,
+        "finalizations": 84,
+        "nonstop": 347,
+        "optimizer_updates": 768
+      },
+      "seed2302_round0": {
+        "cold_plans": 4,
+        "menus": 185,
+        "stops": 58,
+        "finalizations": 60,
+        "nonstop": 183,
+        "optimizer_updates": 512
+      },
+      "seed2302_round1": {
+        "cold_plans": 4,
+        "menus": 102,
+        "stops": 43,
+        "finalizations": 44,
+        "nonstop": 99,
+        "optimizer_updates": 768
+      },
+      "seed2303_round0": {
+        "cold_plans": 4,
+        "menus": 223,
+        "stops": 51,
+        "finalizations": 60,
+        "nonstop": 228,
+        "optimizer_updates": 512
+      },
+      "seed2303_round1": {
+        "cold_plans": 4,
+        "menus": 458,
+        "stops": 73,
+        "finalizations": 84,
+        "nonstop": 465,
+        "optimizer_updates": 768
+      },
+      "final_test": {
+        "cold_plans": 180,
+        "nonstop": 404,
+        "menus": 384,
+        "finalizations": 156,
+        "stops": 66
+      },
+      "verification": {
+        "cold_plans": 24,
+        "menus": 1483,
+        "stops": 354,
+        "finalizations": 392,
+        "nonstop": 1497
+      }
+    },
+    "seed_training_repairs": {
+      "2301": 522,
+      "2302": 282,
+      "2303": 693
+    },
+    "recorded_registration_counter_prefix": [
+      {
+        "line": 5101,
+        "phase": "seed2302_round1"
+      }
+    ],
+    "first_final_test_line": 8047,
+    "first_verification_line": 9237,
+    "registration_limit": "Snapshot counts match a pre-test ledger prefix; this does not independently authenticate historical file creation time."
+  },
+  "alignment": {
+    "cases": 12,
+    "original_steps": 192,
+    "matched_prefix_steps": 104,
+    "prefix_lengths": [
+      7,
+      11,
+      5,
+      8,
+      12,
+      7,
+      7,
+      12,
+      8,
+      8,
+      7,
+      12
+    ],
+    "scope": "Saved semantic windows and accepted route equality; no new execution of either rule or repair."
+  },
+  "labels": {
+    "rows": 132,
+    "decision_states_by_seed_round": 44,
+    "serialized_branches": 456,
+    "serialized_suffix_transitions": 2067,
+    "groups": [
+      {
+        "seed": 2301,
+        "round": 0,
+        "labels": 24,
+        "states": 8,
+        "cases": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "remaining_h": {
+          "16": 12,
+          "14": 12
+        },
+        "evaluated_policies": [
+          "rule"
+        ],
+        "one": {
+          "positive": 7,
+          "negative": 17,
+          "mean": -0.07831887439333222,
+          "minimum": -0.394533,
+          "maximum": 0.6099172647494727
+        },
+        "multi": {
+          "positive": 4,
+          "negative": 20,
+          "mean": -0.8981898613932303,
+          "minimum": -1.7373680263786708,
+          "maximum": 0.41753009594700286
+        },
+        "static": {
+          "positive": 4,
+          "negative": 20,
+          "mean": -0.8981898613932303,
+          "minimum": -1.7373680263786708,
+          "maximum": 0.41753009594700286
+        }
+      },
+      {
+        "seed": 2301,
+        "round": 1,
+        "labels": 24,
+        "states": 8,
+        "cases": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "remaining_h": {
+          "16": 12,
+          "14": 12
+        },
+        "evaluated_policies": [
+          "c8899c9bf51a2f6747f78b99f53b664b11c9b472ec33570b4efc23766ec2b97d"
+        ],
+        "one": {
+          "positive": 8,
+          "negative": 16,
+          "mean": -0.026217526930291533,
+          "minimum": -0.32778300000000005,
+          "maximum": 0.6099172647494727
+        },
+        "multi": {
+          "positive": 0,
+          "negative": 24,
+          "mean": -1.2633210943440865,
+          "minimum": -1.967372,
+          "maximum": -0.3906139417235063
+        },
+        "static": {
+          "positive": 4,
+          "negative": 20,
+          "mean": -0.8723475984536978,
+          "minimum": -1.7373680263786708,
+          "maximum": 0.41753009594700286
+        },
+        "multi_minus_static": {
+          "positive": 3,
+          "negative": 21,
+          "mean": -0.39097349589038866
+        }
+      },
+      {
+        "seed": 2302,
+        "round": 0,
+        "labels": 24,
+        "states": 8,
+        "cases": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "remaining_h": {
+          "16": 12,
+          "14": 12
+        },
+        "evaluated_policies": [
+          "rule"
+        ],
+        "one": {
+          "positive": 4,
+          "negative": 20,
+          "mean": -0.16064597978731973,
+          "minimum": -0.350328,
+          "maximum": 0.601661936826321
+        },
+        "multi": {
+          "positive": 0,
+          "negative": 24,
+          "mean": -1.4156292536266755,
+          "minimum": -1.9820020000000003,
+          "maximum": -0.2609813747366113
+        },
+        "static": {
+          "positive": 0,
+          "negative": 24,
+          "mean": -1.4156292536266755,
+          "minimum": -1.9820020000000003,
+          "maximum": -0.2609813747366113
+        }
+      },
+      {
+        "seed": 2302,
+        "round": 1,
+        "labels": 12,
+        "states": 4,
+        "cases": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "remaining_h": {
+          "16": 12
+        },
+        "evaluated_policies": [
+          "58962462d1fa5740f8df2e7b9dc76e1f05cdc86c4e27854a4cf9aca5df290141"
+        ],
+        "one": {
+          "positive": 2,
+          "negative": 10,
+          "mean": -0.16107206161375154,
+          "minimum": -0.337905,
+          "maximum": 0.3443723500447976
+        },
+        "multi": {
+          "positive": 2,
+          "negative": 10,
+          "mean": -0.16107206161375154,
+          "minimum": -0.337905,
+          "maximum": 0.3443723500447976
+        },
+        "static": {
+          "positive": 0,
+          "negative": 12,
+          "mean": -1.6854319128162507,
+          "minimum": -1.9820020000000003,
+          "maximum": -1.3310948733793866
+        },
+        "multi_minus_static": {
+          "positive": 12,
+          "negative": 0,
+          "mean": 1.5243598512024992
+        }
+      },
+      {
+        "seed": 2303,
+        "round": 0,
+        "labels": 24,
+        "states": 8,
+        "cases": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "remaining_h": {
+          "16": 12,
+          "14": 12
+        },
+        "evaluated_policies": [
+          "rule"
+        ],
+        "one": {
+          "positive": 2,
+          "negative": 22,
+          "mean": -0.09671704738528197,
+          "minimum": -0.287609,
+          "maximum": 0.906270207445016
+        },
+        "multi": {
+          "positive": 10,
+          "negative": 14,
+          "mean": 0.04148611334452874,
+          "minimum": -1.3116988509927974,
+          "maximum": 1.7010637648343798
+        },
+        "static": {
+          "positive": 10,
+          "negative": 14,
+          "mean": 0.04148611334452874,
+          "minimum": -1.3116988509927974,
+          "maximum": 1.7010637648343798
+        }
+      },
+      {
+        "seed": 2303,
+        "round": 1,
+        "labels": 24,
+        "states": 8,
+        "cases": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "remaining_h": {
+          "16": 12,
+          "14": 12
+        },
+        "evaluated_policies": [
+          "4c8dc1d84b228200a1d0edc45d2f07bb667282946bc052779ac797380fda1acb"
+        ],
+        "one": {
+          "positive": 2,
+          "negative": 22,
+          "mean": -0.11337608398253667,
+          "minimum": -0.24704400000000004,
+          "maximum": 0.5419553336226466
+        },
+        "multi": {
+          "positive": 0,
+          "negative": 24,
+          "mean": -1.5785711596471868,
+          "minimum": -1.9963819999999994,
+          "maximum": -0.8841146663773529
+        },
+        "static": {
+          "positive": 11,
+          "negative": 13,
+          "mean": 0.0182260921810363,
+          "minimum": -1.491914,
+          "maximum": 1.7362354234212933
+        },
+        "multi_minus_static": {
+          "positive": 1,
+          "negative": 23,
+          "mean": -1.596797251828223
+        }
+      }
+    ],
+    "seed2302_round1_one_and_multi_equal_in_saved_suffixes": true,
+    "equal_suffix_rows": 12,
+    "compared_suffix_fields": [
+      "remaining_return",
+      "transitions",
+      "events",
+      "total_return",
+      "work",
+      "returned_J",
+      "route",
+      "finalization",
+      "anchor_J"
+    ],
+    "scope": "Recomputed from saved verification JSON, not independent reexecution against the original pickle training tables."
+  },
+  "fits": {
+    "optimizer_updates": 3840,
+    "logs": [
+      {
+        "file": "fit_2301_mc0.json",
+        "updates": 256,
+        "initial_loss": 0.5000916123390198,
+        "final_loss": 0.0029080677777528763,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2301_multi.json",
+        "updates": 256,
+        "initial_loss": 0.4521850347518921,
+        "final_loss": 0.0003100993053521961,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2301_one0.json",
+        "updates": 256,
+        "initial_loss": 0.029443901032209396,
+        "final_loss": 0.0010251548374071717,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2301_one1.json",
+        "updates": 256,
+        "initial_loss": 0.03366544842720032,
+        "final_loss": 1.4498940799967386e-05,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2301_static.json",
+        "updates": 256,
+        "initial_loss": 0.20206966996192932,
+        "final_loss": 0.0029640900902450085,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2302_mc0.json",
+        "updates": 256,
+        "initial_loss": 0.858913242816925,
+        "final_loss": 0.0034346338361501694,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2302_multi.json",
+        "updates": 256,
+        "initial_loss": 0.9475576877593994,
+        "final_loss": 1.4127669601293746e-05,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2302_one0.json",
+        "updates": 256,
+        "initial_loss": 0.02237863838672638,
+        "final_loss": 0.00016055886226240546,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2302_one1.json",
+        "updates": 256,
+        "initial_loss": 5.375811451813206e-05,
+        "final_loss": 1.5440662637367097e-11,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2302_static.json",
+        "updates": 256,
+        "initial_loss": 0.004754180088639259,
+        "final_loss": 4.0041303606130896e-11,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2303_mc0.json",
+        "updates": 256,
+        "initial_loss": 0.4801047444343567,
+        "final_loss": 0.00564040569588542,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2303_multi.json",
+        "updates": 256,
+        "initial_loss": 1.9609447717666626,
+        "final_loss": 0.0022293345537036657,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2303_one0.json",
+        "updates": 256,
+        "initial_loss": 0.09442370384931564,
+        "final_loss": 0.0017068765591830015,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2303_one1.json",
+        "updates": 256,
+        "initial_loss": 0.008420214988291264,
+        "final_loss": 8.383050044358242e-06,
+        "zero_gradient_records": 0
+      },
+      {
+        "file": "fit_2303_static.json",
+        "updates": 256,
+        "initial_loss": 0.5728334784507751,
+        "final_loss": 0.0023316696751862764,
+        "zero_gradient_records": 0
+      }
+    ],
+    "multi_model_updates_per_seed": 512,
+    "total_updates_per_seed_across_shared_initialization_and_controls": 1280
+  },
+  "checkpoint_storage_comparisons": [
+    {
+      "seed": 2301,
+      "model": "frozen_init",
+      "storage_blocks": 46,
+      "changed_from_init": 0
+    },
+    {
+      "seed": 2301,
+      "model": "matched_static_rule_value",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2301,
+      "model": "multi_policy_iteration",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2301,
+      "model": "one_step_repeated",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2302,
+      "model": "frozen_init",
+      "storage_blocks": 46,
+      "changed_from_init": 0
+    },
+    {
+      "seed": 2302,
+      "model": "matched_static_rule_value",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2302,
+      "model": "multi_policy_iteration",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2302,
+      "model": "one_step_repeated",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2303,
+      "model": "frozen_init",
+      "storage_blocks": 46,
+      "changed_from_init": 0
+    },
+    {
+      "seed": 2303,
+      "model": "matched_static_rule_value",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2303,
+      "model": "multi_policy_iteration",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    },
+    {
+      "seed": 2303,
+      "model": "one_step_repeated",
+      "storage_blocks": 46,
+      "changed_from_init": 36
+    }
+  ],
+  "checkpoint_scope": "Raw torch ZIP storage-block hashes only; no pickle decoding, tensor loading, model forward or parameter-name semantic reconstruction.",
+  "multi_test_behavior": [
+    {
+      "seed": 2301,
+      "measurements": 12,
+      "repair_calls": 0,
+      "reasons": {
+        "stop": 12
+      },
+      "overruns": 2
+    },
+    {
+      "seed": 2302,
+      "measurements": 12,
+      "repair_calls": 27,
+      "reasons": {
+        "complete_soft_deadline": 12
+      },
+      "overruns": 12
+    },
+    {
+      "seed": 2303,
+      "measurements": 12,
+      "repair_calls": 0,
+      "reasons": {
+        "stop": 12
+      },
+      "overruns": 0
+    }
+  ],
+  "limits": [
+    "Three training seeds also use different four-scene training subsets; observed variation combines data and optimization randomness.",
+    "Menus and finalizations are instrumented shared-environment event counters, not all internal legacy solver scans or validator invocations.",
+    "The 2067 stored suffix transitions include repeated parent STOP and shared prefixes; they are not 2067 independent labeled decision states.",
+    "The 8192 repair budget is a ceiling; the planned two rounds and 3840 updates finished, so unused calls do not authorize more training.",
+    "No external legacy dependencies, original teacher pickle, robot IK or physical validation were rerun."
+  ],
+  "input_sha256": {
+    "protocol.json": "9b626ccb79a9729902c0ee3738988bafa286f5ba521d9968cb01522e7280bdde",
+    "resource.jsonl": "44cb6a56ccda22a710fd2d2342073a64d11eb348c8ef8778e86993b5b912810f",
+    "resources.json": "1dc25069d369edc43b51adbd5060007348138dc62f3c0f5f8566b05fe8fd7a75",
+    "alignment.json": "b315c4435d45866d945f86d3a722263c4099eca5ddb9bb5dd3be5b4516406b0a",
+    "verified_labels.json.gz": "e2eb45ba6a3cd7bad832442f96b12f40ccfd6ec523089a4e57f72d04174ce28c",
+    "label_verification.json": "cd0d493b1b2a6a8d4a680c9c19f38fce39a114e9d330aadda95c67b4d2560238",
+    "test_results.json": "d4f9465bd611254c031b9b0626cd19af4a09cd33b47c3baa2ddec31d2549463e"
+  },
+  "source_semantics_reviewed": {
+    "core.py": "c88070e5912170aa422a131a49381072ddee012b7efe1dafa244d97cb5768ac8",
+    "learning.py": "5d64aae1d02c68dd882a4b71a6aa17bb1cf2bca6234ce682c54e54baa83d9364",
+    "trial.py": "e30bab13d96365854ff009db143201590501a13b60603cd694738d09bddfa146",
+    "verify_labels.py": "bdade88fbddb994871d3e5d4d46bbb20fd20d5fe864f386b7ccad648869c0303",
+    "repair_counted.py": "224853b0974ab296f718581cb46e2febdc4ab9589b9951bce668233cdb3c4439"
+  }
+}

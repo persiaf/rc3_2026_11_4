@@ -1,0 +1,162 @@
+{
+  "scope": "Existing synthetic validator fixture only; no calibration or IK",
+  "baseline_status": "inputs_complete",
+  "actual_joint_parents": {
+    "lg": "left_palm",
+    "rg": "right_palm"
+  },
+  "mutated_roles": {
+    "lg": "right_gripper",
+    "rg": "left_gripper"
+  },
+  "result": {
+    "status": "inputs_complete",
+    "ready_for_service_generation": true,
+    "blocked_inputs": [],
+    "identity": {
+      "repository": "test/synthetic-only",
+      "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "repository_path": "robot/robot.urdf",
+      "urdf_sha256": "38bcd7536ce872c36a7e82865373fd383cee9990aa70ead1860568b8bd2bdc20"
+    },
+    "asset_inventory": {
+      "robot": "synthetic_test_only",
+      "links": [
+        "base",
+        "mast",
+        "left_palm",
+        "left_finger",
+        "right_palm",
+        "right_finger",
+        "wheel_link"
+      ],
+      "root_link": "base",
+      "joints": [
+        {
+          "name": "lift",
+          "type": "prismatic",
+          "parent": "base",
+          "child": "mast",
+          "origin_xyz": "0 0 0",
+          "origin_rpy": "0 0 0",
+          "axis": "0 0 1",
+          "limits": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "velocity": 0.0,
+            "effort": 0.0
+          },
+          "mimic_joint": null
+        },
+        {
+          "name": "left",
+          "type": "revolute",
+          "parent": "mast",
+          "child": "left_palm",
+          "origin_xyz": "0 0 0",
+          "origin_rpy": "0 0 0",
+          "axis": "0 0 1",
+          "limits": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "velocity": 0.0,
+            "effort": 0.0
+          },
+          "mimic_joint": null
+        },
+        {
+          "name": "lg",
+          "type": "revolute",
+          "parent": "left_palm",
+          "child": "left_finger",
+          "origin_xyz": "0 0 0",
+          "origin_rpy": "0 0 0",
+          "axis": "0 0 1",
+          "limits": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "velocity": 0.0,
+            "effort": 0.0
+          },
+          "mimic_joint": null
+        },
+        {
+          "name": "right",
+          "type": "revolute",
+          "parent": "mast",
+          "child": "right_palm",
+          "origin_xyz": "0 0 0",
+          "origin_rpy": "0 0 0",
+          "axis": "0 0 1",
+          "limits": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "velocity": 0.0,
+            "effort": 0.0
+          },
+          "mimic_joint": null
+        },
+        {
+          "name": "rg",
+          "type": "revolute",
+          "parent": "right_palm",
+          "child": "right_finger",
+          "origin_xyz": "0 0 0",
+          "origin_rpy": "0 0 0",
+          "axis": "0 0 1",
+          "limits": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "velocity": 0.0,
+            "effort": 0.0
+          },
+          "mimic_joint": null
+        },
+        {
+          "name": "wheel",
+          "type": "continuous",
+          "parent": "base",
+          "child": "wheel_link",
+          "origin_xyz": "0 0 0",
+          "origin_rpy": "0 0 0",
+          "axis": "0 0 1",
+          "limits": {
+            "lower": 0.0,
+            "upper": 0.0,
+            "velocity": 0.0,
+            "effort": 0.0
+          },
+          "mimic_joint": null
+        }
+      ],
+      "mesh_references": {
+        "package://Test/meshes/base.stl": [
+          {
+            "link": "base",
+            "usage": "collision"
+          }
+        ]
+      },
+      "collision_links": [
+        "base",
+        "mast",
+        "left_palm",
+        "left_finger",
+        "right_palm",
+        "right_finger",
+        "wheel_link"
+      ],
+      "degenerate_declared_limits": [
+        "lift",
+        "left",
+        "lg",
+        "right",
+        "rg"
+      ]
+    },
+    "physical_ik_verified": false,
+    "collision_verified": false,
+    "physical_infeasibility_claimed": false,
+    "scope": "Input consistency only. A complete report still needs IK witnesses and independent collision/trajectory validation."
+  }
+}

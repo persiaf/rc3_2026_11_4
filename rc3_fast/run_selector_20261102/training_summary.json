@@ -1,0 +1,226 @@
+{
+  "status": "complete",
+  "selected": "ensemble",
+  "epochs_per_seed": 500,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "training_instances": 288,
+  "validation_instances": 72,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "python": "3.10.20",
+  "torch": "2.12.1+cu126",
+  "numpy": "2.2.6",
+  "hidden": 64,
+  "optimizer_updates": 7500,
+  "training_s": 15.810506199999509,
+  "fixed_portfolios": {
+    "top1": [
+      1
+    ],
+    "top3": [
+      1,
+      4,
+      7
+    ]
+  },
+  "fixed_validation_regret_pct": {
+    "top1": 3.444595664857853,
+    "top3": 1.4947826276080702
+  },
+  "export_max_abs_error": 2.384185791015625e-07,
+  "candidates": [
+    {
+      "name": "seed17",
+      "member_ids": [
+        0
+      ],
+      "epoch": 7,
+      "metrics": {
+        "top1_regret_pct": 3.206685749344332,
+        "top1_objective": 153.035676277475,
+        "top3_regret_pct": 1.168788391762947,
+        "top3_objective": 149.70740436201945
+      }
+    },
+    {
+      "name": "seed29",
+      "member_ids": [
+        1
+      ],
+      "epoch": 11,
+      "metrics": {
+        "top1_regret_pct": 3.6378910160136977,
+        "top1_objective": 153.26951787304722,
+        "top3_regret_pct": 1.344099391050326,
+        "top3_objective": 150.17974958408055
+      }
+    },
+    {
+      "name": "seed43",
+      "member_ids": [
+        2
+      ],
+      "epoch": 3,
+      "metrics": {
+        "top1_regret_pct": 4.271461511812015,
+        "top1_objective": 154.23962219979722,
+        "top3_regret_pct": 1.2989483980414016,
+        "top3_objective": 149.95895097638055
+      }
+    },
+    {
+      "name": "ensemble",
+      "member_ids": [
+        0,
+        1,
+        2
+      ],
+      "epoch": null,
+      "metrics": {
+        "top1_regret_pct": 3.168649938378846,
+        "top1_objective": 152.64058809271944,
+        "top3_regret_pct": 1.147954382455662,
+        "top3_objective": 149.80573869768054
+      }
+    }
+  ],
+  "data_hashes": {
+    "manifest.json": "c931349134c97c64a3746fbf10e0edee7fce2ff67ead640eea7fd673f6c47ad5",
+    "train.npz": "46a841a910e1ebfde8732fa73d308505723cce0a123a06bdde725aa107d45736",
+    "validation.npz": "7885a6aa2d06c23537e6512d763499163e246f065bb12d1c27210e290ac0a34f"
+  },
+  "source_sha256": "a1d11f2ee6a2529bbafba18330da9c2af5ed0ae2fdc18b92837e548fff6a7290",
+  "metadata": {
+    "feature_names": [
+      "log_tables",
+      "aspect",
+      "tasks_per_table",
+      "empty_fraction",
+      "one_fraction",
+      "two_fraction",
+      "three_fraction",
+      "table_width_mean",
+      "table_width_std",
+      "table_depth_mean",
+      "table_depth_std",
+      "aisle_gap",
+      "obstacles_per_table",
+      "navigable_fraction",
+      "candidate_cover_mean",
+      "candidate_cover_std",
+      "candidate_cover_max",
+      "task_options_mean",
+      "task_options_std",
+      "task_options_min",
+      "both_arms_fraction",
+      "distance_mean",
+      "distance_std",
+      "distance_q25",
+      "distance_q75",
+      "detour_ratio_mean",
+      "detour_ratio_std",
+      "task_x_mean",
+      "task_y_mean",
+      "task_x_std",
+      "task_y_std",
+      "task_xy_cov",
+      "row_work_std",
+      "column_work_std",
+      "task_options_q25",
+      "task_options_q75",
+      "single_dock_table_fraction",
+      "coverage_density"
+    ],
+    "recipes": [
+      {
+        "name": "nearest",
+        "alpha": 0.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain0.5_offset0.75",
+        "alpha": 0.5,
+        "beta": 0.75
+      },
+      {
+        "name": "gain0.5_offset2",
+        "alpha": 0.5,
+        "beta": 2.0
+      },
+      {
+        "name": "gain0.5_offset6",
+        "alpha": 0.5,
+        "beta": 6.0
+      },
+      {
+        "name": "gain1_offset0.75",
+        "alpha": 1.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain1_offset2",
+        "alpha": 1.0,
+        "beta": 2.0
+      },
+      {
+        "name": "gain1_offset6",
+        "alpha": 1.0,
+        "beta": 6.0
+      },
+      {
+        "name": "gain2_offset0.75",
+        "alpha": 2.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain2_offset2",
+        "alpha": 2.0,
+        "beta": 2.0
+      },
+      {
+        "name": "gain2_offset6",
+        "alpha": 2.0,
+        "beta": 6.0
+      },
+      {
+        "name": "gain4_offset0.75",
+        "alpha": 4.0,
+        "beta": 0.75
+      },
+      {
+        "name": "gain4_offset2",
+        "alpha": 4.0,
+        "beta": 2.0
+      },
+      {
+        "name": "gain4_offset6",
+        "alpha": 4.0,
+        "beta": 6.0
+      }
+    ],
+    "selected": "ensemble",
+    "selected_member_ids": [
+      0,
+      1,
+      2
+    ],
+    "fixed_portfolios": {
+      "top1": [
+        1
+      ],
+      "top3": [
+        1,
+        4,
+        7
+      ]
+    },
+    "checkpoint_criterion": "validation top3 relative regret; tie-break top1",
+    "target": "relative recipe cost; lower is better",
+    "penalty": 0.75,
+    "search_passes": 2
+  }
+}

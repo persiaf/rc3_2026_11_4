@@ -1,0 +1,37 @@
+{
+  "all_passed": true,
+  "archive_sha256": "02df5a5ff9dd896aed60b3fc579b8509855f48a60426b784d868250e013c3473",
+  "stage": "rc3_rl_g23/outputs/portable_check/1793777722779382400",
+  "payloads_verified": 282,
+  "copied_dependency_files": 2990,
+  "checks": [
+    {
+      "name": "unit",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "independent_saved_review",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "saved_plan_analysis",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "refuse_trial_replay",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "name": "refuse_branch_requery",
+      "passed": true,
+      "exit_code": 1
+    }
+  ],
+  "additional_repairs": 0,
+  "additional_training_updates": 0,
+  "scope": "Fresh isolated artifact/dependency copies, saved-record checks only; query guards reject reexecution"
+}

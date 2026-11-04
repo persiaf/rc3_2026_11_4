@@ -1,0 +1,57 @@
+[
+  {
+    "name": "help",
+    "command": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5_1.robot_input",
+      "--help"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "stdout": "usage: robot_input.py [-h] {manifest,inventory,template,check} ...\n\nFrozen robot asset inventory and calibration-input preflight (no IK solver).\nPassing this checker establishes input consistency only. It cannot certify the\ncalibration, collision freedom, reachability, or executable robot motion. Run\n``python -m rc3_v5_1.robot_input --help`` for the manifest/template/check CLI.\n\npositional arguments:\n  {manifest,inventory,template,check}\n    manifest            snapshot local assets; output parent is the asset root\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": "",
+    "passed": true
+  },
+  {
+    "name": "inventory",
+    "command": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5_1.robot_input",
+      "inventory",
+      "--manifest",
+      "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5\\robot_assets\\manifest.json",
+      "--output",
+      "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5_1\\robot_results\\asset_inventory.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "stdout": "{\"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5_1\\\\robot_results\\\\asset_inventory.json\", \"status\": \"assets_verified\", \"blocked_count\": 0}\n",
+    "stderr": "",
+    "passed": true
+  },
+  {
+    "name": "empty_template",
+    "command": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5_1.robot_input",
+      "check",
+      "--manifest",
+      "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5\\robot_assets\\manifest.json",
+      "--config",
+      "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5\\robot_assets\\runtime_config.template.json",
+      "--output",
+      "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5_1\\robot_results\\cli_preflight_report.json"
+    ],
+    "returncode": 2,
+    "expected_returncode": 2,
+    "stdout": "{\"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5_1\\\\robot_results\\\\cli_preflight_report.json\", \"status\": \"blocked_inputs\", \"blocked_count\": 135}\n",
+    "stderr": "",
+    "passed": true
+  }
+]

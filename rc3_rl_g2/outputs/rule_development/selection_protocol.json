@@ -1,0 +1,144 @@
+{
+  "schema": "rc3-g2-evaluation-v1",
+  "phase": "rule_development_only",
+  "cases": [
+    {
+      "case_id": 0,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 173702316,
+      "mode": "regular"
+    },
+    {
+      "case_id": 1,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1075488324,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 2,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1831868379,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 3,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1258697796,
+      "mode": "regular"
+    },
+    {
+      "case_id": 4,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 2024884860,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 5,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 707946006,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 6,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1759239865,
+      "mode": "regular"
+    },
+    {
+      "case_id": 7,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 733182465,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 8,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 2041286456,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 9,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 989740211,
+      "mode": "regular"
+    },
+    {
+      "case_id": 10,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 333667094,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 11,
+      "split": "rule_dev",
+      "nx": 10,
+      "ny": 10,
+      "seed": 361337645,
+      "mode": "blocked"
+    }
+  ],
+  "grid": [
+    {
+      "stagnation_limit": 2,
+      "max_perturbations": 1
+    },
+    {
+      "stagnation_limit": 2,
+      "max_perturbations": 2
+    },
+    {
+      "stagnation_limit": 3,
+      "max_perturbations": 1
+    },
+    {
+      "stagnation_limit": 3,
+      "max_perturbations": 2
+    }
+  ],
+  "protocol_sha256": "37037ab87d8c973bd9cb9bcf92b758903b82e6f0dfaac1ca8753709b60cb1557",
+  "criterion": "highest mean total_reward, then lowest mean work_used, then fixed grid order",
+  "validation_used": false,
+  "config": {
+    "epsilon": 0.02,
+    "horizon": 16,
+    "work_budget": 2000000,
+    "work_scale": 10000.0,
+    "lambda_work": 0.01,
+    "potential_weight": 0.0,
+    "max_tasks": 8,
+    "max_candidates": 80,
+    "max_width": 4,
+    "max_actions": 16,
+    "physical_scale": 2.2,
+    "cache_enabled": false
+  },
+  "source_hashes": {
+    "env_g2.py": "c9c36423abfe096a16ee3e752948e29830c3be5643e21713566770190226cf93",
+    "action_memory.py": "e47c518927f0955dd87285e4477284dd7270cfae8569ada63d7fac0db8d44c7c",
+    "baselines.py": "474c277763d7422f3fcb84d2b406c6783df8ae02ba097417538d032384c8f3d4",
+    "adapter_g2.py": "4af17cff865cc923b7938cb622ad44be2e4a654c62710261a962e845940b4703",
+    "evaluate_g2.py": "4acc207ced3ca4aff9ab6ab6a34c30d63ba2bf8931dd366b22f7c427e989d956"
+  }
+}

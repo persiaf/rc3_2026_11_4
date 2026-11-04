@@ -1,0 +1,51 @@
+{
+  "rows": 861,
+  "unique_scenes": 60,
+  "scale_scene_counts": {
+    "12": 9,
+    "36": 9,
+    "64": 9,
+    "100": 9,
+    "144": 9,
+    "196": 9,
+    "256": 3,
+    "400": 3
+  },
+  "primary_scenes": 54,
+  "stress_scenes": 6,
+  "row_counts_by_kind": {
+    "anchor": 60,
+    "calls": 720,
+    "wall": 81
+  },
+  "expected_row_formula": "60 * (1 anchor + 3 methods * 4 call budgets) + 9 * 3 methods * 3 wall budgets = 861",
+  "repeated_runs": 2583,
+  "saved_plans": 2583,
+  "success": 861,
+  "all_861_repeat_aggregates_match": true,
+  "all_repeat_plans_present": true,
+  "frozen_summary_disagreements": [],
+  "summary_rows_checked": 218,
+  "comparison_rows_checked": 204,
+  "hash_total": 31,
+  "hash_matches": 31,
+  "hash_mismatches": [],
+  "split_counts": {
+    "train": 96,
+    "validation": 18,
+    "test": 60
+  },
+  "split_seed_overlaps": {
+    "train_validation": [],
+    "train_test": [],
+    "validation_test": []
+  },
+  "bootstrap": {
+    "seed": 20261103,
+    "resamples": 20000,
+    "unit": "scene; repeated wall objectives averaged first",
+    "resetting": "Same RNG seed reset per comparison; identical data aliases produce identical intervals.",
+    "caveat": "No training-seed uncertainty or multiple-comparison correction. Small n stress intervals are descriptive only."
+  },
+  "validity_scope": "This file reconstructs recorded aggregates; a different audit independently revalidates plan geometry."
+}

@@ -1,0 +1,4273 @@
+{
+  "schema": "rc3-g2-independent-audit-v1",
+  "status": "complete",
+  "protocol": {
+    "protocol_sha256": "37037ab87d8c973bd9cb9bcf92b758903b82e6f0dfaac1ca8753709b60cb1557",
+    "split_counts": {
+      "teacher_initial": 64,
+      "teacher_extra": 32,
+      "train": 384,
+      "validation": 24,
+      "rule_dev": 12,
+      "pipeline": 6
+    },
+    "distinct_seeds": 522,
+    "production_files_verified": 18
+  },
+  "teacher": {
+    "teacher_initial": {
+      "cases": 64,
+      "samples": 512,
+      "queries": 4096,
+      "teacher_sha256": "f53d32640dc6a61f7014a0724bc7565c71c254a2ddc087f244a09e9d62d97ac8",
+      "physical_oracle_work": {
+        "menu_builds": 3648,
+        "menu_work_units": 538155961,
+        "selected_edges": 4096,
+        "proposal_calls": 3584,
+        "proposal_work_units": 16110640,
+        "certification_calls": 7232
+      },
+      "certificate_cache": {
+        "hits": 2617,
+        "misses": 967,
+        "bypasses": 3648,
+        "actual_certifications": 4615
+      },
+      "unknown_legal_actions": 4608,
+      "raw_label_audit": "Existing all-query audit receipt re-bound to the identical teacher SHA; full pickle/raw replay requires --checkpoints."
+    },
+    "teacher_extra": {
+      "cases": 32,
+      "samples": 256,
+      "queries": 2048,
+      "teacher_sha256": "46a7c5133c6b7e4529f207365f49aa0b2e8f839ce1cea46f471fd885105d0a8a",
+      "physical_oracle_work": {
+        "menu_builds": 1824,
+        "menu_work_units": 289942150,
+        "selected_edges": 2048,
+        "proposal_calls": 1792,
+        "proposal_work_units": 6905569,
+        "certification_calls": 3616
+      },
+      "certificate_cache": {
+        "hits": 1301,
+        "misses": 491,
+        "bypasses": 1824,
+        "actual_certifications": 2315
+      },
+      "unknown_legal_actions": 2304,
+      "raw_label_audit": "Existing all-query audit receipt re-bound to the identical teacher SHA; full pickle/raw replay requires --checkpoints."
+    },
+    "excluded_debug_v1": {
+      "status": "interrupted_before_training",
+      "reason": "Add shared memory for deterministic acceptance-bound rejections; same preregistered seeds will be recollected",
+      "completed_cases": 39,
+      "complete_case_queries": 2496,
+      "complete_case_physical_work": {
+        "menu_builds": 2223,
+        "menu_work_units": 329686014,
+        "selected_edges": 2496,
+        "proposal_calls": 2184,
+        "proposal_work_units": 9993605,
+        "certification_calls": 4407
+      },
+      "partial_records": [
+        {
+          "case": "case_0038",
+          "readable_query_records": 0,
+          "read_error": null
+        },
+        {
+          "case": "case_0041",
+          "readable_query_records": 0,
+          "read_error": null
+        }
+      ],
+      "actual_tail_work_known": false,
+      "scope": "All files retained. Completed-case work is an exact subtotal; interrupted/unflushed tail is not presented as zero work. No teacher.pkl was produced and this collection will not train models."
+    },
+    "scope": "Teacher depth-2 observed evidence is actor-only, not PPO rollout or horizon-16 critic target; interrupted v1 costs separate, unflushed tail unknown."
+  },
+  "teacher_root_diagnostics": {
+    "groups": {
+      "all/all": {
+        "cases": 96,
+        "STOP_near_best": 31,
+        "gain_over_STOP": {
+          "mean": 0.47709998599876874,
+          "minimum": 0.0,
+          "maximum": 2.382232468085117,
+          "q25": 0.0,
+          "median": 0.27760548992181505,
+          "q75": 0.8332197207188032
+        },
+        "best_observed_return_mean": 0.3258277568321021,
+        "root_STOP_return_mean": -0.15127222916666666
+      },
+      "all/regular": {
+        "cases": 33,
+        "STOP_near_best": 3,
+        "gain_over_STOP": {
+          "mean": 0.6949915303430926,
+          "minimum": 0.0,
+          "maximum": 2.382232468085117,
+          "q25": 0.2066667672625348,
+          "median": 0.6121648655868791,
+          "q75": 1.1090995350191184
+        },
+        "best_observed_return_mean": 0.5462239848885472,
+        "root_STOP_return_mean": -0.14876754545454546
+      },
+      "all/mixed": {
+        "cases": 32,
+        "STOP_near_best": 13,
+        "gain_over_STOP": {
+          "mean": 0.4273003025749481,
+          "minimum": 0.0,
+          "maximum": 1.7110529304201938,
+          "q25": 0.0,
+          "median": 0.16434850768945813,
+          "q75": 0.7777037216277811
+        },
+        "best_observed_return_mean": 0.2797660838249481,
+        "root_STOP_return_mean": -0.14753421875
+      },
+      "all/blocked": {
+        "cases": 31,
+        "STOP_near_best": 15,
+        "gain_over_STOP": {
+          "mean": 0.2965570474890776,
+          "minimum": 0.0,
+          "maximum": 1.0941500858534465,
+          "q25": 0.0,
+          "median": 0.05062887259171961,
+          "q75": 0.6199869214475262
+        },
+        "best_observed_return_mean": 0.13875995071488403,
+        "root_STOP_return_mean": -0.15779709677419354
+      },
+      "teacher_initial/all": {
+        "cases": 64,
+        "STOP_near_best": 25,
+        "gain_over_STOP": {
+          "mean": 0.43658568306956164,
+          "minimum": 0.0,
+          "maximum": 2.382232468085117,
+          "q25": 0.0,
+          "median": 0.22753338964933503,
+          "q75": 0.6951685573953921
+        },
+        "best_observed_return_mean": 0.2891390893195616,
+        "root_STOP_return_mean": -0.14744659375
+      },
+      "teacher_initial/regular": {
+        "cases": 22,
+        "STOP_near_best": 3,
+        "gain_over_STOP": {
+          "mean": 0.6640093936259265,
+          "minimum": 0.0,
+          "maximum": 2.382232468085117,
+          "q25": 0.1437803679861643,
+          "median": 0.597581334962669,
+          "q75": 1.1233266353238713
+        },
+        "best_observed_return_mean": 0.5154238936259266,
+        "root_STOP_return_mean": -0.1485855
+      },
+      "teacher_initial/mixed": {
+        "cases": 21,
+        "STOP_near_best": 11,
+        "gain_over_STOP": {
+          "mean": 0.34792240829668053,
+          "minimum": 0.0,
+          "maximum": 1.7110529304201938,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.5836906039524661
+        },
+        "best_observed_return_mean": 0.20995969401096629,
+        "root_STOP_return_mean": -0.13796271428571427
+      },
+      "teacher_initial/blocked": {
+        "cases": 21,
+        "STOP_near_best": 11,
+        "gain_over_STOP": {
+          "mean": 0.28699554678339373,
+          "minimum": 0.0,
+          "maximum": 1.0941500858534465,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.6367237075594505
+        },
+        "best_observed_return_mean": 0.13125821345006036,
+        "root_STOP_return_mean": -0.15573733333333334
+      },
+      "teacher_extra/all": {
+        "cases": 32,
+        "STOP_near_best": 6,
+        "gain_over_STOP": {
+          "mean": 0.558128591857183,
+          "minimum": 0.0,
+          "maximum": 1.7202023101278856,
+          "q25": 0.08546578846057463,
+          "median": 0.474008991596701,
+          "q75": 0.9448264335122856
+        },
+        "best_observed_return_mean": 0.39920509185718306,
+        "root_STOP_return_mean": -0.1589235
+      },
+      "teacher_extra/regular": {
+        "cases": 11,
+        "STOP_near_best": 0,
+        "gain_over_STOP": {
+          "mean": 0.7569558037774248,
+          "minimum": 0.11113121686744429,
+          "maximum": 1.7202023101278856,
+          "q25": 0.31206134382668216,
+          "median": 0.8328201538461318,
+          "q75": 1.04402869510363
+        },
+        "best_observed_return_mean": 0.6078241674137884,
+        "root_STOP_return_mean": -0.14913163636363636
+      },
+      "teacher_extra/mixed": {
+        "cases": 11,
+        "STOP_near_best": 2,
+        "gain_over_STOP": {
+          "mean": 0.5788399189243679,
+          "minimum": 0.0,
+          "maximum": 1.3915577018694614,
+          "q25": 0.07987787624484247,
+          "median": 0.5048421158934706,
+          "q75": 0.9890400089450038
+        },
+        "best_observed_return_mean": 0.413032828015277,
+        "root_STOP_return_mean": -0.1658070909090909
+      },
+      "teacher_extra/blocked": {
+        "cases": 10,
+        "STOP_near_best": 4,
+        "gain_over_STOP": {
+          "mean": 0.31663619897101375,
+          "minimum": 0.0,
+          "maximum": 1.022267597576428,
+          "q25": 0.0,
+          "median": 0.1525891592709715,
+          "q75": 0.5110187680652224
+        },
+        "best_observed_return_mean": 0.15451359897101374,
+        "root_STOP_return_mean": -0.1621226
+      }
+    },
+    "records": [
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 0,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 136796124,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.5223362098882491,
+        "root_STOP_return": -0.140976,
+        "gain_over_STOP": 0.6633122098882491,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 1,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1864740459,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.085707,
+        "root_STOP_return": -0.085707,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 2,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1481410504,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.161802,
+        "root_STOP_return": -0.161802,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 3,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1980162974,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.03793817061972235,
+        "root_STOP_return": -0.150588,
+        "gain_over_STOP": 0.11264982938027765,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 4,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1477165762,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.6150756738269535,
+        "root_STOP_return": -0.078498,
+        "gain_over_STOP": 0.6935736738269535,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 5,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1393581500,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.21787200000000004,
+        "root_STOP_return": -0.21787200000000004,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 6,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1286685379,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.1209428856936083,
+        "root_STOP_return": -0.154593,
+        "gain_over_STOP": 1.2755358856936083,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 7,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 544976431,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 1.3297714804629999,
+        "root_STOP_return": -0.122553,
+        "gain_over_STOP": 1.4523244804629998,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          0
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 8,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1279585805,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.7093974083762374,
+        "root_STOP_return": -0.08490600000000001,
+        "gain_over_STOP": 0.7943034083762375,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 9,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 154505309,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.148185,
+        "root_STOP_return": -0.148185,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 10,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1669727461,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.04776023113323491,
+        "root_STOP_return": -0.237096,
+        "gain_over_STOP": 0.2848562311332349,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 11,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 2128125174,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.068085,
+        "root_STOP_return": -0.068085,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 12,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1624827018,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.12216974871039521,
+        "root_STOP_return": -0.148185,
+        "gain_over_STOP": 0.2703547487103952,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 13,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 795870105,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.228285,
+        "root_STOP_return": -0.228285,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 14,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1335760242,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.145782,
+        "root_STOP_return": -0.145782,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 15,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1470266128,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.038628660437284246,
+        "root_STOP_return": -0.147384,
+        "gain_over_STOP": 0.10875533956271574,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 16,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1367743903,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.08545331470260945,
+        "root_STOP_return": -0.15219000000000002,
+        "gain_over_STOP": 0.23764331470260946,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          0
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 17,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1693491013,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.4868872081007082,
+        "root_STOP_return": -0.21306599999999998,
+        "gain_over_STOP": 0.6999532081007082,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          2
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 18,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1314044984,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.2760362302378995,
+        "root_STOP_return": -0.138573,
+        "gain_over_STOP": 0.41460923023789953,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          2
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 19,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1166193400,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.143379,
+        "root_STOP_return": -0.143379,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 20,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1771905726,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.07044390971311151,
+        "root_STOP_return": -0.154593,
+        "gain_over_STOP": 0.0841490902868885,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 21,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1308439034,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.144981,
+        "root_STOP_return": -0.144981,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 22,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 936151852,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.2207612326979852,
+        "root_STOP_return": -0.230688,
+        "gain_over_STOP": 0.009926767302014805,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 23,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 330486396,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.142578,
+        "root_STOP_return": -0.142578,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 24,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1856298506,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.4456998292505654,
+        "root_STOP_return": -0.146583,
+        "gain_over_STOP": 0.5922828292505654,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          5
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 25,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1313404533,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.225081,
+        "root_STOP_return": -0.225081,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 26,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 59027054,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.033362537035985934,
+        "root_STOP_return": -0.22988699999999998,
+        "gain_over_STOP": 0.19652446296401405,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          5
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 27,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 914889447,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.4530928406747725,
+        "root_STOP_return": -0.149787,
+        "gain_over_STOP": 0.6028798406747725,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 28,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1491466644,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.134568,
+        "root_STOP_return": -0.134568,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 29,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1354212078,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.146583,
+        "root_STOP_return": -0.146583,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 30,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 2038837278,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.0028828576449913,
+        "root_STOP_return": -0.158598,
+        "gain_over_STOP": 1.1614808576449913,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          0
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 31,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1136147164,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.094518,
+        "root_STOP_return": -0.094518,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 32,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 468714079,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.087309,
+        "root_STOP_return": -0.087309,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 33,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 114838200,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.156996,
+        "root_STOP_return": -0.156996,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 34,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1868508986,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.43489073750761453,
+        "root_STOP_return": -0.133767,
+        "gain_over_STOP": 0.5686577375076145,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 35,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 153603226,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 1.0076420858534465,
+        "root_STOP_return": -0.086508,
+        "gain_over_STOP": 1.0941500858534465,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 36,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 661083729,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.18149240077965895,
+        "root_STOP_return": -0.148986,
+        "gain_over_STOP": 0.33047840077965895,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 37,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1082599580,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.6554139108592519,
+        "root_STOP_return": -0.098523,
+        "gain_over_STOP": 0.753936910859252,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          1
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 38,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1631095916,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.4677127075594505,
+        "root_STOP_return": -0.16901100000000002,
+        "gain_over_STOP": 0.6367237075594505,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 39,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 568671767,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.2121943225558056,
+        "root_STOP_return": -0.141777,
+        "gain_over_STOP": 1.3539713225558057,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          3
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 40,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 684428447,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.209862,
+        "root_STOP_return": -0.209862,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 41,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1686848329,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.15138900000000002,
+        "root_STOP_return": -0.15138900000000002,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 42,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 205666185,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.030554330883801134,
+        "root_STOP_return": -0.149787,
+        "gain_over_STOP": 0.11923266911619887,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 43,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 419289904,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.9201949240629529,
+        "root_STOP_return": -0.090513,
+        "gain_over_STOP": 1.0107079240629528,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 44,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 440439687,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.226683,
+        "root_STOP_return": -0.226683,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 45,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 13554404,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.3597792857142725,
+        "root_STOP_return": -0.140976,
+        "gain_over_STOP": 1.5007552857142725,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 46,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 436775704,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.095319,
+        "root_STOP_return": -0.095319,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 47,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 420255268,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.8650392643908952,
+        "root_STOP_return": -0.09131399999999999,
+        "gain_over_STOP": 0.9563532643908952,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 48,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 565696365,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.06923846459606059,
+        "root_STOP_return": -0.148185,
+        "gain_over_STOP": 0.2174234645960606,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          2
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 49,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1826679899,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.48837160395246604,
+        "root_STOP_return": -0.095319,
+        "gain_over_STOP": 0.5836906039524661,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 50,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 402770175,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.226683,
+        "root_STOP_return": -0.226683,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 51,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1624655400,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 2.250868468085117,
+        "root_STOP_return": -0.131364,
+        "gain_over_STOP": 2.382232468085117,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 52,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 810993291,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.116145,
+        "root_STOP_return": -0.116145,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 53,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 622486190,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.11188872891143728,
+        "root_STOP_return": -0.141777,
+        "gain_over_STOP": 0.25366572891143724,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 54,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1876508330,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.500682443932412,
+        "root_STOP_return": -0.15138900000000002,
+        "gain_over_STOP": 0.652071443932412,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 55,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 568274439,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 1.619738930420194,
+        "root_STOP_return": -0.09131399999999999,
+        "gain_over_STOP": 1.7110529304201938,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 56,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 444794077,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.22348,
+        "root_STOP_return": -0.22348,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 57,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 107683504,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.4471588655868791,
+        "root_STOP_return": -0.16500599999999999,
+        "gain_over_STOP": 0.6121648655868791,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          2
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 58,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1175301329,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.086508,
+        "root_STOP_return": -0.086508,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 59,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1733525549,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.5660563906725884,
+        "root_STOP_return": -0.141777,
+        "gain_over_STOP": 0.7078333906725884,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          5
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 60,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 2917241,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.8654849683605117,
+        "root_STOP_return": -0.143379,
+        "gain_over_STOP": 1.0088639683605116,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 61,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 243831112,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.147384,
+        "root_STOP_return": -0.147384,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 62,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 645334797,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.44385113533560183,
+        "root_STOP_return": -0.159399,
+        "gain_over_STOP": 0.6032501353356019,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_initial",
+        "case": {
+          "case_id": 63,
+          "split": "teacher_initial",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1779177835,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.0665489999999924,
+        "root_STOP_return": -0.162603,
+        "gain_over_STOP": 1.2291519999999925,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          2
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 0,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1020696713,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.9472975350191184,
+        "root_STOP_return": -0.161802,
+        "gain_over_STOP": 1.1090995350191184,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 1,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 557366170,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 1.2986417018694614,
+        "root_STOP_return": -0.092916,
+        "gain_over_STOP": 1.3915577018694614,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 2,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 254975004,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.015050445950223368,
+        "root_STOP_return": -0.23949900000000002,
+        "gain_over_STOP": 0.2545494459502234,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 3,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1942957632,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.6878391538461318,
+        "root_STOP_return": -0.144981,
+        "gain_over_STOP": 0.8328201538461318,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          0
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 4,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1699453005,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.4135281158934706,
+        "root_STOP_return": -0.09131399999999999,
+        "gain_over_STOP": 0.5048421158934706,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 5,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 207770240,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.3046028672999314,
+        "root_STOP_return": -0.138573,
+        "gain_over_STOP": 0.4431758672999314,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 6,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 581809607,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.04085976726253482,
+        "root_STOP_return": -0.16580699999999998,
+        "gain_over_STOP": 0.2066667672625348,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          1,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 7,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 913980812,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 1.016992329625399,
+        "root_STOP_return": -0.086508,
+        "gain_over_STOP": 1.1035003296253991,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          5
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 8,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 32165081,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.3782390683203194,
+        "root_STOP_return": -0.155394,
+        "gain_over_STOP": 0.5336330683203194,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          4
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 9,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1829521253,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": -0.03945678313255571,
+        "root_STOP_return": -0.150588,
+        "gain_over_STOP": 0.11113121686744429,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 10,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1455217430,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.8908387249363406,
+        "root_STOP_return": -0.153792,
+        "gain_over_STOP": 1.0446307249363407,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 11,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 806457610,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.09131399999999999,
+        "root_STOP_return": -0.09131399999999999,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 12,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1954846688,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.6790244213368175,
+        "root_STOP_return": -0.155394,
+        "gain_over_STOP": 0.8344184213368175,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 13,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 610454705,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.15621903646665544,
+        "root_STOP_return": -0.22428,
+        "gain_over_STOP": 0.38049903646665545,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          0
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 14,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1298480396,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.8812915975764279,
+        "root_STOP_return": -0.140976,
+        "gain_over_STOP": 1.022267597576428,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          2,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 15,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1249731832,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.8291708551881416,
+        "root_STOP_return": -0.149787,
+        "gain_over_STOP": 0.9789578551881416,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 16,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 919293911,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.233091,
+        "root_STOP_return": -0.233091,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 17,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1506711457,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.227485,
+        "root_STOP_return": -0.227485,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 18,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 166723912,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.009644345432765655,
+        "root_STOP_return": -0.140175,
+        "gain_over_STOP": 0.14981934543276565,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 19,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1915731855,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.12361429932369317,
+        "root_STOP_return": -0.21466799999999997,
+        "gain_over_STOP": 0.0910537006763068,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 20,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1082931380,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.22428,
+        "root_STOP_return": -0.22428,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 21,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1935426044,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.5808283101278855,
+        "root_STOP_return": -0.139374,
+        "gain_over_STOP": 1.7202023101278856,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 22,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 278780541,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.14356294818662188,
+        "root_STOP_return": -0.212265,
+        "gain_over_STOP": 0.06870205181337813,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          1,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 23,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1919429346,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": 0.7868131379715156,
+        "root_STOP_return": -0.075294,
+        "gain_over_STOP": 0.8621071379715156,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 24,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1136010288,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 1.0314479780037327,
+        "root_STOP_return": -0.12575699999999998,
+        "gain_over_STOP": 1.1572049780037326,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 25,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 68867267,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": -0.22748400000000002,
+        "root_STOP_return": -0.22748400000000002,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 26,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1361378911,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.18246212740828038,
+        "root_STOP_return": -0.233091,
+        "gain_over_STOP": 0.05062887259171961,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 27,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 231284208,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.653343338076271,
+        "root_STOP_return": -0.155394,
+        "gain_over_STOP": 0.808737338076271,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          0,
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 28,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 638766914,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.6920071539333683,
+        "root_STOP_return": -0.156997,
+        "gain_over_STOP": 0.8490041539333684,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          3,
+          0
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 29,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1976979818,
+          "mode": "blocked"
+        },
+        "best_observed_remaining_return": -0.09532,
+        "root_STOP_return": -0.09532,
+        "gain_over_STOP": 0.0,
+        "STOP_near_best": true,
+        "best_observed_path": [
+          16
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 30,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1489254726,
+          "mode": "regular"
+        },
+        "best_observed_remaining_return": 0.26606692039082946,
+        "root_STOP_return": -0.15138900000000002,
+        "gain_over_STOP": 0.41745592039082946,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          4,
+          5
+        ],
+        "observed_nonstop_actions": 7
+      },
+      {
+        "split": "teacher_extra",
+        "case": {
+          "case_id": 31,
+          "split": "teacher_extra",
+          "nx": 10,
+          "ny": 10,
+          "seed": 856547880,
+          "mode": "mixed"
+        },
+        "best_observed_remaining_return": 0.802886292953667,
+        "root_STOP_return": -0.130563,
+        "gain_over_STOP": 0.933449292953667,
+        "STOP_near_best": false,
+        "best_observed_path": [
+          6,
+          6
+        ],
+        "observed_nonstop_actions": 7
+      }
+    ],
+    "scope": "Post hoc offline diagnosis of all 96 registered teacher roots; highest return among queried depth-2 suffixes only. No new queries, no PPO or horizon-16 oracle claims."
+  },
+  "bc": {
+    "initial": {
+      "updates": 400,
+      "samples": 512,
+      "unique_scenes": 64,
+      "elapsed_s": 28.331451099998958,
+      "device": "cpu",
+      "actor_only": true,
+      "critic_supervised": false,
+      "scope": "Masked supervised actor loss over queried evidence only; no unknown negative labels"
+    },
+    "continued": {
+      "updates": 2048,
+      "samples": 768,
+      "unique_scenes": 96,
+      "elapsed_s": 146.7285273000016,
+      "device": "cpu",
+      "actor_only": true,
+      "critic_supervised": false,
+      "scope": "Masked supervised actor loss over queried evidence only; no unknown negative labels"
+    },
+    "pipeline_receipt": {
+      "all_passed": true,
+      "reports": [
+        {
+          "kind": "mlp",
+          "actual_actions": 256,
+          "updates": 16,
+          "completed_episodes": 21,
+          "all_episode_ledgers_verified": true,
+          "restore_sampling_identical": true,
+          "parameters_changed": true,
+          "elapsed_s": 8.568601599999965,
+          "iterations": [
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.16789822152350098,
+              "approx_kl": 1.4097313396632671e-05,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 3.5732250213623047,
+              "optimizer_s": 0.2613006999999925,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 5.751452900000004
+            }
+          ]
+        },
+        {
+          "kind": "graph",
+          "actual_actions": 768,
+          "updates": 48,
+          "completed_episodes": 82,
+          "all_episode_ledgers_verified": true,
+          "restore_sampling_identical": true,
+          "parameters_changed": true,
+          "elapsed_s": 30.87834930000099,
+          "iterations": [
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.33051662193611264,
+              "approx_kl": 4.514586180448532e-06,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 11.55974006652832,
+              "optimizer_s": 2.6026421999995364,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.410164700002497
+            },
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.11053969932254404,
+              "approx_kl": 5.389680154621601e-06,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 2.5309395790100098,
+              "optimizer_s": 2.635176700001466,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.639007500001753
+            },
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.10456066799815744,
+              "approx_kl": 6.734393537044525e-06,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 1.9680087566375732,
+              "optimizer_s": 2.5094312999972317,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.600417300000117
+            }
+          ]
+        }
+      ],
+      "scope": "Numerical/interaction correctness only; not superiority evidence"
+    },
+    "prior_debug_pipeline_receipt": {
+      "all_passed": true,
+      "reports": [
+        {
+          "kind": "mlp",
+          "actual_actions": 256,
+          "updates": 16,
+          "completed_episodes": 21,
+          "all_episode_ledgers_verified": true,
+          "restore_sampling_identical": true,
+          "parameters_changed": true,
+          "elapsed_s": 10.33960450000086,
+          "iterations": [
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.16789822152350098,
+              "approx_kl": 1.4097313396632671e-05,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 3.5732250213623047,
+              "optimizer_s": 0.331669499999407,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.5228459000027215
+            }
+          ]
+        },
+        {
+          "kind": "graph",
+          "actual_actions": 768,
+          "updates": 48,
+          "completed_episodes": 82,
+          "all_episode_ledgers_verified": true,
+          "restore_sampling_identical": true,
+          "parameters_changed": true,
+          "elapsed_s": 31.35103589999926,
+          "iterations": [
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.33051662193611264,
+              "approx_kl": 4.514586180448532e-06,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 11.55974006652832,
+              "optimizer_s": 2.4835652000001573,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.663623799999186
+            },
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.11053969932254404,
+              "approx_kl": 5.389680154621601e-06,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 2.5309395790100098,
+              "optimizer_s": 2.703925200003141,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.662532499998633
+            },
+            {
+              "updates": 16,
+              "old_new_logp_error": 0.0,
+              "early_kl_stop": false,
+              "loss": 0.10456066799815744,
+              "approx_kl": 6.734393537044525e-06,
+              "clip_fraction": 0.0,
+              "grad_norm_max": 1.9680087566375732,
+              "optimizer_s": 2.5189433000014105,
+              "advantages_finite": true,
+              "gradients_finite": true,
+              "actual_actions": 256,
+              "collect_s": 6.632968800000526
+            }
+          ]
+        }
+      ],
+      "scope": "Numerical/interaction correctness only; not superiority evidence"
+    },
+    "all_preparatory_pipeline_actual_actions": 2048,
+    "scope": "BC supervised updates and pipeline interactions are not included in formal PPO actions."
+  },
+  "rule_selection": {
+    "selected": {
+      "stagnation_limit": 2,
+      "max_perturbations": 1
+    },
+    "cases": 12,
+    "query_runs": 48,
+    "scores": [
+      {
+        "grid_index": 0,
+        "settings": {
+          "stagnation_limit": 2,
+          "max_perturbations": 1
+        },
+        "mean_return": -0.6564865976968811,
+        "mean_work": 1048951.5833333333,
+        "scenes": 12
+      },
+      {
+        "grid_index": 1,
+        "settings": {
+          "stagnation_limit": 2,
+          "max_perturbations": 2
+        },
+        "mean_return": -0.9253850509184579,
+        "mean_work": 1432158.25,
+        "scenes": 12
+      },
+      {
+        "grid_index": 2,
+        "settings": {
+          "stagnation_limit": 3,
+          "max_perturbations": 1
+        },
+        "mean_return": -0.9009043285489562,
+        "mean_work": 1371986.0,
+        "scenes": 12
+      },
+      {
+        "grid_index": 3,
+        "settings": {
+          "stagnation_limit": 3,
+          "max_perturbations": 2
+        },
+        "mean_return": -1.1426244926242832,
+        "mean_work": 1723421.8333333333,
+        "scenes": 12
+      }
+    ],
+    "selection_sha256": "be5edb28d904379836612492961f5f36cea93394c4d560fb188e0b6ea0d3c7e4",
+    "validation_used": false,
+    "scope": "All four registered ILS development-grid means independently recomputed; separate from 24 validation cases."
+  },
+  "ppo_iterations": {
+    "iterations": 128,
+    "actual_actions": 32768,
+    "optimizer_updates": 2039,
+    "early_kl_iterations": 3,
+    "sampled_STOP_actions": 31735,
+    "sampled_changed_actions": 503,
+    "completed_episode_count_from_rollouts": 31735,
+    "max_old_new_logp_error": 0.0,
+    "optimizer_s": 262.4447264000059,
+    "collect_s": 2015.175777399967,
+    "inference_s": 34.5361173999614,
+    "worker_wait_s": 1979.4429575000609,
+    "last": {
+      "updates": 16,
+      "old_new_logp_error": 0.0,
+      "early_kl_stop": false,
+      "loss": -0.0006564975192304701,
+      "approx_kl": 1.853040885180235e-06,
+      "clip_fraction": 0.0,
+      "grad_norm_max": 2.4727513790130615,
+      "optimizer_s": 1.582315699999981,
+      "advantages_finite": true,
+      "gradients_finite": true,
+      "iteration": 128,
+      "actual_actions": 32768,
+      "optimizer_updates": 2039,
+      "rollout_return_mean": -0.1519773304462433,
+      "completed_episodes": 255,
+      "episode_return_mean": -0.15257330980392156,
+      "stop_fraction": 0.99609375,
+      "changed_fraction": 0.00390625,
+      "collect_s": 11.544912199999999,
+      "inference_s": 0.2234032000001207,
+      "worker_s": 11.313827599999968,
+      "elapsed_s": 2352.052650300002,
+      "validation_s": 34.0220816999981
+    },
+    "scope": "Retained fresh on-policy interactions; collector boundaries do not terminate or finalize episodes. A separately recorded killed/uncommitted tail, if present, is not included.",
+    "uncommitted_live_iterations": 0
+  },
+  "completed_episodes": {
+    "completed_episodes": 31735,
+    "completed_steps": 32768,
+    "charged_work": 5046946866,
+    "counters": {
+      "menu_builds": 32768,
+      "menu_work": 5040943680,
+      "proposal_calls": 1033,
+      "proposal_work": 6003186,
+      "certification_calls": 32768,
+      "accepted": 1033,
+      "best_improvements": 236
+    },
+    "certificate_cache_delta": {
+      "hits": 532,
+      "misses": 501,
+      "bypasses": 31735,
+      "actual_certifications": 32236
+    },
+    "prepared_input_categories": {
+      "cold": 384,
+      "disk": 31337,
+      "memory": 14
+    },
+    "episodes_by_worker": {
+      "3": 3968,
+      "5": 3975,
+      "6": 3973,
+      "7": 3972,
+      "1": 3972,
+      "2": 3962,
+      "0": 3956,
+      "4": 3957
+    },
+    "fallback_count": 0,
+    "overrun_count": 1,
+    "termination_reasons": {
+      "stop": 31734,
+      "budget": 1
+    },
+    "mean_return": -0.15633691279398756,
+    "unique_training_scenes": 384,
+    "uncommitted_live_rows": 0,
+    "resume_cache_boundaries": [
+      {
+        "worker": 0,
+        "episode": 2166,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 1,
+        "episode": 2184,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 2,
+        "episode": 2173,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 3,
+        "episode": 2180,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 4,
+        "episode": 2167,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 5,
+        "episode": 2186,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 6,
+        "episode": 2182,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      },
+      {
+        "worker": 7,
+        "episode": 2183,
+        "preserved_logical_certifications": 0,
+        "post_load_physical_delta": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 1,
+          "actual_certifications": 1
+        },
+        "checkpoint_prefix_verified": true
+      }
+    ],
+    "scope": "All retained complete-episode scalar ledgers recomputed, not path replanning. complete_s includes optimizer/other-worker/validation waiting and is NOT deployment latency. Active workers are separate. At a restored episode boundary, physical cache deltas cover only post-load actions; preserved logical certification prefixes are separately checked against the retained interruption checkpoint under --checkpoints. Reset/load validation and any killed unlogged tail are outside these physical deltas, so this is not a total-process certification count."
+  },
+  "interruption": {
+    "interrupted": true,
+    "receipt_sha256": "72efc09b38c80949106a11262caf06731a642e2b0995ac6c07e07f25169912b6",
+    "checkpoint": "outputs\\training\\interruption_18432.pt",
+    "checkpoint_sha256": "ff1948116c1463bcd9657da5a2b5d24d857e31ff6ee6448ec58c5b89ffbf183f",
+    "retained_boundary": 18432,
+    "retained_actions": 32768,
+    "unknown_discarded_actions_interval": [
+      0,
+      256
+    ],
+    "unknown_discarded_optimizer_updates_interval": [
+      0,
+      16
+    ],
+    "physical_actions_interval": [
+      32768,
+      33024
+    ],
+    "resumed_first_episodes": [
+      {
+        "worker": 0,
+        "episode": 2166
+      },
+      {
+        "worker": 1,
+        "episode": 2184
+      },
+      {
+        "worker": 2,
+        "episode": 2173
+      },
+      {
+        "worker": 3,
+        "episode": 2180
+      },
+      {
+        "worker": 4,
+        "episode": 2167
+      },
+      {
+        "worker": 5,
+        "episode": 2186
+      },
+      {
+        "worker": 6,
+        "episode": 2182
+      },
+      {
+        "worker": 7,
+        "episode": 2183
+      }
+    ],
+    "retained_prefix_hashes": {
+      "ppo_iterations.jsonl": {
+        "rows": 72,
+        "sha256": "c0862e3d4237b9990b0af32611159c217a9817b34530d8e62ca6ad5a231cc809"
+      },
+      "ppo_episodes.jsonl": {
+        "rows": 17413,
+        "sha256": "2e7f26a35a84f7c62fcf6352c3e7d70ed3e2ea7a0bacdf34f18fa037ba78dd4b"
+      }
+    },
+    "unknown_tail_work_and_time": true,
+    "scope": "One killed uncommitted rollout may have executed 0..256 additional physical actions. Up to one rollout optimizer cycle (0..16 attempted updates) may also be lost before log flush. It contributes neither retained actor samples nor retained optimizer updates. Final 32768 is the retained on-policy count, not an exact total physical-call claim. Trainer elapsed time excludes interruption idle time and unlogged tail time. Resume creates and validates adapters outside episode cache deltas; these costs are not silently counted as zero."
+  },
+  "saved_evaluations": {
+    "datasets": {
+      "ppo_8192": {
+        "rows": 24,
+        "methods": {
+          "ppo_8192": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.6165988000011566,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          }
+        },
+        "results_sha256": "9ea3c9ba074f56a6fcc93820d9071e331fe459bd8bc21125fd407b15e4df66a0"
+      },
+      "ppo_16384": {
+        "rows": 24,
+        "methods": {
+          "ppo_16384": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.46175380000204314,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          }
+        },
+        "results_sha256": "d9cfe89aa5e5113990650a7d1a636786cd4313ac552d960ae5e9c707a5dbc576"
+      },
+      "ppo_32768": {
+        "rows": 24,
+        "methods": {
+          "ppo_32768": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.39777125000000524,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          }
+        },
+        "results_sha256": "36527ae18ce0dadaa2888a2079706df21f4f32665922eb9f97f487741466b372"
+      },
+      "controls_fixed_work": {
+        "rows": 240,
+        "methods": {
+          "bc_frozen": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.395091349999916,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "bc_continued_512": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.3897556000000577,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "bc_continued_1024": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.4064835500000754,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "bc_continued_2048": {
+            "n": 24,
+            "mean_J": 293.608856212125,
+            "mean_return": -0.15710314552049232,
+            "median_complete_s": 0.39974640000002637,
+            "mean_quality": 0.08809143781284103,
+            "root_STOP": 18,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "original_fixed3": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": null,
+            "median_complete_s": 0.24558954999997695,
+            "mean_quality": 0.0,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "original_detour": {
+            "n": 24,
+            "mean_J": 289.55288115384167,
+            "mean_return": null,
+            "median_complete_s": 0.47707979999995587,
+            "mean_quality": 1.410492133397093,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "stop": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.3790773000000627,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "detour_memory": {
+            "n": 24,
+            "mean_J": 291.12876515274166,
+            "mean_return": -1.1139796114004217,
+            "median_complete_s": 0.8136948499999335,
+            "mean_quality": 0.9112417219329119,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "ils": {
+            "n": 24,
+            "mean_J": 293.1550923693417,
+            "mean_return": -0.9151049701172569,
+            "median_complete_s": 0.5999348000000282,
+            "mean_quality": 0.21547669654940987,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "random": {
+            "n": 24,
+            "mean_J": 292.498682564625,
+            "mean_return": -1.0038479928219388,
+            "median_complete_s": 0.8271101999999928,
+            "mean_quality": 0.4098897988447278,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          }
+        },
+        "results_sha256": "174b0a02e5f92f6662fe726fc54668e2a5460cd4cd9c11425e2bc9f53b85d3a2"
+      },
+      "final_fixed_work": {
+        "rows": 216,
+        "methods": {
+          "ppo_final": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.39388335000001007,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "bc_frozen": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.39445455000009133,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "bc_continued_2048": {
+            "n": 24,
+            "mean_J": 293.608856212125,
+            "mean_return": -0.15710314552049232,
+            "median_complete_s": 0.39513079999994716,
+            "mean_quality": 0.08809143781284103,
+            "root_STOP": 18,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "original_fixed3": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": null,
+            "median_complete_s": 0.24784105000003365,
+            "mean_quality": 0.0,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "original_detour": {
+            "n": 24,
+            "mean_J": 289.55288115384167,
+            "mean_return": null,
+            "median_complete_s": 0.4715569999999616,
+            "mean_quality": 1.410492133397093,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "stop": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.15639525,
+            "median_complete_s": 0.3757294000000684,
+            "mean_quality": 0.0,
+            "root_STOP": 24,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "detour_memory": {
+            "n": 24,
+            "mean_J": 291.12876515274166,
+            "mean_return": -1.1139796114004217,
+            "median_complete_s": 0.8054106499999989,
+            "mean_quality": 0.9112417219329119,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "ils": {
+            "n": 24,
+            "mean_J": 293.1550923693417,
+            "mean_return": -0.9151049701172569,
+            "median_complete_s": 0.6008424000000332,
+            "mean_quality": 0.21547669654940987,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "random": {
+            "n": 24,
+            "mean_J": 292.498682564625,
+            "mean_return": -1.0038479928219388,
+            "median_complete_s": 0.8327141500000153,
+            "mean_quality": 0.4098897988447278,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          }
+        },
+        "results_sha256": "9398ab1d1c2a14d8201b93c5c588b61537dd201d5496f4fe2bee7436d5356a17"
+      },
+      "final_soft_time_0400ms": {
+        "rows": 216,
+        "methods": {
+          "ppo_final": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.139474125,
+            "median_complete_s": 0.3864064499999813,
+            "mean_quality": 0.0,
+            "root_STOP": 18,
+            "fallback": 0,
+            "deadline_overruns": 10
+          },
+          "bc_frozen": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.138306,
+            "median_complete_s": 0.39057165000008354,
+            "mean_quality": 0.0,
+            "root_STOP": 19,
+            "fallback": 0,
+            "deadline_overruns": 10
+          },
+          "bc_continued_2048": {
+            "n": 24,
+            "mean_J": 293.62735100749165,
+            "mean_return": -0.0919054434216165,
+            "median_complete_s": 0.3939559000001509,
+            "mean_quality": 0.08292147324505017,
+            "root_STOP": 15,
+            "fallback": 0,
+            "deadline_overruns": 11
+          },
+          "original_fixed3": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": null,
+            "median_complete_s": 0.24430265000000873,
+            "mean_quality": 0.0,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 0
+          },
+          "original_detour": {
+            "n": 24,
+            "mean_J": 290.993952090125,
+            "mean_return": null,
+            "median_complete_s": 0.4467552500000238,
+            "mean_quality": 0.9897885891348852,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 21
+          },
+          "stop": {
+            "n": 24,
+            "mean_J": 293.8482824911083,
+            "mean_return": -0.14698350000000002,
+            "median_complete_s": 0.3742152499999065,
+            "mean_quality": 0.0,
+            "root_STOP": 22,
+            "fallback": 0,
+            "deadline_overruns": 8
+          },
+          "detour_memory": {
+            "n": 24,
+            "mean_J": 293.31132968733334,
+            "mean_return": -0.44947872449143167,
+            "median_complete_s": 0.4850550999999541,
+            "mean_quality": 0.1959709838419017,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 24
+          },
+          "ils": {
+            "n": 24,
+            "mean_J": 293.56102968365,
+            "mean_return": -0.3990328883800765,
+            "median_complete_s": 0.47321295000006103,
+            "mean_quality": 0.10230986161992349,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 24
+          },
+          "random": {
+            "n": 24,
+            "mean_J": 293.695462235525,
+            "mean_return": -0.3735522749668433,
+            "median_complete_s": 0.48607240000001184,
+            "mean_quality": 0.05632222503315672,
+            "root_STOP": 0,
+            "fallback": 0,
+            "deadline_overruns": 23
+          }
+        },
+        "results_sha256": "9dd676416a3710bc4e9316f7256f6c61f1cdb30e6314707a829879e142936bf3"
+      }
+    },
+    "scope": "All saved final/stage JSON rows and evidence ledgers recomputed; this is not new path execution or timing. Only six explicitly identified cases are replayed with --replay."
+  },
+  "reviewer_scope": "Separate audit agent reviewed the existing teacher-module audit and recomputed saved evidence; inherited project context, not a zero-context external review.",
+  "checkpoints": {
+    "checkpoints": [
+      {
+        "checkpoint": "bc_continued_0512.pt",
+        "sha256": "296479e7d70da7ca8f93eb9ff54a5efde91ef715127bdc6aaf517dac1c8fcb06",
+        "parent_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+        "updates": 512
+      },
+      {
+        "checkpoint": "bc_continued_1024.pt",
+        "sha256": "f7937cff1f009401ff1ae8db3e9d9c6a0088a46d4c38179d7f060d19819e6310",
+        "parent_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+        "updates": 1024
+      },
+      {
+        "checkpoint": "bc_continued_2048.pt",
+        "sha256": "ed503eee23420b3332dc19e5077f793f2bdaa8a161f2faadc0bc116a423496af",
+        "parent_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+        "updates": 2048
+      },
+      {
+        "checkpoint": "ppo_08192.pt",
+        "sha256": "a7b00a333d9d294b2a3039b17524bbfa123b3f077a00050dfca447cc099f0d76",
+        "parent_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+        "actual_actions": 8192,
+        "optimizer_updates": 507,
+        "parameters_changed": true,
+        "optimizer_parameter_states": 24,
+        "adam_steps_min": 507,
+        "adam_steps_max": 507
+      },
+      {
+        "checkpoint": "ppo_16384.pt",
+        "sha256": "e13b43754788352622560dc6c6f67d6bb46173226d1b4c7f7d8b50b813c3468e",
+        "parent_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+        "actual_actions": 16384,
+        "optimizer_updates": 1019,
+        "parameters_changed": true,
+        "optimizer_parameter_states": 24,
+        "adam_steps_min": 1019,
+        "adam_steps_max": 1019
+      },
+      {
+        "checkpoint": "ppo_32768.pt",
+        "sha256": "b73718cf1cabbb1741d5f3d04109b95dedbda07de660f8e638975e82e78de5f3",
+        "parent_bc_sha256": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+        "actual_actions": 32768,
+        "optimizer_updates": 2039,
+        "parameters_changed": true,
+        "optimizer_parameter_states": 24,
+        "adam_steps_min": 2039,
+        "adam_steps_max": 2039
+      }
+    ],
+    "active_unfinished_workers": [
+      {
+        "worker": 0,
+        "episode": 3957,
+        "case": {
+          "case_id": 160,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1925999416,
+          "mode": "mixed"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 136971,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 2,
+        "finalized": false
+      },
+      {
+        "worker": 1,
+        "episode": 3973,
+        "case": {
+          "case_id": 89,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 657475627,
+          "mode": "blocked"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 110538,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 3,
+        "finalized": false
+      },
+      {
+        "worker": 2,
+        "episode": 3963,
+        "case": {
+          "case_id": 114,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1475127961,
+          "mode": "regular"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 138573,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 0,
+        "finalized": false
+      },
+      {
+        "worker": 3,
+        "episode": 3969,
+        "case": {
+          "case_id": 139,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 533845814,
+          "mode": "mixed"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 212265,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 3,
+        "finalized": false
+      },
+      {
+        "worker": 4,
+        "episode": 3958,
+        "case": {
+          "case_id": 116,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 2120934059,
+          "mode": "blocked"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 213867,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 1,
+        "finalized": false
+      },
+      {
+        "worker": 5,
+        "episode": 3976,
+        "case": {
+          "case_id": 253,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1393268483,
+          "mode": "mixed"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 96120,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 2,
+        "finalized": false
+      },
+      {
+        "worker": 6,
+        "episode": 3974,
+        "case": {
+          "case_id": 310,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 1494490410,
+          "mode": "mixed"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 230688,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 0,
+        "finalized": false
+      },
+      {
+        "worker": 7,
+        "episode": 3973,
+        "case": {
+          "case_id": 295,
+          "split": "train",
+          "nx": 10,
+          "ny": 10,
+          "seed": 44119788,
+          "mode": "mixed"
+        },
+        "steps": 0,
+        "charged_work": 0,
+        "pending_menu_work": 212265,
+        "counters": {
+          "menu_builds": 1,
+          "menu_work": 0,
+          "proposal_calls": 0,
+          "proposal_work": 0,
+          "certification_calls": 0,
+          "accepted": 0,
+          "best_improvements": 0,
+          "work_count_incomplete": false
+        },
+        "prefix_reward": 0.0,
+        "preparations": 48,
+        "memory_reuses": 3,
+        "finalized": false
+      }
+    ],
+    "completed_plus_active_actions": 32768,
+    "charged_work_completed_plus_active": 5046946866,
+    "physically_built_pending_menu_work": 1351287,
+    "prepared_inputs": {
+      "retained_started_episodes": 31743,
+      "retained_counter_cold_builds": 384,
+      "retained_counter_memory_reuses": 14,
+      "retained_counter_disk_loads": 31345,
+      "excludes_resume_constructor_and_load_overhead": true,
+      "excludes_unlogged_killed_tail": true
+    },
+    "interruption_checkpoint": {
+      "checkpoint_sha256": "ff1948116c1463bcd9657da5a2b5d24d857e31ff6ee6448ec58c5b89ffbf183f",
+      "workers": [
+        {
+          "worker": 0,
+          "episode": 2166,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 1,
+          "episode": 2184,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 2,
+          "episode": 2173,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 3,
+          "episode": 2180,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 4,
+          "episode": 2167,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 5,
+          "episode": 2186,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 6,
+          "episode": 2182,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        },
+        {
+          "worker": 7,
+          "episode": 2183,
+          "steps": 0,
+          "logical_certifications": 0,
+          "old_prefix_physical_cache_breakdown_saved": false
+        }
+      ],
+      "source_and_protocol_verified": true,
+      "retained_prefix_count_verified": true,
+      "scope": "Checkpoint-to-log restore prefixes verified. Certificate hits/misses before an active prefix were not serialized; no physical breakdown is invented. Constructor reset/load preparation is outside restored cumulative reset counters."
+    },
+    "teacher_all_raw_labels_recomputed": {
+      "teacher_initial": {
+        "all_passed": true,
+        "cases": 64,
+        "samples": 512,
+        "queries": 4096,
+        "observed_action_labels": 4096,
+        "unknown_legal_actions": 4608,
+        "label_description": {
+          "states": 512,
+          "stop_in_near_tie_set": 283,
+          "multiple_near_ties": 15,
+          "root_states": 64,
+          "root_stop_in_near_tie_set": 25
+        },
+        "checks": [
+          {
+            "case_id": 0,
+            "seed": 136796124,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 1,
+            "seed": 1864740459,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 2,
+            "seed": 1481410504,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 3,
+            "seed": 1980162974,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 4,
+            "seed": 1477165762,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 5,
+            "seed": 1393581500,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 6,
+            "seed": 1286685379,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 7,
+            "seed": 544976431,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 8,
+            "seed": 1279585805,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 9,
+            "seed": 154505309,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 10,
+            "seed": 1669727461,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 11,
+            "seed": 2128125174,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 12,
+            "seed": 1624827018,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 13,
+            "seed": 795870105,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 14,
+            "seed": 1335760242,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 15,
+            "seed": 1470266128,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 16,
+            "seed": 1367743903,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 17,
+            "seed": 1693491013,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 18,
+            "seed": 1314044984,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 19,
+            "seed": 1166193400,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 20,
+            "seed": 1771905726,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 21,
+            "seed": 1308439034,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 22,
+            "seed": 936151852,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 23,
+            "seed": 330486396,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 24,
+            "seed": 1856298506,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 25,
+            "seed": 1313404533,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 26,
+            "seed": 59027054,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 27,
+            "seed": 914889447,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 28,
+            "seed": 1491466644,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 29,
+            "seed": 1354212078,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 30,
+            "seed": 2038837278,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 31,
+            "seed": 1136147164,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 32,
+            "seed": 468714079,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 33,
+            "seed": 114838200,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 34,
+            "seed": 1868508986,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 35,
+            "seed": 153603226,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 36,
+            "seed": 661083729,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 37,
+            "seed": 1082599580,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 38,
+            "seed": 1631095916,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 39,
+            "seed": 568671767,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 40,
+            "seed": 684428447,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 41,
+            "seed": 1686848329,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 42,
+            "seed": 205666185,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 43,
+            "seed": 419289904,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 44,
+            "seed": 440439687,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 45,
+            "seed": 13554404,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 46,
+            "seed": 436775704,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 47,
+            "seed": 420255268,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 48,
+            "seed": 565696365,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 49,
+            "seed": 1826679899,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 50,
+            "seed": 402770175,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 51,
+            "seed": 1624655400,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 52,
+            "seed": 810993291,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 53,
+            "seed": 622486190,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 54,
+            "seed": 1876508330,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 55,
+            "seed": 568274439,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 56,
+            "seed": 444794077,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 57,
+            "seed": 107683504,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 58,
+            "seed": 1175301329,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 59,
+            "seed": 1733525549,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 60,
+            "seed": 2917241,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 61,
+            "seed": 243831112,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 62,
+            "seed": 645334797,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 63,
+            "seed": 1779177835,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          }
+        ],
+        "teacher_sha256": "f53d32640dc6a61f7014a0724bc7565c71c254a2ddc087f244a09e9d62d97ac8",
+        "scope": "Offline independent computation from all raw query/menu records. Recomputes highest suffix returns, prefix removal, terminal fees/corrections, evidence masks, ties and scene/route weights; not a rerun of teacher search or PPO rollout."
+      },
+      "teacher_extra": {
+        "all_passed": true,
+        "cases": 32,
+        "samples": 256,
+        "queries": 2048,
+        "observed_action_labels": 2048,
+        "unknown_legal_actions": 2304,
+        "label_description": {
+          "states": 256,
+          "stop_in_near_tie_set": 84,
+          "multiple_near_ties": 21,
+          "root_states": 32,
+          "root_stop_in_near_tie_set": 6
+        },
+        "checks": [
+          {
+            "case_id": 0,
+            "seed": 1020696713,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 1,
+            "seed": 557366170,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 2,
+            "seed": 254975004,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 3,
+            "seed": 1942957632,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 4,
+            "seed": 1699453005,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 5,
+            "seed": 207770240,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 6,
+            "seed": 581809607,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 7,
+            "seed": 913980812,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 8,
+            "seed": 32165081,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 9,
+            "seed": 1829521253,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 10,
+            "seed": 1455217430,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 11,
+            "seed": 806457610,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 12,
+            "seed": 1954846688,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 13,
+            "seed": 610454705,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 14,
+            "seed": 1298480396,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 15,
+            "seed": 1249731832,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 16,
+            "seed": 919293911,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 17,
+            "seed": 1506711457,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 18,
+            "seed": 166723912,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 19,
+            "seed": 1915731855,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 20,
+            "seed": 1082931380,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 21,
+            "seed": 1935426044,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 22,
+            "seed": 278780541,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 23,
+            "seed": 1919429346,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 24,
+            "seed": 1136010288,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 25,
+            "seed": 68867267,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 26,
+            "seed": 1361378911,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 27,
+            "seed": 231284208,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 28,
+            "seed": 638766914,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 29,
+            "seed": 1976979818,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 30,
+            "seed": 1489254726,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          },
+          {
+            "case_id": 31,
+            "seed": 856547880,
+            "passed": true,
+            "queries": 64,
+            "samples": 8
+          }
+        ],
+        "teacher_sha256": "46a7c5133c6b7e4529f207365f49aa0b2e8f839ce1cea46f471fd885105d0a8a",
+        "scope": "Offline independent computation from all raw query/menu records. Recomputes highest suffix returns, prefix removal, terminal fees/corrections, evidence masks, ties and scene/route weights; not a rerun of teacher search or PPO rollout."
+      }
+    },
+    "scope": "All checkpoint sources/finite tensors/parent identity and saved worker ledgers checked. Eight live episodes are kept unfinished; pending menu work is physical preparation, not yet debited reward. Metadata plus reviewed loader establishes shared BC parent; no unsaved initial PPO tensor snapshot is claimed."
+  },
+  "actual_replay": {
+    "saved_plan_replays": [
+      {
+        "case_index": 0,
+        "seed": 431014569,
+        "method": "bc_frozen",
+        "saved_evidence_sha256": "ef2e9d7303ba37ee75c18364dd9a21e1fb02db46536e64d3b378fbf46b066e90",
+        "actual_actions": 1,
+        "J": 260.04999999999995,
+        "return_value": -0.162603,
+        "work": 162603,
+        "validated": true,
+        "proposal_calls": 0,
+        "changed_proposals": 0,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.2470683999999892,
+          "cache_lookup_s": 0.0
+        }
+      },
+      {
+        "case_index": 0,
+        "seed": 431014569,
+        "method": "bc_continued_2048",
+        "saved_evidence_sha256": "a447a5884b03c6822954abc21bf54dc884bcd72a128f2606b2def0d8f99b6b5f",
+        "actual_actions": 2,
+        "J": 260.04999999999995,
+        "return_value": -0.32714699999999997,
+        "work": 327147,
+        "validated": true,
+        "proposal_calls": 1,
+        "changed_proposals": 0,
+        "cache_stats": {
+          "hits": 1,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.24696689999996124,
+          "cache_lookup_s": 0.0020442000000002736
+        }
+      },
+      {
+        "case_index": 0,
+        "seed": 431014569,
+        "method": "ppo_final",
+        "saved_evidence_sha256": "d765da13f4ed9b0ead64aa2d0332114f35518fea921e143010d161006d7a482d",
+        "actual_actions": 1,
+        "J": 260.04999999999995,
+        "return_value": -0.162603,
+        "work": 162603,
+        "validated": true,
+        "proposal_calls": 0,
+        "changed_proposals": 0,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.24894480000011754,
+          "cache_lookup_s": 0.0
+        }
+      },
+      {
+        "case_index": 1,
+        "seed": 25824512,
+        "method": "bc_frozen",
+        "saved_evidence_sha256": "9fdf4e70efa8ffa6089ae6ceb2493654bfbc963ba8c482acc58ac769abaa9c71",
+        "actual_actions": 1,
+        "J": 320.43966817500007,
+        "return_value": -0.22107600000000002,
+        "work": 221076,
+        "validated": true,
+        "proposal_calls": 0,
+        "changed_proposals": 0,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.37857320000011896,
+          "cache_lookup_s": 0.0
+        }
+      },
+      {
+        "case_index": 1,
+        "seed": 25824512,
+        "method": "bc_continued_2048",
+        "saved_evidence_sha256": "9804ae4c5236e86a495bad8c617c53c8732423506010ed9bd2610a2cfa6d667e",
+        "actual_actions": 1,
+        "J": 320.43966817500007,
+        "return_value": -0.22107600000000002,
+        "work": 221076,
+        "validated": true,
+        "proposal_calls": 0,
+        "changed_proposals": 0,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.37830499999972744,
+          "cache_lookup_s": 0.0
+        }
+      },
+      {
+        "case_index": 1,
+        "seed": 25824512,
+        "method": "ppo_final",
+        "saved_evidence_sha256": "5369544062e2ecec5f3278b0b060acd31e6e2cdfdf1cdb843fca00f4efa091d7",
+        "actual_actions": 1,
+        "J": 320.43966817500007,
+        "return_value": -0.22107600000000002,
+        "work": 221076,
+        "validated": true,
+        "proposal_calls": 0,
+        "changed_proposals": 0,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.3822689999999511,
+          "cache_lookup_s": 0.0
+        }
+      }
+    ],
+    "restored_worker": 0,
+    "restored_case": {
+      "case_id": 160,
+      "split": "train",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1925999416,
+      "mode": "mixed"
+    },
+    "restored_prefix_steps": 0,
+    "duplicate_restorations": [
+      {
+        "terminal": true,
+        "steps": 1,
+        "work": 136971,
+        "return_value": -0.136971,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.3050892000001113,
+          "cache_lookup_s": 0.0
+        }
+      },
+      {
+        "terminal": true,
+        "steps": 1,
+        "work": 136971,
+        "return_value": -0.136971,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 0,
+          "bypasses": 7,
+          "actual_certifications": 7,
+          "certification_s": 0.30658340000013595,
+          "cache_lookup_s": 0.0
+        }
+      }
+    ],
+    "sampled_actions": [
+      {
+        "action_id": 16,
+        "action": {
+          "kind": "stop",
+          "start": 0,
+          "end": 0,
+          "forbidden_node": null,
+          "key": "stop"
+        },
+        "reward": -0.136971,
+        "terminal": true
+      }
+    ],
+    "restore_sequences_identical": true,
+    "elapsed_audit_s": 5.881786200000079,
+    "scope": "Six predeclared final fixed-work case/method runs physically reconstructed from saved inputs, policy observations/actions reproduced, all repairs and final validators rerun. Worker 0 checkpoint restored twice and sampled up to three real actions, stopping naturally; no other active worker finalized, no training counter modified. Audit time/cache queries are additional review costs, not deployment measurements."
+  },
+  "all_requested_checks_passed": true,
+  "audit_script_sha256": "fa0044cf4aac36b0aa58de338d6e905c5a664c0e0ef54b265a22ecf53f65f632"
+}

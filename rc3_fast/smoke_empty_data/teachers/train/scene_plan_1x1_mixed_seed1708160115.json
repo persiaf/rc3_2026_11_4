@@ -1,0 +1,296 @@
+{
+  "scene": {
+    "schema_version": 2,
+    "parameter_status": "DEMONSTRATION_ONLY_NOT_MEASURED",
+    "nx": 1,
+    "ny": 1,
+    "seed": 1708160115,
+    "start": [
+      0.0,
+      0.0
+    ],
+    "robot": {
+      "base_radius": 0.32,
+      "clearance": 0.08,
+      "arm_forward_offset": 0.12,
+      "arm_spacing": 0.36,
+      "arm_min_reach": 0.1,
+      "arm_max_reach": 0.9,
+      "arm_sector_half_angle_deg": 100.0,
+      "shoulder_height": 0.75,
+      "fixed_lift_height": 0.4
+    },
+    "geometry": {
+      "table_width": 0.9004431719050774,
+      "table_depth": 0.696097533577248,
+      "aisle_gap": 1.6214932886446332,
+      "table_height": 0.75,
+      "dock_gap": 0.5,
+      "task_margin": 0.04
+    },
+    "table_width": 0.9004431719050774,
+    "table_depth": 0.696097533577248,
+    "aisle_gap": 1.6214932886446332,
+    "x_lines": [
+      0.0,
+      2.5219364605497105
+    ],
+    "y_lines": [
+      0.0,
+      2.3175908222218813
+    ],
+    "tables": [
+      {
+        "id": 0,
+        "ix": 0,
+        "iy": 0,
+        "cx": 1.243751445938393,
+        "cy": 1.160954601521534,
+        "xmin": 0.7755402419186646,
+        "xmax": 1.7119626499581213,
+        "ymin": 0.8115800182281521,
+        "ymax": 1.5103291848149158,
+        "z": 0.75
+      }
+    ],
+    "tasks": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "x": 1.3599727344561272,
+        "y": 1.4141539071095568,
+        "z": 0.75
+      }
+    ],
+    "candidates": [
+      {
+        "id": 0,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.0096458439285287,
+        "y": 0.31158001822815207,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.0096458439285287,
+          0.0
+        ]
+      },
+      {
+        "id": 1,
+        "table_id": 0,
+        "side": "bottom",
+        "x": 1.4778570479482571,
+        "y": 0.31158001822815207,
+        "theta": 1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.4778570479482571,
+          0.0
+        ]
+      },
+      {
+        "id": 2,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.0096458439285287,
+        "y": 2.010329184814916,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.0096458439285287,
+          2.3175908222218813
+        ]
+      },
+      {
+        "id": 3,
+        "table_id": 0,
+        "side": "top",
+        "x": 1.4778570479482571,
+        "y": 2.010329184814916,
+        "theta": -1.5707963267948966,
+        "h": 0.4,
+        "corridor_anchor": [
+          1.4778570479482571,
+          2.3175908222218813
+        ]
+      },
+      {
+        "id": 4,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.27554024191866455,
+        "y": 0.986267309874843,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          0.986267309874843
+        ]
+      },
+      {
+        "id": 5,
+        "table_id": 0,
+        "side": "left",
+        "x": 0.27554024191866455,
+        "y": 1.335641893168225,
+        "theta": 0.0,
+        "h": 0.4,
+        "corridor_anchor": [
+          0.0,
+          1.335641893168225
+        ]
+      },
+      {
+        "id": 6,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.2119626499581213,
+        "y": 0.986267309874843,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.5219364605497105,
+          0.986267309874843
+        ]
+      },
+      {
+        "id": 7,
+        "table_id": 0,
+        "side": "right",
+        "x": 2.2119626499581213,
+        "y": 1.335641893168225,
+        "theta": 3.141592653589793,
+        "h": 0.4,
+        "corridor_anchor": [
+          2.5219364605497105,
+          1.335641893168225
+        ]
+      }
+    ],
+    "model_scope": "fixed-height spherical-sector arm proxy; independent sequential one-arm tasks; no IK, joint path, or hardware validation",
+    "complexity": "mixed",
+    "density_profile": 0,
+    "obstacles": [],
+    "layout_description": "Individual table scale 0.95-1.05; position jitter +/-0.04 m; horizontal aisle blockers on alternating rows."
+  },
+  "feasibility": [
+    {
+      "task_id": 0,
+      "left": [
+        2,
+        3,
+        7
+      ],
+      "right": [
+        2,
+        3,
+        6,
+        7
+      ]
+    }
+  ],
+  "plans": {
+    "portfolio_teacher": {
+      "method": "portfolio_teacher",
+      "status": "complete",
+      "selected_candidate_ids": [
+        2
+      ],
+      "visit_order_candidate_ids": [
+        2
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 2,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 2,
+          "pose": {
+            "x": 1.0096458439285287,
+            "y": 2.010329184814916,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 3.6344983035000005,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "unserved_reasons": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9862673099
+        ],
+        [
+          0.0,
+          1.3356418932
+        ],
+        [
+          0.0,
+          2.3175908222
+        ],
+        [
+          1.0096458439,
+          2.3175908222
+        ],
+        [
+          1.0096458439,
+          2.0103291848
+        ],
+        [
+          1.0096458439,
+          2.3175908222
+        ],
+        [
+          0.0,
+          2.3175908222
+        ],
+        [
+          0.0,
+          1.3356418932
+        ],
+        [
+          0.0,
+          0.9862673099
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        3.6344983035000005,
+        3.6344983035000005
+      ],
+      "route_length_m": 7.268996607000001,
+      "stop_penalty_equivalent_m": 0.75,
+      "objective_length_plus_stops_m": 8.018996607000002,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 7.268996607,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      }
+    }
+  }
+}

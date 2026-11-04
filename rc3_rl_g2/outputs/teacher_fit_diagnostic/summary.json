@@ -1,0 +1,1778 @@
+{
+  "scope": "Post hoc inference on the already queried supervised teacher states, not a new generalization set. Near-best means best among the queried finite-depth suffixes; unknown legal actions have no quality label. No environment step, repair oracle, finalization or new teacher query is performed.",
+  "groups": [
+    {
+      "model": "bc_continued_2048",
+      "split": "initial",
+      "level": "root",
+      "samples": 64,
+      "scenes": 64,
+      "depth_counts": {
+        "2": 64
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.375,
+          "teacher_weighted_mean": 0.3277789495886944
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.421875,
+          "teacher_weighted_mean": 0.3676439569711032
+        },
+        "full_greedy_unknown": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.20227800042185198
+        },
+        "unknown_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.3777318797183747,
+          "teacher_weighted_mean": 0.37845843687281683
+        },
+        "observed_near_best_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.2288712139509639,
+          "teacher_weighted_mean": 0.22158000080482768
+        },
+        "evidence_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.6222681202816254,
+          "teacher_weighted_mean": 0.6215415631271834
+        },
+        "full_greedy_stop": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.671875,
+          "teacher_weighted_mean": 0.6522885467201013
+        },
+        "evidence_greedy_stop": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.8125,
+          "teacher_weighted_mean": 0.8132250580046404
+        },
+        "stop_probability": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.30879888130833033,
+          "teacher_weighted_mean": 0.2927662592550892
+        },
+        "stop_teacher_near_best": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.4738560544206596,
+          "teacher_weighted_mean": 1.5236837625613675
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 52,
+          "unknown": 12,
+          "sample_mean": 0.3342424325405328,
+          "teacher_weighted_mean": 0.37706862444068256
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.3582344131025267,
+          "teacher_weighted_mean": 0.4138633093897392
+        },
+        "full_greedy_quality_known": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.8125,
+          "teacher_weighted_mean": 0.7977219995781482
+        }
+      }
+    },
+    {
+      "model": "bc_continued_2048",
+      "split": "initial",
+      "level": "all",
+      "samples": 512,
+      "scenes": 64,
+      "depth_counts": {
+        "1": 448,
+        "2": 64
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.5234375,
+          "teacher_weighted_mean": 0.5632316468253967
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.5859375,
+          "teacher_weighted_mean": 0.6163628472222221
+        },
+        "full_greedy_unknown": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.16796875,
+          "teacher_weighted_mean": 0.14137524801587298
+        },
+        "unknown_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.3698273518948948,
+          "teacher_weighted_mean": 0.3484660907692077
+        },
+        "observed_near_best_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.3005713162282939,
+          "teacher_weighted_mean": 0.321866307610668
+        },
+        "evidence_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.6301726481051052,
+          "teacher_weighted_mean": 0.6515339092307922
+        },
+        "full_greedy_stop": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.720703125,
+          "teacher_weighted_mean": 0.7478422619047619
+        },
+        "evidence_greedy_stop": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.845703125,
+          "teacher_weighted_mean": 0.8531498015873015
+        },
+        "stop_probability": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.35677278163137094,
+          "teacher_weighted_mean": 0.3738244431374325
+        },
+        "stop_teacher_near_best": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0366057415718748,
+          "teacher_weighted_mean": 0.9975944307773801
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 426,
+          "unknown": 86,
+          "sample_mean": 0.1695421570142565,
+          "teacher_weighted_mean": 0.15402378964181848
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.2051445188676066,
+          "teacher_weighted_mean": 0.1825599570632732
+        },
+        "full_greedy_quality_known": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.83203125,
+          "teacher_weighted_mean": 0.8586247519841268
+        }
+      }
+    },
+    {
+      "model": "bc_continued_2048",
+      "split": "extra",
+      "level": "root",
+      "samples": 32,
+      "scenes": 32,
+      "depth_counts": {
+        "2": 32
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.3125,
+          "teacher_weighted_mean": 0.31101321585903086
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.3125,
+          "teacher_weighted_mean": 0.31101321585903086
+        },
+        "full_greedy_unknown": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.15625,
+          "teacher_weighted_mean": 0.15374449339207047
+        },
+        "unknown_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.34754824740039636,
+          "teacher_weighted_mean": 0.34094295922641593
+        },
+        "observed_near_best_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.2185617946213769,
+          "teacher_weighted_mean": 0.21628221644454254
+        },
+        "evidence_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.6524517525996036,
+          "teacher_weighted_mean": 0.6590570407735842
+        },
+        "full_greedy_stop": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.65625,
+          "teacher_weighted_mean": 0.6246696035242291
+        },
+        "evidence_greedy_stop": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.78125,
+          "teacher_weighted_mean": 0.7387665198237886
+        },
+        "stop_probability": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.3478835586366124,
+          "teacher_weighted_mean": 0.3417410999877287
+        },
+        "stop_teacher_near_best": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.9496538015857308,
+          "teacher_weighted_mean": 1.960061631973308
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 27,
+          "unknown": 5,
+          "sample_mean": 0.34217900592518213,
+          "teacher_weighted_mean": 0.3539813202736036
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.38597007447067,
+          "teacher_weighted_mean": 0.38959949236399216
+        },
+        "full_greedy_quality_known": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.84375,
+          "teacher_weighted_mean": 0.8462555066079295
+        }
+      }
+    },
+    {
+      "model": "bc_continued_2048",
+      "split": "extra",
+      "level": "all",
+      "samples": 256,
+      "scenes": 32,
+      "depth_counts": {
+        "1": 224,
+        "2": 32
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.38671875,
+          "teacher_weighted_mean": 0.43330853174603173
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.4140625,
+          "teacher_weighted_mean": 0.4749751984126984
+        },
+        "full_greedy_unknown": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.16796875,
+          "teacher_weighted_mean": 0.1609375
+        },
+        "unknown_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.33958654307602,
+          "teacher_weighted_mean": 0.3229830581909837
+        },
+        "observed_near_best_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.27201127141267417,
+          "teacher_weighted_mean": 0.30143965349348806
+        },
+        "evidence_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.66041345692398,
+          "teacher_weighted_mean": 0.6770169418090163
+        },
+        "full_greedy_stop": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.6796875,
+          "teacher_weighted_mean": 0.6921875
+        },
+        "evidence_greedy_stop": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.8125,
+          "teacher_weighted_mean": 0.8101190476190476
+        },
+        "stop_probability": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.39543711123463954,
+          "teacher_weighted_mean": 0.40866914347895783
+        },
+        "stop_teacher_near_best": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.4777646332526697,
+          "teacher_weighted_mean": 1.311800471330865
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 213,
+          "unknown": 43,
+          "sample_mean": 0.21771039028375844,
+          "teacher_weighted_mean": 0.1928891931747402
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.27932222957012065,
+          "teacher_weighted_mean": 0.24551645087946802
+        },
+        "full_greedy_quality_known": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.83203125,
+          "teacher_weighted_mean": 0.8390624999999999
+        }
+      }
+    },
+    {
+      "model": "bc_continued_2048",
+      "split": "combined",
+      "level": "root",
+      "samples": 96,
+      "scenes": 96,
+      "depth_counts": {
+        "2": 96
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3541666666666667,
+          "teacher_weighted_mean": 0.3223505919269719
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3854166666666667,
+          "teacher_weighted_mean": 0.34930822992440447
+        },
+        "full_greedy_unknown": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.17708333333333334,
+          "teacher_weighted_mean": 0.18656397090286692
+        },
+        "unknown_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3676706689457152,
+          "teacher_weighted_mean": 0.36631179099386507
+        },
+        "observed_near_best_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.22543474084110157,
+          "teacher_weighted_mean": 0.21986470049134207
+        },
+        "evidence_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.6323293310542848,
+          "teacher_weighted_mean": 0.633688209006135
+        },
+        "full_greedy_stop": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.6666666666666666,
+          "teacher_weighted_mean": 0.6433461703038081
+        },
+        "evidence_greedy_stop": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.8020833333333334,
+          "teacher_weighted_mean": 0.7891171016973326
+        },
+        "stop_probability": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.32182710708442436,
+          "teacher_weighted_mean": 0.30862318244195147
+        },
+        "stop_teacher_near_best": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.6324553034756832,
+          "teacher_weighted_mean": 1.664972845939645
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 79,
+          "unknown": 17,
+          "sample_mean": 0.33695493230490664,
+          "teacher_weighted_mean": 0.3692918909135988
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.36747963355857444,
+          "teacher_weighted_mean": 0.4060072453976629
+        },
+        "full_greedy_quality_known": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.8229166666666666,
+          "teacher_weighted_mean": 0.813436029097133
+        }
+      }
+    },
+    {
+      "model": "bc_continued_2048",
+      "split": "combined",
+      "level": "all",
+      "samples": 768,
+      "scenes": 96,
+      "depth_counts": {
+        "1": 672,
+        "2": 96
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5199239417989419
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.5286458333333334,
+          "teacher_weighted_mean": 0.569233630952381
+        },
+        "full_greedy_unknown": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.16796875,
+          "teacher_weighted_mean": 0.14789599867724867
+        },
+        "unknown_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.35974708228860325,
+          "teacher_weighted_mean": 0.3399717465764664
+        },
+        "observed_near_best_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.291051301289754,
+          "teacher_weighted_mean": 0.3150574229049414
+        },
+        "evidence_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.6402529177113968,
+          "teacher_weighted_mean": 0.6600282534235336
+        },
+        "full_greedy_stop": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.70703125,
+          "teacher_weighted_mean": 0.7292906746031745
+        },
+        "evidence_greedy_stop": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.8346354166666666,
+          "teacher_weighted_mean": 0.8388062169312169
+        },
+        "stop_probability": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.3696608914991271,
+          "teacher_weighted_mean": 0.38543934325127427
+        },
+        "stop_teacher_near_best": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.1836587054654732,
+          "teacher_weighted_mean": 1.1023297776285417
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 639,
+          "unknown": 129,
+          "sample_mean": 0.18559823477075718,
+          "teacher_weighted_mean": 0.16678064506526433
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.22987042243511127,
+          "teacher_weighted_mean": 0.20354545500200483
+        },
+        "full_greedy_quality_known": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.83203125,
+          "teacher_weighted_mean": 0.8521040013227513
+        }
+      }
+    },
+    {
+      "model": "bc_frozen",
+      "split": "initial",
+      "level": "root",
+      "samples": 64,
+      "scenes": 64,
+      "depth_counts": {
+        "2": 64
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "full_greedy_unknown": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.3056338315687127,
+          "teacher_weighted_mean": 0.30269581365189985
+        },
+        "observed_near_best_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.21380931142709425,
+          "teacher_weighted_mean": 0.20189873926976704
+        },
+        "evidence_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.6943661684312872,
+          "teacher_weighted_mean": 0.6973041863481003
+        },
+        "full_greedy_stop": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.40842329447284065,
+          "teacher_weighted_mean": 0.4056303650100151
+        },
+        "stop_teacher_near_best": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.7291699467787986,
+          "teacher_weighted_mean": 1.808988169916315
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.4365856830695616,
+          "teacher_weighted_mean": 0.49692122275048256
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.4365856830695616,
+          "teacher_weighted_mean": 0.49692122275048256
+        },
+        "full_greedy_quality_known": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "bc_frozen",
+      "split": "initial",
+      "level": "all",
+      "samples": 512,
+      "scenes": 64,
+      "depth_counts": {
+        "1": 448,
+        "2": 64
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "full_greedy_unknown": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.31919885661250574,
+          "teacher_weighted_mean": 0.309666879550209
+        },
+        "observed_near_best_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.2697225600123192,
+          "teacher_weighted_mean": 0.2806075303229985
+        },
+        "evidence_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.6808011433874943,
+          "teacher_weighted_mean": 0.6903331204497909
+        },
+        "full_greedy_stop": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.41478899855974344,
+          "teacher_weighted_mean": 0.4156616423406921
+        },
+        "stop_teacher_near_best": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.3349156487987335,
+          "teacher_weighted_mean": 1.2968453999899194
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.23394835073439368,
+          "teacher_weighted_mean": 0.20980451627852917
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.23394835073439368,
+          "teacher_weighted_mean": 0.20980451627852917
+        },
+        "full_greedy_quality_known": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "bc_frozen",
+      "split": "extra",
+      "level": "root",
+      "samples": 32,
+      "scenes": 32,
+      "depth_counts": {
+        "2": 32
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "full_greedy_unknown": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.29966577150753826,
+          "teacher_weighted_mean": 0.30024120203436333
+        },
+        "observed_near_best_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.13190462981606238,
+          "teacher_weighted_mean": 0.1237309786776655
+        },
+        "evidence_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.7003342284924616,
+          "teacher_weighted_mean": 0.6997587979656367
+        },
+        "full_greedy_stop": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.43572060269518476,
+          "teacher_weighted_mean": 0.4375181358006304
+        },
+        "stop_teacher_near_best": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 2.512494577542407,
+          "teacher_weighted_mean": 2.5741485219430498
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.5581285918571831,
+          "teacher_weighted_mean": 0.5969161844934614
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.5581285918571831,
+          "teacher_weighted_mean": 0.5969161844934614
+        },
+        "full_greedy_quality_known": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "bc_frozen",
+      "split": "extra",
+      "level": "all",
+      "samples": 256,
+      "scenes": 32,
+      "depth_counts": {
+        "1": 224,
+        "2": 32
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "full_greedy_unknown": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.3110104392532883,
+          "teacher_weighted_mean": 0.30196852321189904
+        },
+        "observed_near_best_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.18772212369751604,
+          "teacher_weighted_mean": 0.22022150254328615
+        },
+        "evidence_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.6889895607467117,
+          "teacher_weighted_mean": 0.698031476788101
+        },
+        "full_greedy_stop": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.441175431372505,
+          "teacher_weighted_mean": 0.4416819054211493
+        },
+        "stop_teacher_near_best": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 2.0439778250221106,
+          "teacher_weighted_mean": 1.8244725313301695
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.34239094467558395,
+          "teacher_weighted_mean": 0.2956059474149838
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.34239094467558395,
+          "teacher_weighted_mean": 0.2956059474149838
+        },
+        "full_greedy_quality_known": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "bc_frozen",
+      "split": "combined",
+      "level": "root",
+      "samples": 96,
+      "scenes": 96,
+      "depth_counts": {
+        "2": 96
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "full_greedy_unknown": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3036444782149879,
+          "teacher_weighted_mean": 0.30190106705771813
+        },
+        "observed_near_best_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.18650775089008365,
+          "teacher_weighted_mean": 0.17658982234720666
+        },
+        "evidence_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.6963555217850121,
+          "teacher_weighted_mean": 0.6980989329422819
+        },
+        "full_greedy_stop": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.417522397213622,
+          "teacher_weighted_mean": 0.4159548892853961
+        },
+        "stop_teacher_near_best": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.9902781570333345,
+          "teacher_weighted_mean": 2.0567294335164696
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.47709998599876874,
+          "teacher_weighted_mean": 0.5292972836771066
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.47709998599876874,
+          "teacher_weighted_mean": 0.5292972836771066
+        },
+        "full_greedy_quality_known": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "bc_frozen",
+      "split": "combined",
+      "level": "all",
+      "samples": 768,
+      "scenes": 96,
+      "depth_counts": {
+        "1": 672,
+        "2": 96
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "full_greedy_unknown": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.31646938415943326,
+          "teacher_weighted_mean": 0.3071007607707724
+        },
+        "observed_near_best_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.2423890812407182,
+          "teacher_weighted_mean": 0.26047885439642776
+        },
+        "evidence_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.6835306158405668,
+          "teacher_weighted_mean": 0.6928992392292276
+        },
+        "full_greedy_stop": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4235844761639973,
+          "teacher_weighted_mean": 0.42433506336751114
+        },
+        "stop_teacher_near_best": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.571269707539859,
+          "teacher_weighted_mean": 1.4727211104366695
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.2700958820481238,
+          "teacher_weighted_mean": 0.23840499332401405
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.2700958820481238,
+          "teacher_weighted_mean": 0.23840499332401405
+        },
+        "full_greedy_quality_known": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "ppo_final",
+      "split": "initial",
+      "level": "root",
+      "samples": 64,
+      "scenes": 64,
+      "depth_counts": {
+        "2": 64
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "full_greedy_unknown": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.0003377258233835791,
+          "teacher_weighted_mean": 0.00033684566548850556
+        },
+        "observed_near_best_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.39052664632272754,
+          "teacher_weighted_mean": 0.3365721426575389
+        },
+        "evidence_probability_mass": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.9996622741766164,
+          "teacher_weighted_mean": 0.9996631543345116
+        },
+        "full_greedy_stop": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.999233211339495,
+          "teacher_weighted_mean": 0.9992428994142052
+        },
+        "stop_teacher_near_best": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.390625,
+          "teacher_weighted_mean": 0.3366378401181186
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 6.082580075532137,
+          "teacher_weighted_mean": 6.626492165580215
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.4365856830695616,
+          "teacher_weighted_mean": 0.49692122275048256
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 0.4365856830695616,
+          "teacher_weighted_mean": 0.49692122275048256
+        },
+        "full_greedy_quality_known": {
+          "n": 64,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "ppo_final",
+      "split": "initial",
+      "level": "all",
+      "samples": 512,
+      "scenes": 64,
+      "depth_counts": {
+        "1": 448,
+        "2": 64
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "full_greedy_unknown": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.000338812035158128,
+          "teacher_weighted_mean": 0.00033740863280679815
+        },
+        "observed_near_best_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.5524300219543667,
+          "teacher_weighted_mean": 0.5826305894113308
+        },
+        "evidence_probability_mass": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.9996611879648418,
+          "teacher_weighted_mean": 0.9996625913671929
+        },
+        "full_greedy_stop": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.9992383383982755,
+          "teacher_weighted_mean": 0.9992301234301164
+        },
+        "stop_teacher_near_best": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.552734375,
+          "teacher_weighted_mean": 0.582986111111111
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 4.460176902873003,
+          "teacher_weighted_mean": 4.1618896416844375
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.23394835073439368,
+          "teacher_weighted_mean": 0.20980451627852917
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 0.23394835073439368,
+          "teacher_weighted_mean": 0.20980451627852917
+        },
+        "full_greedy_quality_known": {
+          "n": 512,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "ppo_final",
+      "split": "extra",
+      "level": "root",
+      "samples": 32,
+      "scenes": 32,
+      "depth_counts": {
+        "2": 32
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "full_greedy_unknown": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.00033706160111869555,
+          "teacher_weighted_mean": 0.00033643883874542565
+        },
+        "observed_near_best_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.18742792906777309,
+          "teacher_weighted_mean": 0.16646186024962611
+        },
+        "evidence_probability_mass": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.9996629383988813,
+          "teacher_weighted_mean": 0.9996635611612545
+        },
+        "full_greedy_stop": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.9994016886891328,
+          "teacher_weighted_mean": 0.9994026104154254
+        },
+        "stop_teacher_near_best": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.1875,
+          "teacher_weighted_mean": 0.1665198237885463
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 8.277092574215512,
+          "teacher_weighted_mean": 8.49144935077649
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.5581285918571831,
+          "teacher_weighted_mean": 0.5969161844934614
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 0.5581285918571831,
+          "teacher_weighted_mean": 0.5969161844934614
+        },
+        "full_greedy_quality_known": {
+          "n": 32,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "ppo_final",
+      "split": "extra",
+      "level": "all",
+      "samples": 256,
+      "scenes": 32,
+      "depth_counts": {
+        "1": 224,
+        "2": 32
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "full_greedy_unknown": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.00033728323982948257,
+          "teacher_weighted_mean": 0.00033561050477081295
+        },
+        "observed_near_best_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.32796107457072377,
+          "teacher_weighted_mean": 0.4092342197977186
+        },
+        "evidence_probability_mass": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.9996627167601705,
+          "teacher_weighted_mean": 0.9996643894952292
+        },
+        "full_greedy_stop": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.9994038949668314,
+          "teacher_weighted_mean": 0.9994038484802044
+        },
+        "stop_teacher_near_best": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.328125,
+          "teacher_weighted_mean": 0.4094494047619047
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 6.832687419520957,
+          "teacher_weighted_mean": 6.000255951452353
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.34239094467558395,
+          "teacher_weighted_mean": 0.2956059474149838
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 0.34239094467558395,
+          "teacher_weighted_mean": 0.2956059474149838
+        },
+        "full_greedy_quality_known": {
+          "n": 256,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "ppo_final",
+      "split": "combined",
+      "level": "root",
+      "samples": 96,
+      "scenes": 96,
+      "depth_counts": {
+        "2": 96
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "full_greedy_unknown": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.00033750441596195127,
+          "teacher_weighted_mean": 0.000336713944377852
+        },
+        "observed_near_best_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3228270739044094,
+          "teacher_weighted_mean": 0.2814943590223995
+        },
+        "evidence_probability_mass": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.9996624955840381,
+          "teacher_weighted_mean": 0.999663286055622
+        },
+        "full_greedy_stop": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.9992893704560409,
+          "teacher_weighted_mean": 0.9992946101505863
+        },
+        "stop_teacher_near_best": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.3229166666666667,
+          "teacher_weighted_mean": 0.28155755241762936
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 6.814084241759929,
+          "teacher_weighted_mean": 7.230322262627074
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.47709998599876874,
+          "teacher_weighted_mean": 0.5292972836771066
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 0.47709998599876874,
+          "teacher_weighted_mean": 0.5292972836771066
+        },
+        "full_greedy_quality_known": {
+          "n": 96,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    },
+    {
+      "model": "ppo_final",
+      "split": "combined",
+      "level": "all",
+      "samples": 768,
+      "scenes": 96,
+      "depth_counts": {
+        "1": 672,
+        "2": 96
+      },
+      "metrics": {
+        "full_legal_greedy_observed_near_best_hit": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "evidence_greedy_near_best_hit": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "full_greedy_unknown": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.0,
+          "teacher_weighted_mean": 0.0
+        },
+        "unknown_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.0003383024367152462,
+          "teacher_weighted_mean": 0.0003368092567948032
+        },
+        "observed_near_best_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.47760703949315236,
+          "teacher_weighted_mean": 0.5248317995401268
+        },
+        "evidence_probability_mass": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.9996616975632847,
+          "teacher_weighted_mean": 0.9996631907432051
+        },
+        "full_greedy_stop": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "evidence_greedy_stop": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        },
+        "stop_probability": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.9992935239211275,
+          "teacher_weighted_mean": 0.9992880317801458
+        },
+        "stop_teacher_near_best": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.4778645833333333,
+          "teacher_weighted_mean": 0.5251405423280422
+        },
+        "evidence_normalized_tie_cross_entropy": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 5.251013741755654,
+          "teacher_weighted_mean": 4.774678411607077
+        },
+        "observed_full_greedy_Q_gap": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.2700958820481238,
+          "teacher_weighted_mean": 0.23840499332401405
+        },
+        "evidence_greedy_Q_gap": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 0.2700958820481238,
+          "teacher_weighted_mean": 0.23840499332401405
+        },
+        "full_greedy_quality_known": {
+          "n": 768,
+          "unknown": 0,
+          "sample_mean": 1.0,
+          "teacher_weighted_mean": 1.0
+        }
+      }
+    }
+  ],
+  "interpretation": {
+    "full_hit": "Unknown chosen actions count as no observed-near-best hit, not evidence that their quality is poor.",
+    "evidence_hit": "Argmax restricted to queried evidence; separates ranking on known labels from probability allocated outside the queried subset.",
+    "Q_gap": "Only queried choices have an observed Q gap. Unknown quality is null, never filled with zero.",
+    "weighting": "Within each group, renormalize equal-scene/equal-route teacher weights. Combined split masses are 64:32, preserving equal scene mass.",
+    "all_states": "Includes roots at depth 2 and descendants at depth 1; root-only groups isolate a common depth.",
+    "probabilities": "Probabilities use all legal actions; evidence cross-entropy renormalizes only queried actions as during BC."
+  },
+  "schema": "rc3-g2-teacher-fit-v1",
+  "rows": 2304,
+  "request": {
+    "schema": "rc3-g2-teacher-fit-v1",
+    "scope": "Post hoc inference on the already queried supervised teacher states, not a new generalization set. Near-best means best among the queried finite-depth suffixes; unknown legal actions have no quality label. No environment step, repair oracle, finalization or new teacher query is performed.",
+    "batch_size": 8,
+    "device": "cpu",
+    "tool_sha256": "c7176e93f84c63ad5f1d5ad950207ad818cdbfbd42c47c572a010be262409e52",
+    "checkpoint_sha256": {
+      "bc_frozen": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+      "bc_continued_2048": "ed503eee23420b3332dc19e5077f793f2bdaa8a161f2faadc0bc116a423496af",
+      "ppo_final": "b73718cf1cabbb1741d5f3d04109b95dedbda07de660f8e638975e82e78de5f3"
+    },
+    "teacher_sha256": {
+      "initial": "f53d32640dc6a61f7014a0724bc7565c71c254a2ddc087f244a09e9d62d97ac8",
+      "extra": "46a7c5133c6b7e4529f207365f49aa0b2e8f839ce1cea46f471fd885105d0a8a"
+    },
+    "final_comparison_summary_sha256": "7bef1603203269e3a8727310358abfea50a1c1503fce9388fdec58b3e6b4be51",
+    "protocol_sha256": "37037ab87d8c973bd9cb9bcf92b758903b82e6f0dfaac1ca8753709b60cb1557",
+    "new_environment_queries": 0,
+    "expected_rows": 2304
+  },
+  "diagnostic_wall_s": {
+    "bc_frozen": 0.7712371000000076,
+    "bc_continued_2048": 0.5961010000000897,
+    "ppo_final": 0.6215472999999747
+  },
+  "timing_scope": "Diagnostic loading plus inference; not deployment planning latency."
+}

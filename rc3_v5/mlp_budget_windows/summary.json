@@ -1,0 +1,79 @@
+{
+  "status": "complete",
+  "scenes": 18,
+  "runs": 108,
+  "valid_runs": 108,
+  "fixed3_bounds": 108,
+  "changed_frozen_files": [],
+  "all_passed": true,
+  "inference_scope": "Descriptive supplement after observing the original V4 results. No retrospective change to original adoption gates.",
+  "bootstrap": {
+    "method": "percentile paired scene bootstrap",
+    "samples": 20000,
+    "seed": 731203,
+    "sorting": [
+      "seed",
+      "nx",
+      "ny",
+      "mode"
+    ],
+    "training_seed_uncertainty": false,
+    "repeated_runs_treated_as_independent": false,
+    "multiple_comparison_adjustment": false
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "methods": {
+    "detour_wall400": {
+      "scenes": 18,
+      "runs": 54,
+      "mean_objective_m": 264.2387571812333,
+      "mean_reduction_vs_fixed3_pct": 1.4726360330861672,
+      "median_scene_planning_ms": 437.3832500004937,
+      "p95_scene_planning_ms": 454.78145500064784,
+      "p95_all_run_planning_ms": 460.48986500036335,
+      "max_run_planning_ms": 480.4266999999527,
+      "mean_dp_calls": 19.833333333333332,
+      "median_dp_calls": 17.0,
+      "deadline_exceeded_runs": 54,
+      "max_overrun_ms": 80.42669999995266,
+      "mean_overrun_ms": 41.997116666681414,
+      "fallback_runs": 0,
+      "stop_reasons": {
+        "deadline": 54
+      }
+    },
+    "v3_mlp_wall400": {
+      "scenes": 18,
+      "runs": 54,
+      "mean_objective_m": 263.59791408573705,
+      "mean_reduction_vs_fixed3_pct": 1.7302535116716815,
+      "median_scene_planning_ms": 436.14379999962694,
+      "p95_scene_planning_ms": 454.3285150001793,
+      "p95_all_run_planning_ms": 458.8405699993927,
+      "max_run_planning_ms": 469.5701000000554,
+      "mean_dp_calls": 18.27777777777778,
+      "median_dp_calls": 17.0,
+      "deadline_exceeded_runs": 54,
+      "max_overrun_ms": 69.57010000005536,
+      "mean_overrun_ms": 38.79025555566772,
+      "fallback_runs": 0,
+      "stop_reasons": {
+        "deadline": 54
+      }
+    }
+  },
+  "paired_mlp_vs_detour": {
+    "scenes": 18,
+    "mean_reduction_pct": 0.26050724125498376,
+    "ci95_pct": [
+      -0.008684172045571278,
+      0.5295448093375277
+    ],
+    "wins": 12,
+    "ties": 1,
+    "losses": 5,
+    "median_paired_time_ratio": 0.9933161202176997,
+    "ratio_of_median_times": 0.9971662152108811
+  },
+  "elapsed_s": 57.43937160000132
+}

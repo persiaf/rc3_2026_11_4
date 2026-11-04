@@ -1,0 +1,502 @@
+{
+  "training": {
+    "all": {
+      "states": 384,
+      "improvable": 349,
+      "all_zero": 35,
+      "oracle_mean_gain_pct": 0.634059090779374,
+      "methods": {
+        "rank": {
+          "mean_selected_gain_pct": 0.3858057697798358,
+          "positive_selection_rate_on_improvable": 0.7879656160458453,
+          "mean_per_state_fraction_of_oracle": 0.5795535422318777,
+          "total_gain_fraction_of_oracle": 0.6084697394774521,
+          "exact_best_on_improvable": 132
+        },
+        "rank_stop": {
+          "mean_selected_gain_pct": 0.3858057697798358,
+          "positive_selection_rate_on_improvable": 0.7879656160458453,
+          "mean_per_state_fraction_of_oracle": 0.5795535422318777,
+          "total_gain_fraction_of_oracle": 0.6084697394774521,
+          "exact_best_on_improvable": 132
+        },
+        "gain": {
+          "mean_selected_gain_pct": 0.359737767206146,
+          "positive_selection_rate_on_improvable": 0.7363896848137536,
+          "mean_per_state_fraction_of_oracle": 0.5161771069415184,
+          "total_gain_fraction_of_oracle": 0.5673568480249417,
+          "exact_best_on_improvable": 118
+        },
+        "positive": {
+          "mean_selected_gain_pct": 0.3638712817907314,
+          "positive_selection_rate_on_improvable": 0.7478510028653295,
+          "mean_per_state_fraction_of_oracle": 0.532077690801494,
+          "total_gain_fraction_of_oracle": 0.57387597951394,
+          "exact_best_on_improvable": 123
+        },
+        "detour": {
+          "mean_selected_gain_pct": 0.08858212325746233,
+          "positive_selection_rate_on_improvable": 0.28653295128939826,
+          "mean_per_state_fraction_of_oracle": 0.13442459339128096,
+          "total_gain_fraction_of_oracle": 0.13970641624044658,
+          "exact_best_on_improvable": 26
+        },
+        "random_expected": {
+          "mean_selected_gain_pct": 0.045131989687945406,
+          "positive_selection_rate_on_improvable": 0.1613106606765858,
+          "mean_per_state_fraction_of_oracle": 0.06841215611673088,
+          "total_gain_fraction_of_oracle": 0.07117946945996781,
+          "exact_best_on_improvable": null
+        }
+      },
+      "stop": {
+        "predicted": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 35,
+        "true_negative": 349,
+        "probabilities_all": [
+          8.62081397482638e-05,
+          0.0028629901788148992,
+          0.014920670515273605,
+          0.09484075941811652,
+          0.33468682844192355,
+          0.6869141676618579,
+          0.7477219952325199
+        ],
+        "probabilities_zero": [
+          0.04766284556037624,
+          0.2413391805958887,
+          0.40778915374179964,
+          0.6178835363743137,
+          0.6772885238381176,
+          0.697933516450771,
+          0.7021798426559106
+        ],
+        "probabilities_improvable": [
+          8.62081397482638e-05,
+          0.0022510728288843347,
+          0.011296394925246953,
+          0.06082980791196441,
+          0.1968298151901663,
+          0.6314299808622019,
+          0.7477219952325199
+        ]
+      }
+    },
+    "step0": {
+      "states": 48,
+      "improvable": 48,
+      "all_zero": 0,
+      "oracle_mean_gain_pct": 0.8555678289849311,
+      "methods": {
+        "rank": {
+          "mean_selected_gain_pct": 0.557162229437381,
+          "positive_selection_rate_on_improvable": 0.8541666666666666,
+          "mean_per_state_fraction_of_oracle": 0.6232694072548031,
+          "total_gain_fraction_of_oracle": 0.6512192377527957,
+          "exact_best_on_improvable": 21
+        },
+        "rank_stop": {
+          "mean_selected_gain_pct": 0.557162229437381,
+          "positive_selection_rate_on_improvable": 0.8541666666666666,
+          "mean_per_state_fraction_of_oracle": 0.6232694072548031,
+          "total_gain_fraction_of_oracle": 0.6512192377527957,
+          "exact_best_on_improvable": 21
+        },
+        "gain": {
+          "mean_selected_gain_pct": 0.5028868060714254,
+          "positive_selection_rate_on_improvable": 0.8333333333333334,
+          "mean_per_state_fraction_of_oracle": 0.5276153704784213,
+          "total_gain_fraction_of_oracle": 0.587781341273741,
+          "exact_best_on_improvable": 16
+        },
+        "positive": {
+          "mean_selected_gain_pct": 0.5187521773623303,
+          "positive_selection_rate_on_improvable": 0.8125,
+          "mean_per_state_fraction_of_oracle": 0.5540830792513911,
+          "total_gain_fraction_of_oracle": 0.6063250157241091,
+          "exact_best_on_improvable": 16
+        },
+        "detour": {
+          "mean_selected_gain_pct": 0.09811520498866837,
+          "positive_selection_rate_on_improvable": 0.3958333333333333,
+          "mean_per_state_fraction_of_oracle": 0.12284961995168718,
+          "total_gain_fraction_of_oracle": 0.11467846459944024,
+          "exact_best_on_improvable": 3
+        },
+        "random_expected": {
+          "mean_selected_gain_pct": 0.05802924286399502,
+          "positive_selection_rate_on_improvable": 0.1807167509238785,
+          "mean_per_state_fraction_of_oracle": 0.06817541081940177,
+          "total_gain_fraction_of_oracle": 0.06782541476909258,
+          "exact_best_on_improvable": null
+        }
+      },
+      "stop": {
+        "predicted": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "true_negative": 48,
+        "probabilities_all": [
+          8.62081397482638e-05,
+          0.0002868269992748031,
+          0.0005894391605318976,
+          0.0015347727619982902,
+          0.0028626261349571453,
+          0.01263503131222641,
+          0.018832376546903458
+        ],
+        "probabilities_zero": [],
+        "probabilities_improvable": [
+          8.62081397482638e-05,
+          0.0002868269992748031,
+          0.0005894391605318976,
+          0.0015347727619982902,
+          0.0028626261349571453,
+          0.01263503131222641,
+          0.018832376546903458
+        ]
+      }
+    },
+    "late": {
+      "states": 192,
+      "improvable": 161,
+      "all_zero": 31,
+      "oracle_mean_gain_pct": 0.5334670539371776,
+      "methods": {
+        "rank": {
+          "mean_selected_gain_pct": 0.3095156553311729,
+          "positive_selection_rate_on_improvable": 0.7391304347826086,
+          "mean_per_state_fraction_of_oracle": 0.5750117592245162,
+          "total_gain_fraction_of_oracle": 0.5801963833508307,
+          "exact_best_on_improvable": 62
+        },
+        "rank_stop": {
+          "mean_selected_gain_pct": 0.3095156553311729,
+          "positive_selection_rate_on_improvable": 0.7391304347826086,
+          "mean_per_state_fraction_of_oracle": 0.5750117592245162,
+          "total_gain_fraction_of_oracle": 0.5801963833508307,
+          "exact_best_on_improvable": 62
+        },
+        "gain": {
+          "mean_selected_gain_pct": 0.2927794659499341,
+          "positive_selection_rate_on_improvable": 0.6956521739130435,
+          "mean_per_state_fraction_of_oracle": 0.5125949338318517,
+          "total_gain_fraction_of_oracle": 0.5488238941638793,
+          "exact_best_on_improvable": 58
+        },
+        "positive": {
+          "mean_selected_gain_pct": 0.293265244469391,
+          "positive_selection_rate_on_improvable": 0.7018633540372671,
+          "mean_per_state_fraction_of_oracle": 0.5272002560666905,
+          "total_gain_fraction_of_oracle": 0.5497345005750376,
+          "exact_best_on_improvable": 62
+        },
+        "detour": {
+          "mean_selected_gain_pct": 0.08639175692709007,
+          "positive_selection_rate_on_improvable": 0.2732919254658385,
+          "mean_per_state_fraction_of_oracle": 0.14360309145582084,
+          "total_gain_fraction_of_oracle": 0.1619439406604176,
+          "exact_best_on_improvable": 13
+        },
+        "random_expected": {
+          "mean_selected_gain_pct": 0.03638193814894445,
+          "positive_selection_rate_on_improvable": 0.14677631167237137,
+          "mean_per_state_fraction_of_oracle": 0.06428730376081046,
+          "total_gain_fraction_of_oracle": 0.0681990347490679,
+          "exact_best_on_improvable": null
+        }
+      },
+      "stop": {
+        "predicted": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 31,
+        "true_negative": 161,
+        "probabilities_all": [
+          0.0010486176068453046,
+          0.017972485860917965,
+          0.06987315884797518,
+          0.24339145987704908,
+          0.524388524681897,
+          0.7032752031117873,
+          0.7477219952325199
+        ],
+        "probabilities_zero": [
+          0.04766284556037624,
+          0.30033114202038025,
+          0.4654450196275691,
+          0.6374250866646939,
+          0.6789123960538801,
+          0.6984330842396109,
+          0.7021798426559106
+        ],
+        "probabilities_improvable": [
+          0.0010486176068453046,
+          0.01442084748679248,
+          0.04917385574798941,
+          0.14874239821117188,
+          0.32843509857541153,
+          0.6845393037369771,
+          0.7477219952325199
+        ]
+      }
+    }
+  },
+  "validation": {
+    "all": {
+      "states": 144,
+      "improvable": 136,
+      "all_zero": 8,
+      "oracle_mean_gain_pct": 0.6632509904835994,
+      "methods": {
+        "rank": {
+          "mean_selected_gain_pct": 0.12520221629018774,
+          "positive_selection_rate_on_improvable": 0.3235294117647059,
+          "mean_per_state_fraction_of_oracle": 0.1735938790085039,
+          "total_gain_fraction_of_oracle": 0.18877049274950716,
+          "exact_best_on_improvable": 12
+        },
+        "rank_stop": {
+          "mean_selected_gain_pct": 0.12520221629018774,
+          "positive_selection_rate_on_improvable": 0.3235294117647059,
+          "mean_per_state_fraction_of_oracle": 0.1735938790085039,
+          "total_gain_fraction_of_oracle": 0.18877049274950716,
+          "exact_best_on_improvable": 12
+        },
+        "gain": {
+          "mean_selected_gain_pct": 0.0818916322915947,
+          "positive_selection_rate_on_improvable": 0.25735294117647056,
+          "mean_per_state_fraction_of_oracle": 0.12203709299935586,
+          "total_gain_fraction_of_oracle": 0.12347004899590826,
+          "exact_best_on_improvable": 1
+        },
+        "positive": {
+          "mean_selected_gain_pct": 0.08247963299188636,
+          "positive_selection_rate_on_improvable": 0.27205882352941174,
+          "mean_per_state_fraction_of_oracle": 0.13005859754125967,
+          "total_gain_fraction_of_oracle": 0.12435659226343196,
+          "exact_best_on_improvable": 6
+        },
+        "detour": {
+          "mean_selected_gain_pct": 0.1980606531077582,
+          "positive_selection_rate_on_improvable": 0.4632352941176471,
+          "mean_per_state_fraction_of_oracle": 0.27544233053365885,
+          "total_gain_fraction_of_oracle": 0.2986209684562179,
+          "exact_best_on_improvable": 21
+        },
+        "random_expected": {
+          "mean_selected_gain_pct": 0.040136492823674215,
+          "positive_selection_rate_on_improvable": 0.1628968047643744,
+          "mean_per_state_fraction_of_oracle": 0.057753494144095474,
+          "total_gain_fraction_of_oracle": 0.060514787613674424,
+          "exact_best_on_improvable": null
+        }
+      },
+      "stop": {
+        "predicted": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 8,
+        "true_negative": 136,
+        "probabilities_all": [
+          3.644043062958934e-05,
+          0.0019869620126371397,
+          0.01114537450194963,
+          0.059327981047640053,
+          0.13458519142883976,
+          0.3415274213946815,
+          0.40150650622846734
+        ],
+        "probabilities_zero": [
+          0.0054957131765090384,
+          0.024143680679131817,
+          0.07503347513028265,
+          0.16908966940291503,
+          0.23638158114509472,
+          0.27728166979200425,
+          0.28182612408610536
+        ],
+        "probabilities_improvable": [
+          3.644043062958934e-05,
+          0.0019236933223213408,
+          0.009898608947632094,
+          0.05790883450996315,
+          0.12593233582091817,
+          0.3421077016923417,
+          0.40150650622846734
+        ]
+      }
+    },
+    "step0": {
+      "states": 18,
+      "improvable": 17,
+      "all_zero": 1,
+      "oracle_mean_gain_pct": 0.720708504319191,
+      "methods": {
+        "rank": {
+          "mean_selected_gain_pct": 0.14071750939950156,
+          "positive_selection_rate_on_improvable": 0.4117647058823529,
+          "mean_per_state_fraction_of_oracle": 0.16862182262359546,
+          "total_gain_fraction_of_oracle": 0.1952488538100834,
+          "exact_best_on_improvable": 0
+        },
+        "rank_stop": {
+          "mean_selected_gain_pct": 0.14071750939950156,
+          "positive_selection_rate_on_improvable": 0.4117647058823529,
+          "mean_per_state_fraction_of_oracle": 0.16862182262359546,
+          "total_gain_fraction_of_oracle": 0.1952488538100834,
+          "exact_best_on_improvable": 0
+        },
+        "gain": {
+          "mean_selected_gain_pct": 0.12278371054909105,
+          "positive_selection_rate_on_improvable": 0.4117647058823529,
+          "mean_per_state_fraction_of_oracle": 0.13818082260724854,
+          "total_gain_fraction_of_oracle": 0.17036528612226837,
+          "exact_best_on_improvable": 0
+        },
+        "positive": {
+          "mean_selected_gain_pct": 0.139432602137971,
+          "positive_selection_rate_on_improvable": 0.4117647058823529,
+          "mean_per_state_fraction_of_oracle": 0.18146185003939336,
+          "total_gain_fraction_of_oracle": 0.19346601476512953,
+          "exact_best_on_improvable": 0
+        },
+        "detour": {
+          "mean_selected_gain_pct": 0.23236910636640257,
+          "positive_selection_rate_on_improvable": 0.47058823529411764,
+          "mean_per_state_fraction_of_oracle": 0.2531333246720109,
+          "total_gain_fraction_of_oracle": 0.32241760014460685,
+          "exact_best_on_improvable": 2
+        },
+        "random_expected": {
+          "mean_selected_gain_pct": 0.050175732674284115,
+          "positive_selection_rate_on_improvable": 0.19334549420665115,
+          "mean_per_state_fraction_of_oracle": 0.06806830352825369,
+          "total_gain_fraction_of_oracle": 0.06962000916262538,
+          "exact_best_on_improvable": null
+        }
+      },
+      "stop": {
+        "predicted": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 1,
+        "true_negative": 17,
+        "probabilities_all": [
+          3.644043062958934e-05,
+          0.00025234691747421474,
+          0.0005813713448422758,
+          0.001541208724391215,
+          0.0033636410221319513,
+          0.005350326201870707,
+          0.0054957131765090384
+        ],
+        "probabilities_zero": [
+          0.0054957131765090384,
+          0.0054957131765090384,
+          0.0054957131765090384,
+          0.0054957131765090384,
+          0.0054957131765090384,
+          0.0054957131765090384,
+          0.0054957131765090384
+        ],
+        "probabilities_improvable": [
+          3.644043062958934e-05,
+          0.00025068340601574004,
+          0.0004345934129533347,
+          0.001084013099609639,
+          0.002319950902181442,
+          0.004348643185721182,
+          0.0046404956786365095
+        ]
+      }
+    },
+    "late": {
+      "states": 72,
+      "improvable": 68,
+      "all_zero": 4,
+      "oracle_mean_gain_pct": 0.6073864629336944,
+      "methods": {
+        "rank": {
+          "mean_selected_gain_pct": 0.1252922361911462,
+          "positive_selection_rate_on_improvable": 0.3088235294117647,
+          "mean_per_state_fraction_of_oracle": 0.18201396591651234,
+          "total_gain_fraction_of_oracle": 0.2062809164135484,
+          "exact_best_on_improvable": 7
+        },
+        "rank_stop": {
+          "mean_selected_gain_pct": 0.1252922361911462,
+          "positive_selection_rate_on_improvable": 0.3088235294117647,
+          "mean_per_state_fraction_of_oracle": 0.18201396591651234,
+          "total_gain_fraction_of_oracle": 0.2062809164135484,
+          "exact_best_on_improvable": 7
+        },
+        "gain": {
+          "mean_selected_gain_pct": 0.08513608347857371,
+          "positive_selection_rate_on_improvable": 0.23529411764705882,
+          "mean_per_state_fraction_of_oracle": 0.13710749081382445,
+          "total_gain_fraction_of_oracle": 0.14016789749867645,
+          "exact_best_on_improvable": 0
+        },
+        "positive": {
+          "mean_selected_gain_pct": 0.06685709651275021,
+          "positive_selection_rate_on_improvable": 0.22058823529411764,
+          "mean_per_state_fraction_of_oracle": 0.11796288823241693,
+          "total_gain_fraction_of_oracle": 0.11007340563671518,
+          "exact_best_on_improvable": 4
+        },
+        "detour": {
+          "mean_selected_gain_pct": 0.16983206365774903,
+          "positive_selection_rate_on_improvable": 0.45588235294117646,
+          "mean_per_state_fraction_of_oracle": 0.2983094085580921,
+          "total_gain_fraction_of_oracle": 0.2796112097023948,
+          "exact_best_on_improvable": 13
+        },
+        "random_expected": {
+          "mean_selected_gain_pct": 0.03485680315821406,
+          "positive_selection_rate_on_improvable": 0.14513558912835622,
+          "mean_per_state_fraction_of_oracle": 0.0534312613103033,
+          "total_gain_fraction_of_oracle": 0.05738817916661277,
+          "exact_best_on_improvable": null
+        }
+      },
+      "stop": {
+        "predicted": 0,
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 4,
+        "true_negative": 68,
+        "probabilities_all": [
+          0.0006098452736230584,
+          0.0206425269060121,
+          0.05942236377036281,
+          0.1232248424780786,
+          0.21501383617078262,
+          0.3611358506824252,
+          0.40150650622846734
+        ],
+        "probabilities_zero": [
+          0.0960454414184828,
+          0.13887469264351318,
+          0.18502822908730673,
+          0.23313554236359396,
+          0.2623498913971008,
+          0.2798785008172049,
+          0.28182612408610536
+        ],
+        "probabilities_improvable": [
+          0.0006098452736230584,
+          0.01928661515529611,
+          0.0547957078570201,
+          0.11402283953634224,
+          0.18493823052690508,
+          0.36341025381177927,
+          0.40150650622846734
+        ]
+      }
+    }
+  }
+}

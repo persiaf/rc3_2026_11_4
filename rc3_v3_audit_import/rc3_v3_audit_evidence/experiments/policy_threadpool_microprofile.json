@@ -1,0 +1,95 @@
+{
+  "validation_case": {
+    "nx": 10,
+    "ny": 10,
+    "seed": 806477264,
+    "mode": "regular",
+    "scene_id": 0
+  },
+  "windows": 76,
+  "legal_windows": 76,
+  "features": 28,
+  "architecture": "mlp",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scope": "One fixed real validation observation, 5 randomized-order blocks of 200 calls. Both conditions run inside one outer BLAS-thread=1 context. No source changes, no retraining, no full planner timing.",
+  "median_of_block_mean_call_ms": {
+    "per_call_discovery": 0.3974136350001345,
+    "already_managed_once": 0.11307286500027658
+  },
+  "all_outputs_exactly_equal": true,
+  "caveat": "This isolates per-call threadpool-library discovery and context overhead on the current Linux machine; it does not reproduce the original Windows benchmark or establish end-to-end speedup.",
+  "runs": [
+    {
+      "block": 0,
+      "method": "per_call_discovery",
+      "calls": 200,
+      "mean_call_ms": 0.5296583950001832,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 0,
+      "method": "already_managed_once",
+      "calls": 200,
+      "mean_call_ms": 0.11307286500027658,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 1,
+      "method": "already_managed_once",
+      "calls": 200,
+      "mean_call_ms": 0.1181728650004743,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 1,
+      "method": "per_call_discovery",
+      "calls": 200,
+      "mean_call_ms": 0.6580401650001022,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 2,
+      "method": "already_managed_once",
+      "calls": 200,
+      "mean_call_ms": 0.11736895000012737,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 2,
+      "method": "per_call_discovery",
+      "calls": 200,
+      "mean_call_ms": 0.39492993999999726,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 3,
+      "method": "per_call_discovery",
+      "calls": 200,
+      "mean_call_ms": 0.344261010000082,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 3,
+      "method": "already_managed_once",
+      "calls": 200,
+      "mean_call_ms": 0.09304378999956953,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 4,
+      "method": "per_call_discovery",
+      "calls": 200,
+      "mean_call_ms": 0.3974136350001345,
+      "outputs_exactly_equal": true
+    },
+    {
+      "block": 4,
+      "method": "already_managed_once",
+      "calls": 200,
+      "mean_call_ms": 0.07881795999992391,
+      "outputs_exactly_equal": true
+    }
+  ]
+}

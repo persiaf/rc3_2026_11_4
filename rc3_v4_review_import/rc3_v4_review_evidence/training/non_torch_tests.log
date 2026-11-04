@@ -1,0 +1,16 @@
+This receipt transcribes the actual completed tool run; it is not the uploaded historical log.
+Source root: analysis/v4_upload
+Command: $CODEX_PRIMARY_RUNTIME_PYTHON -B -m unittest rc3_v4.test_features rc3_v4.test_legacy_policy -v
+
+test_graphs_have_no_oracle_dependency ... ok
+test_known_aliasing_separated_by_distance ... ok
+test_padding_does_not_add_legal_actions ... ok
+test_all_heads_and_actions_equal_in_18_validation_scenes ... ok
+test_invalid_observation_rejected ... ok
+test_outputs_do_not_create_threadpool_context ... ok
+test_reject_non_npz_or_non_mlp ... ok
+
+Ran 7 tests in 10.625s
+OK
+
+Torch model tests were not run in this environment. No PT checkpoint was loaded.

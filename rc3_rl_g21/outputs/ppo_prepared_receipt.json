@@ -1,0 +1,35 @@
+{
+  "schema": "rc3-g21-ppo-prepared-review-v1",
+  "created_utc": "2026-11-03T13:18:23.711868+00:00",
+  "status": "prepared_not_executed",
+  "formal_training_started": false,
+  "new_environment_queries": 0,
+  "new_worker_processes": 0,
+  "tests_run": 10,
+  "tests_passed": true,
+  "authorization_check": "PPO is gated: outputs/ppo_authorization.json is absent",
+  "source_sha256": {
+    "train_ppo_pilot.py": "d84e419d3d1d9073f922d457af2dec2891399b729339997a72066d22ae0e004d",
+    "collector_pilot.py": "bc765c0af9380470c1a10b48f4a993387992a588f4799a2a921beded357095e5",
+    "worker_pilot.py": "28809e369e0425320a8d4043c85425ac7b085dd396a53e39a418d9e1fce4eb68",
+    "test_ppo_pilot.py": "9ece9d37d9927727635f3d9e6743231998e3d0fcfffc06b0158ab411f7048c8c"
+  },
+  "implemented": [
+    "G21-only prepared cache, worker failure records and committed-step JSONL",
+    "Protocol/authorization/selected-BC identity gates plus fresh numerical opportunity gate",
+    "Frozen G2 PPO update parameters, 8x32 fresh batches, hard <=4096 committed cap",
+    "1024/2048/4096 existing-teacher-only diagnostics and prespecified collapse stop",
+    "Raw STOP/continue GAE distributions and per-transition raw advantages",
+    "Critic pre/post MSE and explained variance with null for constant return targets",
+    "Actual proposal counter increments and completed episodes with >=2 proposals",
+    "Analytical same-scene root STOP return from existing menu, verified if actual first step STOP",
+    "No G2 automatic validation, automatic restart/resume or budget extension"
+  ],
+  "not_validated": [
+    "New multiprocessing worker/collector end-to-end runtime not executed",
+    "No new PPO quality, feasibility, timing or checkpoint evidence",
+    "Training episode wall time includes optimizer waits and is not deployment planner latency",
+    "Analytical root STOP comparator has no separately executed STOP episode; this is recorded explicitly",
+    "Partial failed vector batches require manual inspection of worker ledgers; automatic resume is disabled"
+  ]
+}

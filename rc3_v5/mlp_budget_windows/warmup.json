@@ -1,0 +1,152 @@
+[
+  {
+    "method": "learned",
+    "result": {
+      "status": "complete",
+      "objective_m": 16.2,
+      "reference_objective_m": 16.2,
+      "planning_s": 0.011471300000266638,
+      "inner_planning_s": 0.011465100000350503,
+      "dp_calls": 1,
+      "accepted": 0,
+      "fallback_used": false,
+      "stop_reason": "horizon",
+      "overrun_s": 0.0,
+      "deadline_exceeded": false,
+      "independent_validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 12.449999999999996,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      },
+      "runtime": {
+        "status": "complete",
+        "method": "learned",
+        "reference": "fixed3",
+        "reference_objective_m": 16.2,
+        "winning_reference_recipe": 0,
+        "objective_m": 16.2,
+        "cost_nonincreasing": true,
+        "attempts": 1,
+        "dp_calls": 1,
+        "accepted": 0,
+        "provisional_improvements": 0,
+        "fallback_used": false,
+        "failures": [],
+        "stop_reason": "horizon",
+        "budget_exhausted": true,
+        "deadline_exceeded": false,
+        "time_overrun_s": 0.0,
+        "time_limit_s": null,
+        "planning_s": 0.011465100000350503,
+        "elapsed_s": 0.011465100000350503,
+        "reference_s": 0.0023581000004924135,
+        "feature_s": 0.001041100000293227,
+        "model_s": 0.00032309999915014487,
+        "repair_s": 0.001982599998882506,
+        "final_validation_s": 0.0,
+        "trace": [
+          {
+            "event": "validated_reference",
+            "reference": "fixed3",
+            "recipe": 0,
+            "objective_m": 16.2
+          },
+          {
+            "event": "provisional_repair",
+            "action": 0,
+            "accepted": false,
+            "objective_m": 16.2,
+            "independently_certified": false,
+            "elapsed_s": 0.005907499999011634
+          }
+        ],
+        "guarantee_scope": "Only the returned independently verified plan is certified. Cost is bounded by the verified reference under the discrete proxy model. Deadline is soft, not hard real time.",
+        "thread_session_s": 0.005553300001338357
+      },
+      "policy_graph_s": 0.0,
+      "policy_inference_s": 0.0,
+      "policy_calls": 0.0,
+      "policy_stops": 0.0
+    }
+  },
+  {
+    "method": "detour",
+    "result": {
+      "status": "complete",
+      "objective_m": 16.2,
+      "reference_objective_m": 16.2,
+      "planning_s": 0.004665399999794317,
+      "inner_planning_s": 0.004660599999624537,
+      "dp_calls": 1,
+      "accepted": 0,
+      "fallback_used": false,
+      "stop_reason": "horizon",
+      "overrun_s": 0.0,
+      "deadline_exceeded": false,
+      "independent_validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "point_collision_count": 0,
+        "unserved_task_ids": [],
+        "independent_polyline_length_m": 12.449999999999996,
+        "errors": [],
+        "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+      },
+      "runtime": {
+        "status": "complete",
+        "method": "detour",
+        "reference": "fixed3",
+        "reference_objective_m": 16.2,
+        "winning_reference_recipe": 0,
+        "objective_m": 16.2,
+        "cost_nonincreasing": true,
+        "attempts": 1,
+        "dp_calls": 1,
+        "accepted": 0,
+        "provisional_improvements": 0,
+        "fallback_used": false,
+        "failures": [],
+        "stop_reason": "horizon",
+        "budget_exhausted": true,
+        "deadline_exceeded": false,
+        "time_overrun_s": 0.0,
+        "time_limit_s": null,
+        "planning_s": 0.004660599999624537,
+        "elapsed_s": 0.004660599999624537,
+        "reference_s": 0.0015559000003122492,
+        "feature_s": 0.0009169000004476402,
+        "model_s": 6.999998731771484e-06,
+        "repair_s": 0.001986100000067381,
+        "final_validation_s": 0.0,
+        "trace": [
+          {
+            "event": "validated_reference",
+            "reference": "fixed3",
+            "recipe": 0,
+            "objective_m": 16.2
+          },
+          {
+            "event": "provisional_repair",
+            "action": 0,
+            "accepted": false,
+            "objective_m": 16.2,
+            "independently_certified": false,
+            "elapsed_s": 0.004640999999537598
+          }
+        ],
+        "guarantee_scope": "Only the returned independently verified plan is certified. Cost is bounded by the verified reference under the discrete proxy model. Deadline is soft, not hard real time.",
+        "thread_session_s": 1.630000042496249e-05
+      },
+      "policy_graph_s": 0.0,
+      "policy_inference_s": 0.0,
+      "policy_calls": 0.0,
+      "policy_stops": 0.0
+    }
+  }
+]

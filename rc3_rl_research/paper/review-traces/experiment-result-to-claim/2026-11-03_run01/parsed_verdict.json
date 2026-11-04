@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "reviewer": "/root/rl_references",
+  "role": "delegated independent paper architect/reviewer and source auditor",
+  "context": "Full task context inherited; independent role, not zero-context",
+  "experiment_id": "RC3-G0G1-2026-11-03",
+  "claim_supported": "yes",
+  "intended_claim_scope": "Only the two predeclared scoped G0/G1 claims: reproducible model-feasible environment and finite-menu multistep effects; not learned-policy superiority",
+  "confidence": "high",
+  "phase_gate": {
+    "G0": "pass_scoped",
+    "G1": "pass_scoped"
+  },
+  "claims": [
+    {
+      "id": "G1",
+      "claim": "Environment maintains certified anchor/current/best, shared constraints, budget accounting, reward/output consistency and replay.",
+      "claim_supported": "yes",
+      "confidence": "high",
+      "basis": "43 regression tests passed in executor log; independent 7/7 extra runtime probes; 14,592 raw transitions audited; 32 selected sequence reexecutions by executor.",
+      "limitations": "Finite software evidence within supplied static model; atomic soft work budget, not all-input proof, hard deadline or physical IK guarantee."
+    },
+    {
+      "id": "G0",
+      "claim": "Predeclared finite-menu depth-3 diagnosis can exhibit feasible deferred benefit after a worse first move.",
+      "claim_supported": "yes",
+      "confidence": "high",
+      "basis": "18/32 scenes have strict-worse-first final J below all queried root one-step J; 9/32 immediate-versus-descendant strict reversals; independent raw-ledger count recomputation.",
+      "limitations": "Existence within this development menu/depth. Only 2/32 beat all queried monotone-first branches; monotone-first is not all-steps-monotone. Does not prove deterioration necessary."
+    },
+    {
+      "id": "DRL_superiority",
+      "claim": "Trained budget-aware PPO stably improves on strong shared-action rules and generalizes across scene scales.",
+      "claim_supported": "no",
+      "test_status": "not_tested",
+      "confidence": "high",
+      "basis": "No PPO network training or model benchmark was performed.",
+      "limitations": "This is absent evidence, not a negative result that PPO cannot work."
+    }
+  ],
+  "what_results_support": [
+    "An isolated non-monotone feasible-search environment with correct best/anchor output guard and reproducible action semantics under tested conditions.",
+    "Finite-menu deferred-quality effects in the fixed 32-scene development set.",
+    "Need to separate final J from reward after actual work penalties."
+  ],
+  "what_results_dont_support": [
+    "Trained PPO advantage over Fixed3/Detour/fully tuned ALNS or BC.",
+    "Necessity of worse moves, cross-scale generalization, deployment speed, hard runtime/work deadline or physical arm IK.",
+    "Treating correlated tree transitions/leaves as independent scenes."
+  ],
+  "missing_evidence": [
+    "Short-run PPO correctness: old/new logprob with exact sampled menu/mask, GAE terminal/truncation semantics and finite gradient diagnostics.",
+    "Matched-initialization BC versus PPO with same actions, repair, candidate caps and budget; strong tuned shared-action rule baselines.",
+    "Fresh held-out data, multiple training seeds, cross-scale evaluation and full planning time/work comparisons.",
+    "An explicit stable reward/work policy; post hoc reward audit cannot silently replace the preregistered quality metric."
+  ],
+  "suggested_claim_revision": "Report G0/G1 as a validated research environment and finite development evidence of multistep effects. Keep learned-policy superiority as an untested research question.",
+  "next_experiments_needed": [
+    "Before training, freeze reward/work accounting and STOP comparison, then audit rollout logprob and GAE.",
+    "Only a subsequent scoped G2: same BC start, short PPO budget, held-out development validation and shared-action rule controls.",
+    "Advance to longer/multiseed/cross-scale training only if short-run correctness and measured incremental value justify it."
+  ],
+  "routing_action": "Confirm scoped G0/G1; supplement later with short-training evidence. No training or ablations launched in this stage.",
+  "pending_external_review": false,
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional — no paper claim audit available",
+  "metrics": {
+    "scenes_planned": 32,
+    "scenes_completed": 32,
+    "diagnostic_depth": 3,
+    "branch_limit_including_stop": 8,
+    "tree_transitions_including_stop": 14592,
+    "proposal_queries": 12768,
+    "worse_first_beats_queried_one_step": 18,
+    "worse_first_then_record": 26,
+    "nonimproving_first_then_record": 27,
+    "ranking_reversal": 9,
+    "worse_first_beats_all_queried_monotone_first": 2,
+    "supplementary_max_leaf_return_beats_stop": 24,
+    "supplementary_strict_witness_return_beats_stop": 10,
+    "supplementary_strict_witness_return_denominator": 18
+  },
+  "supplementary_reward_scope": "Post-registration descriptive analysis using fixed original lambda_work/work_scale and terminal menu charges. Does not replace preregistered J; scene-level counts, not independent leaf samples.",
+  "independent_executed_checks": {
+    "new_scene_probes": {
+      "passed": 7,
+      "total": 7
+    },
+    "raw_ledger_audit": {
+      "scenes": 32,
+      "transitions": 14592,
+      "passed": true
+    },
+    "full_search_tree_rerun": false,
+    "historical_experiments_rerun": false
+  },
+  "executor_evidence_reviewed": {
+    "regression_tests": 43,
+    "selected_sequence_full_replays": 32,
+    "freeze_v5_payloads": 541,
+    "freeze_v5_live_payloads": 539,
+    "freeze_v5_archive_only_payloads": 2,
+    "freeze_v51_payloads": 87
+  },
+  "resolved_findings": [
+    "rollout_record now rejects a different legal action than the one executed",
+    "artifact replay compares saved plan, reward components, policy trace/state",
+    "deadline after initial observation replays pending menu work; independently reproduced original failure and passed same saved artifact after fix"
+  ],
+  "unresolved_blockers": [],
+  "source_and_evidence_sha256": {
+    "types.py": "4fe2658655f6a0256cf2fbfb9581bce8881bc538264e9807045fe00abbd5b4db",
+    "adapter.py": "3d8cce6b18990cfce9f65521a2454b173ed991eee53f0a8dc7e99d93cacaa80e",
+    "action_builder.py": "fb1c82695839096304f1ff9e6a3e75cd6bb323a8c5e7a0adce8b7cb18a61e3c5",
+    "repair_proposal.py": "650aa4ff6dc65e56d93221bd6c2bf1f5f4e55581ccc247a4263aba806b5fa854",
+    "rl_env.py": "9d0fcaf354323cb69c6d024cec288b40a3f76cc0d13ba2e96fd6cb86d9128372",
+    "runtime_rl.py": "8240b9a9222cefef1b5df167f8fa22ba11437a4629c8f90aa669ff8d3f4611d9",
+    "policies.py": "c6cd588d9747656dbc62e91cb0531f0a8a708ed6ef478b5d6079528999bd9bf1",
+    "diagnose_g0.py": "87dc7ef36064a1eaabe3c41be9c284461f302d11fb25d020fb080730be5c18f6",
+    "prepare_g0.py": "3654e80fab1ecf78f539535ea78212c86ff682667d7ec5d9f78cf27162cfccde",
+    "outputs/g0/protocol.json": "5e1f1e919c4ba6b7914b12b11d26279798beec4537680ba9f9918a6504c3bb8c",
+    "outputs/g0/summary.json": "92b40a854645ed8f738e56c70f243de8cc37ad9b4cb08c6f4b1ff7b10b145785",
+    "outputs/review_g0_records.json": "02f4d1ad6ed57cbe15e8a02552a53c3d020bdf83c3794117ecb107b0ecb2618d",
+    "outputs/review_independent_probes.json": "3ffda8330b4f51a7769745a9c2c14ccbc11a30f2ec60ce97a6d40e90d94a019b",
+    "outputs/tests_final.log": "4425cc1817211062fe4cf0d26352287e31be233bbfbf11a3af6fe53eb8d50b88",
+    "outputs/delivery_verification.json": "c125d718a8429e8136dd7f31df398f42d892200ac98ca71ac7bd973680f93368",
+    "outputs/freeze_after.json": "2090c8359b8e7cf66308043335f608d2edeb6c77ba943ea6711484b26b070c64",
+    "outputs/freeze_v51.json": "034158b9c85c8f0841f38d036aab6815b9e3fb417b50bbfe4b371b73b72cb564"
+  },
+  "skill": {
+    "name": "experiment-result-to-claim",
+    "path": "C:/Users/Administrator/.codex/skills/experiment-result-to-claim/SKILL.md",
+    "missing_references": [
+      "../shared-references/review-tracing.md",
+      "../shared-references/assurance-contract.md"
+    ],
+    "handling": "Recorded all trace fields explicitly required in SKILL; no missing document claims fabricated."
+  }
+}

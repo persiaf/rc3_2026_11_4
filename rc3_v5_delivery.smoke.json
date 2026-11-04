@@ -1,0 +1,85 @@
+{
+  "all_passed": true,
+  "relocated_root": "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5_bundle_smoke",
+  "archive_sha256": "0901d94faa949a2378af99b8314580b77669fe666a807fc55a89d7b3a97a4d81",
+  "files_verified": 541,
+  "checks": [
+    {
+      "name": "portable_integration",
+      "command": [
+        "D:\\tools\\anocaonda\\python.exe",
+        "-B",
+        "-m",
+        "rc3_v5.verify",
+        "--skip-unit",
+        "--output",
+        "smoke_outputs"
+      ],
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]\", \"torch_imported\": false, \"all_passed\": true}\n",
+      "stderr": ""
+    },
+    {
+      "name": "external_regressions",
+      "command": [
+        "D:\\tools\\anocaonda\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "rc3_v5.test_external"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "............................\n----------------------------------------------------------------------\nRan 28 tests in 0.392s\n\nOK\n"
+    },
+    {
+      "name": "robot_assets",
+      "command": [
+        "D:\\tools\\anocaonda\\python.exe",
+        "-B",
+        "-m",
+        "rc3_v5.robot_input",
+        "inventory",
+        "--manifest",
+        "rc3_v5/robot_assets/manifest.json",
+        "--output",
+        "smoke_outputs/inventory.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5_bundle_smoke\\\\smoke_outputs\\\\inventory.json\", \"status\": \"assets_verified\", \"blocked_count\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "native_protocol_relocated",
+      "command": [
+        "D:\\tools\\anocaonda\\python.exe",
+        "-B",
+        "-m",
+        "rc3_v5.audit_protocol",
+        "--input",
+        "rc3_v5/mlp_budget_windows",
+        "--output",
+        "smoke_outputs/native_protocol.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"all_passed\": true, \"errors\": [], \"checks\": 6488, \"scenes\": 18, \"runs\": 108, \"platform\": \"Windows-11-10.0.26200-SP0\", \"model_sha256\": \"63e200f204b1e53c630f178bf7f60665944222becb60126b11c6461613db234d\", \"auditor_sha256\": \"91c415d6de68fa1f418b512d8c1dd44b8d3c61732ffa9acb06c5c8abcc219e41\", \"budget_script_sha256\": \"7180e866fa6942b10ed306b17bcf4653afb02562243836c1dd544786222b6b85\", \"experiment_modified\": false, \"planner_rerun\": false, \"scope\": \"Read-only source/scene/config/order/timing consistency and complete summary reconstruction. Complements geometric audit; saved clocks are not independent hardware measurements. Post-v4 descriptive evidence, with platform-separated scene-level inference.\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "uploaded_protocol_relocated",
+      "command": [
+        "D:\\tools\\anocaonda\\python.exe",
+        "-B",
+        "-m",
+        "rc3_v5.audit_protocol",
+        "--input",
+        "rc3_v4_review_import/rc3_v4_review_evidence/mlp_budget_supplement",
+        "--output",
+        "smoke_outputs/uploaded_protocol.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"all_passed\": true, \"errors\": [], \"checks\": 6488, \"scenes\": 18, \"runs\": 108, \"platform\": \"Linux-6.18.57-x86_64-with-glibc2.39\", \"model_sha256\": \"63e200f204b1e53c630f178bf7f60665944222becb60126b11c6461613db234d\", \"auditor_sha256\": \"91c415d6de68fa1f418b512d8c1dd44b8d3c61732ffa9acb06c5c8abcc219e41\", \"budget_script_sha256\": \"7180e866fa6942b10ed306b17bcf4653afb02562243836c1dd544786222b6b85\", \"experiment_modified\": false, \"planner_rerun\": false, \"scope\": \"Read-only source/scene/config/order/timing consistency and complete summary reconstruction. Complements geometric audit; saved clocks are not independent hardware measurements. Post-v4 descriptive evidence, with platform-separated scene-level inference.\"}\n",
+      "stderr": ""
+    }
+  ]
+}

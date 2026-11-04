@@ -1,0 +1,173 @@
+{
+  "experiment": "G23_2026-11-04",
+  "role": "independent paper architect/reviewer",
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "Failure of this preregistered bounded configuration, not universal algorithmic ineffectiveness",
+  "what_results_support": [
+    "Twelve development-scene rule prefixes: 104 exact semantic windows and returned routes match original rule",
+    "One actual feedback-based approximate policy iteration round beyond rule MC0; explicit STOP-relative numeric targets",
+    "132 training label targets and 2067 saved suffix transitions have consistent STOP, finite-horizon and J/W reward arithmetic",
+    "Positive exploratory means and scene-bootstrap lower bounds versus frozen initialization and matched static rule-value control, both below 0.3%",
+    "All 180 returned plans pass supplied proxy validation; independent saved geometry/cost/assignment arithmetic matches; no fallback and no anchor worsening"
+  ],
+  "what_results_dont_support": [
+    "Preregistered quality objective versus all strong comparators",
+    "Practical incremental multi-step RL gain over same-interface rule and matched one-step model",
+    "Complete 0.8-second resource compliance or hard real time",
+    "Stable performance across training seeds, convergence, proven valley crossing, cross-scale/general distribution generalization",
+    "Real arm IK, synchronized dual-arm coordination or shorter physical task completion time"
+  ],
+  "missing_evidence": [
+    "Independent test sample is only six scenes",
+    "Each seed sees only four distinct training scenes; the seed2302 second round reaches roots only",
+    "Registered complete time constraint fails",
+    "Hardware model was not preregistered; metadata is posthoc",
+    "Paper claim audit unavailable"
+  ],
+  "suggested_claim_revision": "在规则操作对齐的封顶试验中实现了有限多步价值评价与一次策略改进闭环，但六场景结果未达到强规则、匹配一步及资源主门槛，不作为第三部分 DRL 有效性核心。",
+  "next_experiments_needed": [],
+  "next_experiments_explanation": "User stop-loss takes precedence: no supplementary same-direction local-window+STOP experiments, tuning, new loss variants, or cross-scale expansion. A separate global construction problem, if desired, requires a new independently authorized and registered task.",
+  "paper_claim_audit": "unavailable",
+  "writing_verdict_label": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "primary_passed": false,
+  "comparisons": {
+    "same_interface_rule": {
+      "scene_values_percent": [
+        -0.1337664819415264,
+        -0.8519748460656155,
+        0.0,
+        -0.36724201248622856,
+        -0.24567982206089486,
+        0.0018133581367348823
+      ],
+      "mean_gain_percent": -0.2661416340695884,
+      "bootstrap10000_ci95": [
+        -0.5278388357678725,
+        -0.06263659795482525
+      ],
+      "exhaustive_scene_bootstrap_ci95": [
+        -0.5278388357678725,
+        -0.06263659795482525
+      ],
+      "per_seed_mean_gain_percent": {
+        "2301": -0.4514754067299729,
+        "2302": 0.1045259112511806,
+        "2303": -0.4514754067299729
+      },
+      "passed": false
+    },
+    "one_step_repeated": {
+      "scene_values_percent": [
+        -0.2314218358693451,
+        0.09619397885171248,
+        0.0,
+        -0.009152480322169393,
+        0.45292945968881404,
+        0.0018133581367348823
+      ],
+      "mean_gain_percent": 0.05172708008095781,
+      "bootstrap10000_ci95": [
+        -0.09937636176993131,
+        0.22524154281350128
+      ],
+      "exhaustive_scene_bootstrap_ci95": [
+        -0.09967858812605379,
+        0.22706918255665198
+      ],
+      "per_seed_mean_gain_percent": {
+        "2301": -0.38907165227021717,
+        "2302": 0.5521100449321171,
+        "2303": -0.0078571524190266
+      },
+      "passed": false
+    },
+    "frozen_init": {
+      "scene_values_percent": [
+        0.5126257831782742,
+        0.12113718402235801,
+        0.0,
+        0.0,
+        0.452929459688814,
+        0.0018133581367348823
+      ],
+      "mean_gain_percent": 0.18141763083769682,
+      "bootstrap10000_ci95": [
+        0.020491757026515484,
+        0.35229289189712154
+      ],
+      "exhaustive_scene_bootstrap_ci95": [
+        0.020491757026515484,
+        0.35229289189712154
+      ],
+      "per_seed_mean_gain_percent": {
+        "2301": -0.0078571524190266,
+        "2302": 0.5521100449321171,
+        "2303": 0.0
+      },
+      "passed": false
+    },
+    "matched_static_rule_value": {
+      "scene_values_percent": [
+        0.41394994920832556,
+        0.12113718402235801,
+        0.0,
+        0.0,
+        0.4195956781642766,
+        0.0018133581367348823
+      ],
+      "mean_gain_percent": 0.1594160282552825,
+      "bootstrap10000_ci95": [
+        0.020491757026515484,
+        0.2999199827799108
+      ],
+      "exhaustive_scene_bootstrap_ci95": [
+        0.020491757026515484,
+        0.29928125431004143
+      ],
+      "per_seed_mean_gain_percent": {
+        "2301": -0.016666890762268696,
+        "2302": 0.5521100449321171,
+        "2303": -0.05719506940400098
+      },
+      "passed": false
+    },
+    "original_detour16": {
+      "scene_values_percent": [
+        -2.3237648896699974,
+        -1.6156386360857364,
+        0.0,
+        -0.9977827050997744,
+        -1.081130994854026,
+        -0.5121805232395856
+      ],
+      "mean_gain_percent": -1.0884162914915199,
+      "bootstrap10000_ci95": [
+        -1.6967074705315566,
+        -0.5172124577388286
+      ],
+      "exhaustive_scene_bootstrap_ci95": [
+        -1.688556560636303,
+        -0.5172124577388286
+      ],
+      "per_seed_mean_gain_percent": {
+        "2301": -1.276457678207699,
+        "2302": -0.7123335180591616,
+        "2303": -1.276457678207699
+      },
+      "passed": false
+    }
+  },
+  "overruns": 105,
+  "global_counts": {
+    "nonstop": 3694,
+    "menus": 3464,
+    "stops": 784,
+    "finalizations": 952,
+    "cold_plans": 252,
+    "optimizer_updates": 3840
+  },
+  "execution_scope": "Read only saved records and source; imported torch only to deserialize saved checkpoint tensors, no model construction/forward, no planning, repair, query, or training",
+  "trace_note": "The skill-referenced shared-references/review-tracing.md and assurance-contract.md were absent. This trace includes the explicitly required prompt, raw reviewer response, parsed verdict, routing, and reproducible independent evidence arithmetic."
+}

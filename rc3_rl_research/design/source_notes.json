@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-11-03",
+  "scope": "G0/G1 source inspection; no model training, optimizer updates, historical experiment reruns, or third-party code execution",
+  "transport": "official GitHub repositories via GitHub connector; official web primary sources for papers and Gymnasium",
+  "repositories": [
+    {
+      "repo": "yining043/NeuOpt",
+      "sha": "ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b",
+      "date": "2024-07-24T13:08:54Z",
+      "tree": "83ca3b5febcf03cc03449083f58d6125f2ed98b6",
+      "commit_api": "https://api.github.com/repos/yining043/NeuOpt/commits?per_page=1"
+    },
+    {
+      "repo": "vwxyzjn/cleanrl",
+      "sha": "fe8d8a03c41a7ef5b523e2e354bd01c363e786bb",
+      "date": "2026-04-20T10:57:15Z",
+      "tree": "4c503e30cd0860e54fd970a8a9734d8c6a017a07",
+      "commit_api": "https://api.github.com/repos/vwxyzjn/cleanrl/commits?per_page=1"
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "sha": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "date": "2026-09-14T09:56:40Z",
+      "tree": "1798873dfd4e97778177a713b0f2634313bfc8ac",
+      "commit_api": "https://api.github.com/repos/ai4co/rl4co/commits?per_page=1"
+    }
+  ],
+  "files": [
+    {
+      "repo": "yining043/NeuOpt",
+      "path": "problems/problem_tsp.py",
+      "commit": "ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b",
+      "git_blob_sha": "199e381b078f846ed8c754bc84ec17b4f3bde703",
+      "verified_line_range": [
+        85,
+        112
+      ],
+      "url": "https://github.com/yining043/NeuOpt/blob/ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b/problems/problem_tsp.py#L85-L112",
+      "finding": "current advances to generated k-opt successor; best-so-far minimum is separate; quality reward is best decrease",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "yining043/NeuOpt",
+      "path": "agent/ppo.py",
+      "commit": "ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b",
+      "git_blob_sha": "879e0f952d28e6bafd72a29aa766a3f346e135cc",
+      "verified_line_range": [
+        400,
+        542
+      ],
+      "url": "https://github.com/yining043/NeuOpt/blob/ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b/agent/ppo.py#L400-L542",
+      "finding": "n-step rollout stores old state/context/action/logprob; update reevaluates original action; bootstrapped n-step return",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "yining043/NeuOpt",
+      "path": "nets/actor_network.py",
+      "commit": "ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b",
+      "git_blob_sha": "fc20c5c43e7e609c31efbc56fc4f3db2a0acd587",
+      "verified_line_range": [
+        90,
+        124
+      ],
+      "url": "https://github.com/yining043/NeuOpt/blob/ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b/nets/actor_network.py#L90-L124",
+      "finding": "actor forwards fixed_action to decoder",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "yining043/NeuOpt",
+      "path": "nets/graph_layers.py",
+      "commit": "ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b",
+      "git_blob_sha": "75b04d218fbc2db272407f2d21e009d568578469",
+      "verified_line_range": [
+        408,
+        433
+      ],
+      "url": "https://github.com/yining043/NeuOpt/blob/ccf6b5f0f6a8fda2792b4be11d4ec35390a8139b/nets/graph_layers.py#L408-L433",
+      "finding": "mask applied to logits; fixed-action reevaluation follows same decomposition",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "vwxyzjn/cleanrl",
+      "path": "cleanrl/ppo.py",
+      "commit": "fe8d8a03c41a7ef5b523e2e354bd01c363e786bb",
+      "git_blob_sha": "edde76baef51f05a8654160dfb19a4fdb34d14d3",
+      "verified_line_range": [
+        170,
+        295
+      ],
+      "url": "https://github.com/vwxyzjn/cleanrl/blob/fe8d8a03c41a7ef5b523e2e354bd01c363e786bb/cleanrl/ppo.py#L170-L295",
+      "finding": "rollout storage, GAE and PPO clipping; termination OR truncation used for next_done (not adopted)",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "rl4co/models/rl/ppo/ppo.py",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "8b9397ecc597f95373821690126f65a51655b444",
+      "verified_line_range": [
+        17,
+        50
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/rl4co/models/rl/ppo/ppo.py#L17-L50",
+      "finding": "this PPO class models whole autoregressive construction as single-step MDP",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "rl4co/models/rl/ppo/n_step_ppo.py",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "711a45c278a7f1035e0ad201ba05fb07f9d664ae",
+      "verified_line_range": [
+        140,
+        218
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/rl4co/models/rl/ppo/n_step_ppo.py#L140-L218",
+      "finding": "multiple improvement transitions, stored tds/actions/logprob/rewards, n-step return and policy ratio",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "rl4co/models/rl/ppo/stepwise_ppo.py",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "af23827f5bb90eafd404570396b7fa38f19e653d",
+      "verified_line_range": [
+        42,
+        168
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/rl4co/models/rl/ppo/stepwise_ppo.py#L42-L168",
+      "finding": "separate StepwisePPO exists; whole framework must not be described as single-step only",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "rl4co/models/zoo/dact/model.py",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "4aa80210937d0f95aebc93522a35f46a10b66848",
+      "verified_line_range": [
+        5,
+        14
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/rl4co/models/zoo/dact/model.py#L5-L14",
+      "finding": "DACT inherits n_step_PPO",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "rl4co/models/zoo/n2s/model.py",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "0483a496288a91d4bc8958a381a68237ce0323c5",
+      "verified_line_range": [
+        5,
+        14
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/rl4co/models/zoo/n2s/model.py#L5-L14",
+      "finding": "N2S inherits n_step_PPO",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "rl4co/models/zoo/neuopt/model.py",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "1e0fa0f335af0f91db83f51654cbe9534ff470b0",
+      "verified_line_range": [
+        5,
+        14
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/rl4co/models/zoo/neuopt/model.py#L5-L14",
+      "finding": "NeuOpt inherits n_step_PPO",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    },
+    {
+      "repo": "ai4co/rl4co",
+      "path": "docs/content/api/zoo/improvement.md",
+      "commit": "dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "git_blob_sha": "90e763bc11a485e27f71fad494a68632ae3407d9",
+      "verified_line_range": [
+        1,
+        46
+      ],
+      "url": "https://github.com/ai4co/rl4co/blob/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0/docs/content/api/zoo/improvement.md#L1-L46",
+      "finding": "improvement zoo includes DACT, N2S and NeuOpt",
+      "source_content_read": true,
+      "third_party_code_copied": false
+    }
+  ],
+  "papers_and_docs": [
+    {
+      "title": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "authors": [
+        "Yining Ma",
+        "Zhiguang Cao",
+        "Yeow Meng Chee"
+      ],
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2310.18264v1",
+      "verified": "official arXiv title, authors, abstract, NeurIPS 2023 acceptance note; repo code directly read",
+      "adoption": "current/best and multi-step learning-to-search concepts; infeasible-region exploration excluded"
+    },
+    {
+      "title": "Proximal Policy Optimization Algorithms",
+      "authors": [
+        "John Schulman",
+        "Filip Wolski",
+        "Prafulla Dhariwal",
+        "Alec Radford",
+        "Oleg Klimov"
+      ],
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1707.06347v2",
+      "verified": "official arXiv metadata and abstract; implementation details cross-checked in actual source files"
+    },
+    {
+      "title": "Policy invariance under reward transformations: Theory and application to reward shaping",
+      "authors": [
+        "Andrew Y. Ng",
+        "Daishi Harada",
+        "Stuart Russell"
+      ],
+      "year": 1999,
+      "url": "https://people.eecs.berkeley.edu/~russell/papers/icml99-shaping.pdf",
+      "verified": "official Berkeley-hosted PDF extracted text: Theorem 1 and Corollary 2; undiscounted absorbing-state condition",
+      "local_derivation": "sum gamma^t*(gamma*Phi(s[t+1])-Phi(s[t]))=-Phi(s[0])+gamma^T*Phi(s[T]); zero true-terminal potential removes tail dependence",
+      "limitations": "PDF screenshot rendering unavailable; only extracted text and algebra used"
+    },
+    {
+      "title": "Handling Time Limits",
+      "organization": "Farama Foundation / Gymnasium",
+      "url": "https://gymnasium.farama.org/tutorials/gymnasium_basics/handling_time_limits/",
+      "verified": "official documentation termination/truncation distinction; finite-horizon remaining time in observation; terminal no-bootstrap versus external cutoff bootstrap"
+    }
+  ],
+  "local_readonly_audit": [
+    {
+      "path": "rc3_improve/repair.py",
+      "sha256": "5b3471d4ce7df23cf7381fcf2f1d86ab39eddce2bca7cf23350a5a8c74c1ee36",
+      "lines": [
+        [
+          80,
+          85
+        ],
+        [
+          134,
+          199
+        ]
+      ],
+      "finding": "incumbent candidates preserved, final return only strict improvement"
+    },
+    {
+      "path": "rc3_v3/environment.py",
+      "sha256": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+      "lines": [
+        [
+          113,
+          134
+        ]
+      ],
+      "finding": "only strict improvement changes current route; immediate current cost reward"
+    },
+    {
+      "path": "rc3_v4/runtime.py",
+      "sha256": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff",
+      "lines": [
+        [
+          112,
+          116
+        ],
+        [
+          130,
+          136
+        ]
+      ],
+      "finding": "per-step nonincrease guard distinct from desirable final anchor-bound certification"
+    }
+  ],
+  "user_design": {
+    "input": "rc3_drl_research_design.docx",
+    "sha256": "3324696ac3ae67b8cecdfbea376ab57cf55bd4c2c2b4ef531dac12d44cb2c477",
+    "text_export": "rc3_rl_research/design/research_design.txt",
+    "read": true
+  },
+  "explicit_nonclaims": [
+    "G0/G1 is not PPO training",
+    "No claim of trained superiority to Detour",
+    "No claim of real-arm IK executability",
+    "No claim that plain CleanRL timeout logic matches this task",
+    "No claim that all RL4CO PPO implementations use single-step construction",
+    "No original NeuOpt infeasible search adopted"
+  ],
+  "source_failures": [
+    "Official shaping-PDF screenshot renderer failed; text extraction succeeded"
+  ],
+  "implementation_decisions_not_attributed_as_existing_upstream_features": [
+    "Store ordered window action menu and sampled-time mask",
+    "Bound feasible current worsening relative to best and anchor",
+    "Charge actual repair work",
+    "True-terminal potential zero; external rollout cutoff not terminal",
+    "Finite-horizon gamma=1 chosen to preserve final-best-improvement minus total-work objective"
+  ]
+}
+

@@ -1,0 +1,49 @@
+{
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "The observed single-seed pilot and lack of incremental deployment benefit, not a universal claim about PPO or GNNs.",
+  "claim_statuses": {
+    "C1_training_and_conditional_multistep_decisions": "partial",
+    "C2_increment_over_BC_STOP_and_rules": "no",
+    "model_limited_engineering_consistency": "yes_limited"
+  },
+  "what_results_support": [
+    "Correct retained on-policy training and reward/checkpoint contracts within the stated model.",
+    "PPO retained the frozen BC root-STOP greedy behavior on all 24 development scenes at all three checkpoints.",
+    "Higher return than continuing rules is reproduced by the simple shared-menu STOP control.",
+    "Frozen Fixed3 yields the same cost with lower complete planning time."
+  ],
+  "what_results_dont_support": [
+    "Incremental learned conditional multistep planning benefit.",
+    "Hard 400 ms deadlines.",
+    "Across-seed, cross-scale or physical IK reliability.",
+    "Exact lifetime physical training cost after the interrupted uncommitted rollout.",
+    "PPO alone caused the initial greedy STOP behavior."
+  ],
+  "missing_evidence": [
+    "Effective supervised action ranking before PPO.",
+    "Independent development evidence isolating actor/critic/exploration causes.",
+    "Fresh held-out data and multiple seeds only after a new preregistered positive pilot.",
+    "Matched monotone/nonmonotone training if a mechanism claim is later pursued."
+  ],
+  "suggested_claim_revision": "Report a reproducible budget-conditioned local-search platform and a controlled negative single-seed PPO result; retain Fixed3/Detour as the default.",
+  "next_experiments_needed": [
+    "Bounded small-teacher fitting check against STOP on separate development data.",
+    "Actual complete-episode critic calibration and one preregistered conservative PPO initialization/exploration variant.",
+    "Maintain STOP and original Fixed3 controls, with full-time and quality reporting."
+  ],
+  "routing_action": "pivot_to_preparation_and_narrow_claim",
+  "automatic_extra_training": false,
+  "paper_claim_audit": "unavailable",
+  "provisional_label": "provisional - no paper claim audit available",
+  "pending_external_review": false,
+  "reviewer_scope": "Delegated audit/reviewer agent with inherited project context, not a zero-context external referee.",
+  "source_sha256": {
+    "outputs/g2_audit.json": "40978d315cf185941ff4e29ac6a2d8be5142e43a19425540d1ca61ef96cd9db8",
+    "outputs/final_evaluation/summary.json": "7bef1603203269e3a8727310358abfea50a1c1503fce9388fdec58b3e6b4be51",
+    "outputs/final_evaluation/rows.csv": "2f704f38bcf72ae7c43f532919d3cc28d5b7289711703485ceb13e9a213a2d7c",
+    "outputs/teacher_fit_diagnostic/summary.json": "d090a3d40775d51401040a164524007ffac3063321352ea6ac7e60fb39c0f8d5",
+    "outputs/interruption_receipt.json": "72efc09b38c80949106a11262caf06731a642e2b0995ac6c07e07f25169912b6",
+    "design/EXPERIMENT_PLAN.md": "8323e55388ee5ad95f5523691a66a2384739451aabdab038962190566bcdc9c2"
+  }
+}

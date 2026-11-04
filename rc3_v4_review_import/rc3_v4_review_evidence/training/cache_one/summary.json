@@ -1,0 +1,193 @@
+{
+  "scope": "Post-freeze validation-only engineering diagnostic; not a new test, retraining or adoption decision.",
+  "scenes": 1,
+  "repeats": 3,
+  "head_checks": 8,
+  "all_bitwise_equal": true,
+  "all_actions_equal": true,
+  "all_final_plan_objects_equal": true,
+  "all_independently_valid": true,
+  "summaries": [
+    {
+      "method": "original",
+      "scenes": 1,
+      "planning_ms": 516.7703880001682,
+      "model_ms": 134.8870619999616,
+      "graph_ms": 64.78399200022977,
+      "inference_ms": 69.95405999964532,
+      "objective": 262.95,
+      "cache_hits": 0.0,
+      "cache_misses": 0.0
+    },
+    {
+      "method": "cached",
+      "scenes": 1,
+      "planning_ms": 471.682267999995,
+      "model_ms": 96.38747199960562,
+      "graph_ms": 59.57280999973591,
+      "inference_ms": 35.31403200031491,
+      "objective": 262.95,
+      "cache_hits": 4.0,
+      "cache_misses": 4.0
+    }
+  ],
+  "records": [
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "method": "cached",
+      "repeat": 0,
+      "planning_ms": 480.8253159999367,
+      "model_ms": 98.5948259997258,
+      "graph_ms": 59.57280999973591,
+      "inference_ms": 38.08113900004173,
+      "objective": 262.95,
+      "calls": 8,
+      "accepted": 4,
+      "cache_hits": 4,
+      "cache_misses": 4
+    },
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "method": "original",
+      "repeat": 0,
+      "planning_ms": 499.25907099986944,
+      "model_ms": 129.46352299991304,
+      "graph_ms": 64.78399200022977,
+      "inference_ms": 64.54410699961954,
+      "objective": 262.95,
+      "calls": 8,
+      "accepted": 4,
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "method": "cached",
+      "repeat": 1,
+      "planning_ms": 470.90070700005526,
+      "model_ms": 96.38747199960562,
+      "graph_ms": 60.344144000509914,
+      "inference_ms": 35.11706399967807,
+      "objective": 262.95,
+      "calls": 8,
+      "accepted": 4,
+      "cache_hits": 4,
+      "cache_misses": 4
+    },
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "method": "original",
+      "repeat": 1,
+      "planning_ms": 524.3580860001202,
+      "model_ms": 150.56101599998328,
+      "graph_ms": 80.55955400004677,
+      "inference_ms": 69.95405999964532,
+      "objective": 262.95,
+      "calls": 8,
+      "accepted": 4,
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "method": "original",
+      "repeat": 2,
+      "planning_ms": 516.7703880001682,
+      "model_ms": 134.8870619999616,
+      "graph_ms": 62.725700999862966,
+      "inference_ms": 72.11013099959018,
+      "objective": 262.95,
+      "calls": 8,
+      "accepted": 4,
+      "cache_hits": 0,
+      "cache_misses": 0
+    },
+    {
+      "scene": 0,
+      "seed": 806477264,
+      "method": "cached",
+      "repeat": 2,
+      "planning_ms": 471.682267999995,
+      "model_ms": 92.83845100003418,
+      "graph_ms": 56.48195899971142,
+      "inference_ms": 35.31403200031491,
+      "objective": 262.95,
+      "calls": 8,
+      "accepted": 4,
+      "cache_hits": 4,
+      "cache_misses": 4
+    }
+  ],
+  "checks": [
+    {
+      "scene": 0,
+      "step": 0,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 57,
+      "new_action": 57
+    },
+    {
+      "scene": 0,
+      "step": 1,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 27,
+      "new_action": 27
+    },
+    {
+      "scene": 0,
+      "step": 2,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 35,
+      "new_action": 35
+    },
+    {
+      "scene": 0,
+      "step": 3,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 36,
+      "new_action": 36
+    },
+    {
+      "scene": 0,
+      "step": 4,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 50,
+      "new_action": 50
+    },
+    {
+      "scene": 0,
+      "step": 5,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 37,
+      "new_action": 37
+    },
+    {
+      "scene": 0,
+      "step": 6,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 51,
+      "new_action": 51
+    },
+    {
+      "scene": 0,
+      "step": 7,
+      "all_heads_bitwise_equal": true,
+      "max_output_error": 0.0,
+      "old_action": 48,
+      "new_action": 48
+    }
+  ],
+  "elapsed_s": 3.7413129920000756
+}

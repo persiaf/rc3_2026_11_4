@@ -1,0 +1,60 @@
+{
+  "portable_deployment": [
+    {
+      "model": "selector.npz",
+      "policy": "learned",
+      "top_k": 1,
+      "valid": true,
+      "cache_equal": true,
+      "objective_m": 291.9439106582,
+      "cold_s": 0.2638954999993075,
+      "warm_s": 0.06521840000004886
+    },
+    {
+      "model": "selector.npz",
+      "policy": "learned",
+      "top_k": 3,
+      "valid": true,
+      "cache_equal": true,
+      "objective_m": 286.4677907668,
+      "cold_s": 0.27687889999924664,
+      "warm_s": 0.08909489999950893
+    },
+    {
+      "model": "selector.npz",
+      "policy": "fixed",
+      "top_k": 1,
+      "valid": true,
+      "cache_equal": true,
+      "objective_m": 291.9439106582,
+      "cold_s": 0.2482853999999861,
+      "warm_s": 0.061975900000106776
+    },
+    {
+      "model": "selector.npz",
+      "policy": "fixed",
+      "top_k": 3,
+      "valid": true,
+      "cache_equal": true,
+      "objective_m": 286.4677907668,
+      "cold_s": 0.2746724999997241,
+      "warm_s": 0.08335540000007313
+    },
+    {
+      "model": "selector_neural.npz",
+      "policy": "learned",
+      "top_k": 3,
+      "valid": true,
+      "cache_equal": true,
+      "objective_m": 285.4554994002,
+      "cold_s": 0.2741986999999426,
+      "warm_s": 0.08560140000008687
+    }
+  ],
+  "no_torch_or_sklearn_imported": true,
+  "frozen_model_unchanged": true,
+  "teacher_files": 1536,
+  "teacher_validation_s": 27.424957999999606,
+  "teacher_failures": [],
+  "all_valid": true
+}

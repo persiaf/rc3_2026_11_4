@@ -1,0 +1,24 @@
+--- a/rc3_v5/robot_input.py
++++ b/rc3_v5/robot_input.py
+@@ -324,6 +324,21 @@
+             joint = gripper.get("joint")
+             if joint not in by_role[side + "_gripper"]:
+                 error("grippers." + side + ".joint", "joint must have matching gripper role")
++            else:
++                # A declared role alone does not bind the actuator to an arm.
++                # Follow the physical URDF ancestry, retaining fixed tool links.
++                gripper_chain, link = set(), joints[joint]["parent"]
++                while link in parent_joint:
++                    ancestor = parent_joint[link]
++                    gripper_chain.add(ancestor["name"])
++                    link = ancestor["parent"]
++                own_arm = set(by_role[side + "_arm"])
++                other = "right" if side == "left" else "left"
++                if (not own_arm.issubset(gripper_chain)
++                        or set(by_role[other + "_arm"]) & gripper_chain
++                        or not set(by_role["lift"]).issubset(gripper_chain)):
++                    error("grippers." + side + ".chain",
++                          "gripper joint does not belong to configured arm motion chain")
+             samples = gripper.get("opening_samples")
+             if not isinstance(samples, list) or len(samples) < 2 or not all(_vector(row, 2) for row in samples):
+                 error("grippers." + side + ".opening_samples", "requires >= 2 [joint_position, opening_m] calibration samples")

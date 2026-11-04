@@ -1,0 +1,93 @@
+[
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "rc3_v5.external_example",
+      "--output",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/demo"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"fixed3\": \"complete\", \"detour\": \"complete\", \"fixed_height_only\": \"failed\", \"left_arm_only\": \"failed\", \"audit_disagrees\": \"failed\", \"proxy_vs_synthetic_table\": null}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/demo/external_demo.json",
+      "--verify-plan",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/demo/detour_plan.json",
+      "--output",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_verify_json.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"status\": \"complete\", \"output\": \"/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_verify_json.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/demo/external_demo.npz",
+      "--method",
+      "detour",
+      "--penalty",
+      "1.5",
+      "--output",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_npz_custom_penalty.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"status\": \"complete\", \"output\": \"/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_npz_custom_penalty.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/demo/external_demo.npz",
+      "--verify-plan",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_npz_custom_penalty.json",
+      "--penalty",
+      "1.5",
+      "--output",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_verify_npz_custom_penalty.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"status\": \"complete\", \"output\": \"/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_verify_npz_custom_penalty.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/demo/external_demo.npz",
+      "--verify-plan",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_npz_custom_penalty.json",
+      "--output",
+      "/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_verify_wrong_penalty.json"
+    ],
+    "returncode": 2,
+    "expected_returncode": 2,
+    "passed": true,
+    "stdout": "{\"status\": \"failed\", \"output\": \"/workspace/scratch/ada4dddf6d6b/analysis/v5_audit/external/reproduced/cli_verify_wrong_penalty.json\"}\n",
+    "stderr": ""
+  }
+]

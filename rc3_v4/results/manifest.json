@@ -1,0 +1,164 @@
+{
+  "status": "complete",
+  "frozen_utc": "2026-11-03T03:07:27.092911+00:00",
+  "cases": 39,
+  "test_sizes": {
+    "36": 9,
+    "100": 18,
+    "196": 9,
+    "400": 3
+  },
+  "repeats": 3,
+  "selected_training_records": {
+    "control": {
+      "variant": "control",
+      "seed": 29,
+      "epoch": 30,
+      "checkpoint": "control_seed29.pt",
+      "validation": {
+        "mean_gain_pct": 0.9962191762038226,
+        "mean_calls": 8.0,
+        "gains_pct": [
+          0.9975983742841267,
+          0.0,
+          1.406695156695153,
+          0.0,
+          1.3753166847629636,
+          0.3427419354838687,
+          1.3677911573333021,
+          0.3606999999300858,
+          0.6363532546321902,
+          1.276425944304967,
+          0.34722267553089314,
+          0.23708396392742234,
+          2.007611217947384,
+          0.965568122514532,
+          1.1091754597402,
+          0.6137061011441205,
+          1.4631714334082389,
+          3.4247836900293613
+        ],
+        "stopped": 0,
+        "stop_events": []
+      },
+      "parameter_count": 38438
+    },
+    "structured": {
+      "variant": "structured",
+      "seed": 17,
+      "epoch": 60,
+      "checkpoint": "structured_seed17.pt",
+      "validation": {
+        "mean_gain_pct": 1.2872931058050898,
+        "mean_calls": 8.0,
+        "gains_pct": [
+          2.8450027711066124,
+          0.5253346890357413,
+          2.1723646723647017,
+          0.0,
+          1.7010495837857569,
+          0.3427419354838687,
+          0.63354199939328,
+          0.3510796655701177,
+          1.8059152854649756,
+          1.193722966568802,
+          0.639221214793546,
+          2.1202350273632735,
+          1.6953046904251747,
+          0.9838603265532901,
+          1.2833403840213407,
+          0.9853303788266573,
+          1.4714407091975799,
+          2.421789604536897
+        ],
+        "stopped": 0,
+        "stop_events": []
+      },
+      "parameter_count": 38438
+    }
+  },
+  "training_seeds": [
+    17,
+    29,
+    43
+  ],
+  "model_sha256": {
+    "rc3_v3\\deployment\\policy.npz": "63e200f204b1e53c630f178bf7f60665944222becb60126b11c6461613db234d",
+    "rc3_v4\\training\\control.npz": "a66f4ef613678a3730703c6a5bb37217892a20a2dff26d1fa4d18a1b85917197",
+    "rc3_v4\\training\\control_seed17.npz": "22a9a5fcfdcbd7b834779af3bd3373083dd403a05adef4357fc546f170404602",
+    "rc3_v4\\training\\control_seed29.npz": "a66f4ef613678a3730703c6a5bb37217892a20a2dff26d1fa4d18a1b85917197",
+    "rc3_v4\\training\\control_seed43.npz": "a383d172387d78c95998a986fee16de9e27a7535b7456ca7861eaff54f3e5cbd",
+    "rc3_v4\\training\\structured.npz": "10b47390842512024b8b4c5c825c2989106ec412a76d6d4f5d848cd81f9acf61",
+    "rc3_v4\\training\\structured_seed17.npz": "10b47390842512024b8b4c5c825c2989106ec412a76d6d4f5d848cd81f9acf61",
+    "rc3_v4\\training\\structured_seed29.npz": "fc26f2146df555503fd0e08e000c6d98aba756322efc98c30779e56187182fbc",
+    "rc3_v4\\training\\structured_seed43.npz": "5a66a16e9737929b2f35e01bcc1380f189146cf0fd24365fb71c1212a4742767"
+  },
+  "model_paths": {
+    "v3_mlp": "rc3_v3\\deployment\\policy.npz",
+    "control": "rc3_v4\\training\\control.npz",
+    "control_seed17": "rc3_v4\\training\\control_seed17.npz",
+    "control_seed29": "rc3_v4\\training\\control_seed29.npz",
+    "control_seed43": "rc3_v4\\training\\control_seed43.npz",
+    "structured": "rc3_v4\\training\\structured.npz",
+    "structured_seed17": "rc3_v4\\training\\structured_seed17.npz",
+    "structured_seed29": "rc3_v4\\training\\structured_seed29.npz",
+    "structured_seed43": "rc3_v4\\training\\structured_seed43.npz"
+  },
+  "source_sha256": {
+    "rc3_v4\\evaluate.py": "fa6cc49542e9edbcd5c656ebdebd2af2b74f22f6b4d73f95d849059d12d9bcf1",
+    "rc3_v4\\report.py": "e98ea8535da534432ee1e6cdda68515637f4b47f0a69ef37a42d49f10e379e8e",
+    "rc3_v4\\runtime.py": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff",
+    "rc3_v4\\features.py": "d0b4e178298900634e0b4ff169f1c7510627d4a0d2603d53d795da1588443dba",
+    "rc3_v4\\policy.py": "4a8706969ee68caaa80215ed34cecf43358a2e261ae547abf9a95c485d786508",
+    "rc3_v4\\model.py": "ca68baddd31927e4cba334ff3501e650aa2ccbfb2883192c6e651b632e730b89",
+    "rc3_v4\\legacy_policy.py": "4979aa0567f50a7c8c6a3e2994ce47e46e65f93c49303469d339c4d0eb2ba2d0",
+    "rc3_v3\\model.py": "94574d5a702a67f1f06b94841e09e1f29a3091fda548de4cb8e56cb8e1923d5d",
+    "rc3_v3\\environment.py": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+    "rc3_fast\\solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_fast\\scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_baseline\\baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline\\validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_improve\\repair.py": "5b3471d4ce7df23cf7381fcf2f1d86ab39eddce2bca7cf23350a5a8c74c1ee36",
+    "rc3_improve\\environment.py": "ae02801f5339800d43a014add4aa978bfaf3877440df35a211405c6bbac6e04e",
+    "rc3_improve\\evaluate.py": "4618268cd2dcf6d4d6d4a4bfd190901ad75f81982675283a26bf6abac335606e"
+  },
+  "data_sha256": {
+    "rc3_v4\\data\\test_cases.json": "6dfd2cbc8ffa2b0dfe8a9ab192db3775f562dd7bc96c4ff13cac834720f51219",
+    "rc3_v4\\data\\manifest.json": "8d17dee8b02eabcf41564b815e4740435a337609313211d3e13aa2a64ce2d9cf",
+    "rc3_v4\\training\\summary.json": "7483fd2996c72f31fdb1e0f53a097f56a6e8e18cd41ed08fd1701ffed3c1ab8d",
+    "rc3_v4\\data\\data.pkl": "82114aa6ce456fa136a814595331ec6aeab5a90acd4269165ece3b114bd25553"
+  },
+  "planned_runs": 855,
+  "planned_main_method_cases": 195,
+  "planned_wall_method_cases": 54,
+  "planned_seed_method_cases": 108,
+  "stop_penalty_equivalent_m": 0.75,
+  "wall_seconds": 0.4,
+  "wall_tables": 100,
+  "wall_horizon": 256,
+  "training_horizon": 8,
+  "timing_scope": "Full planner including anchor, feature construction, model, repairs, final independent validation, and session thread control. Common navigation/reachability preprocessing listed separately. Excludes model/process loading, scene generation, extra post-timing audit and disk I/O. Atomic repair/final verification may overrun the soft deadline.",
+  "repeat_rule": "Mean objective and median planning time within scene; preserve every repeat, never select the best test repeat.",
+  "selection_rule": "Both control and structured checkpoints selected on the original 18 validation scenes only; all three training seeds reported on the 18 new 100-table cases.",
+  "legacy_policy_note": "v3_mlp uses the frozen original weights with an output-equivalent v4 engineering adapter: cached BLAS controller once per full planning session. No retraining or weight changes.",
+  "acceptance": {
+    "primary_tables": 100,
+    "minimum_reduction_pct": 0.2,
+    "ci95_lower_must_be_positive": true,
+    "references": [
+      "control8",
+      "detour8"
+    ],
+    "max_median_time_ratio_to_detour": 1.25,
+    "all_plans_valid_required": true
+  },
+  "python": "3.13.5",
+  "numpy": "2.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "elapsed_s": 610.0991631000006,
+  "attempted_runs": 855,
+  "successful_runs": 855,
+  "failed_runs": 0,
+  "saved_plans": 855,
+  "changed_frozen_files": []
+}

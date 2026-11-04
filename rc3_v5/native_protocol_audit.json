@@ -1,0 +1,101 @@
+{
+  "all_passed": true,
+  "errors": [],
+  "checks": 6488,
+  "scenes": 18,
+  "runs": 108,
+  "methods": {
+    "detour_wall400": {
+      "scenes": 18,
+      "runs": 54,
+      "mean_objective_m": 264.2387571812333,
+      "mean_reduction_vs_fixed3_pct": 1.4726360330861672,
+      "median_scene_planning_ms": 437.3832500004937,
+      "p95_scene_planning_ms": 454.78145500064784,
+      "p95_all_run_planning_ms": 460.48986500036335,
+      "max_run_planning_ms": 480.4266999999527,
+      "mean_dp_calls": 19.833333333333332,
+      "median_dp_calls": 17.0,
+      "deadline_exceeded_runs": 54,
+      "max_overrun_ms": 80.42669999995266,
+      "mean_overrun_ms": 41.997116666681414,
+      "fallback_runs": 0,
+      "stop_reasons": {
+        "deadline": 54
+      }
+    },
+    "v3_mlp_wall400": {
+      "scenes": 18,
+      "runs": 54,
+      "mean_objective_m": 263.59791408573705,
+      "mean_reduction_vs_fixed3_pct": 1.7302535116716815,
+      "median_scene_planning_ms": 436.14379999962694,
+      "p95_scene_planning_ms": 454.3285150001793,
+      "p95_all_run_planning_ms": 458.8405699993927,
+      "max_run_planning_ms": 469.5701000000554,
+      "mean_dp_calls": 18.27777777777778,
+      "median_dp_calls": 17.0,
+      "deadline_exceeded_runs": 54,
+      "max_overrun_ms": 69.57010000005536,
+      "mean_overrun_ms": 38.79025555566772,
+      "fallback_runs": 0,
+      "stop_reasons": {
+        "deadline": 54
+      }
+    }
+  },
+  "paired": {
+    "scenes": 18,
+    "mean_reduction_pct": 0.26050724125498376,
+    "ci95_pct": [
+      -0.008684172045571278,
+      0.5295448093375277
+    ],
+    "wins": 12,
+    "ties": 1,
+    "losses": 5,
+    "median_paired_time_ratio": 0.9933161202176997,
+    "ratio_of_median_times": 0.9971662152108811
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "model_sha256": "63e200f204b1e53c630f178bf7f60665944222becb60126b11c6461613db234d",
+  "auditor_sha256": "91c415d6de68fa1f418b512d8c1dd44b8d3c61732ffa9acb06c5c8abcc219e41",
+  "budget_script_sha256": "7180e866fa6942b10ed306b17bcf4653afb02562243836c1dd544786222b6b85",
+  "tamper_checks": [
+    {
+      "field": "planning_s",
+      "rejected": true,
+      "errors": [
+        "tamper planning_s:planning_s",
+        "tamper planning_s:overrun",
+        "tamper planning_s:deadline flag",
+        "tamper planning_s:outer/inner time ordering"
+      ]
+    },
+    {
+      "field": "overrun_s",
+      "rejected": true,
+      "errors": [
+        "tamper overrun_s:overrun_s",
+        "tamper overrun_s:overrun"
+      ]
+    },
+    {
+      "field": "repeat",
+      "rejected": true,
+      "errors": [
+        "tamper repeat:repeat"
+      ]
+    },
+    {
+      "field": "config",
+      "rejected": true,
+      "errors": [
+        "tamper config:config.seconds"
+      ]
+    }
+  ],
+  "experiment_modified": false,
+  "planner_rerun": false,
+  "scope": "Read-only source/scene/config/order/timing consistency and complete summary reconstruction. Complements geometric audit; saved clocks are not independent hardware measurements. Post-v4 descriptive evidence, with platform-separated scene-level inference."
+}

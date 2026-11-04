@@ -1,0 +1,153 @@
+{
+  "scope": "G1 integration only; not G0 sampled development data, no training or comparative performance claim",
+  "test_module": "rc3_rl_research.test_adapter",
+  "integration_tests_passed": 11,
+  "combined_test_modules": [
+    "rc3_rl_research.test_env",
+    "rc3_rl_research.test_adapter",
+    "rc3_rl_research.test_proposal"
+  ],
+  "combined_tests_passed": 43,
+  "execution_evidence": "Final combined unittest run reported by rl_environment agent in shared tool output; root final acceptance should archive the command log.",
+  "proxy_geometry": {
+    "nonempty": {
+      "tables": 4,
+      "tasks": 4,
+      "seed": 202611031
+    },
+    "empty": {
+      "tables": 2,
+      "tasks": 0,
+      "seed": 202611032
+    },
+    "shared_runtime": {
+      "tables": 9,
+      "mode": "blocked",
+      "scene_seed": 202611033,
+      "policy_seed": 0
+    }
+  },
+  "external_scope": "Reused frozen v5 synthetic common-arm and later-stop counterexamples; no physical calibration/IK claim",
+  "saved_runtime_replays": 5,
+  "policies": {
+    "random": {
+      "returned_cost": 28.180339309199997,
+      "anchor_cost": 28.180339309199997,
+      "steps": 4,
+      "work_used": 6734,
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 4,
+        "work_used": 6734,
+        "total_reward": -0.006734,
+        "finalization": {
+          "reason": "horizon",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 28.180339309199997,
+          "best_cost": 28.180339309199997,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      }
+    },
+    "greedy": {
+      "returned_cost": 28.180339309199997,
+      "anchor_cost": 28.180339309199997,
+      "steps": 4,
+      "work_used": 8092,
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 4,
+        "work_used": 8092,
+        "total_reward": -0.008092,
+        "finalization": {
+          "reason": "horizon",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 28.180339309199997,
+          "best_cost": 28.180339309199997,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      }
+    },
+    "alns": {
+      "returned_cost": 28.180339309199997,
+      "anchor_cost": 28.180339309199997,
+      "steps": 4,
+      "work_used": 10898,
+      "replay": {
+        "schema": "rc3-rl-g01-v1",
+        "replay_valid": true,
+        "transitions": 4,
+        "work_used": 10898,
+        "total_reward": -0.010898000000000001,
+        "finalization": {
+          "reason": "horizon",
+          "fallback_used": false,
+          "failure_reason": null,
+          "returned_cost": 28.180339309199997,
+          "best_cost": 28.180339309199997,
+          "quality_correction": 0.0,
+          "work_overrun": 0
+        },
+        "exported_plan_verified": true,
+        "policy_state_verified": true
+      }
+    }
+  },
+  "fixes": [
+    "Reject nonfinite/boolean payload anchor costs, noninteger route nodes, and unknown source kinds",
+    "Require successful independent validation flag on exported plans",
+    "Environment owner fixed empty-initial-state certificate replay preserving and checking the saved method"
+  ],
+  "artifacts": {
+    "external_common_arm.json": {
+      "bytes": 43446,
+      "sha256": "c6c4c92ea03ca514bbbd0ca6669e233205175a892df5d9c2c622112c0235c893"
+    },
+    "external_later_stop_replay.json": {
+      "bytes": 445,
+      "sha256": "8ad91844e8de7657e9a0053c48dfc91b48519797f168e49f6ada7235eba93d00"
+    },
+    "external_later_stop_runtime.json": {
+      "bytes": 139727,
+      "sha256": "f45f9d90b3452f501d8662f88b8a7945f25679d7a063ef9633bec10dcfda48cc"
+    },
+    "proxy_blocked_alns.json": {
+      "bytes": 363258,
+      "sha256": "6699ccc026c7aa3e22c95b7c851f34f244acead48580a5a3e4d3c026038fbaed"
+    },
+    "proxy_blocked_greedy.json": {
+      "bytes": 362745,
+      "sha256": "aaaaeb85601cf9011b3a69c39f611ce26857e7d91fa129e2d4b0065859096dcd"
+    },
+    "proxy_blocked_random.json": {
+      "bytes": 362435,
+      "sha256": "b81209528b5d1c0dfe361fcb7fb7cfd5ef45bd6013ca2d2d71c33b94b0313f12"
+    },
+    "proxy_empty_replay.json": {
+      "bytes": 411,
+      "sha256": "de3e2ae4abd90157ec1b790ebc01700f4cf2f31d1ef049089d215f97aab9eb87"
+    },
+    "proxy_empty_runtime.json": {
+      "bytes": 22482,
+      "sha256": "181f0e232a6920df05d260ad8a7bdc432ffc47eb9a3ac99126e4c788d934900b"
+    },
+    "proxy_nonempty.json": {
+      "bytes": 17987,
+      "sha256": "ed3d137ceacdd474689067e95148a2850db741ed4306f1ce7ed086a971dc395c"
+    },
+    "shared_runtime_replay_summary.json": {
+      "bytes": 2338,
+      "sha256": "b5b9fee868e6eafb8927abba493ebddeff075ab53359a1b0bbbf91b2425c6bc5"
+    }
+  }
+}

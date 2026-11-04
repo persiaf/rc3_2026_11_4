@@ -1,0 +1,16 @@
+{
+  "scope": "Intentional contract-violation demonstrations, not performance or model-quality evidence.",
+  "source": "rc3_v4_review_import\\rc3_v4_review_evidence\\training\\graph_embedding_cache.py",
+  "mutable_weight_example": {
+    "graph_pool_bias_added": 0.5,
+    "cache_hit": 1,
+    "max_absolute_error_per_head": [
+      5.45301628112793,
+      0.03148973360657692,
+      3.4106292724609375
+    ],
+    "original_all_heads_equal": false,
+    "v5_mutation_raises_ValueError": true
+  },
+  "interpretation": "The uploaded adapter assumes invariant weights but does not enforce it. The maintenance adapter rejects ordinary array or checkpoint configuration mutation. Both adapters require a new Env when F/D/map/task semantics change."
+}

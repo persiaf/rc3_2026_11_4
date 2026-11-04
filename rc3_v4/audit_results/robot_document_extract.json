@@ -1,0 +1,234 @@
+{
+  "docx": "第三章操作可达性建模与推导.docx",
+  "paragraphs": 394,
+  "relevant": [
+    {
+      "paragraph": 1,
+      "text": "本章研究给定桌面抓取任务后，如何确定移动双臂机器人可采用的底盘位置、底盘朝向、升降高度及执行手臂。沿用第二章的 AlohaMini1 机构模型，以边长 40 mm 的方块作为原子任务对象，以非实机环境中发生合法虚拟抓取事件作为任务完成标志。研究结果由候选服务配置、分臂可行性关系、操作质量和验证证据组成，为第四章的多停靠选择、任务分配及路径规划提供输入。",
+      "previous": "第三章 面向方块抓取任务的移动底盘与双臂可达性建模",
+      "next": "本章把几何包络、末态逆解和抓取过程作为不同层次处理。几何条件用于快速缩小候选范围；五轴逆运动学用于检验位置与接近方向；连续接近和夹爪闭合检查用于建立操作可执行关系。该结构保留已有几何评分的计算效率，并使每个“可执行”条目都有相应的构型或轨迹依据。"
+    },
+    {
+      "paragraph": 9,
+      "text": "其中， 是 URDF 升降关节相对模型零位的位移，不能直接解释为机械臂的离地高度。每臂仅将 joint1 至 joint5 作为末端运动关节，joint6 以独立夹爪变量  处理。两臂共享底盘及升降变量，完整运动构型为 14 维，加入两个夹爪变量后为 16 维。",
+      "previous": "",
+      "next": "本章采用停靠后操作的执行方式。导航时双臂保持已验证的收拢构型和导航高度；停靠后完成升降，服务期间底盘与升降保持固定；串行操作时非工作臂保持规定参考姿态。任务在虚拟抓取事件成立时完成，不要求先抬升、搬运、放置或回位。后续操作与离开停靠点所需的连接、复位和升降动作另行计入转换开销。"
+    },
+    {
+      "paragraph": 13,
+      "text": "机构几何采用 AlohaMini-Simulation 指定提交中的 AlohaMini1 URDF，并与官方 AlohaMini1 模型核对[1–3]。官方说明将 AlohaMini1 标为 SO-ARM100/101、5+1 自由度、标称臂展 40 cm；60 cm 升降总行程只确定行程区间长度。AlohaMini2 的六轴手臂和其他尺寸不用于当前模型。",
+      "previous": "3.1.2 模型来源及必要参数",
+      "next": "模型参数分为直接可用的几何量、需确认的运行量和本章设定的任务量。表 3-1 给出区分，防止把算法参数写成硬件测量结果。"
+    },
+    {
+      "paragraph": 23,
+      "text": "采用 URDF 的平移和旋转",
+      "previous": "左右肩安装变换",
+      "next": "可直接提取"
+    },
+    {
+      "paragraph": 36,
+      "text": "当前 URDF 为零，需补齐",
+      "previous": "应使用有效运行配置",
+      "next": "掌部到捕获中心 TCP"
+    },
+    {
+      "paragraph": 42,
+      "text": "需由几何或标定确定",
+      "previous": "",
+      "next": "方块与初始任务容差"
+    },
+    {
+      "paragraph": 77,
+      "text": "安装旋转按 URDF 的 RPY 顺序  计算，两侧均接近绕  轴旋转 ，不能假定为单位阵[1–3]。",
+      "previous": "右臂安装平移为  m。",
+      "next": "对式（3-8）求逆，得到抓取目标在手臂基座中的位置与方向："
+    },
+    {
+      "paragraph": 130,
+      "text": "3.4.1 与 URDF 一致的正运动学",
+      "previous": "3.4 五轴机械臂逆解与抓取过程验证",
+      "next": "对手臂  的第  个运动关节，记 URDF 固定原点平移为 ，RPY 为 ，归一化关节轴为 。该关节的局部变换为"
+    },
+    {
+      "paragraph": 131,
+      "text": "对手臂  的第  个运动关节，记 URDF 固定原点平移为 ，RPY 为 ，归一化关节轴为 。该关节的局部变换为",
+      "previous": "3.4.1 与 URDF 一致的正运动学",
+      "next": ""
+    },
+    {
+      "paragraph": 136,
+      "text": "第二章已经列出原始关节偏移与轴向，本章直接使用同一组数据。URDF 的 joint origin 是相邻参考系之间的固定偏移，不是可以直接填入 DH 表的连杆长度。采用一致的变换乘积，可避免论文推导与导入模型出现两套几何。",
+      "previous": "",
+      "next": "3.4.2 位置与接近方向约束"
+    },
+    {
+      "paragraph": 282,
+      "text": "原有几何评分与导航停靠材料能够支持建模背景，但不能直接作为当前 AlohaMini1 五轴方块抓取的定量结果。尤其是 navigation_docking_only 只说明导航与停靠代理验证，正式抓取结果应来自 full_manipulation 对应的模型、IK、轨迹与事件记录。",
+      "previous": "本章验证需要回答三类问题。第一，坐标变换、雅可比和几何推导是否与实现一致；第二，在有效机构参数下，分层方法能否识别并验证可执行抓取；第三，候选分辨率、质量排序和扰动是否影响覆盖与执行表现。第一类可以独立数值核对，后两类需要建立完整的仿真配置并运行抓取流程。",
+      "next": "3.8.2 公式实现的数值一致性核对"
+    },
+    {
+      "paragraph": 284,
+      "text": "为检查本章关键公式，采用仓库提取的五个运动关节几何进行 1000 组数值核对，随机种子固定为 20261029。关节角测试区间为  rad，工具变换使用明确给定的非零平移与旋转，底盘高度也采用测试常数；这些量仅为代数检查条件，不作为实际运行限位、TCP 标定值或底盘离地高度。",
+      "previous": "3.8.2 公式实现的数值一致性核对",
+      "next": "坐标测试先用正向链构造世界 TCP，再分别反求单臂末端和底盘变换，与原始矩阵比较。雅可比测试采用  rad 中心差分，与式（3-28）逐项比较。球形高度区间测试比较式（3-21）的区间判断与直接距离不等式，方块宽度测试比较顶点投影与式（3-6）。结果见表 3-2。"
+    },
+    {
+      "paragraph": 342,
+      "text": "当前公式核对已完成。AlohaMini1 的有效限位、TCP 与夹爪开口映射尚需形成完整配置后，才能运行本节的正式抓取实验。本章不填入未测量的完成率、计算时间或相比基线的提升幅度；后续实验结果应与模型和场景版本一并归档。",
+      "previous": "扰动实验在名义已验证候选上对底盘、升降和目标施加误差，并明确是否重新感知和求解。固定分配手臂和允许重新选择手臂应分开报告；每种条件使用一致的扰动样本。对于随机扰动，记录分布、样本数、随机种子及结果置信区间；对于人为边界样本，报告边界检验结果，不能将其当作均匀分布成功概率。",
+      "next": "3.9 本章小结"
+    },
+    {
+      "paragraph": 344,
+      "text": "本章面向桌面 40 mm 方块抓取，将世界任务转换为包含底盘位置、朝向和升降高度的服务配置查询，建立了由几何筛选、五轴逆解、连续接近及夹爪闭合组成的验证过程。坐标变换保留 AlohaMini1 的实际安装旋转，抓取姿态采用位置与接近方向约束，允许面内方向通过工具几何进一步筛选，避免将夹爪自由度误当作末端位姿自由度。",
+      "previous": "3.9 本章小结",
+      "next": "在候选构造方面，本章由完整导航外形推导桌边停靠距离，并由保守工作包络推导升降必要区间；在操作验证方面，推导了任务残差、方向雅可比和阻尼求解步骤，结合关节、碰撞和连续性约束形成可复查的单臂证据；在双臂表达方面，保留任务、配置、手臂三维关系及质量指标，通过逻辑并形成覆盖集合，同时区分候选覆盖、操作执行和实际任务完成。"
+    },
+    {
+      "paragraph": 361,
+      "text": "URDF、限位、工具、夹爪映射 → 配置状态",
+      "previous": "模型配置核对",
+      "next": "单位和零位明确，必要字段有效"
+    },
+    {
+      "paragraph": 385,
+      "text": "本章的正文、公式推导、算法定义和接口已经形成；表 3-2 所列数值一致性核对已执行。完整 AlohaMini1 工作空间、碰撞验证轨迹和方块抓取对比实验需要补齐有效运行参数后执行。章节方法可作为正式实验的实现规范，但实验完成之前，不应将其写成已经取得的硬件抓取性能或算法提升结论。",
+      "previous": "A.3 本阶段成果的使用范围",
+      "next": "参考文献"
+    },
+    {
+      "paragraph": 387,
+      "text": "[1] lemon198. AlohaMini-Simulation robot model. Commit 83f06e734653f2c267d2c30421267024dd4e1fae. 来源链接.",
+      "previous": "参考文献",
+      "next": "[2] liyiteng. AlohaMini1 robot model. Commit 17c6a98d79881a45ab869c1f392ed89c0723a298. 来源链接."
+    },
+    {
+      "paragraph": 388,
+      "text": "[2] liyiteng. AlohaMini1 robot model. Commit 17c6a98d79881a45ab869c1f392ed89c0723a298. 来源链接.",
+      "previous": "[1] lemon198. AlohaMini-Simulation robot model. Commit 83f06e734653f2c267d2c30421267024dd4e1fae. 来源链接.",
+      "next": "[3] liyiteng. AlohaMini documentation and AlohaMini1 description. Commit 17c6a98d79881a45ab869c1f392ed89c0723a298. 来源链接; 来源链接."
+    },
+    {
+      "paragraph": 389,
+      "text": "[3] liyiteng. AlohaMini documentation and AlohaMini1 description. Commit 17c6a98d79881a45ab869c1f392ed89c0723a298. 来源链接; 来源链接.",
+      "previous": "[2] liyiteng. AlohaMini1 robot model. Commit 17c6a98d79881a45ab869c1f392ed89c0723a298. 来源链接.",
+      "next": "[4] Zacharias F, Borst C, Hirzinger G. Capturing Robot Workspace Structure Representing Robot Capabilities. 2007 IEEE/RSJ International Conference on Intelligent Robots and Systems, 2007: 3229–3236. DOI 10.1109/IROS.2007.4399105. Author institution record: 出版或作者页面."
+    }
+  ],
+  "external_relationships": [
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId77",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://elib.dlr.de/51226/",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId73",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/lemon198/AlohaMini-Simulation/blob/83f06e734653f2c267d2c30421267024dd4e1fae/src/Aloha/urdf/Aloha.urdf",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId76",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/liyiteng/AlohaMini/blob/17c6a98d79881a45ab869c1f392ed89c0723a298/AlohaMini1/README.md",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId74",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/liyiteng/AlohaMini/blob/17c6a98d79881a45ab869c1f392ed89c0723a298/AlohaMini1/simulation/src/Aloha/urdf/Aloha.urdf",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId75",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/liyiteng/AlohaMini/blob/17c6a98d79881a45ab869c1f392ed89c0723a298/README.md",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId78",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://jkros.org/_PR/view/?aidx=31149&bidx=2756",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId80",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-4-manipulability/",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/document.xml.rels",
+      "Id": "rId79",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://modernrobotics.northwestern.edu/nu-gm-book-resource/6-2-numerical-inverse-kinematics-part-1-of-2/",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId77",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://elib.dlr.de/51226/",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId73",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/lemon198/AlohaMini-Simulation/blob/83f06e734653f2c267d2c30421267024dd4e1fae/src/Aloha/urdf/Aloha.urdf",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId76",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/liyiteng/AlohaMini/blob/17c6a98d79881a45ab869c1f392ed89c0723a298/AlohaMini1/README.md",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId74",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/liyiteng/AlohaMini/blob/17c6a98d79881a45ab869c1f392ed89c0723a298/AlohaMini1/simulation/src/Aloha/urdf/Aloha.urdf",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId75",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://github.com/liyiteng/AlohaMini/blob/17c6a98d79881a45ab869c1f392ed89c0723a298/README.md",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId78",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://jkros.org/_PR/view/?aidx=31149&bidx=2756",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId80",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-4-manipulability/",
+      "TargetMode": "External"
+    },
+    {
+      "part": "word/_rels/footnotes.xml.rels",
+      "Id": "rId79",
+      "Type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "Target": "https://modernrobotics.northwestern.edu/nu-gm-book-resource/6-2-numerical-inverse-kinematics-part-1-of-2/",
+      "TargetMode": "External"
+    }
+  ]
+}

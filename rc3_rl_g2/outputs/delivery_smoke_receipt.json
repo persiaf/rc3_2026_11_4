@@ -1,0 +1,130 @@
+{
+  "archive_sha256": "2fe860781980ccf7bffbe2fdc0d7945efc5b8941a64c7fe0d0ac3b5bfddc2908",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "import_provenance",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-c",
+        "import importlib,json,pathlib; r=pathlib.Path.cwd().resolve(); result={}; names=['rc3_baseline', 'rc3_fast', 'rc3_improve', 'rc3_rl_research', 'rc3_v3', 'rc3_v4', 'rc3_v5', 'rc3_rl_g2'];\nfor name in names:\n m=importlib.import_module(name); paths=[pathlib.Path(m.__file__).resolve()] if m.__file__ else [pathlib.Path(p).resolve() for p in m.__path__]; assert all(p.is_relative_to(r) for p in paths),(name,paths); result[name]=[str(p) for p in paths]\nprint(json.dumps(result))"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "train_help",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_rl_g2.train_ppo",
+        "--help"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "contract_tests",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "rc3_rl_g2.test_env_g2",
+        "rc3_rl_g2.test_collector_contract",
+        "-v"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "runtime_stop",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_rl_g2.runtime_g2",
+        "--method",
+        "stop",
+        "--nx",
+        "2",
+        "--ny",
+        "2",
+        "--seed",
+        "20261103",
+        "--mode",
+        "mixed",
+        "--output",
+        "portable_smoke_20261103T123824/stop.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "runtime_learned",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_rl_g2.runtime_g2",
+        "--checkpoint",
+        "rc3_rl_g2/outputs/deployment/policy_ppo.pt",
+        "--nx",
+        "2",
+        "--ny",
+        "2",
+        "--seed",
+        "20261103",
+        "--mode",
+        "mixed",
+        "--output",
+        "portable_smoke_20261103T123824/learned.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "independent_stop",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_rl_g2.tools.package_delivery",
+        "validate-plan",
+        "--plan",
+        "portable_smoke_20261103T123824/stop.json",
+        "--output",
+        "portable_smoke_20261103T123824/stop_check.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "independent_learned",
+      "command": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_rl_g2.tools.package_delivery",
+        "validate-plan",
+        "--plan",
+        "portable_smoke_20261103T123824/learned.json",
+        "--output",
+        "portable_smoke_20261103T123824/learned_check.json"
+      ],
+      "returncode": 0
+    }
+  ],
+  "payload_before": {
+    "all_passed": true,
+    "payload_count": 2621,
+    "frozen_dependency_files": 120,
+    "directory": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_rl_g2\\outputs\\portable_test\\rc3_rl_g2_delivery-2fe860781980",
+    "scope": "Included payload integrity; not the omitted full legacy archives/experiments."
+  },
+  "payload_after": {
+    "all_passed": true,
+    "payload_count": 2621,
+    "frozen_dependency_files": 120,
+    "directory": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_rl_g2\\outputs\\portable_test\\rc3_rl_g2_delivery-2fe860781980",
+    "scope": "Included payload integrity; not the omitted full legacy archives/experiments."
+  },
+  "output": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_rl_g2\\outputs\\portable_test\\rc3_rl_g2_delivery-2fe860781980\\portable_smoke_20261103T123824",
+  "scope": "Portable imports, training CLI, targeted contracts, tiny STOP/learned plans and fresh validators only; no training or performance rerun."
+}

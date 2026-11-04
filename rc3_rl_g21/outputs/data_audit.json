@@ -1,0 +1,155 @@
+{
+  "schema": "rc3-g21-teacher-readonly-audit-v1",
+  "statistics": {
+    "initial": {
+      "samples": 512,
+      "scenes": 64,
+      "roots": 64,
+      "raw_root_fraction": 0.125,
+      "root_weight_mass": 0.0587921626984127,
+      "weight_total": 1.0,
+      "positive_delta_count": 39,
+      "delta_greater_than_point1_count": 37,
+      "delta_at_least_point1_count": 37,
+      "stop_near_best_count": 25,
+      "stop_unique_near_best_count": 25,
+      "negative_selection_eligible_count": 25,
+      "positive_delta_distribution": {
+        "count": 39,
+        "minimum": 0.009926767302014805,
+        "q25": 0.27760548992181505,
+        "median": 0.6367237075594505,
+        "q75": 1.0097859462117322,
+        "maximum": 2.382232468085117,
+        "mean": 0.7164483004218446
+      },
+      "all_delta_distribution": {
+        "count": 64,
+        "minimum": -0.228357,
+        "q25": -0.10038141605799714,
+        "median": 0.22753338964933503,
+        "q75": 0.6951685573953921,
+        "maximum": 2.382232468085117,
+        "mean": 0.3826670529702135
+      }
+    },
+    "extra": {
+      "samples": 256,
+      "scenes": 32,
+      "roots": 32,
+      "raw_root_fraction": 0.125,
+      "root_weight_mass": 0.056299603174603176,
+      "weight_total": 1.0,
+      "positive_delta_count": 26,
+      "delta_greater_than_point1_count": 23,
+      "delta_at_least_point1_count": 23,
+      "stop_near_best_count": 6,
+      "stop_unique_near_best_count": 6,
+      "negative_selection_eligible_count": 6,
+      "positive_delta_distribution": {
+        "count": 26,
+        "minimum": 0.05062887259171961,
+        "q25": 0.2860368435793314,
+        "median": 0.8207787459612015,
+        "q75": 1.0114401619793563,
+        "maximum": 1.7202023101278856,
+        "mean": 0.6869274976703792
+      },
+      "all_delta_distribution": {
+        "count": 32,
+        "minimum": -0.22830500000000004,
+        "q25": 0.08546578846057463,
+        "median": 0.474008991596701,
+        "q75": 0.9448264335122856,
+        "maximum": 1.7202023101278856,
+        "mean": 0.5294971770174477
+      }
+    },
+    "combined": {
+      "samples": 768,
+      "scenes": 96,
+      "roots": 96,
+      "raw_root_fraction": 0.125,
+      "root_weight_mass": 0.057961309523809526,
+      "weight_total": 1.0,
+      "positive_delta_count": 65,
+      "delta_greater_than_point1_count": 60,
+      "delta_at_least_point1_count": 60,
+      "stop_near_best_count": 31,
+      "stop_unique_near_best_count": 31,
+      "negative_selection_eligible_count": 31,
+      "positive_delta_distribution": {
+        "count": 65,
+        "minimum": 0.009926767302014805,
+        "q25": 0.2703547487103952,
+        "median": 0.652071443932412,
+        "q75": 1.0107079240629528,
+        "maximum": 2.382232468085117,
+        "mean": 0.7046399793212585
+      },
+      "all_delta_distribution": {
+        "count": 96,
+        "minimum": -0.228357,
+        "q25": -0.0883801999720131,
+        "median": 0.27760548992181505,
+        "q75": 0.8332197207188032,
+        "maximum": 2.382232468085117,
+        "mean": 0.4316104276526249
+      }
+    }
+  },
+  "historical_ppo_log_audit": {
+    "actual_actions": 32768,
+    "stop_actions": 31735,
+    "non_stop_actions": 1033,
+    "completed_episodes": 31735,
+    "logged_episode_proposals": 1033,
+    "episodes_with_search": 733,
+    "episodes_with_one_proposal": 548,
+    "episodes_with_at_least_two_proposals": 185,
+    "last_8192_non_stop_actions": 4,
+    "historical_logs_only": true,
+    "iterations_sha256": "c4b1475bfac2c4a29a7c9246505ed1af258738578234b25fbb8ccf02c5b681b7",
+    "episodes_sha256": "2bf2b9c6bd35d05999203da177b915151285f3ec9b599393c17024392840536e"
+  },
+  "sources": {
+    "initial": {
+      "split": "initial",
+      "teacher_file": "rc3_rl_g2/outputs/teacher_initial/teacher.pkl",
+      "teacher_sha256": "f53d32640dc6a61f7014a0724bc7565c71c254a2ddc087f244a09e9d62d97ac8",
+      "summary_sha256": "3b318daca233fef50035183d03f0f2a1523cfee87065b274104ca7271decc288",
+      "audit_receipt_sha256": "baec42cf2db32abea93477de4ba1a9b29b9964511d5e8bf2c288de1ca03b56a1",
+      "saved_audit_all_passed": true,
+      "sha_checked_before_pickle": true,
+      "saved_weights_recomputed": true
+    },
+    "extra": {
+      "split": "extra",
+      "teacher_file": "rc3_rl_g2/outputs/teacher_extra/teacher.pkl",
+      "teacher_sha256": "46a7c5133c6b7e4529f207365f49aa0b2e8f839ce1cea46f471fd885105d0a8a",
+      "summary_sha256": "ff3f7220e22d2fcaa5e697558f882a38a3f22703aa7756f0f1dae8b63b0eae51",
+      "audit_receipt_sha256": "99eaa31bf816511c08545677ccabe1004a6ff34b8982f5cfa498812cc0c9b2fc",
+      "saved_audit_all_passed": true,
+      "sha_checked_before_pickle": true,
+      "saved_weights_recomputed": true
+    }
+  },
+  "selection_sha256": "666bb760aeb528c6ade231fefcec57af2b39fb2d313b3e01dbe9bb5cd5bf135d",
+  "script_sha256": "8716fb4cc3f57d75e130f868994cb7f4973286b4bbff5ed6fe4d65be60524ff4",
+  "root_labels_sha256": "9e1f40fec74414d30ad5dbf430d7b1d710ce80a8028bf6e59820716eef6d31b9",
+  "scope": {
+    "torch_used": false,
+    "policy_inference_performed": false,
+    "environment_queries": 0,
+    "source_files_modified": false,
+    "conclusions": "Teacher evidence only; not policy performance or real robot feasibility."
+  },
+  "checked_review_claims": {
+    "initial_positive_39_of_64": true,
+    "combined_positive_65_of_96": true,
+    "combined_above_point1_60_of_96": true,
+    "initial_stop_near_best_25_of_64": true,
+    "combined_stop_near_best_31_of_96": true
+  },
+  "source_sha256_unchanged_after_audit": true
+}

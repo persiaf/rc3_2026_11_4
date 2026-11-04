@@ -1,0 +1,41 @@
+{
+  "status": "frozen_before_test",
+  "selection_rule": "minimum validation top3 relative regret; top1 tie break",
+  "candidates": [
+    {
+      "run": "run_extended_20261102",
+      "validation_metrics": {
+        "top1_regret_pct": 4.162459194131963,
+        "top1_objective": 159.33862067858956,
+        "top3_regret_pct": 1.475783910235525,
+        "top3_objective": 155.3428824532552
+      }
+    },
+    {
+      "run": "run_portfolio_20261102",
+      "validation_metrics": {
+        "top1_regret_pct": 4.681145643566706,
+        "top1_objective": 159.50772292060103,
+        "top3_regret_pct": 1.2990589368146548,
+        "top3_objective": 155.2898211899625
+      }
+    },
+    {
+      "run": "run_forest_20261102",
+      "validation_metrics": {
+        "top1_regret_pct": 4.096098140401241,
+        "top3_regret_pct": 1.1962431406170992
+      }
+    }
+  ],
+  "selected": "run_forest_20261102",
+  "fixed_validation_regret_pct": {
+    "top1": 3.7511657633669415,
+    "top3": 1.1348398101185289
+  },
+  "recommended_deployment_policy": "fixed portfolio is stronger on validation; learned policy retained for honest testing",
+  "model_sha256": "a553b653257e46a1661bc5d6e9b18ce815f064c569deca39a3a62c83897cdefd",
+  "test_instances": 192,
+  "ood_instances": 24,
+  "timing_repeats": 3
+}

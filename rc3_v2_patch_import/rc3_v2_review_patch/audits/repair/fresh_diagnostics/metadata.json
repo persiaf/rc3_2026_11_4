@@ -1,0 +1,13 @@
+{
+  "purpose": "Exploratory fresh development diagnostics; not a frozen test or a runtime benchmark.",
+  "data_seed_start": 4200000200,
+  "cases": 8,
+  "horizon": 8,
+  "strategy_scope": "best_immediate scans all eligible windows, then takes maximum immediate gain; not a globally optimal sequence.",
+  "timing_scope": "Search loop only; excludes shared preprocessing, construction, final export and independent validation.",
+  "source_root": "/workspace/scratch/ada4dddf6d6b/analysis/v2_upload",
+  "valid_plans": 48,
+  "total_plans": 48,
+  "bound_scope": "Local travel-plus-stops only, before canonical_route. Additional outside-window redundant-stop removal can exceed this bound; do not use as an upper bound on total environment reward.",
+  "postprocess_note": "Initial analytical-bound key renamed descriptively; no numerical results changed."
+}

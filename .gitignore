@@ -1,0 +1,34 @@
+# Local backup archives and reconstructed copies of the project.
+/project_backups/
+/project_backup_run.log
+**/portable_check/
+**/portable_test/
+/rc3_paper_figures_v1_smoke/
+/rc3_v3_bundle_smoke/
+/rc3_v4_bundle_smoke/
+/rc3_v5_bundle_smoke/
+/rc3_v5_1_bundle_smoke/
+/rc3_g23_closeout/work/
+
+# Rebuildable computational caches; original data manifests are retained.
+/rc3_improve/data_20261102/cache.pkl
+/rc3_improve/data_v2_20261102/cache.pkl
+/rc3_rl_g2/outputs/prepared_train/
+
+# Machine environment and interpreter caches.
+**/.venv/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
+# Local credentials are never project artifacts.
+.env
+.env.local
+.env.*.local
+*.pem
+*.pfx

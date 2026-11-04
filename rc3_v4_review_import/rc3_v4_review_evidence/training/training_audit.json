@@ -1,0 +1,360 @@
+{
+  "scope": "Read-only training evidence audit. No PT load, no Torch, no training, no new-test tuning.",
+  "pickle_safety": {
+    "opcode_scan_first": true,
+    "numeric_numpy_whitelist": true,
+    "v3_opcodes": {
+      "PROTO": 1,
+      "FRAME": 267,
+      "EMPTY_DICT": 121583,
+      "MEMOIZE": 789220,
+      "MARK": 215362,
+      "SHORT_BINUNICODE": 160,
+      "EMPTY_LIST": 92315,
+      "APPENDS": 92239,
+      "BININT1": 197179,
+      "BININT": 236,
+      "BINFLOAT": 435955,
+      "SETITEMS": 121583,
+      "BINGET": 568689,
+      "LONG_BINGET": 910694,
+      "BININT2": 68337,
+      "STACK_GLOBAL": 4,
+      "NEWFALSE": 909,
+      "NEWTRUE": 347,
+      "TUPLE3": 4,
+      "REDUCE": 191208,
+      "NONE": 12,
+      "TUPLE": 1540,
+      "BUILD": 4,
+      "SHORT_BINBYTES": 189666,
+      "TUPLE2": 190050,
+      "BYTEARRAY8": 1536,
+      "TUPLE1": 1154,
+      "STOP": 1
+    },
+    "v4_opcodes": {
+      "PROTO": 1,
+      "FRAME": 2272,
+      "EMPTY_DICT": 152461,
+      "MEMOIZE": 1561571,
+      "MARK": 431894,
+      "SHORT_BINUNICODE": 171,
+      "EMPTY_LIST": 92699,
+      "APPENDS": 92623,
+      "BININT1": 536841,
+      "BININT": 240,
+      "BINFLOAT": 435955,
+      "SETITEMS": 152461,
+      "BINGET": 568689,
+      "LONG_BINGET": 1652145,
+      "BININT2": 68337,
+      "STACK_GLOBAL": 4,
+      "NEWFALSE": 911,
+      "NEWTRUE": 349,
+      "TUPLE3": 30884,
+      "REDUCE": 376478,
+      "NONE": 18,
+      "TUPLE": 186810,
+      "BUILD": 6,
+      "SHORT_BINBYTES": 189666,
+      "TUPLE2": 282684,
+      "BYTEARRAY8": 186804,
+      "TUPLE1": 62910,
+      "STOP": 1
+    }
+  },
+  "counts": {
+    "train_scenes": 96,
+    "validation_scenes": 18,
+    "new_test_scenes": 39,
+    "train_states": 384,
+    "training_scenes_represented": 96,
+    "states_per_scene": {
+      "4": 96
+    },
+    "positive_states": 349,
+    "zero_states": 35,
+    "legal_actions": 30200,
+    "positive_actions": 4353,
+    "zero_actions": 25847,
+    "teacher_counts": {
+      "oracle": 128,
+      "detour": 128,
+      "random": 128
+    },
+    "step_counts": {
+      "0": 48,
+      "2": 48,
+      "4": 48,
+      "6": 48,
+      "1": 48,
+      "3": 48,
+      "5": 48,
+      "7": 48
+    },
+    "train_sizes": {
+      "(10, 10)": 96
+    },
+    "test_sizes": {
+      "(10, 10)": 18,
+      "(6, 6)": 9,
+      "(14, 14)": 9,
+      "(20, 20)": 3
+    }
+  },
+  "data_reuse": {
+    "all_old_top_level_fields_unchanged": true,
+    "field_checks": {
+      "schema": true,
+      "feature_names": true,
+      "scenes": true,
+      "initial_routes": true,
+      "reference_costs": true,
+      "trajectories": true,
+      "case_metadata": true,
+      "statistics": true
+    },
+    "rows_equal_except_added_graphs": true,
+    "graph_shapes_and_lengths_valid": true,
+    "all_graph_values_finite": true,
+    "max_candidates": 32,
+    "max_tasks": 8
+  },
+  "split_checks": {
+    "train_validation_disjoint": true,
+    "test_train_disjoint": true,
+    "test_validation_disjoint": true,
+    "new_old_test_disjoint": null,
+    "old_test_metadata_available": false,
+    "historical_workspace_exclusion": "Uploaded scan records 2863 seeds from 3111 source files; full original historical workspace is not independently available, so this audit does not attest all history."
+  },
+  "hashes": {
+    "v3_data": {
+      "expected": "310401a8e08393bc8d595a84857c4563a69dddd994b38041654dbcc03e585999",
+      "actual": "310401a8e08393bc8d595a84857c4563a69dddd994b38041654dbcc03e585999",
+      "match": true
+    },
+    "v4_data": {
+      "expected": "82114aa6ce456fa136a814595331ec6aeab5a90acd4269165ece3b114bd25553",
+      "actual": "82114aa6ce456fa136a814595331ec6aeab5a90acd4269165ece3b114bd25553",
+      "match": true
+    },
+    "test_cases": {
+      "expected": "6dfd2cbc8ffa2b0dfe8a9ab192db3775f562dd7bc96c4ff13cac834720f51219",
+      "actual": "6dfd2cbc8ffa2b0dfe8a9ab192db3775f562dd7bc96c4ff13cac834720f51219",
+      "match": true
+    },
+    "train.py": {
+      "expected": "f13a952818545653124f41abcf0299cf22e2cb5e6c4e91fa47d807b3c85a2616",
+      "actual": "f13a952818545653124f41abcf0299cf22e2cb5e6c4e91fa47d807b3c85a2616",
+      "match": true
+    },
+    "model.py": {
+      "expected": "ca68baddd31927e4cba334ff3501e650aa2ccbfb2883192c6e651b632e730b89",
+      "actual": "ca68baddd31927e4cba334ff3501e650aa2ccbfb2883192c6e651b632e730b89",
+      "match": true
+    },
+    "features.py": {
+      "expected": "d0b4e178298900634e0b4ff169f1c7510627d4a0d2603d53d795da1588443dba",
+      "actual": "d0b4e178298900634e0b4ff169f1c7510627d4a0d2603d53d795da1588443dba",
+      "match": true
+    }
+  },
+  "training": {
+    "runs": 6,
+    "epochs_per_run": 80,
+    "batch_size": 8,
+    "updates_expected": 23040,
+    "updates_recorded": 23040,
+    "history_rows": 54,
+    "all_history_update_counts_correct": true,
+    "runs_details": [
+      {
+        "variant": "control",
+        "seed": 17,
+        "selected_epoch": 20,
+        "epochs_recorded": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "history_selection_correct": true,
+        "metadata_matches": true,
+        "parameter_count": 38438,
+        "parameter_count_matches": true,
+        "bytes": 155570,
+        "sha256": "22a9a5fcfdcbd7b834779af3bd3373083dd403a05adef4357fc546f170404602",
+        "normalization_exact": true,
+        "phase": "gain_supervised",
+        "stop_rule": "binary_threshold",
+        "stop_threshold": 0.9
+      },
+      {
+        "variant": "control",
+        "seed": 29,
+        "selected_epoch": 30,
+        "epochs_recorded": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "history_selection_correct": true,
+        "metadata_matches": true,
+        "parameter_count": 38438,
+        "parameter_count_matches": true,
+        "bytes": 155604,
+        "sha256": "a66f4ef613678a3730703c6a5bb37217892a20a2dff26d1fa4d18a1b85917197",
+        "normalization_exact": true,
+        "phase": "gain_supervised",
+        "stop_rule": "binary_threshold",
+        "stop_threshold": 0.9
+      },
+      {
+        "variant": "control",
+        "seed": 43,
+        "selected_epoch": 40,
+        "epochs_recorded": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "history_selection_correct": true,
+        "metadata_matches": true,
+        "parameter_count": 38438,
+        "parameter_count_matches": true,
+        "bytes": 155708,
+        "sha256": "a383d172387d78c95998a986fee16de9e27a7535b7456ca7861eaff54f3e5cbd",
+        "normalization_exact": true,
+        "phase": "gain_supervised",
+        "stop_rule": "binary_threshold",
+        "stop_threshold": 0.9
+      },
+      {
+        "variant": "structured",
+        "seed": 17,
+        "selected_epoch": 60,
+        "epochs_recorded": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "history_selection_correct": true,
+        "metadata_matches": true,
+        "parameter_count": 38438,
+        "parameter_count_matches": true,
+        "bytes": 156184,
+        "sha256": "10b47390842512024b8b4c5c825c2989106ec412a76d6d4f5d848cd81f9acf61",
+        "normalization_exact": true,
+        "phase": "gain_supervised",
+        "stop_rule": "binary_threshold",
+        "stop_threshold": 0.9
+      },
+      {
+        "variant": "structured",
+        "seed": 29,
+        "selected_epoch": 20,
+        "epochs_recorded": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "history_selection_correct": true,
+        "metadata_matches": true,
+        "parameter_count": 38438,
+        "parameter_count_matches": true,
+        "bytes": 155930,
+        "sha256": "fc26f2146df555503fd0e08e000c6d98aba756322efc98c30779e56187182fbc",
+        "normalization_exact": true,
+        "phase": "gain_supervised",
+        "stop_rule": "binary_threshold",
+        "stop_threshold": 0.9
+      },
+      {
+        "variant": "structured",
+        "seed": 43,
+        "selected_epoch": 20,
+        "epochs_recorded": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ],
+        "history_selection_correct": true,
+        "metadata_matches": true,
+        "parameter_count": 38438,
+        "parameter_count_matches": true,
+        "bytes": 155912,
+        "sha256": "5a66a16e9737929b2f35e01bcc1380f189146cf0fd24365fb71c1212a4742767",
+        "normalization_exact": true,
+        "phase": "gain_supervised",
+        "stop_rule": "binary_threshold",
+        "stop_threshold": 0.9
+      }
+    ],
+    "selected": {
+      "control": {
+        "seed": 29,
+        "epoch": 30,
+        "val_gain_pct": 0.9962191762038226,
+        "chosen_by_validation": true,
+        "exported_npz_identical_to_selected_seed": true
+      },
+      "structured": {
+        "seed": 17,
+        "epoch": 60,
+        "val_gain_pct": 1.2872931058050898,
+        "chosen_by_validation": true,
+        "exported_npz_identical_to_selected_seed": true
+      }
+    },
+    "gain_scale_derived": 0.6853467226028442,
+    "positive_weight_derived": 5.937744084539398,
+    "actually_retrained": false
+  },
+  "source_files_modified": false,
+  "validation_cache_crosscheck": {
+    "scenes": 18,
+    "plans": 108,
+    "source": "Existing first N validation scenes; complete objective checked against selected training history.",
+    "max_gain_percentage_point_difference": 4.085620730620576e-14,
+    "all_head_arrays_bitwise_equal": true,
+    "all_final_plans_equal": true
+  },
+  "elapsed_s": 16.002857970999912
+}

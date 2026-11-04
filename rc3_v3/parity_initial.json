@@ -1,0 +1,814 @@
+{
+  "status": "pass",
+  "scope": "Validation scenes only. Same-state three-head numeric parity and independently executed full action/cost rollouts. No test cases or costs inspected.",
+  "schema": "rc3-v3-budget28",
+  "device": "cuda",
+  "validation_scenes": 18,
+  "horizon": 8,
+  "seconds": 12.260266299999785,
+  "torch": "2.12.1+cu126",
+  "data_sha256": "310401a8e08393bc8d595a84857c4563a69dddd994b38041654dbcc03e585999",
+  "checkpoints": [
+    {
+      "checkpoint": "rc3_v3\\run_v3_20261102\\attention_seed17.pt",
+      "numpy_checkpoint": "rc3_v3\\run_v3_20261102\\attention_seed17.npz",
+      "checkpoint_sha256": "947de6eafd5b38f4f0689d10bec1ecb45212022e60145625625f983cd0a59218",
+      "numpy_sha256": "cafa0c2a9d421ef49850df54280f7b5b52164a2754967aed269a8ee0b04335df",
+      "states_checked": 114,
+      "score_max_abs_error": {
+        "cpu_vs_numpy": 2.2649765014648438e-06,
+        "batch_vs_cpu": 3.2186508178710938e-06
+      },
+      "all_passed": true,
+      "mismatches": [],
+      "cases": [
+        {
+          "scene_index": 0,
+          "seed": 806477264,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            61,
+            42,
+            62,
+            43,
+            59,
+            38,
+            37,
+            72
+          ],
+          "batch_cpu_numpy_costs": [
+            269.1,
+            269.1,
+            269.1
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 1,
+          "seed": 581642321,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            51,
+            50,
+            58,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            295.04999999999995,
+            295.04999999999995,
+            295.04999999999995
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 2,
+          "seed": 777931079,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            71,
+            3,
+            21,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            277.7999999999999,
+            277.7999999999999,
+            277.7999999999999
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 3,
+          "seed": 1432654736,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            70,
+            72,
+            71,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            242.44999999999993,
+            242.44999999999993,
+            242.44999999999993
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 4,
+          "seed": 446139775,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            34,
+            37,
+            70,
+            41,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            272.29999999999995,
+            272.29999999999995,
+            272.29999999999995
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 5,
+          "seed": 458581588,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            73,
+            39,
+            39,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            247.29999999999998,
+            247.29999999999998,
+            247.29999999999998
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 6,
+          "seed": 700647362,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            61,
+            2,
+            5,
+            67,
+            59,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            310.57902829759996,
+            310.57902829759996,
+            310.57902829759996
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 7,
+          "seed": 2048557680,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            24,
+            24,
+            14,
+            13,
+            11,
+            12,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            344.8280905734,
+            344.8280905734,
+            344.8280905734
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 8,
+          "seed": 1988403149,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            27,
+            27,
+            7,
+            50,
+            35,
+            33,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            244.1120937986,
+            244.1120937986,
+            244.1120937986
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 9,
+          "seed": 172405326,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            49,
+            46,
+            12,
+            21,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            334.78521107280005,
+            334.78521107280005,
+            334.78521107280005
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 10,
+          "seed": 2032356671,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            72,
+            72,
+            44,
+            61,
+            13,
+            32,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            278.73717679379996,
+            278.73717679379996,
+            278.73717679379996
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 11,
+          "seed": 488840541,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            31,
+            70,
+            73,
+            70,
+            73,
+            74,
+            78,
+            78
+          ],
+          "batch_cpu_numpy_costs": [
+            269.63813668939997,
+            269.63813668939997,
+            269.63813668939997
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 12,
+          "seed": 1728920484,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            50,
+            73,
+            85,
+            77,
+            99,
+            81,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            389.1587565663998,
+            389.1587565663998,
+            389.1587565663998
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 13,
+          "seed": 397643615,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            27,
+            27,
+            23,
+            14,
+            13,
+            7,
+            7,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            208.67554965620008,
+            208.67554965620008,
+            208.67554965620008
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 14,
+          "seed": 2136803537,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            35,
+            35,
+            29,
+            38,
+            35,
+            28,
+            29,
+            5
+          ],
+          "batch_cpu_numpy_costs": [
+            368.25396542759995,
+            368.25396542759995,
+            368.25396542759995
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 15,
+          "seed": 737123377,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            3,
+            1,
+            3,
+            3,
+            46,
+            11,
+            13,
+            45
+          ],
+          "batch_cpu_numpy_costs": [
+            329.9219575368,
+            329.9219575368,
+            329.9219575368
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 16,
+          "seed": 1511644165,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            62,
+            46,
+            46,
+            86,
+            48,
+            46,
+            26,
+            26
+          ],
+          "batch_cpu_numpy_costs": [
+            350.18298971519977,
+            350.18298971519977,
+            350.18298971519977
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 17,
+          "seed": 1895125488,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            57,
+            53,
+            27,
+            8,
+            56,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            337.4467437822,
+            337.4467437822,
+            337.4467437822
+          ],
+          "independent_validation": true
+        }
+      ]
+    },
+    {
+      "checkpoint": "rc3_v3\\run_v3_20261102\\mlp_seed43.pt",
+      "numpy_checkpoint": "rc3_v3\\run_v3_20261102\\mlp_seed43.npz",
+      "checkpoint_sha256": "b71a288e919787185347ce955aa786e089748daba767ca3c8a9a02ea606d1777",
+      "numpy_sha256": "9a8bd1184a7a4a55f8fef27f9e9bb1e2b25a5efadedd1bc993913c4260642b53",
+      "states_checked": 117,
+      "score_max_abs_error": {
+        "cpu_vs_numpy": 9.5367431640625e-07,
+        "batch_vs_cpu": 1.430511474609375e-06
+      },
+      "all_passed": true,
+      "mismatches": [],
+      "cases": [
+        {
+          "scene_index": 0,
+          "seed": 806477264,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            37,
+            62,
+            42,
+            38,
+            61,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            270.65,
+            270.65,
+            270.65
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 1,
+          "seed": 581642321,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            51,
+            58,
+            8,
+            4,
+            2,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            295.04999999999995,
+            295.04999999999995,
+            295.04999999999995
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 2,
+          "seed": 777931079,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            21,
+            21,
+            55,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            277.7999999999999,
+            277.7999999999999,
+            277.7999999999999
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 3,
+          "seed": 1432654736,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            70,
+            72,
+            79,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            242.44999999999993,
+            242.44999999999993,
+            242.44999999999993
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 4,
+          "seed": 446139775,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            69,
+            37,
+            59,
+            82,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            274.04999999999995,
+            274.04999999999995,
+            274.04999999999995
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 5,
+          "seed": 458581588,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            48,
+            39,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            247.29999999999998,
+            247.29999999999998,
+            247.29999999999998
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 6,
+          "seed": 700647362,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            47,
+            8,
+            61,
+            49,
+            4,
+            2,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            305.751896936,
+            305.751896936,
+            305.751896936
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 7,
+          "seed": 2048557680,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            13,
+            11,
+            22,
+            24,
+            14,
+            75,
+            75,
+            24
+          ],
+          "batch_cpu_numpy_costs": [
+            344.6291035414,
+            344.6291035414,
+            344.6291035414
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 8,
+          "seed": 1988403149,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            29,
+            35,
+            33,
+            35,
+            33,
+            13,
+            14,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            244.78771938819997,
+            244.78771938819997,
+            244.78771938819997
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 9,
+          "seed": 172405326,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            45,
+            45,
+            12,
+            50,
+            44,
+            70,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            332.80124554060006,
+            332.80124554060006,
+            332.80124554060006
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 10,
+          "seed": 2032356671,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            72,
+            31,
+            60,
+            17,
+            72,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            277.97754836859997,
+            277.97754836859997,
+            277.97754836859997
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 11,
+          "seed": 488840541,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            31,
+            70,
+            19,
+            19,
+            61,
+            2,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            273.0976707456,
+            273.0976707456,
+            273.0976707456
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 12,
+          "seed": 1728920484,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            51,
+            73,
+            81,
+            81,
+            86,
+            86,
+            99,
+            77
+          ],
+          "batch_cpu_numpy_costs": [
+            389.1587565663998,
+            389.1587565663998,
+            389.1587565663998
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 13,
+          "seed": 397643615,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            7,
+            35,
+            7,
+            32,
+            35,
+            23,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            210.96337601420007,
+            210.96337601420007,
+            210.96337601420007
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 14,
+          "seed": 2136803537,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            77,
+            25,
+            25,
+            77,
+            80,
+            66,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            360.92635602039996,
+            360.92635602039996,
+            360.92635602039996
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 15,
+          "seed": 737123377,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            3,
+            4,
+            57,
+            74,
+            68,
+            68,
+            66,
+            13
+          ],
+          "batch_cpu_numpy_costs": [
+            330.89277279899994,
+            330.89277279899994,
+            330.89277279899994
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 16,
+          "seed": 1511644165,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            62,
+            82,
+            7,
+            86,
+            6,
+            8,
+            42,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            348.1981414415999,
+            348.1981414415999,
+            348.1981414415999
+          ],
+          "independent_validation": true
+        },
+        {
+          "scene_index": 17,
+          "seed": 1895125488,
+          "actions_match": true,
+          "costs_match": true,
+          "export_match": true,
+          "actions": [
+            53,
+            57,
+            47,
+            11,
+            12,
+            11,
+            12,
+            null
+          ],
+          "batch_cpu_numpy_costs": [
+            336.126630675,
+            336.126630675,
+            336.126630675
+          ],
+          "independent_validation": true
+        }
+      ]
+    }
+  ]
+}

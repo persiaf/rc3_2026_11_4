@@ -1,0 +1,78 @@
+{
+  "scope": "Read-only G0/G1 environment semantic audit before G2; no neural training or full G0 rerun; frozen sources unchanged.",
+  "source_root": "/workspace/scratch/ada4dddf6d6b/analysis/g01_review/source/rc3_rl_research",
+  "conclusion": "Normal step-path semantics support proceeding to G2 preparation. No observed finding invalidates the reported G0 mechanism counts. Correct the verified state-load finite-value gap and make the PPO collector contract explicit before training/resume.",
+  "verified_behaviors": [
+    "Current/best/anchor are separate and proposals are independently certified before bounded acceptance.",
+    "Quality reward uses best-so-far improvement and final fallback correction; unchanged and failed proposals are charged.",
+    "STOP, horizon and work-budget endings inside step are true terminal states. Collector boundary preserves nonterminal state and bootstrap.",
+    "rollout_record stores exact sampled action order, mask, chosen action and finite sampled log probability/value, and rejects mismatch with step info.",
+    "Shared menu construction never calls the exact repair solver; repair proposer explicitly forbids only the one removed candidate for replace.",
+    "Immutable F, arm_dist and D are created from immutable byte buffers; input source/problem are deep-copied."
+  ],
+  "findings": [
+    {
+      "priority": "P1 integration requirement",
+      "title": "External termination events are not PPO transitions",
+      "locations": [
+        "rl_env.py::terminate (302-322)",
+        "rl_env.py::rollout_record (41-62)",
+        "rl_env.py::step (293-300)",
+        "runtime_rl.py::run deadline paths"
+      ],
+      "nature": "Known event-based runtime design; not a defect in the audited G0 totals, which include events. It becomes a training bug if a collector uses transitions alone.",
+      "evidence": "Minimal fixture: default step reward=-0.005, external termination reward=-0.002, complete return=-0.007. With potential_weight=.4, step reward=-.405 and terminal event=+.398, complete return=-.007. The stored prior transition remains terminated=False.",
+      "correction": "For the first PPO version use only step-driven horizon/work/STOP true terminals and collector truncations for batch cuts. If external deadlines/finalize are used in training, merge terminal event reward into the final transition, update terminal observation and terminated=True, and disable bootstrap. Zero-action runtime termination produces an episode metric but no actor sample.",
+      "blocking": "Blocks a PPO collector that ignores external events; does not block one explicitly limited to step-driven terminals.",
+      "repro": "terminal_event_repro.json"
+    },
+    {
+      "priority": "P1 restoration hardening",
+      "title": "load_state_dict accepts NaN costs and totals",
+      "locations": [
+        "rl_env.py::load_state_dict (353-391)"
+      ],
+      "nature": "Verified validation gap in checkpoint restoration; clean saved G0 data were not shown to contain NaN.",
+      "evidence": "Injecting NaN into each of anchor_cost/current_cost/best_cost in an otherwise valid synthetic state is accepted; the next step returns nonfinite reward. NaN total_reward is also accepted. abs(nan)>tolerance evaluates False.",
+      "correction": "Validate every stored cost/return/shaping/penalty/timing numeric as finite before comparisons; costs nonnegative, steps/work integer and nonnegative; assert best_cost<=current_cost and best_cost<=anchor_cost, current acceptance bound, and termination/horizon/work/returned-certificate consistency. Validate menu/config identity before exposing restored observation. Reject malformed state before mutating env.",
+      "blocking": "Fix before enabling resumable training/checkpoint restoration. It is not evidence that ordinary current runs are corrupt.",
+      "repro": "state_load_minimal_repro.json"
+    },
+    {
+      "priority": "P1 network contract",
+      "title": "Current observe output is not the proposed graph-policy input",
+      "locations": [
+        "rl_env.py::observe (135-162)",
+        "action_builder.py::FEATURE_NAMES",
+        "action_builder.py::build_actions action_details (194-197)"
+      ],
+      "nature": "Explicit G1 scope boundary, not an implementation bug.",
+      "evidence": "Observation includes 22 scalar action features, route/costs and task coverage counts, but no F/D/candidate geometry. Per-action required-task/pool/retained lists remain in menu diagnostics, outside observe. The report does not claim this observation is a sufficient Markov representation.",
+      "correction": "Create an immutable scene graph registry keyed by problem_id and feature schema/hash, supply F or its valid route-level union, navigation D, service attributes and dynamic route/coverage/best/budget context. Persist sufficient raw graph/ordered menu identifiers for PPO recomputation. Treat the 22-feature shared MLP as a compact baseline, not automatically a graph policy.",
+      "blocking": "Required to implement the proposed graph actor-critic; existing environment can be reused."
+    },
+    {
+      "priority": "P2 baseline and history contract",
+      "title": "Replay context hashes cannot serve as semantic repeated-query keys",
+      "locations": [
+        "action_builder.py::build_actions context_key/action_context_keys (169-172,206)",
+        "rl_env.py::step history append",
+        "policies.py::DetourPolicy.select (53-71)",
+        "policies.py::AdaptiveOperatorPolicy.update (103-111)"
+      ],
+      "nature": "Disclosed interface-reference limitation, not concealed strong baseline.",
+      "evidence": "Action key includes remaining budget, step count and the full prior history. The same route/operator/window query gets a different key every step. Greedy has no repeat handling; adaptive reference rewards every accepted feasible move with 1, including no-change proposals.",
+      "correction": "Separate replay identity from proposal identity: use problem+full route+operator/window/forbidden node+solver caps for deterministic repeated-query detection. Store outcome/changed flags. Share any no-op/failed-query suppression and menu refill/cap rules across PPO, BC and rule baselines. Tune a stronger rule baseline on development scenes and report no-change reward/acceptance handling explicitly.",
+      "blocking": "Must fix or explicitly control before claiming PPO beats a strong same-action rule. Does not invalidate G0 search-tree evidence."
+    }
+  ],
+  "disclosed_tradeoff_not_bug": {
+    "menu_work": "step eagerly constructs the next observation/menu; menu work is charged on the next step or terminate event. This is a documented soft budget, and pending_menu_work/work_after_menu expose it. Future lazy/stop-before-menu optimization must get a new protocol and shared baseline treatment, not alter old records.",
+    "timing": "Work units are deterministic proxies, not FLOPs or CPU shares. Complete scene-to-plan timing remains necessary."
+  },
+  "actual_actions": [
+    "Read rl_env.py, action_builder.py, repair_proposal.py, adapter.py, policies.py, runtime_rl.py, types.py, test_env.py.",
+    "Ran only short synthetic fixture reproductions for malformed-state loading and external terminal-event accounting.",
+    "No source code modification, no policy training, no full G0 rerun."
+  ]
+}

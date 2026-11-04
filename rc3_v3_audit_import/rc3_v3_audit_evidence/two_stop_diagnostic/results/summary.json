@@ -1,0 +1,84 @@
+{
+  "status": "complete",
+  "elapsed_s": 26.274791688999926,
+  "validation_scenes": 18,
+  "test_scenes_accessed": 0,
+  "methods": [
+    "detour",
+    "learned",
+    "two_stop_feasible_gain"
+  ],
+  "dp_call_cap": 8,
+  "repeats_per_method_case": 1,
+  "model_sha256": "63e200f204b1e53c630f178bf7f60665944222becb60126b11c6461613db234d",
+  "case_sha256": "fa19ef5c6822f04fb0d9e7e1416355d8e0313bda06d586ed153e36d15c026492",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "all_independently_valid": true,
+  "all_reference_bounds": true,
+  "chosen_lower_bound_checks": 144,
+  "chosen_lower_bound_failures": 0,
+  "summaries": [
+    {
+      "method": "detour",
+      "total": 18,
+      "success": 18,
+      "mean_gain_pct": 0.628940312384699,
+      "median_planning_ms": 348.71803350006303,
+      "median_cold_total_ms": 515.8887795000169,
+      "mean_dp_calls": 8.0,
+      "mean_accepted": 1.8333333333333333,
+      "median_ranking_ms": 0.10842350002349121
+    },
+    {
+      "method": "learned",
+      "total": 18,
+      "success": 18,
+      "mean_gain_pct": 1.0016177255757863,
+      "median_planning_ms": 365.9117164999657,
+      "median_cold_total_ms": 519.9130719999516,
+      "mean_dp_calls": 8.0,
+      "mean_accepted": 2.4444444444444446,
+      "median_ranking_ms": 6.048447499836129
+    },
+    {
+      "method": "two_stop_feasible_gain",
+      "total": 18,
+      "success": 18,
+      "mean_gain_pct": 0.6689345048632842,
+      "median_planning_ms": 448.8756584999578,
+      "median_cold_total_ms": 606.1052364999,
+      "mean_dp_calls": 8.0,
+      "mean_accepted": 1.8888888888888888,
+      "median_ranking_ms": 75.20562200005543
+    }
+  ],
+  "comparisons": [
+    {
+      "method": "two_stop_feasible_gain",
+      "reference": "detour",
+      "n": 18,
+      "mean_cost_reduction_pct": 0.040136585683932725,
+      "wins": 2,
+      "ties": 15,
+      "losses": 1,
+      "median_reference_over_new_time": 0.8038591888549802
+    },
+    {
+      "method": "two_stop_feasible_gain",
+      "reference": "learned",
+      "n": 18,
+      "mean_cost_reduction_pct": -0.33777010863170515,
+      "wins": 4,
+      "ties": 2,
+      "losses": 12,
+      "median_reference_over_new_time": 0.8569643377418744
+    }
+  ],
+  "scope": "Post-freeze exploratory validation-set diagnostic, one timed run per method per scene on current Linux hardware; not an independent test or final performance claim.",
+  "work_budget_caveat": "All use the same 8 original exact-repair calls, but the two-stop rule performs extra fully timed candidate scanning, so equal call counts do not imply equal computational work.",
+  "ranking_semantics": "Exact feasible zero/one/two-stop restricted replacement gives a lower bound on achievable local improvement, not an upper bound. No windows are pruned based on this gain; all-zero gains fall back to detour. Outside canonicalization can increase realized gain.",
+  "diagnostic_script_sha256": "cfa6194f0d0b22b2dc887162aac417130105a1e45d701c5b839cc343ac037c70",
+  "script_portability_note": "After the recorded run, only --source-root path resolution and its redundant equality check were changed; algorithm and measurement functions were unchanged."
+}

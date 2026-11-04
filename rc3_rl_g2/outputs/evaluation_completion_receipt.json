@@ -1,0 +1,59 @@
+{
+  "schema": "rc3-g2-evaluation-completion-v1",
+  "completed_utc": "2026-11-03T12:29:14.244129+00:00",
+  "execution": "Actual serial invocation of tools.evaluate_all; no interrupted partial evaluation or rerun",
+  "datasets": {
+    "controls_fixed_work": {
+      "rows": 240,
+      "complete": 240,
+      "valid": 240,
+      "results_sha256": "174b0a02e5f92f6662fe726fc54668e2a5460cd4cd9c11425e2bc9f53b85d3a2",
+      "evidence_files_present": true
+    },
+    "final_fixed_work": {
+      "rows": 216,
+      "complete": 216,
+      "valid": 216,
+      "results_sha256": "9398ab1d1c2a14d8201b93c5c588b61537dd201d5496f4fe2bee7436d5356a17",
+      "evidence_files_present": true
+    },
+    "final_soft_time_0400ms": {
+      "rows": 216,
+      "complete": 216,
+      "valid": 216,
+      "results_sha256": "9dd676416a3710bc4e9316f7256f6c61f1cdb30e6314707a829879e142936bf3",
+      "evidence_files_present": true
+    }
+  },
+  "checkpoint_stages": {
+    "8192": {
+      "rows": 24,
+      "complete": 24,
+      "valid": 24,
+      "root_stop": 24,
+      "results_sha256": "9ea3c9ba074f56a6fcc93820d9071e331fe459bd8bc21125fd407b15e4df66a0"
+    },
+    "16384": {
+      "rows": 24,
+      "complete": 24,
+      "valid": 24,
+      "root_stop": 24,
+      "results_sha256": "d9cfe89aa5e5113990650a7d1a636786cd4313ac552d960ae5e9c707a5dbc576"
+    },
+    "32768": {
+      "rows": 24,
+      "complete": 24,
+      "valid": 24,
+      "root_stop": 24,
+      "results_sha256": "36527ae18ce0dadaa2888a2079706df21f4f32665922eb9f97f487741466b372"
+    }
+  },
+  "formal_comparison_runs": 672,
+  "independent_validation_scenes": 24,
+  "summary_sha256": "7bef1603203269e3a8727310358abfea50a1c1503fce9388fdec58b3e6b4be51",
+  "teacher_fit_rows": 2304,
+  "teacher_fit_new_environment_queries": 0,
+  "teacher_fit_summary_sha256": "d090a3d40775d51401040a164524007ffac3063321352ea6ac7e60fb39c0f8d5",
+  "production_sources_unchanged": 18,
+  "scope": "Count, identity and file-presence check; independent saved-ledger audit and actual plan replay are separate work. Training resumed from 18432 with possible unlogged tail disclosed in interruption_receipt."
+}

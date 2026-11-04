@@ -1,0 +1,127 @@
+{
+  "display_id": "first_main100_fixed_call_case",
+  "seed": 1565649625,
+  "tables": 100,
+  "tasks": 158,
+  "candidates": 800,
+  "selection_rule": "First 100-table case in the frozen test_cases.json order; repeat 0 for all five main fixed-call methods, irrespective of cost or learning gain.",
+  "source": {
+    "path": "rc3_v4/results/plans/scene_plan_000_1565649625.json",
+    "bytes": 3220301,
+    "sha256": "491551177f3ba509a4e714db724fb27e99acb59dc46c45db589c4c0ce03cb79d"
+  },
+  "common_axes_limits": [
+    -0.6,
+    22.6,
+    -0.6,
+    19.6
+  ],
+  "central_crop": [
+    8.8,
+    13.2,
+    7.6,
+    11.4
+  ],
+  "crop_rule": "Central 20% in x and y of the saved x_lines/y_lines envelope; selected without inspecting method performance.",
+  "all_panels_share_style_and_axes": true,
+  "new_planning_or_inference": false,
+  "new_timing": false,
+  "methods": [
+    {
+      "label": "fixed3_rep0",
+      "display_label": "Fixed3",
+      "plan_pointer": "/plans/fixed3_rep0",
+      "config": {
+        "id": "fixed3",
+        "method": "fixed3",
+        "policy": null,
+        "kind": "calls",
+        "horizon": 0,
+        "seconds": null,
+        "repeats": 3
+      },
+      "L_m": 209.55,
+      "K": 94,
+      "lambda_m": 0.75,
+      "J_equivalent_m": 280.05
+    },
+    {
+      "label": "detour8_rep0",
+      "display_label": "Detour8",
+      "plan_pointer": "/plans/detour8_rep0",
+      "config": {
+        "id": "detour8",
+        "method": "detour",
+        "policy": null,
+        "kind": "calls",
+        "horizon": 8,
+        "seconds": null,
+        "repeats": 3
+      },
+      "L_m": 205.7,
+      "K": 94,
+      "lambda_m": 0.75,
+      "J_equivalent_m": 276.2
+    },
+    {
+      "label": "v3_mlp8_rep0",
+      "display_label": "旧 MLP8",
+      "plan_pointer": "/plans/v3_mlp8_rep0",
+      "config": {
+        "id": "v3_mlp8",
+        "method": "learned",
+        "policy": "v3_mlp",
+        "kind": "calls",
+        "horizon": 8,
+        "seconds": null,
+        "repeats": 3
+      },
+      "L_m": 205.1,
+      "K": 93,
+      "lambda_m": 0.75,
+      "J_equivalent_m": 274.85
+    },
+    {
+      "label": "control8_rep0",
+      "display_label": "Control8",
+      "plan_pointer": "/plans/control8_rep0",
+      "config": {
+        "id": "control8",
+        "method": "learned",
+        "policy": "control",
+        "kind": "calls",
+        "horizon": 8,
+        "seconds": null,
+        "repeats": 3
+      },
+      "L_m": 205.1,
+      "K": 93,
+      "lambda_m": 0.75,
+      "J_equivalent_m": 274.85
+    },
+    {
+      "label": "structured8_rep0",
+      "display_label": "Structured8",
+      "plan_pointer": "/plans/structured8_rep0",
+      "config": {
+        "id": "structured8",
+        "method": "learned",
+        "policy": "structured",
+        "kind": "calls",
+        "horizon": 8,
+        "seconds": null,
+        "repeats": 3
+      },
+      "L_m": 207.3,
+      "K": 94,
+      "lambda_m": 0.75,
+      "J_equivalent_m": 277.8
+    }
+  ],
+  "outputs": {
+    "pdf": "fig3_routes100.pdf",
+    "svg": "fig3_routes100.svg",
+    "png": "fig3_routes100.png"
+  },
+  "scope": "A fixed illustrative case, not an independent comparison population; route overlaps are drawn on top of one another."
+}

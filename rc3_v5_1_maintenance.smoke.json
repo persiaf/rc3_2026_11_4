@@ -1,0 +1,37 @@
+{
+  "all_passed": true,
+  "relocated_root": "D:\\file_used\\\u897f\u67da\\\u5b9e\u9a8c\u5ba4_\u4efb\u52a1\\\u7855\u58eb\u8bba\u6587\u76f8\u5173\\\u5927\u8bba\u6587\\chatgpt\u751f\u6210\u6587\u4ef6\\rc3_v5_1_bundle_smoke",
+  "archive_sha256": "20559f39164ef20eb79f4850467cb2493c43425aac12bb672bd10154d869070f",
+  "checks": [
+    {
+      "name": "nineteen_regressions",
+      "expected_exit": 0,
+      "exit": 0,
+      "stdout": "{\"output\": \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\tmp96qzoqss\\\\report.json\", \"status\": \"blocked_inputs\", \"blocked_count\": 1}\n",
+      "stderr": "test_api_missing_config_returns_input_blocker (rc3_v5_1.test_robot_input.RobotInputTests.test_api_missing_config_returns_input_blocker) ... ok\ntest_changed_mesh_fails_hash (rc3_v5_1.test_robot_input.RobotInputTests.test_changed_mesh_fails_hash) ... ok\ntest_cli_invalid_json_outputs_structured_blocker (rc3_v5_1.test_robot_input.RobotInputTests.test_cli_invalid_json_outputs_structured_blocker) ... ok\ntest_collision_checks_must_be_explicit (rc3_v5_1.test_robot_input.RobotInputTests.test_collision_checks_must_be_explicit) ... ok\ntest_complete_reference_manifest_cannot_omit_urdf_mesh (rc3_v5_1.test_robot_input.RobotInputTests.test_complete_reference_manifest_cannot_omit_urdf_mesh) ... ok\ntest_complete_synthetic_config_only_passes_input_consistency (rc3_v5_1.test_robot_input.RobotInputTests.test_complete_synthetic_config_only_passes_input_consistency) ... ok\ntest_declared_left_gripper_physically_on_right_arm_blocks (rc3_v5_1.test_robot_input.RobotInputTests.test_declared_left_gripper_physically_on_right_arm_blocks) ... ok\ntest_evidence_binding_and_hash_required (rc3_v5_1.test_robot_input.RobotInputTests.test_evidence_binding_and_hash_required) ... ok\ntest_gripper_upstream_of_own_arm_blocks (rc3_v5_1.test_robot_input.RobotInputTests.test_gripper_upstream_of_own_arm_blocks) ... ok\ntest_hash_valid_record_cannot_redirect_mesh (rc3_v5_1.test_robot_input.RobotInputTests.test_hash_valid_record_cannot_redirect_mesh) ... ok\ntest_manifest_path_cannot_escape_asset_root (rc3_v5_1.test_robot_input.RobotInputTests.test_manifest_path_cannot_escape_asset_root) ... ok\ntest_missing_asset_blocks_without_claiming_infeasibility (rc3_v5_1.test_robot_input.RobotInputTests.test_missing_asset_blocks_without_claiming_infeasibility) ... ok\ntest_park_outside_limits_and_unknown_tcp_fail (rc3_v5_1.test_robot_input.RobotInputTests.test_park_outside_limits_and_unknown_tcp_fail) ... ok\ntest_swapped_gripper_roles_block_both_sides (rc3_v5_1.test_robot_input.RobotInputTests.test_swapped_gripper_roles_block_both_sides) ... ok\ntest_tcp_may_not_use_other_arm_frame (rc3_v5_1.test_robot_input.RobotInputTests.test_tcp_may_not_use_other_arm_frame) ... ok\ntest_template_retains_unknowns_and_blocks (rc3_v5_1.test_robot_input.RobotInputTests.test_template_retains_unknowns_and_blocks) ... ok\ntest_valid_fixed_tool_connector_is_allowed (rc3_v5_1.test_robot_input.RobotInputTests.test_valid_fixed_tool_connector_is_allowed) ... ok\ntest_wrong_robot_revision_blocks (rc3_v5_1.test_robot_input.RobotInputTests.test_wrong_robot_revision_blocks) ... ok\ntest_zero_effective_limits_block (rc3_v5_1.test_robot_input.RobotInputTests.test_zero_effective_limits_block) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.518s\n\nOK\n"
+    },
+    {
+      "name": "patched_help",
+      "expected_exit": 0,
+      "exit": 0,
+      "stdout": "usage: robot_input.py [-h] {manifest,inventory,template,check} ...\n\nFrozen robot asset inventory and calibration-input preflight (no IK solver).\nPassing this checker establishes input consistency only. It cannot certify the\ncalibration, collision freedom, reachability, or executable robot motion. Run\n``python -m rc3_v5_1.robot_input --help`` for the manifest/template/check CLI.\n\npositional arguments:\n  {manifest,inventory,template,check}\n    manifest            snapshot local assets; output parent is the asset root\n\noptions:\n  -h, --help            show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "name": "unchanged_empty_template",
+      "expected_exit": 2,
+      "exit": 2,
+      "stdout": "{\"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5_1_bundle_smoke\\\\maintenance_smoke\\\\preflight.json\", \"status\": \"blocked_inputs\", \"blocked_count\": 135}\n",
+      "stderr": ""
+    },
+    {
+      "name": "relocated_freeze_audit",
+      "expected_exit": 0,
+      "exit": 0,
+      "stdout": "{\"all_passed\": true, \"scope\": \"Integrity only; no training, timing or plan execution.\", \"v5_archive_sha256\": \"0901d94faa949a2378af99b8314580b77669fe666a807fc55a89d7b3a97a4d81\", \"v5_entries\": 542, \"v5_manifest_payloads\": 541, \"live_payloads_unchanged\": 539, \"archive_only_payloads\": [\"README_V5.md\", \"V4_PACKAGE_MANIFEST.json\"], \"inherited_v4_payloads\": 270, \"inherited_v4_entries_including_manifest\": 271, \"acceptance_payloads\": 65, \"acceptance_archive_sha256\": \"a47d8a06dd1355eb3f5d9d4294ffcb6c18bf72d9943b42d60806fb413bed30be\", \"acceptance_archive_present_and_matches\": null}\n",
+      "stderr": ""
+    }
+  ],
+  "overlay_unchanged_after_tests": true,
+  "real_calibration_or_ik_performed": false
+}

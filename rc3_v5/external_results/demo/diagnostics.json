@@ -1,0 +1,99 @@
+{
+  "fixed3": {
+    "status": "complete",
+    "objective": 14.699999999999998,
+    "heights": [
+      0.4,
+      0.7
+    ],
+    "arms": [
+      "L",
+      "R"
+    ],
+    "independent_validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "errors": [],
+      "collision_count": 0,
+      "independent_polyline_length_m": 11.699999999999998,
+      "service_checker_calls": 0,
+      "built_in_physical_ik_recheck": false,
+      "evidence_level": "synthetic_demo",
+      "scope": "External-table consistency plus circular-base/AABB navigation checks; no built-in IK, arm swept-path, lift-transition or cooperative-task certification."
+    }
+  },
+  "detour": {
+    "status": "complete",
+    "objective": 14.299999999999999,
+    "heights": [
+      0.4,
+      0.7
+    ],
+    "arms": [
+      "L",
+      "R"
+    ],
+    "independent_validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "errors": [],
+      "collision_count": 0,
+      "independent_polyline_length_m": 11.299999999999997,
+      "service_checker_calls": 0,
+      "built_in_physical_ik_recheck": false,
+      "evidence_level": "synthetic_demo",
+      "scope": "External-table consistency plus circular-base/AABB navigation checks; no built-in IK, arm swept-path, lift-transition or cooperative-task certification."
+    }
+  },
+  "fixed_height_only": {
+    "schema": "rc3-external-plan-v1",
+    "status": "failed",
+    "code": "external_input_or_certification_failure",
+    "detail": "no externally audited complete anchor: [{'stage': 'construct_reference', 'recipe': 0, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}, {'stage': 'construct_reference', 'recipe': 1, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}, {'stage': 'construct_reference', 'recipe': 7, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}]",
+    "plans": {},
+    "pending_task_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "physical_infeasibility_claim": false,
+    "total_s": 0.003363200001331279
+  },
+  "left_arm_only": {
+    "schema": "rc3-external-plan-v1",
+    "status": "failed",
+    "code": "external_input_or_certification_failure",
+    "detail": "no externally audited complete anchor: [{'stage': 'construct_reference', 'recipe': 0, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}, {'stage': 'construct_reference', 'recipe': 1, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}, {'stage': 'construct_reference', 'recipe': 7, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}]",
+    "plans": {},
+    "pending_task_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "physical_infeasibility_claim": false,
+    "total_s": 0.0032226000002992805
+  },
+  "audit_disagrees": {
+    "schema": "rc3-external-plan-v1",
+    "status": "failed",
+    "code": "external_input_or_certification_failure",
+    "detail": "no externally audited complete anchor: [{'stage': 'construct_reference', 'recipe': 0, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}, {'stage': 'construct_reference', 'recipe': 1, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}, {'stage': 'construct_reference', 'recipe': 7, 'error': 'infeasible scene: uncovered tasks have no accessible candidate'}]",
+    "plans": {},
+    "pending_task_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "physical_infeasibility_claim": false,
+    "total_s": 0.0031982000000425614
+  },
+  "proxy_vs_synthetic_table": {
+    "proxy_positive_external_negative": 51,
+    "proxy_negative_external_positive": 0,
+    "note": "Synthetic assumptions only; this is not measured IK false-positive/negative accuracy."
+  },
+  "scope": "Interoperability/guard tests on a deliberately specified table; no actual robot model, no measured lift/dual-arm benefit."
+}

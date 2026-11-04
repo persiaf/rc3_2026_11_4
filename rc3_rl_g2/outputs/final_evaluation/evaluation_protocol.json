@@ -1,0 +1,288 @@
+{
+  "schema": "rc3-g2-final-evaluation-request-v1",
+  "cases": [
+    {
+      "case_id": 0,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 431014569,
+      "mode": "regular"
+    },
+    {
+      "case_id": 1,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 25824512,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 2,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 845157113,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 3,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1777005513,
+      "mode": "regular"
+    },
+    {
+      "case_id": 4,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 3040069,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 5,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1642783487,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 6,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 999495378,
+      "mode": "regular"
+    },
+    {
+      "case_id": 7,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1667158197,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 8,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 298637717,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 9,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1655429762,
+      "mode": "regular"
+    },
+    {
+      "case_id": 10,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 849320701,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 11,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 362067955,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 12,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 211953026,
+      "mode": "regular"
+    },
+    {
+      "case_id": 13,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1895160634,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 14,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 671100386,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 15,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 535236339,
+      "mode": "regular"
+    },
+    {
+      "case_id": 16,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1929060566,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 17,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 895362954,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 18,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 2016000044,
+      "mode": "regular"
+    },
+    {
+      "case_id": 19,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 335579717,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 20,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 686624156,
+      "mode": "blocked"
+    },
+    {
+      "case_id": 21,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 79003958,
+      "mode": "regular"
+    },
+    {
+      "case_id": 22,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 919645120,
+      "mode": "mixed"
+    },
+    {
+      "case_id": 23,
+      "split": "validation",
+      "nx": 10,
+      "ny": 10,
+      "seed": 1444386212,
+      "mode": "blocked"
+    }
+  ],
+  "config": {
+    "epsilon": 0.02,
+    "horizon": 16,
+    "work_budget": 2000000,
+    "work_scale": 10000.0,
+    "lambda_work": 0.01,
+    "potential_weight": 0.0,
+    "max_tasks": 8,
+    "max_candidates": 80,
+    "max_width": 4,
+    "max_actions": 16,
+    "physical_scale": 2.2,
+    "cache_enabled": false
+  },
+  "protocol_sha256": "37037ab87d8c973bd9cb9bcf92b758903b82e6f0dfaac1ca8753709b60cb1557",
+  "scope": "One training seed; the same 24 validation scenes are repeatedly evaluated. Scene-paired bootstrap intervals are exploratory, conditional on this seed and validation distribution; not independent confirmation or across-seed uncertainty.",
+  "execution": "single process CPU; torch thread count 1; rotated method order; fresh adapters",
+  "checkpoint_sha256": {
+    "bc_frozen": "fdf7a9e75f6cfd909a3aa6aaf25971cd77fc90cd471b3582dbb55a1a2f72c6f7",
+    "bc_continued_512": "296479e7d70da7ca8f93eb9ff54a5efde91ef715127bdc6aaf517dac1c8fcb06",
+    "bc_continued_1024": "f7937cff1f009401ff1ae8db3e9d9c6a0088a46d4c38179d7f060d19819e6310",
+    "bc_continued_2048": "ed503eee23420b3332dc19e5077f793f2bdaa8a161f2faadc0bc116a423496af",
+    "ppo_final": "b73718cf1cabbb1741d5f3d04109b95dedbda07de660f8e638975e82e78de5f3"
+  },
+  "core_source_identity": {
+    "rc3_rl_g2/actor_critic.py": "865579329995805fa1fbc3655db389b75d9a141cb99993d5ed434073b7485002",
+    "rc3_rl_g2/graph_observation.py": "0398c9534404819ee1983daae0ae6418230d3c0669786350670130d5909fa8de",
+    "rc3_rl_g2/env_g2.py": "c9c36423abfe096a16ee3e752948e29830c3be5643e21713566770190226cf93",
+    "rc3_rl_g2/action_memory.py": "e47c518927f0955dd87285e4477284dd7270cfae8569ada63d7fac0db8d44c7c",
+    "rc3_rl_g2/adapter_g2.py": "4af17cff865cc923b7938cb622ad44be2e4a654c62710261a962e845940b4703",
+    "rc3_rl_g2/collector.py": "5963ae57a6543b8ef089b937f084fc8bc59a3a0a99bf8aa6531eeb33137cc6f9",
+    "rc3_rl_g2/collector_contract.py": "1c7aabd04b178fda9c9bce8489536a6644b733d3464db5d545453f20e1dfa957",
+    "rc3_rl_g2/worker.py": "ec648a8a14ea533970983f1ebc891bbe64b9874fac8e646e299fb35e918a3189",
+    "rc3_rl_g2/train_ppo.py": "5af8a30aeb5526156b88fba6bac960012afd9ddd3849e7ba8b757daeeb18227e",
+    "rc3_rl_g2/ppo_math.py": "309d8a49d2cd68d294ce0ef92b43e00c8fc12659176bbf246b4c3fdfa2482c6f",
+    "rc3_rl_g2/teacher_dataset.py": "c82caaa0afc2b493498bab164449d2a49ee2fe760234d3ac74283151457a4087",
+    "rc3_rl_g2/checkpoints.py": "fddeb244a5f822548fe5254a22123ea57d09da4e084f30cd401cb7eb9ad7354f",
+    "rc3_rl_g2/prepared_cache.py": "da1dcdf3b250e0758ff1150e5a2f923f9eba331a0105b4c66eadec66857cdd57",
+    "rc3_rl_research/types.py": "4fe2658655f6a0256cf2fbfb9581bce8881bc538264e9807045fe00abbd5b4db",
+    "rc3_rl_research/adapter.py": "3d8cce6b18990cfce9f65521a2454b173ed991eee53f0a8dc7e99d93cacaa80e",
+    "rc3_rl_research/action_builder.py": "fb1c82695839096304f1ff9e6a3e75cd6bb323a8c5e7a0adce8b7cb18a61e3c5",
+    "rc3_rl_research/repair_proposal.py": "650aa4ff6dc65e56d93221bd6c2bf1f5f4e55581ccc247a4263aba806b5fa854",
+    "rc3_rl_research/rl_env.py": "9d0fcaf354323cb69c6d024cec288b40a3f76cc0d13ba2e96fd6cb86d9128372",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_improve/environment.py": "ae02801f5339800d43a014add4aa978bfaf3877440df35a211405c6bbac6e04e",
+    "rc3_improve/repair.py": "5b3471d4ce7df23cf7381fcf2f1d86ab39eddce2bca7cf23350a5a8c74c1ee36",
+    "rc3_v3/environment.py": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+    "rc3_v5/external.py": "6a54dcc803d92a68e353c58fafbdd17dc5ec371e4e16101d76b90e1cd6235fc6"
+  },
+  "tool_sha256": "4522b44ea48cde0b00523656372e5e2429e89195c0b36f91d08c332a61dd5dda",
+  "evaluator_sha256": "4acc207ced3ca4aff9ab6ab6a34c30d63ba2bf8931dd366b22f7c427e989d956",
+  "ils_selection_sha256": "be5edb28d904379836612492961f5f36cea93394c4d560fb188e0b6ea0d3c7e4",
+  "selected_ils": {
+    "stagnation_limit": 2,
+    "max_perturbations": 1
+  },
+  "methods_controls": [
+    "bc_frozen",
+    "bc_continued_512",
+    "bc_continued_1024",
+    "bc_continued_2048",
+    "original_fixed3",
+    "original_detour",
+    "stop",
+    "detour_memory",
+    "ils",
+    "random"
+  ],
+  "methods_final": [
+    "ppo_final",
+    "bc_frozen",
+    "bc_continued_2048",
+    "original_fixed3",
+    "original_detour",
+    "stop",
+    "detour_memory",
+    "ils",
+    "random"
+  ],
+  "soft_time_limit_s": 0.4,
+  "bootstrap_replicates": 10000,
+  "no_validation_model_selection": true,
+  "planned_evaluations": {
+    "controls": 240,
+    "final_fixed": 216,
+    "final_soft_time": 216,
+    "total": 672
+  }
+}

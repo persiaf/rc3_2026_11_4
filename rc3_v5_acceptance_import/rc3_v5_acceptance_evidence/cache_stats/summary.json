@@ -1,0 +1,103 @@
+{
+  "all_passed": true,
+  "errors": [],
+  "cache": {
+    "equivalence": {
+      "scenes": 18,
+      "plans_revalidated": 36,
+      "all_plan_objects_equal": true,
+      "stored_head_records_recounted": 144,
+      "actual_full_144_head_recomputation_this_audit": false
+    },
+    "benchmark": {
+      "scenes": 18,
+      "plans_revalidated": 108,
+      "all_plan_objects_equal": true,
+      "summary": {
+        "original": {
+          "planning_ms": 486.59014999975625,
+          "model_ms": 140.1358999983131,
+          "graph_ms": 68.88605000131065,
+          "inference_ms": 75.44864999817946
+        },
+        "cached": {
+          "planning_ms": 441.8709499996112,
+          "model_ms": 106.46479999741132,
+          "graph_ms": 67.81000000228232,
+          "inference_ms": 36.356099999466096
+        }
+      },
+      "median_paired_speedup": 1.092400092915045,
+      "median_paired_reduction_pct": 8.452804669706149,
+      "faster_scenes": 17,
+      "slower_scenes": 1,
+      "ratio_of_group_medians": 1.101204209057383,
+      "reduction_from_group_medians_pct": 9.190321670129876
+    }
+  },
+  "native_mlp": {
+    "scenes": 18,
+    "revalidated_returned_plans": 108,
+    "revalidated_references": 18,
+    "groups": {
+      "detour_wall400": {
+        "scenes": 18,
+        "runs": 54,
+        "mean_objective_m": 264.2387571812333,
+        "mean_reduction_vs_fixed3_pct": 1.4726360330861672,
+        "median_scene_planning_ms": 437.3832500004937,
+        "p95_scene_planning_ms": 454.78145500064784,
+        "p95_all_run_planning_ms": 460.48986500036335,
+        "max_run_planning_ms": 480.4266999999527,
+        "mean_dp_calls": 19.833333333333332,
+        "median_dp_calls": 17.0,
+        "deadline_exceeded_runs": 54,
+        "max_overrun_ms": 80.42669999995266,
+        "mean_overrun_ms": 41.997116666681414,
+        "fallback_runs": 0,
+        "scenes_with_repeat_cost_changes": 7,
+        "scenes_with_repeat_call_changes": 17
+      },
+      "v3_mlp_wall400": {
+        "scenes": 18,
+        "runs": 54,
+        "mean_objective_m": 263.59791408573705,
+        "mean_reduction_vs_fixed3_pct": 1.7302535116716815,
+        "median_scene_planning_ms": 436.14379999962694,
+        "p95_scene_planning_ms": 454.3285150001793,
+        "p95_all_run_planning_ms": 458.8405699993927,
+        "max_run_planning_ms": 469.5701000000554,
+        "mean_dp_calls": 18.27777777777778,
+        "median_dp_calls": 17.0,
+        "deadline_exceeded_runs": 54,
+        "max_overrun_ms": 69.57010000005536,
+        "mean_overrun_ms": 38.79025555566772,
+        "fallback_runs": 0,
+        "scenes_with_repeat_cost_changes": 9,
+        "scenes_with_repeat_call_changes": 16
+      }
+    },
+    "paired": {
+      "scenes": 18,
+      "mean_reduction_pct": 0.26050724125498376,
+      "ci95_pct": [
+        -0.008684172045571278,
+        0.5295448093375277
+      ],
+      "wins": 12,
+      "ties": 1,
+      "losses": 5,
+      "median_paired_time_ratio": 0.9933161202176997,
+      "ratio_of_median_times": 0.9971662152108811
+    },
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "revalidated_returned_plans": 252,
+  "revalidated_reference_plans": 18,
+  "all_plan_records_valid": true,
+  "hash_entries_checked": 67,
+  "hash_entries_matched": 67,
+  "checks_count": 4659,
+  "elapsed_s": 8.139407511000172,
+  "scope": "Actual saved-plan revalidation with reviewed scalar validator; independent statistic reconstruction. Recorded original timing values, no new timing benchmarks or training. 144 stored head checks recounted, not all recomputed; cache semantics exercised in separate 11 actual unit tests."
+}

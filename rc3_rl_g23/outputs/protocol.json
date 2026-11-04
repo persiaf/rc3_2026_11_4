@@ -1,0 +1,301 @@
+{
+  "schema": "g23-rule-value-iteration-v1",
+  "date": "2026-11-04",
+  "seeds": [
+    2301,
+    2302,
+    2303
+  ],
+  "splits": {
+    "train": [
+      {
+        "seed": 99726440,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 0,
+        "split": "train"
+      },
+      {
+        "seed": 451670477,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 1,
+        "split": "train"
+      },
+      {
+        "seed": 1617324149,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 2,
+        "split": "train"
+      },
+      {
+        "seed": 1622956053,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 3,
+        "split": "train"
+      },
+      {
+        "seed": 762445369,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 4,
+        "split": "train"
+      },
+      {
+        "seed": 810990620,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 5,
+        "split": "train"
+      },
+      {
+        "seed": 582674742,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 6,
+        "split": "train"
+      },
+      {
+        "seed": 995734621,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 7,
+        "split": "train"
+      },
+      {
+        "seed": 972139476,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 8,
+        "split": "train"
+      },
+      {
+        "seed": 1683350328,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 9,
+        "split": "train"
+      },
+      {
+        "seed": 25451375,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 10,
+        "split": "train"
+      },
+      {
+        "seed": 1425854741,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 11,
+        "split": "train"
+      }
+    ],
+    "calibration": [
+      {
+        "seed": 1699776288,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 0,
+        "split": "calibration"
+      },
+      {
+        "seed": 1797563587,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 1,
+        "split": "calibration"
+      },
+      {
+        "seed": 490689394,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 2,
+        "split": "calibration"
+      }
+    ],
+    "selection": [
+      {
+        "seed": 12383696,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 0,
+        "split": "selection"
+      },
+      {
+        "seed": 1659151027,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 1,
+        "split": "selection"
+      },
+      {
+        "seed": 601973071,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 2,
+        "split": "selection"
+      }
+    ],
+    "test": [
+      {
+        "seed": 1800321024,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 0,
+        "split": "test"
+      },
+      {
+        "seed": 1206585024,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 1,
+        "split": "test"
+      },
+      {
+        "seed": 1330960562,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 2,
+        "split": "test"
+      },
+      {
+        "seed": 553492415,
+        "nx": 10,
+        "ny": 10,
+        "mode": "regular",
+        "case_id": 3,
+        "split": "test"
+      },
+      {
+        "seed": 1037968623,
+        "nx": 10,
+        "ny": 10,
+        "mode": "mixed",
+        "case_id": 4,
+        "split": "test"
+      },
+      {
+        "seed": 1114968655,
+        "nx": 10,
+        "ny": 10,
+        "mode": "blocked",
+        "case_id": 5,
+        "split": "test"
+      }
+    ]
+  },
+  "config": {
+    "epsilon": 0.02,
+    "horizon": 16,
+    "work_budget": 2000000,
+    "work_scale": 10000.0,
+    "lambda_work": 0.01,
+    "potential_weight": 0.0,
+    "max_tasks": 8,
+    "max_candidates": 80,
+    "max_width": 4,
+    "max_actions": 16,
+    "physical_scale": 2.2,
+    "cache_enabled": false
+  },
+  "complete_soft_s": 0.8,
+  "repetitions": 2,
+  "wall_limit_s": 5400,
+  "alignment_cases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "limits": {
+    "nonstop": 8192,
+    "menus": 20000,
+    "stops": 4000,
+    "finalizations": 2000,
+    "cold_plans": 300,
+    "optimizer_updates": 3840
+  },
+  "training": {
+    "rounds": 2,
+    "states_per_round": 8,
+    "first_actions": 3,
+    "updates_per_fit": 256,
+    "lr": 0.001,
+    "batch": 16,
+    "threshold": 0.0,
+    "train_calls_per_seed": 1536
+  },
+  "value": "Full finite-horizon MC under a separately frozen continuation; gamma1; STOP baseline paid pending menu plus final correction",
+  "controls": [
+    "same_interface_rule",
+    "one_step_repeated",
+    "frozen_init",
+    "matched_static_rule_value",
+    "multi_policy_iteration",
+    "original_fixed3",
+    "original_detour16"
+  ],
+  "main_gate": {
+    "mean_gain_percent": 0.3,
+    "paired_ci_lower_above_zero": true,
+    "comparators": [
+      "same_interface_rule",
+      "one_step_repeated",
+      "frozen_init",
+      "matched_static_rule_value",
+      "original_detour16"
+    ]
+  },
+  "stopping": "If aligned capped trial fails the preregistered quality gate, stop treating local window choice+STOP as the DRL core; no extensions",
+  "initialization": "Rule policy for round0; MC0 checkpoint forms pi1; round1 follows pi1 and also evaluates static rule on identical first transitions",
+  "matched_training": "one-step and multi/static use same first transitions/capacity, 256+256 updates; frozen_init remains first256 checkpoint",
+  "counter_scope": "All original reference repairs, paired aligned repairs, branch rollouts, training and final comparisons globally counted",
+  "engineering": "No new preprocessing/proposal cache; common interfaces for all shared methods; no claimed cache speedup",
+  "uncertainty": "Scene-level paired bootstrap after averaging repetitions and training seeds; only six independent new test scenes, exploratory external validity",
+  "calibration": "Threshold0 predetermined; calibration/selection seeds reserved but not queried or used for tuning",
+  "training_deadline": "Training MC finishes under finite h/work, without wall-time cuts; deployment additionally has complete .8s soft cap",
+  "work_proxy": "G2 context+candidate units, plus original rule scan proxy windows*(1+M); original dense DP evaluated entries counted; not elapsed time",
+  "arm_graph": "Separate left/right reachability edge subgraphs encoded by two identical graph encoders plus shared per-action numeric head; all controls same capacity",
+  "cross_scale": "Only after main quality gate passes; otherwise do not expand",
+  "request_sha256": "e835d96d9acfd3e46cd5b548f07577c1a32004859100ddc30279926a1f43a4d0",
+  "source_sha256": {
+    "core.py": "c88070e5912170aa422a131a49381072ddee012b7efe1dafa244d97cb5768ac8",
+    "learning.py": "5d64aae1d02c68dd882a4b71a6aa17bb1cf2bca6234ce682c54e54baa83d9364",
+    "repair_counted.py": "224853b0974ab296f718581cb46e2febdc4ab9589b9951bce668233cdb3c4439",
+    "test_contract.py": "2240304e1ac3f95b7970495d5c870cb059132067ef6c002a202707a0cd06a117",
+    "trial.py": "e30bab13d96365854ff009db143201590501a13b60603cd694738d09bddfa146",
+    "__init__.py": "9c89cb37bc15837f1189199207be3ac8c934893a225fc63630b2a6fc25f9c03d"
+  }
+}

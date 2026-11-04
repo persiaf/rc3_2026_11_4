@@ -1,0 +1,232 @@
+第二章 MathType 7 公式代码（纯文本），公式号仅用于定位；复制下一行公式，不要复制公式号。
+
+
+# 2.1.1 双臂移动机器人整体结构
+
+【式（2-1）】
+\boldsymbol{\xi} = \begin{bmatrix} x_b&y_b&\theta_b&h& \boldsymbol q_L^T& \boldsymbol q_R^T \end{bmatrix}^{T}
+
+【式（2-2）】
+n_\xi=4+n_L+n_R
+
+
+# 2.2.1 世界坐标系与移动底盘坐标系
+
+【式（2-3）】
+\boldsymbol b= \begin{bmatrix} x_b&y_b&\theta_b \end{bmatrix}^{T}
+
+【式（2-4）】
+\boldsymbol R_z(\theta_b)= \begin{bmatrix} \cos\theta_b&-\sin\theta_b&0\\ \sin\theta_b&\cos\theta_b&0\\ 0&0&1 \end{bmatrix}
+
+【式（2-5）】
+{}^WT_B= \begin{bmatrix} \cos\theta_b&-\sin\theta_b&0&x_b\\ \sin\theta_b&\cos\theta_b&0&y_b\\ 0&0&1&z_b\\ 0&0&0&1 \end{bmatrix}
+
+
+# 2.2.2 升降机构与左右机械臂坐标系
+
+【式（2-6）】
+{}^BT_H(h)=\begin{bmatrix} 1&0&0&0\\0&1&0&0\\0&0&1&h_0+h\\0&0&0&1 \end{bmatrix}
+
+【式（2-7）】
+{}^HT_{A_L}=\begin{bmatrix} \boldsymbol R_{A_L}&\begin{matrix} d_x\\d_a/2\\0\end{matrix}\\ \boldsymbol 0_{1\times3}&1\end{bmatrix}
+
+【式（2-8）】
+{}^HT_{A_R}=\begin{bmatrix} \boldsymbol R_{A_R}&\begin{matrix} d_x\\-d_a/2\\0\end{matrix}\\ \boldsymbol 0_{1\times3}&1\end{bmatrix}
+
+
+# 2.2.3 多坐标系间齐次变换关系
+
+【式（2-9）】
+{}^WT_{A_\ell} = {}^WT_B \,{}^BT_H(h) \,{}^HT_{A_\ell}, \quad \ell\in\{L,R\}
+
+【式（2-10）】
+{}^WT_{E_\ell}(\boldsymbol{\xi}) = {}^WT_B \,{}^BT_H(h) \,{}^HT_{A_\ell} \,{}^{A_\ell}T_{E_\ell}(\boldsymbol q_\ell)
+
+【式（2-11）】
+\begin{bmatrix} \boldsymbol p_i^{A_\ell}\\1 \end{bmatrix} = \left({}^WT_{A_\ell}\right)^{-1} \begin{bmatrix} \boldsymbol p_i^W\\1 \end{bmatrix}
+
+【式（2-12）】
+\boldsymbol p_i^{A_\ell} = \boldsymbol R_{WA_\ell}^{T} \left( \boldsymbol p_i^W-\boldsymbol p_{WA_\ell} \right)
+
+【式（2-13）】
+{}^{A_\ell}T_{G_i} = \left({}^WT_{A_\ell}\right)^{-1}{}^WT_{G_i}
+
+
+# 2.3.1 全向移动底盘运动学建模
+
+【式（2-14）】
+\boldsymbol v_B= \begin{bmatrix} v_x^B&v_y^B&\omega_b \end{bmatrix}^T
+
+【式（2-15）】
+\dot{\boldsymbol b}= \begin{bmatrix} \cos\theta_b&-\sin\theta_b&0\\ \sin\theta_b&\cos\theta_b&0\\ 0&0&1 \end{bmatrix} \boldsymbol v_B
+
+【式（2-17）】
+\begin{bmatrix} \omega_{FL}\\ \omega_{FR}\\ \omega_{RL}\\ \omega_{RR} \end{bmatrix} = \frac{1}{r_w} \begin{bmatrix} 1&-1&-a\\ 1&1&a\\ 1&1&-a\\ 1&-1&a \end{bmatrix} \begin{bmatrix} v_x^B\\ v_y^B\\ \omega_b \end{bmatrix}
+
+【式（2-18）】
+\begin{bmatrix} v_x^B\\ v_y^B\\ \omega_b \end{bmatrix} = \frac{r_w}{4} \begin{bmatrix} 1&1&1&1\\ -1&1&1&-1\\ -\frac1a&\frac1a&-\frac1a&\frac1a \end{bmatrix} \begin{bmatrix} \omega_{FL}\\ \omega_{FR}\\ \omega_{RL}\\ \omega_{RR} \end{bmatrix}
+
+
+# 2.3.2 底盘几何轮廓与碰撞模型
+
+【式（2-24）】
+\mathcal F(\boldsymbol b) = \left\{ \begin{bmatrix}x_b\\y_b\end{bmatrix} + \boldsymbol R_2(\theta_b)\boldsymbol u \;\middle|\; \boldsymbol u\in\mathcal F_B \right\}
+
+【式（2-25）】
+\mathcal F_B= \left[-\frac{L_B}{2},\frac{L_B}{2}\right] \times \left[-\frac{W_B}{2},\frac{W_B}{2}\right]
+
+【式（2-27）】
+\mathcal F(\boldsymbol b)\cap\mathcal O = \varnothing
+
+【式（2-28）】
+\mathcal O_{d_s} = \mathcal O\oplus\mathbb B_{d_s}
+
+【式（2-29）】
+\mathcal F(\boldsymbol b) \cap\mathcal O_{d_s} = \varnothing
+
+【式（2-31）】
+\mathcal F(\gamma(s)) \cap\mathcal O_{d_s} = \varnothing,\quad \forall s\in[0,1]
+
+
+# 2.4.1 双机械臂正运动学模型
+
+【式（2-32）】
+{}^{k-1}T_k= \begin{bmatrix} c_k&-s_kc_{\alpha_k}&s_ks_{\alpha_k}&a_kc_k\\ s_k&c_kc_{\alpha_k}&-c_ks_{\alpha_k}&a_ks_k\\ 0&s_{\alpha_k}&c_{\alpha_k}&d_k\\ 0&0&0&1 \end{bmatrix}
+
+【式（2-33）】
+{}^{A_\ell}T_{E_\ell}(\boldsymbol q_\ell) = \left( \prod_{k=1}^{n_\ell} {}^{k-1}T_k(q_{\ell,k}) \right) {}^{n_\ell}T_{E_\ell}
+
+
+# 2.4.2 双机械臂逆运动学与工作空间约束
+
+【式（2-35）】
+{}^WT_{E_\ell} (\boldsymbol b,h,\boldsymbol q_\ell) = {}^WT_{G_i}
+
+【式（2-36）】
+\boldsymbol p_{E_\ell}^W (\boldsymbol b,h,\boldsymbol q_\ell) = \boldsymbol p_i^W
+
+【式（2-37）】
+q_{\ell,k}^{\min} \le q_{\ell,k} \le q_{\ell,k}^{\max}
+
+【式（2-39）】
+\mathcal W_\ell(\boldsymbol b,h) = \left\{ \boldsymbol p_{E_\ell}^W (\boldsymbol b,h,\boldsymbol q_\ell) \mid \boldsymbol q_\ell\in\mathcal Q_\ell \right\}
+
+
+# 2.4.3 双机械臂微分运动学模型
+
+【式（2-41）】
+\boldsymbol v_{E_\ell} = \boldsymbol J_\ell(\boldsymbol q_\ell) \dot{\boldsymbol q}_\ell
+
+【式（2-42）】
+\boldsymbol J_{\ell,k}= \begin{bmatrix} \boldsymbol z_{k-1}\times (\boldsymbol o_E-\boldsymbol o_{k-1})\\ \boldsymbol z_{k-1} \end{bmatrix}
+
+
+# 2.4.4 操作任务数学建模
+
+【式（2-43）】
+\mathcal T=\{t_1,t_2,\ldots,t_N\}
+
+【式（2-44）】
+t_i= \left( \boldsymbol p_i^W, \mathcal R_i, \kappa_i, j_i \right)
+
+
+# 2.5.1 二维栅格环境模型
+
+【式（2-46）】
+M[u,v]= \begin{cases} 1,&\text{栅格被障碍物占据}\\ 0,&\text{栅格为自由空间} \end{cases}
+
+【式（2-47）】
+\begin{aligned} u&=\left\lfloor \frac{x-x_0}{r_g} \right\rfloor\\ v&=\left\lfloor \frac{y-y_0}{r_g} \right\rfloor \end{aligned}
+
+【式（2-48）】
+\begin{aligned} x_c&=x_0+\left(u+\frac12\right)r_g\\ y_c&=y_0+\left(v+\frac12\right)r_g \end{aligned}
+
+
+# 2.5.2 多桌面工作区域模型
+
+【式（2-50）】
+\mathcal R= \{R_1,R_2,\ldots,R_{M_R}\}
+
+【式（2-51）】
+\mathcal T_j= \{t_i\in\mathcal T\mid j_i=j\}
+
+
+# 2.5.3 静态与动态障碍物模型
+
+【式（2-52）】
+\mathcal O(t) = \mathcal O_s\cup\mathcal O_d(t)
+
+【式（2-53）】
+\mathcal C_{\mathrm{free}}(t) = \left\{ p\in SE(2) \;\middle|\; \mathcal F(p)\cap \left(\mathcal O(t)\oplus\mathbb B_{d_s}\right) = \varnothing \right\}
+
+
+# 2.6.1 面向操作任务的可达停靠位姿生成问题
+
+【式（2-54）】
+p=(x,y,\theta)\in SE(2)
+
+【式（2-55）】
+\mathcal P_j= \{p_{j1},p_{j2},\ldots,p_{jK_j}\}
+
+【式（2-56）】
+\Omega_j = \Omega_{\mathrm{free}} \cap \Omega_{\mathrm{safe}} \cap \Omega_{\mathrm{reach},j} \cap \Omega_{\mathrm{orient},j}
+
+【式（2-58）】
+\rho(p,t_i) = \max\{ \rho_L(p,t_i), \rho_R(p,t_i) \}
+
+【式（2-59）】
+\mathcal B_i= \left\{ p\in\Omega_{j_i} \;\middle|\; \rho(p,t_i)\ge\rho_{\min} \right\}
+
+
+# 2.6.2 多任务多停靠协同规划问题
+
+【式（2-60）】
+\mathcal C(p) = \{ t_i\in\mathcal T \mid \rho(p,t_i)\ge\rho_{\min} \}
+
+【式（2-61）】
+C_{ik}= \begin{cases} 1,&t_i\in\mathcal C(p_k)\\ 0,&t_i\notin\mathcal C(p_k) \end{cases}
+
+【式（2-62）】
+\begin{aligned} \sum_{k=1}^{K}x_{ik}&=1\\ x_{ik}&\le C_{ik}y_k\\ x_{ik},y_k&\in\{0,1\} \end{aligned}
+
+【式（2-63）】
+\bigcup_{p\in\mathcal S} \mathcal C(p) = \mathcal T
+
+【式（2-66）】
+L_{\mathrm{nav}} = L(\gamma_{0,\sigma_1}) + \sum_{j=1}^{Q-1} L(\gamma_{\sigma_j,\sigma_{j+1}})
+
+【式（2-67）】
+\begin{aligned} \min_{\boldsymbol X,\boldsymbol y,\sigma,\Gamma} \quad& \alpha\sum_{k=1}^{K}y_k + \beta L_{\mathrm{nav}} + \gamma J_{\mathrm{op}}\\ \mathrm{s.t.}\quad& \sum_{k=1}^{K}x_{ik}=1,\quad\forall i\\ & x_{ik}\le C_{ik}y_k,\quad\forall i,k\\ & x_{ik},y_k\in\{0,1\}\\ & \Gamma\subseteq\mathcal C_{\mathrm{free}} \end{aligned}
+
+【式（2-68）】
+\Pi_0= (\mathcal S,\boldsymbol X,\sigma,\Gamma)
+
+
+# 2.6.3 环境变化下的执行方案在线调整问题
+
+【式（2-69）】
+\mathcal M_t \longrightarrow \mathcal M_{t+1}
+
+【式（2-71）】
+\begin{aligned} \min_{\Pi_{t+1}}\quad& \lambda_1 L_{\mathrm{rem}}(\Pi_{t+1})\\ &+ \lambda_2D_{\mathrm{edit}}(\Pi_{t+1},\Pi_t)\\ &+ \lambda_3T_{\mathrm{replan}}\\ \mathrm{s.t.}\quad& \mathcal T_{\mathrm{rem}}(t) \subseteq \bigcup_{p\in\mathcal S_{t+1}} \mathcal C_{t+1}(p)\\ & \Gamma_{t+1} \subseteq \mathcal C_{\mathrm{free}}(t+1) \end{aligned}
+
+
+# 2.6.4 三类规划问题的统一关系
+
+【式（2-72）】
+(\mathcal M,\mathcal T,\boldsymbol\eta) \xrightarrow{\mathrm{P1}} (\mathcal P,\boldsymbol\rho,\boldsymbol C) \xrightarrow{\mathrm{P2}} \Pi_0 \xrightarrow{\mathrm{P3}} \Pi_{t+1}
+
+辅助表达式，原文第 208 行
+c_k=\cos\theta_k,\quad s_k=\sin\theta_k
+
+辅助表达式，原文第 210 行
+c_{\alpha_k}=\cos\alpha_k,\quad s_{\alpha_k}=\sin\alpha_k
+
+辅助表达式，原文第 222 行
+{}^WT_{E_\ell} = {}^WT_B \,{}^BT_H(h) \,{}^HT_{A_\ell} \,{}^{A_\ell}T_{E_\ell}(\boldsymbol q_\ell)
+
+辅助表达式，原文第 309 行
+\mathcal T= \bigcup_{j=1}^{M_R}\mathcal T_j
+
+
+本次上传文本未出现的编号：2-16, 2-19, 2-20, 2-21, 2-22, 2-23, 2-26, 2-30, 2-34, 2-38, 2-40, 2-45, 2-49, 2-57, 2-64, 2-65, 2-70

@@ -1,0 +1,93 @@
+[
+  {
+    "argv": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5.external_example",
+      "--output",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\demo"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"fixed3\": \"complete\", \"detour\": \"complete\", \"fixed_height_only\": \"failed\", \"left_arm_only\": \"failed\", \"audit_disagrees\": \"failed\", \"proxy_vs_synthetic_table\": null}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\demo\\external_demo.json",
+      "--verify-plan",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\demo\\detour_plan.json",
+      "--output",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\cli_verify_json.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"status\": \"complete\", \"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5\\\\external_results\\\\cli_verify_json.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\demo\\external_demo.npz",
+      "--method",
+      "detour",
+      "--penalty",
+      "1.5",
+      "--output",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\cli_npz_custom_penalty.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"status\": \"complete\", \"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5\\\\external_results\\\\cli_npz_custom_penalty.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\demo\\external_demo.npz",
+      "--verify-plan",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\cli_npz_custom_penalty.json",
+      "--penalty",
+      "1.5",
+      "--output",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\cli_verify_npz_custom_penalty.json"
+    ],
+    "returncode": 0,
+    "expected_returncode": 0,
+    "passed": true,
+    "stdout": "{\"status\": \"complete\", \"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5\\\\external_results\\\\cli_verify_npz_custom_penalty.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "D:\\tools\\anocaonda\\python.exe",
+      "-B",
+      "-m",
+      "rc3_v5.external",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\demo\\external_demo.npz",
+      "--verify-plan",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\cli_npz_custom_penalty.json",
+      "--output",
+      "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_v5\\external_results\\cli_verify_wrong_penalty.json"
+    ],
+    "returncode": 2,
+    "expected_returncode": 2,
+    "passed": true,
+    "stdout": "{\"status\": \"failed\", \"output\": \"D:\\\\file_used\\\\\\u897f\\u67da\\\\\\u5b9e\\u9a8c\\u5ba4_\\u4efb\\u52a1\\\\\\u7855\\u58eb\\u8bba\\u6587\\u76f8\\u5173\\\\\\u5927\\u8bba\\u6587\\\\chatgpt\\u751f\\u6210\\u6587\\u4ef6\\\\rc3_v5\\\\external_results\\\\cli_verify_wrong_penalty.json\"}\n",
+    "stderr": ""
+  }
+]

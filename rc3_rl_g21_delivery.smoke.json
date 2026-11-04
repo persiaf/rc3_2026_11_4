@@ -1,0 +1,42 @@
+{
+  "schema": "rc3-g21-portable-smoke-v1",
+  "archive_sha256": "79b0985a1ec459f2a069e6b1c4d4841a6a54d7c609df9f020c25e7414086c50b",
+  "dependency_sha256": "2fe860781980ccf7bffbe2fdc0d7945efc5b8941a64c7fe0d0ac3b5bfddc2908",
+  "stage": "rc3_rl_g21/outputs/portable_check/20261104_090425",
+  "selected_frozen_files": 368,
+  "new_members": 153,
+  "manifest_payloads_verified": 152,
+  "checks": [
+    {
+      "name": "unit_tests",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_s": 2.5274362999999767,
+      "tests": 73
+    },
+    {
+      "name": "results_audit",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_s": 1.5421712000000412
+    },
+    {
+      "name": "checkpoint_replay",
+      "passed": true,
+      "exit_code": 0,
+      "elapsed_s": 5.8470245999999975
+    },
+    {
+      "name": "ppo_gate_rejection",
+      "passed": true,
+      "exit_code": 1,
+      "elapsed_s": 1.7571887000000288
+    }
+  ],
+  "all_passed": true,
+  "no_interaction_outputs": true,
+  "new_environment_queries": 0,
+  "new_optimizer_updates": 0,
+  "scope": "Fresh ZIP extraction; synthetic tests, saved-record audit, zero-update checkpoint replay and rejection of gated PPO. No planner or worker end-to-end run.",
+  "source_archive_unchanged": true
+}

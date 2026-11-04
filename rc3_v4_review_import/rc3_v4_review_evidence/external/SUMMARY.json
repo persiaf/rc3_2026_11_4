@@ -1,0 +1,126 @@
+{
+  "all_checks_passed": true,
+  "unit_tests_run": 20,
+  "unit_failures": 0,
+  "unit_errors": 0,
+  "unit_skipped": 0,
+  "torch_imported": false,
+  "roundtrips": {
+    "json": true,
+    "npz": true
+  },
+  "external_methods": {
+    "fixed3": {
+      "objective": 14.699999999999998,
+      "route": [
+        0,
+        24,
+        13,
+        23
+      ],
+      "arms": [
+        "L",
+        "R"
+      ],
+      "heights": [
+        0.4,
+        0.7
+      ],
+      "check": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "errors": [],
+        "collision_count": 0,
+        "independent_polyline_length_m": 11.699999999999998,
+        "service_checker_calls": 0,
+        "built_in_physical_ik_recheck": false,
+        "evidence_level": "synthetic_demo",
+        "scope": "External-table consistency plus circular-base/AABB navigation checks; no built-in IK, arm swept-path, lift-transition or cooperative-task certification."
+      }
+    },
+    "detour": {
+      "objective": 14.299999999999999,
+      "route": [
+        23,
+        22,
+        13,
+        12
+      ],
+      "arms": [
+        "L",
+        "R"
+      ],
+      "heights": [
+        0.4,
+        0.7
+      ],
+      "check": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "errors": [],
+        "collision_count": 0,
+        "independent_polyline_length_m": 11.299999999999997,
+        "service_checker_calls": 0,
+        "built_in_physical_ik_recheck": false,
+        "evidence_level": "synthetic_demo",
+        "scope": "External-table consistency plus circular-base/AABB navigation checks; no built-in IK, arm swept-path, lift-transition or cooperative-task certification."
+      }
+    }
+  },
+  "callback": {
+    "counted_calls": 4,
+    "false_rejected": true,
+    "exception_rejected": true,
+    "final_rejection_returned_anchor": true,
+    "final_trial_calls": 5
+  },
+  "proxy_smoke": [
+    {
+      "method": "fixed3",
+      "objective": 38.0586068312,
+      "cold_cache_hit": false,
+      "warm_cache_hit": true
+    },
+    {
+      "method": "detour",
+      "objective": 38.0586068312,
+      "cold_cache_hit": false,
+      "warm_cache_hit": true
+    },
+    {
+      "method": "learned",
+      "objective": 38.0586068312,
+      "cold_cache_hit": false,
+      "warm_cache_hit": true
+    },
+    {
+      "method": "legacy",
+      "objective": 38.0586068312,
+      "cold_cache_hit": false,
+      "warm_cache_hit": true
+    }
+  ],
+  "invalid_proxy_task_ids_preserved": true,
+  "metadata_trust_boundary": {
+    "relabelled_declaration_accepted": true,
+    "built_in_physical_ik_recheck": false,
+    "interpretation": "Expected: self-declared asset hashes and status labels bind records but do not independently validate physics or provenance."
+  },
+  "alternate_arm_completeness": {
+    "planner_failed": true,
+    "valid_same_route_witness": true,
+    "interpretation": "F declares both arms, audit A permits R only. Export picks L and rejects all anchors, despite an independently accepted R assignment."
+  },
+  "package_files_checked": 270,
+  "package_files_matched": 270,
+  "original_source_unchanged": true,
+  "source_sha256": {
+    "rc3_v4/external.py": "93bc94c1d6d9aa0d9dfea3149b69f2a8976a02ae5d211cc87079e44e3365356f",
+    "rc3_v4/runtime.py": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff",
+    "rc3_v4/audit.py": "c39c8dd6fd3f4baaebf883e70c98a2164172a41fd1b5975ec5ad6f9cdc54d962",
+    "rc3_v4/plan.py": "2d6a2ee8349ff50f3453a73a626db5b9d4b1b4f861b3017447ea956daf65bb0d",
+    "rc3_v4/verify.py": "357963bff3b34a5caadf7d6e05144a6c1baddbb5c9482e906056526584b7d5e4"
+  },
+  "elapsed_s": 1.3331994640000175,
+  "scope": "No robot operation, no IK computation, no retraining, no full Torch suite; original upload files are read-only."
+}
