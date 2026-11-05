@@ -28,3 +28,7 @@
 [R1完整报告](REPORT_R1.md)：四组同参数、完整前缀、查询优势回归/排序训练。实际9,286次终局评价、6,144步；两表示首轮晋升均失败，两轮A=C/B=D，D相对B改善0%[0,0]。主门槛与冷/热部署门槛均失败，当前配置收尾，不自动追加训练或进入R2。
 
 `r1/protocol.json`、`paper/EXPERIMENT_PLAN.md`为事前协议；`analysis.json`、`quality_time.csv`、`resources.json`及`qa_saved.json`为完整结果和验收。保存数据离线复算入口：`python -B -m rc3_nav_value.r1.summarize` 与 `python -B -m rc3_nav_value.r1.verify_saved --out rc3_nav_value/r1`；均不新增推理、规划、H或训练。
+
+## R1复核后冻结
+
+R1证据版本固定为 `df8cf28b0ece2271bd86d5eceee8ea5ca71a65d0`，`r1/`与REPORT_R1.md保持原字节。用户对上传报告与CSV的复核、当前配置收尾和后续候选约束见 [收尾补充](r1_closeout/REVIEW_AND_DECISION.md)。教师动作识别／预测可靠性仅登记方向，未启动新研究；R2/R3和原60保留测试继续保持未启动／封存。
