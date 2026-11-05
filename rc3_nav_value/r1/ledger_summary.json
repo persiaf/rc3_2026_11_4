@@ -1,0 +1,65 @@
+{
+  "schema": "rc3-r1-oracle-ledger-v1",
+  "limits": {
+    "init": 4096,
+    "round": 8192,
+    "audit": 1024,
+    "validation": 3072
+  },
+  "total_limit": 16384,
+  "used": {
+    "init": 4096,
+    "round": 2551,
+    "audit": 431,
+    "validation": 2208
+  },
+  "started": {
+    "init": 4096,
+    "round": 2551,
+    "audit": 431,
+    "validation": 2208
+  },
+  "completed": {
+    "init": 4096,
+    "round": 2551,
+    "audit": 431,
+    "validation": 2208
+  },
+  "failed": {
+    "init": 0,
+    "round": 0,
+    "audit": 0,
+    "validation": 0
+  },
+  "total_started": 9286,
+  "total_completed": 9286,
+  "total_failed": 0,
+  "cache_hits": 6130,
+  "internal_counts": {
+    "construct": 1440,
+    "two_opt": 37818,
+    "joint_search": 10246,
+    "recipe": 1440
+  },
+  "internal_inclusive_s": {
+    "construct": 11.833956200032844,
+    "two_opt": 66.3950137997781,
+    "joint_search": 34.10935329997119,
+    "recipe": 23.820831200062457
+  },
+  "internal_exclusive_s": {
+    "construct": 11.833956200032844,
+    "two_opt": 66.3950137997781,
+    "joint_search": 28.405604600129664,
+    "recipe": 3.0220652000225527
+  },
+  "certification_counts": {
+    "export_attempts": 9510,
+    "export_completed": 9510,
+    "scalar_attempts": 9286,
+    "scalar_completed": 9286
+  },
+  "oracle_s": 1104.2410161999542,
+  "timing_scope": "Inclusive timers overlap nested recipe/search calls; exclusive timers do not. Oracle time excludes raw completion performed by caller and journal IO.",
+  "accounting_scope": "Every attempted native or full-H evaluation pre-debited once; failed calls remain charged. Explicit cache hits have no new solver/H or certification work."
+}

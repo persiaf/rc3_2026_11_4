@@ -1,0 +1,212 @@
+{
+  "schema": "rc3-r1-seed-audit-boundary-sanity-v1",
+  "generated_at": "2026-11-05T09:24:21.524339+00:00",
+  "base_commit": "129ba6e916ed5a44ecb92998553c082b4510ecd1",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "train_map_first",
+      "text": "8600000000",
+      "expected": [
+        8600000000
+      ],
+      "observed": [
+        8600000000
+      ],
+      "passed": true
+    },
+    {
+      "name": "train_map_last",
+      "text": "8600000031",
+      "expected": [
+        8600000031
+      ],
+      "observed": [
+        8600000031
+      ],
+      "passed": true
+    },
+    {
+      "name": "train_map_outside_upper",
+      "text": "8600000032",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "train_task_first",
+      "text": "8700000000",
+      "expected": [
+        8700000000
+      ],
+      "observed": [
+        8700000000
+      ],
+      "passed": true
+    },
+    {
+      "name": "train_task_last",
+      "text": "8700000031",
+      "expected": [
+        8700000031
+      ],
+      "observed": [
+        8700000031
+      ],
+      "passed": true
+    },
+    {
+      "name": "train_task_outside_upper",
+      "text": "8700000032",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "development_map_first",
+      "text": "8800000000",
+      "expected": [
+        8800000000
+      ],
+      "observed": [
+        8800000000
+      ],
+      "passed": true
+    },
+    {
+      "name": "development_map_last",
+      "text": "8800000031",
+      "expected": [
+        8800000031
+      ],
+      "observed": [
+        8800000031
+      ],
+      "passed": true
+    },
+    {
+      "name": "development_map_outside_upper",
+      "text": "8800000032",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "development_task_first",
+      "text": "8900000000",
+      "expected": [
+        8900000000
+      ],
+      "observed": [
+        8900000000
+      ],
+      "passed": true
+    },
+    {
+      "name": "development_task_last",
+      "text": "8900000031",
+      "expected": [
+        8900000031
+      ],
+      "observed": [
+        8900000031
+      ],
+      "passed": true
+    },
+    {
+      "name": "development_task_outside_upper",
+      "text": "8900000032",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "exploration_first",
+      "text": "9000000000",
+      "expected": [
+        9000000000
+      ],
+      "observed": [
+        9000000000
+      ],
+      "passed": true
+    },
+    {
+      "name": "exploration_last",
+      "text": "9000009999",
+      "expected": [
+        9000009999
+      ],
+      "observed": [
+        9000009999
+      ],
+      "passed": true
+    },
+    {
+      "name": "exploration_outside_upper",
+      "text": "9000010000",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "policy_sampling",
+      "text": "{\"policy_sampling_seed\":11412026}",
+      "expected": [
+        11412026
+      ],
+      "observed": [
+        11412026
+      ],
+      "passed": true
+    },
+    {
+      "name": "fractional_time",
+      "text": "0.8600000000",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "longer_integer",
+      "text": "18600000000",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "hash_fragment",
+      "text": "a8600000000f",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "protected_reserved_not_proposed",
+      "text": "7700000000",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    }
+  ],
+  "test_count": 20,
+  "inventory_raw_file_hash_verified": true,
+  "inventory_file_sha256": "1920e386b20216e42b9407f9eae69c3b562db4b296d55246d44cb405398d2483",
+  "canonical_inventory_sha256": "84eaa9b0a81a5194720577172ada7a125a7d589adfb2e92b081f9e119d895018",
+  "distinct_hash_semantics_verified": true,
+  "tracked_base_filenames_checked": 8551,
+  "filename_collisions": [],
+  "frozen_files_sha256": {
+    "seed_audit.json": "9905cb2765467fcac72097d1ab33e1e592c87f57ce38710d6313a9db6746d13e",
+    "seed_audit_inventory.jsonl": "1920e386b20216e42b9407f9eae69c3b562db4b296d55246d44cb405398d2483",
+    "seed_audit_tool.py": "6d86e3fb43478d5582331db14e42af4f1ebab71adba3ea0e6020c34fb79344f7"
+  },
+  "research_calls": {
+    "scene_generation": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0
+  },
+  "scope": "String boundary tests plus independent raw-JSONL and canonical-TSV hashes; no research calls. Main R1 seed audit files frozen."
+}

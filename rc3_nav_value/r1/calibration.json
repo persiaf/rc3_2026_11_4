@@ -1,0 +1,117 @@
+{
+  "device": "cuda",
+  "torch": "2.12.1+cu126",
+  "python": "3.10.20",
+  "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "probe_steps": 32,
+  "optimizer_updates": 0,
+  "step_s": [
+    1.9939393000004202,
+    0.023752700000841287,
+    0.016529200000150013,
+    0.016047299999627285,
+    0.016234200000326382,
+    0.015689500000007683,
+    0.017540000000735745,
+    0.017559200001414865,
+    0.017540099999678205,
+    0.01786320000064734,
+    0.015671699999074917,
+    0.01693909999994503,
+    0.015667499999835854,
+    0.01779490000080841,
+    0.015973999999914668,
+    0.015543800000159536,
+    0.02304329999969923,
+    0.019229200001063873,
+    0.01769570000033127,
+    0.019073199999184,
+    0.018171499999880325,
+    0.0183154000005743,
+    0.0180465000012191,
+    0.020872199998848373,
+    0.016097300000183168,
+    0.014916799998900387,
+    0.01573160000043572,
+    0.015578399999867543,
+    0.016294299999572104,
+    0.014963100000386476,
+    0.016023000000132015,
+    0.023287099998924532
+  ],
+  "raw_completion_s": [
+    0.3187319999997271,
+    0.34238470000127563,
+    0.2357772000013938,
+    0.4084127999994962,
+    0.4696019000002707,
+    0.2791882000001351
+  ],
+  "max_initial_H_s": 0.3129057999994984,
+  "max_prepare_s": 0.27389059999950405,
+  "prefix_checks": [
+    {
+      "rep": "base",
+      "case": 0,
+      "prefix_equivalence_maxabs": 3.5762786865234375e-07
+    },
+    {
+      "rep": "base",
+      "case": 1,
+      "prefix_equivalence_maxabs": 3.5762786865234375e-07
+    },
+    {
+      "rep": "base",
+      "case": 2,
+      "prefix_equivalence_maxabs": 4.76837158203125e-07
+    },
+    {
+      "rep": "nav",
+      "case": 0,
+      "prefix_equivalence_maxabs": 4.76837158203125e-07
+    },
+    {
+      "rep": "nav",
+      "case": 1,
+      "prefix_equivalence_maxabs": 4.172325134277344e-07
+    },
+    {
+      "rep": "nav",
+      "case": 2,
+      "prefix_equivalence_maxabs": 2.980232238769531e-07
+    }
+  ],
+  "wall_limit_s": 7200,
+  "formula": "min(7200,max(1800,ceil(4*(6144*max_probe_step_s+12288*max_initial_H_s+1728*max_prepare_s+4096*max_raw_completion_s)+120)))",
+  "initial_and_calibration_s": 441.90782619999845,
+  "parameter_count": 75393,
+  "architecture": {
+    "hidden": 64,
+    "layers": 2,
+    "task_dim": 5,
+    "candidate_dim": 7,
+    "edge_dim": 2,
+    "distance_scale": 10.0,
+    "score_scale": 0.2
+  },
+  "stats_before_optimizer": {
+    "optimizer_updates": 0,
+    "backward_probe_steps": 32,
+    "raw_gB_trajectories": 4604,
+    "label_uses": 4064,
+    "scenes": 32,
+    "prepare_calls": 32,
+    "raw_gB_decisions": 197641,
+    "training_or_probe_forward_batches": 32,
+    "training_or_probe_forward_rows": 256,
+    "static_encodes": 6,
+    "prefix_encode_batches": 6,
+    "forward_score_batches": 642,
+    "forward_score_rows": 642,
+    "prefix_update_batches": 642,
+    "prefix_update_rows": 642,
+    "decisions": 642,
+    "complete_many_calls": 6,
+    "raw_trajectories": 6
+  }
+}

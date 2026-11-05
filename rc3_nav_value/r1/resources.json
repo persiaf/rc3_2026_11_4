@@ -1,0 +1,101 @@
+{
+  "status": "completed",
+  "stats": {
+    "optimizer_updates": 6144,
+    "backward_probe_steps": 32,
+    "raw_gB_trajectories": 4636,
+    "label_uses": 12256,
+    "scenes": 64,
+    "prepare_calls": 1824,
+    "raw_gB_decisions": 200474,
+    "training_or_probe_forward_batches": 6176,
+    "training_or_probe_forward_rows": 49408,
+    "static_encodes": 3486,
+    "prefix_encode_batches": 5470,
+    "forward_score_batches": 300279,
+    "forward_score_rows": 773927,
+    "prefix_update_batches": 300175,
+    "prefix_update_rows": 780991,
+    "decisions": 774615,
+    "complete_many_calls": 3422,
+    "raw_trajectories": 10590,
+    "old128_raw_trajectories": 224,
+    "old128_decisions": 20300,
+    "prior_raw_trajectories": 224,
+    "prior_decisions": 20244,
+    "score_state_calls": 2048
+  },
+  "ledger": {
+    "schema": "rc3-r1-oracle-ledger-v1",
+    "limits": {
+      "init": 4096,
+      "round": 8192,
+      "audit": 1024,
+      "validation": 3072
+    },
+    "total_limit": 16384,
+    "used": {
+      "init": 4096,
+      "round": 2551,
+      "audit": 431,
+      "validation": 2208
+    },
+    "started": {
+      "init": 4096,
+      "round": 2551,
+      "audit": 431,
+      "validation": 2208
+    },
+    "completed": {
+      "init": 4096,
+      "round": 2551,
+      "audit": 431,
+      "validation": 2208
+    },
+    "failed": {
+      "init": 0,
+      "round": 0,
+      "audit": 0,
+      "validation": 0
+    },
+    "total_started": 9286,
+    "total_completed": 9286,
+    "total_failed": 0,
+    "cache_hits": 6130,
+    "internal_counts": {
+      "construct": 1440,
+      "two_opt": 37818,
+      "joint_search": 10246,
+      "recipe": 1440
+    },
+    "internal_inclusive_s": {
+      "construct": 11.833956200032844,
+      "two_opt": 66.3950137997781,
+      "joint_search": 34.10935329997119,
+      "recipe": 23.820831200062457
+    },
+    "internal_exclusive_s": {
+      "construct": 11.833956200032844,
+      "two_opt": 66.3950137997781,
+      "joint_search": 28.405604600129664,
+      "recipe": 3.0220652000225527
+    },
+    "certification_counts": {
+      "export_attempts": 9510,
+      "export_completed": 9510,
+      "scalar_attempts": 9286,
+      "scalar_completed": 9286
+    },
+    "oracle_s": 1104.2410161999542,
+    "timing_scope": "Inclusive timers overlap nested recipe/search calls; exclusive timers do not. Oracle time excludes raw completion performed by caller and journal IO.",
+    "accounting_scope": "Every attempted native or full-H evaluation pre-debited once; failed calls remain charged. Explicit cache hits have no new solver/H or certification work."
+  },
+  "device": "cuda",
+  "elapsed_s": 2667.579239499999,
+  "post_calibration_elapsed_s": 2225.6702496,
+  "wall_limit_s": 7200,
+  "logical_updates_per_configuration": 2048,
+  "retained_test_queries": 0,
+  "R2_started": false,
+  "R3_started": false
+}

@@ -1,0 +1,141 @@
+{
+  "training": {
+    "round1_A": {
+      "updates": 512,
+      "first_loss": 0.07293892651796341,
+      "final_loss": 0.07781461626291275,
+      "first128_mean_loss": 0.08755605906480923,
+      "last128_mean_loss": 0.08288785920012742
+    },
+    "round1_B": {
+      "updates": 512,
+      "first_loss": 0.08745448291301727,
+      "final_loss": 0.08706652373075485,
+      "first128_mean_loss": 0.08763865404762328,
+      "last128_mean_loss": 0.08393424039240927
+    },
+    "round1_C": {
+      "updates": 512,
+      "first_loss": 0.07293892651796341,
+      "final_loss": 0.07781461626291275,
+      "first128_mean_loss": 0.08755605906480923,
+      "last128_mean_loss": 0.08288785920012742
+    },
+    "round1_D": {
+      "updates": 512,
+      "first_loss": 0.08745448291301727,
+      "final_loss": 0.08706652373075485,
+      "first128_mean_loss": 0.08763865404762328,
+      "last128_mean_loss": 0.08393424039240927
+    },
+    "round2_A": {
+      "updates": 512,
+      "first_loss": 0.0760815441608429,
+      "final_loss": 0.07777410745620728,
+      "first128_mean_loss": 0.08434746533748694,
+      "last128_mean_loss": 0.07897646402125247
+    },
+    "round2_B": {
+      "updates": 512,
+      "first_loss": 0.07980950176715851,
+      "final_loss": 0.08282730728387833,
+      "first128_mean_loss": 0.0842013864312321,
+      "last128_mean_loss": 0.07991474069422111
+    },
+    "round2_C": {
+      "updates": 512,
+      "first_loss": 0.0760815441608429,
+      "final_loss": 0.07777410745620728,
+      "first128_mean_loss": 0.08434746533748694,
+      "last128_mean_loss": 0.07897646402125247
+    },
+    "round2_D": {
+      "updates": 512,
+      "first_loss": 0.07980950176715851,
+      "final_loss": 0.08282730728387833,
+      "first128_mean_loss": 0.0842013864312321,
+      "last128_mean_loss": 0.07991474069422111
+    },
+    "warm_base": {
+      "updates": 1024,
+      "first_loss": 0.07020016014575958,
+      "final_loss": 0.059990331530570984,
+      "first128_mean_loss": 0.06976606964599341,
+      "last128_mean_loss": 0.06530536903301254
+    },
+    "warm_nav": {
+      "updates": 1024,
+      "first_loss": 0.07020016014575958,
+      "final_loss": 0.06220214068889618,
+      "first128_mean_loss": 0.06976478593423963,
+      "last128_mean_loss": 0.06565587673685513
+    }
+  },
+  "queried_fit_on_seen_training_states": {
+    "A": {
+      "1": {
+        "states": 128,
+        "queried_action_mse": 0.0012756424740982702,
+        "queried_pair_sign_accuracy": 0.5845172513772108,
+        "queried_top1_hit_rate": 0.2578125,
+        "mean_queried_top1_advantage_regret": 0.024828320923768108
+      },
+      "2": {
+        "states": 128,
+        "queried_action_mse": 0.0011563724954904504,
+        "queried_pair_sign_accuracy": 0.6250362213851057,
+        "queried_top1_hit_rate": 0.25,
+        "mean_queried_top1_advantage_regret": 0.020780832518860256
+      }
+    },
+    "B": {
+      "1": {
+        "states": 128,
+        "queried_action_mse": 0.000984758759981637,
+        "queried_pair_sign_accuracy": 0.5554587688734031,
+        "queried_top1_hit_rate": 0.2421875,
+        "mean_queried_top1_advantage_regret": 0.025176575826994445
+      },
+      "2": {
+        "states": 128,
+        "queried_action_mse": 0.0009529951892922343,
+        "queried_pair_sign_accuracy": 0.5986651189785258,
+        "queried_top1_hit_rate": 0.2265625,
+        "mean_queried_top1_advantage_regret": 0.02530828338581167
+      }
+    },
+    "C": {
+      "1": {
+        "states": 128,
+        "queried_action_mse": 0.0012756424740982702,
+        "queried_pair_sign_accuracy": 0.5845172513772108,
+        "queried_top1_hit_rate": 0.2578125,
+        "mean_queried_top1_advantage_regret": 0.024828320923768108
+      },
+      "2": {
+        "states": 128,
+        "queried_action_mse": 0.0011563724954904504,
+        "queried_pair_sign_accuracy": 0.6250362213851057,
+        "queried_top1_hit_rate": 0.25,
+        "mean_queried_top1_advantage_regret": 0.020780832518860256
+      }
+    },
+    "D": {
+      "1": {
+        "states": 128,
+        "queried_action_mse": 0.000984758759981637,
+        "queried_pair_sign_accuracy": 0.5554587688734031,
+        "queried_top1_hit_rate": 0.2421875,
+        "mean_queried_top1_advantage_regret": 0.025176575826994445
+      },
+      "2": {
+        "states": 128,
+        "queried_action_mse": 0.0009529951892922343,
+        "queried_pair_sign_accuracy": 0.5986651189785258,
+        "queried_top1_hit_rate": 0.2265625,
+        "mean_queried_top1_advantage_regret": 0.02530828338581167
+      }
+    }
+  },
+  "interpretation": "Queried-only fit and ranks do not establish all-menu route quality or independent-state generalization."
+}

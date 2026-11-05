@@ -1,0 +1,200 @@
+{
+  "schema": "rc3-r1-seed-use-audit-v1",
+  "generated_at": "2026-11-05T09:23:34.018691+00:00",
+  "base_commit": "129ba6e916ed5a44ecb92998553c082b4510ecd1",
+  "proposed_seed_ranges": {
+    "train_map": [
+      8600000000,
+      8600000031
+    ],
+    "train_task": [
+      8700000000,
+      8700000031
+    ],
+    "development_map": [
+      8800000000,
+      8800000031
+    ],
+    "development_task": [
+      8900000000,
+      8900000031
+    ],
+    "exploration": [
+      9000000000,
+      9000009999
+    ]
+  },
+  "proposed_scene_and_exploration_seed_count": 10128,
+  "policy_sampling_seed": {
+    "value": 11412026,
+    "type": "policy RNG seed, not a scene/map/task seed",
+    "prior_exact_mentions": [],
+    "prior_filename_mentions": [],
+    "status": "NO_RECORDED_PRIOR_MENTION"
+  },
+  "verdict": "PASS_NO_RECORDED_PRIOR_USE",
+  "collisions": [],
+  "filename_collisions": [],
+  "historical_range_overlaps": [],
+  "planned_only_mentions": [],
+  "exact_match_rule": "Integer token boundaries excluding adjacent digits, ASCII-word characters or decimal dots; exact range membership. Filenames separately use numeric boundaries permitting underscore. Decimal timing fragments and longer integers excluded.",
+  "scan": {
+    "tracked_base_files": 8551,
+    "scanned_files": 7247,
+    "file_kinds": {
+      "plain_text": 6903,
+      "gzip_jsonl": 344
+    },
+    "uncompressed_bytes_scanned": 2064315619,
+    "filenames_checked": 8551,
+    "errors": []
+  },
+  "inventory_file": "seed_audit_inventory.jsonl",
+  "inventory_file_sha256": "1920e386b20216e42b9407f9eae69c3b562db4b296d55246d44cb405398d2483",
+  "inventory_file_hash_semantics": "SHA256 of actual JSONL file bytes as written, including its UTF8 and LF newlines",
+  "canonical_inventory_sha256": "84eaa9b0a81a5194720577172ada7a125a7d589adfb2e92b081f9e119d895018",
+  "canonical_inventory_format": "Sorted UTF8 TSV rows: path TAB sha256 TAB physical_file_bytes TAB scanned_uncompressed_bytes LF; this hash is NOT the JSONL file hash",
+  "audited_tool_sha256": "6d86e3fb43478d5582331db14e42af4f1ebab71adba3ea0e6020c34fb79344f7",
+  "explicit_historical_banks": [
+    {
+      "name": "C012_training_maps",
+      "start": 7100000000,
+      "end": 7100000023,
+      "status": "executed"
+    },
+    {
+      "name": "C012_training_tasks",
+      "start": 7200000000,
+      "end": 7200016383,
+      "status": "executed"
+    },
+    {
+      "name": "C012_development",
+      "start": 7300000000,
+      "end": 7300000023,
+      "status": "executed"
+    },
+    {
+      "name": "C012_selection",
+      "start": 7400000000,
+      "end": 7400000047,
+      "status": "executed"
+    },
+    {
+      "name": "C012_small_exact",
+      "start": 7500000000,
+      "end": 7500000011,
+      "status": "executed"
+    },
+    {
+      "name": "C012_throughput_only",
+      "start": 7600000000,
+      "end": 7600000031,
+      "status": "executed"
+    },
+    {
+      "name": "C012_future_test_reserved_unqueried",
+      "start": 7700000000,
+      "end": 7700000059,
+      "status": "protected_reserved_unqueried"
+    },
+    {
+      "name": "C0_small_exact_task_seeds",
+      "start": 7500001000,
+      "end": 7500001011,
+      "status": "executed"
+    },
+    {
+      "name": "C22_training_map_seed",
+      "start": 7100000000,
+      "end": 7100000023,
+      "distinct": 24,
+      "status": "executed"
+    },
+    {
+      "name": "C22_training_task_seed",
+      "start": 7800000000,
+      "end": 7800004095,
+      "distinct": 4096,
+      "status": "executed"
+    },
+    {
+      "name": "C22_mechanism_map_seed",
+      "start": 7900000000,
+      "end": 7900000047,
+      "distinct": 48,
+      "status": "executed"
+    },
+    {
+      "name": "C22_mechanism_task_seed",
+      "start": 8000000000,
+      "end": 8000000047,
+      "distinct": 48,
+      "status": "executed"
+    },
+    {
+      "name": "R0_primary_map_seed",
+      "start": 8300000000,
+      "end": 8300000031,
+      "distinct": 32,
+      "status": "executed"
+    },
+    {
+      "name": "R0_primary_task_seed",
+      "start": 8400000000,
+      "end": 8400000031,
+      "distinct": 32,
+      "status": "executed"
+    },
+    {
+      "name": "C22_calibration_map_seed_start",
+      "start": 8100000000,
+      "end": 8100000031,
+      "status": "executed"
+    },
+    {
+      "name": "C22_calibration_task_seed_start",
+      "start": 8200000000,
+      "end": 8200000031,
+      "status": "executed"
+    },
+    {
+      "name": "R0_exploration_declared_bank",
+      "start": 8500000000,
+      "end": 8500000255,
+      "status": "executed_or_reserved_R0_protocol_bank"
+    }
+  ],
+  "exclusions": {
+    "file_suffix_counts": {
+      ".zip": 25,
+      ".docx": 13,
+      ".png": 40,
+      ".tex": 9,
+      ".pdf": 17,
+      ".svg": 12,
+      ".html": 1,
+      ".pt": 97,
+      ".npz": 49,
+      ".gz": 872,
+      ".pkl": 141,
+      ".patch": 3,
+      ".xml": 2,
+      ".urdf": 2,
+      "(no suffix)": 1,
+      ".stl": 19,
+      ".ps1": 1
+    },
+    "scope": "No unpickling or execution of binary payloads. Historical ZIP/PKL/PT/NPZ/MAT/PDF/image/DOCX internals excluded; their text execution manifests/protocols and gzip JSONL logs covered. No claim about unrecorded external runs."
+  },
+  "interpretation": "No recorded prior actual use in the audited tracked execution/protocol text, gzip routes or filenames and no overlap with explicit historical/protected banks. Proposed-only design mentions are not counted as executed use. Binary/archive scope limitation remains explicit.",
+  "research_calls": {
+    "scene_generation": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0,
+    "reserved_test_queries": 0
+  },
+  "elapsed_s": 61.77964740000061
+}

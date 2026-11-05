@@ -1,0 +1,161 @@
+{
+  "schema": "rc3-nav-value-r1-v1",
+  "date": "2026-11-05",
+  "base_commit": "129ba6e916ed5a44ecb92998553c082b4510ecd1",
+  "training_seed": 11412026,
+  "scope": "One matched development screen; no R2/R3, no retained60 reads, no historical evidence changes",
+  "seeds_sha256": "eb121499b9b7caad4c0cc0691864a019a68a3df5cf216676c75e7e0ad911e9c5",
+  "seed_audit_sha256": "9905cb2765467fcac72097d1ab33e1e592c87f57ce38710d6313a9db6746d13e",
+  "seed_inventory_sha256": "1920e386b20216e42b9407f9eae69c3b562db4b296d55246d44cb405398d2483",
+  "seed_boundary_sha256": "751bac0dfc2457c8da6df056e1a36d1daabaa0b1132881fc2fca084bbe7e1044",
+  "source_sha256": {
+    "rc3_nav_value/r1/run.py": "433d2fc6004dcdc46fd69453c2b1c32f0a9a27eea384dcfcc38175e4e51a58f8",
+    "rc3_nav_value/r1/value_model.py": "804d621739ed11d1fb9baf27757e7f9e9e309583999bbe65f486aaf95644fbf1",
+    "rc3_nav_value/r1/policy.py": "82a5280b8d7c226b19553bc5e5edfabcf48f4d8825a6a56844bd73d2936b119f",
+    "rc3_nav_value/r1/oracle.py": "cd0192bed7be7ce8b82c4f5bde4f0fba528c79cf732d057b92a3a06b613489c3",
+    "rc3_nav_value/r1/analyze.py": "5e6e260d3ed13f6e989c0da6ecb10077f192e81da3da4a7eea6d0f6b8e787cdf",
+    "rc3_constructive/problem.py": "f7bd772ef83c31778e38316d9dbe1c2f3a1cbefb1439bcc8eacff725825d16da",
+    "rc3_constructive/env.py": "7220d141ba6c8e0844c2ea64569e685232c187e933c049d084a9659e0e3316c8",
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_constructive/model.py": "c997ff6d3bc8626fb3bfba269a9cc9de157052026766ba9f60d7938a3505e26f",
+    "rc3_constructive/evaluate.py": "8ee6478d8a9890c045f9b7d9caad8b337a7068c445885201cf20a7a00679166d",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_v3/environment.py": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+    "rc3_v4/runtime.py": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff"
+  },
+  "H_source_sha256": {
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693"
+  },
+  "H_sha256": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "old128_sha256": "2c274552db543ee11a4c5b174a157dff47895b0c590a94187a19b90d094bcacf",
+  "H": "Unchanged baselines.postprocess: twice normalize+two_opt60 then normalize; joint_search2; normalize; export and independent scalar validation",
+  "objective": "J=L+0.75K, closed route; exact positive coverage/current-to-candidate/home reachability action mask",
+  "target": "Delta=(Yref-Ya)/max(Yref,1e-8), Y=J(H(prefix+action+Complete_reference)); positive preferred; model argmax all legal actions",
+  "supersedes": "R1 revised design J-only Huber is superseded BEFORE DATA by user-requested normalized advantage regression+ranking. All four groups receive complete ordered prefix GRU.",
+  "architecture": {
+    "hidden": 64,
+    "layers": 2,
+    "neighbor_count": 20,
+    "near": 16,
+    "long_range": 4,
+    "distance_scale": 10.0,
+    "score_bound": 0.2,
+    "identical_parameters": true,
+    "all_groups_full_prefix": true,
+    "base_relation": "Euclidean candidate distance",
+    "nav_relation": "true candidate navigation D",
+    "common": "true current/home D, exact masks, prefix edge costs, coverage, geometry",
+    "topology": "geometric nearest16 excluding self plus4 quantile ranks floor((2q+1)*R/8) in remaining Euclidean-distance order; distance ties originalID; topology shared and never selected by D"
+  },
+  "groups": {
+    "A": "base fixed g0 with matched new states",
+    "B": "nav fixed g0 with matched new states",
+    "C": "base approximate policy iteration",
+    "D": "nav approximate policy iteration"
+  },
+  "limits": {
+    "init": 4096,
+    "round": 8192,
+    "audit": 1024,
+    "validation": 3072,
+    "total": 16384
+  },
+  "init": "32 nativeFixed3 training reference calls+508 checkpoint menus*up to8; first28 scenes16 thresholds, last4 scenes15. Duplicated crossed threshold prefixes skipped, never replace seeds/states.",
+  "query": "reference first (include both group references in paired states); gain/(distance+.75) descending fill4, current distance fill6, independent permutation fill8. Numeric ties original ID. Only actually queried legal actions enter loss.",
+  "exploration": "9000000000+stable state menu index; below9000010000",
+  "warm": {
+    "updates": 1024,
+    "batch_size": 8,
+    "shared_labels": true,
+    "matched_initial_tensors": true,
+    "shared_within_representation": true
+  },
+  "rounds": {
+    "count": 2,
+    "updates_each": 512,
+    "states_each": 128,
+    "menu_each": 8,
+    "first": "4 coverage thresholds0,.25,.5,.75 from actual g0 trajectories; same pair states and labels",
+    "second": "per scene 2 thresholds0,.5 from fixed g0 plus2 thresholds.25,.75 from current API reference actual trajectories; same pool and menu for fixed/API pair; no duplicate state replacement",
+    "optimizer": "Adam1e-4 at warm; fresh identical Adam1e-4 at round1; retain corresponding optimizer state into round2; clip norm1; no dropout",
+    "promotion": "after round1 only: API candidate vs its current g0 on ALL new dev32: mean relative gain>=.5%, paired bootstrap95 lower>0, all feasible. Otherwise keep g0. No best-checkpoint selection after endpoints.",
+    "invariant": "before promotion A1=C1, B1=D1 exact parameter tensors and dev greedy raw/final routes/J; if reference not promoted also require corresponding round2 identity",
+    "actual_optimizer_steps": 6144,
+    "logical_steps_per_configuration": 2048,
+    "logical_sum_with_inherited_warm": 8192
+  },
+  "loss": {
+    "regression": "SmoothL1 beta.02 on Delta queried actions only",
+    "ranking": "all queried pairs weighted by absolute true Delta gap; softplus(-signGap*predGap/.02); skip ties<=1e-8",
+    "rank_weight": 0.1,
+    "unqueried": "unknown; no zero fill, no loss and no pseudo label",
+    "replay": "warm labels used only for warm1024; each round uses only its frozen-reference current labels, eight same-scene states; fixed/API matched scene/minibatch indices"
+  },
+  "audit": "after each round on actual training state pool: evaluate learner all-menu argmax under corresponding frozen reference; if in queried8 reuse label; otherwise1 billed fullH. Never fit/promote/select using these audit outcomes. This tests action generalization on seen states, not unseen-state generalization.",
+  "validation": {
+    "initial_methods": [
+      "warm_base",
+      "warm_nav",
+      "old128",
+      "prior",
+      "gBH",
+      "fixed3",
+      "detour16"
+    ],
+    "round_methods": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "timing_methods": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "warm_nav",
+      "old128",
+      "prior",
+      "fixed3",
+      "detour16"
+    ],
+    "cases": 32,
+    "repetitions": 3,
+    "cache_modes": [
+      "cold",
+      "hot"
+    ],
+    "reserved_other_calibration": 128,
+    "independence": "new development maps independent of train/R0, but SAME dev32 used for promotion and final screen => exploratory, not untouched test confirmation",
+    "baselines": "Fixed3/Detour16 retain full native pipeline; gBH teacher uses commonH; prior/old/neural use commonH. Do not claim all native baselines have an identical pipeline.",
+    "timing": "random deterministic method/cache order; scene generation/JSON load excluded; deploy total=timed C/F/D preparation+feature/static encode/decision+oracle compute (H/native, export, independent scalar checks). Journal/fsync/summary IO excluded by oracle compute stopwatch; observed full request wall and bookkeeping residual separately saved. No inter-request neural embedding reuse; model load outside and reported; GPU synchronize boundaries.",
+    "top_calls_upper": 2336,
+    "unknown_audit_upper": 1024
+  },
+  "gate": {
+    "main": "ALL32 valid; D2vsB2 mean>=.5% and paired95lower>0; D2vswarm_nav95lower>0; D2vsold128+H95lower>0",
+    "strong_deployment": "also Detour16 relative degradation one-sided95upper<=.5%; complete time median ratio<=.7 and p95ratio<=1 in both navcache modes; not quality/time dominated byFixed3",
+    "inference": "no online Complete lookahead; one greedy full-menu model construction+H; no rulefallback",
+    "fail": "close this configuration; no further updates/seeds/rounds; retain R0 opportunity result; R2 never automatically starts"
+  },
+  "bootstrap": {
+    "resamples": 20000,
+    "seed": 11412026,
+    "unit": "scene",
+    "relative_gain": "100*(Jbaseline-Jcandidate)/Jbaseline",
+    "CI": "paired percentile95; exploratory; no multiple-comparison confirmatory claim"
+  },
+  "wall": {
+    "calibration": "initial labels;3 untrained raw greedy NN probes per representation;16 forward/backward probes per representation, NO optimizer updates; all tracked",
+    "freeze_before_optimizer": true,
+    "formula": "min(7200,max(1800,ceil(4*(6144*max_probe_step_s+12288*max_initial_H_s+1728*max_prepare_s+4096*max_raw_completion_s)+120)))",
+    "scope": "starts immediately before first optimizer step; includes all following training, raw trajectories, oracle calls, audits, validation and timing. Initial collection/calibration separately recorded. Deadline checked between calls/steps, cannot extend.",
+    "incomplete": "inconclusive_stop; preserve failed calls/checkpoints; no replacement run or early-checkpoint substitution"
+  },
+  "counters": "actual terminal native/H calls vs label uses/cachehits; internal solver calls, NN staticencodes/score batches/rows, raw trajectories/decisions, backward probes and actual/logical optimizer steps separately; topcalls are not equal FLOPs"
+}

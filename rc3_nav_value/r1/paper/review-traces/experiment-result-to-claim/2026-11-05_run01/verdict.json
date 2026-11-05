@@ -1,0 +1,76 @@
+{
+  "schema": "rc3.r1.result_to_claim.v1",
+  "experiment": "R1 single matched training-seed development screen",
+  "reviewer_role": "independent paper architect/reviewer",
+  "date": "2026-11-05",
+  "claim_supported": "no",
+  "supporting_representation_claim_supported": "no",
+  "research_gate": "fail",
+  "deployment_gate": {"cold": "fail", "hot": "fail"},
+  "confidence": "high",
+  "paper_claim_audit": "unavailable",
+  "paper_writing_verdict": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "what_results_support": [
+    "Neither first-round candidate passed the registered promotion rule: C1 gain 0.602016495776891%, CI95 [-0.7715013931372698,1.9818528988290915]%; D1 gain 1.1355472856199402%, CI95 [-0.1138629968863214,2.5002968281150717]%.",
+    "No reference policy update occurred. Both rounds retain warm reference hashes; A=C and B=D have exact saved raw/final route and J identities and byte-identical checkpoint tensor-storage payloads.",
+    "D2 vs B2 gain is exactly 0%, CI95 [0,0]%. D2 vs warm_nav is 0.5963534057306674%, CI95 [-1.1690721105346313,2.4938448761426106]%. D2 vs old128+H is -6.145567385064993%, CI95 [-7.783350569997495,-4.493346025953747]%.",
+    "B2 vs A2 (equivalently D2 vs C2) gain is -0.943622345550901%, CI95 [-2.4254011327888,0.6227407741918931]%; warm_nav vs warm_base is -0.7195777262135973%, CI95 [-1.8477857426736066,0.37747070700635793]%. No positive terminal-route representation benefit is supported.",
+    "All 2208 quality records have stored valid dual certificates; all required quality/timing cells are present. The main gate fails on every criterion except recorded feasibility.",
+    "D2 selects unknown actions in 124/128 training-state audits (96.875%). Those unknown choices have 0.11764425265363991% mean true advantage, 1.3349503453430234 pp optimism bias, 3.6392289194184357% mean positive regret to the queried best, and 12.444896948679288% worst such loss.",
+    "D2 mean relative degradation against native Detour16 is 9.17532445110922%, with one-sided 95% upper bound 10.598362615421696%. Cold D/Detour16 median and p95 time ratios are 1.1370509058994838 and 1.0610124545268562; hot ratios are 1.2123744742178664 and 1.0790762669689669. Native Fixed3 dominates all registered quality/time axes in both modes.",
+    "The saved journal contains 9286 started/completed terminal calls, zero failures and 6130 cache hits. Exactly 6144 optimizer steps are logged. Post-calibration elapsed time 2225.6702496 s is below 7200 s. No accounting, timing or saved-QA blocker was found."
+  ],
+  "what_results_dont_support": [
+    "API benefit, a completed effective changed-reference API iteration, or a general claim that API is ineffective: this run never promoted its reference.",
+    "A reliable terminal-route gain from candidate-navigation relations, or information necessity of original G1–G4. The intervals also do not establish universal harm from navigation relations.",
+    "All-menu learning, global action optimality, independent-state generalization, or a causal diagnosis from queried-only fitting.",
+    "Deployment advantage, physical feasibility/IK, seed-robust learning, untouched-test confirmation, hardware-independent speedup, or a new network gain inferred from R0 teacher search."
+  ],
+  "missing_evidence": {
+    "failed_under_current_configuration": [
+      "Accepted promotion, all non-feasibility main-gate conditions, and both cache-mode deployment gates.",
+      "Positive evidence for terminal-route benefit from candidate-navigation relations."
+    ],
+    "not_tested_or_not_identified": [
+      "An API contrast after an actually accepted changed reference.",
+      "Independent unseen-state full-menu action generalization, multiple training seeds and an untouched confirmatory test.",
+      "G1–G4 information necessity, alternative architectures/RL methods, physical feasibility, and other hardware deployment."
+    ],
+    "saved_artifact_limits": [
+      "No saved Adam moment/step tensors or individual sampled label indices; no independent recovery of initial shared tensors or unqueried scores/masks.",
+      "Compact records cannot establish exact single-vs-batched completion argmax equivalence or replace fresh geometric validation.",
+      "Saved scene identities/resource declarations cannot establish the absence of every possible unsaved retained-test read."
+    ]
+  },
+  "suggested_claim_revision": "In a preregistered single-seed development screen, neither first-round candidate passed the reference-promotion rule. The second round retained the initial reference, yielding identical fixed-reference and nominal API learners within each representation. The final navigation learner failed the incremental-quality and complete quality–time deployment criteria and showed no reliable terminal-route advantage from candidate-navigation relations. These results delimit this configuration and do not establish a general failure of API or navigation information.",
+  "next_experiments_needed": [
+    "None is needed to decide this frozen screen: close the configuration. Do not append updates, seeds, rounds, replacement runs or rescue ablations.",
+    "Only under a separate explicit task and newly frozen protocol: a substantively revised method must document an accepted reference change before claiming API effects, evaluate independent-state full-menu choice, and use matched multiple seeds plus an untouched test for broader claims.",
+    "A future deployment claim must satisfy full native-baseline quality–time criteria under declared hardware; this statement does not authorize future work."
+  ],
+  "routing_action": "close_current_configuration_no_automatic_R2_R3",
+  "routing_category": "pivot_or_narrow_claim_without_new_experiments",
+  "positive_claim_paper_writing_ready": false,
+  "blocking_evidence_issues": [],
+  "independent_checks": {
+    "source": "saved artifacts only; standard library and NumPy; no project runtime imported",
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 11412026,
+    "final_comparisons_recomputed": 8,
+    "promotion_comparisons_recomputed": 2,
+    "quality_records_checked": 2208,
+    "timing_records_checked": 1728,
+    "method_cache_timing_summaries_recomputed": 18,
+    "checkpoint_identity_pairs_checked": 4,
+    "tensor_storage_entries_per_checkpoint": 44,
+    "qa_input_files_rehashed": 882,
+    "qa_input_missing": 0,
+    "qa_input_hash_mismatches": 0,
+    "saved_qa_checks": 1012842,
+    "saved_qa_failures": 0,
+    "new_research_calls": 0,
+    "model_instantiations": 0
+  },
+  "raw_reply": "raw_reply.md"
+}
