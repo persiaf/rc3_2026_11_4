@@ -1,0 +1,54 @@
+{
+  "experiment": "C2.1 frozen-route common-H1 diagnosis",
+  "reviewer_role": "independent delegated paper architect/reviewer",
+  "review_date": "2026-11-05",
+  "claims": {
+    "A_common_H1_gap_closure": {
+      "claim_supported": "yes",
+      "confidence": "high",
+      "what_results_support": "All 72 routes improve; RL mean absolute Fixed3 gap decreases 18.5173262118 to 1.6155086193, descriptive reduction 91.2756917451%.",
+      "what_results_dont_support": "No isolated causal selection/order component, optimality, generalization or learning superiority.",
+      "missing_evidence": "No additional evidence required for this bounded conditional descriptive claim; stronger claims require independent confirmation.",
+      "suggested_claim_revision": "Limit to saved frozen routes on reused 24 development scenes under the fixed compound H1.",
+      "next_experiments_needed": [],
+      "routing_action": "confirm_bounded_descriptive_finding_only"
+    },
+    "B_stable_independent_deployment_advantage": {
+      "claim_supported": "no",
+      "confidence": "high",
+      "what_results_support": "H1 preserves a modest conditional mean learning signal but paired intervals cross zero.",
+      "what_results_dont_support": "Stable superiority to prior/init, noninferiority or equivalence to Fixed3, complete pipeline speed or deployment frontier.",
+      "missing_evidence": [
+        "frozen-method independent confirmation",
+        "training-seed repeatability",
+        "complete same-machine pipeline timing",
+        "controlled mechanism/target attribution"
+      ],
+      "suggested_claim_revision": "Learning advantage remains unconfirmed; retain strong-rule defaults and report only limited exploratory signal.",
+      "next_experiments_needed": [
+        "Only if separately authorized: controlled raw-vs-post training-target test with all other design factors fixed; later independent and complete-time confirmation."
+      ],
+      "routing_action": "narrow_claim_and_stop_capped_stage"
+    },
+    "limited_learning_signal": {
+      "claim_supported": "partial",
+      "confidence": "medium",
+      "what_results_support": "Under common H1 RL improves prior by mean 1.3397079747% and initialization by 1.0900229689%.",
+      "what_results_dont_support": "Stability: both scene-paired intervals cross zero; wins 13/24 and 12/24 respectively.",
+      "routing_action": "retain_as_conditional_exploratory_signal"
+    }
+  },
+  "blocking_factual_mismatches": [],
+  "numeric_audit": "PASS; numeric_audit.json",
+  "actual_review_additional_work": {
+    "planner_calls": 0,
+    "neural_calls": 0,
+    "optimizer_updates": 0,
+    "geometry_certificates": 0,
+    "retained_test_queries": 0
+  },
+  "paper_claim_audit": "unavailable",
+  "downstream_writing_status": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "scope": "Independent agent review, not an outside human review. No further experiment authorized."
+}

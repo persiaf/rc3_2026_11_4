@@ -1,13 +1,16 @@
 {
-  "version": "2026.11.04-constructive-c2",
-  "snapshot_date": "2026-11-04",
+  "version": "2026.11.05-constructive-c21",
+  "snapshot_date": "2026-11-05",
   "repository": "https://github.com/persiaf/rc3_2026_11_4",
   "default_branch": "main",
   "snapshot_tag": "snapshot-2026-11-04-constructive-c2",
   "frozen_base_snapshot_tag": "snapshot-2026-11-04-g23-closeout",
   "planning_entry": "rc3_v5.plan",
   "robot_preflight_entry": "rc3_v5_1.robot_input",
-  "default_methods": ["Fixed3", "Detour"],
+  "default_methods": [
+    "Fixed3",
+    "Detour"
+  ],
   "main_experiment_evidence": "rc3_v4",
   "local_window_stop_drl_core": "closed_after_G2.3_primary_gate_failure",
   "construction_based_research": "C0_C1_C2_completed_primary_and_continuation_gates_failed_no_C3",
@@ -15,5 +18,10 @@
   "constructive_optimizer_updates": 512,
   "constructive_training_seeds": 1,
   "physical_calibration_and_ik": "deferred",
-  "scope": "2D static-batch planning with proxy reachability constraints"
+  "scope": "2D static-batch planning with proxy reachability constraints",
+  "snapshot_tag_scope": "Frozen C012 snapshot; current C21 revision is identified by Git commit, tag not moved",
+  "constructive_diagnostic": "C2.1_completed_72_frozen_route_H1_calls_learning_advantage_unconfirmed_no_training_no_C3",
+  "constructive_diagnostic_report": "rc3_constructive/REPORT_C21.md",
+  "constructive_diagnostic_new_optimizer_updates": 0,
+  "constructive_diagnostic_reserved_test_queries": 0
 }

@@ -14,3 +14,12 @@
 - ../REPORT_C012.md、EXPERIMENT_RESULT_TO_CLAIM.md、findings.md：最终报告与路由。
 - review-traces/experiment-result-to-claim/2026-11-04_run01/：独立提示、原回应、结构化判定、路由及独立复算脚本／JSON。
 - 根项目project_management/GIT_MANIFEST.json：所有交付文件的逐项SHA256清单，以Git版本管理，不生成额外ZIP备份。
+
+## C2.1（2026-11-05）
+
+- ../REPORT_C21.md、../c21.py：冻结路线归因报告与有界执行／保存复算入口。
+- ../c21/protocol.json、call_ledger.jsonl、execution_environment.json：事前固定参数、输入／权重哈希与72次调用账。
+- ../c21/rows.jsonl、analysis.json、per_scene.csv：三来源H0/H1候选集合、J/L/K及三类增量。
+- ../c21/plans/、verification.json、resources.json、frozen_integrity.json：72方案、独立终验、资源分类和冻结字节核对。
+- ../c21/REQUEST.txt：原始用户审查意见及本轮任务范围。
+- review-traces/experiment-result-to-claim/2026-11-05_run01/：独立结果到主张审查及算术复核；无额外规划或证书。
