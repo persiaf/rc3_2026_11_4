@@ -1,0 +1,75 @@
+{
+  "schema": "rc3-c22-resource-accounting-v1",
+  "optimizer_updates": {
+    "A": 128,
+    "B": 128,
+    "total": 256
+  },
+  "training_policy_sampled_trajectories": 8192,
+  "distinct_training_instances": 4096,
+  "training_maps": 24,
+  "baseline_training_actual_greedy_trajectories": 4096,
+  "baseline_training_actual_forward_batches": 128,
+  "baseline_training_trajectory_uses": 8192,
+  "calibration_greedy_forward_trajectories": 192,
+  "calibration_greedy_backward_trajectories": 128,
+  "evaluation_neural_greedy_trajectories": 144,
+  "total_neural_input_trajectories": 12624,
+  "complete_H_calls": {
+    "calibration": 128,
+    "training": 8192,
+    "evaluation": 192,
+    "total": 8512
+  },
+  "complete_H_training_breakdown": {
+    "B_samples": 4096,
+    "shared_fixed_baseline": 4096,
+    "A_samples": 0
+  },
+  "evaluation": {
+    "independent_mechanism_cases": 48,
+    "final_plans": 288,
+    "prior_constructed_routes": 48,
+    "fixed3_complete_calls": 48,
+    "detour16_complete_calls": 48
+  },
+  "geometric_certificates": {
+    "export": 288,
+    "separate_saved_plan_checks": 288,
+    "total": 576
+  },
+  "training_raw_numeric_replays": 12288,
+  "verification_service_transitions": 1172353,
+  "verification_new_H_calls": 0,
+  "review_new_research_calls": 0,
+  "retained_test_queries": 0,
+  "C3_started": false,
+  "complete_pipeline_timing_measurements": 0,
+  "training_wall_limit_s": 2401,
+  "paired_training_elapsed_s": 361.99709989999974,
+  "arm_work_s": {
+    "A": 68.19544800000176,
+    "B": 113.91283500000054
+  },
+  "shared_baseline_s": 75.73543179999842,
+  "shared_preparation_s": 81.3570317000017,
+  "training_H_s": 82.39165850002382,
+  "verification_elapsed_s": 120.63771710000037,
+  "raw_diagnostics": {
+    "A": {
+      "first16_mean_raw_J": 537.6322946853663,
+      "last16_mean_raw_J": 537.870042887514,
+      "first16_objective_J": 537.6322946853663,
+      "last16_objective_J": 537.870042887514,
+      "loss_all_finite": true
+    },
+    "B": {
+      "first16_mean_raw_J": 538.441493481516,
+      "last16_mean_raw_J": 545.7799329894555,
+      "first16_objective_J": 313.51768707585074,
+      "last16_objective_J": 312.5449385180816,
+      "loss_all_finite": true
+    }
+  },
+  "scope": "Trajectory counts include repeated maps, greedy baseline and calibration separately; uses are not forwards. Complete H includes original H0 plus fixed joint search. Strong-rule internal construction/search is contained in complete calls and not expanded as H calls. Arm work includes sample inference, route serialization, sample H if B, loss/backward and optimizer. Shared baseline includes its H and serialization. No deployment timing claim."
+}

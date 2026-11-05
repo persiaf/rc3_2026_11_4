@@ -23,3 +23,13 @@
 - ../c21/plans/、verification.json、resources.json、frozen_integrity.json：72方案、独立终验、资源分类和冻结字节核对。
 - ../c21/REQUEST.txt：原始用户审查意见及本轮任务范围。
 - review-traces/experiment-result-to-claim/2026-11-05_run01/：独立结果到主张审查及算术复核；无额外规划或证书。
+
+## C2.2（2026-11-05）
+
+- ../REPORT_C22.md、../c22.py、../c22_close.py：目标对照报告、一次性执行与保存记录复算。
+- ../c22/protocol.json、instances.jsonl、mechanism_seeds.json、wall_protocol.json：事前协议、4096任务流、48新机制种子及壁钟。
+- ../c22/paper/2026-11-05_EXPERIMENT_PLAN.md及EXPERIMENT_PLAN.md、EXPERIMENT_TRACKER.md：本阶段计划与状态；原阶段计划保留。
+- ../c22/training.jsonl、training_routes.jsonl.gz、training_summary.json、checkpoints/：256新更新、8192sample与4096baseline路线及两终点。
+- ../c22/evaluation.jsonl、analysis.json、per_scene.csv、scenes/、plans/：288质量结果、配对统计与48场景执行方案。
+- ../c22/resources.json、verification.json、frozen_integrity.json、REQUEST.txt：资源分类、合法性重放、原文件字节审计与用户任务。
+- review-traces/experiment-result-to-claim/2026-11-05_run02/：独立算术与主张审查，不执行新规划或训练。

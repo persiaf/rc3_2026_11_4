@@ -1,0 +1,45 @@
+{
+  "all_passed": true,
+  "source_hashes": 18,
+  "calibration_H": 128,
+  "training_H": 8192,
+  "training_routes": {
+    "A": 4096,
+    "B": 4096,
+    "baseline": 4096
+  },
+  "service_transitions": {
+    "A": 397556,
+    "B": 396614,
+    "baseline": 378183
+  },
+  "distinct_training_instances": 4096,
+  "policy_samples": 8192,
+  "baseline_actual": 4096,
+  "baseline_uses": 8192,
+  "training_updates": 256,
+  "wall_limit_s": 2401,
+  "training_elapsed_s": 361.99709989999974,
+  "checkpoint_info": {
+    "A": {
+      "parameter_tensors_changed": 26,
+      "optimizer_state_tensors": 26,
+      "optimizer_steps": 128
+    },
+    "B": {
+      "parameter_tensors_changed": 26,
+      "optimizer_state_tensors": 26,
+      "optimizer_steps": 128
+    }
+  },
+  "loss_formula_audit": "Source checked: detached cost difference times summed logp /100, positive sign for cost minimization. All 256 per-batch raw/objective/baseline means match stored trajectories. Exact trajectory-weighted loss cannot be reconstructed because only mean_logp is retained; mean products cannot replace mean of products. No exact-loss reconstruction claimed.",
+  "fixed_baseline_audit": "Same warm source checkpoint, source holds baseline fixed and asserts unchanged tensors at finish; one shared stored baseline route per instance, two uses. No new neural execution.",
+  "research_calls_added": {
+    "neural": 0,
+    "planner": 0,
+    "H": 0,
+    "optimizer": 0,
+    "geometry": 0,
+    "test_generation": 0
+  }
+}

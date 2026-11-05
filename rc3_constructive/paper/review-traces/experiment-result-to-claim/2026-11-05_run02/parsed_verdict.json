@@ -1,0 +1,46 @@
+{
+  "experiment": "C2.2 matched warm-start raw versus complete-final cost",
+  "review_date": "2026-11-05",
+  "reviewer_role": "independent delegated paper architect/reviewer agent, not external human review",
+  "claim_supported": "partial",
+  "confidence": "high",
+  "preregistered_screen": "inconclusive_stop_this_round",
+  "claims": {
+    "narrow_conditional_B_over_A": {
+      "claim_supported": "yes",
+      "confidence": "medium",
+      "what_results_support": "On this one matched training seed and 48 fixed mechanism scenes, B improves A by mean 1.5490955905%, CI95 [0.5245699539, 2.5706268254], wins 32/48.",
+      "what_results_dont_support": "No cross-training-seed stability or demonstrated improvement over the warm start.",
+      "missing_evidence": "Training-seed repeatability; separate authorization required for any further execution.",
+      "suggested_claim_revision": "Conditional B>A contrast, not a useful new-model or deployment claim."
+    },
+    "combined_useful_mechanism_signal": {
+      "claim_supported": "partial",
+      "confidence": "high",
+      "what_results_support": "g criteria pass, but h mean -0.9084273270%, CI95 [-2.2809904786, 0.3869896839] does not pass. Exact preregistered category is inconclusive, not clear signal and not the unsupported-budget branch.",
+      "what_results_dont_support": "No confirmed improvement over the common warm start; B's final mean J remains higher than warm.",
+      "missing_evidence": "A useful improvement over warm with matched controls and replication.",
+      "suggested_claim_revision": "Post-cost training attenuated deterioration relative to raw-cost training in this capped run; joint screen inconclusive.",
+      "next_experiments_needed": [],
+      "routing_action": "record_inconclusive_and_stop_current_round_without_extra_updates_or_seeds"
+    },
+    "stable_independent_deployment_advantage": {
+      "claim_supported": "no",
+      "confidence": "high",
+      "what_results_support": "Current evidence remains mechanism-level only.",
+      "what_results_dont_support": "No stable superiority, strong-baseline noninferiority, full-pipeline speed, cross-scale or true robot validation.",
+      "missing_evidence": ["cross-training-seed evidence", "frozen-method retained-test confirmation", "standardized complete pipeline timing", "strong-rule quality gate"],
+      "suggested_claim_revision": "Deployment advantage remains unestablished; retain Fixed3/Detour defaults.",
+      "next_experiments_needed": [],
+      "routing_action": "no_C3_or_expanded_training_or_retained_test_queries"
+    }
+  },
+  "numeric_audit": "PASS",
+  "blocking_factual_mismatches": [],
+  "loss_audit_limit": "Per-trajectory logp not saved; exact weighted loss cannot be reconstructed from mean_logp. Source formula, every cost mean, gradients finite/nonzero and optimizer step states checked; no exact gradient recomputation claimed.",
+  "paper_claim_audit": "unavailable",
+  "downstream_writing_status": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "actual_review_additional_calls": {"planner": 0, "H": 0, "neural": 0, "optimizer_updates": 0, "geometry_certificates": 0, "test_generation": 0},
+  "next_action": "Stop this authorized round and record results. Future experiments require a new user task."
+}

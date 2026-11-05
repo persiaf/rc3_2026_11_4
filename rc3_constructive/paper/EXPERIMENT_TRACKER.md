@@ -23,3 +23,14 @@
 | C21-review | 独立结果到主张审查 | 见2026-11-05_run01 trace与EXPERIMENT_RESULT_TO_CLAIM.md |
 | Post-aware-training | 单变量目标机制试验 | NOT STARTED：需未来明确任务，不自动扩训 |
 | Reserved-test | 60个保留场景 | UNQUERIED：本轮仍为0 |
+
+## C2.2（2026-11-05）
+
+| ID | 工作 | 状态与判定 |
+| --- | --- | --- |
+| C22-register/calibrate | 固定实例、共同H与壁钟 | DONE：4096新任务、48机制种子、2401秒上限；校准零优化 |
+| C22-A/B | 匹配暖启动raw/post目标训练 | DONE：各128更新×32，8192策略采样，固定baseline |
+| C22-evaluate | 六方法固定终点评估 | DONE：新48场景、288方案；原60测试查询0 |
+| C22-mechanism | g/h联合筛选 | INCONCLUSIVE STOP：g通过，h区间跨零且均值负；不自动追加 |
+| C22-audit | 完整路线重放与独立结果审查 | 见verification.json与2026-11-05_run02 trace |
+| C3／独立训练种子复核 | 超出本轮范围 | NOT STARTED |
