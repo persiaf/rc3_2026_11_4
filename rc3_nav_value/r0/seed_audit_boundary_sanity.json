@@ -1,0 +1,103 @@
+{
+  "schema": "rc3-r0-seed-audit-boundary-sanity-v1",
+  "generated_at": "2026-11-05T08:18:24.179974+00:00",
+  "all_passed": true,
+  "base_commit": "8b3ad97cfa98109a46a3759f625f2c2ef7a04455",
+  "regex_cases": [
+    {
+      "name": "JSON field",
+      "text": "{\"seed\":8300000000}",
+      "expected": [
+        8300000000
+      ],
+      "observed": [
+        8300000000
+      ],
+      "passed": true
+    },
+    {
+      "name": "map upper bound",
+      "text": "8300000031",
+      "expected": [
+        8300000031
+      ],
+      "observed": [
+        8300000031
+      ],
+      "passed": true
+    },
+    {
+      "name": "task field",
+      "text": "\"task_seed\": 8400000031",
+      "expected": [
+        8400000031
+      ],
+      "observed": [
+        8400000031
+      ],
+      "passed": true
+    },
+    {
+      "name": "exploration upper bound",
+      "text": "8500000255",
+      "expected": [
+        8500000255
+      ],
+      "observed": [
+        8500000255
+      ],
+      "passed": true
+    },
+    {
+      "name": "outside map range",
+      "text": "8300000032",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "outside exploration range",
+      "text": "8500000256",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "fractional timing",
+      "text": "0.8300000000",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "longer integer",
+      "text": "18300000000",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    },
+    {
+      "name": "hash fragment",
+      "text": "a8300000000f",
+      "expected": [],
+      "observed": [],
+      "passed": true
+    }
+  ],
+  "tracked_base_paths_checked": 8352,
+  "filename_pattern": "Numeric boundaries permit underscores in filenames; exact proposed-seed membership required",
+  "filename_collisions": [],
+  "frozen_files_sha256": {
+    "seed_audit.json": "2ef988dda90e08225a1ec8005f1cc8089f6d7a1975973c9050f292a09e4a311a",
+    "seed_audit_inventory.jsonl": "2ac9effcc4b840906ef617c09ec067d6463f03e0d29dce16b4a08fc08b64a6a5",
+    "seed_audit_tool.py": "11d5068dd248b240a70f759716e4a1021294c5806af2359ad42ff57813b416cf"
+  },
+  "research_calls": {
+    "scene_generation": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0
+  },
+  "scope": "Synthetic string boundary tests and tracked filename inspection only. Mainseed audit files frozen at these hashes; this receipt does not alter them."
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "rc3-r0-seed-use-audit-v1",
+  "generated_at": "2026-11-05T08:15:24.198711+00:00",
+  "base_commit": "8b3ad97cfa98109a46a3759f625f2c2ef7a04455",
+  "proposed_seed_ranges": {
+    "map": [
+      8300000000,
+      8300000031
+    ],
+    "task": [
+      8400000000,
+      8400000031
+    ],
+    "exploration": [
+      8500000000,
+      8500000255
+    ]
+  },
+  "proposed_distinct_seeds": 320,
+  "verdict": "PASS_NO_RECORDED_PRIOR_USE",
+  "collisions": [],
+  "historical_range_overlaps": [],
+  "planned_only_mentions": [
+    {
+      "file": "research_proposals/20261105_nav_value_review/revise_docx.py",
+      "classification": "planned_proposal_only",
+      "seed": 8300000000,
+      "byte_offset": 12354,
+      "context": "�实例，regular/mixed/blocked按固定循环为11/11/10例。可采用预留地图种子8300000000+i、任务种子8400000000+i（i=0…31）；正式任务须核对历史未用并登记�"
+    },
+    {
+      "file": "research_proposals/20261105_nav_value_review/revise_docx.py",
+      "classification": "planned_proposal_only",
+      "seed": 8400000000,
+      "byte_offset": 12381,
+      "context": "cked按固定循环为11/11/10例。可采用预留地图种子8300000000+i、任务种子8400000000+i（i=0…31）；正式任务须核对历史未用并登记清单。本次不生成场�"
+    }
+  ],
+  "exact_match_rule": "10-digit integer token with numeric/ASCII-word/dot boundaries, then exact membership in the proposed ranges; decimal timing substrings and hash fragments do not count",
+  "scan": {
+    "tracked_base_files": 8352,
+    "scanned_files": 7048,
+    "file_kinds": {
+      "plain_text": 6704,
+      "gzip_jsonl": 344
+    },
+    "uncompressed_bytes_scanned": 2042709297,
+    "inventory_sha256": "8631c20f068b709c9a64201bd4526a619667c611e7b0796affb7eb38a36aa536",
+    "inventory_reference": "seed_audit_inventory.jsonl",
+    "errors": []
+  },
+  "explicit_historical_banks": [
+    {
+      "name": "C012_training_maps",
+      "start": 7100000000,
+      "end": 7100000023,
+      "status": "executed"
+    },
+    {
+      "name": "C012_training_tasks",
+      "start": 7200000000,
+      "end": 7200016383,
+      "status": "executed"
+    },
+    {
+      "name": "C012_development",
+      "start": 7300000000,
+      "end": 7300000023,
+      "status": "executed"
+    },
+    {
+      "name": "C012_selection",
+      "start": 7400000000,
+      "end": 7400000047,
+      "status": "executed"
+    },
+    {
+      "name": "C012_small_exact",
+      "start": 7500000000,
+      "end": 7500000011,
+      "status": "executed"
+    },
+    {
+      "name": "C012_throughput_only",
+      "start": 7600000000,
+      "end": 7600000031,
+      "status": "executed"
+    },
+    {
+      "name": "C012_future_test_reserved_unqueried",
+      "start": 7700000000,
+      "end": 7700000059,
+      "status": "reserved_unqueried"
+    },
+    {
+      "name": "C0_small_exact_task_seeds",
+      "start": 7500001000,
+      "end": 7500001011,
+      "status": "executed"
+    },
+    {
+      "name": "C22_training_map_seed",
+      "start": 7100000000,
+      "end": 7100000023,
+      "status": "executed",
+      "distinct": 24
+    },
+    {
+      "name": "C22_mechanism_map_seed",
+      "start": 7900000000,
+      "end": 7900000047,
+      "status": "executed",
+      "distinct": 48
+    },
+    {
+      "name": "C22_training_task_seed",
+      "start": 7800000000,
+      "end": 7800004095,
+      "status": "executed",
+      "distinct": 4096
+    },
+    {
+      "name": "C22_mechanism_task_seed",
+      "start": 8000000000,
+      "end": 8000000047,
+      "status": "executed",
+      "distinct": 48
+    },
+    {
+      "name": "C22_calibration_map_seed_start",
+      "start": 8100000000,
+      "end": 8100000031,
+      "status": "executed"
+    },
+    {
+      "name": "C22_calibration_task_seed_start",
+      "start": 8200000000,
+      "end": 8200000031,
+      "status": "executed"
+    }
+  ],
+  "exclusions": {
+    "file_suffix_counts": {
+      ".zip": 25,
+      ".docx": 13,
+      ".png": 40,
+      ".tex": 9,
+      ".pdf": 17,
+      ".svg": 12,
+      ".html": 1,
+      ".pt": 97,
+      ".npz": 49,
+      ".gz": 872,
+      ".pkl": 141,
+      ".patch": 3,
+      ".xml": 2,
+      ".urdf": 2,
+      "(no suffix)": 1,
+      ".stl": 19,
+      ".ps1": 1
+    },
+    "scope": "No unpickling or execution of binary payloads; ZIP delivery packages, PKL/PT/NPZ/MAT payload internals, PDFs/images and DOCX ZIP internals are excluded. Their text execution manifests/protocols and gzip JSONL logs are covered. Existing proposal DOCX files are unexecuted design sources, not evidence of seed use."
+  },
+  "interpretation": "No previous recorded actual use found in tracked execution/protocol text and gzip trajectory logs, nor overlap with explicit C012/C21-reused/C22 banks or the protected60 reserved-test bank. This does not claim forensic enumeration of arbitrary integers inside historical binary/archive payloads or unrecorded external jobs.",
+  "research_calls": {
+    "scene_generation": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0,
+    "reserved_test_queries": 0
+  },
+  "elapsed_s": 86.56423519999953
+}

@@ -1,0 +1,118 @@
+{
+  "audit_scope": "Saved-record arithmetic, hashes and static-source review only; no project imports, planning, H, geometry certification or learning.",
+  "passed": true,
+  "gate": {
+    "complete_cases": 32,
+    "mean_gain_percent": 2.250654204783714,
+    "positive_cases": 32,
+    "max_positive_relative_share": 0.08944762348022874,
+    "mean_gain_pass": true,
+    "positive_count_pass": true,
+    "concentration_pass": true,
+    "all_feasible": true,
+    "passed": true
+  },
+  "quality": {
+    "native": {
+      "J": 284.545602725675,
+      "L": 223.11591522567497,
+      "K": 81.90625
+    },
+    "root": {
+      "J": 284.2691595927062,
+      "L": 222.86290959270622,
+      "K": 81.875
+    },
+    "teacher": {
+      "J": 277.8744753213,
+      "L": 216.8432253213,
+      "K": 81.375
+    }
+  },
+  "exploratory_scene_bootstrap": {
+    "teacher_vs_gBH": {
+      "mean": 2.250654204783714,
+      "ci95": [
+        1.7990165472075776,
+        2.734123017711682
+      ]
+    },
+    "teacher_vs_native_Fixed3": {
+      "mean": 2.3424715302003327,
+      "ci95": [
+        1.8845994433237159,
+        2.818151928194078
+      ]
+    },
+    "root_gBH_vs_native_Fixed3": {
+      "mean": 0.09364809460546068,
+      "ci95": [
+        0.02162451979909534,
+        0.20370614351452027
+      ]
+    }
+  },
+  "teacher_vs_native_mean_percent": 2.3424715302003327,
+  "root_vs_native_mean_percent": 0.09364809460546068,
+  "mode_counts": {
+    "regular": 11,
+    "mixed": 11,
+    "blocked": 10
+  },
+  "total_terminal_calls": 2144,
+  "terminal_calls": {
+    "native": 32,
+    "root": 32,
+    "query": 2016,
+    "teacher": 32,
+    "other": 32
+  },
+  "full_H_calls": 2112,
+  "candidate_uses": 2048,
+  "query_cache_hits": 32,
+  "fullH_result_uses": 2144,
+  "native_internal_calls": {
+    "solve_route": 96,
+    "construct": 96,
+    "two_opt": 288,
+    "joint_search": 96
+  },
+  "fullH_internal_calls": {
+    "two_opt": 8100,
+    "joint_search": 2112
+  },
+  "checkpoints": 256,
+  "checkpoints_with_queried_opportunity": 120,
+  "mean_queried_opportunity_J": 0.7993355339257834,
+  "immediate_rule_suboptimal_checkpoints": 114,
+  "mean_immediate_rule_regret_J": 1.0155297574851594,
+  "raw_min_suboptimal_after_H_checkpoints": 108,
+  "mean_final_regret_of_raw_min_J": 0.7269231244085962,
+  "maximum_reference_continuity_error_J": 0.0,
+  "maximum_final_continuity_error_J": 0.0,
+  "canonical_inventory_sha256": "8631c20f068b709c9a64201bd4526a619667c611e7b0796affb7eb38a36aa536",
+  "inventory_raw_sha256": "2ac9effcc4b840906ef617c09ec067d6463f03e0d29dce16b4a08fc08b64a6a5",
+  "registration_protocol_changed_keys": [
+    "registration_amendment",
+    "seed_boundary_sha256",
+    "source_sha256"
+  ],
+  "verified_plan_hashes": 96,
+  "numerical_or_protocol_blockers": [],
+  "geometry_scope": "Consumed stored verification and plan validity records; reviewer did not issue geometry certificates.",
+  "source_files": {
+    "protocol.json": "475bf0e985f33d35dda18fc2a9fb0173ceadeb5b1602d4e13129f1691f05f55f",
+    "registration_amendment.json": "1c7046c6df7f0cf1ce189b2654ed19374f9c93cc2ce67085a94272a59e85f898",
+    "wall_protocol.json": "0abb89a72ccbb83824dc2497dafc4e321dcee4fe4581179e8779501e1f617826",
+    "execution_summary.json": "552cca703b8b137743a4f436afbc079d4ba8b78e15a7db8952e5e27792116246",
+    "case_results.json": "53896e46a82274ebf2fded391949f546057589bd563637a7bd192351d2a885b1",
+    "calls.jsonl": "aa2f31ce038e1076b270bd71a581bc46a82ed627e7e3b5b6a9690577fff30b71",
+    "evaluations.jsonl": "3266d2b469ec1c10f0d295ae428ddf644e3e7bd11d81625cc28b19b61e068b21",
+    "checkpoints.jsonl": "4175573ec970491697eaf4bb26da759b3f671925b56bbe070b20ef9f7449cb75",
+    "verification.json": "3c77b0a7b34bf2cffbd5b4da3417ce0e76cecb86b25d467d35ab617f0a22d5b3",
+    "analysis.json": "21e49534a4d9b344dc82e93bfec5566c51b849f99829786167110b0d80216864",
+    "resources.json": "46c0fe91e2e2aeebffb100fcce2c601cb605b94af0b4cdcc3bdf358f06e1fee3",
+    "seed_audit.json": "2ef988dda90e08225a1ec8005f1cc8089f6d7a1975973c9050f292a09e4a311a",
+    "seed_audit_boundary_sanity.json": "46a64f49de0c105c7350e5e900e0c676924e5f53b99da8e3ddb8c785e4b04521"
+  }
+}

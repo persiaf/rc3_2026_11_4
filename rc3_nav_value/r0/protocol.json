@@ -1,0 +1,91 @@
+{
+  "schema": "rc3-nav-value-r0-v1",
+  "date": "2026-11-05",
+  "base_commit": "8b3ad97cfa98109a46a3759f625f2c2ef7a04455",
+  "design_commit": "8b3ad97cfa98109a46a3759f625f2c2ef7a04455",
+  "proposal": "RC3_研究模型与实验计划_20261105_评审修订版.docx",
+  "proposal_sha256": "bf1f70ab9014e3348f7332d5ee05c65d2291035c60416d6249ab0316c553c484",
+  "primary_cases": 32,
+  "all_cases_in_primary_summary": true,
+  "mode_counts": {
+    "regular": 11,
+    "mixed": 11,
+    "blocked": 10
+  },
+  "seeds_sha256": "1a5ed75b22aeeb57b473b85abfcd6e65d4eb42d097e6b0296e4cb2da25d29293",
+  "seed_audit_sha256": "2ef988dda90e08225a1ec8005f1cc8089f6d7a1975973c9050f292a09e4a311a",
+  "H": "original H0: twice normalize+two_opt(passes=60), final normalize; then joint_search(passes=2), final normalize",
+  "H_sha256": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "H_source_sha256": {
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693"
+  },
+  "reference": "g_B-v1: fixed native Fixed3 service sequence B, scan from beginning for first positive-gain legal node; serve all remaining covered tasks; auto depot return",
+  "primary_reference_cost": "J(H(Complete_gB(empty prefix)))",
+  "native_Fixed3_separate": true,
+  "old_128_evaluation": false,
+  "objective": "J=L+0.75K, closed tour, unchanged proxy reachability and navigation",
+  "checkpoints": "Coverage thresholds0,1/8,...7/8, queried at first actual teacher state at or beyond threshold; consume all crossed thresholds once; no terminal/duplicate prefix",
+  "query_candidates": "reference first; gain/(D_current,j+0.75) descending fill to4 unique; D_current,j ascending fill to6; independent fixed random permutation fill to8; all legal if fewer; numeric rule ties by originalID",
+  "exploration_seed": "8500000000+case*8+checkpoint_index; independent of maps/tasks",
+  "winner_rule": "minimum actual finalY; within absolute J tolerance1e-7 prefer reference, then originalID; no network scores",
+  "max_checkpoints_per_case": 8,
+  "max_candidates_per_checkpoint": 8,
+  "absolute_J_tolerance": 1e-07,
+  "top_level_caps": {
+    "native": 32,
+    "root": 32,
+    "query": 2048,
+    "teacher": 32,
+    "other": 160
+  },
+  "total_top_level_cap": 2304,
+  "budget_semantics": "One full nativeFixed3 call OR one Complete_gB+fullH/finalH call is a top-level evaluation. Internal recipe construction, two_opt and joint_search separately counted. Counts are not FLOPs or matched search effort.",
+  "cache_key": "sceneSHA256, complete ordered prefix, forcedaction, referenceBhash, gBversion, Hhash, tolerance. Root uses forcedreference action so first root query can hit exact cache. Real calls versus uses/hits separately recorded.",
+  "calibration": {
+    "cases": [
+      0,
+      1,
+      2
+    ],
+    "calls": "first3 native and root allocations reused, no extra calibration H",
+    "wall_rule": "Before main queries: min(1800,max(180,ceil(4*(32*max_prepare_s+32*max_native_s+2272*max_completeH_s+64*max_export_s)+60))) seconds. Soft checks before each terminal call and between cases.",
+    "main_timer": "starts after calibration and source checks; includes all remaining scene preparation, teacher decisions, terminal calls, export and serialization; separate replay verification excluded"
+  },
+  "audits": "One forced uncached rootH repeat per case charged to other (32 of160); compare raw/final routes+metrics; no further H in independent saved-record verification",
+  "primary_gate": {
+    "mean_relative_gain_percent_min": 0.5,
+    "positive_scene_min": 12,
+    "max_positive_relative_share": 0.25,
+    "feasible_all_32": true,
+    "complete_cases_32": true,
+    "strict_positive": "rootJ-teacherJ>1e-7; q=100*(rootJ-teacherJ)/rootJ, thresholds unrounded",
+    "incomplete": "inconclusive stop, no subset, replacement seed, expanded wall or calls"
+  },
+  "bootstrap": "exploratory scene-paired10000 seed114, no training-seed or deployment significance claim",
+  "fail_closed": "Abort on invalid prefix, nonfinite/increase beyond numerical guard, certificate failure or source mismatch; preserve ledger/partial output, no implicit retries/resume",
+  "verification": "Numeric replay of all saved unique completeH raw/final routes, candidate queues/checkpoints from saved data;96 exported plans and96 independent scalar geometry checks if all cases complete; zero verificationH",
+  "claims": "R0 only tests queried action opportunities and bounded teacher improvement underH; no proof of learnability, missing-information necessity, RL contribution, neural deployment, or all-action optimality",
+  "neural_forwards": 0,
+  "optimizer_updates": 0,
+  "retained_test_queries": 0,
+  "R1_started": false,
+  "R2_started": false,
+  "R3_started": false,
+  "cpu_threads": 1,
+  "source_sha256": {
+    "rc3_nav_value/r0_run.py": "a273723c476da984bcb5dfc622755f87af347427362f70dd89e48cf9a0e9a484",
+    "rc3_constructive/problem.py": "f7bd772ef83c31778e38316d9dbe1c2f3a1cbefb1439bcc8eacff725825d16da",
+    "rc3_constructive/env.py": "7220d141ba6c8e0844c2ea64569e685232c187e933c049d084a9659e0e3316c8",
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_v3/environment.py": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+    "rc3_v4/runtime.py": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff"
+  },
+  "seed_boundary_sha256": "46a64f49de0c105c7350e5e900e0c676924e5f53b99da8e3ddb8c785e4b04521",
+  "registration_amendment": "registration_amendment.json"
+}
