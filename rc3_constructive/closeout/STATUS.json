@@ -1,0 +1,50 @@
+{
+  "schema": "rc3-constructive-closeout-status-v1",
+  "date": "2026-11-05",
+  "base_commit": "5d852186974ab21274443b8bebc5e276164564df",
+  "branch_scope": "Same existing network structure with continued policy-gradient training",
+  "status": "closed",
+  "C22_screen": "inconclusive_stop_this_round",
+  "research_reference": {
+    "path": "rc3_constructive/outputs/checkpoints/update0128.pt",
+    "sha256": "2c274552db543ee11a4c5b174a157dff47895b0c590a94187a19b90d094bcacf",
+    "role": "Frozen research reference, not deployment promotion"
+  },
+  "archived_endpoints": {
+    "A": {
+      "path": "rc3_constructive/c22/checkpoints/A_update0128.pt",
+      "sha256": "8e3bcd40658341d92bfacf63039fbd7e30122edc81d651ad3ae846270802b52a",
+      "continue_training": false
+    },
+    "B": {
+      "path": "rc3_constructive/c22/checkpoints/B_update0128.pt",
+      "sha256": "a7b417b8a1eb9cd3bcc9390a4cdf634f7b20ac018b57edbdd8d783e5d009952c",
+      "continue_training": false
+    }
+  },
+  "default_planners": [
+    "Fixed3",
+    "Detour"
+  ],
+  "C3_started": false,
+  "reserved_60_test_queries_this_round": 0,
+  "new_research_calls": {
+    "optimizer_updates": 0,
+    "policy_samples": 0,
+    "neural_forwards": 0,
+    "H_calls": 0,
+    "planner_calls": 0,
+    "scene_generation": 0,
+    "geometry_certificates": 0
+  },
+  "future_navigation_information_gate": {
+    "status": "proposed_not_started",
+    "path": "rc3_constructive/NAVIGATION_INFORMATION_GATE.md",
+    "new_model_or_training_started": false,
+    "abstract_witness_status": "not_searched",
+    "generator_realization_status": "not_attempted"
+  },
+  "maintenance_scope": "Saved-record arithmetic, source reading, byte checks, documentation and Git synchronization; no new training/planning/performance experiment",
+  "closure_report": "rc3_constructive/REPORT_CLOSEOUT.md",
+  "statistics": "rc3_constructive/closeout/analysis.json"
+}

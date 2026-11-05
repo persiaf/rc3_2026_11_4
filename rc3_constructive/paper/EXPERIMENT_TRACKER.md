@@ -34,3 +34,14 @@
 | C22-mechanism | g/h联合筛选 | INCONCLUSIVE STOP：g通过，h区间跨零且均值负；不自动追加 |
 | C22-audit | 完整路线重放与独立结果审查 | 见verification.json与2026-11-05_run02 trace |
 | C3／独立训练种子复核 | 超出本轮范围 | NOT STARTED |
+
+## 当前支线收尾（2026-11-05）
+
+| 项目 | 状态 |
+| --- | --- |
+| 同结构继续策略梯度训练 | CLOSED：接受C22无定论并停止，不从A/B继续 |
+| 原update0128 | FROZEN RESEARCH REFERENCE：不是部署提升 |
+| C012／C21／C22原始证据 | FROZEN，全部保留 |
+| 收尾补算／字节检查 | SAVED-RECORD ONLY：新训练／规划等调用均0 |
+| 导航关系信息价值验证 | PROPOSED NOT STARTED：先独立立项，完整H后的决策价值与场景实现性均待验 |
+| 新模型／C3／原60保留测试 | NOT STARTED／UNQUERIED |

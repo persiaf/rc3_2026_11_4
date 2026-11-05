@@ -1,0 +1,58 @@
+{
+  "experiment": "Constructive same-network policy-gradient branch closeout after C2.2",
+  "review_date": "2026-11-05",
+  "reviewer_role": "Independent delegated paper architect/reviewer agent, not external human review",
+  "claim_supported": "partial",
+  "confidence": "high",
+  "historical_screen": "inconclusive_stop_this_round",
+  "claims": {
+    "conditional_B_better_than_A": {
+      "claim_supported": "yes",
+      "confidence": "medium",
+      "what_results_support": "On one matched seed and the 48 C22 mechanism scenes, post-cost B outperforms raw-cost A by paired mean 1.5490955905%, CI [0.5245699539,2.5706268254].",
+      "what_results_dont_support": "Cross-training-seed stability, improvement over warm or independent deployment value.",
+      "missing_evidence": "Repeatability and actual warm-start improvement; no further runs authorized.",
+      "suggested_claim_revision": "Retain this conditional mechanism finding without promotion to useful-model or deployment superiority."
+    },
+    "combined_useful_new_model": {
+      "claim_supported": "partial",
+      "confidence": "high",
+      "what_results_support": "g passes but h does not: B-vs-warm mean -0.9084273270%, CI [-2.2809904786,0.3869896839]. The original preregistered screen remains inconclusive.",
+      "what_results_dont_support": "B improves its warm start or may replace it as a better research model.",
+      "missing_evidence": "A repeatable net improvement over the warm start.",
+      "routing_action": "Close current same-network continuing-policy-gradient branch; preserve update0128 reference and A/B evidence."
+    },
+    "stable_independent_deployment_advantage": {
+      "claim_supported": "no",
+      "confidence": "high",
+      "what_results_support": "Proxy-valid solutions and bounded conditional comparisons only.",
+      "what_results_dont_support": "Stable learning increment, strong-rule noninferiority, full online speed, cross-scale or true dual-arm robot control.",
+      "missing_evidence": "Independent useful-model confirmation, training stability, strong-baseline quality and full-pipeline timing.",
+      "routing_action": "Retain Fixed3/Detour defaults; no C3 or retained-test queries."
+    },
+    "future_navigation_information_value": {
+      "status": "unproven_not_executed",
+      "what_is_established": "Current scoring consumes current-to-candidate/home navigation terms but does not encode the entire future candidate relation matrix statically.",
+      "what_is_not_established": "This boundary caused C22 degradation, survives complete H as a decision gap, occurs in original-generator instances, or implies a successful new model.",
+      "routing_action": "Proposed separately authorized gate only; no witness search, model change or training now."
+    }
+  },
+  "closeout_document_scope": "PASS",
+  "numeric_audit": "PASS",
+  "blocking_factual_or_logic_mismatches": [],
+  "paper_claim_audit": "unavailable",
+  "downstream_writing_status": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "actual_review_additional_calls": {
+    "training_updates": 0,
+    "policy_samples": 0,
+    "neural_forwards": 0,
+    "H_calls": 0,
+    "planner_calls": 0,
+    "scene_generation": 0,
+    "geometry_certificates": 0,
+    "counterexample_searches": 0
+  },
+  "next_experiments_needed": [],
+  "next_action": "Record this closeout and stop current branch, without starting future gate execution."
+}

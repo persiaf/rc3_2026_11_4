@@ -33,3 +33,11 @@
 - ../c22/evaluation.jsonl、analysis.json、per_scene.csv、scenes/、plans/：288质量结果、配对统计与48场景执行方案。
 - ../c22/resources.json、verification.json、frozen_integrity.json、REQUEST.txt：资源分类、合法性重放、原文件字节审计与用户任务。
 - review-traces/experiment-result-to-claim/2026-11-05_run02/：独立算术与主张审查，不执行新规划或训练。
+
+## 当前同结构支线收尾（2026-11-05）
+
+- ../REPORT_CLOSEOUT.md：收尾决定、统计解释与论文边界。
+- ../NAVIGATION_INFORMATION_GATE.md：未来独立任务门槛，未启动搜索或训练。
+- ../closeout.py、../closeout/analysis.json：保存记录复算与输入哈希，零新研究调用。
+- ../closeout/STATUS.json、frozen_integrity.json、REQUEST.txt：关闭状态、保留权重、原文件字节核对与任务依据。
+- review-traces/experiment-result-to-claim/2026-11-05_run03/：独立统计与主张复核。
