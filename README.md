@@ -14,9 +14,9 @@ R1 已完成单种子有界筛选并收尾当前配置：实际9,286/16,384次�
 
 R1研究证据冻结于提交 `df8cf28`。后续用户复核与候选研究边界登记在 [R1收尾补充](rc3_nav_value/r1_closeout/REVIEW_AND_DECISION.md)：优先验证教师动作识别与完整菜单预测可靠性，候选方向尚未启动。本次收尾维护不新增训练、规划或性能实验。
 
-研究内容三的目标固定为：在大规模复杂10×10父场景中进行深度强化学习训练，冻结策略后快速规划不同规模局部任务。监督和规则仅作辅助与对照，不能替代DRL核心。新独立支线已完成 [S0全局—局部环境一致性](rc3_global_local/REPORT_S0.md)：3父图18窗口、63条未训练轨迹及精确重放，1次无更新梯度探针；S1/S2/S3正式训练和性能验证未启动。完整目标与后续协议见 [固定研究目标](rc3_global_local/RESEARCH_OBJECTIVE.md) 与 [研究目录](rc3_global_local/README.md)。本地分支尚未推送，旧研究结论不因软件检查通过而改变。
+研究内容三的目标固定为：在大规模复杂10×10父场景中进行深度强化学习训练，冻结策略后快速规划不同规模局部任务。监督和规则仅作辅助与对照，不能替代DRL核心。新独立支线已完成 [S0全局—局部环境一致性](rc3_global_local/REPORT_S0.md)：3父图18窗口、63条未训练轨迹及精确重放，1次无更新梯度探针；S1/S2/S3正式训练和性能验证未启动。完整目标与后续协议见 [固定研究目标](rc3_global_local/RESEARCH_OBJECTIVE.md) 与 [研究目录](rc3_global_local/README.md)。S0提交`057830d`已随`codex/global-local-preflight`研究分支历史上传GitHub；旧研究结论不因软件检查通过而改变。
 
-S1/S2正式执行前评审已完成：**正式训练REVISE，本轮工程准备PASS**。实际111物理布局满足预定独立划分；36端点基线与18全候选闭环参照通过；三个已存S0父图的9完整策略轨迹和3次反向通过，优化器更新为0。新增不可变输入/缓存与端点适配层，原S0/v1/v2原字节未改。v3仅为新提案，未激活；完整正式runner、batch/RNG/恢复与权重谱系验收仍须补齐。S3目标及原60测试未评价。见 [本轮全部交付](rc3_global_local_impl_review/README.md)、[实施判断](rc3_global_local_impl_review/IMPLEMENTATION_REVIEW.md) 与 [执行方案](rc3_global_local_impl_review/NEXT_STEP_DECISION.md)。当前分支`codex/global-local-preflight`本地提交，未自动推送或合并main。
+S1/S2正式执行前评审已完成：**正式训练REVISE，本轮工程准备PASS**。实际111物理布局满足预定独立划分；36端点基线与18全候选闭环参照通过；三个已存S0父图的9完整策略轨迹和3次反向通过，优化器更新为0。新增不可变输入/缓存与端点适配层，原S0/v1/v2原字节未改。v3仅为新提案，未激活；完整正式runner、batch/RNG/恢复与权重谱系验收仍须补齐。S3目标及原60测试未评价。见 [本轮全部交付](rc3_global_local_impl_review/README.md)、[实施判断](rc3_global_local_impl_review/IMPLEMENTATION_REVIEW.md) 与 [执行方案](rc3_global_local_impl_review/NEXT_STEP_DECISION.md)。用户明确要求GitHub交付后，已推送至`codex/global-local-preflight`，未合并main；[仓库内交付与远端核对记录](project_management/github_delivery_global_local_preflight/README.md)取代此前仅本地交付状态。
 
 ## 获取完整文件
 
