@@ -1,0 +1,289 @@
+{
+  "schema": "rc3-global-local-literature-verification-v1",
+  "checked_client_date": "2026-11-06",
+  "reviewer": "/root/s0_literature",
+  "scope": "六篇方案文献+RL4CO存在性、元数据及可支持的设计含义；不是整篇论文逐cite审查，也不是实验结果。",
+  "research_goal_fixed": "DRL大规模复杂父场景训练，冻结策略处理不同规模局部任务，输出完整可验证路径；监督仅辅助初始化/对照。",
+  "entries": [
+    {
+      "key": "csp_attention",
+      "title": "Deep Reinforcement Learning for Combinatorial Optimization: Covering Salesman Problems",
+      "authors": [
+        "Kaiwen Li",
+        "Tao Zhang",
+        "Rui Wang",
+        "Yuheng Wang",
+        "Yi Han",
+        "Ling Wang"
+      ],
+      "year": 2022,
+      "venue": "IEEE Transactions on Cybernetics 52(12):13142–13155",
+      "doi": "10.1109/TCYB.2021.3103811",
+      "status": "verified_published",
+      "primary_urls": [
+        "https://doi.org/10.1109/TCYB.2021.3103811",
+        "https://arxiv.org/html/2102.05875v1"
+      ],
+      "metadata_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/34437087/"
+      ],
+      "task": "Covering Salesman Problem：选择覆盖全部城市的访问子集与闭合路线。",
+      "method": "多头注意力、动态覆盖嵌入；完整回合长度的REINFORCE及贪心rollout基线。",
+      "support": "可借鉴动态剩余覆盖状态和完整路线奖励。",
+      "limits": "原城市距离覆盖不含本项目逐臂F/A、底盘碰撞、外部允许表、局部入口/出口或IK。不能迁移其速度或最优差数字。",
+      "metadata_notes": [
+        "2021 arXiv与2022正式卷期分开。",
+        "arXiv v1作者页未列Ling Wang；正式期刊引用使用PubMed的六作者记录，不混并版本。"
+      ],
+      "evidence_sections": [
+        "arXiv v1 §IV dynamic embedding/decoder",
+        "arXiv v1 §V Train with REINFORCE Algorithm"
+      ],
+      "access": "作者arXiv全文与PubMed记录可读；DOI为正式链接。"
+    },
+    {
+      "key": "pomo",
+      "title": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "authors": [
+        "Yeong-Dae Kwon",
+        "Jinho Choo",
+        "Byoungjip Kim",
+        "Iljoo Yoon",
+        "Youngjune Gwon",
+        "Seungjai Min"
+      ],
+      "year": 2020,
+      "venue": "Advances in Neural Information Processing Systems 33 (NeurIPS 2020)",
+      "status": "verified_published",
+      "primary_urls": [
+        "https://proceedings.neurips.cc/paper/2020/hash/f231f2107df69eab0a3862d50018a9b2-Abstract.html",
+        "https://proceedings.neurips.cc/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf"
+      ],
+      "task": "TSP、CVRP、0-1背包。",
+      "method": "多首节点rollout与同实例共享均值基线的REINFORCE；另有多greedy/增广推理。",
+      "support": "未来S2可比较多合法首动作探索与统一终局回报的共享基线。",
+      "limits": "覆盖问题不同首动作不保证循环移位对称或等价最优。多起点、推理增广均须计账，不能直接宣称本任务低方差或收益。",
+      "metadata_notes": [
+        "附件缩写少了正式题名末尾for Reinforcement Learning。"
+      ],
+      "evidence_sections": [
+        "§4.1 multiple starting nodes",
+        "§4.2 equations (3),(4): shared baseline; policy product starts at t=2",
+        "§4.3 multiple greedy inference"
+      ],
+      "implementation_boundary": "强制首动作的概率不来自策略时，不把它作为采样log-prob梯度；各rollout仍须完成同一任务并验证约束。",
+      "access": "NeurIPS正文PDF可读。"
+    },
+    {
+      "key": "uav_global_local",
+      "title": "UAV Path Planning using Global and Local Map Information with Deep Reinforcement Learning",
+      "authors": [
+        "Mirco Theile",
+        "Harald Bayerlein",
+        "Richard Nai",
+        "David Gesbert",
+        "Marco Caccamo"
+      ],
+      "year": 2021,
+      "venue": "2021 20th International Conference on Advanced Robotics (ICAR), pp.539–546",
+      "doi": "10.1109/ICAR53236.2021.9659413",
+      "status": "verified_published",
+      "primary_urls": [
+        "https://arxiv.org/abs/2010.06917v4",
+        "https://www.eurecom.edu/publication/6377/download/comsys-publi-6377.pdf"
+      ],
+      "task": "UAV覆盖路径规划和IoT数据采集。",
+      "method": "DDQN结合压缩全局地图与高分辨率局部裁剪地图。",
+      "support": "可借鉴同一物理环境的粗全局/细局部联合观察。",
+      "limits": "局部观察不是任务窗口可行性保持的证明；离散UAV移动/着陆和移动双臂停靠服务不同，不提供逐臂或IK证书。",
+      "metadata_notes": [
+        "arXiv首发2020；v4为2021-10-21，并注明ICAR 2021。"
+      ],
+      "evidence_sections": [
+        "arXiv abstract and v4 related DOI",
+        "Author-institution PDF §II–III: state/action, DDQN and map processing"
+      ],
+      "access": "作者arXiv与EURECOM全文可读。"
+    },
+    {
+      "key": "glop",
+      "title": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "authors": [
+        "Haoran Ye",
+        "Jiarui Wang",
+        "Helan Liang",
+        "Zhiguang Cao",
+        "Yong Li",
+        "Fanzhang Li"
+      ],
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 38(18):20284–20292",
+      "doi": "10.1609/aaai.v38i18.30009",
+      "status": "verified_published",
+      "primary_urls": [
+        "https://ojs.aaai.org/index.php/AAAI/article/view/30009",
+        "https://arxiv.org/abs/2312.08224v2"
+      ],
+      "official_code": "https://github.com/henry-yeh/GLOP",
+      "task": "TSP、ATSP、CVRP、PCTSP。",
+      "method": "非自回归全局划分与自回归局部构造，层级转换到TSP及Shortest Hamiltonian Path子问题。",
+      "support": "可借鉴局部路径构造和全局连接端点接口。",
+      "limits": "不是任意矩形裁剪的可行性定理，也没有移动双臂F/A或碰撞安全结论；其分区优化不等同当前S0窗口接口已实现。",
+      "metadata_notes": [
+        "arXiv首发2023；正式AAAI引用为2024。"
+      ],
+      "evidence_sections": [
+        "AAAI official abstract and metadata",
+        "arXiv v2 abstract"
+      ],
+      "access": "AAAI摘要/正式元数据与arXiv可读；AAAI PDF直链访问被站点保护拦截。"
+    },
+    {
+      "key": "udc",
+      "title": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "authors": [
+        "Zhi Zheng",
+        "Changliang Zhou",
+        "Xialiang Tong",
+        "Mingxuan Yuan",
+        "Zhenkun Wang"
+      ],
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems 37 (NeurIPS 2024), Main Conference Track",
+      "doi": "10.52202/079017-0197",
+      "status": "verified_published",
+      "primary_urls": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/hash/0b8e4c8468273ee3bafb288229c0acbc-Abstract-Conference.html",
+        "https://arxiv.org/abs/2407.00312"
+      ],
+      "official_code": "https://github.com/CIAM-Group/NCOcode/tree/main/singleobjective/UDC-Large-scale-CO-master",
+      "task": "论文报告10类大规模组合优化问题。",
+      "method": "全局GNN划分、定长子路径求解及Divide-Conquer-Reunion协调训练。",
+      "support": "局部求解目标与全局协调需要联合处理，可作为未来S2的组织参考。",
+      "limits": "不能推出固定窗口训练一定泛化，也不能把只实现局部环境称为已实现UDC或已获得其收益。",
+      "metadata_notes": [
+        "NeurIPS规范记录第三作者Xialiang Tong；arXiv v4显示Tong Xialiang，引用本文采用会议记录。",
+        "arXiv v4修订2025不改变会议年2024。"
+      ],
+      "evidence_sections": [
+        "NeurIPS abstract/metadata",
+        "arXiv v4 abstract/history"
+      ],
+      "access": "NeurIPS与作者arXiv摘要/元数据可读；本文不扩大宣称10个任务的具体清单。"
+    },
+    {
+      "key": "progressive_training",
+      "title": "Enhancing neural combinatorial optimization by progressive training paradigm",
+      "authors": [
+        "Zhi Cao",
+        "Yaoxin Wu",
+        "Yaqing Hou",
+        "Hongwei Ge"
+      ],
+      "year": 2026,
+      "venue": "Neurocomputing 659, article 131707; issue date 2026-01-01",
+      "doi": "10.1016/j.neucom.2025.131707",
+      "status": "verified_published_issue2026",
+      "primary_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S0925231225023793",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0925231225023793"
+      ],
+      "task": "TSP、CVRP，基于LEHD构造模型。",
+      "method": "小规模有最优标签的SL预训练，再在更大实例上RL微调，并以分解降低大规模RL的显存负担。",
+      "support": "有限监督初始化可以服务随后真正的大规模RL；不改变本研究DRL核心。",
+      "limits": "没有验证本项目覆盖/逐臂F&A/导航障碍/入口出口/真实IK。不能据此确定S2超参数、保证收敛或复现速度。",
+      "metadata_notes": [
+        "出版商搜索记录显示卷659及2026-01-01；DOI包含2025，二者不能混作卷期年。",
+        "出版商CRediT列出四作者；搜索返回的文章摘要和章节片段可读，直接open为403。",
+        "摘要的求解规模至10,000节点不等于所有RL训练都在10,000节点；可读介绍称分解训练实现到1000规模。",
+        "四作者顺序另经DBLP规范记录交叉核对；方法含义仍只取出版商片段。"
+      ],
+      "evidence_sections": [
+        "Publisher abstract/introduction",
+        "Publisher CRediT authorship snippet and journal metadata"
+      ],
+      "access": "出版商官方搜索索引返回元数据、摘要/章节片段；直接文章页与Crossref API在本工具中未打开。不是已通读全文的审查。",
+      "metadata_urls": [
+        "https://dblp.org/rec/journals/ijon/CaoWHG26"
+      ]
+    },
+    {
+      "key": "rl4co",
+      "title": "RL4CO: an Extensive Reinforcement Learning for Combinatorial Optimization Benchmark",
+      "authors": [
+        "Federico Berto",
+        "Chuanbo Hua",
+        "Junyoung Park",
+        "Laurin Luttmann",
+        "Yining Ma",
+        "Fanchen Bu",
+        "Jiarui Wang",
+        "Haoran Ye",
+        "Minsu Kim",
+        "Sanghyeok Choi",
+        "Nayeli Gast Zepeda",
+        "André Hottung",
+        "Jianan Zhou",
+        "Jieyi Bi",
+        "Yu Hu",
+        "Fei Liu",
+        "Hyeonah Kim",
+        "Jiwoo Son",
+        "Haeyeon Kim",
+        "Davide Angioni",
+        "Wouter Kool",
+        "Zhiguang Cao",
+        "Qingfu Zhang",
+        "Joungho Kim",
+        "Jie Zhang",
+        "Kijung Shin",
+        "Cathy Wu",
+        "Sungsoo Ahn",
+        "Guojie Song",
+        "Changhyun Kwon",
+        "Kevin Tierney",
+        "Lin Xie",
+        "Jinkyoo Park"
+      ],
+      "year": 2025,
+      "venue": "KDD 2025 (arXiv v6 record: Oral); preprint first submitted 2023",
+      "doi": "10.1145/3711896.3737433",
+      "status": "verified_paper_and_official_repository",
+      "primary_urls": [
+        "https://arxiv.org/abs/2306.17100v6",
+        "https://github.com/ai4co/rl4co",
+        "https://rl4co.ai4co.org/"
+      ],
+      "task": "组合优化RL环境/模型/算法基准与模块化库。",
+      "method": "分离环境、策略、RL算法及评估配置。",
+      "support": "S0仅借鉴接口与模块组织，本轮不安装或替换现有约束内核。",
+      "limits": "RL4CO不提供本机器人F&A、碰撞/IK/轨迹认证；使用其名称不构成实现正确或性能证据。",
+      "metadata_notes": [
+        "预印本2023与KDD 2025正式状态分开。",
+        "环境/方法数量随版本变化，不把早期摘要数量当成当前固定规范。"
+      ],
+      "evidence_sections": [
+        "arXiv v6 metadata/abstract",
+        "Official repository README modularization"
+      ],
+      "access": "作者arXiv及官方仓库可读；未安装或执行库。"
+    }
+  ],
+  "overall": "VERIFIED_WITH_VERSION_AND_SCOPE_LIMITATIONS",
+  "experiment_calls": {
+    "scene_generation": 0,
+    "navigation": 0,
+    "planning": 0,
+    "H": 0,
+    "inference": 0,
+    "backward": 0,
+    "optimizer_updates": 0,
+    "reserved_test_reads": 0
+  },
+  "files_written": [
+    "rc3_global_local/LITERATURE_VERIFICATION.md",
+    "rc3_global_local/literature_sources.json"
+  ],
+  "no_install": true,
+  "no_push": true
+}

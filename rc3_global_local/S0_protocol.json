@@ -1,0 +1,114 @@
+{
+  "schema": "rc3-global-local-S0-v1",
+  "registered_utc": "2026-11-06T02:33:34.506233+00:00",
+  "client_date": "2026-11-06",
+  "base": "6f595cfa89f74d7f7a0e39faaadf5b8655d83f33",
+  "branch": "codex/global-local-s0",
+  "pushed": false,
+  "fixed_research_goal": "DRL trained on large complex10x10 parent scenes, frozen policy for variable4x3/6x6/8x8 local tasks, complete constraint-validated execution paths; supervision only auxiliary init/control",
+  "current_scope": "S0 environment consistency, untrained policies, finite gradient probes, freeze future protocol; NO S1/S2 optimization or S3 performance execution",
+  "source_sha256": {
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_constructive/problem.py": "f7bd772ef83c31778e38316d9dbe1c2f3a1cbefb1439bcc8eacff725825d16da",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_global_local/__init__.py": "ea3c3ff7c385a7a210e2e1765498a3107d154c96e7bd1eada5e800b633fc25c0",
+    "rc3_global_local/environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0",
+    "rc3_global_local/policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+    "rc3_global_local/problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "rc3_global_local/register.py": "09978a10eaddbdcb415b9d2e3253c907b1d2db8124237695db7fd2809599ae0b",
+    "rc3_global_local/report_s0.py": "4d4a297a649ae276b7c59a3ed0ded942b215e39a6d9bd30c798a8ebca1eb001b",
+    "rc3_global_local/run_s0.py": "dde17817de76ba99c57e8c6f32323b6857b33dfdbc6f9ebdc78d56ed0143f07c",
+    "rc3_global_local/terminal.py": "6f4c334176f2d4fcf86e9b02eaaf4ce98c5fa5d8b8bee335e04ed6cea62785af",
+    "rc3_global_local/test_environment.py": "a1425c36a4d2a1af6a2608cf2dfd6b5a5937cb4b549c367a4065b2c9607fdad8",
+    "rc3_global_local/test_policy.py": "110e0c86909c6f6c740a83e2992a6ca000e94b0e74aba03eac0fe2f8edb80bb8",
+    "rc3_global_local/validation.py": "b15b6d0f9e57e64d8e958d08e088299df785342b0b7562fc6336beb48a666777",
+    "rc3_nav_value/r1/oracle.py": "cd0192bed7be7ce8b82c4f5bde4f0fba528c79cf732d057b92a3a06b613489c3",
+    "rc3_v5/external.py": "6a54dcc803d92a68e353c58fafbdd17dc5ec371e4e16101d76b90e1cd6235fc6"
+  },
+  "seeds_sha256": "54d1e91e43ff77d2522481a25db79c6ebb0c6b848c5c572efae2ded8746d81d8",
+  "seed_audit_sha256": "1c790402fa27e45f30e9333a5e04ccd58fbd65351cb929103947864d982c36e7",
+  "unit_sha256": "ec2204efec115c8a01b4e409f86b90f3648f23124216d7a82aba784b573265fa",
+  "policy_unit_sha256": "56dddbdb17a8d284e1ba480d0d2b2d5b49fa248ad633e62ca82545345c01ba02",
+  "prereg_review_sha256": "2711072677074839bfd67195851759f85af92b9b6ec36835f38b74a824a5a803",
+  "prereg_review_json_sha256": "d09e7e750fec826576aff51d5134ab5a85bea2fe2ddfd95bf6420dd64e1b95ee",
+  "environment_sha256": "c861b4483ac6180df5fb07d12695fa5117d93f8975c93d03ab7ab04b50380047",
+  "H_source_sha256": {
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693"
+  },
+  "H_sha256": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "semantics": {
+    "window": "table-index task subset, NOT physically cropped navigation map; all original obstacles and corridors retained; paths may leave task window",
+    "candidates": "all same-arm(F&A) positive-coverage candidates with entry and exit connectivity, including candidates outside selected tables",
+    "state": "global context, local effective F/C, remaining tasks, current node, explicit exit and complete ordered prefix",
+    "action": "one positive-gain legal service pose; no early STOP; at most task_count actions",
+    "endpoints": "local symbol0 outgoing uses entry→candidate, incoming uses candidate→exit; service-service distances symmetric. Empty task uses direct entry→exit cost.",
+    "reward": "step -Dmove-.75; last adds -Dexit + Jraw-JH; sum reward=-JH. Empty task terminal reward=-Dentry,exit.",
+    "H": "original byte-identical normalize/two_opt60 twice + joint_search2 + normalize, applied to explicit endpoint cost adapter; open path uses new independent validator",
+    "physical": "proxy or externally supplied F/A table consistency; no invented IK/collision/joint-trajectory evidence"
+  },
+  "cases": {
+    "parent_scenes": 3,
+    "modes": [
+      "regular",
+      "mixed",
+      "blocked"
+    ],
+    "sizes": [
+      [
+        4,
+        3
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "positions": [
+      "corner",
+      "center"
+    ],
+    "crops": 18,
+    "corner_endpoints": [
+      0,
+      0
+    ],
+    "center_endpoints": "first and last depot-connected original candidate nodes",
+    "A_conditions": "all allowed; deterministic same-arm restrictions retaining one valid pair per task; synthetic allow table only"
+  },
+  "policies": [
+    "uniform random legal",
+    "gain/(navigation+.75) rule",
+    "untrained global/local/prefix stochastic policy greedy endpoint"
+  ],
+  "neural": {
+    "hidden": 64,
+    "global_tokens": "100 table14-feature tokens: geometry/task density/obstacle count/true neighboring navigation",
+    "local": "task5/candidate7 effective bipartite encoder; true current/exit navigation; full-prefix incremental GRU",
+    "heuristic_logit_prior": false,
+    "global_context_identity": "scene+task+F+A hash; never cache by static map alone",
+    "gradient_probe": "three legal forced first stops per8x8 center view, same instance mean return baseline; forced step contributes no policy logprob; one accumulated backward, zero optimizer steps"
+  },
+  "limits": {
+    "parent_generations": 3,
+    "navigation_preparations": 3,
+    "crops": 18,
+    "ordinary_episodes": 54,
+    "gradient_episodes": 9,
+    "full_terminal_attempts": 80,
+    "expected_real_episodes": 63,
+    "wall_s": 1800,
+    "optimizer_updates": 0,
+    "termination": "cooperative checks between work and before successful completion; overrun/error => incomplete, preserve attempts; no silent replacement seed"
+  },
+  "gate": "All view slices equal independent parent calculations, preserve parent inputs, all produced plans validate, rewards telescope, exact action replay, masked policy distribution and finite structural/empirical gradients, unchanged neural parameters, no optimizer/heldout60 calls",
+  "future_training": "separately registered S2_S3_protocol.json held NOT_STARTED; source binding for future trainer/baseline conformance mandatory before any formal optimizer",
+  "original60": "sealed, no content reads/generation/queries"
+}

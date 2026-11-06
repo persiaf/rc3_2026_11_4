@@ -1,0 +1,113 @@
+{
+  "schema": "S0-independent-synthetic-policy-contract-v1",
+  "client_date": "2026-11-06",
+  "author": "/root/s0_policy_contract",
+  "tests": 13,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "elapsed_s": 0.3301243000005343,
+  "command": "python -B -m rc3_global_local.test_policy",
+  "test_names": [
+    "test_cache_branch_recomputes_ordered_prefix",
+    "test_cross_model_cache_rejected_even_when_versions_equal",
+    "test_cross_problem_cache_rejected",
+    "test_cross_weight_version_cache_rejected",
+    "test_empty_problem_has_no_action_distribution",
+    "test_feature_dimensions_and_manual_values",
+    "test_history_preserves_order_for_same_current_and_coverage",
+    "test_illegal_actions_have_exact_zero_probability",
+    "test_incremental_prefix_cache_equals_full_recompute",
+    "test_one_parameter_set_supports_different_local_sizes",
+    "test_same_prefix_score_does_not_repeat_GRU_updates",
+    "test_structural_backward_is_finite_and_preserves_weights",
+    "test_terminal_has_no_action_distribution"
+  ],
+  "source_sha256": {
+    "test_policy.py": "110e0c86909c6f6c740a83e2992a6ca000e94b0e74aba03eac0fe2f8edb80bb8",
+    "policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+    "problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0"
+  },
+  "model_operations": {
+    "encode_attempts": 18,
+    "encode_completed": 18,
+    "score_attempts": 23,
+    "score_completed": 18,
+    "prefix_GRU_forward_calls": 28,
+    "backward_calls": 1,
+    "synthetic_weight_version_mutations": 1
+  },
+  "structural_gradient_norms": {
+    "global_": 0.20080141588567332,
+    "local": 6.609338609580705,
+    "prefix": 0.8458102667902395,
+    "query": 6.490812673887307,
+    "key_navigation": 3.3725369943255643
+  },
+  "optimizer_updates": 0,
+  "real_scene_generation": 0,
+  "navigation_preparations": 0,
+  "planner_calls": 0,
+  "H_calls": 0,
+  "teacher_queries": 0,
+  "retained60_reads": 0,
+  "scope": "Hand-authored F/A/D fixtures and identity terminal only; finite graph connectivity is not RL training or evidence of learning increment. One isolated in-memory parameter mutation tests version rejection; no checkpoint is written or altered.",
+  "previous_runs": [
+    {
+      "reason": "Initial12-contract run before added cross-model-instance guard and regression test",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "passed": true,
+      "elapsed_s": 0.4276049999998577,
+      "source_sha256": {
+        "test_policy.py": "49b6d11b50ffa5f23e3cfe3e5d5827e5e2298f923ab2df1d64b4eda8a469421f",
+        "policy.py": "bd3c38e792aad2efa571532fb668c9d32fce765184eae16a7b3cf8acd4b246c3"
+      },
+      "model_operations": {
+        "encode_attempts": 17,
+        "encode_completed": 17,
+        "score_attempts": 22,
+        "score_completed": 18,
+        "prefix_GRU_forward_calls": 28,
+        "backward_calls": 1,
+        "synthetic_weight_version_mutations": 1
+      }
+    },
+    {
+      "reason": "13-contract run after cross-model-instance guard; preceding dependency bytes",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "passed": true,
+      "elapsed_s": 0.06963769999947544,
+      "source_sha256": {
+        "test_policy.py": "110e0c86909c6f6c740a83e2992a6ca000e94b0e74aba03eac0fe2f8edb80bb8",
+        "policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+        "problem.py": "0149226f3a56a82ff79b1ff7a9e103dd6d34198fc990634de0d269206bc80ff0",
+        "environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0"
+      },
+      "model_operations": {
+        "encode_attempts": 18,
+        "encode_completed": 18,
+        "score_attempts": 23,
+        "score_completed": 18,
+        "prefix_GRU_forward_calls": 28,
+        "backward_calls": 1,
+        "synthetic_weight_version_mutations": 1
+      }
+    }
+  ],
+  "all_unit_runs_model_operations": {
+    "encode_attempts": 53,
+    "encode_completed": 53,
+    "score_attempts": 68,
+    "score_completed": 54,
+    "prefix_GRU_forward_calls": 84,
+    "backward_calls": 3,
+    "synthetic_weight_version_mutations": 3
+  },
+  "all_unit_runs_elapsed_s": 0.8273669999998674,
+  "run_scope_note": "Current13 tests bind updated dependency hashes; preceding12/13 runs are retained solely for verification-cost accounting. All used synthetic fixtures; no optimizer, real scene, navigation, H or checkpoint."
+}

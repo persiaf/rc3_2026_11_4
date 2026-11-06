@@ -1,0 +1,128 @@
+{
+  "schema": "rc3-global-local-independent-synthetic-unit-v2",
+  "client_date": "2026-11-06",
+  "author": "/root/s0_independent_tests",
+  "command": "rc3_learning/.venv/Scripts/python.exe -B -m unittest rc3_global_local.test_environment -v",
+  "tests_passed": 38,
+  "failures": 0,
+  "errors": 0,
+  "observed_test_elapsed_s": 0.071,
+  "tests": [
+    "rc3_global_local.test_environment.EnvironmentContracts.test_action_type_and_range_rejected_without_state_mutation",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_boundary_candidate_not_clipped_by_table_or_position",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_closed_endpoint_costs",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_disconnected_candidates_filtered_before_local_decision",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_disconnected_entry_exit_rejected",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_empty_closed_problem_zero_cost",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_empty_task_problem_moves_directly_to_exit",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_endpoint_may_coincide_with_service_without_repeated_service",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_every_synthetic_legal_action_sequence_completes_within_N",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_extract_grid_keeps_original_task_and_candidate_ids",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_global_mapping_rejects_invalid_internal_nodes",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_global_mapping_rejects_repeated_service_but_not_endpoint_overlap",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_identity_terminal_reward_is_complete_open_route_cost",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_incomplete_replay_fails",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_mask_checks_current_and_exit_distance",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_mask_positive_gain_and_no_repeat",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_observation_arrays_and_prefix_are_copies",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_open_endpoint_matrix_and_service_submatrix",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_parent_constraint_input_copied_and_stored_readonly",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_parent_global_ids_reject_numeric_equal_non_integer_types",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_parent_rejects_D_shape_without_preparing_navigation",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_parent_rejects_asymmetric_navigation",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_parent_rejects_noncontiguous_global_ids",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_parent_scene_F_A_D_unchanged_by_extraction_and_rollout",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_proxy_coupled_task_rejected_before_prepare",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_proxy_nonfinite_lift_rejected_before_prepare",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_proxy_variable_lift_rejected_before_prepare",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_replay_is_exact_and_fresh_only",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_rule_uses_positive_coverage_and_exact_distance",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_same_arm_allow_restriction_is_retained",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_same_arm_intersection_required",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_supported_proxy_input_reaches_only_mocked_prepare",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_target_and_endpoint_validation",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_terminal_H_correction_sign_and_telescoping_identity",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_terminal_state_rejects_all_further_actions",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_uncoverable_selected_task_fails_closed",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_variable_lift_dispatches_to_supplied_external_tables",
+    "rc3_global_local.test_environment.EnvironmentContracts.test_window_validation"
+  ],
+  "test_sha256": "a1425c36a4d2a1af6a2608cf2dfd6b5a5937cb4b549c367a4065b2c9607fdad8",
+  "tested_source_sha256": {
+    "problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0"
+  },
+  "scope": "Synthetic matrices only. Mock prepare verifies unsupported coupled tasks, variable/nonfinite proxy lift are rejected before any real kernel; mocked external dispatch permits supplied-table lift. No actual scene/nav/H/model/gradient/update/test read.",
+  "research_calls": {
+    "real_scene_generation": 0,
+    "navigation_preparations": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "model_forwards": 0,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "retained_test_reads": 0
+  },
+  "coverage": [
+    "same-arm F&A intersection",
+    "all legal boundary candidates retained",
+    "global task/candidate/table IDs and mapping",
+    "open/closed entry/exit and zero legs",
+    "positive-gain/current/exit masks",
+    "horizon <= number of tasks and exhaustive legal sequences",
+    "return=-JH and correction sign",
+    "empty-task direct exit",
+    "illegal/done/repeated actions",
+    "observations copied and parent unchanged",
+    "strict Python integer global IDs",
+    "D depot-plus-candidates square shape",
+    "coupled/variable/nonfinite-lift proxy rejection before real prepare",
+    "supported proxy and supplied-external dispatch via mocks only"
+  ],
+  "run_history": [
+    {
+      "tests_passed": 31,
+      "failures": 0,
+      "errors": 0,
+      "observed_test_elapsed_s": 0.011,
+      "test_sha256": "4db8f5bf1bf8dc56e41621ebfc706d604e0f22a6100d5ce2b6c515bd6a138832",
+      "tested_source_sha256": {
+        "problem.py": "0149226f3a56a82ff79b1ff7a9e103dd6d34198fc990634de0d269206bc80ff0",
+        "environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0"
+      },
+      "scope": "Hand-specified synthetic C/F/A and metric-closure D only, with injected identity or fixed synthetic terminal costs. No actual scene generator, navigation kernel, planner, frozen H, model, backward, optimizer, retained tests or old result audit executed.",
+      "research_calls": {
+        "real_scene_generation": 0,
+        "navigation_preparations": 0,
+        "planner_calls": 0,
+        "H_calls": 0,
+        "model_forwards": 0,
+        "backward_calls": 0,
+        "optimizer_updates": 0,
+        "retained_test_reads": 0
+      }
+    },
+    {
+      "tests_passed": 38,
+      "failures": 0,
+      "errors": 0,
+      "observed_test_elapsed_s": 0.071,
+      "test_sha256": "a1425c36a4d2a1af6a2608cf2dfd6b5a5937cb4b549c367a4065b2c9607fdad8",
+      "tested_source_sha256": {
+        "problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+        "environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0"
+      },
+      "scope": "Synthetic matrices only. Mock prepare verifies unsupported coupled tasks, variable/nonfinite proxy lift are rejected before any real kernel; mocked external dispatch permits supplied-table lift. No actual scene/nav/H/model/gradient/update/test read.",
+      "research_calls": {
+        "real_scene_generation": 0,
+        "navigation_preparations": 0,
+        "planner_calls": 0,
+        "H_calls": 0,
+        "model_forwards": 0,
+        "backward_calls": 0,
+        "optimizer_updates": 0,
+        "retained_test_reads": 0
+      }
+    }
+  ]
+}

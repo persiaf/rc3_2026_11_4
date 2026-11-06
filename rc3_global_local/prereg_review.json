@@ -1,0 +1,52 @@
+{
+  "schema": "rc3-global-local-independent-prereg-review-v1",
+  "client_date": "2026-11-06",
+  "reviewer": "/root/s0_preregistration_review",
+  "base_commit": "6f595cfa89f74d7f7a0e39faaadf5b8655d83f33",
+  "branch": "codex/global-local-s0",
+  "verdict": "PASS_FOR_S0",
+  "remaining_blockers": 0,
+  "review_report": "PREREG_REVIEW.md",
+  "source_sha256": {
+    "__init__.py": "ea3c3ff7c385a7a210e2e1765498a3107d154c96e7bd1eada5e800b633fc25c0",
+    "environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0",
+    "policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+    "problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "register.py": "09978a10eaddbdcb415b9d2e3253c907b1d2db8124237695db7fd2809599ae0b",
+    "report_s0.py": "4d4a297a649ae276b7c59a3ed0ded942b215e39a6d9bd30c798a8ebca1eb001b",
+    "run_s0.py": "dde17817de76ba99c57e8c6f32323b6857b33dfdbc6f9ebdc78d56ed0143f07c",
+    "terminal.py": "6f4c334176f2d4fcf86e9b02eaaf4ce98c5fa5d8b8bee335e04ed6cea62785af",
+    "test_environment.py": "a1425c36a4d2a1af6a2608cf2dfd6b5a5937cb4b549c367a4065b2c9607fdad8",
+    "test_policy.py": "110e0c86909c6f6c740a83e2992a6ca000e94b0e74aba03eac0fe2f8edb80bb8",
+    "validation.py": "b15b6d0f9e57e64d8e958d08e088299df785342b0b7562fc6336beb48a666777"
+  },
+  "synthetic_receipts_reviewed": {
+    "environment_tests": 38,
+    "policy_tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "receipt_source_hashes_match_current": true,
+    "tests_rerun_by_this_reviewer": false
+  },
+  "review_scope": "Read-only source, kernel applicability, independent synthetic test receipts, literature verification artifacts and frozen future design; only this JSON and PREREG_REVIEW.md written",
+  "research_calls_by_this_reviewer": {
+    "real_scene_generation": 0,
+    "navigation_preparations": 0,
+    "planning": 0,
+    "H": 0,
+    "model_forwards": 0,
+    "backward": 0,
+    "optimizer_updates": 0,
+    "retained60_reads": 0
+  },
+  "S0_executed": false,
+  "S0_consistency_passed": false,
+  "future_S1_S2_S3_status": "FROZEN_DESIGN_NOT_STARTED",
+  "training_runner_certified": false,
+  "future_baseline_endpoint_conformance_certified": false,
+  "future_execution_requires_separate_source_binding_task": true,
+  "trained_DRL_performance_supported": false,
+  "independent_RL_gain_supported": false,
+  "physical_joint_trajectory_certified": false,
+  "admission_limits": "PASS_FOR_S0 permits registration and the bounded consistency/backward-only S0 probes only. Actual S0 admission requires all registered gates; no S1/S2/S3 optimizer or performance execution is authorized by this review."
+}
