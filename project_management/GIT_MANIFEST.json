@@ -15086,6 +15086,10 @@
       "sha256": "0d9d51c31e2247db66c347a4d88b5db12533c6421a04036db7619556e8ea041c",
       "bytes": 5565
     },
+    "rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json": {
+      "sha256": "c8983d424df56b6cf9567541eb81aeca978047e061d28c32c7f77d262663f27f",
+      "bytes": 1238
+    },
     "rc3_global_local_execution_v3/AUTHORIZATION_CHAIN.md": {
       "sha256": "b02cea2f5ce1d44f54b7db03c02dc63ed895c5bffb6b72d7fa2b9e57da6d9442",
       "bytes": 3231
@@ -15245,6 +15249,18 @@
     "rc3_global_local_execution_v3/authorization_templates/S2_AUTHORIZATION_PENDING.json": {
       "sha256": "c0f0edbbf12d67178fbc97d788353b1b77e09417dd7cb6f98f66325aa12800b3",
       "bytes": 4946
+    },
+    "rc3_global_local_execution_v3/authorizations/20261106_S1_A/PROTOCOL_APPROVAL.json": {
+      "sha256": "0136460e11211847bcfe3db5059322afb2af93a8695cea796cc186fbcf511eb3",
+      "bytes": 4917
+    },
+    "rc3_global_local_execution_v3/authorizations/20261106_S1_A/S1_A_AUTHORIZATION.json": {
+      "sha256": "b70f5083d2e2528aafdf0569d93cee32977e88bc0f3e99662316dc398af73361",
+      "bytes": 5453
+    },
+    "rc3_global_local_execution_v3/authorizations/20261106_S1_A/USER_APPROVAL_SOURCE.txt": {
+      "sha256": "bf8239bb2599054647873996212e4630561c91755738be066f8076b8ff8028fb",
+      "bytes": 1198
     },
     "rc3_global_local_execution_v3/drafts/V3_EXECUTION_CANDIDATE_DRAFT01.json": {
       "sha256": "5e5887ab3cd955abdd12ee8559665cc94a2d1643377bcf22afb94ebccad866ee",
@@ -43203,8 +43219,8 @@
     "project_management/GIT_MANIFEST.json",
     "project_management/PUBLISH_RECEIPT.json"
   ],
-  "file_count": 10799,
-  "total_bytes": 3236207268,
+  "file_count": 10803,
+  "total_bytes": 3236220074,
   "scope": "Original LFS working-tree bytes; historical scientific evidence preserved. Current preflight engineering checks separately accounted, no optimizer training or S3 target evaluation.",
   "research_extension": {
     "branch": "codex/global-local-s0",
@@ -43273,5 +43289,16 @@
     "active_pointer_changed": false,
     "published_report_anchor": "8414bbec92b7d214acb0317c9c8bb9a9a79dc387",
     "publication_receipt": "rc3_s1a_authorization_check/PUBLICATION_RECEIPT.json"
+  },
+  "S1_A_authorized_execution": {
+    "experiment_id": "rc3_v3_global_local_20261106_01",
+    "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+    "authorization_receipt": "rc3_global_local_execution_v3/authorizations/20261106_S1_A/S1_A_AUTHORIZATION.json",
+    "authorized_stages": [
+      "S1-A"
+    ],
+    "optimizer_updates_authorized": 0,
+    "old_pointer_preserved": true,
+    "source_hashes_preserved": true
   }
 }
