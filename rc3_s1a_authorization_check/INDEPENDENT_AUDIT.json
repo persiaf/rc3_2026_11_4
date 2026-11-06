@@ -1,0 +1,346 @@
+{
+  "schema": "rc3-independent-s1a-permission-audit-v1",
+  "reviewer": "/root/s1a_authorization_audit",
+  "checked_utc": "2026-11-06T07:26:48.636181+00:00",
+  "base_commit": "968b1033051b7368b038ad4d95cce54703943688",
+  "status": "PASS_VERSION_AND_PREPARATION_CHECK_SCIENCE_REVISE",
+  "authorization_decision": "REVISE_MISSING_EXPLICIT_PROTOCOL_APPROVAL_AND_S1_A_AUTHORIZATION",
+  "latest_user_instruction_is_authorization": false,
+  "conversation_basis": "The user expressly states the latest instruction does not constitute protocol approval or scientific authorization; no separate two-part approval was present in this inherited conversation.",
+  "exact_sha256": {
+    "protocol": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+    "source_manifest": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+    "registry": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a"
+  },
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "H_source_sha256": {
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693"
+  },
+  "source_files_checked": 33,
+  "source_failures": [],
+  "frozen_base_files_checked": 9,
+  "frozen_base_files": [
+    "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
+    "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json",
+    "rc3_global_local_execution_v3/REGISTRY.json",
+    "rc3_global_local_execution_v3/H_BINDING.json",
+    "rc3_global_local/FUTURE_DESIGN_STATUS.json",
+    "rc3_global_local_execution_v3/authorization_templates/PROTOCOL_APPROVAL_PENDING.json",
+    "rc3_global_local_execution_v3/authorization_templates/S1_A_AUTHORIZATION_PENDING.json",
+    "rc3_global_local_execution_v3/authorization_templates/S1_B_AUTHORIZATION_PENDING.json",
+    "rc3_global_local_execution_v3/authorization_templates/S2_AUTHORIZATION_PENDING.json"
+  ],
+  "current_engineering_verification_sha256": "2c6015ddaefac28f1281551f2e20ae9ddbbbcf15a13761ecc46ff6643446bb3b",
+  "current_engineering_verification_status": "PASS",
+  "authorization_search_scope": "Repository JSON names matching *APPROVAL*/*AUTHORIZATION*/*approval*/*authorization*, current stage status and templates, plus inherited conversation. No sealed task JSON semantics loaded.",
+  "authorization_metadata_files_checked": 38,
+  "authorization_records": [
+    {
+      "path": "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/S2_AUTHORIZATION_PENDING.json",
+      "sha256": "0c19be2e61467cf79c8ce1fa6cdb87792b5d0bdc8415aa335a82766db899c5ac",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_AUTHORIZATION",
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/S1_B_AUTHORIZATION_PENDING.json",
+      "sha256": "16bb0d078fff40a7101f5f7b60d52b63499e968472aae951f6e9d55098817d79",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_AUTHORIZATION",
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/S1_A_AUTHORIZATION_PENDING.json",
+      "sha256": "9d649cbcb79d5771478918554443dd5edd09fcdcf2cc3df021a83a77656a5b9e",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_AUTHORIZATION",
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/PROTOCOL_APPROVAL_PENDING.json",
+      "sha256": "fb46d4b5b433b1af8297870776dd162dbac22f38ca252d4c883901d2668020b0",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_APPROVAL",
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/authorization_templates/S2_AUTHORIZATION_PENDING.json",
+      "sha256": "c0f0edbbf12d67178fbc97d788353b1b77e09417dd7cb6f98f66325aa12800b3",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_AUTHORIZATION",
+      "matches_exact_bindings": true
+    },
+    {
+      "path": "rc3_global_local_execution_v3/authorization_templates/S1_B_AUTHORIZATION_PENDING.json",
+      "sha256": "e4f809bfff0053c3b766f2d3b321fb64e36e36ba0b74f60a19f7846a3705fff3",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_AUTHORIZATION",
+      "matches_exact_bindings": true
+    },
+    {
+      "path": "rc3_global_local_execution_v3/authorization_templates/S1_A_AUTHORIZATION_PENDING.json",
+      "sha256": "2eee1cf2945dd406aa5330c5c9d277134a3dc167508038b1c5891d72e2d0e523",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_AUTHORIZATION",
+      "matches_exact_bindings": true
+    },
+    {
+      "path": "rc3_global_local_execution_v3/authorization_templates/PROTOCOL_APPROVAL_PENDING.json",
+      "sha256": "fcc278394e81d4e04223682f5196852662bdc118f44b1ffbdd1c29ee586db6bb",
+      "classification": "PENDING_template",
+      "status": "PENDING_USER_APPROVAL",
+      "matches_exact_bindings": true
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/resume/stage_admission/S1-B/11622026/AUTHORIZATION.json",
+      "sha256": "8743ed8f9e10631d89cda53c57a2c9ba95d251527db294d91a56e35e595ca847",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/resume/stage_admission/S1-B/11622026/AUTHORIZATION.json",
+      "sha256": "8743ed8f9e10631d89cda53c57a2c9ba95d251527db294d91a56e35e595ca847",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/resume/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "692033f6d3fdc155d46746486a8c36b409173ed442b0817f3ef2158c8774eb8a",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/resume/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "692033f6d3fdc155d46746486a8c36b409173ed442b0817f3ef2158c8774eb8a",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/hash_clock/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "8e6d90ba955a437154cb26e8c4c005dd2884a300c03193a1d6e60ca84d46e298",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/parent_completion_mutation/stage_admission/S2/11622026/AUTHORIZATION.json",
+      "sha256": "dca9ab1e0ee10bc2c9cfca1eb2239158e8fcd8f39d0aa0a7abfdba3ef2225d70",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/parent_completion_mutation/stage_admission/S1-B/11622028/AUTHORIZATION.json",
+      "sha256": "d0775993efe0651bc9715acd544eeb04f029c2e01f16ea84b522ed8e921ea08b",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/parent_completion_mutation/stage_admission/S1-B/11622027/AUTHORIZATION.json",
+      "sha256": "6cc8b085273800bd854a0b2341a1777ff13804428b5e727f16eba2f81873eabb",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/parent_completion_mutation/stage_admission/S1-B/11622026/AUTHORIZATION.json",
+      "sha256": "0d4dfe472d1f141a51218f874dda3463acfd88c33193740e4a9c6c5336de5eb4",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/parent_completion_mutation/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "8d457e9bcc74db65ed07ef7b950ab874485f58468d01bc9fef88feb660018e5a",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S2/11622028/AUTHORIZATION.json",
+      "sha256": "5fa8f872f5aa7d450ba3386aaebb6461df783381a0f44e0dbc252b76d1aeff4a",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S2/11622027/AUTHORIZATION.json",
+      "sha256": "22c402f2492fc6476a71c72a860706540d0e9d9473351dd275b879d639697aa0",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/hash_clock/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "8e6d90ba955a437154cb26e8c4c005dd2884a300c03193a1d6e60ca84d46e298",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S2/11622026/AUTHORIZATION.json",
+      "sha256": "bda81a3a9a5cd495b3f22f709663698a7e636b9bfbfefefa038501fe4054b8eb",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S1-B/11622028/AUTHORIZATION.json",
+      "sha256": "c55a713a150dc2866d39af64117b7326e6c5cb7916677497f41628be08b6627d",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S1-B/11622027/AUTHORIZATION.json",
+      "sha256": "0fb293ac8faf8a93217e3a0328ccff2de9c7c53f3e73ed1ba2cb5e01924180e9",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S1-B/11622026/AUTHORIZATION.json",
+      "sha256": "231ed76b6a9cfb5b31df13327f934a57002cf445a367e1be3f3e8d2c14e46b33",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/chain/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "1115e24b827aea194cbd9d5e65118baafa420fcd5cf19a5e998837814b9b1893",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/cap_clock/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "f69b6d43122f88534cae11380dd2a2205ba02eb884b2001f6a13fc044f570be1",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S2/11622028/AUTHORIZATION.json",
+      "sha256": "5fa8f872f5aa7d450ba3386aaebb6461df783381a0f44e0dbc252b76d1aeff4a",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S2/11622027/AUTHORIZATION.json",
+      "sha256": "22c402f2492fc6476a71c72a860706540d0e9d9473351dd275b879d639697aa0",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_01/adapter_construct_failure/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "c4605ea87e2174715e363022d4d277b4428950edf04da1572baf987077c7477e",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S2/11622026/AUTHORIZATION.json",
+      "sha256": "bda81a3a9a5cd495b3f22f709663698a7e636b9bfbfefefa038501fe4054b8eb",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/cap_clock/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "f69b6d43122f88534cae11380dd2a2205ba02eb884b2001f6a13fc044f570be1",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/adapter_construct_failure/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "c4605ea87e2174715e363022d4d277b4428950edf04da1572baf987077c7477e",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S1-A/AUTHORIZATION.json",
+      "sha256": "1115e24b827aea194cbd9d5e65118baafa420fcd5cf19a5e998837814b9b1893",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S1-B/11622028/AUTHORIZATION.json",
+      "sha256": "c55a713a150dc2866d39af64117b7326e6c5cb7916677497f41628be08b6627d",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S1-B/11622027/AUTHORIZATION.json",
+      "sha256": "0fb293ac8faf8a93217e3a0328ccff2de9c7c53f3e73ed1ba2cb5e01924180e9",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_global_local_execution_v3/engineering_runs/admission_02/chain/stage_admission/S1-B/11622026/AUTHORIZATION.json",
+      "sha256": "231ed76b6a9cfb5b31df13327f934a57002cf445a367e1be3f3e8d2c14e46b33",
+      "classification": "UNIT_ONLY_engineering",
+      "status": null,
+      "matches_exact_bindings": false
+    },
+    {
+      "path": "rc3_rl_g21/outputs/gain_authorization.json",
+      "sha256": "8b473d3c5e66c8bc69c1712d5d5957a64e968e9a40b502ab85df7254f6633872",
+      "classification": "other_history",
+      "status": null,
+      "matches_exact_bindings": false
+    }
+  ],
+  "valid_protocol_approvals_found": [],
+  "valid_S1_A_authorizations_found": [],
+  "minimum_missing_fields": [
+    "Explicit user approval of exact protocol and source binding",
+    "Separate user authorization for S1-A only with experiment_id and fixed limits",
+    "Traceable links between protocol approval, stage authorization and exact source/H/registry identities"
+  ],
+  "S1_A_preparation": {
+    "registry_teacher_specs": 256,
+    "native_Detour16_attempts_max": 256,
+    "full_H_attempts_max": 256,
+    "total_top_level_attempts_max": 512,
+    "wall_s_max": 1800,
+    "optimizer_updates": 0,
+    "stage_execution_not_started": true
+  },
+  "active_design": "v2",
+  "active_pointer_sha256": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49",
+  "old_candidate_and_evidence_modified": false,
+  "S1_B_readiness": "NOT_EVALUATED_S1_A_NOT_EXECUTED",
+  "scientific_calls": {
+    "model_instantiations": 0,
+    "model_forward": 0,
+    "backward": 0,
+    "optimizer_updates": 0,
+    "teacher_queries": 0,
+    "full_H": 0,
+    "scene_task_generation": 0,
+    "navigation": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0
+  },
+  "wall_s": 0.3555870000018331,
+  "timing_scope": "This independent standard-library metadata/hash audit only, not entire static review or project maintenance.",
+  "not_performed": [
+    "No production permission emitted",
+    "No require_stage_authority execution call",
+    "No task/model/planner/H/optimizer run",
+    "No Git mutation, push or merge"
+  ]
+}

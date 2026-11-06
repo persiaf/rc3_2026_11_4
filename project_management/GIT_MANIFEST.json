@@ -1,6 +1,6 @@
 {
   "schema": "rc3-git-content-manifest-v1",
-  "version": "2026.11.06-v3-candidate-admission",
+  "version": "2026.11.06-s1a-authorization-check",
   "files": {
     ".gitattributes": {
       "sha256": "4cb24fa65895fe4deb814d14f4cf88d22785639878b5838cba9730e1b3b028b1",
@@ -19,8 +19,8 @@
       "bytes": 47270
     },
     "PROJECT_VERSION.json": {
-      "sha256": "39a69966afc343c3bfad58d25b1cea38a6e737dd7722b67164302bfbcc4efdea",
-      "bytes": 8764
+      "sha256": "85bb38f92a5e3d5a4c4d21f45fd3c4f0b10d38b9880cec0d87938abc349f05c6",
+      "bytes": 9554
     },
     "RC3_研究模型与实验计划_20261105.docx": {
       "sha256": "8f7f3ddde12f62fb3bbf1d061c56eb1a9995a9310cd1f02b1465c83289ef3f10",
@@ -31,8 +31,8 @@
       "bytes": 39287
     },
     "README.md": {
-      "sha256": "50492aa09349bdbb4b7860ef410c2c97dae5ac53274ad5012e1da020b3c7decb",
-      "bytes": 10882
+      "sha256": "ab8a4acdcfa681a27f1c0826f4acd153e9aa745281837f856c1e94dec84b3e8f",
+      "bytes": 11445
     },
     "chatgpt生成文件.zip": {
       "sha256": "8f544e2a684f60bbaa594bb49532166210d6b589fbb9d0f6209e5adfb60c1806",
@@ -38854,6 +38854,50 @@
       "sha256": "4fe2658655f6a0256cf2fbfb9581bce8881bc538264e9807045fe00abbd5b4db",
       "bytes": 2429
     },
+    "rc3_s1a_authorization_check/AUTHORIZATION_REQUEST.md": {
+      "sha256": "4bffd596ac467b4d01c6e39e1629512801330576f7e29ba0ab1cc3a0665a4e38",
+      "bytes": 1718
+    },
+    "rc3_s1a_authorization_check/EXPERIMENT_REPORT.md": {
+      "sha256": "5cb0109a795d6611105aea7dbdfbb1e48e64e23c8c975d07e35e57007d577c91",
+      "bytes": 604
+    },
+    "rc3_s1a_authorization_check/GIT_VERSION_AUDIT.json": {
+      "sha256": "a21105be5fd7467abff21248bbd6535d3be537937517f151a436113750e421e9",
+      "bytes": 1546
+    },
+    "rc3_s1a_authorization_check/IMPLEMENTATION_REVIEW.md": {
+      "sha256": "fc799061066835aa0bef087073fbee679fa44f545a2b576e1d64eeb975caefcf",
+      "bytes": 1851
+    },
+    "rc3_s1a_authorization_check/INDEPENDENT_AUDIT.json": {
+      "sha256": "bcff2c7c983351c5fccee843f6611081c34cbfb29e67462e83b3a092602c7925",
+      "bytes": 16828
+    },
+    "rc3_s1a_authorization_check/INDEPENDENT_REVIEW.md": {
+      "sha256": "684d2b4d2adcd7db4e2946af4e44b50ed2310dd44e027fdcaba5893003444678",
+      "bytes": 2102
+    },
+    "rc3_s1a_authorization_check/NEXT_STEP_DECISION.md": {
+      "sha256": "d09c6c77b4071f85d5594e21d6f9fcd9632003de5e473feff6663c4bbee1bb3a",
+      "bytes": 760
+    },
+    "rc3_s1a_authorization_check/README.md": {
+      "sha256": "b971c67b289b1abecc66f6587e4fe7e15861e3258c7452ec9052562c6c9acd2c",
+      "bytes": 1133
+    },
+    "rc3_s1a_authorization_check/RESOURCE_ACCOUNTING.json": {
+      "sha256": "216be292e3a6f868a780fdb30337c37a4623ab3c9deda4a363c472602fafa541",
+      "bytes": 1498
+    },
+    "rc3_s1a_authorization_check/RESULT_TO_CLAIM.md": {
+      "sha256": "8dec16364cef148f7845f15ed8ba9a58321058aac1b0bacca4121181a3131229",
+      "bytes": 384
+    },
+    "rc3_s1a_authorization_check/STAGE_STATUS.json": {
+      "sha256": "3ac7e9ea9c3aab0d773032363561f4c4701fb0d620a84e3e89923c02aa21d7cb",
+      "bytes": 1142
+    },
     "rc3_teacher_distill/EXPERIMENT_RESULT_TO_CLAIM.md": {
       "sha256": "58138d92ac857ded62f76d18640f6cfe16cf4d0dfa7c137c14e638f8d9d67b93",
       "bytes": 2936
@@ -43155,8 +43199,8 @@
     "project_management/GIT_MANIFEST.json",
     "project_management/PUBLISH_RECEIPT.json"
   ],
-  "file_count": 10787,
-  "total_bytes": 3236175231,
+  "file_count": 10798,
+  "total_bytes": 3236206150,
   "scope": "Original LFS working-tree bytes; historical scientific evidence preserved. Current preflight engineering checks separately accounted, no optimizer training or S3 target evaluation.",
   "research_extension": {
     "branch": "codex/global-local-s0",
@@ -43215,5 +43259,13 @@
     "engineering": "GO",
     "scientific_execution": "REVISE_PENDING_USER_APPROVAL",
     "publication_receipt": "rc3_global_local_execution_v3/PUBLICATION_RECEIPT.json"
+  },
+  "S1_A_authorization_check_extension": {
+    "base": "968b1033051b7368b038ad4d95cce54703943688",
+    "report": "rc3_s1a_authorization_check/README.md",
+    "decision": "REVISE_MISSING_TWO_EXPLICIT_USER_AUTHORIZATIONS",
+    "science_calls": 0,
+    "source_code_changes": 0,
+    "active_pointer_changed": false
   }
 }
