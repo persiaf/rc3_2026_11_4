@@ -15090,6 +15090,10 @@
       "sha256": "b02cea2f5ce1d44f54b7db03c02dc63ed895c5bffb6b72d7fa2b9e57da6d9442",
       "bytes": 3231
     },
+    "rc3_global_local_execution_v3/CODE_REVISION_LOG.json": {
+      "sha256": "9d96fb9ade4b5901d85ec724475d274586a870d75feb601f7468ef6ade36f6d6",
+      "bytes": 617
+    },
     "rc3_global_local_execution_v3/DRAFT_HISTORY.json": {
       "sha256": "96269cd112f92e660b47518a039c79369c424b6d94aac9b3d5455f5ad366e7ae",
       "bytes": 689
@@ -15138,6 +15142,10 @@
       "sha256": "be2cd89ddb4f7cf68b04000f8fd4c842e2c86673d532edaa18bfed6fa529c4bd",
       "bytes": 4787
     },
+    "rc3_global_local_execution_v3/REGRESSION_BINDING_02.json": {
+      "sha256": "a52560fea96b7ebdf29e8fb61621d8921a0f0887d7c667b8e9c6026250295c26",
+      "bytes": 5196
+    },
     "rc3_global_local_execution_v3/RESOURCE_ACCOUNTING.json": {
       "sha256": "c44db7072bdf9b29798f7cbd1af4b0842a86b9d2d1aa955b1768dd98e03af85d",
       "bytes": 716
@@ -15167,20 +15175,52 @@
       "bytes": 6163
     },
     "rc3_global_local_execution_v3/authority.py": {
-      "sha256": "01d2eb0d01b395fde7c80e9d2d5aab8f137de8b9d5b3b84648c9a409787e95b6",
-      "bytes": 15093
+      "sha256": "e71afd076a72227593fca72bf7139644a6b36c5969cefab3d3ae7194555c0ef1",
+      "bytes": 15755
     },
     "rc3_global_local_execution_v3/drafts/V3_EXECUTION_CANDIDATE_DRAFT01.json": {
       "sha256": "5e5887ab3cd955abdd12ee8559665cc94a2d1643377bcf22afb94ebccad866ee",
       "bytes": 32513
     },
     "rc3_global_local_execution_v3/regression.py": {
-      "sha256": "cc7ada802115c3d7e50cf43462596722cd11b360eda229ef5979c9889ff5d697",
-      "bytes": 21400
+      "sha256": "47330cfc44016f48221de45db80d761eceac006c7e158558ad65c3616988bb79",
+      "bytes": 24044
     },
     "rc3_global_local_execution_v3/runner.py": {
       "sha256": "4d91866a38341d2f87c3cc049578619975b3c4fd00a6edeb9cc3e27d86405679",
       "bytes": 16496
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/EXECUTION_SOURCE_BINDING.json": {
+      "sha256": "adad7adf5dfc24418b93f59551ffc6ed13ac5b7fb2e77d249400044ad6a0b80d",
+      "bytes": 9639
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/PENDING_TEMPLATE_CHECK.json": {
+      "sha256": "32fe4d46c4d2301cec6936ce816d087c2a6433aefb4a01b715998fee5a97ead7",
+      "bytes": 1519
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/authority.py": {
+      "sha256": "01d2eb0d01b395fde7c80e9d2d5aab8f137de8b9d5b3b84648c9a409787e95b6",
+      "bytes": 15093
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/PROTOCOL_APPROVAL_PENDING.json": {
+      "sha256": "fb46d4b5b433b1af8297870776dd162dbac22f38ca252d4c883901d2668020b0",
+      "bytes": 4402
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/S1_A_AUTHORIZATION_PENDING.json": {
+      "sha256": "9d649cbcb79d5771478918554443dd5edd09fcdcf2cc3df021a83a77656a5b9e",
+      "bytes": 4691
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/S1_B_AUTHORIZATION_PENDING.json": {
+      "sha256": "16bb0d078fff40a7101f5f7b60d52b63499e968472aae951f6e9d55098817d79",
+      "bytes": 4786
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/authorization_templates/S2_AUTHORIZATION_PENDING.json": {
+      "sha256": "0c19be2e61467cf79c8ce1fa6cdb87792b5d0bdc8415aa335a82766db899c5ac",
+      "bytes": 4958
+    },
+    "rc3_global_local_execution_v3/source_revisions/binding01/regression.py": {
+      "sha256": "cc7ada802115c3d7e50cf43462596722cd11b360eda229ef5979c9889ff5d697",
+      "bytes": 21400
     },
     "rc3_global_local_impl_review/ARCHIVE_VERIFICATION.json": {
       "sha256": "9c3302c0f2ded16bc9a7e4ba69f40109f534651f22077e91030530450a14b9e4",
@@ -40463,8 +40503,8 @@
     "project_management/GIT_MANIFEST.json",
     "project_management/PUBLISH_RECEIPT.json"
   ],
-  "file_count": 10114,
-  "total_bytes": 3235124437,
+  "file_count": 10124,
+  "total_bytes": 3235200044,
   "scope": "Original LFS working-tree bytes; historical scientific evidence preserved. Current preflight engineering checks separately accounted, no optimizer training or S3 target evaluation.",
   "research_extension": {
     "branch": "codex/global-local-s0",
@@ -40516,6 +40556,6 @@
     "new_scientific_calls": 0,
     "branch": "codex/global-local-preflight",
     "protocol_stage": "complete",
-    "code_and_regression_stage": "code_implemented_bound_regression_pending"
+    "code_and_regression_stage": "parent_completion_guard_revised_rebound_pending_regression02"
   }
 }

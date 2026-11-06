@@ -1,0 +1,30 @@
+{
+  "schema": "rc3-pending-template-production-gate-check-v1",
+  "checked_utc": "2026-11-06T06:50:56.004099+00:00",
+  "engineering_protocol_sha256": "59d328e798ce136f37a78003f86c6672b8c8be2d9dd5376ca2a6bfe8b902e6a9",
+  "source_binding_sha256": "adad7adf5dfc24418b93f59551ffc6ed13ac5b7fb2e77d249400044ad6a0b80d",
+  "status": "PASS",
+  "checks": [
+    {
+      "stage": "S1-A",
+      "expected_rejection": "Explicit user protocol approval is missing",
+      "approval_sha256": "fb46d4b5b433b1af8297870776dd162dbac22f38ca252d4c883901d2668020b0",
+      "authorization_sha256": "9d649cbcb79d5771478918554443dd5edd09fcdcf2cc3df021a83a77656a5b9e"
+    },
+    {
+      "stage": "S1-B",
+      "expected_rejection": "Explicit user protocol approval is missing",
+      "approval_sha256": "fb46d4b5b433b1af8297870776dd162dbac22f38ca252d4c883901d2668020b0",
+      "authorization_sha256": "16bb0d078fff40a7101f5f7b60d52b63499e968472aae951f6e9d55098817d79"
+    },
+    {
+      "stage": "S2",
+      "expected_rejection": "Explicit user protocol approval is missing",
+      "approval_sha256": "fb46d4b5b433b1af8297870776dd162dbac22f38ca252d4c883901d2668020b0",
+      "authorization_sha256": "0c19be2e61467cf79c8ce1fa6cdb87792b5d0bdc8415aa335a82766db899c5ac"
+    }
+  ],
+  "production_permits_emitted": 0,
+  "scientific_calls": 0,
+  "scope": "Actual production require_stage_authority parses final source manifest and fully source-matching PENDING templates; it rejects before granting permission. No APPROVED/AUTHORIZED document created."
+}

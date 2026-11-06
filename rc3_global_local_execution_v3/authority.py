@@ -204,6 +204,16 @@ class StageChain:
             raise AdmissionError('Predecessor scientific identity or status differs: '+key)
         if value.get('stage_key') != key:
             raise AdmissionError('Predecessor stage identity differs')
+        parts=key.split('/')
+        stage,seed=parts[0],None if len(parts)==1 else int(parts[1])
+        required=set(self.required_predecessors(stage,seed))
+        recorded=value.get('predecessors')
+        if not isinstance(recorded,dict) or set(recorded)!=required:
+            raise AdmissionError('Completed stage predecessor set differs from its fixed chain')
+        for parent_key,expected_hash in recorded.items():
+            parent=self.path(parent_key,'COMPLETE.json')
+            if not parent.is_file() or digest(parent)!=expected_hash:
+                raise AdmissionError('Completed stage points to a changed predecessor receipt: '+parent_key)
         auth = self.path(key,'AUTHORIZATION.json')
         start = self.path(key,'START.json')
         if (not auth.is_file() or not start.is_file() or value.get('authorization_record_sha256') != digest(auth)

@@ -154,6 +154,46 @@ def resume_case():
     return dict(same_authorization_resume=True,failed_or_new_authorization_reset_rejected=True,prior_stage_seconds=31.25,new_admission_seconds=2.5,resumed_before_seconds=33.75,clock_test='isolated adapter arithmetic, not new model resume')
 
 
+def parent_completion_mutation_case():
+    """Child completion must bind exact current parent receipts, recursively."""
+    chain=auth.StageChain(OUT/'parent_completion_mutation',fixture_binding('UNIT_PARENT_MUTATION'))
+    complete(chain,'S1-A',None,'UNIT_A')
+    for seed in auth.SEEDS:complete(chain,'S1-B',seed,'UNIT_B')
+    parent_map=upstream(chain,'S2',auth.SEEDS[0])
+    mutations=[]
+    for parent,child in [('S1-A',auth.stage_key('S1-B',auth.SEEDS[0])),
+                         (auth.stage_key('S1-B',auth.SEEDS[0]),auth.stage_key('S1-B',auth.SEEDS[1]))]:
+        f=chain.path(parent,'COMPLETE.json');original=f.read_bytes();row=auth.read(f)
+        row['cumulative_stage_resources']['UNIT_ONLY_tampered_resource']=123
+        save(f,row)
+        name='parent_resource_'+str(len(mutations))
+        save(OUT/'parent_completion_mutation_evidence'/(name+'.json'),row)
+        rejects(lambda:chain.completed(child),name+' child stale receipt')
+        rejects(lambda:chain.admit('S2',auth.SEEDS[0],'UNIT_S2',parent_map),name+' S2 stale ancestry')
+        f.write_bytes(original)
+        check(chain.completed(child)[0]['stage_key']==child)
+        mutations.append(dict(parent=parent,child=child,type='resource_only_parent_change'))
+    child=auth.stage_key('S1-B',auth.SEEDS[1]);f=chain.path(child,'COMPLETE.json');original=f.read_bytes()
+    for mode in ['missing','extra']:
+        row=json.loads(original)
+        if mode=='missing':row['predecessors'].pop(next(iter(row['predecessors'])))
+        else:row['predecessors']['S1-B/99999999']='UNIT_ONLY_NONDECLARED_PARENT'
+        save(f,row)
+        save(OUT/'parent_completion_mutation_evidence'/('parent_keys_'+mode+'.json'),row)
+        rejects(lambda:chain.completed(child),mode+' exact parent key set')
+        rejects(lambda:chain.admit('S2',auth.SEEDS[0],'UNIT_S2',parent_map),mode+' S2 parent set')
+        f.write_bytes(original)
+        check(chain.completed(child)[0]['stage_key']==child)
+        mutations.append(dict(child=child,type=mode+'_parent_key'))
+    check(upstream(chain,'S2',auth.SEEDS[0])==parent_map)
+    admission=chain.admit('S2',auth.SEEDS[0],'UNIT_S2',parent_map)
+    check(admission['predecessors']==parent_map)
+    chain.close(admission,[artifact(chain.folder,'S2_RESTORED_ACCEPTED.unit')],{'UNIT_ONLY_simulated_used':1},complete=True)
+    return dict(resource_only_parent_mutations_rejected=2,missing_and_extra_parent_sets_rejected=True,
+        S2_rejects_stale_ancestry=True,original_byte_restoration_accepts=True,
+        negative_mutation_fixtures=mutations,real_stage_execution=False)
+
+
 def make_pool(folder,binding):
     pool=folder/'teachers256';pool.mkdir(parents=True)
     rows=[];specs=list(TrainingRegistry(auth.REGISTRY).teacher_specs())
@@ -261,7 +301,7 @@ def adapter_record_case():
 
 CASES=dict(protocol_metadata=protocol_case,production_gates=gates_case,separate_stage_chain=chain_case,
     same_stage_resume=resume_case,teacher_pool_metadata=pool_case,checkpoint_identity=checkpoint_case,
-    dirty_boundary=dirty_case,adapter_records=adapter_record_case)
+    dirty_boundary=dirty_case,adapter_records=adapter_record_case,parent_completion_mutation=parent_completion_mutation_case)
 
 
 @contextlib.contextmanager
