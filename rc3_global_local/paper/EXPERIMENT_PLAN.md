@@ -1,5 +1,8 @@
 # 实验计划：固定DRL目标下的大场景—局部任务规划
 
+
+**未来执行有效设计为v2。** `FUTURE_DESIGN_STATUS.json`绑定`S2_S3_protocol_v2.json`与`future_seeds_v2.json`；原v1与S0登记原字节保留。未来96训练/3开发/6seen/12unseen父图标签均采用mixed/blocked变化模式，正式S1或optimizer前必须按canonical map_key核验物理几何唯一性与各组不交，碰撞即停、不换seed。当前并未生成S3任务或完成未来布局独立性门，标签数不是已验证独立布局数。修订不改变预算、性能门槛或固定DRL目标。
+
 日期2026-11-06。固定目标见RESEARCH_OBJECTIVE.md；文献支持/限制见LITERATURE_VERIFICATION.md。研究不是以前T1教师排序小试的延长训练，也不将纯监督或启发式当最终方法。
 
 ## Claim Map

@@ -1,0 +1,100 @@
+{
+  "phase": "S0 backward-only consistency probe",
+  "loss": -13.251139640808105,
+  "groups": [
+    {
+      "parent_case": 0,
+      "case": 5,
+      "forced_starts": [
+        1,
+        164,
+        328
+      ],
+      "returns": [
+        -211.82500000000005,
+        -204.17499999999995,
+        -200.57499999999993
+      ],
+      "baseline": -205.52499999999998,
+      "advantages": [
+        -6.300000000000068,
+        1.3500000000000227,
+        4.9500000000000455
+      ]
+    },
+    {
+      "parent_case": 1,
+      "case": 11,
+      "forced_starts": [
+        1,
+        110,
+        220
+      ],
+      "returns": [
+        -156.5471063307,
+        -157.58568154910006,
+        -166.96002719930004
+      ],
+      "baseline": -160.36427169303337,
+      "advantages": [
+        3.817165362333384,
+        2.7785901439333145,
+        -6.59575550626667
+      ]
+    },
+    {
+      "parent_case": 2,
+      "case": 17,
+      "forced_starts": [
+        1,
+        188,
+        376
+      ],
+      "returns": [
+        -236.86834585199995,
+        -255.7655338157997,
+        -245.35182324060008
+      ],
+      "baseline": -245.9952343027999,
+      "advantages": [
+        9.126888450799953,
+        -9.770299512999799,
+        0.6434110621998173
+      ]
+    }
+  ],
+  "parameter_gradient_norms": {
+    "global_net.0.weight": 6.060785293579102,
+    "global_net.0.bias": 2.497354745864868,
+    "global_net.2.weight": 12.978304862976074,
+    "global_net.2.bias": 6.725532531738281,
+    "task_in.weight": 51.22456359863281,
+    "task_in.bias": 28.162221908569336,
+    "candidate_in.weight": 84.1037368774414,
+    "candidate_in.bias": 26.3547420501709,
+    "to_task.weight": 128.35263061523438,
+    "to_task.bias": 23.031326293945312,
+    "to_candidate.weight": 118.71062469482422,
+    "to_candidate.bias": 13.639825820922852,
+    "task_norm.weight": 14.270949363708496,
+    "task_norm.bias": 15.281113624572754,
+    "candidate_norm.weight": 16.20669937133789,
+    "candidate_norm.bias": 13.822184562683105,
+    "key.weight": 171.31666564941406,
+    "dynamic.weight": 150.24159240722656,
+    "nav.weight": 46.038021087646484,
+    "prefix.weight_ih": 50.59978485107422,
+    "prefix.weight_hh": 11.03023910522461,
+    "prefix.bias_ih": 6.613646030426025,
+    "prefix.bias_hh": 3.5732014179229736,
+    "query.weight": 430.6225891113281,
+    "query.bias": 32.37113571166992
+  },
+  "all_finite": true,
+  "nonzero": true,
+  "tensor_hash_before": "d52b1c1ecb73fbcd779d23caa06b937cd384e248722220b1f961d2737d576dbf",
+  "tensor_hash_after": "d52b1c1ecb73fbcd779d23caa06b937cd384e248722220b1f961d2737d576dbf",
+  "optimizer_updates": 0,
+  "forced_first_logprob_excluded": true,
+  "claim": "Gradient/MDP engineering check only; no learning improvement evidence"
+}

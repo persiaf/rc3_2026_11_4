@@ -1,0 +1,127 @@
+{
+  "schema": "rc3-global-local-S2-S3-design-v2",
+  "date": "2026-11-06",
+  "status": "FROZEN_DESIGN_NOT_STARTED",
+  "fixed_research_goal": "DRL trained on large complex10x10 parent scenes, frozen policy for variable4x3/6x6/8x8 local tasks, complete constraint-validated execution paths; supervision only auxiliary init/control",
+  "seeds_sha256": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+  "S0_protocol_sha256": "58631506e88594291e091818c0b35660cb40c73a92986dc1d5ee836e13308f66",
+  "mandatory_pre_optimizer_binding": "A separate execution task must hash the completed training runner and endpoint-adapted Fixed3/Detour baselines, verify conformance and S0 pass, then write execution receipt. No optimizer is authorized by S0 implementation task. Execute the layout_independence_gate BEFORE any S1 teacher/optimization. Active design is v2; original v1 has no formal-execution eligibility.",
+  "S1": {
+    "role": "bounded auxiliary supervised initialization, NOT final method",
+    "teacher_routes_max": 256,
+    "supervised_updates": 256,
+    "instances": "Exactly future_seeds_v2.json S1_teachers256 specs from S2 training bank; endpoint-adaptedDetour16 followed by sameH, no selection using S3",
+    "teacher_terminal_evaluations_max": 512,
+    "architecture": "same GlobalLocalPolicy as S2 and all controls",
+    "teacher": "new endpoint-adapted Fixed3/Detour16 routes with same F&A/global nav/H; never import R1/T1 g0 action labels",
+    "save": "untrained checkpoint, frozen supervised checkpoint, every teacher instance and resource"
+  },
+  "S2": {
+    "core": "genuine policy-gradient optimization on large complex parent scenes",
+    "parent_maps": 96,
+    "task_draws_per_parent": 8,
+    "episodes": "50% full10x10 tasks,50% local windows balanced4x3/6x6/8x8, all embedded in original10x10 geometry/navigation",
+    "task_and_constraints": "Sample declared parent/task bank only, A_condition=(parent_index+task_draw_index)%3 using frozen make_allow; unchanged proxy F and base footprint. Whole-parent task density/obstacles/F&A remain visible.",
+    "windows_and_endpoints": "Full episodes closed depot; local size cyclic4x3/6x6/8x8, x0/y0 uniformly drawn among valid table-grid origins from sampling RNG. Alternate closed depot and open first/last depot-connected global candidates by local episode index.",
+    "schedule": "even update indexes full; odd local sizes cyclic; four parent/task draws from fixed sampling seed; same instance3 trajectories: one fully policy-sampled including first action plus2 forced distinct legal first stops",
+    "starts": "Primary trajectory samples first action with logprob; auxiliary forced starts are first/last legal original IDs and contribute no forced-first logprob. All complete same target tasks; no TSP symmetry claim.",
+    "loss": "For each trajectory use detached leave-one-out mean return of the other2 as baseline. Negative advantage*logprob: primary weight1, each forced auxiliary weight.25, divide total by1.5. S0 forced-only probe checks plumbing, not this future optimizer.",
+    "objective": "REINFORCE on negative complete JH with exact masks and explicit entry/exit; no teacher action-regression substitute",
+    "optimizer": "Adam1e-4,clip1,512 fixed updates,batch4instances,3 optimizer seeds11622026..28; save fixed end, no S3 selection",
+    "controls": "frozen supervised start, untrained same architecture, continued-SL512updates on same frozen S1 dataset; all same F&A and postprocessing",
+    "development": "18 declared local cases on3 separate parent layouts, checked at updates256 and512 for feasibility/resources only; no best-checkpoint selection and no S3 reads",
+    "budgets_per_seed": {
+      "rl_terminal_rewards": 6144,
+      "development_and_other": 2048,
+      "total_terminal": 8192,
+      "optimizer_updates": 512,
+      "wall_s": 7200
+    },
+    "missing_reward": "Failures charged; do not silently discard/reward-zero infeasible routes; stop incomplete. No new seed/epoch rescue.",
+    "boundary": "Training and controls remain supervised+RL distinction; final contribution requires positive independent RL increment, not merely smaller degradation.",
+    "parent_modes": "mixed/blocked alternating,48 each, declared96 geometry labels pending canonical identity audit"
+  },
+  "S3": {
+    "status": "NOT_STARTED",
+    "checkpoint": "frozen fixed512-step endpoints, no local retraining",
+    "inference": "One deterministic greedy constructive trajectory per neural method, no multi-start/teacher/search in action selection. Raw and H results refer to the same raw construction; H benefit and added time separate.",
+    "allow_mask": "future_seeds_v2.json S3 explicit A_condition=case%3 using same frozen make_allow formula",
+    "cases": 108,
+    "seen_layout_parent_maps": 6,
+    "unseen_layout_parent_maps": 12,
+    "children_per_parent": 6,
+    "groups": "Seen-layout/new-task results and unseen-layout/new-task results separate; seen is not unseen-environment generalization.",
+    "sizes": [
+      [
+        4,
+        3
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "endpoints": "corner closed-depot; center open connected endpoints; separate strata",
+    "methods": [
+      "Fixed3_endpoint_adapter",
+      "Detour16_endpoint_adapter",
+      "untrained",
+      "frozen_supervised",
+      "continued_SL",
+      "RL_raw",
+      "RL_plus_H"
+    ],
+    "timing": "3 repeats, cold global-navigation and hot known-parent navigation; include parsing/prep/subset/all features/global encode/local decisions/H/export/independent validation; model load and parent caches explicit. All methods receive equal input/cache scope.",
+    "cache": "Hot cache primes navigation only; global/local neural embeddings rebuilt per request and bound to task+F+A+model. Report any later cache optimization separately, never reuse task-conditioned hG by map key alone.",
+    "primary_metrics": [
+      "task completion",
+      "proxy/table constraint feasibility",
+      "J",
+      "L",
+      "K",
+      "complete median/p95 time"
+    ],
+    "independent_RL_gate": "ALL valid; vs frozen SL and continued-SL mean paired gain>=.5% with parent-cluster bootstrap95 lower>0, each size reported; three optimizer seeds direction consistent; no use of action Top1 as final success",
+    "deployment_gate": "vs Detour16 mean relative degradation one-sided95upper<=.5%; complete median time ratio<=.7 and p95<=1 in both cache modes; not dominated byFixed3; report seen/unseen and each size separately",
+    "bootstrap": "20000 parent-cluster resamples seed11632026; independent parents6 seen/12 unseen, NOT108 independent environments",
+    "budget_per_seed": {
+      "complete_requests": 5292,
+      "wall_s": 14400
+    },
+    "budget_all3seeds": {
+      "complete_requests": 15876
+    },
+    "no_blending": "Report raw/H gains separately, no teacher search at inference, no returned-home/exit connection cost omission",
+    "parent_modes": "mixed/blocked only;6 intended seen and12 intended unseen geometries, independently keyed before formal execution"
+  },
+  "fail": "Record full negative/incomplete results, no automatic optimizer/seed/network-depth extension",
+  "protected60": "unchanged sealed",
+  "physical_joint_trajectory": "not yet attested; requires real kinematic/collision/joint-path evidence for full physical execution claims",
+  "amendment": {
+    "client_date": "2026-11-06",
+    "utc": "2026-11-06T02:46:06.016984+00:00",
+    "before_any_S1_S2_S3_execution": true,
+    "supersedes": "S2_S3_protocol.json",
+    "original_v1_sha256": "6776ea5c1f82debada769d1950985316fe06ff873455293fcad743adb94493b3",
+    "retained_S0_protocol_sha256": "58631506e88594291e091818c0b35660cb40c73a92986dc1d5ee836e13308f66",
+    "reason": "Physical layout identity is not map_seed identity in regular mode. Correct this structural generator issue before formal optimization, without using S3 results.",
+    "performance_gates_and_budgets_unchanged": true,
+    "old_S0_and_v1_bytes_unchanged": true
+  },
+  "layout_independence_gate": {
+    "identity_function": "rc3_fast.planner.map_key",
+    "source_sha256": {
+      "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+      "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+      "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90"
+    },
+    "modes": "All future training/development/S3 parent layouts alternate mixed/blocked; regular remains only an S0 engineering control.",
+    "mandatory_before_S1_or_optimizer": "Materialize only declared parent-layout geometry and hash canonical map_key. Require96 unique train keys;3 unique development keys disjoint train;6 seen keys equal their intended six training keys;12 unique unseen keys disjoint train/development; unseen and seen disjoint. Stop on collision; no silent mode/seed replacement. Record this geometry-only preparation and elapsed budget separately.",
+    "test_tasks": "Do not generate/evaluate S3 target task draws, rollouts or costs during layout-identity audit. No hyperparameter/checkpoint selection from S3 geometry or outcomes.",
+    "statistics": "Cluster on actual canonical parent geometry; assert6 seen and12 unseen groups before using that count. Until this gate passes, counts denote intended parent labels, not verified independent geometries."
+  }
+}
