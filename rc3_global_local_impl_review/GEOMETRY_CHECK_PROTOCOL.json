@@ -1,0 +1,38 @@
+{
+  "schema": "implementation-preflight-geometry-only-v1",
+  "base": "057830d584b6c71c79ef5118087c681c98135fe2",
+  "active_v2_sha256": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+  "seed_registry_sha256": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+  "source_sha256": {
+    "rc3_global_local_impl_review/geometry_only.py": "3cb7947851ade22838e50ea457325f24aca79124f059feb1b5715a784cb3bb1d",
+    "rc3_global_local_impl_review/check_layouts.py": "462c74a3f5d656b1356d3d1b98d8e8d36906ace4a85d3c2b7afc3aa50d6e4378",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90"
+  },
+  "limits": {
+    "reference_layout_reconstructions": 3,
+    "declared_new_physical_layouts": 111,
+    "target_task_generations": 0,
+    "navigation_preparations": 0,
+    "model_forwards": 0,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "S3_task_queries": 0,
+    "original60_reads": 0,
+    "wall_s": 600
+  },
+  "scope": {
+    "identity_function": "rc3_fast.planner.map_key",
+    "source_sha256": {
+      "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+      "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+      "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90"
+    },
+    "modes": "All future training/development/S3 parent layouts alternate mixed/blocked; regular remains only an S0 engineering control.",
+    "mandatory_before_S1_or_optimizer": "Materialize only declared parent-layout geometry and hash canonical map_key. Require96 unique train keys;3 unique development keys disjoint train;6 seen keys equal their intended six training keys;12 unique unseen keys disjoint train/development; unseen and seen disjoint. Stop on collision; no silent mode/seed replacement. Record this geometry-only preparation and elapsed budget separately.",
+    "test_tasks": "Do not generate/evaluate S3 target task draws, rollouts or costs during layout-identity audit. No hyperparameter/checkpoint selection from S3 geometry or outcomes.",
+    "statistics": "Cluster on actual canonical parent geometry; assert6 seen and12 unseen groups before using that count. Until this gate passes, counts denote intended parent labels, not verified independent geometries."
+  },
+  "failure": "Stop on source drift or collision; no seed/mode replacement; keep failed record"
+}

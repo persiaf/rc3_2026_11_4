@@ -1,0 +1,40 @@
+{
+  "schema": "implementation-preflight-engineering-v1",
+  "base": "057830d584b6c71c79ef5118087c681c98135fe2",
+  "source_sha256": {
+    "rc3_global_local_impl_review/check_engineering.py": "072b10c1ee3cc9cb00b226c580528a4bd57aa9c5c03d3b7478854b1bb6071351",
+    "rc3_global_local_impl_review/runtime_guards.py": "572a4f631438700d86658ab004605551dc525d405a57bef922b6caa928736997",
+    "rc3_global_local_impl_review/endpoint_baselines.py": "6ebe1cc90f2372a5f106f8ac6289a582b3d929e9f4d0088d57aae2435209ed1b",
+    "rc3_global_local/policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+    "rc3_global_local/environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0",
+    "rc3_global_local/problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "rc3_global_local/terminal.py": "6f4c334176f2d4fcf86e9b02eaaf4ce98c5fa5d8b8bee335e04ed6cea62785af",
+    "rc3_global_local/validation.py": "b15b6d0f9e57e64d8e958d08e088299df785342b0b7562fc6336beb48a666777",
+    "rc3_v4/runtime.py": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff",
+    "rc3_v3/environment.py": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+    "rc3_improve/repair.py": "5b3471d4ce7df23cf7381fcf2f1d86ab39eddce2bca7cf23350a5a8c74c1ee36",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_nav_value/r1/oracle.py": "cd0192bed7be7ce8b82c4f5bde4f0fba528c79cf732d057b92a3a06b613489c3"
+  },
+  "initial_policy_sha256": "bbbcdfe07820f84d753f44bd1b684211dd81f148c57f12f7c08fc70acc7f572b",
+  "source_scope": "Original saved S0 three parents and18 windows only; no future/S3 target instance creation",
+  "limits": {
+    "endpoint_baseline_attempts": 36,
+    "closed_full_native_reference_attempts": 18,
+    "full_parent_policy_trajectories": 9,
+    "terminal_reward_attempts": 9,
+    "backward_attempts": 3,
+    "optimizer_updates": 0,
+    "new_scene_generation": 0,
+    "navigation_preparations": 0,
+    "S3_task_queries": 0,
+    "original60_reads": 0,
+    "wall_s": 1200
+  },
+  "baseline": "18 S0 windows x Fixed3/Detour16;9 closed windows additionally original native full-candidate reference, compare J/order",
+  "calibration": "3 saved full10x10 S0 parents; each one full policy-sampled row including first logprob plus2 forced low/high first rows excluding forced logprob. Independent per-role torch.Generator SHA-derived streams. LOO detached returns, weights1/.25/.25 divided1.5, one backward/parent, no optimizer or saved updated weights.",
+  "scope": "Engineering conformity/calibration, not trained DRL performance. Native full-reference call profiler overhead included; throughput from untrained saved fixtures is only an estimate, not a certified training budget.",
+  "failure": "Keep charged attempts and partial data, stop on inconsistency; no seed/case replacements or automatic rerun"
+}

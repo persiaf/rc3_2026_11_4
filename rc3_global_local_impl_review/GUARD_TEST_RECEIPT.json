@@ -1,0 +1,33 @@
+{
+  "schema": "rc3-runtime-guards-synthetic-regression-v1",
+  "tests": 20,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "elapsed_s": 0.02998470000056841,
+  "operations": {
+    "score_entry_guard_rejections": 1,
+    "synthetic_terminal_mock_calls": 2,
+    "synthetic_terminal_cache_hits": 1
+  },
+  "research_calls": {
+    "scene_generations": 0,
+    "navigation_preparations": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "model_instantiations": 0,
+    "model_forwards": 0,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "S3_task_queries": 0,
+    "original60_reads": 0
+  },
+  "source_sha256": {
+    "rc3_global_local_impl_review/runtime_guards.py": "572a4f631438700d86658ab004605551dc525d405a57bef922b6caa928736997",
+    "rc3_global_local_impl_review/test_runtime_guards.py": "c2e86ba7875d094ce6c96c03f039defcf9fccd080bea7abd5909d589e766816d",
+    "rc3_global_local/problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "rc3_global_local/policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+    "rc3_global_local/terminal.py": "6f4c334176f2d4fcf86e9b02eaaf4ce98c5fa5d8b8bee335e04ed6cea62785af"
+  },
+  "scope": "Synthetic inputs only. Two terminal calls are mocked numeric identities, not real H. One score entry rejects before model/tensor computation. Numeric algorithms and S0 files unchanged."
+}

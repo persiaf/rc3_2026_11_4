@@ -1,0 +1,108 @@
+{
+  "schema": "rc3-independent-saved-preparation-audit-v1",
+  "reviewer": "/root/preflight_independent_audit",
+  "base": "057830d584b6c71c79ef5118087c681c98135fe2",
+  "status": "PASS_FINAL",
+  "final_review": true,
+  "scientific_call_counters": {
+    "new_scene_generation": 0,
+    "navigation_preparations": 0,
+    "planning": 0,
+    "full_H": 0,
+    "model_instantiations": 0,
+    "model_forwards": 0,
+    "backwards": 0,
+    "optimizer_updates": 0,
+    "S3_task_queries": 0,
+    "original60_reads": 0
+  },
+  "frozen_S0": {
+    "files": 140,
+    "manifest_sha256": "e0d249c98f4c1a3969d345f2614ed1c5d68a5de1a001324c8c4fd480999dab22"
+  },
+  "physical_layouts": {
+    "physical_keys": 111,
+    "target_task_feasibility_tested": false,
+    "limitation": "Physical independence is established; no future task/F&A instance was generated or validated."
+  },
+  "saved_engineering": {
+    "endpoint_plans": 36,
+    "closed_full_native_plans": 18,
+    "open_endpoint_plans": 18,
+    "closed_objective_and_order_equal": 18,
+    "calibration_plans": 9,
+    "backwards_saved": 3,
+    "optimizer_updates": 0,
+    "model_hash_unchanged": true,
+    "real_calls_not_repeated": true,
+    "gradient_limit": "Static loss and saved finite gradients checked; independent audit did not recompute model forward/backward."
+  },
+  "v3_proposal": {
+    "activated": false,
+    "optimizer_authorized": false,
+    "S1_balanced_cells": 4,
+    "S3_balanced_group_size_A_cells": 18,
+    "changed_distribution_explicit": true,
+    "no_actual_target_tasks_generated": true
+  },
+  "documents": {
+    "final_deliverables_checked": true,
+    "present_sha256": {
+      "IMPLEMENTATION_REVIEW.md": "42e92956934bdaf4e757b04816e1cbdaa918db58afa1b7e726db0450d531db71",
+      "EXPERIMENT_REPORT.md": "97fddc57b94ba8c4f5a7d042795c911f342ce3ab2781e864d86e6405105ebdb3",
+      "RESULT_TO_CLAIM.md": "1bea975121b2aa465f279d4cbe6d040f99f1b97db15ac68b3a3c8ed661bf6472",
+      "RESOURCE_ACCOUNTING.json": "dcb370db8465c9bd0df3a0bfa0034b3c3744f2fb1b9f2021269a4202f41dc7a0",
+      "NEXT_STEP_DECISION.md": "382a19501d693ad21a8a1d2ec3ff2b23745458ec58f714145f5d189d29bda10e",
+      "GIT_VERSION_AUDIT.json": "8cc84ad87389d3ab114bca08a07fcd73fd7c0e0a51ec56ab5928dfe5f30831e7"
+    },
+    "git_receipt": "GIT_VERSION_AUDIT.json checked against actual branch/config/preserved refs. Root live remote receipt retained; no duplicate child fetch. Final actual commit SHA is necessarily postcommit and will be verified by root in its external receipt/reply; not falsely claimed checked here."
+  },
+  "verification_accounting": {
+    "assertions": 49812,
+    "frozen_files_checked": 140,
+    "source_hash_checks": 28,
+    "saved_geometry_files_checked": 111,
+    "saved_parent_array_loads": 3,
+    "assignment_checks": 4646,
+    "segment_box_pairs_checked": 1800320,
+    "saved_plans_verified": 63,
+    "saved_action_transitions_checked": 1069,
+    "wall_s": 3.2061831999999413,
+    "cpu_s": 1.84375
+  },
+  "script_sha256": "76bd00d29541dde0f215ee2b877d7da3924a3c0efee29d21918a06c068a60a8b",
+  "verification_run_history": [
+    {
+      "status": "PASS_SAVED_EVIDENCE_FINAL_DOCS_PENDING",
+      "final_review": false,
+      "assertions": 45696,
+      "frozen_files_checked": 140,
+      "source_hash_checks": 28,
+      "saved_geometry_files_checked": 111,
+      "saved_parent_array_loads": 3,
+      "assignment_checks": 4646,
+      "segment_box_pairs_checked": 1800320,
+      "saved_plans_verified": 63,
+      "saved_action_transitions_checked": 1069,
+      "wall_s": 2.409827600000426,
+      "cpu_s": 1.46875,
+      "script_sha256": "9b34ce2f02090112a04cff23400d32d07f3c156bd2fbf131a355d30f1226b10b"
+    },
+    {
+      "status": "PASS_FINAL",
+      "final_review": true,
+      "script_sha256": "76bd00d29541dde0f215ee2b877d7da3924a3c0efee29d21918a06c068a60a8b",
+      "assertions": 49812,
+      "frozen_files_checked": 140,
+      "source_hash_checks": 28,
+      "saved_geometry_files_checked": 111,
+      "saved_parent_array_loads": 3,
+      "assignment_checks": 4646,
+      "segment_box_pairs_checked": 1800320,
+      "saved_plans_verified": 63,
+      "saved_action_transitions_checked": 1069,
+      "wall_s": 3.2061831999999413,
+      "cpu_s": 1.84375
+    }
+  ]
+}
