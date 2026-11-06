@@ -1,0 +1,82 @@
+{
+  "schema": "rc3-s1a-frozen-byte-check-v1",
+  "checked_utc": "2026-11-06T09:06:55.765943+00:00",
+  "base_commit": "9fb99f6c757a8a1c2db53ccd4dbd9cfddce92f78",
+  "base_files": 10799,
+  "base_files_identical_in_working_tree": 10795,
+  "changed_paths": [
+    {
+      "path": "AGENTS.md",
+      "expected": {
+        "sha256": "cc836cc9cbfd629e709ba677d4937f8e9eec502f1f92a9b9ac0820d53181a055",
+        "bytes": 5335
+      },
+      "actual": {
+        "sha256": "164a412e8c401c4a60c4afd9050fcf06e915a45816a190c5ac9f6ed968094a7d",
+        "bytes": 5512
+      },
+      "classification": "authorized_root_metadata"
+    },
+    {
+      "path": "PROJECT_VERSION.json",
+      "expected": {
+        "sha256": "85bb38f92a5e3d5a4c4d21f45fd3c4f0b10d38b9880cec0d87938abc349f05c6",
+        "bytes": 9554
+      },
+      "actual": {
+        "sha256": "5a0f6ec864195fffef1b4c4222fe48783e8e7271aee09e9b342c3f7a6f5ded6a",
+        "bytes": 10596
+      },
+      "classification": "authorized_root_metadata"
+    },
+    {
+      "path": "README.md",
+      "expected": {
+        "sha256": "ab8a4acdcfa681a27f1c0826f4acd153e9aa745281837f856c1e94dec84b3e8f",
+        "bytes": 11445
+      },
+      "actual": {
+        "sha256": "37ff7f26cef46c54a6c498ad9805d31ac637a1ad86506a2fca1d660e31a9f0f5",
+        "bytes": 12100
+      },
+      "classification": "authorized_root_metadata"
+    },
+    {
+      "path": "第二章与第三章修订稿_20261029.docx",
+      "expected": {
+        "sha256": "4843a4e7e492d3b0db6bc99a6d5ed180293355573f2ec6b1e6b3ecf0a356884c",
+        "bytes": 284094
+      },
+      "actual": {
+        "sha256": "d38390839f6fa1d1c45b6ac9fa78d2e0fba5257be5ae32433cc77600f4bbcb35",
+        "bytes": 319070
+      },
+      "classification": "unrelated_user_working_tree_edit_not_staged"
+    }
+  ],
+  "unexpected_changes": [],
+  "approved_runtime_files": 33,
+  "runtime_mismatches": [],
+  "protocol_checks": {
+    "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json": {
+      "expected": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+      "actual": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+      "passed": true
+    },
+    "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json": {
+      "expected": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+      "actual": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+      "passed": true
+    },
+    "rc3_global_local_execution_v3/REGISTRY.json": {
+      "expected": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+      "actual": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+      "passed": true
+    }
+  },
+  "raw_run_files": 1482,
+  "raw_run_mismatches": [],
+  "original60_scope": "Only byte hash maintenance, no semantic task loads or evaluations",
+  "unrelated_docx_scope": "Preserved user edit; exclude from staging and retain release hash from committed manifest",
+  "scientific_frozen_evidence_passed": true
+}

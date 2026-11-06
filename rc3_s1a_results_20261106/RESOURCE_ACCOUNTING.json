@@ -1,0 +1,244 @@
+{
+  "schema": "rc3-s1a-scientific-resource-accounting-v1",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "scientific_stage": "S1-A",
+  "status": "COMPLETE_WITH_DOWNSTREAM_REPLAY_DEFECT",
+  "approved_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "approved_source_binding_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+  "budgets": {
+    "teacher_instances": 256,
+    "native_attempts": 256,
+    "H_attempts": 256,
+    "top_level_attempts": 512,
+    "stage_wall_s": 1800,
+    "optimizer_updates": 0
+  },
+  "actual_scientific_stage": {
+    "ledger": {
+      "terminal": {
+        "teacher_H": {
+          "terminal_requests": 256,
+          "terminal_cache_hits": 0,
+          "terminal_attempts": 256,
+          "terminal_completed": 256,
+          "terminal_failed": 0,
+          "full_H_calls": 256,
+          "export_attempts": 256,
+          "exports": 256,
+          "validation_attempts": 256,
+          "validation_completed": 256
+        }
+      },
+      "internal_H_search": {
+        "teacher_H": {
+          "counts": {
+            "construct": 0,
+            "two_opt": 787,
+            "joint_search": 256,
+            "recipe": 0
+          },
+          "inclusive_s": {
+            "construct": 0.0,
+            "two_opt": 0.10477490005359869,
+            "joint_search": 0.2253547999789589,
+            "recipe": 0.0
+          },
+          "exclusive_s": {
+            "construct": 0.0,
+            "two_opt": 0.10477490005359869,
+            "joint_search": 0.1965312000029371,
+            "recipe": 0.0
+          }
+        }
+      },
+      "parent_requests": 256,
+      "task_scene_generation_attempts": 256,
+      "task_scene_generations": 256,
+      "proxy_feasibility_calls": 256,
+      "navigation_attempts": 96,
+      "navigation_completed": 96,
+      "view_extractions": 256,
+      "native_teacher_attempts": 256,
+      "teacher_native_internal": {
+        "baseline_attempts": 256,
+        "endpoint_export_attempts": 469,
+        "endpoint_export_completed": 469,
+        "endpoint_validation_attempts": 469,
+        "endpoint_validation_completed": 469,
+        "baseline_completed": 256,
+        "native_construct_calls": 768,
+        "native_two_opt_calls": 2280,
+        "native_joint_search_calls": 768,
+        "native_recipe_calls": 768,
+        "adapter_wall_s": 51.09231259999797
+      },
+      "native_teacher_completed": 256,
+      "navigation_artifact_loads": 160
+    },
+    "elapsed_wall_s": 190.15379480000047,
+    "wall_cap_s": 1800.0
+  },
+  "actual_top_level_attempts": 512,
+  "teacher_labels_completed": 256,
+  "science_optimizer_updates": 0,
+  "model_initializations": 0,
+  "label_cost_statistics": {
+    "native": {
+      "J": {
+        "n": 256,
+        "mean": 130.01605188701055,
+        "min": 38.8486864596,
+        "p25": 74.799019879,
+        "median": 124.96284997745002,
+        "p75": 168.50647672135,
+        "p95": 240.93324974460003,
+        "max": 299.3602493858999
+      },
+      "L": {
+        "n": 256,
+        "mean": 105.71722376201055,
+        "min": 32.6236668712,
+        "p25": 64.99056949269999,
+        "median": 99.70673975579999,
+        "p75": 137.22254399752498,
+        "p95": 189.47212631957498,
+        "max": 231.86024938589995
+      },
+      "K": {
+        "n": 256,
+        "mean": 32.3984375,
+        "min": 5,
+        "p25": 12.75,
+        "median": 31.0,
+        "p75": 46.0,
+        "p95": 72.0,
+        "max": 90
+      }
+    },
+    "H": {
+      "J": {
+        "n": 256,
+        "mean": 129.77862745758787,
+        "min": 38.8486864596,
+        "p25": 74.799019879,
+        "median": 124.73030613725001,
+        "p75": 166.93127933215,
+        "p95": 239.03323555890003,
+        "max": 299.3602493858999
+      },
+      "L": {
+        "n": 256,
+        "mean": 105.48565870758789,
+        "min": 32.6236668712,
+        "p25": 64.6747980655,
+        "median": 99.70673975579999,
+        "p75": 137.157974294675,
+        "p95": 187.85991378555,
+        "max": 231.86024938589995
+      },
+      "K": {
+        "n": 256,
+        "mean": 32.390625,
+        "min": 5,
+        "p25": 12.75,
+        "median": 31.0,
+        "p75": 46.0,
+        "p95": 72.0,
+        "max": 90
+      }
+    }
+  },
+  "native_to_H": {
+    "absolute_delta_J": {
+      "n": 256,
+      "mean": 0.23742442942265646,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p95": 1.6871483847499995,
+      "max": 8.883281362799977
+    },
+    "paired_gain_percent": {
+      "n": 256,
+      "mean": 0.13466072038086946,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "p95": 1.0538278800489693,
+      "max": 4.042910612207772
+    },
+    "positive_cases_at_1e_minus7": 41,
+    "unchanged_cases_at_1e_minus7": 215,
+    "negative_cases_beyond_tolerance": 0,
+    "ratio_of_mean_J_gain_percent": 0.18261162831570976
+  },
+  "native_DP_calls": 3719,
+  "S3_target_queries": 0,
+  "original60_semantic_reads": 0,
+  "S1_B_S2_S3_executed": false,
+  "independent_verification": {
+    "plan_audit": "INDEPENDENT_AUDIT.json",
+    "plan_audit_sha256": "e8612cfc5b6782465987d376ddbc8dddd57463aa5449f2b65d14dc7d1c51006a",
+    "plans": 512,
+    "counts": {
+      "files_hashed": 1164,
+      "bytes_hashed": 563671547,
+      "assertions": 9636,
+      "saved_task_array_loads": 256,
+      "saved_navigation_array_loads": 256,
+      "navigation_rejected_count_readonly_reconstructions": 96,
+      "teacher_inputs_requiring_missing_navigation_metadata": 96,
+      "saved_views_reconstructed": 256,
+      "plans_revalidated": 512,
+      "assignments_revalidated": 30508,
+      "polyline_segments_revalidated": 132074,
+      "segment_box_pairs_revalidated": 13729544,
+      "teacher_inputs_matching_saved_navigation_loader": 160,
+      "paid_H_artifacts_checked": 256
+    },
+    "automated_time_accounting": {
+      "full_plan_audit_body_wall_s": 76.07119930000044,
+      "prior_metadata_diagnostic_body_wall_s": 2.576932600000873,
+      "read_only_witness_body_wall_s": 2.2836586000012176,
+      "known_body_wall_s_total": 80.93179050000253,
+      "initial_direct_entry_import_error_process_wall_s": 0.4813926,
+      "static_review_and_successful_interpreter_import_wall_s": null,
+      "scientific_query_calls_added": 0
+    },
+    "resource_review": "RESOURCE_AUDIT.json",
+    "resource_review_sha256": "8df28e4b82cc30d7c0d4ebad4322db6f978412a9401a0abed4a947eb2a0edcb6",
+    "scientific_queries_added": 0,
+    "scope": "Read saved input/array/plan/hash data, recover missing non-routing integer metadata only; no scientific regeneration or paid retry."
+  },
+  "raw_data_artifacts": {
+    "files": 1482,
+    "bytes": 564969808,
+    "navigation_npz_files": 96,
+    "navigation_npz_bytes": 458595387,
+    "F_A_npz_files": 256,
+    "F_A_npz_bytes": 496079,
+    "new_models_or_weights": 0,
+    "all_scientific_artifacts_preserved": true
+  },
+  "time_scope": {
+    "scientific_stage_final_s": 190.15379480000047,
+    "pool_index_snapshot_s": 187.3627118000004,
+    "independent_audit_times_separate": true,
+    "static_authoring_Git_full_task_wall_s": null,
+    "scope": "Final stage clock includes artifact hashing. Snapshots/nested native/H times are not additive; imports/static writing/Git are not all individually timed."
+  },
+  "replay_defect": {
+    "present": true,
+    "cause": "Approved navigation artifact omitted rejected_edge_count although original in-memory navigation binding includes it. Same frozen loader rebuilds a different parent identity for original-generation inputs.",
+    "readonly_recovery": "Recover omitted integer from saved coordinates/corridor candidate-edge topology minus saved accepted edge_count; no collision filter, shortest path, native or H recomputation; match exact saved parent/view identities.",
+    "production_sources_or_artifacts_modified": false,
+    "affected_teacher_inputs": 96,
+    "minimum_next_step": "Before S1-B, separately review source/artifact identity compatibility repair, update approved source binding as required, and re-audit replay. Do not requery or replace any S1-A teacher.",
+    "witness_path": "rc3_s1a_results_20261106/REPLAY_WITNESS.json",
+    "witness_sha256": "a013e4b4879fb2c3c53e0005f5251e94ee43394a010e53f977fb2758ac0ceccd"
+  },
+  "S1_B_decision": "REVISE",
+  "performance_claim_boundary": "Additional H benefit only; no neural or DRL learning occurred."
+}

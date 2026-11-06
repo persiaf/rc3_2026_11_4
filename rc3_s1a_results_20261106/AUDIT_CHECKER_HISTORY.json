@@ -1,0 +1,44 @@
+{
+  "schema": "rc3-s1a-audit-checker-history-v1",
+  "scope": "Auditor implementation/metadata interpretation history only; never a scientific rerun or query.",
+  "attempts": [
+    {
+      "command": "python -B rc3_s1a_results_20261106/audit_s1a.py",
+      "status": "MODULE_IMPORT_ERROR_BEFORE_AUDIT",
+      "cause": "Direct script entry did not put repository root on sys.path; corrected invocation uses -m.",
+      "process_wall_s": 0.4813926,
+      "scientific_calls": 0
+    },
+    {
+      "command": "python -B -m rc3_s1a_results_20261106.audit_s1a",
+      "status": "AUDIT_METADATA_REPLAY_MISMATCH_DIAGNOSTIC",
+      "wall_s": 2.576932600000873,
+      "cpu_s": 2.09375,
+      "files_hashed": 297,
+      "bytes_hashed": 29058526,
+      "assertions": 336,
+      "saved_task_array_loads": 1,
+      "saved_navigation_array_loads": 1,
+      "message": "Immutable parent identity differs",
+      "cause": "Approved serializer/reloader omits rejected_edge_count included in original navigation binding. This first audit did not yet recover that omitted metadata.",
+      "script_sha256": "5920a7625241db33a8b8e2b39186638af2529e16028a4ffe8b6d51e44648e509",
+      "source_preserved": "audit_revisions/audit_s1a_initial.py",
+      "scientific_calls": 0
+    },
+    {
+      "command": "python -B -m rc3_s1a_results_20261106.audit_s1a",
+      "status": "PASS_SAVED_PLANS_WITH_NAVIGATION_REPLAY_DEFECT",
+      "wall_s": 76.07119930000044,
+      "cpu_s": 72.03125,
+      "script_sha256": "5e9230a88141fe0be18220504a1ccabea883ddd8318e36c7b679ff55ae80576d",
+      "source": "audit_s1a.py",
+      "scientific_calls": 0
+    }
+  ],
+  "read_only_supplemental_witness": {
+    "path": "REPLAY_WITNESS.json",
+    "wall_s": 2.2836586000012176,
+    "scientific_calls": 0
+  },
+  "original_scientific_code_or_run_artifacts_modified": false
+}

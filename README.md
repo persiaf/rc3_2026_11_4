@@ -1,6 +1,6 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-06** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.06-s1a-authorization-check**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-06** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.06-s1a-scientific-results**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
 
 当前验证范围是二维静态批次任务与代理可达约束。真实机器人标定与 IK 暂缓。G2.3 的“局部窗口选择＋STOP”作为第三部分 DRL 核心的路线已结束追加训练，不能将这些记录解释为学习方法已经优于强规则。独立构造式研究已完成C0／C1和一次512更新C2小试：速度部分达标，质量及继续门槛未通过；随后完成冻结路线 C2.1：72 次共同后处理使 RL 与 Fixed3 的平均逐场景相对差缩至 +0.8170%，相同后处理下相对先验的学习增量区间仍跨零；没有追加训练或启动C3。归因见 [C2.1报告](rc3_constructive/REPORT_C21.md)，原小试详见 [研究目录](rc3_constructive/README.md) 与 [完整报告](rc3_constructive/REPORT_C012.md)。
 
@@ -20,9 +20,11 @@ S1/S2正式执行前评审已完成：**正式训练REVISE，本轮工程准备P
 
 S1/S2正式训练器已实现，登记工程验收与独立复核通过：batch4梯度等价、命名随机流、S1/S2连续与恢复状态逐位相同、独立权重分叉及无授权拒绝。累计21次工程Adam、12次真实完整H，正式科学训练更新0。教师失败后隐式重试预算漏洞已修并零更新回归；两次绑定和旧源字节保留。**工程GO，正式执行仍REVISE**：v2保持活动冻结设计，v3及执行澄清待正式批准，不自动激活，不消费S3/原60。见 [训练器六项交付](rc3_global_local_trainer/README.md)、[工程验收](rc3_global_local_trainer/TRAINER_VERIFICATION.md) 与 [下一步决定](rc3_global_local_trainer/NEXT_STEP_DECISION.md)。成果在`codex/global-local-preflight`交付，不合并main。
 
-v3执行候选已定稿，八项差异及S1-A/S1-B/S2独立授权链已明确：**技术准入GO，科学执行仍REVISE/未授权**。候选SHA256为`0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb`，活动v2指针和旧证据原字节未改。阶段衔接/来源/预算守卫经当前9组75断言零科学回归和独立审查通过；本轮模型、optimizer、真实教师/H、场景/nav调用均0。待用户批准准确协议与源码绑定后，才分别授权S1-A教师、S1-B监督初始化和后续S2 DRL，不自动解封S3。见 [本轮交付](rc3_global_local_execution_v3/README.md)、[协议定稿](rc3_global_local_execution_v3/PROTOCOL_FINALIZATION.md)、[S1执行准备](rc3_global_local_execution_v3/S1_PREPARATION.md) 与 [下一步决定](rc3_global_local_execution_v3/NEXT_STEP_DECISION.md)。
+此前v3候选定稿轮次完成八项差异澄清及独立阶段授权链验收，当时尚未批准、科学调用0。该轮9组75断言为零科学工程回归；原候选与旧v2历史指针继续保留原字节，后续真实批准和S1-A结果以下文及新的活动执行状态为准。候选SHA256为`0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb`。见 [本轮交付](rc3_global_local_execution_v3/README.md)、[协议定稿](rc3_global_local_execution_v3/PROTOCOL_FINALIZATION.md)、[S1执行准备](rc3_global_local_execution_v3/S1_PREPARATION.md) 与 [下一步决定](rc3_global_local_execution_v3/NEXT_STEP_DECISION.md)。
 
-S1-A最新授权核查完成：准确协议、源码绑定、registry和33份源码匹配，但**未收到协议批准及独立S1-A授权，科学准入REVISE**。本条准备任务不构成许可；本轮收费教师、模型、optimizer、H、任务/nav调用均0，没有创建正式运行目录，不能提前判定S1-B通过。见 [授权核查与准备报告](rc3_s1a_authorization_check/README.md) 及 [待用户确认的两项范围](rc3_s1a_authorization_check/AUTHORIZATION_REQUEST.md)。候选、旧v2指针、源码与既有证据保持原字节。
+S1-A此前授权核查曾因缺少两项明确决定停在准备阶段，该轮科学调用0，记录保持在 [授权核查报告](rc3_s1a_authorization_check/README.md)。后续用户已正式批准准确v3和仅S1-A，分别新建真实收据并激活执行版本，未覆盖旧v2指针或原候选字节。
+
+**S1-A已实际完成**：256教师、native256+H256=512次评价、190.153795秒、缓存0/收费失败0/optimizer0；512份返回路线独立代理约束复核通过。平均教师J=129.77862746，额外H改善41例、不变215例，没有神经学习。审计发现nav保存缺少参与identity的`rejected_edge_count`，影响首96例的直接重载，因此**S1-B技术REVISE，未执行也未授权**。原D/F/A/路线及批准源码未改，没有重跑教师。见 [真实实验结果](rc3_s1a_results_20261106/README.md)、[256例明细](rc3_s1a_results_20261106/PER_TEACHER.csv)、[重载问题与最小修复](rc3_s1a_results_20261106/NAVIGATION_REPLAY_FINDING.md) 和 [下一步](rc3_s1a_results_20261106/NEXT_STEP_DECISION.md)。当前准确活动版本与权限见 [批准执行状态](rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json)，S1-B/S2/S3和原60边界不自动解除。
 
 ## 获取完整文件
 
