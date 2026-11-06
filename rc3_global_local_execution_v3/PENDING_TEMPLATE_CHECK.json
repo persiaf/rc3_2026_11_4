@@ -1,0 +1,29 @@
+{
+  "schema": "rc3-pending-template-production-gate-check-v2",
+  "status": "PASS",
+  "source_binding_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+  "source_revision": 2,
+  "checks": [
+    {
+      "stage": "S1-A",
+      "expected_rejection": "Explicit user protocol approval is missing",
+      "approval_sha256": "fcc278394e81d4e04223682f5196852662bdc118f44b1ffbdd1c29ee586db6bb",
+      "authorization_sha256": "2eee1cf2945dd406aa5330c5c9d277134a3dc167508038b1c5891d72e2d0e523"
+    },
+    {
+      "stage": "S1-B",
+      "expected_rejection": "Explicit user protocol approval is missing",
+      "approval_sha256": "fcc278394e81d4e04223682f5196852662bdc118f44b1ffbdd1c29ee586db6bb",
+      "authorization_sha256": "e4f809bfff0053c3b766f2d3b321fb64e36e36ba0b74f60a19f7846a3705fff3"
+    },
+    {
+      "stage": "S2",
+      "expected_rejection": "Explicit user protocol approval is missing",
+      "approval_sha256": "fcc278394e81d4e04223682f5196852662bdc118f44b1ffbdd1c29ee586db6bb",
+      "authorization_sha256": "c0f0edbbf12d67178fbc97d788353b1b77e09417dd7cb6f98f66325aa12800b3"
+    }
+  ],
+  "production_permits_emitted": 0,
+  "scientific_calls": 0,
+  "prior_check_preserved": "source_revisions/binding01/PENDING_TEMPLATE_CHECK.json"
+}

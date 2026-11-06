@@ -1,22 +1,95 @@
 {
-  "schema": "rc3-v3-admission-resource-v1",
-  "phase": "CODE_IMPLEMENTED_REGRESSION_BOUND_NOT_EXECUTED",
-  "scientific_calls": {
-    "teacher": 0,
-    "scene_task_generation": 0,
-    "navigation": 0,
+  "schema": "rc3-v3-admission-resource-v2",
+  "phase": "PROTOCOL_FINALIZED_ADAPTER_IMPLEMENTED_REGRESSION_PASS",
+  "current_case_groups": 9,
+  "current_assertions": 75,
+  "regression_attempts": 2,
+  "case_evaluations_all_attempts": 17,
+  "protocol_metadata_declarations": {
+    "teacher_specs": 256,
+    "training_parent_maps": 96,
+    "task_draws_per_parent": 8,
+    "S3_cases_declared": 108,
+    "target_tasks_generated": 0
+  },
+  "science_calls_all_attempts": {
     "optimizer_updates": 0,
     "model_instantiations": 0,
     "model_forward": 0,
     "backward": 0,
-    "full_H": 0,
+    "real_teacher_queries": 0,
+    "real_full_H": 0,
+    "scene_task_generation": 0,
+    "navigation_generation": 0,
     "S3_target_queries": 0,
     "original60_semantic_reads": 0
   },
-  "historical_trainer_engineering": "Previous21Adam/12H remains frozen in rc3_global_local_trainer and is not rerun or counted here.",
-  "regression_protocol": "ENGINEERING_REGRESSION_PROTOCOL.json",
+  "prohibited_operation_attempts": [
+    {},
+    {}
+  ],
+  "new_formal_or_engineering_optimizer_updates": 0,
+  "new_models_or_trained_weights": 0,
+  "checkpoint_fixture_reads": 2,
+  "checkpoint_fixture_scope": "Trusted previous engineering checkpoint dictionaries only, no model or formal use; UNIT_ONLY byte/metadata specimens are not weights.",
+  "synthetic_teacher_metadata_records_per_attempt": 256,
+  "real_teacher_queries": 0,
+  "registration": "ENGINEERING_REGRESSION_PROTOCOL.json",
+  "limits": {
+    "optimizer_updates": 0,
+    "model_instantiations": 0,
+    "model_forward": 0,
+    "backward": 0,
+    "real_teacher_queries": 0,
+    "real_full_H": 0,
+    "scene_task_generation": 0,
+    "navigation_generation": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0,
+    "wall_s_all_attempts": 900,
+    "regression_process_attempts": 5
+  },
+  "timing": {
+    "run_RESULT_snapshot_wall_s": [
+      2.53546219999771,
+      1.2630645999997796
+    ],
+    "run_end_including_result_write_wall_s": [
+      2.536586599999282,
+      1.2635718000019551
+    ],
+    "cumulative_registered_body_wall_s": 3.800158400001237,
+    "protocol_metadata_and_old_bytes": "PROTOCOL_FINALIZATION_RECEIPT.json",
+    "independent_verification": "INDEPENDENT_AUDIT.json (verification_run_history plus saved_chain_extension and automated_verification_accounting; static review not independently timed)",
+    "supplemental_PENDING_production_gate_checks_current": 3,
+    "supplemental_gate_timing": "Not individually timed as a separate body; no source/model/teacher work. Tool-process startup/import excluded from registered bodies.",
+    "startup_import_static_review_authoring_Git_complete_task_wall_s": null,
+    "scope": "All stated case walls nested within attempt walls. Missing timings are unmeasured, never zero or fabricated."
+  },
+  "source_revision": {
+    "binding01": "REGRESSION_BINDING_01.json",
+    "binding02": "REGRESSION_BINDING_02.json",
+    "change": "Strict current-parent COMPLETE hash/keyset check only; original code/binding/templates/audits preserved in source_revisions/binding01.",
+    "new_algorithm_or_budget": false
+  },
+  "current_source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+  "historical_core_engineering": "Old21Adam/12H in rc3_global_local_trainer untouched, not rerun or added to current science.",
+  "scientific_caps_proposed": {
+    "S1_A_native": 256,
+    "S1_A_H": 256,
+    "S1_A_wall_s": 1800,
+    "S1_B_per_seed_updates": 256,
+    "S1_B_per_seed_wall_s": 1800,
+    "S1_B_new_teacher_queries": 0,
+    "S2_per_seed_RL_updates": 512,
+    "S2_per_seed_continuedSL_updates": 512,
+    "S2_per_seed_terminal": 8192,
+    "S2_per_seed_shared_wall_s": 7200,
+    "three_seed_all_optimizer_updates": 3840,
+    "serial_stage_wall_upper_s": 28800
+  },
   "formal_protocol_approved": false,
   "active_design": "v2",
-  "fixed_DRL_goal_unchanged": true,
-  "code_source_hashes": 33
+  "S3_and_original60": "SEALED_NO_SEMANTIC_LOADING_OR_EVALUATION",
+  "fixed_DRL_goal_unchanged": true
 }

@@ -1,0 +1,175 @@
+{
+  "schema": "rc3-zero-science-stage-regression-v1",
+  "status": "PASS",
+  "run_id": "admission_02",
+  "source_sha256": {
+    "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90",
+    "rc3_baseline/validator.py": "47025f391a947ffbfe7ec2d31b3a40328975c33a19d00f65ca6edffdb7f19ed1",
+    "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+    "rc3_constructive/problem.py": "f7bd772ef83c31778e38316d9dbe1c2f3a1cbefb1439bcc8eacff725825d16da",
+    "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+    "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+    "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693",
+    "rc3_global_local/environment.py": "b041c273b80d9219dff6d508ce5828934612963783baf12366e0eceeafafd6b0",
+    "rc3_global_local/policy.py": "5b26e5c768866e49cf383f14df37be17b38409916f650c44fba51f445a247d5e",
+    "rc3_global_local/problem.py": "64403a306d1158f60c31c5aec51f13e690a671901df619557d6d9c57b30de320",
+    "rc3_global_local/run_s0.py": "dde17817de76ba99c57e8c6f32323b6857b33dfdbc6f9ebdc78d56ed0143f07c",
+    "rc3_global_local/terminal.py": "6f4c334176f2d4fcf86e9b02eaaf4ce98c5fa5d8b8bee335e04ed6cea62785af",
+    "rc3_global_local/validation.py": "b15b6d0f9e57e64d8e958d08e088299df785342b0b7562fc6336beb48a666777",
+    "rc3_global_local_execution_v3/__init__.py": "27ab847d1b7e0fa281f43186f5e6f920211531f350ba05282b275bc2a49a769c",
+    "rc3_global_local_execution_v3/audit_admission.py": "425e01a977952e6c5d5cee8c86c66f714a967f4744d13c3f7f1dbc867ef5e704",
+    "rc3_global_local_execution_v3/authority.py": "e71afd076a72227593fca72bf7139644a6b36c5969cefab3d3ae7194555c0ef1",
+    "rc3_global_local_execution_v3/regression.py": "47330cfc44016f48221de45db80d761eceac006c7e158558ad65c3616988bb79",
+    "rc3_global_local_execution_v3/runner.py": "4d91866a38341d2f87c3cc049578619975b3c4fd00a6edeb9cc3e27d86405679",
+    "rc3_global_local_impl_review/endpoint_baselines.py": "6ebe1cc90f2372a5f106f8ac6289a582b3d929e9f4d0088d57aae2435209ed1b",
+    "rc3_global_local_impl_review/runtime_guards.py": "572a4f631438700d86658ab004605551dc525d405a57bef922b6caa928736997",
+    "rc3_global_local_trainer/__init__.py": "8978fe720137450ff2f8f6954472a07da9f4729abb967e0a9a7220ac361aefcc",
+    "rc3_global_local_trainer/approval.py": "424733b26b4a85457a5e126ce1852eef240b5a00853bd8ac071e33ceb9a048d8",
+    "rc3_global_local_trainer/audit_saved_trainer.py": "b162c4d7f95ba1db63b1d7da109f29efa38934a82aae12b18295e3ee7a5f386e",
+    "rc3_global_local_trainer/checkpoint.py": "eaaa3a69e7e1b0c17632fc9870e65ef7a932f2c17ffe051c583371a27c35c1d9",
+    "rc3_global_local_trainer/data.py": "75c715b86c18468adc06fbd88f7b5dc0da320db1ee0ad2aac6a9dc007492d400",
+    "rc3_global_local_trainer/engine.py": "afc2542e7d79538e3a4e05e2fbfc8878ee1f74ca0d90997bca993d575749da0e",
+    "rc3_global_local_trainer/rng.py": "e044d3d43594646d68c29a86ed465df34f43819a4a639c5d13c2f2ec7f439c0d",
+    "rc3_global_local_trainer/runner.py": "a19c92bf7d9c2c1633b651ed0fb63cee68f34ca1ff10a0d1c13f91a10e322238",
+    "rc3_global_local_trainer/verification.py": "3fd94d6825f8b48576b91b911e0ac5e677dda46d9594aab2c96f8028769599a2",
+    "rc3_global_local_trainer/verification_budget.py": "62531c74826a86c66437f6cbb34ffe4f8389d1abd2b71fe64bb42680a9d20b03",
+    "rc3_improve/repair.py": "5b3471d4ce7df23cf7381fcf2f1d86ab39eddce2bca7cf23350a5a8c74c1ee36",
+    "rc3_v3/environment.py": "04f2ca6e89837185b731f028b1b36af9bab51b2379f4f01a8450d0e8b0604df0",
+    "rc3_v4/runtime.py": "b5c09bf9f1f81f616a30f493f6efb0d6bf919ba40dd45faf2945608310d192ff"
+  },
+  "binding_sha256": "a52560fea96b7ebdf29e8fb61621d8921a0f0887d7c667b8e9c6026250295c26",
+  "engineering_fixture_only": true,
+  "cases": {
+    "protocol_metadata": {
+      "status": "PASS",
+      "evidence": {
+        "candidate_pending": true,
+        "active_design": "v2",
+        "teachers": 256,
+        "bank": 768,
+        "S3_declarations": 108,
+        "target_tasks_generated": 0
+      },
+      "wall_s": 0.0016820000018924475
+    },
+    "production_gates": {
+      "status": "PASS",
+      "evidence": {
+        "production_missing_approval_rejected": true,
+        "canonical_single_output": true,
+        "science_calls": 0
+      },
+      "wall_s": 0.01732340000307886
+    },
+    "separate_stage_chain": {
+      "status": "PASS",
+      "evidence": {
+        "new_downstream_authorization": true,
+        "same_science_identity": true,
+        "all_three_S1_endpoints_required": true,
+        "fixed_seed_order": true,
+        "no_real_execution": true
+      },
+      "wall_s": 0.12217990000135615
+    },
+    "same_stage_resume": {
+      "status": "PASS",
+      "evidence": {
+        "same_authorization_resume": true,
+        "failed_or_new_authorization_reset_rejected": true,
+        "prior_stage_seconds": 31.25,
+        "new_admission_seconds": 2.5,
+        "resumed_before_seconds": 33.75,
+        "clock_test": "isolated adapter arithmetic, not new model resume"
+      },
+      "wall_s": 0.025407699999050237
+    },
+    "teacher_pool_metadata": {
+      "status": "PASS",
+      "evidence": {
+        "complete_structural_records": 256,
+        "wrong_spec_route_H_validation_hash_budget_rejected": true,
+        "teacher_queries": 0,
+        "scope": "Metadata only; no fixture is a real teacher or formal input"
+      },
+      "wall_s": 0.7550636999985727
+    },
+    "checkpoint_identity": {
+      "status": "PASS",
+      "evidence": {
+        "protocol_registry_H_source_seed_run_weight_bytes_rejected": true,
+        "metadata_only_not_restore": true,
+        "production_engineering_checkpoint_use": "Excluded by exact run/binding and frozen tensor loader; byte fixture never passes tensor load"
+      },
+      "wall_s": 0.09662100000059581
+    },
+    "dirty_boundary": {
+      "status": "PASS",
+      "evidence": {
+        "frozen_production_dirty_log_precheck": true,
+        "model_instantiations": 0,
+        "torch_dictionary_deserializations": 1,
+        "prior_engineering_checkpoint_not_formal_source": true
+      },
+      "wall_s": 0.017722000000503613
+    },
+    "adapter_records": {
+      "status": "PASS",
+      "evidence": {
+        "factory_failure_recorded": true,
+        "failed_relaunch_rejected": true,
+        "artifact_hash_before_resource_snapshot": true,
+        "exhausted_clock_cannot_complete": true
+      },
+      "wall_s": 0.04778489999807789
+    },
+    "parent_completion_mutation": {
+      "status": "PASS",
+      "evidence": {
+        "resource_only_parent_mutations_rejected": 2,
+        "missing_and_extra_parent_sets_rejected": true,
+        "S2_rejects_stale_ancestry": true,
+        "original_byte_restoration_accepts": true,
+        "negative_mutation_fixtures": [
+          {
+            "parent": "S1-A",
+            "child": "S1-B/11622026",
+            "type": "resource_only_parent_change"
+          },
+          {
+            "parent": "S1-B/11622026",
+            "child": "S1-B/11622027",
+            "type": "resource_only_parent_change"
+          },
+          {
+            "child": "S1-B/11622027",
+            "type": "missing_parent_key"
+          },
+          {
+            "child": "S1-B/11622027",
+            "type": "extra_parent_key"
+          }
+        ],
+        "real_stage_execution": false
+      },
+      "wall_s": 0.15890050000234623
+    }
+  },
+  "error": null,
+  "assertions": 75,
+  "forbidden_operation_attempts": {},
+  "scientific_call_counters": {
+    "optimizer_updates": 0,
+    "model_instantiations": 0,
+    "model_forward": 0,
+    "backward": 0,
+    "real_teacher_queries": 0,
+    "real_full_H": 0,
+    "scene_task_generation": 0,
+    "navigation_generation": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0
+  },
+  "wall_s": 1.2630645999997796,
+  "scope": "UNIT_ONLY structure/byte/ledger fixtures, one negative trusted torch dictionary read; no production permission, real teachers/models, optimizer or task generation."
+}

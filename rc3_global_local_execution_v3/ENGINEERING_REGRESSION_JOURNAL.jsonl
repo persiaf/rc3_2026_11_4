@@ -1,0 +1,120 @@
+{"event": "run_start", "run_id": "admission_01", "binding_sha256": "be2cd89ddb4f7cf68b04000f8fd4c842e2c86673d532edaa18bfed6fa529c4bd"}
+{"event": "case_start", "run_id": "admission_01", "case": "protocol_metadata"}
+{"event": "case_complete", "run_id": "admission_01", "case": "protocol_metadata"}
+{"event": "case_start", "run_id": "admission_01", "case": "production_gates"}
+{"event": "expected_rejection", "case": "S1-ANone", "type": "AdmissionError", "message": "User protocol approval and corresponding stage authorization are both required"}
+{"event": "expected_rejection", "case": "S1-B11622026", "type": "AdmissionError", "message": "User protocol approval and corresponding stage authorization are both required"}
+{"event": "expected_rejection", "case": "S211622026", "type": "AdmissionError", "message": "User protocol approval and corresponding stage authorization are both required"}
+{"event": "expected_rejection", "case": "S3None", "type": "AdmissionError", "message": "Only S1-A/S1-B/S2 are supported; S3 remains sealed"}
+{"event": "expected_rejection", "case": "S1-B999", "type": "AdmissionError", "message": "S1-A has no optimizer seed; S1-B/S2 require one fixed declared seed"}
+{"event": "expected_rejection", "case": "S1-BTrue", "type": "AdmissionError", "message": "S1-A has no optimizer seed; S1-B/S2 require one fixed declared seed"}
+{"event": "expected_rejection", "case": "S1-A11622026", "type": "AdmissionError", "message": "S1-A has no optimizer seed; S1-B/S2 require one fixed declared seed"}
+{"event": "expected_rejection", "case": "old protocol", "type": "AdmissionError", "message": "Only the new explicitly reviewed candidate/registry pair is supported"}
+{"event": "expected_rejection", "case": "nested duplicate run", "type": "AdmissionError", "message": "Output must be the fixed experiment_id child under new execution runs/"}
+{"event": "expected_rejection", "case": "old evidence output", "type": "AdmissionError", "message": "Output must be the fixed experiment_id child under new execution runs/"}
+{"event": "expected_rejection", "case": "permit type", "type": "AdmissionError", "message": "A validated per-stage permit is required"}
+{"event": "case_complete", "run_id": "admission_01", "case": "production_gates"}
+{"event": "case_start", "run_id": "admission_01", "case": "separate_stage_chain"}
+{"event": "expected_rejection", "case": "S2 before all S1", "type": "AdmissionError", "message": "Required predecessor is incomplete: S1-B/11622026"}
+{"event": "expected_rejection", "case": "fixed seed order", "type": "AdmissionError", "message": "Required predecessor is incomplete: S1-B/11622026"}
+{"event": "expected_rejection", "case": "wrong parent hash", "type": "AdmissionError", "message": "Explicit authorization predecessor set/hashes differ"}
+{"event": "expected_rejection", "case": "completed stage rerun", "type": "AdmissionError", "message": "Stage already complete; a new authorization cannot repeat it"}
+{"event": "case_complete", "run_id": "admission_01", "case": "separate_stage_chain"}
+{"event": "case_start", "run_id": "admission_01", "case": "same_stage_resume"}
+{"event": "expected_rejection", "case": "same stage changed authorization", "type": "AdmissionError", "message": "Same stage cannot switch authorization or reset its scientific binding"}
+{"event": "expected_rejection", "case": "unannounced restart", "type": "AdmissionError", "message": "Existing/failed stage cannot silently restart; explicit safe resume required"}
+{"event": "expected_rejection", "case": "failed restart", "type": "AdmissionError", "message": "Existing/failed stage cannot silently restart; explicit safe resume required"}
+{"event": "case_complete", "run_id": "admission_01", "case": "same_stage_resume"}
+{"event": "case_start", "run_id": "admission_01", "case": "teacher_pool_metadata"}
+{"event": "expected_rejection", "case": "missing native certificate", "type": "AdmissionError", "message": "Teacher complete routes, tasks, endpoint identity or validation is missing"}
+{"event": "expected_rejection", "case": "invalid H certificate", "type": "AdmissionError", "message": "Teacher complete routes, tasks, endpoint identity or validation is missing"}
+{"event": "expected_rejection", "case": "route label mismatch", "type": "AdmissionError", "message": "Teacher complete routes, tasks, endpoint identity or validation is missing"}
+{"event": "expected_rejection", "case": "teacher spec mismatch", "type": "AdmissionError", "message": "Teacher label identity differs"}
+{"event": "expected_rejection", "case": "H cost mismatch", "type": "AdmissionError", "message": "Teacher native/H terminal objective records differ or are nonfinite"}
+{"event": "expected_rejection", "case": "changed pool bytes", "type": "AdmissionError", "message": "Teacher label bytes changed"}
+{"event": "expected_rejection", "case": "teacher budget excess", "type": "AdmissionError", "message": "Teacher pool paid-query counters are incomplete or exceed the fixed cap"}
+{"event": "case_complete", "run_id": "admission_01", "case": "teacher_pool_metadata"}
+{"event": "case_start", "run_id": "admission_01", "case": "checkpoint_identity"}
+{"event": "expected_rejection", "case": "wrong checkpoint protocol_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint registry_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint H_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint source_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint optimizer_seed", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint run", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "selected earlier weight", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "bad checkpoint bytes", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "case_complete", "run_id": "admission_01", "case": "checkpoint_identity"}
+{"event": "case_start", "run_id": "admission_01", "case": "dirty_boundary"}
+{"event": "expected_rejection", "case": "dirty after closed boundary", "type": "RuntimeError", "message": "Work exists after this checkpoint; refuse uncharged/duplicate crash replay"}
+{"event": "case_complete", "run_id": "admission_01", "case": "dirty_boundary"}
+{"event": "case_start", "run_id": "admission_01", "case": "adapter_records"}
+{"event": "expected_rejection", "case": "factory construction failure", "type": "RuntimeError", "message": "UNIT_ONLY expected constructor failure"}
+{"event": "expected_rejection", "case": "failed stage cannot start another factory", "type": "AdmissionError", "message": "Existing/failed stage cannot silently restart; explicit safe resume required"}
+{"event": "expected_rejection", "case": "hash-end cap check", "type": "TimeoutError", "message": "Cumulative stage wall cap reached; no automatic budget extension"}
+{"event": "case_complete", "run_id": "admission_01", "case": "adapter_records"}
+{"event": "run_end", "run_id": "admission_01", "status": "PASS", "wall_s": 2.536586599999282, "scientific_call_counters": {"optimizer_updates": 0, "model_instantiations": 0, "model_forward": 0, "backward": 0, "real_teacher_queries": 0, "real_full_H": 0, "scene_task_generation": 0, "navigation_generation": 0, "S3_target_queries": 0, "original60_semantic_reads": 0}}
+{"event": "run_start", "run_id": "admission_02", "binding_sha256": "a52560fea96b7ebdf29e8fb61621d8921a0f0887d7c667b8e9c6026250295c26"}
+{"event": "case_start", "run_id": "admission_02", "case": "protocol_metadata"}
+{"event": "case_complete", "run_id": "admission_02", "case": "protocol_metadata"}
+{"event": "case_start", "run_id": "admission_02", "case": "production_gates"}
+{"event": "expected_rejection", "case": "S1-ANone", "type": "AdmissionError", "message": "User protocol approval and corresponding stage authorization are both required"}
+{"event": "expected_rejection", "case": "S1-B11622026", "type": "AdmissionError", "message": "User protocol approval and corresponding stage authorization are both required"}
+{"event": "expected_rejection", "case": "S211622026", "type": "AdmissionError", "message": "User protocol approval and corresponding stage authorization are both required"}
+{"event": "expected_rejection", "case": "S3None", "type": "AdmissionError", "message": "Only S1-A/S1-B/S2 are supported; S3 remains sealed"}
+{"event": "expected_rejection", "case": "S1-B999", "type": "AdmissionError", "message": "S1-A has no optimizer seed; S1-B/S2 require one fixed declared seed"}
+{"event": "expected_rejection", "case": "S1-BTrue", "type": "AdmissionError", "message": "S1-A has no optimizer seed; S1-B/S2 require one fixed declared seed"}
+{"event": "expected_rejection", "case": "S1-A11622026", "type": "AdmissionError", "message": "S1-A has no optimizer seed; S1-B/S2 require one fixed declared seed"}
+{"event": "expected_rejection", "case": "old protocol", "type": "AdmissionError", "message": "Only the new explicitly reviewed candidate/registry pair is supported"}
+{"event": "expected_rejection", "case": "nested duplicate run", "type": "AdmissionError", "message": "Output must be the fixed experiment_id child under new execution runs/"}
+{"event": "expected_rejection", "case": "old evidence output", "type": "AdmissionError", "message": "Output must be the fixed experiment_id child under new execution runs/"}
+{"event": "expected_rejection", "case": "permit type", "type": "AdmissionError", "message": "A validated per-stage permit is required"}
+{"event": "case_complete", "run_id": "admission_02", "case": "production_gates"}
+{"event": "case_start", "run_id": "admission_02", "case": "separate_stage_chain"}
+{"event": "expected_rejection", "case": "S2 before all S1", "type": "AdmissionError", "message": "Required predecessor is incomplete: S1-B/11622026"}
+{"event": "expected_rejection", "case": "fixed seed order", "type": "AdmissionError", "message": "Required predecessor is incomplete: S1-B/11622026"}
+{"event": "expected_rejection", "case": "wrong parent hash", "type": "AdmissionError", "message": "Explicit authorization predecessor set/hashes differ"}
+{"event": "expected_rejection", "case": "completed stage rerun", "type": "AdmissionError", "message": "Stage already complete; a new authorization cannot repeat it"}
+{"event": "case_complete", "run_id": "admission_02", "case": "separate_stage_chain"}
+{"event": "case_start", "run_id": "admission_02", "case": "same_stage_resume"}
+{"event": "expected_rejection", "case": "same stage changed authorization", "type": "AdmissionError", "message": "Same stage cannot switch authorization or reset its scientific binding"}
+{"event": "expected_rejection", "case": "unannounced restart", "type": "AdmissionError", "message": "Existing/failed stage cannot silently restart; explicit safe resume required"}
+{"event": "expected_rejection", "case": "failed restart", "type": "AdmissionError", "message": "Existing/failed stage cannot silently restart; explicit safe resume required"}
+{"event": "case_complete", "run_id": "admission_02", "case": "same_stage_resume"}
+{"event": "case_start", "run_id": "admission_02", "case": "teacher_pool_metadata"}
+{"event": "expected_rejection", "case": "missing native certificate", "type": "AdmissionError", "message": "Teacher complete routes, tasks, endpoint identity or validation is missing"}
+{"event": "expected_rejection", "case": "invalid H certificate", "type": "AdmissionError", "message": "Teacher complete routes, tasks, endpoint identity or validation is missing"}
+{"event": "expected_rejection", "case": "route label mismatch", "type": "AdmissionError", "message": "Teacher complete routes, tasks, endpoint identity or validation is missing"}
+{"event": "expected_rejection", "case": "teacher spec mismatch", "type": "AdmissionError", "message": "Teacher label identity differs"}
+{"event": "expected_rejection", "case": "H cost mismatch", "type": "AdmissionError", "message": "Teacher native/H terminal objective records differ or are nonfinite"}
+{"event": "expected_rejection", "case": "changed pool bytes", "type": "AdmissionError", "message": "Teacher label bytes changed"}
+{"event": "expected_rejection", "case": "teacher budget excess", "type": "AdmissionError", "message": "Teacher pool paid-query counters are incomplete or exceed the fixed cap"}
+{"event": "case_complete", "run_id": "admission_02", "case": "teacher_pool_metadata"}
+{"event": "case_start", "run_id": "admission_02", "case": "checkpoint_identity"}
+{"event": "expected_rejection", "case": "wrong checkpoint protocol_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint registry_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint H_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint source_sha256", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint optimizer_seed", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "wrong checkpoint run", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "selected earlier weight", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "expected_rejection", "case": "bad checkpoint bytes", "type": "AdmissionError", "message": "Checkpoint protocol/seed/run/phase/weight lineage differs"}
+{"event": "case_complete", "run_id": "admission_02", "case": "checkpoint_identity"}
+{"event": "case_start", "run_id": "admission_02", "case": "dirty_boundary"}
+{"event": "expected_rejection", "case": "dirty after closed boundary", "type": "RuntimeError", "message": "Work exists after this checkpoint; refuse uncharged/duplicate crash replay"}
+{"event": "case_complete", "run_id": "admission_02", "case": "dirty_boundary"}
+{"event": "case_start", "run_id": "admission_02", "case": "adapter_records"}
+{"event": "expected_rejection", "case": "factory construction failure", "type": "RuntimeError", "message": "UNIT_ONLY expected constructor failure"}
+{"event": "expected_rejection", "case": "failed stage cannot start another factory", "type": "AdmissionError", "message": "Existing/failed stage cannot silently restart; explicit safe resume required"}
+{"event": "expected_rejection", "case": "hash-end cap check", "type": "TimeoutError", "message": "Cumulative stage wall cap reached; no automatic budget extension"}
+{"event": "case_complete", "run_id": "admission_02", "case": "adapter_records"}
+{"event": "case_start", "run_id": "admission_02", "case": "parent_completion_mutation"}
+{"event": "expected_rejection", "case": "parent_resource_0 child stale receipt", "type": "AdmissionError", "message": "Completed stage points to a changed predecessor receipt: S1-A"}
+{"event": "expected_rejection", "case": "parent_resource_0 S2 stale ancestry", "type": "AdmissionError", "message": "Completed stage points to a changed predecessor receipt: S1-A"}
+{"event": "expected_rejection", "case": "parent_resource_1 child stale receipt", "type": "AdmissionError", "message": "Completed stage points to a changed predecessor receipt: S1-B/11622026"}
+{"event": "expected_rejection", "case": "parent_resource_1 S2 stale ancestry", "type": "AdmissionError", "message": "Completed stage points to a changed predecessor receipt: S1-B/11622026"}
+{"event": "expected_rejection", "case": "missing exact parent key set", "type": "AdmissionError", "message": "Completed stage predecessor set differs from its fixed chain"}
+{"event": "expected_rejection", "case": "missing S2 parent set", "type": "AdmissionError", "message": "Completed stage predecessor set differs from its fixed chain"}
+{"event": "expected_rejection", "case": "extra exact parent key set", "type": "AdmissionError", "message": "Completed stage predecessor set differs from its fixed chain"}
+{"event": "expected_rejection", "case": "extra S2 parent set", "type": "AdmissionError", "message": "Completed stage predecessor set differs from its fixed chain"}
+{"event": "case_complete", "run_id": "admission_02", "case": "parent_completion_mutation"}
+{"event": "run_end", "run_id": "admission_02", "status": "PASS", "wall_s": 1.2635718000019551, "scientific_call_counters": {"optimizer_updates": 0, "model_instantiations": 0, "model_forward": 0, "backward": 0, "real_teacher_queries": 0, "real_full_H": 0, "scene_task_generation": 0, "navigation_generation": 0, "S3_target_queries": 0, "original60_semantic_reads": 0}}

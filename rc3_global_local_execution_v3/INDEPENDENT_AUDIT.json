@@ -1,0 +1,134 @@
+{
+  "schema": "rc3-independent-stage-admission-audit-v1",
+  "reviewer": "/root/v3_admission_independent",
+  "status": "PASS_FINAL_PROTOCOL_STAGE_ADMISSION_AND_REPORTS",
+  "base": "aa0247c8c38243504028bfad24795e0db7120264",
+  "result": "rc3_global_local_execution_v3/ENGINEERING_VERIFICATION.json",
+  "result_sha256": "2c6015ddaefac28f1281551f2e20ae9ddbbbcf15a13761ecc46ff6643446bb3b",
+  "binding": "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json",
+  "binding_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+  "source_files_checked": 33,
+  "prior_frozen_files_checked": 85,
+  "candidate_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "candidate_status": "PENDING_USER_APPROVAL_NOT_ACTIVE_NOT_AUTHORIZED",
+  "active_v2_pointer_sha256": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49",
+  "S1_mode_endpoint_counts": {
+    "('blocked', 'closed_depot')": 64,
+    "('blocked', 'open_first_last_connected')": 64,
+    "('mixed', 'closed_depot')": 64,
+    "('mixed', 'open_first_last_connected')": 64
+  },
+  "S3_metadata_cases": 108,
+  "target_tasks_materialized": false,
+  "scientific_calls": {
+    "model": 0,
+    "optimizer": 0,
+    "task_generation": 0,
+    "navigation": 0,
+    "teacher": 0,
+    "H": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0
+  },
+  "scope": "Read saved JSON/source hashes and prior original bytes only. Metadata allocation is not task feasibility.",
+  "wall_s": 0.20798540000032517,
+  "cpu_s": 0.15625,
+  "script_sha256": "425e01a977952e6c5d5cee8c86c66f714a967f4744d13c3f7f1dbc867ef5e704",
+  "verification_run_history": [
+    {
+      "status": "PASS_SAVED_EVIDENCE_PENDING_REPORT_FINALIZATION",
+      "wall_s": 0.2542336000005889,
+      "cpu_s": 0.171875,
+      "result_sha256": "437257d016315e424aa5f4221b61fc124b928a4bdebc1ab8c1805a20d057582c",
+      "script_sha256": "425e01a977952e6c5d5cee8c86c66f714a967f4744d13c3f7f1dbc867ef5e704"
+    },
+    {
+      "status": "PASS_SAVED_EVIDENCE_PENDING_REPORT_FINALIZATION",
+      "wall_s": 0.20798540000032517,
+      "cpu_s": 0.15625,
+      "result_sha256": "2c6015ddaefac28f1281551f2e20ae9ddbbbcf15a13761ecc46ff6643446bb3b",
+      "script_sha256": "425e01a977952e6c5d5cee8c86c66f714a967f4744d13c3f7f1dbc867ef5e704"
+    }
+  ],
+  "saved_chain_extension": {
+    "status": "PASS_CURRENT_REVISION02",
+    "source_result_sha256": "6daaaa8539a2f8cd46f4d7a7b34b61367b86a983d183411b2fa5cfdb94abe786",
+    "completed_UNIT_ONLY_nodes": 7,
+    "independent_artifact_and_parent_hash_checks": 42,
+    "distinct_simulated_stage_authorizations": 3,
+    "all_three_S1_sources_required_before_S2": true,
+    "stable_science_binding_exact": true,
+    "simulated_failed_stage_resources_retained": true,
+    "hash_end_cap_complete_absent": true,
+    "parent_mutation_negative_rejections": 8,
+    "parent_mutation_case": {
+      "resource_only_parent_mutations_rejected": 2,
+      "missing_and_extra_parent_sets_rejected": true,
+      "S2_rejects_stale_ancestry": true,
+      "original_byte_restoration_accepts": true,
+      "negative_mutation_fixtures": [
+        {
+          "parent": "S1-A",
+          "child": "S1-B/11622026",
+          "type": "resource_only_parent_change"
+        },
+        {
+          "parent": "S1-B/11622026",
+          "child": "S1-B/11622027",
+          "type": "resource_only_parent_change"
+        },
+        {
+          "child": "S1-B/11622027",
+          "type": "missing_parent_key"
+        },
+        {
+          "child": "S1-B/11622027",
+          "type": "extra_parent_key"
+        }
+      ],
+      "real_stage_execution": false
+    },
+    "H_canonical_hash": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+    "H_source_files_checked": 2,
+    "wall_s": 0.015192599999863887,
+    "scope": "Read-only standard-library JSON/bytes. All chain nodes UNIT_ONLY non-executable; no production approval or scientific phase run."
+  },
+  "archived_initial_independent_audit_sha256": "ed39747c0dc22b98e124d8de955182baabcab577bc25d355b4526fe52bfa838e",
+  "automated_verification_accounting": {
+    "main_audit_history_wall_s": 0.4622190000009141,
+    "archived_first_extension_wall_s": 0.019963800001278287,
+    "current_extension_wall_s": 0.015192599999863887,
+    "known_automated_wall_s_total": 0.49737540000205627,
+    "static_review_and_report_authoring_wall_s": null,
+    "scope": "After interpreter startup; source/byte/JSON verification only. Do not report this as entire independent review time."
+  },
+  "technical_decision": "GO",
+  "formal_scientific_decision": "REVISE_PENDING_USER_APPROVAL_AND_STAGE_AUTHORIZATION",
+  "final_report_review": {
+    "passed": true,
+    "report_sha256": {
+      "README.md": "b36331ebe92eeee9518f8176e1e37d8a5e58504ddae8f2e86268497256905b9a",
+      "IMPLEMENTATION_REVIEW.md": "efbeb8c4ff814047de2fa63cc975ac261f4ee70e5dd3223355e4850b8227e205",
+      "AUTHORIZATION_VERIFICATION.md": "cfa8effe7d7e1728ea3585948507812db929a1c9bf1e4966943c6601fc3f65e2",
+      "PROTOCOL_FINALIZATION.md": "5330a4377932be26936d4aedfefd8ded87acda6e6e4ad6f497f5ebf9809c0ed6",
+      "AUTHORIZATION_CHAIN.md": "b02cea2f5ce1d44f54b7db03c02dc63ed895c5bffb6b72d7fa2b9e57da6d9442",
+      "S1_PREPARATION.md": "5f86f19a236f63ef0e0dd25d040f886188baf199f41f13d62afcb5c239b14388",
+      "RESOURCE_ACCOUNTING.json": "6ff233eb9f735658a0c5fb777bcd21a59753d8443f5c75b3f638af8b0303fee0",
+      "EXPERIMENT_REPORT.md": "aaa114bcc804a5769ea379fd0704df3da287b970bc5d4ab08c7a9aeea59c3557",
+      "RESULT_TO_CLAIM.md": "629f6e85029d723ca4878557723c9e116cdcca96c30a991c0d987e6eb68bde53",
+      "NEXT_STEP_DECISION.md": "eef96655d0ef1ec7848bc77f8fef7b2369ddefad3cf2e75147131486b11e544c",
+      "GIT_VERSION_AUDIT.json": "bd01d4ce7214ea458b032478e0f8529291f197cc9cda3c258d96b6ecb26edd71",
+      "EXECUTION_SOURCE_BINDING.json": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+      "PENDING_TEMPLATE_CHECK.json": "3bc9ffd5773419b6ae70c3f528cf1760666945028f7e41423606661aeea45481",
+      "INDEPENDENT_REVIEW.md": "e6b7cfc2fd335f29d26e88f07f84da0a7d0554cdb189b23d6b4a1a1f3d9c6448"
+    },
+    "pending_templates_not_approved": true,
+    "registered_current_groups": 9,
+    "registered_current_assertions": 75,
+    "known_automated_verification_wall_s": 0.49737540000205627,
+    "static_report_review_wall_s": null,
+    "git_precommit_metadata_checked": true,
+    "actual_final_commit_and_remote_verification": "Root to verify after commit/push; not asserted in this precommit independent review."
+  }
+}

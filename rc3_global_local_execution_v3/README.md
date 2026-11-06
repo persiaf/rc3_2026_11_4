@@ -10,6 +10,13 @@
 - [原字节registry](REGISTRY.json)、[256教师清单](S1_TEACHERS_256.csv)、[108例S3声明](S3_DECLARATIONS_108.csv)，仅声明元数据，无目标任务生成。
 - [H精确绑定](H_BINDING.json)与[定稿核验](PROTOCOL_FINALIZATION_RECEIPT.json)。
 
-实施分阶段提交：协议定稿；授权适配代码；有限工程回归；最终状态与GitHub发布记录。本目录后续执行入口要求独立用户协议批准和逐阶段授权；当前没有真实教师生成或科学训练权限。
+协议、授权适配代码和有限回归已完成。**工程准入GO；正式科学执行REVISE，等待用户批准协议与对应阶段。** 当前没有真实教师生成或科学训练权限，活动v2指针未改变。
+
+当前准确协议SHA256：`0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb`。33份源码、registry、H和环境见[EXECUTION_SOURCE_BINDING.json](EXECUTION_SOURCE_BINDING.json)，其SHA256为`435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968`。
+
+- [实施评审](IMPLEMENTATION_REVIEW.md)、[授权与恢复链](AUTHORIZATION_CHAIN.md)、[S1-A/S1-B准备与入口](S1_PREPARATION.md)。
+- [工程回归报告](AUTHORIZATION_VERIFICATION.md)、[原始结果](engineering_runs/admission_02/RESULT.json)、[独立审查](INDEPENDENT_REVIEW.md)。
+- [资源账](RESOURCE_ACCOUNTING.json)、[实际执行报告](EXPERIMENT_REPORT.md)、[下一步决定](NEXT_STEP_DECISION.md)、[Git版本核对](GIT_VERSION_AUDIT.json)。
+- [待批准模板](authorization_templates/)均为PENDING状态，不构成许可；[模板生产入口拒绝检查](PENDING_TEMPLATE_CHECK.json)确认没有产生生产ExecutionPermit。
 
 S1-A为共享256条教师生成与冻结，最多256native+256H、1800秒、0optimizer；S1-B为三固定种子各256次监督初始化、每seed1800秒、0新教师查询。全部S1-B完成后才可按新的S2授权继续，原60和S3目标继续封存。
