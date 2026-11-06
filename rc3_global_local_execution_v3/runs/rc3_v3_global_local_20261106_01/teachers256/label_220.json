@@ -1,0 +1,2797 @@
+{
+  "index": 220,
+  "spec": {
+    "case": 220,
+    "parent": 28,
+    "map_seed": 10000000028,
+    "task_seed": 11000000226,
+    "width": 6,
+    "height": 6,
+    "x0": 0,
+    "y0": 0,
+    "endpoints": "closed_depot",
+    "A_condition": 0,
+    "role": "train",
+    "mode": "mixed"
+  },
+  "view_identity": "8f074c309579ac326f75455927441c95e5c5d30a2b2962be94fceea5fb0d2746",
+  "actions": [
+    5,
+    25,
+    32,
+    18,
+    10,
+    13,
+    39,
+    64,
+    47,
+    92,
+    62,
+    58,
+    85,
+    77,
+    72,
+    45,
+    22
+  ],
+  "teacher_J": 76.1443489518,
+  "native_plan": {
+    "schema": "rc3-global-local-plan-v1",
+    "method": "endpoint_detour16",
+    "status": "complete",
+    "problem_identity": "8f074c309579ac326f75455927441c95e5c5d30a2b2962be94fceea5fb0d2746",
+    "parent_identity": "4f7f44c04213e5cb069dbb6b0570d845399f7d00dc9bfaa2b4e9550c26208782",
+    "entry_global_node": 0,
+    "exit_global_node": 0,
+    "window": {
+      "x0": 0,
+      "y0": 0,
+      "width": 6,
+      "height": 6
+    },
+    "target_task_ids_global": [
+      0,
+      1,
+      2,
+      3,
+      8,
+      13,
+      14,
+      15,
+      16,
+      17,
+      23,
+      24,
+      28,
+      29,
+      30,
+      31,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41
+    ],
+    "visit_order_candidate_ids": [
+      20,
+      176,
+      185,
+      105,
+      27,
+      42,
+      202,
+      353,
+      274,
+      430,
+      341,
+      335,
+      421,
+      410,
+      403,
+      252,
+      163
+    ],
+    "selected_candidate_ids": [
+      20,
+      176,
+      185,
+      105,
+      27,
+      42,
+      202,
+      353,
+      274,
+      430,
+      341,
+      335,
+      421,
+      410,
+      403,
+      252,
+      163
+    ],
+    "navigation_global_nodes": [
+      0,
+      21,
+      177,
+      186,
+      106,
+      28,
+      43,
+      203,
+      354,
+      275,
+      431,
+      342,
+      336,
+      422,
+      411,
+      404,
+      253,
+      164,
+      0
+    ],
+    "assignments": [
+      {
+        "task_id": 0,
+        "candidate_id": 20,
+        "arm": "L"
+      },
+      {
+        "task_id": 1,
+        "candidate_id": 20,
+        "arm": "L"
+      },
+      {
+        "task_id": 14,
+        "candidate_id": 176,
+        "arm": "R"
+      },
+      {
+        "task_id": 15,
+        "candidate_id": 176,
+        "arm": "L"
+      },
+      {
+        "task_id": 16,
+        "candidate_id": 185,
+        "arm": "L"
+      },
+      {
+        "task_id": 8,
+        "candidate_id": 105,
+        "arm": "L"
+      },
+      {
+        "task_id": 2,
+        "candidate_id": 27,
+        "arm": "L"
+      },
+      {
+        "task_id": 3,
+        "candidate_id": 42,
+        "arm": "L"
+      },
+      {
+        "task_id": 17,
+        "candidate_id": 202,
+        "arm": "L"
+      },
+      {
+        "task_id": 30,
+        "candidate_id": 353,
+        "arm": "L"
+      },
+      {
+        "task_id": 31,
+        "candidate_id": 353,
+        "arm": "L"
+      },
+      {
+        "task_id": 24,
+        "candidate_id": 274,
+        "arm": "L"
+      },
+      {
+        "task_id": 39,
+        "candidate_id": 430,
+        "arm": "R"
+      },
+      {
+        "task_id": 40,
+        "candidate_id": 430,
+        "arm": "R"
+      },
+      {
+        "task_id": 41,
+        "candidate_id": 430,
+        "arm": "L"
+      },
+      {
+        "task_id": 29,
+        "candidate_id": 341,
+        "arm": "L"
+      },
+      {
+        "task_id": 28,
+        "candidate_id": 335,
+        "arm": "L"
+      },
+      {
+        "task_id": 38,
+        "candidate_id": 421,
+        "arm": "L"
+      },
+      {
+        "task_id": 37,
+        "candidate_id": 410,
+        "arm": "L"
+      },
+      {
+        "task_id": 35,
+        "candidate_id": 403,
+        "arm": "L"
+      },
+      {
+        "task_id": 36,
+        "candidate_id": 403,
+        "arm": "L"
+      },
+      {
+        "task_id": 23,
+        "candidate_id": 252,
+        "arm": "L"
+      },
+      {
+        "task_id": 13,
+        "candidate_id": 163,
+        "arm": "L"
+      }
+    ],
+    "service_stops": [
+      {
+        "sequence": 1,
+        "candidate_id": 20,
+        "pose": {
+          "x": 4.439159678762004,
+          "y": 0.8428785780840532,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 5.282038256900001,
+        "tasks": [
+          {
+            "task_id": 0,
+            "arm": "L"
+          },
+          {
+            "task_id": 1,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "candidate_id": 176,
+        "pose": {
+          "x": 5.21668573403179,
+          "y": 4.128416856514962,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 9.5474553799,
+        "tasks": [
+          {
+            "task_id": 14,
+            "arm": "R"
+          },
+          {
+            "task_id": 15,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "candidate_id": 185,
+        "pose": {
+          "x": 7.796237383594156,
+          "y": 4.05083643205585,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 12.389899940500001,
+        "tasks": [
+          {
+            "task_id": 16,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "candidate_id": 105,
+        "pose": {
+          "x": 7.836561302143528,
+          "y": 2.107960859713691,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 16.309651494,
+        "tasks": [
+          {
+            "task_id": 8,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 5,
+        "candidate_id": 27,
+        "pose": {
+          "x": 7.793480301086083,
+          "y": 1.8978618007137866,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 16.562831554,
+        "tasks": [
+          {
+            "task_id": 2,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 6,
+        "candidate_id": 42,
+        "pose": {
+          "x": 11.72418189137422,
+          "y": 1.834353290141823,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 20.7194982423,
+        "tasks": [
+          {
+            "task_id": 3,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 7,
+        "candidate_id": 202,
+        "pose": {
+          "x": 11.695133059585313,
+          "y": 5.840278701329622,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 26.648805347699998,
+        "tasks": [
+          {
+            "task_id": 17,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 8,
+        "candidate_id": 353,
+        "pose": {
+          "x": 10.016122794011892,
+          "y": 8.062816424380692,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 30.550353336399997,
+        "tasks": [
+          {
+            "task_id": 30,
+            "arm": "L"
+          },
+          {
+            "task_id": 31,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 9,
+        "candidate_id": 274,
+        "pose": {
+          "x": 9.514750085047936,
+          "y": 7.7973531095445106,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 31.317189360299995,
+        "tasks": [
+          {
+            "task_id": 24,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 10,
+        "candidate_id": 430,
+        "pose": {
+          "x": 8.549749081962686,
+          "y": 10.706263728313369,
+          "theta": 3.141592653589793,
+          "h": 0.4
+        },
+        "arrival_distance_m": 35.1911009821,
+        "tasks": [
+          {
+            "task_id": 39,
+            "arm": "R"
+          },
+          {
+            "task_id": 40,
+            "arm": "R"
+          },
+          {
+            "task_id": 41,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 11,
+        "candidate_id": 341,
+        "pose": {
+          "x": 4.426426563192567,
+          "y": 9.051618627019018,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 41.3983901326,
+        "tasks": [
+          {
+            "task_id": 29,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 12,
+        "candidate_id": 335,
+        "pose": {
+          "x": 4.2154392911378755,
+          "y": 9.053822702642517,
+          "theta": 3.141592653589793,
+          "h": 0.4
+        },
+        "arrival_distance_m": 41.611581480299996,
+        "tasks": [
+          {
+            "task_id": 28,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 13,
+        "candidate_id": 421,
+        "pose": {
+          "x": 4.456029024153495,
+          "y": 11.102062276651154,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 43.90041078749999,
+        "tasks": [
+          {
+            "task_id": 38,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 14,
+        "candidate_id": 410,
+        "pose": {
+          "x": 2.989856045787089,
+          "y": 11.789675449192996,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 46.22392717259999,
+        "tasks": [
+          {
+            "task_id": 37,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 15,
+        "candidate_id": 403,
+        "pose": {
+          "x": 1.3508098789063765,
+          "y": 11.76835563961376,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 48.05402338329999,
+        "tasks": [
+          {
+            "task_id": 35,
+            "arm": "L"
+          },
+          {
+            "task_id": 36,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 16,
+        "candidate_id": 252,
+        "pose": {
+          "x": 2.2635077693672936,
+          "y": 6.769917984428366,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 54.17752878239999,
+        "tasks": [
+          {
+            "task_id": 23,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 17,
+        "candidate_id": 163,
+        "pose": {
+          "x": 1.3436814602657239,
+          "y": 5.845573075280563,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 56.02170000059999,
+        "tasks": [
+          {
+            "task_id": 13,
+            "arm": "L"
+          }
+        ]
+      }
+    ],
+    "unserved_task_ids": [],
+    "route_polyline": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.8308228214,
+        0.0
+      ],
+      [
+        1.2730598013,
+        0.0
+      ],
+      [
+        2.168991642,
+        0.0
+      ],
+      [
+        3.0554825702,
+        0.0
+      ],
+      [
+        3.5079069243,
+        0.0
+      ],
+      [
+        4.3379832841,
+        0.0
+      ],
+      [
+        4.3379832841,
+        0.82388753
+      ],
+      [
+        4.3379832841,
+        0.8428785781
+      ],
+      [
+        4.4391596788,
+        0.8428785781
+      ],
+      [
+        4.3379832841,
+        0.8428785781
+      ],
+      [
+        4.3379832841,
+        1.1982567556
+      ],
+      [
+        4.3379832841,
+        1.2142199578
+      ],
+      [
+        4.3379832841,
+        1.9790900944
+      ],
+      [
+        4.3379832841,
+        2.7707137912
+      ],
+      [
+        4.3379832841,
+        2.7788053026
+      ],
+      [
+        4.3379832841,
+        3.145052876
+      ],
+      [
+        4.3379832841,
+        3.153739056
+      ],
+      [
+        4.3379832841,
+        3.9581801888
+      ],
+      [
+        5.1557240416,
+        3.9581801888
+      ],
+      [
+        5.216685734,
+        3.9581801888
+      ],
+      [
+        5.216685734,
+        4.1284168565
+      ],
+      [
+        5.216685734,
+        3.9581801888
+      ],
+      [
+        5.6354492716,
+        3.9581801888
+      ],
+      [
+        5.692599431,
+        3.9581801888
+      ],
+      [
+        6.5069749261,
+        3.9581801888
+      ],
+      [
+        7.349256555,
+        3.9581801888
+      ],
+      [
+        7.3880489605,
+        3.9581801888
+      ],
+      [
+        7.7962373836,
+        3.9581801888
+      ],
+      [
+        7.7962373836,
+        4.0508364321
+      ],
+      [
+        7.7962373836,
+        3.9581801888
+      ],
+      [
+        7.8365613021,
+        3.9581801888
+      ],
+      [
+        8.6759665681,
+        3.9581801888
+      ],
+      [
+        8.6759665681,
+        3.1409246254
+      ],
+      [
+        8.6759665681,
+        3.1358859326
+      ],
+      [
+        8.6759665681,
+        2.783935884
+      ],
+      [
+        8.6759665681,
+        2.7658782353
+      ],
+      [
+        8.6759665681,
+        1.9790900944
+      ],
+      [
+        7.8365613021,
+        1.9790900944
+      ],
+      [
+        7.8365613021,
+        2.1079608597
+      ],
+      [
+        7.8365613021,
+        1.9790900944
+      ],
+      [
+        7.7934803011,
+        1.9790900944
+      ],
+      [
+        7.7934803011,
+        1.8978618007
+      ],
+      [
+        7.7934803011,
+        1.9790900944
+      ],
+      [
+        7.8365613021,
+        1.9790900944
+      ],
+      [
+        8.6759665681,
+        1.9790900944
+      ],
+      [
+        9.5268580965,
+        1.9790900944
+      ],
+      [
+        9.5658843466,
+        1.9790900944
+      ],
+      [
+        9.9762435823,
+        1.9790900944
+      ],
+      [
+        10.0117318487,
+        1.9790900944
+      ],
+      [
+        10.8449582102,
+        1.9790900944
+      ],
+      [
+        11.7239950598,
+        1.9790900944
+      ],
+      [
+        11.7241818914,
+        1.9790900944
+      ],
+      [
+        11.7241818914,
+        1.8343532901
+      ],
+      [
+        11.7241818914,
+        1.9790900944
+      ],
+      [
+        11.7239950598,
+        1.9790900944
+      ],
+      [
+        10.8449582102,
+        1.9790900944
+      ],
+      [
+        10.8449582102,
+        2.7658782353
+      ],
+      [
+        10.8449582102,
+        2.770538537
+      ],
+      [
+        10.8449582102,
+        3.1243462248
+      ],
+      [
+        10.8449582102,
+        3.1409246254
+      ],
+      [
+        10.8449582102,
+        3.9581801888
+      ],
+      [
+        10.8449582102,
+        4.7331739734
+      ],
+      [
+        10.8449582102,
+        4.7941484348
+      ],
+      [
+        10.8449582102,
+        5.0929167229
+      ],
+      [
+        10.8449582102,
+        5.1582352791
+      ],
+      [
+        10.8449582102,
+        5.9372702831
+      ],
+      [
+        11.6951330596,
+        5.9372702831
+      ],
+      [
+        11.6951330596,
+        5.8402787013
+      ],
+      [
+        11.6951330596,
+        5.9372702831
+      ],
+      [
+        10.8449582102,
+        5.9372702831
+      ],
+      [
+        10.8449582102,
+        6.7304641029
+      ],
+      [
+        10.8449582102,
+        6.7522302272
+      ],
+      [
+        10.8449582102,
+        7.0827838137
+      ],
+      [
+        10.8449582102,
+        7.1156454821
+      ],
+      [
+        10.8449582102,
+        7.9163603775
+      ],
+      [
+        10.016122794,
+        7.9163603775
+      ],
+      [
+        10.016122794,
+        8.0628164244
+      ],
+      [
+        10.016122794,
+        7.9163603775
+      ],
+      [
+        9.9854535668,
+        7.9163603775
+      ],
+      [
+        9.5762849766,
+        7.9163603775
+      ],
+      [
+        9.514750085,
+        7.9163603775
+      ],
+      [
+        9.514750085,
+        7.7973531095
+      ],
+      [
+        9.514750085,
+        7.9163603775
+      ],
+      [
+        8.6759665681,
+        7.9163603775
+      ],
+      [
+        8.6759665681,
+        8.7097238966
+      ],
+      [
+        8.6759665681,
+        8.736783785
+      ],
+      [
+        8.6759665681,
+        9.0847185062
+      ],
+      [
+        8.6759665681,
+        9.0891245686
+      ],
+      [
+        8.6759665681,
+        9.8954504719
+      ],
+      [
+        8.6759665681,
+        10.6578224372
+      ],
+      [
+        8.6759665681,
+        10.7062637283
+      ],
+      [
+        8.549749082,
+        10.7062637283
+      ],
+      [
+        8.6759665681,
+        10.7062637283
+      ],
+      [
+        8.6759665681,
+        10.6578224372
+      ],
+      [
+        8.6759665681,
+        9.8954504719
+      ],
+      [
+        7.8157220915,
+        9.8954504719
+      ],
+      [
+        7.7868620066,
+        9.8954504719
+      ],
+      [
+        7.3476681107,
+        9.8954504719
+      ],
+      [
+        7.3411629777,
+        9.8954504719
+      ],
+      [
+        6.5069749261,
+        9.8954504719
+      ],
+      [
+        5.6275190981,
+        9.8954504719
+      ],
+      [
+        5.6133121416,
+        9.8954504719
+      ],
+      [
+        5.1798590488,
+        9.8954504719
+      ],
+      [
+        5.1553884227,
+        9.8954504719
+      ],
+      [
+        4.3379832841,
+        9.8954504719
+      ],
+      [
+        4.3379832841,
+        9.0538227026
+      ],
+      [
+        4.3379832841,
+        9.051618627
+      ],
+      [
+        4.4264265632,
+        9.051618627
+      ],
+      [
+        4.3379832841,
+        9.051618627
+      ],
+      [
+        4.3379832841,
+        9.0538227026
+      ],
+      [
+        4.2154392911,
+        9.0538227026
+      ],
+      [
+        4.3379832841,
+        9.0538227026
+      ],
+      [
+        4.3379832841,
+        9.8954504719
+      ],
+      [
+        4.3379832841,
+        10.7328751975
+      ],
+      [
+        4.3379832841,
+        10.7442281444
+      ],
+      [
+        4.3379832841,
+        11.1020622767
+      ],
+      [
+        4.4560290242,
+        11.1020622767
+      ],
+      [
+        4.3379832841,
+        11.1020622767
+      ],
+      [
+        4.3379832841,
+        11.1040753653
+      ],
+      [
+        4.3379832841,
+        11.8745405663
+      ],
+      [
+        3.5082761041,
+        11.8745405663
+      ],
+      [
+        3.4550353099,
+        11.8745405663
+      ],
+      [
+        3.0485196517,
+        11.8745405663
+      ],
+      [
+        2.9898560458,
+        11.8745405663
+      ],
+      [
+        2.9898560458,
+        11.7896754492
+      ],
+      [
+        2.9898560458,
+        11.8745405663
+      ],
+      [
+        2.168991642,
+        11.8745405663
+      ],
+      [
+        1.3508098789,
+        11.8745405663
+      ],
+      [
+        1.3508098789,
+        11.7683556396
+      ],
+      [
+        1.3508098789,
+        11.8745405663
+      ],
+      [
+        2.168991642,
+        11.8745405663
+      ],
+      [
+        2.168991642,
+        11.1040753653
+      ],
+      [
+        2.168991642,
+        11.0815579479
+      ],
+      [
+        2.168991642,
+        10.7328751975
+      ],
+      [
+        2.168991642,
+        10.7079625645
+      ],
+      [
+        2.168991642,
+        9.8954504719
+      ],
+      [
+        2.168991642,
+        9.1075115432
+      ],
+      [
+        2.168991642,
+        9.0538227026
+      ],
+      [
+        2.168991642,
+        8.7593260804
+      ],
+      [
+        2.168991642,
+        8.6956633233
+      ],
+      [
+        2.168991642,
+        7.9163603775
+      ],
+      [
+        2.168991642,
+        7.1399851084
+      ],
+      [
+        2.168991642,
+        7.129077448
+      ],
+      [
+        2.168991642,
+        6.7786042324
+      ],
+      [
+        2.168991642,
+        6.7699179844
+      ],
+      [
+        2.2635077694,
+        6.7699179844
+      ],
+      [
+        2.168991642,
+        6.7699179844
+      ],
+      [
+        2.168991642,
+        5.9372702831
+      ],
+      [
+        1.3436814603,
+        5.9372702831
+      ],
+      [
+        1.3436814603,
+        5.8455730753
+      ],
+      [
+        1.3436814603,
+        5.9372702831
+      ],
+      [
+        1.3298622685,
+        5.9372702831
+      ],
+      [
+        0.8740893942,
+        5.9372702831
+      ],
+      [
+        0.8740485239,
+        5.9372702831
+      ],
+      [
+        0.0,
+        5.9372702831
+      ],
+      [
+        0.0,
+        5.1604614464
+      ],
+      [
+        0.0,
+        4.7902381885
+      ],
+      [
+        0.0,
+        3.9581801888
+      ],
+      [
+        0.0,
+        3.1516770193
+      ],
+      [
+        0.0,
+        2.7954348959
+      ],
+      [
+        0.0,
+        1.9790900944
+      ],
+      [
+        0.0,
+        1.1402597702
+      ],
+      [
+        0.0,
+        0.782053099
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "route_leg_costs_m": [
+      5.282038256900001,
+      4.265417123000001,
+      2.8424445605999997,
+      3.919751553499999,
+      0.2531800599999998,
+      4.1566666883000005,
+      5.929307105400001,
+      3.9015479887,
+      0.7668360238999989,
+      3.8739116217999987,
+      6.207289150499999,
+      0.2131913476999996,
+      2.2888293072000003,
+      2.3235163851000005,
+      1.8300962107000005,
+      6.123505399100001,
+      1.8441712182,
+      7.3726489511999995
+    ],
+    "route_length_m": 63.39434895179999,
+    "objective_length_plus_stops_m": 76.1443489518,
+    "stop_penalty_equivalent_m": 0.75,
+    "arm_joint_trajectories": null,
+    "physical_joint_trajectory_certified": false,
+    "validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "collision_count": 0,
+      "errors": [],
+      "independent_polyline_length_m": 63.39434895180001,
+      "effective_same_arm_F_and_A": true,
+      "endpoint_constraints_satisfied": true,
+      "physical_joint_trajectory_certified": false,
+      "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+    }
+  },
+  "native_info": {
+    "status": "complete",
+    "method": "detour",
+    "reference": "fixed3",
+    "reference_objective_m": 76.18108487379999,
+    "winning_reference_recipe": 7,
+    "objective_m": 76.1443489518,
+    "cost_nonincreasing": true,
+    "attempts": 16,
+    "dp_calls": 16,
+    "accepted": 1,
+    "provisional_improvements": 1,
+    "fallback_used": false,
+    "failures": [],
+    "stop_reason": "horizon",
+    "budget_exhausted": true,
+    "deadline_exceeded": false,
+    "time_overrun_s": 0.0,
+    "time_limit_s": null,
+    "planning_s": 0.0781195999988995,
+    "elapsed_s": 0.0781195999988995,
+    "reference_s": 0.022753299999749288,
+    "feature_s": 0.008630300002550939,
+    "model_s": 0.00014620001456933096,
+    "repair_s": 0.027563000006921357,
+    "final_validation_s": 0.016978499999822816,
+    "trace": [
+      {
+        "event": "validated_reference",
+        "reference": "fixed3",
+        "recipe": 7,
+        "objective_m": 76.18108487379999
+      },
+      {
+        "event": "provisional_repair",
+        "action": 3,
+        "accepted": false,
+        "objective_m": 76.18108487379999,
+        "independently_certified": false,
+        "elapsed_s": 0.028621299999940675
+      },
+      {
+        "event": "provisional_repair",
+        "action": 5,
+        "accepted": true,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.030919900000299094
+      },
+      {
+        "event": "provisional_repair",
+        "action": 3,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.036273000001529
+      },
+      {
+        "event": "provisional_repair",
+        "action": 5,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.03839760000118986
+      },
+      {
+        "event": "provisional_repair",
+        "action": 2,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.039653899999393616
+      },
+      {
+        "event": "provisional_repair",
+        "action": 11,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.04130730000179028
+      },
+      {
+        "event": "provisional_repair",
+        "action": 12,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.04319980000218493
+      },
+      {
+        "event": "provisional_repair",
+        "action": 4,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.045015800002147444
+      },
+      {
+        "event": "provisional_repair",
+        "action": 0,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.0479592000010598
+      },
+      {
+        "event": "provisional_repair",
+        "action": 1,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.04979720000119414
+      },
+      {
+        "event": "provisional_repair",
+        "action": 6,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.05213759999969625
+      },
+      {
+        "event": "provisional_repair",
+        "action": 7,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.05433370000173454
+      },
+      {
+        "event": "provisional_repair",
+        "action": 8,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.05670020000252407
+      },
+      {
+        "event": "provisional_repair",
+        "action": 9,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.05848120000155177
+      },
+      {
+        "event": "provisional_repair",
+        "action": 10,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.05968869999924209
+      },
+      {
+        "event": "provisional_repair",
+        "action": 13,
+        "accepted": false,
+        "objective_m": 76.1443489518,
+        "independently_certified": false,
+        "elapsed_s": 0.06106700000236742
+      },
+      {
+        "event": "validated_final",
+        "objective_m": 76.1443489518
+      }
+    ],
+    "guarantee_scope": "Only the returned independently verified plan is certified. Cost is bounded by the verified reference under the discrete proxy model. Deadline is soft, not hard real time.",
+    "thread_session_s": 6.159999975352548e-05,
+    "adapter_schema": "rc3-endpoint-baseline-adapter-v1",
+    "adapter_method": "detour16",
+    "portfolio_recipes": [
+      0,
+      1,
+      7
+    ],
+    "horizon_cap": 16,
+    "local_route": [
+      0,
+      5,
+      25,
+      32,
+      18,
+      10,
+      13,
+      39,
+      64,
+      47,
+      92,
+      62,
+      58,
+      85,
+      77,
+      72,
+      45,
+      22,
+      0
+    ],
+    "global_navigation_nodes": [
+      0,
+      21,
+      177,
+      186,
+      106,
+      28,
+      43,
+      203,
+      354,
+      275,
+      431,
+      342,
+      336,
+      422,
+      411,
+      404,
+      253,
+      164,
+      0
+    ],
+    "source_pipeline": "Frozen rc3_v4.runtime.run with original portfolio/search; endpoint export/validator callback",
+    "common_H_added": false,
+    "endpoint_adapted_native": true,
+    "original_closed_native_equivalence_scope": "Same candidate/task domain, constraints and closed endpoint; route and objective, not a claim about historical result files",
+    "internal_search": {
+      "counts": {
+        "construct": 3,
+        "two_opt": 9,
+        "joint_search": 3,
+        "recipe": 3
+      },
+      "inclusive_s": {
+        "construct": 0.0015659999990020879,
+        "two_opt": 0.0011546999994607177,
+        "joint_search": 0.0026436000007379334,
+        "recipe": 0.005348599999706494
+      },
+      "exclusive_s": {
+        "construct": 0.0015659999990020879,
+        "two_opt": 0.0011546999994607177,
+        "joint_search": 0.0021168000021134503,
+        "recipe": 0.0005110999991302378
+      }
+    },
+    "adapter_elapsed_s": 0.0936928999981319
+  },
+  "H_result": {
+    "J": 76.1443489518,
+    "L": 63.39434895179999,
+    "K": 17,
+    "raw_J": 76.1443489518,
+    "raw_L": 63.39434895179999,
+    "raw_K": 17,
+    "route": [
+      0,
+      5,
+      25,
+      32,
+      18,
+      10,
+      13,
+      39,
+      64,
+      47,
+      92,
+      62,
+      58,
+      85,
+      77,
+      72,
+      45,
+      22,
+      0
+    ],
+    "raw_route": [
+      0,
+      5,
+      25,
+      32,
+      18,
+      10,
+      13,
+      39,
+      64,
+      47,
+      92,
+      62,
+      58,
+      85,
+      77,
+      72,
+      45,
+      22,
+      0
+    ],
+    "plan": {
+      "schema": "rc3-global-local-plan-v1",
+      "method": "S0_endpoint_construction",
+      "status": "complete",
+      "problem_identity": "8f074c309579ac326f75455927441c95e5c5d30a2b2962be94fceea5fb0d2746",
+      "parent_identity": "4f7f44c04213e5cb069dbb6b0570d845399f7d00dc9bfaa2b4e9550c26208782",
+      "entry_global_node": 0,
+      "exit_global_node": 0,
+      "window": {
+        "x0": 0,
+        "y0": 0,
+        "width": 6,
+        "height": 6
+      },
+      "target_task_ids_global": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        13,
+        14,
+        15,
+        16,
+        17,
+        23,
+        24,
+        28,
+        29,
+        30,
+        31,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "visit_order_candidate_ids": [
+        20,
+        176,
+        185,
+        105,
+        27,
+        42,
+        202,
+        353,
+        274,
+        430,
+        341,
+        335,
+        421,
+        410,
+        403,
+        252,
+        163
+      ],
+      "selected_candidate_ids": [
+        20,
+        176,
+        185,
+        105,
+        27,
+        42,
+        202,
+        353,
+        274,
+        430,
+        341,
+        335,
+        421,
+        410,
+        403,
+        252,
+        163
+      ],
+      "navigation_global_nodes": [
+        0,
+        21,
+        177,
+        186,
+        106,
+        28,
+        43,
+        203,
+        354,
+        275,
+        431,
+        342,
+        336,
+        422,
+        411,
+        404,
+        253,
+        164,
+        0
+      ],
+      "assignments": [
+        {
+          "task_id": 0,
+          "candidate_id": 20,
+          "arm": "L"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 20,
+          "arm": "L"
+        },
+        {
+          "task_id": 14,
+          "candidate_id": 176,
+          "arm": "R"
+        },
+        {
+          "task_id": 15,
+          "candidate_id": 176,
+          "arm": "L"
+        },
+        {
+          "task_id": 16,
+          "candidate_id": 185,
+          "arm": "L"
+        },
+        {
+          "task_id": 8,
+          "candidate_id": 105,
+          "arm": "L"
+        },
+        {
+          "task_id": 2,
+          "candidate_id": 27,
+          "arm": "L"
+        },
+        {
+          "task_id": 3,
+          "candidate_id": 42,
+          "arm": "L"
+        },
+        {
+          "task_id": 17,
+          "candidate_id": 202,
+          "arm": "L"
+        },
+        {
+          "task_id": 30,
+          "candidate_id": 353,
+          "arm": "L"
+        },
+        {
+          "task_id": 31,
+          "candidate_id": 353,
+          "arm": "L"
+        },
+        {
+          "task_id": 24,
+          "candidate_id": 274,
+          "arm": "L"
+        },
+        {
+          "task_id": 39,
+          "candidate_id": 430,
+          "arm": "R"
+        },
+        {
+          "task_id": 40,
+          "candidate_id": 430,
+          "arm": "R"
+        },
+        {
+          "task_id": 41,
+          "candidate_id": 430,
+          "arm": "L"
+        },
+        {
+          "task_id": 29,
+          "candidate_id": 341,
+          "arm": "L"
+        },
+        {
+          "task_id": 28,
+          "candidate_id": 335,
+          "arm": "L"
+        },
+        {
+          "task_id": 38,
+          "candidate_id": 421,
+          "arm": "L"
+        },
+        {
+          "task_id": 37,
+          "candidate_id": 410,
+          "arm": "L"
+        },
+        {
+          "task_id": 35,
+          "candidate_id": 403,
+          "arm": "L"
+        },
+        {
+          "task_id": 36,
+          "candidate_id": 403,
+          "arm": "L"
+        },
+        {
+          "task_id": 23,
+          "candidate_id": 252,
+          "arm": "L"
+        },
+        {
+          "task_id": 13,
+          "candidate_id": 163,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 20,
+          "pose": {
+            "x": 4.439159678762004,
+            "y": 0.8428785780840532,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.282038256900001,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "L"
+            },
+            {
+              "task_id": 1,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 176,
+          "pose": {
+            "x": 5.21668573403179,
+            "y": 4.128416856514962,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 9.5474553799,
+          "tasks": [
+            {
+              "task_id": 14,
+              "arm": "R"
+            },
+            {
+              "task_id": 15,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 3,
+          "candidate_id": 185,
+          "pose": {
+            "x": 7.796237383594156,
+            "y": 4.05083643205585,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 12.389899940500001,
+          "tasks": [
+            {
+              "task_id": 16,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 4,
+          "candidate_id": 105,
+          "pose": {
+            "x": 7.836561302143528,
+            "y": 2.107960859713691,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 16.309651494,
+          "tasks": [
+            {
+              "task_id": 8,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 5,
+          "candidate_id": 27,
+          "pose": {
+            "x": 7.793480301086083,
+            "y": 1.8978618007137866,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 16.562831554,
+          "tasks": [
+            {
+              "task_id": 2,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 6,
+          "candidate_id": 42,
+          "pose": {
+            "x": 11.72418189137422,
+            "y": 1.834353290141823,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 20.7194982423,
+          "tasks": [
+            {
+              "task_id": 3,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 7,
+          "candidate_id": 202,
+          "pose": {
+            "x": 11.695133059585313,
+            "y": 5.840278701329622,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 26.648805347699998,
+          "tasks": [
+            {
+              "task_id": 17,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 8,
+          "candidate_id": 353,
+          "pose": {
+            "x": 10.016122794011892,
+            "y": 8.062816424380692,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 30.550353336399997,
+          "tasks": [
+            {
+              "task_id": 30,
+              "arm": "L"
+            },
+            {
+              "task_id": 31,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 9,
+          "candidate_id": 274,
+          "pose": {
+            "x": 9.514750085047936,
+            "y": 7.7973531095445106,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 31.317189360299995,
+          "tasks": [
+            {
+              "task_id": 24,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 10,
+          "candidate_id": 430,
+          "pose": {
+            "x": 8.549749081962686,
+            "y": 10.706263728313369,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 35.1911009821,
+          "tasks": [
+            {
+              "task_id": 39,
+              "arm": "R"
+            },
+            {
+              "task_id": 40,
+              "arm": "R"
+            },
+            {
+              "task_id": 41,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 11,
+          "candidate_id": 341,
+          "pose": {
+            "x": 4.426426563192567,
+            "y": 9.051618627019018,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 41.3983901326,
+          "tasks": [
+            {
+              "task_id": 29,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 12,
+          "candidate_id": 335,
+          "pose": {
+            "x": 4.2154392911378755,
+            "y": 9.053822702642517,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 41.611581480299996,
+          "tasks": [
+            {
+              "task_id": 28,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 13,
+          "candidate_id": 421,
+          "pose": {
+            "x": 4.456029024153495,
+            "y": 11.102062276651154,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 43.90041078749999,
+          "tasks": [
+            {
+              "task_id": 38,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 14,
+          "candidate_id": 410,
+          "pose": {
+            "x": 2.989856045787089,
+            "y": 11.789675449192996,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 46.22392717259999,
+          "tasks": [
+            {
+              "task_id": 37,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 15,
+          "candidate_id": 403,
+          "pose": {
+            "x": 1.3508098789063765,
+            "y": 11.76835563961376,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 48.05402338329999,
+          "tasks": [
+            {
+              "task_id": 35,
+              "arm": "L"
+            },
+            {
+              "task_id": 36,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 16,
+          "candidate_id": 252,
+          "pose": {
+            "x": 2.2635077693672936,
+            "y": 6.769917984428366,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 54.17752878239999,
+          "tasks": [
+            {
+              "task_id": 23,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 17,
+          "candidate_id": 163,
+          "pose": {
+            "x": 1.3436814602657239,
+            "y": 5.845573075280563,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 56.02170000059999,
+          "tasks": [
+            {
+              "task_id": 13,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.8308228214,
+          0.0
+        ],
+        [
+          1.2730598013,
+          0.0
+        ],
+        [
+          2.168991642,
+          0.0
+        ],
+        [
+          3.0554825702,
+          0.0
+        ],
+        [
+          3.5079069243,
+          0.0
+        ],
+        [
+          4.3379832841,
+          0.0
+        ],
+        [
+          4.3379832841,
+          0.82388753
+        ],
+        [
+          4.3379832841,
+          0.8428785781
+        ],
+        [
+          4.4391596788,
+          0.8428785781
+        ],
+        [
+          4.3379832841,
+          0.8428785781
+        ],
+        [
+          4.3379832841,
+          1.1982567556
+        ],
+        [
+          4.3379832841,
+          1.2142199578
+        ],
+        [
+          4.3379832841,
+          1.9790900944
+        ],
+        [
+          4.3379832841,
+          2.7707137912
+        ],
+        [
+          4.3379832841,
+          2.7788053026
+        ],
+        [
+          4.3379832841,
+          3.145052876
+        ],
+        [
+          4.3379832841,
+          3.153739056
+        ],
+        [
+          4.3379832841,
+          3.9581801888
+        ],
+        [
+          5.1557240416,
+          3.9581801888
+        ],
+        [
+          5.216685734,
+          3.9581801888
+        ],
+        [
+          5.216685734,
+          4.1284168565
+        ],
+        [
+          5.216685734,
+          3.9581801888
+        ],
+        [
+          5.6354492716,
+          3.9581801888
+        ],
+        [
+          5.692599431,
+          3.9581801888
+        ],
+        [
+          6.5069749261,
+          3.9581801888
+        ],
+        [
+          7.349256555,
+          3.9581801888
+        ],
+        [
+          7.3880489605,
+          3.9581801888
+        ],
+        [
+          7.7962373836,
+          3.9581801888
+        ],
+        [
+          7.7962373836,
+          4.0508364321
+        ],
+        [
+          7.7962373836,
+          3.9581801888
+        ],
+        [
+          7.8365613021,
+          3.9581801888
+        ],
+        [
+          8.6759665681,
+          3.9581801888
+        ],
+        [
+          8.6759665681,
+          3.1409246254
+        ],
+        [
+          8.6759665681,
+          3.1358859326
+        ],
+        [
+          8.6759665681,
+          2.783935884
+        ],
+        [
+          8.6759665681,
+          2.7658782353
+        ],
+        [
+          8.6759665681,
+          1.9790900944
+        ],
+        [
+          7.8365613021,
+          1.9790900944
+        ],
+        [
+          7.8365613021,
+          2.1079608597
+        ],
+        [
+          7.8365613021,
+          1.9790900944
+        ],
+        [
+          7.7934803011,
+          1.9790900944
+        ],
+        [
+          7.7934803011,
+          1.8978618007
+        ],
+        [
+          7.7934803011,
+          1.9790900944
+        ],
+        [
+          7.8365613021,
+          1.9790900944
+        ],
+        [
+          8.6759665681,
+          1.9790900944
+        ],
+        [
+          9.5268580965,
+          1.9790900944
+        ],
+        [
+          9.5658843466,
+          1.9790900944
+        ],
+        [
+          9.9762435823,
+          1.9790900944
+        ],
+        [
+          10.0117318487,
+          1.9790900944
+        ],
+        [
+          10.8449582102,
+          1.9790900944
+        ],
+        [
+          11.7239950598,
+          1.9790900944
+        ],
+        [
+          11.7241818914,
+          1.9790900944
+        ],
+        [
+          11.7241818914,
+          1.8343532901
+        ],
+        [
+          11.7241818914,
+          1.9790900944
+        ],
+        [
+          11.7239950598,
+          1.9790900944
+        ],
+        [
+          10.8449582102,
+          1.9790900944
+        ],
+        [
+          10.8449582102,
+          2.7658782353
+        ],
+        [
+          10.8449582102,
+          2.770538537
+        ],
+        [
+          10.8449582102,
+          3.1243462248
+        ],
+        [
+          10.8449582102,
+          3.1409246254
+        ],
+        [
+          10.8449582102,
+          3.9581801888
+        ],
+        [
+          10.8449582102,
+          4.7331739734
+        ],
+        [
+          10.8449582102,
+          4.7941484348
+        ],
+        [
+          10.8449582102,
+          5.0929167229
+        ],
+        [
+          10.8449582102,
+          5.1582352791
+        ],
+        [
+          10.8449582102,
+          5.9372702831
+        ],
+        [
+          11.6951330596,
+          5.9372702831
+        ],
+        [
+          11.6951330596,
+          5.8402787013
+        ],
+        [
+          11.6951330596,
+          5.9372702831
+        ],
+        [
+          10.8449582102,
+          5.9372702831
+        ],
+        [
+          10.8449582102,
+          6.7304641029
+        ],
+        [
+          10.8449582102,
+          6.7522302272
+        ],
+        [
+          10.8449582102,
+          7.0827838137
+        ],
+        [
+          10.8449582102,
+          7.1156454821
+        ],
+        [
+          10.8449582102,
+          7.9163603775
+        ],
+        [
+          10.016122794,
+          7.9163603775
+        ],
+        [
+          10.016122794,
+          8.0628164244
+        ],
+        [
+          10.016122794,
+          7.9163603775
+        ],
+        [
+          9.9854535668,
+          7.9163603775
+        ],
+        [
+          9.5762849766,
+          7.9163603775
+        ],
+        [
+          9.514750085,
+          7.9163603775
+        ],
+        [
+          9.514750085,
+          7.7973531095
+        ],
+        [
+          9.514750085,
+          7.9163603775
+        ],
+        [
+          8.6759665681,
+          7.9163603775
+        ],
+        [
+          8.6759665681,
+          8.7097238966
+        ],
+        [
+          8.6759665681,
+          8.736783785
+        ],
+        [
+          8.6759665681,
+          9.0847185062
+        ],
+        [
+          8.6759665681,
+          9.0891245686
+        ],
+        [
+          8.6759665681,
+          9.8954504719
+        ],
+        [
+          8.6759665681,
+          10.6578224372
+        ],
+        [
+          8.6759665681,
+          10.7062637283
+        ],
+        [
+          8.549749082,
+          10.7062637283
+        ],
+        [
+          8.6759665681,
+          10.7062637283
+        ],
+        [
+          8.6759665681,
+          10.6578224372
+        ],
+        [
+          8.6759665681,
+          9.8954504719
+        ],
+        [
+          7.8157220915,
+          9.8954504719
+        ],
+        [
+          7.7868620066,
+          9.8954504719
+        ],
+        [
+          7.3476681107,
+          9.8954504719
+        ],
+        [
+          7.3411629777,
+          9.8954504719
+        ],
+        [
+          6.5069749261,
+          9.8954504719
+        ],
+        [
+          5.6275190981,
+          9.8954504719
+        ],
+        [
+          5.6133121416,
+          9.8954504719
+        ],
+        [
+          5.1798590488,
+          9.8954504719
+        ],
+        [
+          5.1553884227,
+          9.8954504719
+        ],
+        [
+          4.3379832841,
+          9.8954504719
+        ],
+        [
+          4.3379832841,
+          9.0538227026
+        ],
+        [
+          4.3379832841,
+          9.051618627
+        ],
+        [
+          4.4264265632,
+          9.051618627
+        ],
+        [
+          4.3379832841,
+          9.051618627
+        ],
+        [
+          4.3379832841,
+          9.0538227026
+        ],
+        [
+          4.2154392911,
+          9.0538227026
+        ],
+        [
+          4.3379832841,
+          9.0538227026
+        ],
+        [
+          4.3379832841,
+          9.8954504719
+        ],
+        [
+          4.3379832841,
+          10.7328751975
+        ],
+        [
+          4.3379832841,
+          10.7442281444
+        ],
+        [
+          4.3379832841,
+          11.1020622767
+        ],
+        [
+          4.4560290242,
+          11.1020622767
+        ],
+        [
+          4.3379832841,
+          11.1020622767
+        ],
+        [
+          4.3379832841,
+          11.1040753653
+        ],
+        [
+          4.3379832841,
+          11.8745405663
+        ],
+        [
+          3.5082761041,
+          11.8745405663
+        ],
+        [
+          3.4550353099,
+          11.8745405663
+        ],
+        [
+          3.0485196517,
+          11.8745405663
+        ],
+        [
+          2.9898560458,
+          11.8745405663
+        ],
+        [
+          2.9898560458,
+          11.7896754492
+        ],
+        [
+          2.9898560458,
+          11.8745405663
+        ],
+        [
+          2.168991642,
+          11.8745405663
+        ],
+        [
+          1.3508098789,
+          11.8745405663
+        ],
+        [
+          1.3508098789,
+          11.7683556396
+        ],
+        [
+          1.3508098789,
+          11.8745405663
+        ],
+        [
+          2.168991642,
+          11.8745405663
+        ],
+        [
+          2.168991642,
+          11.1040753653
+        ],
+        [
+          2.168991642,
+          11.0815579479
+        ],
+        [
+          2.168991642,
+          10.7328751975
+        ],
+        [
+          2.168991642,
+          10.7079625645
+        ],
+        [
+          2.168991642,
+          9.8954504719
+        ],
+        [
+          2.168991642,
+          9.1075115432
+        ],
+        [
+          2.168991642,
+          9.0538227026
+        ],
+        [
+          2.168991642,
+          8.7593260804
+        ],
+        [
+          2.168991642,
+          8.6956633233
+        ],
+        [
+          2.168991642,
+          7.9163603775
+        ],
+        [
+          2.168991642,
+          7.1399851084
+        ],
+        [
+          2.168991642,
+          7.129077448
+        ],
+        [
+          2.168991642,
+          6.7786042324
+        ],
+        [
+          2.168991642,
+          6.7699179844
+        ],
+        [
+          2.2635077694,
+          6.7699179844
+        ],
+        [
+          2.168991642,
+          6.7699179844
+        ],
+        [
+          2.168991642,
+          5.9372702831
+        ],
+        [
+          1.3436814603,
+          5.9372702831
+        ],
+        [
+          1.3436814603,
+          5.8455730753
+        ],
+        [
+          1.3436814603,
+          5.9372702831
+        ],
+        [
+          1.3298622685,
+          5.9372702831
+        ],
+        [
+          0.8740893942,
+          5.9372702831
+        ],
+        [
+          0.8740485239,
+          5.9372702831
+        ],
+        [
+          0.0,
+          5.9372702831
+        ],
+        [
+          0.0,
+          5.1604614464
+        ],
+        [
+          0.0,
+          4.7902381885
+        ],
+        [
+          0.0,
+          3.9581801888
+        ],
+        [
+          0.0,
+          3.1516770193
+        ],
+        [
+          0.0,
+          2.7954348959
+        ],
+        [
+          0.0,
+          1.9790900944
+        ],
+        [
+          0.0,
+          1.1402597702
+        ],
+        [
+          0.0,
+          0.782053099
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        5.282038256900001,
+        4.265417123000001,
+        2.8424445605999997,
+        3.919751553499999,
+        0.2531800599999998,
+        4.1566666883000005,
+        5.929307105400001,
+        3.9015479887,
+        0.7668360238999989,
+        3.8739116217999987,
+        6.207289150499999,
+        0.2131913476999996,
+        2.2888293072000003,
+        2.3235163851000005,
+        1.8300962107000005,
+        6.123505399100001,
+        1.8441712182,
+        7.3726489511999995
+      ],
+      "route_length_m": 63.39434895179999,
+      "objective_length_plus_stops_m": 76.1443489518,
+      "stop_penalty_equivalent_m": 0.75,
+      "arm_joint_trajectories": null,
+      "physical_joint_trajectory_certified": false,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "errors": [],
+        "independent_polyline_length_m": 63.39434895180001,
+        "effective_same_arm_F_and_A": true,
+        "endpoint_constraints_satisfied": true,
+        "physical_joint_trajectory_certified": false,
+        "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+      }
+    },
+    "H_s": 0.001075799998943694,
+    "export_s": 0.0007755000006000046,
+    "validation_s": 0.014813300000241725,
+    "cache_hit": false
+  },
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a"
+}

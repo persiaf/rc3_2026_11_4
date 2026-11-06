@@ -1,0 +1,75 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "contexts": {
+    "shared_teachers": {
+      "ledger": {
+        "terminal": {
+          "teacher_H": {
+            "terminal_requests": 256,
+            "terminal_cache_hits": 0,
+            "terminal_attempts": 256,
+            "terminal_completed": 256,
+            "terminal_failed": 0,
+            "full_H_calls": 256,
+            "export_attempts": 256,
+            "exports": 256,
+            "validation_attempts": 256,
+            "validation_completed": 256
+          }
+        },
+        "internal_H_search": {
+          "teacher_H": {
+            "counts": {
+              "construct": 0,
+              "two_opt": 787,
+              "joint_search": 256,
+              "recipe": 0
+            },
+            "inclusive_s": {
+              "construct": 0.0,
+              "two_opt": 0.10477490005359869,
+              "joint_search": 0.2253547999789589,
+              "recipe": 0.0
+            },
+            "exclusive_s": {
+              "construct": 0.0,
+              "two_opt": 0.10477490005359869,
+              "joint_search": 0.1965312000029371,
+              "recipe": 0.0
+            }
+          }
+        },
+        "parent_requests": 256,
+        "task_scene_generation_attempts": 256,
+        "task_scene_generations": 256,
+        "proxy_feasibility_calls": 256,
+        "navigation_attempts": 96,
+        "navigation_completed": 96,
+        "view_extractions": 256,
+        "native_teacher_attempts": 256,
+        "teacher_native_internal": {
+          "baseline_attempts": 256,
+          "endpoint_export_attempts": 469,
+          "endpoint_export_completed": 469,
+          "endpoint_validation_attempts": 469,
+          "endpoint_validation_completed": 469,
+          "baseline_completed": 256,
+          "native_construct_calls": 768,
+          "native_two_opt_calls": 2280,
+          "native_joint_search_calls": 768,
+          "native_recipe_calls": 768,
+          "adapter_wall_s": 51.09231259999797
+        },
+        "native_teacher_completed": 256,
+        "navigation_artifact_loads": 160
+      },
+      "elapsed_wall_s": 187.36666779999723,
+      "wall_cap_s": 1800.0
+    }
+  },
+  "note": "Cumulative per-stage contexts; shared clocks/ledgers are not additive. Resume loading overhead is charged. No S3 or old60 semantic access.",
+  "formal_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "S3_target_queries": 0,
+  "original60_semantic_reads": 0
+}
