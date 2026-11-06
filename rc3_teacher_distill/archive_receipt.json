@@ -1,0 +1,61 @@
+{
+  "schema": "rc3-T-local-closeout-v1",
+  "client_date": "2026-11-06",
+  "branch": "codex/teacher-distill-t0-t2",
+  "maintenance_base": "5d5fe25754ffa032f97937a3fb54f15901c2fb7d",
+  "preregistration_commit": "75075a7ebd36276fe4e04deaa6019623171f4c91",
+  "T0": "complete",
+  "T1": "failed_stop",
+  "T2": "not_started_gate_failed",
+  "T3": "not_authorized",
+  "pushed": false,
+  "default_methods": [
+    "Fixed3",
+    "Detour"
+  ],
+  "retained60": "sealed",
+  "evidence_sha256": {
+    "protocol.json": "c56e5b464cdfa83a6f3ff1dfe8570e8e202b9b9cd109dcca213451f260c84cba",
+    "T1_GATE.json": "8925f30257e258680f1a8c7d45a6b4e07d30a1eaa31a0d13ee306eb803389f37",
+    "resources.json": "dd9a24ff97e09c9b75adf636d951a21e288f1fce704f13ababcd2750a91890a0",
+    "saved_result_audit.json": "fe0d7e6f3be69cf5fbbb82d50ade38c1e6652fb0729d97283523ceea78cd4085",
+    "calibration_replay.json": "8068e6a787f12e1c163965425c2deff523db1b12723f4a495dfa90f533a12224",
+    "baseline_integrity.json": "a9add74649788cfb422938cbe0bc5341f1bb5f7c26a0cb584b62d5cd237d3aa9",
+    "FINAL_REVIEW.md": "6cef15ec78e63009ee4a45741569ec7af25495e2edfb3bd00f158d82f23bf436"
+  },
+  "research_counts": {
+    "train": 3072,
+    "development": 768,
+    "audit": 0,
+    "reference": 120,
+    "T2_routes": 0,
+    "T2_teacher": 0
+  },
+  "postrun_QA": {
+    "calibration_member_forward_calls": 384,
+    "calibration_action_rows": 3072,
+    "dev_identity_member_forward_calls": 6,
+    "dev_identity_action_rows": 48,
+    "total_member_forward_calls": 390,
+    "total_action_rows": 3120,
+    "checkpoint_loading_s": {
+      "linear": 0.03619960000003175,
+      "neural": 0.0016565999999329506
+    },
+    "tensor_forward_loop_s": {
+      "linear": 0.03834859999994933,
+      "neural": 0.03180129999998371
+    },
+    "elapsed_checkpoint_QA_s": 0.18286059999991267,
+    "optimizer_updates": 0,
+    "scene_generation": 0,
+    "navigation_preparations": 0,
+    "planner_calls": 0,
+    "H_calls": 0,
+    "teacher_label_queries": 0,
+    "cpu_torch_threads": 2,
+    "threadpool_limit": 1
+  },
+  "old_files_unchanged": 9452,
+  "scope": "Local branch only; project manifest maintenance is metadata, not an additional experiment; no old evidence overwritten, no full ZIP backup"
+}

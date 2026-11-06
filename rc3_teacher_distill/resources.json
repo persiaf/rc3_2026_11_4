@@ -1,0 +1,97 @@
+{
+  "stage": "T1",
+  "stats": {
+    "scene_generation": 120,
+    "preparations": 120,
+    "nav_cache_hits": 0,
+    "hot_priming": 0,
+    "raw_gB_trajectories": 3960,
+    "raw_gB_decisions": 216045,
+    "label_uses": 3840,
+    "menus": 480,
+    "feature_rows": 3840,
+    "training_forward_batches": 6144,
+    "training_rows": 196608,
+    "optimizer_updates": 6144,
+    "inference_forward_batches": 960,
+    "inference_action_rows": 7680,
+    "raw_student_trajectories": 0,
+    "student_decisions": 0,
+    "old_model_trajectories": 0,
+    "old_model_decisions": 0,
+    "T0_new_research_calls": 0,
+    "retained_test_reads": 0,
+    "T3_calls": 0
+  },
+  "ledger": {
+    "schema": "rc3-T-independent-ledger-v1",
+    "limits": {
+      "train": 3072,
+      "development": 768,
+      "audit": 256,
+      "reference": 512,
+      "T2_routes": 3072,
+      "T2_teacher": 1368
+    },
+    "total_limit": 9048,
+    "T1_limit": 4608,
+    "T2_limit": 4440,
+    "used": {
+      "train": 3072,
+      "development": 768,
+      "audit": 0,
+      "reference": 120,
+      "T2_routes": 0,
+      "T2_teacher": 0
+    },
+    "completed": {
+      "train": 3072,
+      "development": 768,
+      "audit": 0,
+      "reference": 120,
+      "T2_routes": 0,
+      "T2_teacher": 0
+    },
+    "failed": {
+      "train": 0,
+      "development": 0,
+      "audit": 0,
+      "reference": 0,
+      "T2_routes": 0,
+      "T2_teacher": 0
+    },
+    "total_started": 3960,
+    "total_completed": 3960,
+    "total_failed": 0,
+    "cache_hits": 0,
+    "internal_counts": {
+      "construct": 360,
+      "two_opt": 14662,
+      "joint_search": 4200,
+      "recipe": 360
+    },
+    "internal_inclusive_s": {
+      "construct": 2.6693840999932945,
+      "two_opt": 4.051070300077299,
+      "joint_search": 9.73110140004701,
+      "recipe": 5.350717000005716
+    },
+    "internal_exclusive_s": {
+      "construct": 2.6693840999932945,
+      "two_opt": 4.051070300077299,
+      "joint_search": 8.743717299980744,
+      "recipe": 0.681582399997751
+    },
+    "certification_counts": {
+      "export_attempts": 3960,
+      "export_completed": 3960,
+      "scalar_attempts": 3960,
+      "scalar_completed": 3960
+    },
+    "oracle_s": 376.1601863000378,
+    "scope": "Only T-series calls; inclusive times overlap, exclusive do not"
+  },
+  "elapsed_wall_s": 439.46314260000054,
+  "deadline_remaining_s": 3160.536855999999,
+  "scope": "Separate T series only; T0 byte/record audit has zero new research calls; labels, exact hits, actual evaluations and training counted separately"
+}

@@ -17,3 +17,11 @@
 | STATUS.json / T1_GATE.json / T2_NOT_RUN.json | 阶段门控；条件未启动有明确记录 |
 | REPORT_T012.md / paper_claims.json | 可引用结论与范围 |
 | T2_RESULTS.json / quality_time.csv | 仅当T2获准且完成才产生 |
+| saved_result_audit.py / saved_result_audit.json / FINAL_REVIEW.md | 仅对保存记录独立复算与结果审查，无新增研究调用 |
+| calibration_replay.json | 冻结张量与已有特征的验收预测补录；390成员前向/3120行独立计账，不修改原研究资源或停止判断 |
+| execution_environment.json | 研究后安装环境快照，明确区别于事前协议 |
+| EXPERIMENT_RESULT_TO_CLAIM.md / paper/review-traces/ | 结果到主张审查、原始评审与路由记录 |
+| baseline_integrity.json / closeout_integrity.py | 原维护基准全部已登记文件字节核对 |
+| archive_receipt.json | 本地分支收尾状态、关键证据哈希及研究/验收分账，不含推送授权 |
+
+2026-11-06：T1未通过，T2_RESULTS.json和quality_time.csv未生成，交付T2_NOT_RUN.json记录条件停止；不将未执行的T2写成完成。

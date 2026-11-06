@@ -1,0 +1,69 @@
+{
+  "schema": "experiment-result-to-claim-v1",
+  "date": "2026-11-06",
+  "reviewer": "/root/t_final_independent_review",
+  "pending_external_review": false,
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "The registered decision for this single fixed supervised screen; no population-level or general impossibility inference.",
+  "numeric_audit": "PASS_SAVED_NUMBERS_AND_FAILED_STOP",
+  "claims": {
+    "C1_teacher_action_identification": {
+      "claim_supported": "no",
+      "status": "tested_not_supported",
+      "evidence": "MLP top1=44.791667%, near0.1=48.958333%, regret=0.880402%; rule-regret reduction=0.007215 percentage points, scene-paired95CI[-0.129114,0.150136]. Four registered performance criteria fail. Linear also fails."
+    },
+    "C2_complete_route_compression_and_deployment": {
+      "claim_supported": "no",
+      "status": "not_tested_gate_failed",
+      "evidence": "T2 scenes/routes/teacher queries=0; no full route, paired compression denominator, cold/hot complete request timing or deployment frontier evidence."
+    },
+    "RL_independent_increment": {
+      "claim_supported": "no",
+      "status": "not_tested_not_authorized",
+      "evidence": "Supervised models only; no RL/T3 execution or authorization."
+    }
+  },
+  "what_results_support": [
+    "Auditable version-consistent bounded-menu supervised comparison on24 independent development maps, with80 fit and16 calibration maps.",
+    "The preregistered MLP primary fails T1, and stopping before T2 follows the protocol.",
+    "All saved development numbers and scene-paired CI reproduce independently; bounded checkpoint QA reproduces both calibration radii exactly."
+  ],
+  "what_results_dont_support": [
+    "Reliable teacher action identification or positive incremental benefit over the same-menu rule.",
+    "Complete-route improvement, new-scene teacher compression, deployment speed or quality-time frontier.",
+    "Independent RL gain, neural model necessity over linear, all-action extrapolation, or safety from wide calibration intervals.",
+    "A general refutation of teacher distillation or neural planning, or causal attribution of changed R1/T1 metrics to the model."
+  ],
+  "missing_evidence": [
+    "All registered action-identification criteria passing in the registered screen.",
+    "Student-prefix closed-loop transfer, new-scene paired-teacher benefit and complete request timing.",
+    "Independent training-dataset replications and paper-to-evidence claim audit.",
+    "Navigation D matrices and per-update event logs were not persisted; the audit verifies their frozen-code, saved-feature/certification, sparse-history and endpoint evidence rather than recreating those computations."
+  ],
+  "suggested_claim_revision": "Under the fixed38-feature/K8/gB-state supervised configuration and budget, this single screen did not establish the required teacher-action identification evidence. T2 route/deployment benefit and RL increment were not tested. This result is restricted to this configuration.",
+  "next_experiments_needed": "None authorized now. Preserve this failed screen and narrow the claim. Any future representation/target/distribution experiment requires a separate explicitly requested preregistered task; no extra epochs/seeds/menu/threshold variants or automatic T2/T3.",
+  "paper_claim_audit": "unavailable",
+  "downstream_writing": "provisional — no paper claim audit available",
+  "calibration_QA": {
+    "classification": "post-run saved-checkpoint acceptance replay, separate from research resources",
+    "calibration_member_forward_calls": 384,
+    "calibration_action_rows": 3072,
+    "dev_identity_member_forward_calls": 6,
+    "dev_identity_action_rows": 48,
+    "total_member_forward_calls": 390,
+    "total_action_rows": 3120,
+    "optimizer_updates": 0,
+    "new_scene_navigation_planner_H_teacher_queries": 0,
+    "original_research_resources_modified": false,
+    "linear_radius_pp": 4.952829178360261,
+    "neural_radius_pp": 4.985762383726396,
+    "radius_difference_from_original": 0.0
+  },
+  "evidence_paths": [
+    "rc3_teacher_distill/saved_result_audit.py",
+    "rc3_teacher_distill/saved_result_audit.json",
+    "rc3_teacher_distill/calibration_replay.json",
+    "rc3_teacher_distill/FINAL_REVIEW.md"
+  ]
+}
