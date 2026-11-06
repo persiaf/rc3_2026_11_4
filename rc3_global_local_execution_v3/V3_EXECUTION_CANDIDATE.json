@@ -1,0 +1,401 @@
+{
+  "schema": "rc3-global-local-S1-S2-S3-v3-execution-candidate-v1",
+  "date": "2026-11-06",
+  "status": "PENDING_USER_APPROVAL_NOT_ACTIVE_NOT_AUTHORIZED",
+  "fixed_research_goal": "DRL trained on large complex10x10 parent scenes, frozen policy for variable4x3/6x6/8x8 local tasks, complete constraint-validated execution paths; supervision only auxiliary init/control",
+  "seeds_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "S0_protocol_sha256": "58631506e88594291e091818c0b35660cb40c73a92986dc1d5ee836e13308f66",
+  "mandatory_pre_optimizer_binding": "Before any real teacher generation or scientific optimizer, require explicit user approval of this exact protocol+registry, current EXECUTION_SOURCE_BINDING.json including all runtime/H/environment sources, source-bound engineering PASS and separate stage authorization. Keep original active pointer unchanged until explicit adoption; no activation by file presence or engineering GO.",
+  "S1": {
+    "role": "bounded auxiliary supervised initialization, NOT final method",
+    "teacher_routes_max": 256,
+    "supervised_updates": 256,
+    "instances": "Exactly REGISTRY.json/S1_teachers, 256 revised declarations; bank seeds unchanged from v2; mode x endpoint four cells64 each; no S3 data.",
+    "teacher_terminal_evaluations_max": 512,
+    "architecture": "same GlobalLocalPolicy as S2 and all controls",
+    "teacher": "Exactly endpoint-adapted native Detour16 (not alternative teacher selection), followed by one full common H under the same task/F&A/navigation/endpoints; every native/H call charged. No R1/T1 labels or engineering checkpoints.",
+    "save": "untrained checkpoint, frozen supervised checkpoint, every teacher instance and resource",
+    "optimizer": {
+      "algorithm": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "clip_global_norm": 1.0,
+      "gamma": 1.0,
+      "entropy_weight": 0.0,
+      "advantage_standardization": false
+    },
+    "updates_per_seed": 256,
+    "batch_instances": 4,
+    "instance_registry": "rc3_global_local_execution_v3/REGISTRY.json/S1_teachers; exact256 entries. Parent, task seed, window origin/size, A and endpoints are immutable declarations.",
+    "loss": "Teacher forcing masked cross entropy; average over valid service decisions within each route, then mean over4 instances. Empty valid route loss0, no STOP label or replacement.",
+    "batch_sampling": "With replacement from fixed256 teachers using phase-specific PCG64 stream keyed by(optimizer_seed,S1_data); record each index.",
+    "shared_teacher_dataset": "Build256Detour16_endpoint native outputs plus one extra commonH per route ONCE, maximum512 terminal evaluations, shared all3 optimizer seeds.",
+    "wall_s": {
+      "shared_teacher_stage": 1800,
+      "supervised_per_seed": 1800
+    },
+    "architecture_initialization": "Each optimizer seed11622026..28 creates its untrained checkpoint; save tensor/file hash before S1. Teacher data shared. Save fixed256 endpoint and full optimizer/RNG state.",
+    "generation_pipeline": "For each declared spec, generate original frozen make_complex_scene then frozen resample_tasks, build proxy F and make_allow A, verify canonical geometry/source and full-target connected effective service, extract unchanged-parent task window, nativeDetour16, commonH, endpoint export and independent proxy validation; persist all inputs/full native and H plans/labels/metrics/resource failures. Temporary constructor tasks are not scientific samples; all construction/resampling work belongs to paid preparation."
+  },
+  "S2": {
+    "core": "genuine policy-gradient optimization on large complex parent scenes",
+    "parent_maps": 96,
+    "task_draws_per_parent": 8,
+    "episodes": "50% full10x10 tasks,50% local windows balanced4x3/6x6/8x8, all embedded in original10x10 geometry/navigation",
+    "task_and_constraints": "Sample declared parent/task bank only, A_condition=(parent_index+task_draw_index)%3 using frozen make_allow; unchanged proxy F and base footprint. Whole-parent task density/obstacles/F&A remain visible.",
+    "windows_and_endpoints": "Full episodes closed depot; local size cyclic4x3/6x6/8x8, x0/y0 uniformly drawn among valid table-grid origins from sampling RNG. Alternate closed depot and open first/last depot-connected global candidates by local episode index.",
+    "schedule": "For each seed, zero-based u=0..511 and slot=0..3 use its own named S2_data PCG64 stream keyed by this protocol SHA and optimizer_seed. Draw parent and task_draw uniformly with replacement. Even u: full10x10 closed; odd u: local_index=((u-1)//2)*4+slot, cyclic size, uniformly valid origin, alternating closed/open. Same instance gets one natural trajectory plus forced low/high legal original-ID starts. Distinct starts only when >=2 legal first actions; sole-action exception is mandatory.",
+    "starts": "Primary includes its sampled first-action logprob. Auxiliary low/high roles force the lowest/highest currently legal original-ID candidate and exclude that forced-first logprob. With unique_first=1, both auxiliary roles force that same action and independently sample suffixes with unchanged .25/.25 weights. All rows finish same target/endpoints; record unique_first, do not deduplicate or assume TSP symmetry.",
+    "loss": "For each trajectory use detached leave-one-out mean return of the other2 as baseline. Negative advantage*logprob: primary weight1, each forced auxiliary weight.25, divide total by1.5. S0 forced-only probe checks plumbing, not this future optimizer.",
+    "objective": "REINFORCE on negative complete JH with exact masks and explicit entry/exit; no teacher action-regression substitute",
+    "optimizer": "Adam1e-4,clip1,512 fixed updates,batch4instances,3 optimizer seeds11622026..28; save fixed end, no S3 selection",
+    "controls": "frozen_SL same S1 weight; continuedSL fresh Adam512 on same frozen S1 teacher pool, same CE/batch4, independent phase sampling. This compares training pipelines, not equal-FLOPs or pure algorithm causality.",
+    "development": "18 declared local cases on3 separate parent layouts, checked at updates256 and512 for feasibility/resources only; no best-checkpoint selection and no S3 reads",
+    "budgets_per_seed": {
+      "RL_terminal_rewards": 6144,
+      "development_and_other_terminal": 2048,
+      "total_S2_terminal": 8192,
+      "RL_optimizer_updates": 512,
+      "continued_SL_optimizer_updates": 512,
+      "S2_all_optimizer_updates": 1024,
+      "wall_s_shared_RL_continuedSL_development": 7200
+    },
+    "missing_reward": "Failures charged; do not silently discard/reward-zero infeasible routes; stop incomplete. No new seed/epoch rescue.",
+    "boundary": "Training and controls remain supervised+RL distinction; final contribution requires positive independent RL increment, not merely smaller degradation.",
+    "parent_modes": "Exactly96 mixed/blocked training geometry keys (48each) already checked. The768 declared target-task draws remain ungenerated and not globally certified; each accessed full-target F&A/navigation instance must pass before use, otherwise stop without replacement.",
+    "optimizer_config": {
+      "algorithm": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "clip_global_norm": 1.0,
+      "gamma": 1.0,
+      "entropy_weight": 0.0,
+      "advantage_standardization": false
+    },
+    "update_attempts_per_seed": 512,
+    "continued_SL_updates_per_seed": 512,
+    "forward_backward_execution": "Macro batch4, fixed weights throughout batch; accumulate gradient of instance_loss/4 separately, clip once after4, optimizer.step once. This matches batch-mean objective; before formal use require synthetic value/gradient equivalence regression. Separate prefix caches across3 trajectories; rebuild encodings after any weight update.",
+    "mixed_objective": "Preserve v2 weighted mixture [E_primary R+.25E_forcedlow R+.25E_forcedhigh R]/1.5 with R=-JH. Primary includes first logprob; forced auxiliary starts do not. Each row baseline detached mean of other2 independent returns.",
+    "boundaries": {
+      "empty_instance": "Legal direct entry->exit terminal, zero logprob/loss contribution, still record cost; never replace sample.",
+      "all_empty_macro_batch": "Inconclusive stop before optimizer; do not resample to force512steps.",
+      "one_legal_first": "Both auxiliary roles use the only legal first node, independent suffix generators; retain .25/.25 weights and record unique_first=1, no silent dedup reweight.",
+      "zero_advantage_nonempty": "Keep registered update schedule, record zero-signal batch, no extra entropy/teacher/round; optimizer step with computed zero grads is recorded.",
+      "invalid_or_nonfinite": "Pre-debit work, preserve failure, stop inconclusive; no reward-zero pseudo-success or replacement."
+    },
+    "memory_execution": "Use fixed instance gradient accumulation to avoid holding12full-episode graphs simultaneously. Bounded navigation cache max2parent maps; task-conditioned neural cache per episode and bound to task/F/A/D/weights. Before first optimizer validate actual batch4-equivalent memory and gradients; no automatic batch/scale/budget change."
+  },
+  "S3": {
+    "status": "DECLARATIONS_ONLY_TARGET_TASKS_SEALED",
+    "checkpoint": "frozen fixed512-step endpoints, no local retraining",
+    "inference": "One greedy rollout per actor, no teacher/extra starts; deterministic weights/input/thread controls. Report cold/hot navigation scope equally across methods; parsing/array loading/subset/all encodings/H/export/validation included, IO/model load separately clear.",
+    "allow_mask": "REGISTRY.json/S3 exact108 declarations. A=(parent+position_idx+size_idx)%3; preserve v3-proposal metadata bytes, no task generation or outcome use.",
+    "cases": 108,
+    "seen_layout_parent_maps": 6,
+    "unseen_layout_parent_maps": 12,
+    "children_per_parent": 6,
+    "groups": "Seen-layout/new-task results and unseen-layout/new-task results separate; seen is not unseen-environment generalization.",
+    "sizes": [
+      [
+        4,
+        3
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "endpoints": "corner closed-depot; center open connected endpoints; separate strata",
+    "methods": [
+      "Fixed3_endpoint_adapter",
+      "Detour16_endpoint_adapter",
+      "untrained",
+      "frozen_supervised",
+      "continued_SL",
+      "RL_raw",
+      "RL_plus_H"
+    ],
+    "timing": "3 repeats, cold global-navigation and hot known-parent navigation; include parsing/prep/subset/all features/global encode/local decisions/H/export/independent validation; model load and parent caches explicit. All methods receive equal input/cache scope.",
+    "cache": "Hot cache primes navigation only; global/local neural embeddings rebuilt per request and bound to task+F+A+model. Report any later cache optimization separately, never reuse task-conditioned hG by map key alone.",
+    "primary_metrics": [
+      "task completion",
+      "proxy/table constraint feasibility",
+      "J",
+      "L",
+      "K",
+      "complete median/p95 time"
+    ],
+    "independent_RL_gate": "ALL valid; vs frozen SL and continued-SL mean paired gain>=.5% with parent-cluster bootstrap95 lower>0, each size reported; three optimizer seeds direction consistent; no use of action Top1 as final success",
+    "deployment_gate": "vs Detour16 mean relative degradation one-sided95upper<=.5%; complete median time ratio<=.7 and p95<=1 in both cache modes; not dominated byFixed3; report seen/unseen and each size separately",
+    "bootstrap": "20000 physical-parent-cluster resamples, PCG64 seed11632026, same declared parent resample indices used across matched methods/controls within each cell. Seen6 and unseen12 parents separate; not108 independent environments; intervals not simultaneous familywise coverage.",
+    "budget_per_seed": {
+      "complete_requests": 5292,
+      "wall_s": 14400
+    },
+    "budget_all3seeds": {
+      "complete_requests": 15876
+    },
+    "no_blending": "Report raw/H gains separately, no teacher search at inference, no returned-home/exit connection cost omission",
+    "parent_modes": "Declared6 seen/12 unseen geometries, actual canonical identities already independently verified in saved geometry gate. S3 tasks/routes/costs remain sealed; layout evidence is not task feasibility.",
+    "primary_decision": "Overall independent-RL claim requires all6(group x size) quality cells; overall deployment claim requires all12(group x size x cache) strata. Both classes AND only for a combined quality-and-deployment claim; no pooled rescue. Partial per-cell evidence may be reported with explicit limited scope, not overall pass.",
+    "quality_aggregation": "Within each group,size,method,seed: average two endpoint-child J values for each physical parent. For pooled estimate then average the three matched optimizer-seed parent values; compute parent-relative gain from these method means, then equally average parent gains. FrozenSL/continuedSL are matched to their own seed lineage. Bootstrap true physical parent clusters only.",
+    "RL_gate_per_cell": "For BOTH frozenSL and continuedSL: all cases valid; mean paired parent-relative gain >=0.5%; percentile two-sided95 bootstrap lower (2.5th percentile)>0; each of3 optimizer-seed point gains strictly positive. All6 group-size cells required for overall independent-RL claim.",
+    "deployment_gate_per_stratum": "For each group,size,cache: all cases valid; parent-aggregated RLplusH degradation versus Detour16 one-sided95 percentile upper (95th percentile)<=0.5%; pooled complete-request median time ratio<=0.7 and p95 ratio<=1; RLplusH not Pareto dominated by Fixed3 on meanJ/median/p95 (all <= and at least one strict is domination). All12 strata required for overall deployment claim.",
+    "timing_aggregation": "Within each group,size,cache, pool all parent x endpoint x seed x3repeat request timings for descriptive median/p95. Quality uses parent units, not request count. Endpoint-specific tables always reported; no causal endpoint/position comparison.",
+    "statistical_scope": "One preregistered data-bank screen with3optimization repeats, not3independent datasets. CIs not advertised as simultaneous acrossallcells. No claim of pure-gradient/equal-FLOPs causality becauseRL states on-policy andSL teacher pool fixed.",
+    "planned_request_grid": {
+      "cases": 108,
+      "methods": 7,
+      "quality_requests_per_case_method": 1,
+      "independent_quality_requests_per_seed": 756,
+      "timing_repeats_per_cache": 3,
+      "cache_modes": 2,
+      "independent_timing_requests_per_seed": 4536,
+      "total_complete_requests_per_seed": 5292,
+      "total_complete_requests_all3seeds": 15876,
+      "cost_and_time_rule": "One separate quality request plus six complete timed requests per case/method/seed. No free reuse of quality construction, H, export or validation in timed requests. Timed complete routes/costs must remain consistent with the frozen deterministic method/input; charge all failures and cache hits separately."
+    }
+  },
+  "fail": "Record full negative/incomplete results, no automatic optimizer/seed/network-depth extension",
+  "protected60": "unchanged sealed",
+  "physical_joint_trajectory": "not yet attested; requires real kinematic/collision/joint-path evidence for full physical execution claims",
+  "layout_independence_gate": {
+    "identity_function": "rc3_fast.planner.map_key",
+    "source_sha256": {
+      "rc3_fast/planner.py": "01da2a4f1bdca79a46c50f268943a6c0713b8888db25006cad594d7ca3ae162c",
+      "rc3_fast/scenes.py": "e73f2638ec016891f594cdcfcfb1d074540625cbe92b9d8011442bf733b96230",
+      "rc3_baseline/baseline.py": "2881820d94637a8f3452fbf43b6fc4c5e37f1eb58c1b568eaafc61c356d40e90"
+    },
+    "modes": "All future training/development/S3 parent layouts alternate mixed/blocked; regular remains only an S0 engineering control.",
+    "mandatory_before_S1_or_optimizer": "Materialize only declared parent-layout geometry and hash canonical map_key. Require96 unique train keys;3 unique development keys disjoint train;6 seen keys equal their intended six training keys;12 unique unseen keys disjoint train/development; unseen and seen disjoint. Stop on collision; no silent mode/seed replacement. Record this geometry-only preparation and elapsed budget separately.",
+    "test_tasks": "Do not generate/evaluate S3 target task draws, rollouts or costs during layout-identity audit. No hyperparameter/checkpoint selection from S3 geometry or outcomes.",
+    "statistics": "Cluster on actual canonical parent geometry; assert6 seen and12 unseen groups before using that count. Until this gate passes, counts denote intended parent labels, not verified independent geometries.",
+    "evidence": {
+      "path": "rc3_global_local_impl_review/GEOMETRY_GATE.json",
+      "sha256": "ea26e19c86bc30cf65ac9162856c56862c36bda2729d954ed29e9b8370b01fd2",
+      "independent_review": "rc3_global_local_impl_review/LAYOUT_GATE_REVIEW.json",
+      "independent_sha256": "501dcab7e2272ee313c6ff0b8a41b59762ed1d58eb8682d1abe209685812b636",
+      "scope": "Verified physical geometry only; verify exact input/source hashes before future formal execution, not a task-feasibility certificate."
+    }
+  },
+  "seed_registry": "rc3_global_local_execution_v3/REGISTRY.json",
+  "review_gate": "TECHNICAL_CANDIDATE_READY only after source-bound stage-chain regression and independent review; FORMAL_SCIENTIFIC_EXECUTION remains REVISE pending explicit user protocol approval and corresponding stage authorization. File creation/engineering PASS does not activate protocol.",
+  "v3_change_provenance": {
+    "date": "2026-11-06",
+    "base_S0_commit": "057830d584b6c71c79ef5118087c681c98135fe2",
+    "source_v2_sha256": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+    "current_v2_pointer_unchanged": true,
+    "old_v1_v2_S0_bytes_preserved": true,
+    "S3_outcomes_seen": false,
+    "reason": "Pre-optimizer review closes unspecified recipes/RNG/control budgets/decision rules and corrects declared warmup/scale-condition confounding; no result-driven tuning.",
+    "source_v3_proposal_sha256": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+    "clarifications_sha256": "352577f762328a9f48eee7dcabcfc9dc8a094d227a9a911372a13ee820c94234",
+    "current_task_base_commit": "aa0247c8c38243504028bfad24795e0db7120264"
+  },
+  "input_runtime_contract": {
+    "guards": "rc3_global_local_impl_review/runtime_guards.py",
+    "navigation": "canonical geometry key and content/source hashes bound at production; reject bare/mismatched nav; immutable detached F/A/C/D/IDs/scene; new cache namespace includes D",
+    "layout_gate": "Current physical layout gate PASS with111unique assets; adopt only exact v2 map/mode bank, verify hashes again before execution; this does not assert all768 target-task draws feasible.",
+    "task_validation": "Bind the frozen formal provider chain make_complex_scene -> resample_tasks -> F/make_allow -> exact canonical physical-key/source verification -> immutable navigation snapshot -> full-parent effective connected-service check -> local extraction. This execution version does not claim a task-free formal provider. All constructor/resampler/preparation work is charged inside the requesting stage. Infeasible/nonfinite input is charged incomplete stop; no drop/resample/new seed."
+  },
+  "weight_lineage": {
+    "per_seed": [
+      "untrained_seed_checkpoint",
+      "S1_supervised256_checkpoint",
+      "three exact weight clones: frozen_SL/RL_start/continued_SL_start"
+    ],
+    "optimizer_states": "S1 Adam state saved as evidence but not inherited; RL and continuedSL each fresh Adam with identical registered hyperparameters. FrozenSL no optimizer.",
+    "no_selection": "All3registered seeds run independently without best seed/update choice; final fixed512 endpoints only, no S3 checkpoint selection."
+  },
+  "RNG_contract": {
+    "model_init": "torch.manual_seed(optimizer_seed) only before model construction; not reset per trajectory",
+    "key_derivation": "SHA256 UTF8 canonical tuple [protocol_sha256,phase,optimizer_seed,zero_based_update,instance_slot,role]; first8bytes little-endian modulo2**63; save names/seeds/states",
+    "streams": "PCG64 for dataset/window draws, independent phase names S1_data/S2_data/continuedSL_data. Distinct torch.Generator for primary/forced_low/forced_high per(seed,update,slot); no shared row sampling stream.",
+    "S2_sampling": "u=0..511, slots0..3; sample parent0..95 and task_draw0..7 uniformly with replacement from S2_data. u even full10x10; u odd local_index=((u-1)//2)*4+slot, size_idx=local_index%3 (counts342/341/341), endpoint closed for even local_index/open for odd; x0/y0 uniform valid origins. A=(parent+task_draw)%3.",
+    "data_stream_priority": "This detailed contract and exact stage schedules override the old fixed-sampling-seed summary. Each optimizer seed has independently reproducible S1_data/S2_data/continuedSL_data streams; data schedules are NOT asserted identical across optimizer seeds.",
+    "stream_phase_labels": {
+      "S1_batches": "S1_data",
+      "S2_parent_task_window": "S2_data",
+      "continued_SL_batches": "continuedSL_data",
+      "S2_trajectory_phase": "RL",
+      "trajectory_roles": [
+        "primary",
+        "forced_low",
+        "forced_high"
+      ]
+    },
+    "registry_sampling_seed_role": "REGISTRY.sampling_seed=11632026 is the fixed bootstrap declaration, not a common S2_data stream seed. Dataset/window streams derive from protocol SHA+optimizer_seed+phase. Changing from proposal hash to approved candidate hash intentionally changes named streams before first science; task bank/map seeds remain unchanged."
+  },
+  "resources_summary": {
+    "shared_S1_teacher_terminal_max": 512,
+    "per_seed_optimizer_updates": {
+      "S1": 256,
+      "RL": 512,
+      "continued_SL": 512,
+      "total": 1280
+    },
+    "all3seeds_optimizer_updates_max": 3840,
+    "S2_all3seeds_terminal_max": 24576,
+    "S3_all3seeds_requests_max": 15876,
+    "timing_scope": "Teacher generation, S1, S2 RL, continuedSL, development and S3 separate walls; shared S2 per-seed7200 includesRL+continuedSL+dev and their IO. End-to-end elapsed also reported. No use of preflight wall as deployment latency.",
+    "historical_engineering_updates": "Prior S0/preflight/trainer probes are separate historical engineering ledgers, including21Adam/12H in trainer acceptance; never count them as scientific S1/S2 updates.",
+    "serial_scientific_stage_wall_cap_s": 28800,
+    "serial_scientific_stage_wall_cap_scope": "S1-A1800 + S1-B3x1800 + S2 3x7200, includes all actual stage input preparation, paid queries, training, development, artifact reads/writes, cache restoration and checkpoint IO. This is a ceiling, not a runtime prediction; no uncharged offline preparation. Earlier saved geometry-gate maintenance is separate historical preparation."
+  },
+  "method_pipelines": {
+    "S1_teacher": "endpoint-adapted nativeDetour16 (portfolio+repair) THEN extra commonH; both charged; resulting full positive-gain route supplies teacher forcing.",
+    "S3_Fixed3_Detour16": "Endpoint-adapted frozen native portfolio/search pipeline and its internal postprocess only, NO extra commonH; final global plan endpoint validator.",
+    "S3_untrained_frozenSL_continuedSL_RLplusH": "One greedy actor construction then unchanged commonH and export/validate; all input/prep/features charged.",
+    "S3_RLraw": "Same frozen RL raw construction semantics, export/validate without commonH. Separate timed request execution; require identical raw route to RLplusH for the same input/seed. No free shared timed computation."
+  },
+  "current_task_boundary": "Protocol finalization and bounded stage-authorization engineering only. No real teacher generation, science optimizer, S3 target generation/evaluation or old60 semantic loading. Candidate remains pending explicit approval; original active v2 pointer is not modified.",
+  "proposal_draft_revision": {
+    "revision": 2,
+    "source_v3_proposal_sha256": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+    "old_draft_history_retained": "Original proposal and draft01 remain in their original paths and bytes; this is a new candidate file.",
+    "candidate_draft01_sha256": "5e5887ab3cd955abdd12ee8559665cc94a2d1643377bcf22afb94ebccad866ee",
+    "candidate_draft01_preserved": "drafts/V3_EXECUTION_CANDIDATE_DRAFT01.json",
+    "candidate_draft01_correction": "Correct budget decomposition before approval/execution:5292 =756 separate quality +4536 independent timing requests, rather than treating756 as unused margin. Numeric total cap/methods/seeds/gates unchanged; no S3 target generation or outcome observed."
+  },
+  "protocol_version": "v3-execution-candidate-1",
+  "approval_state": {
+    "user_protocol_approved": false,
+    "active_protocol_pointer_modified": false,
+    "formal_stage_authorized": false,
+    "active_frozen_design": "v2",
+    "scope": "This candidate and stage authorization design grant no teacher generation, optimizer, S3 or old60 access."
+  },
+  "stage_execution": {
+    "S1-A": {
+      "description": "One shared complete paid256-teacher pool, no optimizer",
+      "legacy_operation": "teachers",
+      "scope": "shared across all3optimizer seeds",
+      "declared_teacher_instances": 256,
+      "native_Detour16_attempts_max": 256,
+      "full_H_terminal_attempts_max": 256,
+      "total_top_level_attempts_max": 512,
+      "optimizer_updates_max": 0,
+      "wall_s": 1800,
+      "new_task_draws": "Only accessed declared training-bank inputs for the256 specs; no S3/dev teacher inputs",
+      "complete_artifacts": "Exact256 immutable label/plan records plus pool index/source hashes/resources, each native output then H output independently valid; any partial/incomplete artifact is not a complete pool."
+    },
+    "S1-B": {
+      "description": "Three fixed supervised initializations only, auxiliary to later DRL",
+      "legacy_operation": "S1",
+      "optimizer_seeds": [
+        11622026,
+        11622027,
+        11622028
+      ],
+      "seed_order": "ascending fixed order, no seed selection",
+      "updates_per_seed": 256,
+      "batch_instances": 4,
+      "all3_updates_max": 768,
+      "wall_s_per_seed": 1800,
+      "new_teacher_queries_max": 0,
+      "new_reward_terminal_queries_max": 0,
+      "checkpoint_roles": [
+        "own_seed_untrained",
+        "own_seed_S1_fixed256"
+      ],
+      "phase_complete": "All3 fixed seed endpoints complete; independent per-seed invocation/resume allowed, no automatic S2."
+    },
+    "S2": {
+      "description": "Only after separately authorized DRL and matched continuedSL, using complete S1-B source bundle",
+      "legacy_operation": "S2",
+      "requires_complete_all3_S1_B": true,
+      "optimizer_seeds": [
+        11622026,
+        11622027,
+        11622028
+      ],
+      "seed_order": "ascending fixed order",
+      "RL_updates_per_seed": 512,
+      "continuedSL_updates_per_seed": 512,
+      "RL_terminal_attempts_per_seed_max": 6144,
+      "development_and_other_terminal_attempts_per_seed_max": 2048,
+      "total_terminal_attempts_per_seed_max": 8192,
+      "wall_s_per_seed": 7200,
+      "new_teacher_queries_max": 0,
+      "endpoint_selection": "Fixed512 only, no development best checkpoint or S3 selection"
+    },
+    "S3": {
+      "description": "Declarations only, no execution authorization in this task or S1/S2 authorization",
+      "target_tasks_sealed": true,
+      "requires_separate_future_authorization": true
+    }
+  },
+  "approval_and_authorization_chain": {
+    "protocol_approval_required": true,
+    "stage_authorization_required": true,
+    "new_task_does_not_approve_protocol": true,
+    "stage_order": [
+      "S1-A",
+      "S1-B all3 fixed seed endpoints",
+      "S2 after separate user authorization"
+    ],
+    "separate_stage_authorizations": "Different later authorization documents may extend the same immutable scientific experiment identity after validating source artifacts; authority changes cannot rewrite source identity/checkpoint history, reset stage budgets, change seeds, or reopen a completed stage. Append immutable authorization/event evidence. Exact adapter/source hashes and regression are mandatory.",
+    "scientific_identity": "Exact protocol+registry+runtime/H/source binding, experiment identity and declared seed/control lineage are stable across stage authorizations. Bind original source artifact SHA and its originating stage authorization separately.",
+    "rejection": "Wrong protocol/registry/source/H/seed/authorization scope/experiment/source checkpoint/pool hash, engineering or corrupt fixture, incomplete predecessor, altered/dirty checkpoint or budget reset must reject before real generation/optimizer."
+  },
+  "budget_accounting": {
+    "attempts": "Pre-debit native/H/model training/query attempts, failure and cache hits separately; no reward-zero or free retry; immutable audit journal per invocation/stage.",
+    "time": "S1-A covers all teacher generation/data/nav/F&A/native/H/export/validation/IO. S1-B covers pool/source reads, data/cache input construction, initialization, CE, diagnostics and checkpoint IO. S2 covers SL/pool load, fork, input generation/nav/cache/restore, RL, continuedSL, development and all IO under one7200s clock per seed. No hidden preprocessing stage outside caps.",
+    "resume": "Cumulative stage elapsed/calls/optimizer cursor from committed checkpoint/source resources plus new loading/restore overhead; resumed authorization may not reset them. Completed phases cannot repeat. Dirty crash/partial teachers require an explicit recovery decision preserving already paid resources, not automatic replay.",
+    "checkpoint_IO": "Post-serialization closure records charge checkpoint/sidecar/hash IO; last tiny receipt cannot self-time, subsequent live stage clock includes it. Report outer invocation and nested clocks without summing overlaps."
+  },
+  "binding_requirements": {
+    "source_binding_path": "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json",
+    "required_fields": [
+      "protocol_sha256",
+      "registry_sha256",
+      "runtime_source_sha256",
+      "H_identity",
+      "H_source_sha256",
+      "environment_sha256",
+      "engineering_verification_sha256"
+    ],
+    "no_self_reference": "Protocol references a separately written source binding; binding hashes this exact protocol, registry and finalized source. Protocol never embeds its own digest. Approval and each stage authorization must bind the exact source binding.",
+    "engineering_models": "No engineering checkpoint, intentionally corrupt fixture, selected earlier endpoint or unrelated branch weight may be a formal source."
+  },
+  "historical_amendment_v1_to_v2": {
+    "client_date": "2026-11-06",
+    "utc": "2026-11-06T02:46:06.016984+00:00",
+    "before_any_S1_S2_S3_execution": true,
+    "supersedes": "S2_S3_protocol.json",
+    "original_v1_sha256": "6776ea5c1f82debada769d1950985316fe06ff873455293fcad743adb94493b3",
+    "retained_S0_protocol_sha256": "58631506e88594291e091818c0b35660cb40c73a92986dc1d5ee836e13308f66",
+    "reason": "Physical layout identity is not map_seed identity in regular mode. Correct this structural generator issue before formal optimization, without using S3 results.",
+    "performance_gates_and_budgets_unchanged": true,
+    "old_S0_and_v1_bytes_unchanged": true,
+    "scope_note": "Exact inherited v1-to-v2 explanation only; performance_gates_and_budgets_unchanged applies solely to that transition, NOT v2-to-v3."
+  },
+  "change_boundaries": {
+    "v1_to_v2": "Before science, corrected physical-layout identity and mixed/blocked map declarations. S0/v1 bytes preserved; original numeric performance gates and old budgets unchanged in that historical amendment.",
+    "v2_to_v3_proposal": "Explicit new choices: teacher sample allocation, S1/continuedSL recipe/fresh optimizer lineage, RNG/degenerate boundaries, S1 time caps, per-stage budget scope, S3 A distribution and parent aggregation/AND gates. Retained old threshold numbers does not mean unchanged decision logic.",
+    "v3_proposal_to_this_candidate": "Resolve inherited conflicting prose, stage naming and separate authorization/source chain, exact RNG role, single-first exception, all-preparation/IO clocks and request-cap-vs-grid accounting. No changed reward, network, optimizer numerical recipe, task seeds, sample allocation, performance threshold or numeric stage budget versus v3 proposal."
+  },
+  "H_binding": {
+    "path": "rc3_global_local_execution_v3/H_BINDING.json",
+    "sha256": "4bc694068672afe0b558d16a41232400fce2410c5450824ded9d6725f0ed9b54",
+    "identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+    "source_sha256": {
+      "rc3_constructive/baselines.py": "57d6f375f03ffedfedf25c4a9417a4cafa53019a5bdb39bedbf367f4d2b47e73",
+      "rc3_fast/solver.py": "7cd3bacaa059f810e0dded038e9118929c035220b1567e2a7a63dea9808c3693"
+    }
+  }
+}

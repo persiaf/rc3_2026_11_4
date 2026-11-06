@@ -1,0 +1,100 @@
+{
+  "schema": "rc3-v3-protocol-finalization-metadata-verification-v1",
+  "reviewer": "/root/v3_final_protocol",
+  "status": "PASS_METADATA_CANDIDATE_PENDING_APPROVAL",
+  "protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "H_binding_sha256": "4bc694068672afe0b558d16a41232400fce2410c5450824ded9d6725f0ed9b54",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "protocol_source_binding": "EXECUTION_SOURCE_BINDING.json to be written by root after adapter source freezes",
+  "old_input_sha256": {
+    "rc3_global_local/S2_S3_protocol.json": "6776ea5c1f82debada769d1950985316fe06ff873455293fcad743adb94493b3",
+    "rc3_global_local/S2_S3_protocol_v2.json": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+    "rc3_global_local/future_seeds_v2.json": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+    "rc3_global_local/FUTURE_DESIGN_STATUS.json": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49",
+    "rc3_global_local_impl_review/PROPOSED_PROTOCOL_V3.json": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+    "rc3_global_local_impl_review/PROPOSED_SEEDS_V3.json": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+    "rc3_global_local_trainer/PROTOCOL_EXECUTION_CLARIFICATIONS.json": "352577f762328a9f48eee7dcabcfc9dc8a094d227a9a911372a13ee820c94234"
+  },
+  "teacher_instances": 256,
+  "teacher_changed_from_v2": 213,
+  "teacher_parent_distinct_size_counts": {
+    "3": 64,
+    "2": 32
+  },
+  "mode_endpoint_cells": [
+    {
+      "mode": "blocked",
+      "endpoint": "closed_depot",
+      "count": 64
+    },
+    {
+      "mode": "blocked",
+      "endpoint": "open_first_last_connected",
+      "count": 64
+    },
+    {
+      "mode": "mixed",
+      "endpoint": "closed_depot",
+      "count": 64
+    },
+    {
+      "mode": "mixed",
+      "endpoint": "open_first_last_connected",
+      "count": 64
+    }
+  ],
+  "S2_parent_maps": 96,
+  "S2_task_draws_per_parent": 8,
+  "S2_declared_target_task_bank": 768,
+  "S3_declared_cases": 108,
+  "S3_A_changed_from_v2_only": 72,
+  "S3_request_decomposition_per_seed": {
+    "quality": 756,
+    "timing": 4536,
+    "total": 5292
+  },
+  "leaf_comparison_counts": {
+    "v1_to_v2": 24,
+    "v2_to_v3_proposal": 112,
+    "v3_proposal_to_candidate": 156,
+    "v2_to_candidate": 245,
+    "registry_v2_to_v3": 860,
+    "registry_v3_to_candidate": 0
+  },
+  "diff_rows": 1397,
+  "diff_csv_json_exact_roundtrip": true,
+  "optimizer_numeric_recipes_and_stage_numeric_budgets_unchanged_from_v3_proposal": true,
+  "registered_methods_unchanged": true,
+  "approval_granted": false,
+  "active_pointer_changed": false,
+  "new_calls": {
+    "scene_or_task_generation": 0,
+    "navigation": 0,
+    "teacher": 0,
+    "model_initialization": 0,
+    "forward": 0,
+    "backward": 0,
+    "optimizer": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0
+  },
+  "wall_s": 0.024041200002102414,
+  "timing_scope": "Only this metadata/hash/CSV consistency verification, excluding prior static reading and drafting. No physical/task data execution.",
+  "frozen_input_byte_comparison": {
+    "base": "aa0247c8c38243504028bfad24795e0db7120264",
+    "files_checked": 7,
+    "all_original_bytes_equal": true,
+    "sha256": {
+      "rc3_global_local/S2_S3_protocol.json": "6776ea5c1f82debada769d1950985316fe06ff873455293fcad743adb94493b3",
+      "rc3_global_local/S2_S3_protocol_v2.json": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+      "rc3_global_local/future_seeds_v2.json": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+      "rc3_global_local/FUTURE_DESIGN_STATUS.json": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49",
+      "rc3_global_local_impl_review/PROPOSED_PROTOCOL_V3.json": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+      "rc3_global_local_impl_review/PROPOSED_SEEDS_V3.json": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+      "rc3_global_local_trainer/PROTOCOL_EXECUTION_CLARIFICATIONS.json": "352577f762328a9f48eee7dcabcfc9dc8a094d227a9a911372a13ee820c94234"
+    },
+    "wall_s": 0.23232199999984005,
+    "scope": "Raw bytes of protocol/registry/pointer/clarification files only, no tasks or outcomes."
+  }
+}
