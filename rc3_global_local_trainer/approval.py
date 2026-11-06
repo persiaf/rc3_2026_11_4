@@ -23,6 +23,23 @@ def read(path):
     return json.loads(Path(path).read_text(encoding='utf8'))
 
 
+def teacher_source_binding(binding):
+    """Exact upstream teacher identity, separate from current executable source.
+
+    A formal permit validates the descriptor against its newly approved source
+    manifest. This helper never grants permission and never substitutes current
+    checkpoint/model provenance with the historical teacher source.
+    """
+    replay = binding.get('legacy_teacher_replay')
+    if replay is None:
+        return binding
+    if (not isinstance(replay, dict)
+            or set(replay) != {'manifest_path', 'manifest_sha256', 'science_binding'}
+            or not isinstance(replay['science_binding'], dict)):
+        raise AdmissionError('Invalid explicit legacy teacher source descriptor')
+    return replay['science_binding']
+
+
 def source_binding():
     paths = sorted((ROOT / 'rc3_global_local_trainer').glob('*.py'))
     paths = [p for p in paths if not p.name.startswith('test_')]

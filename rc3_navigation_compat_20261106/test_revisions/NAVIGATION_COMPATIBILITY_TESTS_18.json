@@ -1,0 +1,146 @@
+{
+  "schema": "rc3-navigation-compatibility-negative-tests-v1",
+  "status": "PASS",
+  "created_utc": "2026-11-06T09:37:24.591304+00:00",
+  "test_script_sha256": "cbe99c937068c4f2188cb0123eadd3dca150b31c54f2d266de89f64244eab426",
+  "tests": 18,
+  "assertions": 9,
+  "results": [
+    {
+      "name": "new_schema_complete_save",
+      "status": "PASS",
+      "wall_s": 0.3037136000020837
+    },
+    {
+      "name": "new_schema_load",
+      "status": "PASS",
+      "wall_s": 0.1185165999995661
+    },
+    {
+      "name": "new_schema_select_exact_parent",
+      "status": "PASS",
+      "wall_s": 0.06857949999903212
+    },
+    {
+      "name": "old_schema_two_identity_variants",
+      "status": "PASS",
+      "wall_s": 0.1852240999978676
+    },
+    {
+      "name": "old_schema_restore_original96_parent",
+      "status": "PASS",
+      "wall_s": 0.1395909999992
+    },
+    {
+      "name": "old_schema_preserve_reduced160_identity",
+      "status": "PASS",
+      "wall_s": 0.2666654999993625
+    },
+    {
+      "name": "old_schema_wrong_parent_identity",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation identity has no unique exact matching representation",
+      "wall_s": 0.15535850000014761
+    },
+    {
+      "name": "duplicate_matching_parent_identity_conflict",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation identity has no unique exact matching representation",
+      "wall_s": 0.19346139999834122
+    },
+    {
+      "name": "new_schema_wrong_geometry_receipt",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Saved navigation source/content/geometry mismatch",
+      "wall_s": 0.012742499999149004
+    },
+    {
+      "name": "new_schema_wrong_navigation_source",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Saved navigation source/content/geometry mismatch",
+      "wall_s": 0.013116599999193568
+    },
+    {
+      "name": "new_schema_tampered_file_hash",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Saved navigation source/content/geometry mismatch",
+      "wall_s": 0.029831400002876762
+    },
+    {
+      "name": "new_schema_wrong_content_identity",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Full navigation content identity mismatch",
+      "wall_s": 0.09709029999794438
+    },
+    {
+      "name": "unknown_schema_refused",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Unknown navigation schema or metadata field",
+      "wall_s": 0.01584989999901154
+    },
+    {
+      "name": "new_schema_missing_rejected_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Unexpected navigation NPZ fields",
+      "wall_s": 0.018051200000627432
+    },
+    {
+      "name": "new_schema_negative_rejected_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation NPZ/receipt scalar differs: rejected_edge_count",
+      "wall_s": 0.05009009999776026
+    },
+    {
+      "name": "new_schema_boolean_rejected_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation NPZ/receipt scalar differs: rejected_edge_count",
+      "wall_s": 0.043096600002172636
+    },
+    {
+      "name": "new_schema_unknown_identity_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Unexpected navigation NPZ fields",
+      "wall_s": 0.024520499999198364
+    },
+    {
+      "name": "new_schema_invalid_npz_bytes",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "This file contains pickled (object) data. If you trust the file you can load it unsafely using the `allow_pickle=` keyword argument or `pickle.load()`.",
+      "wall_s": 0.011742200000298908
+    }
+  ],
+  "wall_s": 3.472965100001602,
+  "forbidden_scientific_call_counters": {
+    "rc3_baseline.baseline.navigation": 0,
+    "rc3_fast.scenes.make_complex_scene": 0,
+    "rc3_fast.solver.vectorized_feasibility": 0,
+    "rc3_constructive.problem.resample_tasks": 0,
+    "rc3_constructive.baselines.postprocess": 0,
+    "rc3_global_local.terminal.finish": 0,
+    "rc3_global_local_impl_review.endpoint_baselines.run_endpoint": 0,
+    "rc3_global_local_trainer.runner.run_endpoint": 0,
+    "rc3_global_local_trainer.runner.finish": 0,
+    "rc3_v4.runtime.run": 0,
+    "GlobalLocalPolicy.__init__": 0,
+    "Module.__init__": 0,
+    "rc3_global_local_trainer.engine.make_optimizer": 0,
+    "Optimizer.__init__": 0,
+    "Adam.step": 0
+  },
+  "scientific_generations_and_queries": 0,
+  "fixture_scope": "Copies/re-serialization of saved arrays only, not generated navigation or tasks. Bad fixtures isolated in checked task-local temp directory, removed after tests.",
+  "temporary_fixture_bytes": 54574354,
+  "original_artifacts_written": 0
+}

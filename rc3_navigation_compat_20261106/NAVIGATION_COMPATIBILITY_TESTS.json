@@ -1,0 +1,214 @@
+{
+  "schema": "rc3-navigation-compatibility-negative-tests-v1",
+  "status": "PASS",
+  "created_utc": "2026-11-06T09:43:57.061410+00:00",
+  "test_script_sha256": "3a01efe9314048ed9884dc1bbaadc7cd6e0ccb94b08ad3c8957fee2cdb721539",
+  "tests": 28,
+  "assertions": 10,
+  "results": [
+    {
+      "name": "new_schema_complete_save",
+      "status": "PASS",
+      "wall_s": 0.359457200000179
+    },
+    {
+      "name": "new_schema_boolean_wall_rejected_before_save",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Invalid navigation preparation time",
+      "wall_s": 0.016130299998621922
+    },
+    {
+      "name": "new_schema_load",
+      "status": "PASS",
+      "wall_s": 0.11329439999826718
+    },
+    {
+      "name": "new_schema_select_exact_parent",
+      "status": "PASS",
+      "wall_s": 0.06115160000263131
+    },
+    {
+      "name": "old_schema_two_identity_variants",
+      "status": "PASS",
+      "wall_s": 0.30500860000029206
+    },
+    {
+      "name": "old_schema_restore_original96_parent",
+      "status": "PASS",
+      "wall_s": 0.200627500002156
+    },
+    {
+      "name": "old_schema_preserve_reduced160_identity",
+      "status": "PASS",
+      "wall_s": 0.1468535999993037
+    },
+    {
+      "name": "old_schema_wrong_parent_identity",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation identity has no unique exact matching representation",
+      "wall_s": 0.13676119999945513
+    },
+    {
+      "name": "duplicate_matching_parent_identity_conflict",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation identity has no unique exact matching representation",
+      "wall_s": 0.22794229999999516
+    },
+    {
+      "name": "new_schema_wrong_geometry_receipt",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Saved navigation source/content/geometry mismatch",
+      "wall_s": 0.007920799998828443
+    },
+    {
+      "name": "new_schema_wrong_navigation_source",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Saved navigation source/content/geometry mismatch",
+      "wall_s": 0.008117000001220731
+    },
+    {
+      "name": "new_schema_tampered_file_hash",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Saved navigation source/content/geometry mismatch",
+      "wall_s": 0.19276959999842802
+    },
+    {
+      "name": "new_schema_wrong_content_identity",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Full navigation content identity mismatch",
+      "wall_s": 0.3029769999993732
+    },
+    {
+      "name": "unknown_schema_refused",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Unknown navigation schema or metadata field",
+      "wall_s": 0.05799259999912465
+    },
+    {
+      "name": "new_schema_missing_rejected_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Unexpected navigation NPZ fields",
+      "wall_s": 0.012434899999789195
+    },
+    {
+      "name": "new_schema_negative_rejected_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation NPZ/receipt scalar differs: rejected_edge_count",
+      "wall_s": 0.03974979999838979
+    },
+    {
+      "name": "new_schema_boolean_rejected_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Navigation NPZ/receipt scalar differs: rejected_edge_count",
+      "wall_s": 0.04260710000016843
+    },
+    {
+      "name": "new_schema_unknown_identity_field",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Unexpected navigation NPZ fields",
+      "wall_s": 0.01362159999916912
+    },
+    {
+      "name": "new_schema_invalid_npz_bytes",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "This file contains pickled (object) data. If you trust the file you can load it unsafely using the `allow_pickle=` keyword argument or `pickle.load()`.",
+      "wall_s": 0.008101700001134304
+    },
+    {
+      "name": "legacy_manifest_exact_original_anchors",
+      "status": "PASS",
+      "wall_s": 0.5281149000002188
+    },
+    {
+      "name": "legacy_manifest_bad_pinned_hash",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Legacy replay manifest bytes differ",
+      "wall_s": 0.0008854000006977003
+    },
+    {
+      "name": "legacy_manifest_wrong_original_source_binding",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Legacy replay manifest science binding differs",
+      "wall_s": 0.003806300002906937
+    },
+    {
+      "name": "legacy_manifest_wrong_complete_anchor",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Legacy replay anchor mismatch: stage_complete",
+      "wall_s": 0.00456780000240542
+    },
+    {
+      "name": "legacy_manifest_duplicate_task_identity",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Duplicate legacy task identity",
+      "wall_s": 0.012142600000515813
+    },
+    {
+      "name": "legacy_manifest_parent_conflicts_original_receipt",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Legacy task receipt identity/source differs",
+      "wall_s": 0.5730602000003273
+    },
+    {
+      "name": "legacy_manifest_label_hash_conflicts_saved_file",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Frozen legacy teacher source changed: label",
+      "wall_s": 0.5306548999978986
+    },
+    {
+      "name": "legacy_task_wrong_source_receipt",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Legacy task receipt identity/source differs",
+      "wall_s": 0.5280729000005522
+    },
+    {
+      "name": "production_example_rechecks_index_before_loading",
+      "status": "PASS_REJECTED",
+      "error": "ValueError",
+      "message": "Legacy teacher pool original path/hash differs",
+      "wall_s": 0.01806589999978314
+    }
+  ],
+  "wall_s": 7.43662459999905,
+  "forbidden_scientific_call_counters": {
+    "rc3_baseline.baseline.navigation": 0,
+    "rc3_fast.scenes.make_complex_scene": 0,
+    "rc3_fast.solver.vectorized_feasibility": 0,
+    "rc3_constructive.problem.resample_tasks": 0,
+    "rc3_constructive.baselines.postprocess": 0,
+    "rc3_global_local.terminal.finish": 0,
+    "rc3_global_local_impl_review.endpoint_baselines.run_endpoint": 0,
+    "rc3_global_local_trainer.runner.run_endpoint": 0,
+    "rc3_global_local_trainer.runner.finish": 0,
+    "rc3_v4.runtime.run": 0,
+    "GlobalLocalPolicy.__init__": 0,
+    "Module.__init__": 0,
+    "rc3_global_local_trainer.engine.make_optimizer": 0,
+    "Optimizer.__init__": 0,
+    "Adam.step": 0
+  },
+  "scientific_generations_and_queries": 0,
+  "fixture_scope": "Copies/re-serialization of saved arrays only, not generated navigation or tasks. Bad fixtures isolated in checked task-local temp directory, removed after tests.",
+  "temporary_fixture_bytes": 56771102,
+  "original_artifacts_written": 0
+}

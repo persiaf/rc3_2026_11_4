@@ -1,6 +1,6 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-06** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.06-s1a-scientific-results**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-06** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.06-navigation-compatibility-pass**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
 
 当前验证范围是二维静态批次任务与代理可达约束。真实机器人标定与 IK 暂缓。G2.3 的“局部窗口选择＋STOP”作为第三部分 DRL 核心的路线已结束追加训练，不能将这些记录解释为学习方法已经优于强规则。独立构造式研究已完成C0／C1和一次512更新C2小试：速度部分达标，质量及继续门槛未通过；随后完成冻结路线 C2.1：72 次共同后处理使 RL 与 Fixed3 的平均逐场景相对差缩至 +0.8170%，相同后处理下相对先验的学习增量区间仍跨零；没有追加训练或启动C3。归因见 [C2.1报告](rc3_constructive/REPORT_C21.md)，原小试详见 [研究目录](rc3_constructive/README.md) 与 [完整报告](rc3_constructive/REPORT_C012.md)。
 
@@ -25,6 +25,8 @@ S1/S2正式训练器已实现，登记工程验收与独立复核通过：batch4
 S1-A此前授权核查曾因缺少两项明确决定停在准备阶段，该轮科学调用0，记录保持在 [授权核查报告](rc3_s1a_authorization_check/README.md)。后续用户已正式批准准确v3和仅S1-A，分别新建真实收据并激活执行版本，未覆盖旧v2指针或原候选字节。
 
 **S1-A已实际完成**：256教师、native256+H256=512次评价、190.153795秒、缓存0/收费失败0/optimizer0；512份返回路线独立代理约束复核通过。平均教师J=129.77862746，额外H改善41例、不变215例，没有神经学习。审计发现nav保存缺少参与identity的`rejected_edge_count`，影响首96例的直接重载，因此**S1-B技术REVISE，未执行也未授权**。原D/F/A/路线及批准源码未改，没有重跑教师。见 [真实实验结果](rc3_s1a_results_20261106/README.md)、[256例明细](rc3_s1a_results_20261106/PER_TEACHER.csv)、[重载问题与最小修复](rc3_s1a_results_20261106/NAVIGATION_REPLAY_FINDING.md) 和 [下一步](rc3_s1a_results_20261106/NEXT_STEP_DECISION.md)。当前准确活动版本与权限见 [批准执行状态](rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json)，S1-B/S2/S3和原60边界不自动解除。
+
+**S1-A导航兼容修复已完成，S1-B技术GO**：实际生产路径256/256重放、512保存路线复核、96完整/160简化原身份保留，另6次同图LRU交错通过；原1482文件/564,969,808字节未变。28项格式/来源负测与阶段桥接33断言、独立5125断言通过，新scene/nav/native/H/model/optimizer均0。新执行源码绑定SHA为`0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0`，旧v3协议/435b绑定/原教师不改；新源码及S1-B正式执行仍需对应明确批准/授权。见 [实际修复与验收](rc3_navigation_compat_20261106/README.md)、[新源码绑定](rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json) 和 [获准即执行的阶段计划](rc3_navigation_compat_20261106/S1_B_EXECUTION_PLAN.json)。没有运行S1-B/S2/S3，原60继续封存。
 
 ## 获取完整文件
 

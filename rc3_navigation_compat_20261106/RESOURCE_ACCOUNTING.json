@@ -1,0 +1,143 @@
+{
+  "schema": "rc3-navigation-compat-resource-accounting-v1",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "scope": "Zero-science engineering repair and saved-data regression; separate from completed S1-A and unstarted S1-B.",
+  "status": "COMPLETE_ENGINEERING_PASS",
+  "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+  "actual_new_scientific_resources": {
+    "new_scene_generations": 0,
+    "new_F_A_generations": 0,
+    "navigation_solves": 0,
+    "native_Detour16_calls": 0,
+    "H_calls": 0,
+    "teacher_top_level_evaluations": 0,
+    "model_initializations": 0,
+    "optimizer_initializations": 0,
+    "optimizer_updates": 0,
+    "S3_task_semantic_reads": 0,
+    "old60_task_semantic_reads": 0
+  },
+  "engineering_processes": [
+    {
+      "name": "navigation_schema18",
+      "status": "PASS",
+      "body_wall_s": 3.472965100001602,
+      "full_process_wall_s": null,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "navigation_schema26",
+      "status": "PASS",
+      "body_wall_s": 6.1248603999993065,
+      "full_process_wall_s": 19.9422969,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "production_teacher_replay_initial256",
+      "status": "PASS",
+      "body_wall_s": 183.964985300001,
+      "full_process_wall_s": 189.5772573,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "navigation_schema_final28",
+      "status": "PASS",
+      "body_wall_s": 7.43662459999905,
+      "full_process_wall_s": 24.2798292,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "production_teacher_replay_final256_plus6",
+      "status": "PASS",
+      "body_wall_s": 212.0792121000013,
+      "full_process_wall_s": 230.7493598,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "stage_bridge01",
+      "status": "PASS",
+      "body_wall_s": 1.5476454000017839,
+      "full_process_wall_s": 4.4727678,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "stage_bridge02",
+      "status": "PASS",
+      "body_wall_s": 1.113228899997921,
+      "full_process_wall_s": null,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "stage_bridge_final",
+      "status": "PASS",
+      "body_wall_s": 1.0791776000005484,
+      "full_process_wall_s": 8.899774399997114,
+      "all_science_model_optimizer_calls": 0
+    },
+    {
+      "name": "independent_standard_library_audit",
+      "status": "PASS",
+      "body_wall_s": 13.313470600001892,
+      "full_process_wall_s": null,
+      "all_science_model_optimizer_calls": 0
+    }
+  ],
+  "known_body_process_wall_s_sum": 430.1321700000044,
+  "known_full_process_wall_s_sum": 477.9212853999971,
+  "timing_scope": "Processes overlap; sums are process accounting, NOT total task elapsed time or deployment time. Body is nested within full process and must not be added again. Unknown interpreter/static/Git/file-maintenance time remains null. No task-global wall claim.",
+  "full_task_elapsed_s": null,
+  "production_example_reads_all_engineering_runs": 518,
+  "final_production_ledger": {
+    "parent_requests": 262,
+    "parent_artifact_loads": 262,
+    "navigation_artifact_loads": 257,
+    "view_extractions": 262,
+    "teacher_label_reads": 262,
+    "navigation_memory_cache_hits": 5
+  },
+  "final_assertions": {
+    "production_replay": 49430,
+    "independent": 5125,
+    "stage_bridge": 33,
+    "schema_and_provenance_test_cases": 28,
+    "stage_bridge_expected_rejections": 15
+  },
+  "scientific_forbidden_operations_final": {
+    "rc3_baseline.baseline.navigation": 0,
+    "rc3_fast.scenes.make_complex_scene": 0,
+    "rc3_fast.solver.vectorized_feasibility": 0,
+    "rc3_constructive.problem.resample_tasks": 0,
+    "rc3_constructive.baselines.postprocess": 0,
+    "rc3_global_local.terminal.finish": 0,
+    "rc3_global_local_impl_review.endpoint_baselines.run_endpoint": 0,
+    "rc3_global_local_trainer.runner.run_endpoint": 0,
+    "rc3_global_local_trainer.runner.finish": 0,
+    "rc3_v4.runtime.run": 0,
+    "GlobalLocalPolicy.__init__": 0,
+    "Module.__init__": 0,
+    "rc3_global_local_trainer.engine.make_optimizer": 0,
+    "Optimizer.__init__": 0,
+    "Adam.step": 0
+  },
+  "engineering_failures": 0,
+  "earlier_successful_revisions_preserved": true,
+  "temporary_negative_fixture_bytes_last_suite": 56771102,
+  "temporary_fixture_scope": "Isolated resaved copies of existing arrays, not scientific generation; checked project-local paths, cleaned after tests, no permanent duplicate pool.",
+  "original_S1_A_artifacts": {
+    "files": 1482,
+    "bytes": 564969808,
+    "all_hashes_passed": true,
+    "base_commit": "0b715b1eedfd3107a1e5188c25c60fe7fde113f1"
+  },
+  "original_artifacts_written": 0,
+  "prior_scientific_S1_A_resources_not_charged_this_round": {
+    "native": 256,
+    "H": 256,
+    "top_level": 512,
+    "stage_wall_s": 190.15379480000047,
+    "optimizer_updates": 0
+  },
+  "new_weights_or_model_checkpoints": 0,
+  "S1_B_scientific_execution": "NOT_EXECUTED",
+  "Git_and_LFS": "Maintenance, not scientific queries. Final publication separately recorded."
+}

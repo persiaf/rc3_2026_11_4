@@ -17,7 +17,7 @@ from rc3_global_local.terminal import finish
 from rc3_global_local_impl_review.endpoint_baselines import run_endpoint
 from rc3_nav_value.r1.oracle import _empty_internal, _instrument
 from .approval import (ROOT, V2, REGISTRY_V2, AdmissionError, digest, read,
-                       require_authority, output_directory)
+                       require_authority, output_directory, teacher_source_binding)
 from .data import (TrainingRegistry, TrainingSchedule, SceneProvider, plain,
                    write_new, journal, add)
 from .engine import Trainer, make_optimizer, fork_from_supervised
@@ -182,13 +182,29 @@ class TeacherPool:
             count=256, labels=labels, ledger=self.ledger, elapsed_wall_s=self.clock.elapsed_s,
             source_binding=self.provider.permit.binding))
 
+    def _read_index(self):
+        index_path = self.folder/'POOL_INDEX.json'
+        index = read(index_path)
+        replay = self.provider.permit.binding.get('legacy_teacher_replay')
+        if replay is not None:
+            teacher_source_binding(self.provider.permit.binding)
+            replay_path = (ROOT/replay['manifest_path']).resolve()
+            if (not replay_path.is_relative_to(ROOT) or not replay_path.is_file()
+                    or digest(replay_path) != replay['manifest_sha256']):
+                raise ValueError('Legacy teacher replay declaration bytes differ')
+            declared = read(replay_path)
+            if (index_path.resolve() != (ROOT/declared.get('pool_index_path', '')).resolve()
+                    or digest(index_path) != declared.get('pool_index_sha256')):
+                raise ValueError('Legacy teacher pool original path/hash differs')
+        return index
+
     def validate(self):
-        index = read(self.folder/'POOL_INDEX.json')
+        index = self._read_index()
         if (index['count'] != 256 or len(index['labels']) != 256
                 or [r['index'] for r in index['labels']] != list(range(256))
                 or any(r['file'] != f'label_{r["index"]:03}.json' for r in index['labels'])
                 or index['registry_sha256'] != self.registry.sha256
-                or index['source_binding'] != self.provider.permit.binding):
+                or index['source_binding'] != teacher_source_binding(self.provider.permit.binding)):
             raise ValueError('Teacher pool count/source/registry mismatch')
         for r in index['labels']:
             if digest(self.folder/r['file']) != r['sha256']:
@@ -199,7 +215,7 @@ class TeacherPool:
         if isinstance(index, bool) or not 0 <= int(index) < 256:
             raise ValueError('Teacher label index outside fixed pool')
         path = self.folder/f'label_{int(index):03}.json'
-        frozen_index = read(self.folder/'POOL_INDEX.json')
+        frozen_index = self._read_index()
         if digest(path) != frozen_index['labels'][int(index)]['sha256']:
             raise ValueError('Teacher label changed after pool validation')
         row = read(path)

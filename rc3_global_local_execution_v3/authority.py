@@ -14,7 +14,7 @@ import sys
 
 from rc3_global_local_trainer.approval import (
     ROOT, AdmissionError, ExecutionPermit, digest, read,
-    source_binding as trainer_source_binding)
+    source_binding as trainer_source_binding, teacher_source_binding)
 from rc3_global_local_trainer.data import write_new
 
 HERE = Path(__file__).resolve().parent
@@ -84,7 +84,8 @@ def _project_file(path, label):
 
 
 def require_stage_authority(protocol_path, registry_path, approval_path,
-                            authorization_path, stage, seed, experiment_id):
+                            authorization_path, stage, seed, experiment_id,
+                            source_manifest_path=None):
     if stage not in STAGES:
         raise AdmissionError('Only S1-A/S1-B/S2 are supported; S3 remains sealed')
     if (stage == 'S1-A' and seed is not None) or (stage != 'S1-A' and (type(seed) is not int or seed not in SEEDS)):
@@ -100,7 +101,8 @@ def require_stage_authority(protocol_path, registry_path, approval_path,
     a, e = read(ap), read(ep)
     sources, ph, rh = source_binding(), digest(pp), digest(rp)
     h = read(ROOT/'rc3_global_local/S0_protocol.json')['H_sha256']
-    manifest = read(SOURCE_BINDING)
+    manifest_path = _project_file(source_manifest_path or SOURCE_BINDING, 'Execution source manifest')
+    manifest = read(manifest_path)
     if (manifest.get('protocol_sha256') != ph or manifest.get('registry_sha256') != rh
             or manifest.get('source_sha256') != sources or manifest.get('H_sha256') != h):
         raise AdmissionError('Execution source manifest is absent or stale')
@@ -122,7 +124,7 @@ def require_stage_authority(protocol_path, registry_path, approval_path,
             raise AdmissionError('Engineering authorization fixtures cannot enter formal execution')
         if (receipt.get('protocol_sha256') != ph or receipt.get('registry_sha256') != rh
                 or receipt.get('source_sha256') != sources or receipt.get('H_sha256') != h
-                or receipt.get('source_manifest_sha256') != digest(SOURCE_BINDING)):
+                or receipt.get('source_manifest_sha256') != digest(manifest_path)):
             raise AdmissionError('Protocol/registry/source/H/manifest approval binding mismatch')
     if a.get('status') != 'APPROVED' or a.get('approved_by') != 'user' or not a.get('authorization_text'):
         raise AdmissionError('Explicit user protocol approval is missing')
@@ -149,9 +151,81 @@ def require_stage_authority(protocol_path, registry_path, approval_path,
     predecessors = e.get('predecessors', {})
     if not isinstance(predecessors, dict) or any(not isinstance(k, str) or not isinstance(v, str) for k,v in predecessors.items()):
         raise AdmissionError('Explicit predecessor receipt hashes are required')
-    binding = science_binding(ph, rh, sources, h, experiment_id, digest(ap), digest(SOURCE_BINDING))
+    binding = science_binding(ph, rh, sources, h, experiment_id, digest(ap), digest(manifest_path))
+    replay = manifest.get('legacy_teacher_replay')
+    if replay is not None:
+        if stage == 'S1-A':
+            raise AdmissionError('Legacy teacher compatibility revision cannot repeat S1-A')
+        binding['legacy_teacher_replay'] = validate_legacy_teacher_replay(replay, binding)
     execution = ExecutionPermit(pp, rp, ph, rh, binding, (LEGACY_STAGES[stage],), digest(ap), digest(ep))
     return StagePermit(execution, stage, seed, experiment_id, ep, copy.deepcopy(e), copy.deepcopy(predecessors))
+
+
+def legacy_replay_manifest(binding):
+    """Read the exact immutable replay declaration; no data generation."""
+    replay = binding.get('legacy_teacher_replay')
+    if replay is None:
+        return None
+    teacher_source_binding(binding)  # Validate descriptor shape before use.
+    path = _project_file(ROOT/replay['manifest_path'], 'Legacy teacher replay manifest')
+    if digest(path) != replay['manifest_sha256']:
+        raise AdmissionError('Legacy teacher replay manifest bytes differ')
+    return read(path)
+
+
+def validate_legacy_teacher_replay(replay, binding):
+    """Prove historical S1-A provenance without changing its original bytes."""
+    checked = dict(binding, legacy_teacher_replay=copy.deepcopy(replay))
+    old = teacher_source_binding(checked)
+    for key in ('protocol_sha256', 'registry_sha256', 'H_sha256', 'experiment_id'):
+        if old.get(key) != binding.get(key):
+            raise AdmissionError('Legacy teacher protocol/registry/H/experiment differs')
+    if old.get('legacy_teacher_replay') is not None:
+        raise AdmissionError('Nested legacy teacher source substitutions are forbidden')
+    m = legacy_replay_manifest(checked)
+    if m.get('science_binding') != old:
+        raise AdmissionError('Legacy replay declaration has a different original scientific identity')
+    run = HERE/'runs'/binding['experiment_id']
+    if m.get('run') != run.relative_to(ROOT).as_posix():
+        raise AdmissionError('Legacy teacher replay cannot move to a different run')
+    expected_paths = {
+        'stage_complete': run/'stage_admission/S1-A/COMPLETE.json',
+        'pool_index': run/'teachers256/POOL_INDEX.json',
+        'run_manifest': run/'RUN_MANIFEST.json',
+    }
+    for name, path in expected_paths.items():
+        if (m.get(name+'_path') != path.relative_to(ROOT).as_posix()
+                or not path.is_file() or digest(path) != m.get(name+'_sha256')):
+            raise AdmissionError('Legacy teacher '+name+' source/content differs')
+    old_manifest = _project_file(ROOT/m.get('source_manifest_path', ''), 'Original source manifest')
+    if (digest(old_manifest) != m.get('source_manifest_sha256')
+            or digest(old_manifest) != old.get('source_manifest_sha256')):
+        raise AdmissionError('Original teacher execution source manifest differs')
+    old_sources = read(old_manifest)
+    if (old_sources.get('source_sha256') != old.get('source_sha256')
+            or old_sources.get('protocol_sha256') != old.get('protocol_sha256')
+            or old_sources.get('registry_sha256') != old.get('registry_sha256')
+            or old_sources.get('H_sha256') != old.get('H_sha256')):
+        raise AdmissionError('Original teacher source manifest does not match its identity')
+    approval = _project_file(ROOT/m.get('protocol_approval_path', ''), 'Original user approval')
+    a = read(approval)
+    if (digest(approval) != m.get('protocol_approval_sha256')
+            or digest(approval) != old.get('approval_sha256')
+            or a.get('status') != 'APPROVED' or a.get('approved_by') != 'user'
+            or not a.get('authorization_text') or a.get('engineering_fixture')
+            or a.get('non_executable_fixture')
+            or a.get('source_sha256') != old.get('source_sha256')
+            or a.get('source_manifest_sha256') != old.get('source_manifest_sha256')
+            or any(a.get(k) != old.get(k) for k in ('protocol_sha256', 'registry_sha256', 'H_sha256'))):
+        raise AdmissionError('Original teacher user approval differs')
+    if read(expected_paths['run_manifest']).get('binding') != old:
+        raise AdmissionError('Original run manifest belongs to another source identity')
+    if read(expected_paths['pool_index']).get('source_binding') != old:
+        raise AdmissionError('Original pool index belongs to another source identity')
+    completed, complete_hash = StageChain(run, old).completed('S1-A')
+    if complete_hash != m['stage_complete_sha256'] or completed.get('science_binding') != old:
+        raise AdmissionError('Original S1-A completion identity differs')
+    return copy.deepcopy(replay)
 
 
 def output_directory(path, experiment_id, *, existing=False):
@@ -200,7 +274,11 @@ class StageChain:
         f = self.path(key,'COMPLETE.json')
         if not f.is_file(): raise AdmissionError('Required predecessor is incomplete: '+key)
         value = read(f)
-        if value.get('status') != 'COMPLETE' or value.get('science_binding') != self.binding:
+        expected_binding = teacher_source_binding(self.binding) if key == 'S1-A' else self.binding
+        replay = legacy_replay_manifest(self.binding) if key == 'S1-A' else None
+        if replay is not None and digest(f) != replay.get('stage_complete_sha256'):
+            raise AdmissionError('Original teacher completion bytes differ')
+        if value.get('status') != 'COMPLETE' or value.get('science_binding') != expected_binding:
             raise AdmissionError('Predecessor scientific identity or status differs: '+key)
         if value.get('stage_key') != key:
             raise AdmissionError('Predecessor stage identity differs')

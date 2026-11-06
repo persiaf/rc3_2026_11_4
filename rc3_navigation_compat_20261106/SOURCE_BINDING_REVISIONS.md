@@ -1,0 +1,7 @@
+# 新执行绑定元数据修订
+
+旧正式435b源码绑定及全部科学证据没有改动。新的兼容绑定在交付前只读核对时发现，继承的重复字段runtime_source_sha256仍列旧33源，生产实际使用的source_sha256已正确列新34源。
+
+当前SOURCE_BINDING_UPDATED.json统一两字段为相同的当前34源，SHA256为 `0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0`。未改变任何生产源码、算法、数据、预算或回归结果，全部最终回归source map仍有效。先前未批准候选原字节保留在source_revisions/compatibility_metadata01.json，SHA为 `0e0b95ca2ebd4f92cba81622dde0cf0ce1e887fc0b997bd7687845e62fca0190`；它没有被批准或用于科学执行。
+
+原教师33源来源继续通过legacy_teacher_replay的完整旧科学binding与435b原manifest明确保留。此次只修元数据表达，不读取或重跑教师、模型或优化器。

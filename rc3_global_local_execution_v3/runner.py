@@ -8,17 +8,38 @@ import time
 
 import torch
 
-from rc3_global_local_trainer.approval import AdmissionError, digest, read
+from rc3_global_local_trainer.approval import AdmissionError, digest, read, teacher_source_binding
 from rc3_global_local_trainer.data import SceneProvider, TrainingRegistry, write_new
 from rc3_global_local_trainer.runner import TrainingRun, StageClock, TeacherPool
 from .authority import (ROOT, PROTOCOL, REGISTRY, SEEDS, StagePermit, StageChain,
-    require_stage_authority, output_directory, stage_key)
+    require_stage_authority, output_directory, stage_key, legacy_replay_manifest)
 
 
 class StageTrainingRun(TrainingRun):
     """Reuse frozen math; only admission overhead and cumulative clocks adapt."""
     def __init__(self, permit, folder, admission_overhead_s=0.):
-        super().__init__(permit, folder)
+        manifest = Path(folder)/'RUN_MANIFEST.json'
+        if (permit.binding.get('legacy_teacher_replay') is not None
+                and manifest.is_file() and read(manifest).get('binding') == teacher_source_binding(permit.binding)):
+            # Preserve S1-A's immutable manifest. Current checkpoints, Adam/RNG
+            # and training logs remain bound to the newly approved code version.
+            self.permit, self.folder = permit, Path(folder)
+            self.protocol = read(permit.protocol_path)
+            self.registry = TrainingRegistry(permit.registry_path)
+            self.stop_requested = False
+            self.contexts = {}
+            revision = self.folder/('SOURCE_REVISION_'+permit.binding['source_manifest_sha256']+'.json')
+            record = dict(schema='rc3-source-revision-run-admission-v1', binding=permit.binding,
+                original_run_manifest_sha256=digest(manifest), execution_scopes_require_separate_authorization=['S1-B','S2'],
+                target_role_whitelist=['train', 'development'], S3_allowed=False,
+                checkpoint_every_updates=32, original_teacher_files_preserved=True)
+            if revision.exists():
+                if read(revision) != record:
+                    raise AdmissionError('Existing source revision admission differs')
+            else:
+                write_new(revision, record)
+        else:
+            super().__init__(permit, folder)
         self.admission_overhead_s = float(admission_overhead_s)
         self._initial_offset_applied = False
 
@@ -28,7 +49,12 @@ class StageTrainingRun(TrainingRun):
             clock.before_s += self.admission_overhead_s
             self._initial_offset_applied = True
             clock.check()
-        return super()._components(phase,seed,limit_s,clock,record_context)
+        values = super()._components(phase,seed,limit_s,clock,record_context)
+        if phase in ('S1', 'continued_SL'):
+            # Supervised phases consume only the fixed existing teacher inputs.
+            # Missing artifacts must never generate free replacement data.
+            values[3].read_only = True
+        return values
 
     def _resume(self, checkpoint, trainer, provider, clock, folder):
         super()._resume(checkpoint, trainer, provider, clock, folder)
@@ -81,10 +107,13 @@ def teacher_artifacts(folder,binding):
     folder=Path(folder).resolve();pool=folder/'teachers256';index=pool/'POOL_INDEX.json'
     if not index.is_file(): raise AdmissionError('Shared teacher pool is incomplete')
     r=read(index)
+    replay=legacy_replay_manifest(binding)
+    if replay is not None and digest(index)!=replay.get('pool_index_sha256'):
+        raise AdmissionError('Original teacher pool index bytes differ')
     labels=r.get('labels',[])
     if (r.get('schema')!='rc3-shared-teacher-pool-v1' or r.get('count')!=256
             or r.get('registry_sha256')!=binding['registry_sha256']
-            or r.get('source_binding')!=binding or len(labels)!=256
+            or r.get('source_binding')!=teacher_source_binding(binding) or len(labels)!=256
             or [x.get('index') for x in labels]!=list(range(256))):
         raise AdmissionError('Teacher pool scientific identity or complete count differs')
     specs=list(TrainingRegistry(REGISTRY).teacher_specs())
@@ -246,12 +275,13 @@ def main(argv=None):
     parser.add_argument('--seed',type=int);parser.add_argument('--experiment-id',required=True)
     parser.add_argument('--protocol',default=str(PROTOCOL));parser.add_argument('--registry',default=str(REGISTRY))
     parser.add_argument('--protocol-approval');parser.add_argument('--stage-authorization')
+    parser.add_argument('--source-binding',help='Explicit new immutable execution source manifest; never replaces an old binding')
     parser.add_argument('--output',required=True);parser.add_argument('--existing-run',action='store_true')
     parser.add_argument('--resume')
     args=parser.parse_args(argv)
     try:
         permit=require_stage_authority(args.protocol,args.registry,args.protocol_approval,
-            args.stage_authorization,args.stage,args.seed,args.experiment_id)
+            args.stage_authorization,args.stage,args.seed,args.experiment_id,args.source_binding)
         folder=output_directory(args.output,args.experiment_id,existing=args.existing_run)
         if args.resume and not args.existing_run: raise AdmissionError('Resume must name an explicit existing run')
         torch.set_num_threads(2);torch.use_deterministic_algorithms(True)

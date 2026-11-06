@@ -12,6 +12,8 @@ from .approval import ROOT, ExecutionPermit, digest, read
 from rc3_fast.planner import map_key
 from rc3_global_local_impl_review.runtime_guards import (
     bind_navigation, current_navigation_sources, snapshot_parent, extract_snapshot)
+from .navigation_compat import (LegacyTeacherReplay, load_navigation_variants,
+    save_navigation_artifact, select_navigation)
 
 SIZES = ((4, 3), (6, 6), (8, 8))
 
@@ -128,12 +130,17 @@ class SceneProvider:
     Every generated task draw and navigation artifact is persisted with hashes.
     Bad F&A/connectivity stops before training; it is never replaced or repaired.
     """
-    def __init__(self, registry, folder, ledger, permit, record=None, deadline=None):
+    def __init__(self, registry, folder, ledger, permit, record=None, deadline=None, read_only=False):
         if not isinstance(permit, ExecutionPermit) or permit.registry_sha256 != registry.sha256:
             raise PermissionError('Formal data generation requires a matching admitted execution permit')
         self.registry, self.folder, self.ledger = registry, Path(folder), ledger
         self.permit, self.record, self.deadline = permit, record or (lambda _: None), deadline
-        self.folder.mkdir(parents=True, exist_ok=True)
+        self.read_only = bool(read_only)
+        self.legacy_replay = LegacyTeacherReplay(permit.binding)
+        if self.read_only and not self.folder.is_dir():
+            raise ValueError('Read-only teacher data folder is missing')
+        if not self.read_only:
+            self.folder.mkdir(parents=True, exist_ok=True)
         self.nav_cache = OrderedDict()
         gate = read(ROOT / 'rc3_global_local_impl_review/GEOMETRY_GATE.json')
         if gate['status'] != 'PASS':
@@ -147,45 +154,35 @@ class SceneProvider:
         if self.deadline is not None and time.perf_counter() >= self.deadline:
             raise TimeoutError('Data preparation stage wall budget reached')
 
-    def _navigation(self, scene):
+    def _navigation(self, scene, expected_parent_identity=None, F=None, A=None):
         self.check(); key = map_key(scene)
+        path = self.folder / 'navigation' / (key+'.npz')
+        receipt = path.with_suffix('.json')
+        self.legacy_replay.check_navigation(path)
         if key in self.nav_cache:
             add(self.ledger, 'navigation_memory_cache_hits')
             self.nav_cache.move_to_end(key)
-            return self.nav_cache[key]
-        path = self.folder / 'navigation' / (key+'.npz')
-        receipt = path.with_suffix('.json')
+            return select_navigation(self.nav_cache[key], scene, F, A, expected_parent_identity)
         if receipt.exists():
-            r = read(receipt)
-            if digest(path) != r['sha256'] or r['source_sha256'] != current_navigation_sources():
-                raise ValueError('Saved navigation source/content mismatch')
-            with np.load(path, allow_pickle=False) as a:
-                nav = dict(costs=a['costs'], coordinates=a['coordinates'].tolist(),
-                    service_nodes=a['service_nodes'].tolist(), predecessors=a['predecessors'],
-                    node_count=r['node_count'], edge_count=r['edge_count'])
+            variants = load_navigation_variants(scene, path)
             add(self.ledger, 'navigation_artifact_loads')
         else:
-            if path.exists():
-                raise ValueError('Incomplete navigation artifact; no overwrite or free retry')
+            if path.exists() or self.read_only:
+                raise ValueError('Missing/incomplete navigation artifact; no read-only generation or free retry')
             from rc3_baseline.baseline import navigation
             add(self.ledger, 'navigation_attempts'); tick = time.perf_counter()
             self.record(dict(event='navigation_start', map_key=key))
             nav = navigation(scene)
             add(self.ledger, 'navigation_completed')
-            path.parent.mkdir(parents=True, exist_ok=True)
-            with path.open('xb') as f:
-                np.savez_compressed(f, costs=nav['costs'], coordinates=nav['coordinates'],
-                    service_nodes=nav['service_nodes'], predecessors=nav['predecessors'])
-            write_new(receipt, dict(sha256=digest(path), source_sha256=current_navigation_sources(),
-                map_key=key, node_count=nav['node_count'], edge_count=nav['edge_count'], wall_s=time.perf_counter()-tick))
+            save_navigation_artifact(scene, nav, path, time.perf_counter()-tick)
+            variants = load_navigation_variants(scene, path)
             self.record(dict(event='navigation_complete', map_key=key, wall_s=time.perf_counter()-tick))
-        binding = bind_navigation(scene, nav, source_map_key=key,
-            source_sha256=current_navigation_sources(), provenance=dict(
-                producer='formal_registered_navigation', artifact_sha256=digest(path), map_key=key))
-        self.nav_cache[key] = binding
+        # Cache both historical representations. A map can have two ORIGINAL
+        # task identities; never let the first loaded task choose for later ones.
+        self.nav_cache[key] = variants
         while len(self.nav_cache) > 2:
             self.nav_cache.popitem(last=False)
-        return binding
+        return select_navigation(variants, scene, F, A, expected_parent_identity)
 
     def get(self, spec):
         self.check(); self.registry.validate_spec(spec)
@@ -196,9 +193,13 @@ class SceneProvider:
         receipt = folder / 'receipt.json'
         identity = {k: spec[k] for k in ('role', 'map_seed', 'task_seed', 'mode', 'A_condition')}
         add(self.ledger, 'parent_requests'); tick = time.perf_counter()
+        replay = None
         if receipt.exists():
             r = read(receipt)
-            if (r['spec'] != identity or r['source_sha256'] != self.permit.binding['source_sha256']
+            replay = self.legacy_replay.check_task(folder, r)
+            sources = (self.legacy_replay.manifest['science_binding']['source_sha256']
+                       if replay is not None else self.permit.binding['source_sha256'])
+            if (r['spec'] != identity or r['source_sha256'] != sources
                     or digest(folder/'scene.json') != r['scene_sha256'] or digest(folder/'arrays.npz') != r['arrays_sha256']):
                 raise ValueError('Saved task draw does not match its original receipt')
             scene = read(folder/'scene.json')
@@ -206,8 +207,8 @@ class SceneProvider:
                 F, A = a['F'], a['A']
             add(self.ledger, 'parent_artifact_loads')
         else:
-            if folder.exists():
-                raise ValueError('Partial task artifact; no silent re-generation')
+            if folder.exists() or self.read_only:
+                raise ValueError('Missing/partial task artifact; no read-only or silent re-generation')
             from rc3_fast.scenes import make_complex_scene
             from rc3_constructive.problem import resample_tasks
             from rc3_fast.solver import vectorized_feasibility
@@ -221,7 +222,8 @@ class SceneProvider:
         expected_geometry = self.geometry.get((spec['map_seed'], spec['mode']))
         if expected_geometry is None or map_key(scene) != expected_geometry:
             raise ValueError('Task draw geometry differs from admitted actual geometry gate')
-        parent = snapshot_parent(scene, F, A, navigation=self._navigation(scene))
+        expected_parent = r['parent_identity'] if receipt.exists() else None
+        parent = snapshot_parent(scene, F, A, navigation=self._navigation(scene, expected_parent, F, A))
         if receipt.exists() and r['parent_identity'] != parent.identity:
             raise ValueError('Saved parent interpretation differs from original receipt')
         # Validate full target bank connectivity/F&A even for a small window.
@@ -245,6 +247,8 @@ class SceneProvider:
         else:
             raise ValueError('Unknown endpoint convention')
         view = extract_snapshot(parent, spec['x0'], spec['y0'], spec['width'], spec['height'], entry, exit_)
+        if receipt.exists() and replay is not None and spec == replay['spec'] and view.identity != replay['view_identity']:
+            raise ValueError('Legacy teacher view identity differs from exact replay receipt')
         add(self.ledger, 'view_extractions')
         self.record(dict(event='view', spec=spec, identity=view.identity, description=view.description(),
                          wall_s=time.perf_counter()-tick))
