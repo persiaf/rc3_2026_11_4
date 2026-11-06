@@ -1,6 +1,6 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-06** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.06-global-local-preflight**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-06** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.06-global-local-trainer**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
 
 当前验证范围是二维静态批次任务与代理可达约束。真实机器人标定与 IK 暂缓。G2.3 的“局部窗口选择＋STOP”作为第三部分 DRL 核心的路线已结束追加训练，不能将这些记录解释为学习方法已经优于强规则。独立构造式研究已完成C0／C1和一次512更新C2小试：速度部分达标，质量及继续门槛未通过；随后完成冻结路线 C2.1：72 次共同后处理使 RL 与 Fixed3 的平均逐场景相对差缩至 +0.8170%，相同后处理下相对先验的学习增量区间仍跨零；没有追加训练或启动C3。归因见 [C2.1报告](rc3_constructive/REPORT_C21.md)，原小试详见 [研究目录](rc3_constructive/README.md) 与 [完整报告](rc3_constructive/REPORT_C012.md)。
 
@@ -17,6 +17,8 @@ R1研究证据冻结于提交 `df8cf28`。后续用户复核与候选研究边�
 研究内容三的目标固定为：在大规模复杂10×10父场景中进行深度强化学习训练，冻结策略后快速规划不同规模局部任务。监督和规则仅作辅助与对照，不能替代DRL核心。新独立支线已完成 [S0全局—局部环境一致性](rc3_global_local/REPORT_S0.md)：3父图18窗口、63条未训练轨迹及精确重放，1次无更新梯度探针；S1/S2/S3正式训练和性能验证未启动。完整目标与后续协议见 [固定研究目标](rc3_global_local/RESEARCH_OBJECTIVE.md) 与 [研究目录](rc3_global_local/README.md)。S0提交`057830d`已随`codex/global-local-preflight`研究分支历史上传GitHub；旧研究结论不因软件检查通过而改变。
 
 S1/S2正式执行前评审已完成：**正式训练REVISE，本轮工程准备PASS**。实际111物理布局满足预定独立划分；36端点基线与18全候选闭环参照通过；三个已存S0父图的9完整策略轨迹和3次反向通过，优化器更新为0。新增不可变输入/缓存与端点适配层，原S0/v1/v2原字节未改。v3仅为新提案，未激活；完整正式runner、batch/RNG/恢复与权重谱系验收仍须补齐。S3目标及原60测试未评价。见 [本轮全部交付](rc3_global_local_impl_review/README.md)、[实施判断](rc3_global_local_impl_review/IMPLEMENTATION_REVIEW.md) 与 [执行方案](rc3_global_local_impl_review/NEXT_STEP_DECISION.md)。用户明确要求GitHub交付后，已推送至`codex/global-local-preflight`，未合并main；[仓库内交付与远端核对记录](project_management/github_delivery_global_local_preflight/README.md)取代此前仅本地交付状态。
+
+S1/S2正式训练器已实现，登记工程验收与独立复核通过：batch4梯度等价、命名随机流、S1/S2连续与恢复状态逐位相同、独立权重分叉及无授权拒绝。累计21次工程Adam、12次真实完整H，正式科学训练更新0。教师失败后隐式重试预算漏洞已修并零更新回归；两次绑定和旧源字节保留。**工程GO，正式执行仍REVISE**：v2保持活动冻结设计，v3及执行澄清待正式批准，不自动激活，不消费S3/原60。见 [训练器六项交付](rc3_global_local_trainer/README.md)、[工程验收](rc3_global_local_trainer/TRAINER_VERIFICATION.md) 与 [下一步决定](rc3_global_local_trainer/NEXT_STEP_DECISION.md)。成果在`codex/global-local-preflight`交付，不合并main。
 
 ## 获取完整文件
 

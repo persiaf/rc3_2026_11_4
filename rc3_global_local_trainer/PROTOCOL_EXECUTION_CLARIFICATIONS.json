@@ -1,0 +1,31 @@
+{
+  "schema": "rc3-v3-execution-clarifications-proposal-v1",
+  "status": "PROPOSED_NOT_APPROVED_NOT_ACTIVE",
+  "v2_sha256": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+  "v3_sha256": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+  "no_frozen_file_modified": true,
+  "clarifications_requiring_explicit_approval": [
+    {
+      "field": "S2.schedule fixed sampling seed vs RNG_contract",
+      "implemented_candidate": "Detailed RNG_contract takes precedence: PCG64 S2_data keyed by protocol SHA and optimizer seed, each seed reproducible, dataset schedules not asserted identical across optimizer seeds."
+    },
+    {
+      "field": "amendment.performance_gates_and_budgets_unchanged",
+      "implemented_candidate": "Historical v1-to-v2 statement only. S1 wall caps and v3 necessary-condition/aggregation decisions are explicit new approvals, not unchanged v2 budgets/gates."
+    },
+    {
+      "field": "S2.schedule forced distinct vs one_legal_first",
+      "implemented_candidate": "Use only legal first action for both auxiliary roles when unique_first=1, independent suffix streams, unchanged weights, record degeneracy."
+    },
+    {
+      "field": "data/navigation and checkpoint IO accounting",
+      "implemented_candidate": "Preparation performed within calling phase cumulative clock; shared S2 includes source SL load, forks, RL, continuedSL, development, artifact/cache reads and checkpoint IO. Checkpoint close record charges large serialization overhead."
+    },
+    {
+      "field": "separate stage authorization files",
+      "implemented_candidate": "Current run identity binds one authorization receipt. Same approved scope may list teachers/S1/S2 but CLI stages execute explicitly; different later authorization-to-old-run linkage needs new reviewed support."
+    }
+  ],
+  "engineering_acceptance": "VERIFICATION_RESULT.json",
+  "does_not_authorize_training": true
+}

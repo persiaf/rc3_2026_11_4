@@ -1,0 +1,264 @@
+{
+  "schema": "rc3-independent-saved-trainer-audit-v1",
+  "reviewer": "/root/trainer_independent_review",
+  "status": "PASS_SAVED_ACCEPTANCE_EXACT_RESUME_AND_FULL_PARENT_EVIDENCE",
+  "base": "af8048149f6263e358f635385591950ab9a8f7c3",
+  "acceptance_result": "rc3_global_local_trainer/VERIFICATION_RESULT.json",
+  "acceptance_result_sha256": "eac4d819434d2063fe66adba29665e82893af1a4f60f934f896454ae3ec14116",
+  "resume_pairs": {
+    "S1": {
+      "continuous": "rc3_global_local_trainer/verification_runs/acceptance_01/checkpoints/S1_continuous.pt",
+      "restored": "rc3_global_local_trainer/verification_runs/acceptance_01/checkpoints/S1_resumed.pt",
+      "continuous_sha256": "2353e76a3c533e99f452a1a83e709d558a0fd7ed51fb57a544e7adf719dceb6d",
+      "restored_sha256": "9277d50fb86269d08662d2183be633cc164eb7f9298962cceb0070d10bd754e8",
+      "tensor_sha256": "bffec0a3ca89460d3f06f51cf50de1956964c0da29ab10d2eab76d8b0745eb42",
+      "fields": {
+        "model": {
+          "exact": true,
+          "scalar_elements": 1416,
+          "leaves": 25
+        },
+        "optimizer": {
+          "exact": true,
+          "scalar_elements": 2894,
+          "leaves": 112
+        },
+        "streams": {
+          "exact": true,
+          "scalar_elements": 8,
+          "leaves": 8
+        },
+        "ledger": {
+          "exact": true,
+          "scalar_elements": 9,
+          "leaves": 9
+        },
+        "cursors": {
+          "exact": true,
+          "scalar_elements": 3,
+          "leaves": 3
+        },
+        "weight_version": {
+          "exact": true,
+          "scalar_elements": 1,
+          "leaves": 1
+        },
+        "stopped": {
+          "exact": true,
+          "scalar_elements": 1,
+          "leaves": 1
+        },
+        "model_training": {
+          "exact": true,
+          "scalar_elements": 1,
+          "leaves": 1
+        },
+        "config": {
+          "exact": true,
+          "scalar_elements": 15,
+          "leaves": 15
+        },
+        "terminal_state": {
+          "exact": true,
+          "scalar_elements": 2,
+          "leaves": 2
+        },
+        "global_rng": {
+          "exact": true,
+          "scalar_elements": 6312,
+          "leaves": 634
+        }
+      },
+      "exclusions": "Wall time/RSS, physical checkpoint bytes, and observational diagnostic timings are not required to match."
+    },
+    "RL": {
+      "continuous": "rc3_global_local_trainer/verification_runs/acceptance_01/checkpoints/RL_continuous.pt",
+      "restored": "rc3_global_local_trainer/verification_runs/acceptance_01/checkpoints/RL_resumed.pt",
+      "continuous_sha256": "0ffae965cbe60168cb396265623a8b46b73bd65df8dea0030dd98255521025df",
+      "restored_sha256": "f89899464069ec8c50371e6eb5147e9abe89f28df4f4cd4c25690a7d3fb73b87",
+      "tensor_sha256": "05dd7185ce4c18e2ad9dc1218f3eb5bad0c1bc7c77e2989e6de597ca73184916",
+      "fields": {
+        "model": {
+          "exact": true,
+          "scalar_elements": 1416,
+          "leaves": 25
+        },
+        "optimizer": {
+          "exact": true,
+          "scalar_elements": 2894,
+          "leaves": 112
+        },
+        "streams": {
+          "exact": true,
+          "scalar_elements": 242984,
+          "leaves": 344
+        },
+        "ledger": {
+          "exact": true,
+          "scalar_elements": 12,
+          "leaves": 12
+        },
+        "cursors": {
+          "exact": true,
+          "scalar_elements": 3,
+          "leaves": 3
+        },
+        "weight_version": {
+          "exact": true,
+          "scalar_elements": 1,
+          "leaves": 1
+        },
+        "stopped": {
+          "exact": true,
+          "scalar_elements": 1,
+          "leaves": 1
+        },
+        "model_training": {
+          "exact": true,
+          "scalar_elements": 1,
+          "leaves": 1
+        },
+        "config": {
+          "exact": true,
+          "scalar_elements": 15,
+          "leaves": 15
+        },
+        "terminal_state": {
+          "exact": true,
+          "scalar_elements": 2,
+          "leaves": 2
+        },
+        "global_rng": {
+          "exact": true,
+          "scalar_elements": 6312,
+          "leaves": 634
+        }
+      },
+      "exclusions": "Wall time/RSS, physical checkpoint bytes, and observational diagnostic timings are not required to match."
+    }
+  },
+  "source_hashes_checked": 28,
+  "frozen_protocol_registry_pointer_sha256": {
+    "rc3_global_local/FUTURE_DESIGN_STATUS.json": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49",
+    "rc3_global_local/S2_S3_protocol_v2.json": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+    "rc3_global_local/future_seeds_v2.json": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+    "rc3_global_local_impl_review/PROPOSED_PROTOCOL_V3.json": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+    "rc3_global_local_impl_review/PROPOSED_SEEDS_V3.json": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a"
+  },
+  "formal_S1_S2": "REVISE_PENDING_FORMAL_PROTOCOL_APPROVAL_AND_EXECUTION_AUTHORITY",
+  "v3_activated": false,
+  "scientific_calls": {
+    "model_instantiation": 0,
+    "forward": 0,
+    "backward": 0,
+    "optimizer_updates": 0,
+    "task_generation": 0,
+    "navigation": 0,
+    "teacher": 0,
+    "full_H": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0
+  },
+  "wall_s": 0.3440946000009717,
+  "cpu_s": 0.09375,
+  "timing_scope": "Saved JSON/tensor/source verification only, after Python/torch import; static code review not independently timed.",
+  "script_sha256": "b162c4d7f95ba1db63b1d7da109f29efa38934a82aae12b18295e3ee7a5f386e",
+  "verification_run_history": [
+    {
+      "status": "PASS_SAVED_ACCEPTANCE_AND_EXACT_RESUME",
+      "wall_s": 0.3440946000009717,
+      "cpu_s": 0.09375,
+      "acceptance_result_sha256": "77235c14b6b6ec1ad440dfe759dfb31ff24a171b38fdbcd4e8fa22a4ec1007ec",
+      "script_sha256": "b162c4d7f95ba1db63b1d7da109f29efa38934a82aae12b18295e3ee7a5f386e"
+    },
+    {
+      "status": "TIMING_SCOPE_DIFFERENCE_FOUND_IN_READ_ONLY_PROBE",
+      "wall_s": null,
+      "cpu_s": null,
+      "scope": "First extended probe found 0.005439s receipt-snapshot versus run-end journal difference; reported for metadata correction, not algorithm failure. No model/planner call."
+    },
+    {
+      "status": "PASS_EXTENDED_SAVED_EVIDENCE",
+      "wall_s": 0.4823478999987856,
+      "cpu_s": 0.46875,
+      "scope": "Read-only source/journal/S0 array evidence; startup/static review excluded, no model or planner execution"
+    }
+  ],
+  "revision_coverage": {
+    "binding01_source_hashes": 28,
+    "changed_sources": [
+      "rc3_global_local_trainer/runner.py",
+      "rc3_global_local_trainer/verification.py"
+    ],
+    "old_changed_sources_preserved": true,
+    "core_unchanged": true,
+    "binding02_only_teacher_retry_guard": true,
+    "production_update_loop_unchanged": true
+  },
+  "independent_saved_engineering_checks": {
+    "journal_charges_exact": {
+      "model_encode_calls": 209,
+      "model_score_calls": 1770,
+      "mock_terminal_requests": 168,
+      "backward_calls": 89,
+      "optimizer_step_attempts_total": 21,
+      "small_fixture_mock_terminal_optimizer_steps": 20,
+      "real_full_terminal_attempts": 12,
+      "saved_S0_full_parent_RL_batch_updates": 1
+    },
+    "optimizer_completions": 21,
+    "runs": 2,
+    "registered_wall_s_from_journal_run_end": 15.738802100000612,
+    "all_caps_respected": true,
+    "real_complete_trajectories": 12,
+    "real_terminal_start_complete_pairs": 12,
+    "raw_action_transitions_checked": 1412,
+    "rewards_checked": 1412,
+    "final_service_stops_checked": 1129,
+    "H_monotonicity_and_reward_cost_identity": true,
+    "saved_parent_arrays_read": 3,
+    "new_plan_or_H_evaluations": 0,
+    "wall_s": 0.4823478999987856,
+    "cpu_s": 0.46875
+  },
+  "acceptance_metadata_refresh": {
+    "previous_result_sha256": "77235c14b6b6ec1ad440dfe759dfb31ff24a171b38fdbcd4e8fa22a4ec1007ec",
+    "current_result_sha256": "eac4d819434d2063fe66adba29665e82893af1a4f60f934f896454ae3ec14116",
+    "reason": "Registered budget wall now uses complete journal run-end sum; original RESULT snapshot sum retained separately. Sources/run artifacts/counters and scientific outcomes unchanged.",
+    "final_report_checks": {
+      "TRAINER_IMPLEMENTATION_REPORT.md": "PASS",
+      "TRAINER_VERIFICATION.md": "PASS",
+      "NEXT_STEP_DECISION.md": "PASS",
+      "RESOURCE_ACCOUNTING.json": "PASS",
+      "PROTOCOL_DECISION.md": "PASS",
+      "GIT_VERSION_AUDIT.json": "PASS_PRECOMMIT_METADATA_FINAL_REMOTE_OWNED_BY_ROOT"
+    }
+  },
+  "final_main_deliverable_checks": {
+    "TRAINER_IMPLEMENTATION_REPORT.md": {
+      "status": "PASS",
+      "sha256": "9bcc299c04ce6be32668d0b884cb7c8a579956a36945e2155016cc4bd50c1e9b"
+    },
+    "TRAINER_VERIFICATION.md": {
+      "status": "PASS",
+      "sha256": "e753470f5a61c3464b0c42d8104052f97a4b291c21f7272b5f38300b8619ef0d"
+    },
+    "PROTOCOL_DECISION.md": {
+      "status": "PASS",
+      "sha256": "bc05e82ce2d852879c28c4c5c6f7ed0c8a6a7e08cb271f1ec120cff93b49fbf2"
+    },
+    "RESOURCE_ACCOUNTING.json": {
+      "status": "PASS",
+      "sha256": "79681a767a5a970c168176274680950b8e2818f842af9fcfc7db95194f678930"
+    },
+    "GIT_VERSION_AUDIT.json": {
+      "status": "PASS",
+      "sha256": "8afbb741cc30160b3f25740fce8d6546ab03db56c17c66fd0f13dfd120681c13"
+    },
+    "NEXT_STEP_DECISION.md": {
+      "status": "PASS",
+      "sha256": "b3ba9bc18dd764c0ef92c5598a427ac75509d7b804bbc8adca10c5ddd11c6917"
+    }
+  },
+  "Git_audit_scope": "Verified current branch/base/preserved local refs/tags and14 new engineering pt files; final commit/push/remote SHA occurs after this review and remains root responsibility. No child network/Git mutation."
+}

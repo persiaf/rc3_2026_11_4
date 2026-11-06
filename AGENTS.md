@@ -6,6 +6,7 @@
 - 开始正式优化器前，检查模型/环境/奖励/mask/端点/验证、真实物理布局身份、算法适配、S1→S2→S3权重和数据谱系、资源预算、原生基线及H/交付目标一致性；先形成IMPLEMENTATION_REVIEW.md并判定GO/REVISE/BLOCKED。审查GO不自动授予训练或保留测试执行权限。
 - 查阅当前研究分支最新阶段状态与NEXT_STEP_DECISION.md，以及`rc3_global_local/FUTURE_DESIGN_STATUS.json`所引用的冻结设计。新协议提案不自动成为活动协议。实质算法/奖励/分布/预算/门槛变化必须新增协议及变更说明，在执行前绑定源码、H、环境与种子，不回写冻结版本。
 - 代码审查和有界零更新工程探针与正式训练分账。仅几何独立性检查不得生成保留任务、路线或成本；未来任务不可行不得通过静默换seed、删例或重采样解决。
+- 需要实际optimizer的工程验收，先单独登记用例、源码绑定、数值容差和累计次数/墙钟上限，真实更新与失败先扣账；不得并入正式S1/S2或作为质量提升证据。Checkpoint恢复须核权重/Adam/RNG/游标/查询预算，不用重置账或脏日志重放补跑。
 - 每轮保留IMPLEMENTATION_REVIEW.md、EXPERIMENT_REPORT.md、RESULT_TO_CLAIM.md、RESOURCE_ACCOUNTING.json、NEXT_STEP_DECISION.md与Git版本/远端核对记录。损失下降、梯度存在和软件检查PASS不能解释为规划性能提升；未执行阶段不得写成成功或失败。
 
 ## GitHub 同步

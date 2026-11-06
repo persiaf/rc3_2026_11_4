@@ -1,0 +1,13 @@
+{
+  "schema": "rc3-trainer-preexecution-numerical-contract-v1",
+  "registered_before_first_optimizer": true,
+  "gradient_rtol": 0.00001,
+  "gradient_atol": 0.000001,
+  "loss_rtol": 0.0000001,
+  "loss_atol": 0.0000001,
+  "reward_atol": 0.0000001,
+  "continuous_resume": "Exact tensor equality for CPU deterministic model, Adam, NamedStreams, global RNG, algorithm counters, terminal state and subsequent action/data trace. Only elapsed time and RSS observations excluded.",
+  "batch_equivalence": "Same initial model and independent copies of the exact same sampling streams. Record maximum absolute and relative gradient differences. Both allclose tolerances are frozen before any computation.",
+  "no_post_result_tolerance_selection": true,
+  "protocol_scope": "Engineering acceptance only; no v3 approval or formal science authorization."
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "rc3-trainer-engineering-verification-protocol-v1",
+  "registered_utc": "2026-11-06T04:51:27.644435+00:00",
+  "base_commit": "af8048149f6263e358f635385591950ab9a8f7c3",
+  "scope": "Engineering acceptance of implemented trainer, genuine but bounded optimizer updates; not formal S1/S2 research training, no protocol activation",
+  "fixed_goal": "Large complex parent scene DRL training; frozen fast complete planning of variable local task windows",
+  "active_v2_sha256": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+  "unapproved_v3_proposal_sha256": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+  "v3_activated": false,
+  "limits": {
+    "optimizer_step_attempts_total": 32,
+    "small_fixture_mock_terminal_optimizer_steps": 30,
+    "saved_S0_full_parent_RL_batch_updates": 2,
+    "real_full_terminal_attempts": 24,
+    "mock_terminal_requests": 3000,
+    "model_score_calls": 100000,
+    "backward_calls": 160,
+    "new_scene_task_generation": 0,
+    "new_navigation_preparation": 0,
+    "new_teacher_queries": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0,
+    "wall_s_cumulative_all_attempts": 900
+  },
+  "fixtures": {
+    "source": "Only original S0 saved parents cases0,1,2 and deterministic tiny synthetic policy/environment fixtures. No new map/task seed.",
+    "full_batch": "Saved S0 complete10x10 targets, batch4 with primary+2forced rows each, immutable runtime guards, genuine full H and validation, max2 batches total.",
+    "small": "Existing S0 subset targets or hand-defined tiny C/D/F data; mock terminal returns explicitly labeled, no true H/export; never used as formal teacher labels."
+  },
+  "acceptance_cases": [
+    "environment legal mask and reward sum equals negative full terminal J",
+    "primary first logprob included; forced first excluded; independent per-role RNG",
+    "batch4 joint loss/gradient versus sequential accumulation at fixed parameters, no optimizer",
+    "genuine S1 masked CE update and isolated untrained/frozenSL/RL/continuedSL forks",
+    "S2 continuous4 vs interrupted2+restored2 actual Adam: exact weights, optimizer tensors, RNG/sample traces and algorithm counters",
+    "S1 continuous3 vs interrupted1+restored2 actual Adam: exact endpoint and optimizer/data-stream state",
+    "empty/onefirst/zero-signal and invalid/nonfinite fail-closed without hidden recovery",
+    "checkpoint binding/hash corruption and model/cache version rejection",
+    "formal CLI no approval/auth fails before any generation or optimizer",
+    "actual saved-S0 full batch4 optimizer acceptance with full terminal H, feasibility and memory diagnostics"
+  ],
+  "planned_optimizer_usage": {
+    "S2_resume_comparison": 8,
+    "S1_resume_comparison": 6,
+    "fork_isolation_updates_max": 6,
+    "degenerate_case_updates_max": 2,
+    "real_full_parent_batch_updates_max": 2,
+    "contingency_within_total_cap": 8
+  },
+  "budget_enforcement": "Pre-debit every real Adam.step and real terminal attempt to append-only fsynced journal. All runs, failures and retries cumulatively count. Source revisions require new pre-run binding receipt and remain under same total ceiling; no automatic cap increase.",
+  "source_binding": "A separate immutable execution-binding JSON records final implementation and verification script hashes immediately BEFORE any executed acceptance. This registration is a test plan, not approval of v3 or formal training.",
+  "success": "All numerical/lineage/restore/gate checks pass with no unexpected scientific fixture failures and all caps respected; scientific performance untested.",
+  "failure": "Preserve failures and checkpoints/logs; repair only semantically identical bugs and rebind revision before rerun if cap remains. No seed/case replacement, reward-zero rescue, formal S2 or S3."
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "rc3-trainer-engineering-resource-accounting-v1",
+  "date": "2026-11-06",
+  "scope": "Engineering acceptance with pre-registered actual optimizer updates; not formal scientific S1/S2",
+  "base_commit": "af8048149f6263e358f635385591950ab9a8f7c3",
+  "caps": {
+    "optimizer_step_attempts_total": 32,
+    "small_fixture_mock_terminal_optimizer_steps": 30,
+    "saved_S0_full_parent_RL_batch_updates": 2,
+    "real_full_terminal_attempts": 24,
+    "mock_terminal_requests": 3000,
+    "model_score_calls": 100000,
+    "backward_calls": 160,
+    "new_scene_task_generation": 0,
+    "new_navigation_preparation": 0,
+    "new_teacher_queries": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0,
+    "wall_s_cumulative_all_attempts": 900
+  },
+  "actual_cumulative_counters": {
+    "model_encode_calls": 209,
+    "model_score_calls": 1770,
+    "mock_terminal_requests": 168,
+    "backward_calls": 89,
+    "optimizer_step_attempts_total": 21,
+    "small_fixture_mock_terminal_optimizer_steps": 20,
+    "real_full_terminal_attempts": 12,
+    "saved_S0_full_parent_RL_batch_updates": 1
+  },
+  "optimizer_breakdown": {
+    "actual_Adam_calls": 21,
+    "actual_Adam_completed": 21,
+    "mock_terminal_small_fixture_updates": 20,
+    "saved_S0_full_parent_batch4_updates": 1,
+    "engineering_S1_CE_updates": 8,
+    "engineering_continued_SL_CE_updates": 1,
+    "engineering_RL_updates": 12,
+    "formal_S1_scientific_updates": 0,
+    "formal_S2_scientific_updates": 0
+  },
+  "real_planning": {
+    "full_parent_RL_trajectories": 12,
+    "terminal": {
+      "terminal_requests": 12,
+      "terminal_cache_hits": 0,
+      "terminal_attempts": 12,
+      "terminal_completed": 12,
+      "terminal_failed": 0,
+      "full_H_calls": 12,
+      "export_attempts": 12,
+      "exports": 12,
+      "validation_attempts": 12,
+      "validation_completed": 12
+    },
+    "internal_H_search": {
+      "counts": {
+        "construct": 0,
+        "two_opt": 48,
+        "joint_search": 12,
+        "recipe": 0
+      },
+      "inclusive_s": {
+        "construct": 0.0,
+        "two_opt": 0.2919326999999612,
+        "joint_search": 0.08506240000133403,
+        "recipe": 0.0
+      },
+      "exclusive_s": {
+        "construct": 0.0,
+        "two_opt": 0.2919326999999612,
+        "joint_search": 0.05224070000440406,
+        "recipe": 0.0
+      }
+    },
+    "cached_rewards": 0,
+    "source_parent_artifact_loads": 3,
+    "new_scene_task_draw_generation": 0,
+    "new_navigation": 0,
+    "new_teacher_queries": 0,
+    "S3_target_queries": 0,
+    "original60_semantic_reads": 0
+  },
+  "mock_and_label_replay": {
+    "mock_terminal_requests": 168,
+    "supervised_replay": "Deterministic numeric label-state replay only; no teacher or H. Per-trainer counters retained in checkpoints/traces.",
+    "hand_defined_numerical_fixtures": "Not physical map/task generator output; never enter formal training dataset."
+  },
+  "validation": {
+    "registered_case_groups": 10,
+    "passed_case_groups": 10,
+    "unexpected_failures": 0,
+    "expected_rejection_examples": "Bad labels/masks/nonfinite/empty batches/checkpoint corruption/duplicate checkpoint/formal missing authority/S3 role/partial teacher pool; retained as labeled negative fixtures.",
+    "independent_receipt": "INDEPENDENT_AUDIT.json"
+  },
+  "timing": {
+    "acceptance_run_end_wall_s": [
+      14.204904500000339,
+      1.533897600000273
+    ],
+    "cumulative_registered_acceptance_wall_s": 15.738802100000612,
+    "RESULT_snapshot_wall_s_sum": 15.733363100000133,
+    "full_parent_batch4_case_wall_s": 8.0975868000005,
+    "process_startup_import_wall_s": null,
+    "authoring_static_review_and_Git_wall_s": null,
+    "complete_task_wall_s": null,
+    "scope": "Engineering bodies after imports; case times nested within run times, do not add. Unmeasured startup/authoring overhead is not zero and not fabricated."
+  },
+  "memory": {
+    "peak_RSS_OS_bytes": 931483648,
+    "device": "cpu",
+    "torch_threads": 2,
+    "threadpool_limit": 1,
+    "full_batch4_measured": true,
+    "trained_policy_or_new_task_peak_measured": false
+  },
+  "artifacts": {
+    "checkpoint_pt_files_including_expected_corruption": 14,
+    "checkpoint_file_bytes": 3601278,
+    "LFS_required": true,
+    "expected_corruption": "RL_corrupt.pt/S1_corrupt.pt are intentionally bad restore fixtures, never approved model weights.",
+    "no_old_checkpoint_overwritten": true
+  },
+  "source_revision_history": {
+    "binding01": "EXECUTION_BINDING_01.json",
+    "binding02": "EXECUTION_BINDING_02.json",
+    "old_sources": "source_revisions/binding01",
+    "revision02_extra_optimizer_updates": 0,
+    "revision02_extra_real_H": 0
+  },
+  "formal_training_budget_suggestion": {
+    "shared_teacher_native_plus_H": 512,
+    "shared_teacher_wall_s": 1800,
+    "per_seed_S1_updates": 256,
+    "per_seed_S1_wall_s": 1800,
+    "per_seed_RL_updates": 512,
+    "per_seed_continued_SL_updates": 512,
+    "per_seed_S2_terminal": 8192,
+    "per_seed_S2_shared_wall_s": 7200,
+    "three_seed_all_optimizer_updates": 3840,
+    "estimated_actual_runtime_guaranteed": false
+  },
+  "fixed_goal_unchanged": true,
+  "v3_approved_or_activated": false,
+  "large_scale_training_executed": false,
+  "main_merged": false
+}

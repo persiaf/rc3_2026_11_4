@@ -1,0 +1,6725 @@
+{
+  "schema": "rc3-trainer-v2-v3-protocol-comparison-v1",
+  "date": "2026-11-06",
+  "reviewer": "/root/trainer_protocol_review",
+  "active_design": {
+    "schema": "rc3-global-local-active-future-design-v2",
+    "date": "2026-11-06",
+    "status": "FROZEN_DESIGN_NOT_STARTED",
+    "active_protocol": "S2_S3_protocol_v2.json",
+    "active_protocol_sha256": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+    "active_seed_registry": "future_seeds_v2.json",
+    "active_seed_registry_sha256": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+    "superseded_design_retained": "S2_S3_protocol.json",
+    "superseded_design_sha256": "6776ea5c1f82debada769d1950985316fe06ff873455293fcad743adb94493b3",
+    "superseded_design_formal_execution_allowed": false,
+    "S0_registration_and_results_unchanged": true,
+    "formal_optimizer_updates": 0,
+    "S3_task_queries": 0,
+    "reason": "Correct map-seed/layout-identity aliasing, pending mandatory canonical geometry gate."
+  },
+  "input_sha256": {
+    "rc3_global_local/S2_S3_protocol_v2.json": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+    "rc3_global_local_impl_review/PROPOSED_PROTOCOL_V3.json": "76cce296e62476801c77ec9e17a5446d563c5614f1651281e04a3f8d44a7ea77",
+    "rc3_global_local/future_seeds_v2.json": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+    "rc3_global_local_impl_review/PROPOSED_SEEDS_V3.json": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+    "rc3_global_local/FUTURE_DESIGN_STATUS.json": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49"
+  },
+  "formal_S1_S2_decision": "REVISE_PENDING_PROTOCOL_APPROVAL_AND_TECHNICAL_ACCEPTANCE",
+  "v3_activated": false,
+  "protocol_leaf_changes_count": 108,
+  "protocol_leaf_changes": [
+    {
+      "path": "RNG_contract.S2_sampling",
+      "kind": "added",
+      "v2": null,
+      "v3": "u=0..511, slots0..3; sample parent0..95 and task_draw0..7 uniformly with replacement from S2_data. u even full10x10; u odd local_index=((u-1)//2)*4+slot, size_idx=local_index%3 (counts342/341/341), endpoint closed for even local_index/open for odd; x0/y0 uniform valid origins. A=(parent+task_draw)%3.",
+      "classification": "P1_SAMPLING_SPECIFICATION",
+      "reason": "Independent rows are mathematical prerequisite; exact phase keys/replacement/index rules must be fixed explicitly."
+    },
+    {
+      "path": "RNG_contract.key_derivation",
+      "kind": "added",
+      "v2": null,
+      "v3": "SHA256 UTF8 canonical tuple [protocol_sha256,phase,optimizer_seed,zero_based_update,instance_slot,role]; first8bytes little-endian modulo2**63; save names/seeds/states",
+      "classification": "P1_SAMPLING_SPECIFICATION",
+      "reason": "Independent rows are mathematical prerequisite; exact phase keys/replacement/index rules must be fixed explicitly."
+    },
+    {
+      "path": "RNG_contract.model_init",
+      "kind": "added",
+      "v2": null,
+      "v3": "torch.manual_seed(optimizer_seed) only before model construction; not reset per trajectory",
+      "classification": "P1_SAMPLING_SPECIFICATION",
+      "reason": "Independent rows are mathematical prerequisite; exact phase keys/replacement/index rules must be fixed explicitly."
+    },
+    {
+      "path": "RNG_contract.streams",
+      "kind": "added",
+      "v2": null,
+      "v3": "PCG64 for dataset/window draws, independent phase names S1_data/S2_data/continuedSL_data. Distinct torch.Generator for primary/forced_low/forced_high per(seed,update,slot); no shared row sampling stream.",
+      "classification": "P1_SAMPLING_SPECIFICATION",
+      "reason": "Independent rows are mathematical prerequisite; exact phase keys/replacement/index rules must be fixed explicitly."
+    },
+    {
+      "path": "S1.architecture_initialization",
+      "kind": "added",
+      "v2": null,
+      "v3": "Each optimizer seed11622026..28 creates its untrained checkpoint; save tensor/file hash before S1. Teacher data shared. Save fixed256 endpoint and full optimizer/RNG state.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.batch_instances",
+      "kind": "added",
+      "v2": null,
+      "v3": 4,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.batch_sampling",
+      "kind": "added",
+      "v2": null,
+      "v3": "With replacement from fixed256 teachers using phase-specific PCG64 stream keyed by(optimizer_seed,S1_data); record each index.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.instance_registry",
+      "kind": "added",
+      "v2": null,
+      "v3": "PROPOSED_SEEDS_V3.json/S1_teachers exact256; mode x endpoint four cells64 each;64parents3sizes/32parents2sizes; no S3 input",
+      "classification": "P2_TRAIN_DISTRIBUTION_AND_REGISTRY",
+      "reason": "Teacher assignment changes are substantive even with same seeds/count."
+    },
+    {
+      "path": "S1.instances",
+      "kind": "changed",
+      "v2": "Exactly future_seeds_v2.json S1_teachers256 specs from S2 training bank; endpoint-adaptedDetour16 followed by sameH, no selection using S3",
+      "v3": "Exactly PROPOSED_SEEDS_V3.json S1_teachers256 revised specs; original v2 supplies only unchanged map/task seed bank.",
+      "classification": "P2_TRAIN_DISTRIBUTION_AND_REGISTRY",
+      "reason": "Teacher assignment changes are substantive even with same seeds/count."
+    },
+    {
+      "path": "S1.loss",
+      "kind": "added",
+      "v2": null,
+      "v3": "Teacher forcing masked cross entropy; average over valid service decisions within each route, then mean over4 instances. Empty valid route loss0, no STOP label or replacement.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.advantage_standardization",
+      "kind": "added",
+      "v2": null,
+      "v3": false,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.algorithm",
+      "kind": "added",
+      "v2": null,
+      "v3": "Adam",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.betas",
+      "kind": "added",
+      "v2": null,
+      "v3": [
+        0.9,
+        0.999
+      ],
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.clip_global_norm",
+      "kind": "added",
+      "v2": null,
+      "v3": 1.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.entropy_weight",
+      "kind": "added",
+      "v2": null,
+      "v3": 0.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.eps",
+      "kind": "added",
+      "v2": null,
+      "v3": 1e-08,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.gamma",
+      "kind": "added",
+      "v2": null,
+      "v3": 1.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.lr",
+      "kind": "added",
+      "v2": null,
+      "v3": 0.0001,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.optimizer.weight_decay",
+      "kind": "added",
+      "v2": null,
+      "v3": 0.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.shared_teacher_dataset",
+      "kind": "added",
+      "v2": null,
+      "v3": "Build256Detour16_endpoint native outputs plus one extra commonH per route ONCE, maximum512 terminal evaluations, shared all3 optimizer seeds.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.updates_per_seed",
+      "kind": "added",
+      "v2": null,
+      "v3": 256,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "S1 recipe, data reuse, optimizer or deterministic sampling choice missing from v2."
+    },
+    {
+      "path": "S1.wall_s.shared_teacher_stage",
+      "kind": "added",
+      "v2": null,
+      "v3": 1800,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "S1 wall limits are newly specified budget terms."
+    },
+    {
+      "path": "S1.wall_s.supervised_per_seed",
+      "kind": "added",
+      "v2": null,
+      "v3": 1800,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "S1 wall limits are newly specified budget terms."
+    },
+    {
+      "path": "S2.boundaries.all_empty_macro_batch",
+      "kind": "added",
+      "v2": null,
+      "v3": "Inconclusive stop before optimizer; do not resample to force512steps.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.boundaries.empty_instance",
+      "kind": "added",
+      "v2": null,
+      "v3": "Legal direct entry->exit terminal, zero logprob/loss contribution, still record cost; never replace sample.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.boundaries.invalid_or_nonfinite",
+      "kind": "added",
+      "v2": null,
+      "v3": "Pre-debit work, preserve failure, stop inconclusive; no reward-zero pseudo-success or replacement.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.boundaries.one_legal_first",
+      "kind": "added",
+      "v2": null,
+      "v3": "Both auxiliary roles use the only legal first node, independent suffix generators; retain .25/.25 weights and record unique_first=1, no silent dedup reweight.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.boundaries.zero_advantage_nonempty",
+      "kind": "added",
+      "v2": null,
+      "v3": "Keep registered update schedule, record zero-signal batch, no extra entropy/teacher/round; optimizer step with computed zero grads is recorded.",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.budgets_per_seed.RL_optimizer_updates",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.RL_terminal_rewards",
+      "kind": "added",
+      "v2": null,
+      "v3": 6144,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.S2_all_optimizer_updates",
+      "kind": "added",
+      "v2": null,
+      "v3": 1024,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.continued_SL_optimizer_updates",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.development_and_other",
+      "kind": "removed",
+      "v2": 2048,
+      "v3": null,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.development_and_other_terminal",
+      "kind": "added",
+      "v2": null,
+      "v3": 2048,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.optimizer_updates",
+      "kind": "removed",
+      "v2": 512,
+      "v3": null,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.rl_terminal_rewards",
+      "kind": "removed",
+      "v2": 6144,
+      "v3": null,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.total_S2_terminal",
+      "kind": "added",
+      "v2": null,
+      "v3": 8192,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.total_terminal",
+      "kind": "removed",
+      "v2": 8192,
+      "v3": null,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.wall_s",
+      "kind": "removed",
+      "v2": 7200,
+      "v3": null,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.budgets_per_seed.wall_s_shared_RL_continuedSL_development",
+      "kind": "added",
+      "v2": null,
+      "v3": 7200,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Separates RL and control updates, defines shared wall scope; no automatic increase."
+    },
+    {
+      "path": "S2.continued_SL_updates_per_seed",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.controls",
+      "kind": "changed",
+      "v2": "frozen supervised start, untrained same architecture, continued-SL512updates on same frozen S1 dataset; all same F&A and postprocessing",
+      "v3": "frozen_SL same S1 weight; continuedSL fresh Adam512 on same frozen S1 teacher pool, same CE/batch4, independent phase sampling. This compares training pipelines, not equal-FLOPs or pure algorithm causality.",
+      "classification": "P1_COMPARISON_OR_OBJECTIVE_SPECIFICATION",
+      "reason": "Some objective is preserved from v2; exact optimizer lineage/control semantics require explicit binding."
+    },
+    {
+      "path": "S2.forward_backward_execution",
+      "kind": "added",
+      "v2": null,
+      "v3": "Macro batch4, fixed weights throughout batch; accumulate gradient of instance_loss/4 separately, clip once after4, optimizer.step once. This matches batch-mean objective; before formal use require synthetic value/gradient equivalence regression. Separate prefix caches across3 trajectories; rebuild encodings after any weight update.",
+      "classification": "E_SEMANTICS_PRESERVING_IMPLEMENTATION",
+      "reason": "Correct only with fixed-weight batch mean value/gradient equivalence and cache version tests."
+    },
+    {
+      "path": "S2.memory_execution",
+      "kind": "added",
+      "v2": null,
+      "v3": "Use fixed instance gradient accumulation to avoid holding12full-episode graphs simultaneously. Bounded navigation cache max2parent maps; task-conditioned neural cache per episode and bound to task/F/A/D/weights. Before first optimizer validate actual batch4-equivalent memory and gradients; no automatic batch/scale/budget change.",
+      "classification": "E_SEMANTICS_PRESERVING_IMPLEMENTATION",
+      "reason": "Correct only with fixed-weight batch mean value/gradient equivalence and cache version tests."
+    },
+    {
+      "path": "S2.mixed_objective",
+      "kind": "added",
+      "v2": null,
+      "v3": "Preserve v2 weighted mixture [E_primary R+.25E_forcedlow R+.25E_forcedhigh R]/1.5 with R=-JH. Primary includes first logprob; forced auxiliary starts do not. Each row baseline detached mean of other2 independent returns.",
+      "classification": "P1_COMPARISON_OR_OBJECTIVE_SPECIFICATION",
+      "reason": "Some objective is preserved from v2; exact optimizer lineage/control semantics require explicit binding."
+    },
+    {
+      "path": "S2.optimizer_config.advantage_standardization",
+      "kind": "added",
+      "v2": null,
+      "v3": false,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.algorithm",
+      "kind": "added",
+      "v2": null,
+      "v3": "Adam",
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.betas",
+      "kind": "added",
+      "v2": null,
+      "v3": [
+        0.9,
+        0.999
+      ],
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.clip_global_norm",
+      "kind": "added",
+      "v2": null,
+      "v3": 1.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.entropy_weight",
+      "kind": "added",
+      "v2": null,
+      "v3": 0.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.eps",
+      "kind": "added",
+      "v2": null,
+      "v3": 1e-08,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.gamma",
+      "kind": "added",
+      "v2": null,
+      "v3": 1.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.lr",
+      "kind": "added",
+      "v2": null,
+      "v3": 0.0001,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.optimizer_config.weight_decay",
+      "kind": "added",
+      "v2": null,
+      "v3": 0.0,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S2.parent_modes",
+      "kind": "changed",
+      "v2": "mixed/blocked alternating,48 each, declared96 geometry labels pending canonical identity audit",
+      "v3": "mixed/blocked48each; actual96unique physical keys verified in GEOMETRY_GATE.json;768 target task draws not yet generated or feasibility-tested.",
+      "classification": "R_EXISTING_EVIDENCE",
+      "reason": "Adds previously saved actual geometry evidence, not target-task feasibility."
+    },
+    {
+      "path": "S2.update_attempts_per_seed",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL",
+      "reason": "New optimizer/schedule/boundary choice may affect actual optimization history; not silently adopt."
+    },
+    {
+      "path": "S3.RL_gate_per_cell",
+      "kind": "added",
+      "v2": null,
+      "v3": "For both frozenSL and continuedSL: mean paired parent-relative cost reduction>=.5%, percentile95 lower>0, each of3seed point gains positive, ALL cases valid. FrozenSL comparisons use same seed lineage. All6cells required for overall claim.",
+      "classification": "P3_DECISION_SCOPE",
+      "reason": "Aggregation and all-cell AND rules affect passing decisions; approve before S3."
+    },
+    {
+      "path": "S3.allow_mask",
+      "kind": "changed",
+      "v2": "future_seeds_v2.json S3 explicit A_condition=case%3 using same frozen make_allow formula",
+      "v3": "PROPOSED_SEEDS_V3.json: (parent_index+position_idx+size_idx)%3; each group/size A0/A1/A2 equal counts",
+      "classification": "P2_RESERVED_TASK_DISTRIBUTION",
+      "reason": "A condition assignment changes preserved S3 metadata distribution."
+    },
+    {
+      "path": "S3.deployment_gate_per_stratum",
+      "kind": "added",
+      "v2": null,
+      "v3": "Detour relative quality degradation one-sided95upper<=.5% using parent aggregation; complete raw request median ratio<=.7,p95 ratio<=1 for each(group,size,cache); not Pareto dominated byFixed3 in meanJ/median/p95. All strata required for overall deployment claim.",
+      "classification": "P3_DECISION_SCOPE",
+      "reason": "Aggregation and all-cell AND rules affect passing decisions; approve before S3."
+    },
+    {
+      "path": "S3.inference",
+      "kind": "changed",
+      "v2": "One deterministic greedy constructive trajectory per neural method, no multi-start/teacher/search in action selection. Raw and H results refer to the same raw construction; H benefit and added time separate.",
+      "v3": "One greedy rollout per actor, no teacher/extra starts; deterministic weights/input/thread controls. Report cold/hot navigation scope equally across methods; parsing/array loading/subset/all encodings/H/export/validation included, IO/model load separately clear.",
+      "classification": "R_REPORTING_PIPELINE_SCOPE",
+      "reason": "Clarifies requested pipeline/timing/statistical claim scope, not new empirical result."
+    },
+    {
+      "path": "S3.parent_modes",
+      "kind": "changed",
+      "v2": "mixed/blocked only;6 intended seen and12 intended unseen geometries, independently keyed before formal execution",
+      "v3": "mixed/blocked;actual6seen keys matchtrain and12unseen keys unique/disjoint in GEOMETRY_GATE.json; no S3 target draws or outcomes generated.",
+      "classification": "R_REPORTING_PIPELINE_SCOPE",
+      "reason": "Clarifies requested pipeline/timing/statistical claim scope, not new empirical result."
+    },
+    {
+      "path": "S3.primary_decision",
+      "kind": "added",
+      "v2": null,
+      "v3": "Global target supported only if all6 group x size cells meet both independent-RL-control criteria and all12 group x size x cache deployment strata meet deployment requirements. Otherwise retain per-cell successes with limited scope, no pooled rescue.",
+      "classification": "P3_DECISION_SCOPE",
+      "reason": "Aggregation and all-cell AND rules affect passing decisions; approve before S3."
+    },
+    {
+      "path": "S3.quality_aggregation",
+      "kind": "added",
+      "v2": null,
+      "v3": "For each group,size,method, first mean the2endpoint child costs per parent per seed; then mean3optimizer-seed parent values. Compute relative gain from parent method means; equal parent weight. Bootstrap parent clusters20000 with registered seed.",
+      "classification": "P3_DECISION_SCOPE",
+      "reason": "Aggregation and all-cell AND rules affect passing decisions; approve before S3."
+    },
+    {
+      "path": "S3.statistical_scope",
+      "kind": "added",
+      "v2": null,
+      "v3": "One preregistered data-bank screen with3optimization repeats, not3independent datasets. CIs not advertised as simultaneous acrossallcells. No claim of pure-gradient/equal-FLOPs causality becauseRL states on-policy andSL teacher pool fixed.",
+      "classification": "R_REPORTING_PIPELINE_SCOPE",
+      "reason": "Clarifies requested pipeline/timing/statistical claim scope, not new empirical result."
+    },
+    {
+      "path": "S3.timing_aggregation",
+      "kind": "added",
+      "v2": null,
+      "v3": "Within each group,size,cache, pool all parent x endpoint x seed x3repeat request timings for descriptive median/p95. Quality uses parent units, not request count. Endpoint-specific tables always reported; no causal endpoint/position comparison.",
+      "classification": "P3_DECISION_SCOPE",
+      "reason": "Aggregation and all-cell AND rules affect passing decisions; approve before S3."
+    },
+    {
+      "path": "current_task_boundary",
+      "kind": "added",
+      "v2": null,
+      "v3": "Proposal only; no formal optimizer or S3 target task authority. Existing v2 and S0 future pointer remain byte-identical; adopt/version-bind this proposal only in a later explicitly authorized execution task after REVISE gates close.",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "input_runtime_contract.guards",
+      "kind": "added",
+      "v2": null,
+      "v3": "rc3_global_local_impl_review/runtime_guards.py",
+      "classification": "E_SEMANTICS_PRESERVING_IMPLEMENTATION",
+      "reason": "Input immutable/content/source identity protection preserves intended environment."
+    },
+    {
+      "path": "input_runtime_contract.layout_gate",
+      "kind": "added",
+      "v2": null,
+      "v3": "Current physical layout gate PASS with111unique assets; adopt only exact v2 map/mode bank, verify hashes again before execution; this does not assert all768 target-task draws feasible.",
+      "classification": "R_EXECUTION_VALIDATION_SCOPE",
+      "reason": "Binds no-replacement validation and existing geometry evidence; not task-feasibility result."
+    },
+    {
+      "path": "input_runtime_contract.navigation",
+      "kind": "added",
+      "v2": null,
+      "v3": "canonical geometry key and content/source hashes bound at production; reject bare/mismatched nav; immutable detached F/A/C/D/IDs/scene; new cache namespace includes D",
+      "classification": "E_SEMANTICS_PRESERVING_IMPLEMENTATION",
+      "reason": "Input immutable/content/source identity protection preserves intended environment."
+    },
+    {
+      "path": "input_runtime_contract.task_validation",
+      "kind": "added",
+      "v2": null,
+      "v3": "Use task-free geometry factory then frozen resample_tasks for declared target seed, construct F and A, bind nav and test per-task effective connected service before rollout. Infeasible/NaN is charged failure/inconclusive stop; no drop/resample/replacement seed.",
+      "classification": "R_EXECUTION_VALIDATION_SCOPE",
+      "reason": "Binds no-replacement validation and existing geometry evidence; not task-feasibility result."
+    },
+    {
+      "path": "layout_independence_gate.evidence.independent_review",
+      "kind": "added",
+      "v2": null,
+      "v3": "rc3_global_local_impl_review/LAYOUT_GATE_REVIEW.json",
+      "classification": "R_EXISTING_EVIDENCE",
+      "reason": "References prior geometry-only preparation and independent saved-data audit."
+    },
+    {
+      "path": "layout_independence_gate.evidence.independent_sha256",
+      "kind": "added",
+      "v2": null,
+      "v3": "501dcab7e2272ee313c6ff0b8a41b59762ed1d58eb8682d1abe209685812b636",
+      "classification": "R_EXISTING_EVIDENCE",
+      "reason": "References prior geometry-only preparation and independent saved-data audit."
+    },
+    {
+      "path": "layout_independence_gate.evidence.path",
+      "kind": "added",
+      "v2": null,
+      "v3": "rc3_global_local_impl_review/GEOMETRY_GATE.json",
+      "classification": "R_EXISTING_EVIDENCE",
+      "reason": "References prior geometry-only preparation and independent saved-data audit."
+    },
+    {
+      "path": "layout_independence_gate.evidence.scope",
+      "kind": "added",
+      "v2": null,
+      "v3": "Verified physical geometry only; verify exact input/source hashes before future formal execution, not a task-feasibility certificate.",
+      "classification": "R_EXISTING_EVIDENCE",
+      "reason": "References prior geometry-only preparation and independent saved-data audit."
+    },
+    {
+      "path": "layout_independence_gate.evidence.sha256",
+      "kind": "added",
+      "v2": null,
+      "v3": "ea26e19c86bc30cf65ac9162856c56862c36bda2729d954ed29e9b8370b01fd2",
+      "classification": "R_EXISTING_EVIDENCE",
+      "reason": "References prior geometry-only preparation and independent saved-data audit."
+    },
+    {
+      "path": "method_pipelines.S1_teacher",
+      "kind": "added",
+      "v2": null,
+      "v3": "endpoint-adapted nativeDetour16 (portfolio+repair) THEN extra commonH; both charged; resulting full positive-gain route supplies teacher forcing.",
+      "classification": "P1_PIPELINE_SPECIFICATION",
+      "reason": "Native postprocessing versus extra common H affects measured quality/time, bind before execution."
+    },
+    {
+      "path": "method_pipelines.S3_Fixed3_Detour16",
+      "kind": "added",
+      "v2": null,
+      "v3": "Endpoint-adapted frozen native portfolio/search pipeline and its internal postprocess only, NO extra commonH; final global plan endpoint validator.",
+      "classification": "P1_PIPELINE_SPECIFICATION",
+      "reason": "Native postprocessing versus extra common H affects measured quality/time, bind before execution."
+    },
+    {
+      "path": "method_pipelines.S3_RLraw",
+      "kind": "added",
+      "v2": null,
+      "v3": "Same frozen RL raw construction semantics, export/validate without commonH. Separate timed request execution; require identical raw route to RLplusH for the same input/seed. No free shared timed computation.",
+      "classification": "P1_PIPELINE_SPECIFICATION",
+      "reason": "Native postprocessing versus extra common H affects measured quality/time, bind before execution."
+    },
+    {
+      "path": "method_pipelines.S3_untrained_frozenSL_continuedSL_RLplusH",
+      "kind": "added",
+      "v2": null,
+      "v3": "One greedy actor construction then unchanged commonH and export/validate; all input/prep/features charged.",
+      "classification": "P1_PIPELINE_SPECIFICATION",
+      "reason": "Native postprocessing versus extra common H affects measured quality/time, bind before execution."
+    },
+    {
+      "path": "proposal_draft_revision.changes",
+      "kind": "added",
+      "v2": null,
+      "v3": "Correct inherited v2 instance filename and stale geometry-pending prose; no algorithm/distribution/budget/gate change versus draft01. No formal execution.",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "proposal_draft_revision.prior_preserved",
+      "kind": "added",
+      "v2": null,
+      "v3": "drafts/V3_DRAFT01.json",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "proposal_draft_revision.prior_proposal_sha256",
+      "kind": "added",
+      "v2": null,
+      "v3": "3bc814130a1cb46a3d7683b3e88978440b70c02887a130c6a8768987f1536d22",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "proposal_draft_revision.revision",
+      "kind": "added",
+      "v2": null,
+      "v3": 2,
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "resources_summary.S0_or_current_preflight_optimizer_updates",
+      "kind": "added",
+      "v2": null,
+      "v3": 0,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.S2_all3seeds_terminal_max",
+      "kind": "added",
+      "v2": null,
+      "v3": 24576,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.S3_all3seeds_requests_max",
+      "kind": "added",
+      "v2": null,
+      "v3": 15876,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.all3seeds_optimizer_updates_max",
+      "kind": "added",
+      "v2": null,
+      "v3": 3840,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.per_seed_optimizer_updates.RL",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.per_seed_optimizer_updates.S1",
+      "kind": "added",
+      "v2": null,
+      "v3": 256,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.per_seed_optimizer_updates.continued_SL",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.per_seed_optimizer_updates.total",
+      "kind": "added",
+      "v2": null,
+      "v3": 1280,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.shared_S1_teacher_terminal_max",
+      "kind": "added",
+      "v2": null,
+      "v3": 512,
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "resources_summary.timing_scope",
+      "kind": "added",
+      "v2": null,
+      "v3": "Teacher generation, S1, S2 RL, continuedSL, development and S3 separate walls; shared S2 per-seed7200 includesRL+continuedSL+dev and their IO. End-to-end elapsed also reported. No use of preflight wall as deployment latency.",
+      "classification": "P3_BUDGET_SCOPE",
+      "reason": "Explicit disjoint stage/control accounting and wall definitions; not optimizer authority."
+    },
+    {
+      "path": "review_gate",
+      "kind": "added",
+      "v2": null,
+      "v3": "REVISE until completed formal runner/baseline/guards/RNG/loss/microbatch regressions bind to an adopted protocol and a future explicitly authorized execution task. No optimizer authority in current task.",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "schema",
+      "kind": "changed",
+      "v2": "rc3-global-local-S2-S3-design-v2",
+      "v3": "rc3-global-local-S1-S2-S3-v3-proposal",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "seed_registry",
+      "kind": "added",
+      "v2": null,
+      "v3": "rc3_global_local_impl_review/PROPOSED_SEEDS_V3.json",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "seeds_sha256",
+      "kind": "changed",
+      "v2": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+      "v3": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "status",
+      "kind": "changed",
+      "v2": "FROZEN_DESIGN_NOT_STARTED",
+      "v3": "PROPOSED_FROZEN_NOT_ACTIVE_NOT_AUTHORIZED",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.S3_outcomes_seen",
+      "kind": "added",
+      "v2": null,
+      "v3": false,
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.base_S0_commit",
+      "kind": "added",
+      "v2": null,
+      "v3": "057830d584b6c71c79ef5118087c681c98135fe2",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.current_v2_pointer_unchanged",
+      "kind": "added",
+      "v2": null,
+      "v3": true,
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.date",
+      "kind": "added",
+      "v2": null,
+      "v3": "2026-11-06",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.old_v1_v2_S0_bytes_preserved",
+      "kind": "added",
+      "v2": null,
+      "v3": true,
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.reason",
+      "kind": "added",
+      "v2": null,
+      "v3": "Pre-optimizer review closes unspecified recipes/RNG/control budgets/decision rules and corrects declared warmup/scale-condition confounding; no result-driven tuning.",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "v3_change_provenance.source_v2_sha256",
+      "kind": "added",
+      "v2": null,
+      "v3": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+      "classification": "M_VERSION_PROVENANCE_STATUS",
+      "reason": "Proposal provenance/status/reference metadata does not activate protocol."
+    },
+    {
+      "path": "weight_lineage.no_selection",
+      "kind": "added",
+      "v2": null,
+      "v3": "All3registered seeds run independently without best seed/update choice; final fixed512 endpoints only, no S3 checkpoint selection.",
+      "classification": "P1_COMPARISON_OR_OBJECTIVE_SPECIFICATION",
+      "reason": "Saving/cloning is engineering; fresh versus inherited optimizer is a comparison condition."
+    },
+    {
+      "path": "weight_lineage.optimizer_states",
+      "kind": "added",
+      "v2": null,
+      "v3": "S1 Adam state saved as evidence but not inherited; RL and continuedSL each fresh Adam with identical registered hyperparameters. FrozenSL no optimizer.",
+      "classification": "P1_COMPARISON_OR_OBJECTIVE_SPECIFICATION",
+      "reason": "Saving/cloning is engineering; fresh versus inherited optimizer is a comparison condition."
+    },
+    {
+      "path": "weight_lineage.per_seed",
+      "kind": "added",
+      "v2": null,
+      "v3": [
+        "untrained_seed_checkpoint",
+        "S1_supervised256_checkpoint",
+        "three exact weight clones: frozen_SL/RL_start/continued_SL_start"
+      ],
+      "classification": "P1_COMPARISON_OR_OBJECTIVE_SPECIFICATION",
+      "reason": "Saving/cloning is engineering; fresh versus inherited optimizer is a comparison condition."
+    }
+  ],
+  "classification_counts": {
+    "P1_SAMPLING_SPECIFICATION": 4,
+    "P1_EXECUTION_RECIPE_REQUIRES_APPROVAL": 31,
+    "P2_TRAIN_DISTRIBUTION_AND_REGISTRY": 2,
+    "P3_BUDGET_SCOPE": 24,
+    "P1_COMPARISON_OR_OBJECTIVE_SPECIFICATION": 5,
+    "E_SEMANTICS_PRESERVING_IMPLEMENTATION": 4,
+    "R_EXISTING_EVIDENCE": 6,
+    "P3_DECISION_SCOPE": 5,
+    "P2_RESERVED_TASK_DISTRIBUTION": 1,
+    "R_REPORTING_PIPELINE_SCOPE": 3,
+    "M_VERSION_PROVENANCE_STATUS": 17,
+    "R_EXECUTION_VALIDATION_SCOPE": 2,
+    "P1_PIPELINE_SPECIFICATION": 4
+  },
+  "registry_invariants": {
+    "S2_train": true,
+    "S2_development": true,
+    "policy_seeds": true,
+    "sampling_seed": true,
+    "original60_protected": true
+  },
+  "registry_changed_sections": {
+    "S1_teachers": {
+      "changed_cases": 213,
+      "field_change_counts": {
+        "endpoints": 128,
+        "height": 171,
+        "width": 171,
+        "y0": 156,
+        "x0": 149
+      },
+      "case_diffs": [
+        {
+          "case": 1,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 2,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 3,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 4,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 5,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 6,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 7,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 8,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 9,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 10,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 13,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 14,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 15,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 16,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 17,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 18,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 19,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 20,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 21,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 22,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 25,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 26,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 27,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 28,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 29,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 30,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 31,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 32,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 33,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 34,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 37,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 38,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 39,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 40,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 41,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 42,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 43,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 44,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 45,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 46,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 49,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 50,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 51,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 52,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 53,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 54,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 55,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 56,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 57,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 58,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 61,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 62,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 63,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 64,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 65,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 66,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 67,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 68,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 69,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 70,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 73,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 74,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 75,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 76,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 77,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 78,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 79,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 80,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 81,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 82,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 85,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 86,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 87,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 88,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 89,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 90,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 91,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 92,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 93,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 94,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 96,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 99,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 100,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 101,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 102,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 103,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 104,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 105,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 106,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 107,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 108,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 111,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 112,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 113,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 114,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 115,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 116,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 117,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 118,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 119,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 120,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 123,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 124,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 125,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 126,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 127,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 128,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 129,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 130,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 131,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 132,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 135,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 136,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 137,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 138,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 139,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 140,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 141,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 142,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 143,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 144,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 147,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 148,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 149,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 150,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 151,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 152,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 153,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 154,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 155,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 156,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 159,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 160,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 161,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 162,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 163,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 164,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 165,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 166,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 167,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 168,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 171,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 7,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 172,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 173,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 174,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 175,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 176,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 177,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 5,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 178,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 179,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 7
+            }
+          ]
+        },
+        {
+          "case": 180,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 183,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 3,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 184,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 185,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 5
+            }
+          ]
+        },
+        {
+          "case": 186,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 187,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 188,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 189,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 190,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 191,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 3
+            }
+          ]
+        },
+        {
+          "case": 192,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 193,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 194,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 197,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 198,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 199,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 200,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 201,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 202,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 203,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 204,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 205,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 206,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 209,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 210,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 211,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 212,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 213,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 214,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 215,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 216,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 217,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 218,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 221,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 222,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 223,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 224,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 225,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 226,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 227,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 228,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 5,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 229,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 230,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 6
+            }
+          ]
+        },
+        {
+          "case": 233,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 4
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 234,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 2,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 235,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 236,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 1
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 4
+            }
+          ]
+        },
+        {
+          "case": 237,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 238,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 239,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 240,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 241,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 242,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 5
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 245,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 246,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 3,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 6,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 247,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 1,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 248,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 2
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 249,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            }
+          ]
+        },
+        {
+          "case": 250,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            }
+          ]
+        },
+        {
+          "case": 251,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 6
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 3
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 252,
+          "changed_fields": [
+            {
+              "field": "height",
+              "v2": 3,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 4,
+              "v3": 8
+            },
+            {
+              "field": "y0",
+              "v2": 4,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 253,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "open_first_last_connected",
+              "v3": "closed_depot"
+            },
+            {
+              "field": "height",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "width",
+              "v2": 6,
+              "v3": 8
+            },
+            {
+              "field": "x0",
+              "v2": 4,
+              "v3": 0
+            },
+            {
+              "field": "y0",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 254,
+          "changed_fields": [
+            {
+              "field": "endpoints",
+              "v2": "closed_depot",
+              "v3": "open_first_last_connected"
+            },
+            {
+              "field": "height",
+              "v2": 8,
+              "v3": 3
+            },
+            {
+              "field": "width",
+              "v2": 8,
+              "v3": 4
+            },
+            {
+              "field": "x0",
+              "v2": 0,
+              "v3": 6
+            },
+            {
+              "field": "y0",
+              "v2": 1,
+              "v3": 6
+            }
+          ]
+        }
+      ]
+    },
+    "S3": {
+      "changed_cases": 72,
+      "field_change_counts": {
+        "A_condition": 72
+      },
+      "case_diffs": [
+        {
+          "case": 2,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 3,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 4,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 5,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 6,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 7,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 10,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 11,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 12,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 13,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 14,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 15,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 20,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 21,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 22,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 23,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 24,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 25,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 28,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 29,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 30,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 31,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 32,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 33,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 38,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 39,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 40,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 41,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 42,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 43,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 46,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 47,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 48,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 49,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 50,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 51,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 56,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 57,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 58,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 59,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 60,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 61,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 64,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 65,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 66,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 67,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 68,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 69,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 74,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 75,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 76,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 77,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 78,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 79,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 82,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 83,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 84,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 85,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 86,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 87,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 92,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 93,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 94,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 95,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 96,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 97,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 100,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 101,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 1
+            }
+          ]
+        },
+        {
+          "case": 102,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 2
+            }
+          ]
+        },
+        {
+          "case": 103,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 1,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 104,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 2,
+              "v3": 0
+            }
+          ]
+        },
+        {
+          "case": 105,
+          "changed_fields": [
+            {
+              "field": "A_condition",
+              "v2": 0,
+              "v3": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "metadata_distributions": {
+    "S1_v2": {
+      "mode_endpoint": {
+        "blocked|open_first_last_connected": 128,
+        "mixed|closed_depot": 128
+      },
+      "parent_unique_size_histogram": {
+        "1": 96
+      },
+      "mode_size_counts": {
+        "blocked|4|3": 43,
+        "blocked|6|6": 43,
+        "blocked|8|8": 42,
+        "mixed|4|3": 43,
+        "mixed|6|6": 42,
+        "mixed|8|8": 43
+      }
+    },
+    "S1_v3": {
+      "mode_endpoint": {
+        "blocked|closed_depot": 64,
+        "blocked|open_first_last_connected": 64,
+        "mixed|closed_depot": 64,
+        "mixed|open_first_last_connected": 64
+      },
+      "parent_unique_size_histogram": {
+        "3": 64,
+        "2": 32
+      },
+      "mode_size_counts": {
+        "blocked|4|3": 43,
+        "blocked|6|6": 42,
+        "blocked|8|8": 43,
+        "mixed|4|3": 43,
+        "mixed|6|6": 42,
+        "mixed|8|8": 43
+      }
+    },
+    "S3_v2": {
+      "seen_layout_new_tasks|4|3|0": 6,
+      "seen_layout_new_tasks|4|3|1": 6,
+      "seen_layout_new_tasks|6|6|0": 6,
+      "seen_layout_new_tasks|6|6|2": 6,
+      "seen_layout_new_tasks|8|8|1": 6,
+      "seen_layout_new_tasks|8|8|2": 6,
+      "unseen_layout_new_tasks|4|3|0": 12,
+      "unseen_layout_new_tasks|4|3|1": 12,
+      "unseen_layout_new_tasks|6|6|0": 12,
+      "unseen_layout_new_tasks|6|6|2": 12,
+      "unseen_layout_new_tasks|8|8|1": 12,
+      "unseen_layout_new_tasks|8|8|2": 12
+    },
+    "S3_v3": {
+      "seen_layout_new_tasks|4|3|0": 4,
+      "seen_layout_new_tasks|4|3|1": 4,
+      "seen_layout_new_tasks|4|3|2": 4,
+      "seen_layout_new_tasks|6|6|0": 4,
+      "seen_layout_new_tasks|6|6|1": 4,
+      "seen_layout_new_tasks|6|6|2": 4,
+      "seen_layout_new_tasks|8|8|0": 4,
+      "seen_layout_new_tasks|8|8|1": 4,
+      "seen_layout_new_tasks|8|8|2": 4,
+      "unseen_layout_new_tasks|4|3|0": 8,
+      "unseen_layout_new_tasks|4|3|1": 8,
+      "unseen_layout_new_tasks|4|3|2": 8,
+      "unseen_layout_new_tasks|6|6|0": 8,
+      "unseen_layout_new_tasks|6|6|1": 8,
+      "unseen_layout_new_tasks|6|6|2": 8,
+      "unseen_layout_new_tasks|8|8|0": 8,
+      "unseen_layout_new_tasks|8|8|1": 8,
+      "unseen_layout_new_tasks|8|8|2": 8
+    }
+  },
+  "proposal_metadata_caveats": [
+    "v3 retains original v2 amendment.performance_gates_and_budgets_unchanged=true. This inherited v1-to-v2 statement must not be interpreted as a v2-to-v3 no-change assertion; S1 distribution/budget and S3 decision scope change. Clarify scope in any formally approved version.",
+    "S2.schedule says forced distinct starts; S2.boundaries.one_legal_first explicitly gives its only-first exception. Formal executable spec must implement the exception and log unique-first count."
+  ],
+  "engineering_verification_proposed_caps": {
+    "optimizer_steps": 32,
+    "synthetic_or_mock_terminal_optimizer_steps": 30,
+    "saved_S0_real_full_batch4_RL_steps": 2,
+    "saved_S0_real_trajectories_or_full_H": 24,
+    "wall_s": 900,
+    "new_scene_nav_teacher_or_S3_or_original60_semantic": 0,
+    "authorization": "Root must preregister exact schedule, source hashes and resource journal before any engineering step. This comparison does not authorize execution."
+  },
+  "formal_budget_recommendation": {
+    "S1_shared_teachers": 256,
+    "S1_shared_terminal_evaluations": 512,
+    "S1_shared_teacher_wall_s": 1800,
+    "per_seed_S1_updates": 256,
+    "per_seed_S1_wall_s": 1800,
+    "per_seed_RL_updates": 512,
+    "per_seed_continued_SL_updates": 512,
+    "per_seed_S2_RL_terminal": 6144,
+    "per_seed_S2_other_terminal": 2048,
+    "per_seed_S2_total_terminal": 8192,
+    "per_seed_S2_wall_s_including_RL_control_dev_IO": 7200,
+    "all3seeds_optimizer_updates": 3840,
+    "all3seeds_S2_terminal": 24576,
+    "S3_authorized": false
+  },
+  "new_call_counters": {
+    "scene": 0,
+    "navigation": 0,
+    "teacher": 0,
+    "planning_or_H": 0,
+    "model_forward": 0,
+    "backward": 0,
+    "optimizer": 0,
+    "S3_task": 0,
+    "original60_semantic": 0
+  },
+  "review_scope": "Read-only JSON/source/report review and metadata SHA/counter comparison only; no evidence of training performance."
+}
