@@ -1,0 +1,43 @@
+{
+  "schema": "rc3-s2-delivery-progress-v1",
+  "baseline_commit": "f69de88efa9655cf20633b61b6b0b46dd600666c",
+  "S2_authorization_commit": "13a1495",
+  "closed_seed_11622026_commit": "3affcffe658817c877950191437f1c506fe35766",
+  "preuploaded_LFS": {
+    "seed": 11622026,
+    "objects": 35,
+    "reported_size": "995 MB",
+    "reported_rate": "3.7 MB/s",
+    "exit_code": 0
+  },
+  "branch_push_complete": false,
+  "scope": "LFS object pre-upload only; remote branch HEAD and final reports will be verified after full closeout",
+  "closed_seed_11622027_commit": "1f22d1401f32f5d9a79fbc64fba545283b046a61",
+  "second_preupload": {
+    "ref": "1f22d1401f32f5d9a79fbc64fba545283b046a61",
+    "cumulative_objects_confirmed": 70,
+    "reported_size": "2.0 GB",
+    "reported_rate": "4.0 MB/s",
+    "exit_code": 0,
+    "scope": "Tool-reported cumulative object total; do not add this size to first preupload as unique network bytes"
+  },
+  "closed_seed_11622028_commit": "5c2c5c9819cafd04ca19fd833e7679654726e2be",
+  "third_preupload_partial": {
+    "exit_code": 1,
+    "cumulative_progress_objects": 337,
+    "cumulative_progress_total_objects": 637,
+    "reported_size": "3.0 GB",
+    "reported_rate": "2.2 MB/s",
+    "error": "GitHub LFS batch API EOF; success not asserted",
+    "retry": "same immutable objects; concurrency reduced to 1",
+    "interpretation": "Tool cumulative progress is not a sum of unique transfer bytes"
+  },
+  "completed_preupload": {
+    "ref": "5c2c5c9819cafd04ca19fd833e7679654726e2be",
+    "exit_code": 0,
+    "cumulative_objects_confirmed": 637,
+    "reported_size": "3.0 GB",
+    "reported_rate": "1.3 KB/s",
+    "scope": "Cumulative tool display; full requested object set confirmed. Unique actual network bytes and total transfer wall are not separately measured. Final branch push and live SHA verification remain pending."
+  }
+}

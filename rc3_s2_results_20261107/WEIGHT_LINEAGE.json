@@ -1,0 +1,455 @@
+{
+  "schema": "rc3-s2-closure-v1",
+  "generated_utc": "2026-11-07T08:04:35.254591+00:00",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "baseline_commit": "f69de88efa9655cf20633b61b6b0b46dd600666c",
+  "protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+  "source_revision_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
+  "S2_user_authorization_sha256": "4dba652b2156b88848c4c1c49826952414a5b6d08baa7ce250d710b3ea312423",
+  "S2_user_authorization_commit_abbreviated": "13a1495",
+  "S3_authorized": false,
+  "S3_runtime": "NOT_STARTED",
+  "original60": "SEALED",
+  "S3_model_lineage_readiness": "GO",
+  "S3_execution_readiness": "REVISE_PENDING_FROZEN_PROTOCOL_EVALUATOR_AND_SEPARATE_AUTHORIZATION",
+  "S3_target_semantic_consumption": 0,
+  "S3_target_tasks": "SEALED",
+  "scientific_calls_by_report_writer": 0,
+  "analysis_summary": "rc3_s2_results_20261107/analysis/ANALYSIS_SUMMARY.json",
+  "analysis_summary_sha256": "19fa67a1be886b2ba621331714464bd16cad11d8f4456c1b40539169a3642fcc",
+  "seeds": {
+    "11622026": {
+      "seed": 11622026,
+      "status": "COMPLETE",
+      "fork_receipt": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S2/FORK_RECEIPT.json",
+      "fork_receipt_sha256": "88d83f9ae707a78cc3d5f0915d5684980e2b85669c1beaba54f0bcb337817973",
+      "fork_receipt_contents": {
+        "source_S1_checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+        "common_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+        "branches": {
+          "frozen_SL": {
+            "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+            "optimizer_state_entries": 0
+          },
+          "RL": {
+            "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+            "optimizer_state_entries": 0
+          },
+          "continued_SL": {
+            "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+            "optimizer_state_entries": 0
+          }
+        },
+        "frozen_untrained_checkpoint": "../S1/untrained.pt",
+        "frozen_SL": true,
+        "source_S1_optimizer_inherited": false
+      },
+      "source_S1": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+        "checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+        "checkpoint_bytes": 837749,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.json",
+        "sidecar_sha256": "37e1378d39d7749eb0d26fa12cd311573113bfdee343a7be4bdc830dac52b75a",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.commit.json",
+        "commit_sha256": "708de69f1e85f3c84630b5db6357c12144dd7967dd53c56827647a65ac71824f",
+        "phase": "S1",
+        "cursor": 256,
+        "weight_version": 256,
+        "model_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "untrained_reference": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/untrained.pt",
+        "checkpoint_sha256": "7ae62b55c657bbaef6259902da2188e75718beea9d33cbc6f98515ee789739ac",
+        "checkpoint_bytes": 293589,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/untrained.pt.json",
+        "sidecar_sha256": "1d07031ca843d94029de6d4b7d50d820afc3f4ead81a866b1ff8e742dea925ce",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/untrained.pt.commit.json",
+        "commit_sha256": "70b09655723b93a5a79813f84c9734eca65676e63224774085ff5258e1a03f68",
+        "phase": "S1",
+        "cursor": 0,
+        "weight_version": 0,
+        "model_tensor_sha256": "4b27cefcdd7dda13d5946a481bef3a5cc711cf1db2070eed7799bb041e375497",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "frozen_SL_reference": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+        "checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+        "checkpoint_bytes": 837749,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.json",
+        "sidecar_sha256": "37e1378d39d7749eb0d26fa12cd311573113bfdee343a7be4bdc830dac52b75a",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.commit.json",
+        "commit_sha256": "708de69f1e85f3c84630b5db6357c12144dd7967dd53c56827647a65ac71824f",
+        "phase": "S1",
+        "cursor": 256,
+        "weight_version": 256,
+        "model_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "branches": {
+        "RL": {
+          "actual_completed_updates": 512,
+          "start_from_own_S1": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/RL/start_from_SL.pt",
+            "checkpoint_sha256": "f012a9550e3213e755136632babde139f7644cc89a0b4c20074542023a996183",
+            "checkpoint_bytes": 293525,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/RL/start_from_SL.pt.json",
+            "sidecar_sha256": "288d6ac33a0a17398bdf821a80d10813cb815069c0cd517494eff69f9e04d90e",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/RL/start_from_SL.pt.commit.json",
+            "commit_sha256": "b819c54da507d458ef8695eabe1517a3a384b5f2d99549f6e9f01d77cbe5dab8",
+            "phase": "RL",
+            "cursor": 0,
+            "weight_version": 0,
+            "model_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "fixed_endpoint": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/RL/update_0512.pt",
+            "checkpoint_sha256": "d5d6223d807f9dd4ca7954a06a191589734441dd72bfd133c9e95d592466da75",
+            "checkpoint_bytes": 37950130,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/RL/update_0512.pt.json",
+            "sidecar_sha256": "07cd186df45a2253fd788d8440ee4f967283918a5ded06955f1ba6de87b13058",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/RL/update_0512.pt.commit.json",
+            "commit_sha256": "1d38d81df7b9a2abca5062cb0a715f743bc8824c7877f719008d35489494ba01",
+            "phase": "RL",
+            "cursor": 512,
+            "weight_version": 512,
+            "model_tensor_sha256": "83655cd216fc5abb32abf5e5094e888d1ce1c28162cbe7b3d78b15742a3eee0c",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "eligible_as_completed_endpoint": true
+        },
+        "continued_SL": {
+          "actual_completed_updates": 512,
+          "start_from_own_S1": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/continued_SL/start_from_SL.pt",
+            "checkpoint_sha256": "773acc44a5a025ce922a97f88a27ee06ef62069a18eb15b9c25f90a77b06f7bc",
+            "checkpoint_bytes": 3792405,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/continued_SL/start_from_SL.pt.json",
+            "sidecar_sha256": "7e99017a608ba8452f479bab87db2fddfe9cf33fa518d0ef7202d8f8925e7a47",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/continued_SL/start_from_SL.pt.commit.json",
+            "commit_sha256": "c65be20005c4785838487a7d8f5a5653d8604e2e4465d55763b1a796f4e2c7ad",
+            "phase": "continued_SL",
+            "cursor": 0,
+            "weight_version": 0,
+            "model_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "fixed_endpoint": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/continued_SL/update_0512.pt",
+            "checkpoint_sha256": "6303538aeede660bdca70e24d1177adef380a361a0042858e2de13de6654d8e1",
+            "checkpoint_bytes": 4335989,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/continued_SL/update_0512.pt.json",
+            "sidecar_sha256": "31bf95381634a70fb3e80044bd0fc7d072c5da33a91e0af1404bc722a25e0d37",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/continued_SL/update_0512.pt.commit.json",
+            "commit_sha256": "0d134de1d9b5f892fc395312f3389c87525ba0b7f4ed53ab0e0c2b702c073d5a",
+            "phase": "continued_SL",
+            "cursor": 512,
+            "weight_version": 512,
+            "model_tensor_sha256": "7e3418f94f59f7dd7d2a1c2e10585a2141a1d2a1d9885cae54491d12fed4f691",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "eligible_as_completed_endpoint": true
+        }
+      },
+      "missing_endpoint_is_not_synthesized": true
+    },
+    "11622027": {
+      "seed": 11622027,
+      "status": "COMPLETE",
+      "fork_receipt": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S2/FORK_RECEIPT.json",
+      "fork_receipt_sha256": "ca80a7947d4b51a1e4db49bb0929a5d3db22459017529b1d7a98158f1d94171d",
+      "fork_receipt_contents": {
+        "source_S1_checkpoint_sha256": "365851c8967be6e1eda1bcac4b822a99ba0e7e937c0fef59d6381378499ac8d9",
+        "common_tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+        "branches": {
+          "frozen_SL": {
+            "tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+            "optimizer_state_entries": 0
+          },
+          "RL": {
+            "tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+            "optimizer_state_entries": 0
+          },
+          "continued_SL": {
+            "tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+            "optimizer_state_entries": 0
+          }
+        },
+        "frozen_untrained_checkpoint": "../S1/untrained.pt",
+        "frozen_SL": true,
+        "source_S1_optimizer_inherited": false
+      },
+      "source_S1": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt",
+        "checkpoint_sha256": "365851c8967be6e1eda1bcac4b822a99ba0e7e937c0fef59d6381378499ac8d9",
+        "checkpoint_bytes": 838389,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt.json",
+        "sidecar_sha256": "4bb052f7acfb65dc109b6a4ed6ec398426d4104264151bcb0c878ec11865e659",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt.commit.json",
+        "commit_sha256": "f9553ca769dc029b5856342fc7dd84ce24442b52db17f0590c56f200851f7764",
+        "phase": "S1",
+        "cursor": 256,
+        "weight_version": 256,
+        "model_tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "untrained_reference": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/untrained.pt",
+        "checkpoint_sha256": "546734de134a602d162c0c5a0fc5cfe2b11bec6360632e22861ae8b80284c685",
+        "checkpoint_bytes": 293589,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/untrained.pt.json",
+        "sidecar_sha256": "591decce3b36f10a0270e13429cfd45fa2c3aacb510ae8c48c69f00df6bc407e",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/untrained.pt.commit.json",
+        "commit_sha256": "1a427c125999c1c3f889fc053c136a7d018bed9ce43170608490aa5c013fe300",
+        "phase": "S1",
+        "cursor": 0,
+        "weight_version": 0,
+        "model_tensor_sha256": "7b05fdc8d1c76e1fd603fddd69bb90fa53ff28435cf3662950871546445575f2",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "frozen_SL_reference": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt",
+        "checkpoint_sha256": "365851c8967be6e1eda1bcac4b822a99ba0e7e937c0fef59d6381378499ac8d9",
+        "checkpoint_bytes": 838389,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt.json",
+        "sidecar_sha256": "4bb052f7acfb65dc109b6a4ed6ec398426d4104264151bcb0c878ec11865e659",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt.commit.json",
+        "commit_sha256": "f9553ca769dc029b5856342fc7dd84ce24442b52db17f0590c56f200851f7764",
+        "phase": "S1",
+        "cursor": 256,
+        "weight_version": 256,
+        "model_tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "branches": {
+        "RL": {
+          "actual_completed_updates": 512,
+          "start_from_own_S1": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/RL/start_from_SL.pt",
+            "checkpoint_sha256": "23e94afa809aeef224f182ca12dfa533abb61c72ba2b7c9d9b65379844577355",
+            "checkpoint_bytes": 293525,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/RL/start_from_SL.pt.json",
+            "sidecar_sha256": "e5505d35b6c0056477ba976b2c74339cb7422d9897ea9b17c1cdf4baeacaaabd",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/RL/start_from_SL.pt.commit.json",
+            "commit_sha256": "d8834118d81d862b288d37758b99507650397f0f82050ee3e34ae34eb59b4a50",
+            "phase": "RL",
+            "cursor": 0,
+            "weight_version": 0,
+            "model_tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "fixed_endpoint": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/RL/update_0512.pt",
+            "checkpoint_sha256": "5994f9a9395b0badea2f9a6b481e080bed633062eb26ef1e5549c142eafe42da",
+            "checkpoint_bytes": 37910386,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/RL/update_0512.pt.json",
+            "sidecar_sha256": "a3b6b146f61c5f58cb0612fa7e67cedea618b6cbe89450206d9b6013b727072c",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/RL/update_0512.pt.commit.json",
+            "commit_sha256": "0f7a6e2fe3e5bd3cf467243edb9dba6823a20d814e7cbe61a17fae2c70e8e245",
+            "phase": "RL",
+            "cursor": 512,
+            "weight_version": 512,
+            "model_tensor_sha256": "f57e881d37c0705c94e860165d1be342a7c100b1c34f7a0c8bcf1421da112228",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "eligible_as_completed_endpoint": true
+        },
+        "continued_SL": {
+          "actual_completed_updates": 512,
+          "start_from_own_S1": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/continued_SL/start_from_SL.pt",
+            "checkpoint_sha256": "1b8d8558037495315519719e5da82cdfc41e2c42f64f606b657846232fee0b0d",
+            "checkpoint_bytes": 3720405,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/continued_SL/start_from_SL.pt.json",
+            "sidecar_sha256": "cb5a208e59fd34a11d34c3aa28e3d095bf84d8f76140124ae8894fafcd350679",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/continued_SL/start_from_SL.pt.commit.json",
+            "commit_sha256": "6ae40d5b999a5b35d47c56b69dbac64d361d92303cd8dd2fca9f3eac02dbb815",
+            "phase": "continued_SL",
+            "cursor": 0,
+            "weight_version": 0,
+            "model_tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "fixed_endpoint": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/continued_SL/update_0512.pt",
+            "checkpoint_sha256": "7caf81d095dcfb5d18ab9e7485f62ead0d7b9bc4a47ef1bbca07fbef221cf4d1",
+            "checkpoint_bytes": 4264053,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/continued_SL/update_0512.pt.json",
+            "sidecar_sha256": "a7debe94cb9ad0a5bb01a11407c11e37faa09284ae95600e4d105467a6a45090",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/continued_SL/update_0512.pt.commit.json",
+            "commit_sha256": "f87914cdc401a451f5df3db6ec372c4a3583b6448c999c350ba1a5d9afa48bb9",
+            "phase": "continued_SL",
+            "cursor": 512,
+            "weight_version": 512,
+            "model_tensor_sha256": "136b40f8082e0b5f6e7fca0064b6360fe54a9b5f6b997baad437d52ad72afaac",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "eligible_as_completed_endpoint": true
+        }
+      },
+      "missing_endpoint_is_not_synthesized": true
+    },
+    "11622028": {
+      "seed": 11622028,
+      "status": "COMPLETE",
+      "fork_receipt": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S2/FORK_RECEIPT.json",
+      "fork_receipt_sha256": "b170e45f3c414c7222113e969baf79f65e4eed00d4fbbba44f8ded1b7a6adcd6",
+      "fork_receipt_contents": {
+        "source_S1_checkpoint_sha256": "92a3ae629dd40f45a71c8a7129b7ecd06d82e76e45736a6e092aa76629a30ecc",
+        "common_tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+        "branches": {
+          "frozen_SL": {
+            "tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+            "optimizer_state_entries": 0
+          },
+          "RL": {
+            "tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+            "optimizer_state_entries": 0
+          },
+          "continued_SL": {
+            "tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+            "optimizer_state_entries": 0
+          }
+        },
+        "frozen_untrained_checkpoint": "../S1/untrained.pt",
+        "frozen_SL": true,
+        "source_S1_optimizer_inherited": false
+      },
+      "source_S1": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt",
+        "checkpoint_sha256": "92a3ae629dd40f45a71c8a7129b7ecd06d82e76e45736a6e092aa76629a30ecc",
+        "checkpoint_bytes": 837749,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt.json",
+        "sidecar_sha256": "925613be4e4c643315b02d3d9c47bdaeb819d30ebf39631e601f06208d251474",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt.commit.json",
+        "commit_sha256": "7cf4d8e48430748e4d47ae76fd1d5216ea130a31d9ce07cdf9e717575213ce85",
+        "phase": "S1",
+        "cursor": 256,
+        "weight_version": 256,
+        "model_tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "untrained_reference": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/untrained.pt",
+        "checkpoint_sha256": "aec83e7d1b785517c56324c54944e9bd398e29aae5677f76b90318848f1a78dc",
+        "checkpoint_bytes": 293653,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/untrained.pt.json",
+        "sidecar_sha256": "16a2d8223c2fb6b7ec3aa3cfb9e1d54fbe197e77bb315b5b0cb35202b5e0cfc8",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/untrained.pt.commit.json",
+        "commit_sha256": "f73e2c27ff7d6e3c49b8fdfb0dda9ef52ec2db4a5faf47316de512f8638119c2",
+        "phase": "S1",
+        "cursor": 0,
+        "weight_version": 0,
+        "model_tensor_sha256": "81333194ec66b1b8159092d164c8fe1750be102689c4f4a8679c67ed56a40e6a",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "frozen_SL_reference": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt",
+        "checkpoint_sha256": "92a3ae629dd40f45a71c8a7129b7ecd06d82e76e45736a6e092aa76629a30ecc",
+        "checkpoint_bytes": 837749,
+        "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt.json",
+        "sidecar_sha256": "925613be4e4c643315b02d3d9c47bdaeb819d30ebf39631e601f06208d251474",
+        "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt.commit.json",
+        "commit_sha256": "7cf4d8e48430748e4d47ae76fd1d5216ea130a31d9ce07cdf9e717575213ce85",
+        "phase": "S1",
+        "cursor": 256,
+        "weight_version": 256,
+        "model_tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+        "hash_binding_closed_boundary_ok": true,
+        "tensor_payload_deserialized": false
+      },
+      "branches": {
+        "RL": {
+          "actual_completed_updates": 512,
+          "start_from_own_S1": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/RL/start_from_SL.pt",
+            "checkpoint_sha256": "1f9feac08530dbc29c95f77bd4c212e819ff01317a816dc7d0f1ad40dfbe46e0",
+            "checkpoint_bytes": 293589,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/RL/start_from_SL.pt.json",
+            "sidecar_sha256": "0045315fe0fdb4d8510e78354c236f2f65ce4d73ceb2266e13cb95168850511f",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/RL/start_from_SL.pt.commit.json",
+            "commit_sha256": "b89348968801b904fa2ca3f39b996cfdeb6eb763bcbb8a5d70dbbde817608725",
+            "phase": "RL",
+            "cursor": 0,
+            "weight_version": 0,
+            "model_tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "fixed_endpoint": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/RL/update_0512.pt",
+            "checkpoint_sha256": "55158093ba0912538db60fb6fb6d09039fa56cd0ff762b23f7d61e7d421c28f4",
+            "checkpoint_bytes": 37818418,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/RL/update_0512.pt.json",
+            "sidecar_sha256": "23508b2adb20244b16a7220ece522af79c3adf9b9e67dd2315152450e7e97b3b",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/RL/update_0512.pt.commit.json",
+            "commit_sha256": "cf5308f7c4837bdb85dbb74a0235077e8479c70ab40494146fe1ef2af4bac25e",
+            "phase": "RL",
+            "cursor": 512,
+            "weight_version": 512,
+            "model_tensor_sha256": "b55207b98ed5b1ee4c7252989ce274d7c618b48458861441aa5f63758682c5a0",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "eligible_as_completed_endpoint": true
+        },
+        "continued_SL": {
+          "actual_completed_updates": 512,
+          "start_from_own_S1": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/continued_SL/start_from_SL.pt",
+            "checkpoint_sha256": "8041e954d4c70018c2cea5d8070a562e65fbc775f7c2f0c246eb30887c3a261c",
+            "checkpoint_bytes": 3654357,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/continued_SL/start_from_SL.pt.json",
+            "sidecar_sha256": "9de84241508f62ede4e7d414b0567742054450d2e116e5b519580fca6aeb7083",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/continued_SL/start_from_SL.pt.commit.json",
+            "commit_sha256": "d0dc9e0ce3bdedbcbfb2d041bc0efae68fba1954612ceeccdd2b72d162cf8626",
+            "phase": "continued_SL",
+            "cursor": 0,
+            "weight_version": 0,
+            "model_tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "fixed_endpoint": {
+            "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/continued_SL/update_0512.pt",
+            "checkpoint_sha256": "d9f4cec93c097a4ab8e56352f53c546cef76321b473a73f0d4564b8d4e90e927",
+            "checkpoint_bytes": 4198197,
+            "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/continued_SL/update_0512.pt.json",
+            "sidecar_sha256": "50c569ad3c9300c4fb07149ca9fb1c1213b503412f9f18e151d8cd2ad6168e5f",
+            "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/continued_SL/update_0512.pt.commit.json",
+            "commit_sha256": "4a91044d06cd11ae862f6e9dd58490b861f0b838bacf7b1b1cacb8e80d3466b0",
+            "phase": "continued_SL",
+            "cursor": 512,
+            "weight_version": 512,
+            "model_tensor_sha256": "87f447ce852f6f1c52ba0b8c20a4c158326bf3c084ffb09f7d7f935ef10a849a",
+            "hash_binding_closed_boundary_ok": true,
+            "tensor_payload_deserialized": false
+          },
+          "eligible_as_completed_endpoint": true
+        }
+      },
+      "missing_endpoint_is_not_synthesized": true
+    }
+  },
+  "interpretation": "Frozen-SL uses the original own-seed S1 update0256; untrained uses the original own-seed S1 untrained checkpoint. No regenerated reference policy. Fresh Adam is evidenced by the original fork receipt and hashed start boundary; no S1 optimizer momentum is inherited.",
+  "reference_route_evaluations_added": 0,
+  "tensor_payload_deserializations": 0
+}

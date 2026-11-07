@@ -1,0 +1,46 @@
+{
+  "schema": "rc3-s2-postprocessing-maintenance-notes-v1",
+  "scope": "Report extraction, saved-file audit and Git transport only; no formal-science retry or extra evaluation",
+  "scientific_optimizer_updates_added": 0,
+  "scientific_query_or_inference_or_navigation_or_teacher_or_H_calls_added": 0,
+  "S3_or_original60_semantic_reads": 0,
+  "events": [
+    {
+      "component": "independent saved-file audit seed 11622027",
+      "initial_result": "KeyError for omitted zero navigation counter in sparse ledger",
+      "resolution": "Report-only audit reader uses ledger.get(key, 0); saved files audited again without scientific execution",
+      "initial_failed_attempt_wall_s": null,
+      "wall_scope": "Initial failed audit was not separately instrumented; successful per-seed audit-loop durations are in audit_seed_*.json and are not exhaustive postprocessing time"
+    },
+    {
+      "component": "analyze_s2.py first closed-run extraction",
+      "initial_result": "TypeError: dict() got multiple values for keyword argument phase",
+      "resolution": "Reject a checkpoint phase mismatch before adding report columns; construct dict(r, seed=seed, phase=phase, source=...) without duplicate keyword expansion",
+      "final_outputs_written_by_failed_attempt": false,
+      "initial_failed_attempt_wall_s": null,
+      "wall_scope": "Not separately instrumented. Successful extraction reports its own wall and CPU time in ANALYSIS_SUMMARY.json"
+    },
+    {
+      "component": "third Git LFS preupload",
+      "initial_result": "GitHub locking API EOF; exit 1 before upload confirmation",
+      "resolution": "Retry only transport with lfs.locksverify=false for the GitHub endpoint; object integrity verification remains enabled",
+      "scientific_retry": false,
+      "wall_scope": "Transport is outside the closed scientific stage clocks; network byte totals are not inferred from cumulative progress displays"
+    },
+    {
+      "component": "post-generation final document review",
+      "initial_result": "One legacy ACTIVE closed-seed counter remained 2048 after all three seeds completed; generic S1 pointers and report-only zero-work scope needed clarification",
+      "resolution": "Set receipt-derived completed count3072, keep historical receipt bytes and annotate their S1 scope, point current report to S2; update only supplementary report writer/binding",
+      "scientific_retry": false
+    },
+    {
+      "component": "Git LFS immutable-object transport retry",
+      "initial_result": "Partial 337/637 cumulative objects confirmed, then three batch API EOF messages; exit1",
+      "resolution": "Same immutable object set retried with transfer concurrency1; exit0 confirmed637/637. No source, model or scientific run changed.",
+      "reported_cumulative_size": "3.0 GB",
+      "unique_network_bytes": null,
+      "scientific_retry": false
+    }
+  ],
+  "accounting_limit": "Postprocessing and publication have partially measured components, not a complete wall-time sum. Do not claim all maintenance wall time is known or zero. Original stage clocks and ledgers are unchanged."
+}

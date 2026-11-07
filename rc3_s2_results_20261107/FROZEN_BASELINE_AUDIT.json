@@ -1,0 +1,95 @@
+{
+  "schema": "rc3-frozen-baseline-byte-preservation-audit-v1",
+  "status": "PASS",
+  "audit_type": "one independent opaque-byte preservation scan; no archive writer; no Git staging",
+  "baseline_commit": "f69de88efa9655cf20633b61b6b0b46dd600666c",
+  "baseline_manifest": "project_management/GIT_MANIFEST.json",
+  "baseline_manifest_sha256": "342047e151b6778f037cdd4d8630c75cde6cd948fdc5e52353cd6546d55121aa",
+  "baseline_manifest_file_count": 12515,
+  "baseline_manifest_total_bytes": 3849412158,
+  "scan_scope": "Only entries present in the exact baseline manifest; newly created S2 files absent from that manifest are excluded, including files in shared parent directories.",
+  "frozen_historical_and_S1_scope": "All non-excluded baseline entries were checked, including original S1_A/S1_B and historical scientific evidence. No artifact content was parsed or evaluated.",
+  "disk_checked_file_count": 12510,
+  "disk_checked_expected_bytes": 3849095095,
+  "disk_checked_observed_bytes": 3849095095,
+  "disk_matching_file_count": 12510,
+  "mutable_disk_exclusions": [
+    {
+      "path": "README.md",
+      "reason": "Mutable root project overview; intentional current-run update permitted.",
+      "baseline_bytes": 13629,
+      "baseline_sha256": "1802fa5c62135dd17619cfef77d92f8fbe0a030f1bee29230b482c0c427824cb"
+    },
+    {
+      "path": "PROJECT_VERSION.json",
+      "reason": "Mutable current project version pointer; intentional current-run update permitted.",
+      "baseline_bytes": 12384,
+      "baseline_sha256": "311d398eb5f72bb5d7c1982c864460f69f8d4353237885677a31db106f73875e"
+    },
+    {
+      "path": "rc3_global_local_execution_v3/README.md",
+      "reason": "Mutable execution overview; intentional current-run update permitted.",
+      "baseline_bytes": 2877,
+      "baseline_sha256": "49c9a0ae155463d6775f63152517b234d1143e51e1e50b35d678859f16b72d5f"
+    },
+    {
+      "path": "rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json",
+      "reason": "Mutable active execution pointer; RUNNING intent is expected during S2.",
+      "baseline_bytes": 4079,
+      "baseline_sha256": "baf9d2259f0e2d7105271e0ff4a218552aa7bc0200c4fb611731cb60564d9c8d"
+    }
+  ],
+  "unrelated_live_user_document": {
+    "path": "第二章与第三章修订稿_20261029.docx",
+    "live_disk_file_opened": false,
+    "live_disk_file_modified": false,
+    "verification_source": "committed_git_blob",
+    "committed_baseline_blob_status": "PASS",
+    "expected_bytes": 284094,
+    "observed_bytes": 284094,
+    "expected_sha256": "4843a4e7e492d3b0db6bc99a6d5ed180293355573f2ec6b1e6b3ecf0a356884c",
+    "observed_sha256": "4843a4e7e492d3b0db6bc99a6d5ed180293355573f2ec6b1e6b3ecf0a356884c"
+  },
+  "accounting": {
+    "baseline_file_count": 12515,
+    "mutable_disk_exclusion_count": 4,
+    "user_live_doc_disk_exclusion_count": 1,
+    "committed_baseline_doc_blob_check_count": 1,
+    "baseline_entries_with_verified_bytes_count": 12511,
+    "verified_expected_bytes_including_committed_doc": 3849379189,
+    "excluded_mutable_expected_bytes": 32969,
+    "new_S2_artifacts_scanned": 0,
+    "scan_passes": 1,
+    "frozen_task_model_scene_semantic_reads": 0,
+    "model_deserializations": 0,
+    "inference_calls": 0,
+    "task_or_scene_generation_calls": 0,
+    "optimizer_updates": 0,
+    "H_queries": 0,
+    "S3_queries": 0,
+    "old60_evaluations": 0,
+    "teacher_queries": 0,
+    "frozen_file_writes": 0,
+    "archive_writes": 0,
+    "git_stage_or_commit_operations": 0
+  },
+  "mismatch_count": 0,
+  "mismatches": [],
+  "read_error_count": 0,
+  "read_errors": [],
+  "clock_start_utc": "2026-11-07T01:36:19.666231+00:00",
+  "clock_end_utc": "2026-11-07T01:37:59.218401+00:00",
+  "active_wall_seconds": 99.5519847999999,
+  "interpretation": "Byte preservation and maintenance evidence only; no training, planning, model quality, physical calibration, or performance claim.",
+  "post_scan_scope_qualifier": {
+    "path": ".gitattributes",
+    "reason": "Parent announced a subsequent authorized path-specific Git LFS rule for new S2 seed RL/updates.jsonl files after this first baseline entry had already been hashed.",
+    "recorded_check_scope": "Pre-update .gitattributes bytes only; this receipt does not assert byte preservation of the subsequent intentionally updated Git metadata file.",
+    "pre_update_baseline_sha256": "4cb24fa65895fe4deb814d14f4cf88d22785639878b5838cba9730e1b3b028b1",
+    "pre_update_baseline_bytes": 378,
+    "pre_update_check_status": "PASS",
+    "subsequent_current_file_hash_obtained": false,
+    "additional_baseline_scans": 0,
+    "annotation_utc": "2026-11-07T01:39:52.270000+00:00"
+  }
+}

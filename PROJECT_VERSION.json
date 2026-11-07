@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.06-s1b-three-seed-complete",
+  "version": "2026.11.07-s2-closeout",
   "snapshot_date": "2026-11-06",
   "repository": "https://github.com/persiaf/rc3_2026_11_4",
   "default_branch": "main",
@@ -271,5 +271,60 @@
     "old60": "SEALED",
     "main_merged": false,
     "historical_metadata_scope": "Earlier per-phase objects retain their original-turn status; current execution authority and status are this record and ACTIVE_EXECUTION_STATUS."
+  },
+  "S2_scientific_execution": {
+    "status": "COMPLETE_ALL3_FIXED_ENDPOINTS",
+    "experiment_id": "rc3_v3_global_local_20261106_01",
+    "branch": "codex/global-local-preflight",
+    "baseline_commit": "f69de88efa9655cf20633b61b6b0b46dd600666c",
+    "user_authorization_commit": "13a1495f65bede5f37fcc26dc3d2d6d5b961fff1",
+    "S2_user_authorization_sha256": "4dba652b2156b88848c4c1c49826952414a5b6d08baa7ce250d710b3ea312423",
+    "approved_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+    "approved_source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+    "source_revision_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
+    "authorized_stages": [
+      "S1-A",
+      "S1-B",
+      "S2"
+    ],
+    "actual_optimizer_updates": 3072,
+    "actual_updates_by_seed": {
+      "11622026": {
+        "RL": 512,
+        "continued_SL": 512
+      },
+      "11622027": {
+        "RL": 512,
+        "continued_SL": 512
+      },
+      "11622028": {
+        "RL": 512,
+        "continued_SL": 512
+      }
+    },
+    "actual_stage_shared_wall_s_by_seed": {
+      "11622026": 2954.5433328,
+      "11622027": 3029.5197525000003,
+      "11622028": 3253.5610393999996
+    },
+    "completion_sha256": {
+      "11622026": "278e8e9f4ba6f5524288696f3105bd35a32850d68e0153c17313370af8ba9a2d",
+      "11622027": "3713f5ed84b26441f1378cfaeb7e777c572d20ce7e1e8a0c3fd9d2d4d97e4339",
+      "11622028": "d08d1ea0be225c3dad85d60afb3d3afd876b3a823e0ca9224165009d8c77faaa"
+    },
+    "original_S1_A_S1_B_bytes_preserved": true,
+    "original_S1_B_updates_separate": 768,
+    "report": "rc3_s2_results_20261107/README.md",
+    "S3_model_lineage_readiness": "GO",
+    "S3_execution_readiness": "REVISE_PENDING_FROZEN_PROTOCOL_EVALUATOR_AND_SEPARATE_AUTHORIZATION",
+    "S3_authorized": false,
+    "S3_executed": false,
+    "S3_target_semantic_consumption": 0,
+    "old60": "SEALED",
+    "metadata_closed_utc": "2026-11-07T08:05:11.954401+00:00",
+    "main_merged": false,
+    "branch_push_complete": false,
+    "publication_receipt": "rc3_s2_results_20261107/PUBLICATION_RECEIPT.json",
+    "historical_metadata_scope": "Earlier objects retain their original-turn status; current state is this S2 object and ACTIVE_EXECUTION_STATUS."
   }
 }

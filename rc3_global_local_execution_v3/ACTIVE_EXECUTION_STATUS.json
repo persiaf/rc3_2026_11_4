@@ -1,6 +1,6 @@
 {
   "schema": "rc3-active-approved-scientific-execution-v1",
-  "status": "APPROVED_V3_S1_A_AND_S1_B_COMPLETE_S2_NOT_AUTHORIZED",
+  "status": "APPROVED_V3_S2_COMPLETE_ALL3_FIXED_ENDPOINTS",
   "active_protocol": "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
   "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
   "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -8,12 +8,13 @@
   "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
   "protocol_approval": "rc3_global_local_execution_v3/authorizations/20261106_S1_A/PROTOCOL_APPROVAL.json",
   "protocol_approval_sha256": "0136460e11211847bcfe3db5059322afb2af93a8695cea796cc186fbcf511eb3",
-  "stage_authorization": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/S1_B_AUTHORIZATION.json",
-  "stage_authorization_sha256": "ee952e9a3b3d917b96aef803196d16e9807fe7ac527c1b7244210f04d50950e2",
+  "stage_authorization": "rc3_global_local_execution_v3/authorizations/20261107_S2/S2_AUTHORIZATION.json",
+  "stage_authorization_sha256": "4dba652b2156b88848c4c1c49826952414a5b6d08baa7ce250d710b3ea312423",
   "experiment_id": "rc3_v3_global_local_20261106_01",
   "authorized_stages": [
     "S1-A",
-    "S1-B"
+    "S1-B",
+    "S2"
   ],
   "S1_B_S2_S3_authorized": false,
   "old_v2_pointer_preserved": true,
@@ -26,22 +27,22 @@
   "S1_A_optimizer_updates": 0,
   "independent_saved_plan_audit": "PASS_512_RETURN_PLANS",
   "downstream_S1_B": "COMPLETE_ALL3_FIXED_ENDPOINTS",
-  "result_report": "rc3_s1b_results_20261106/README.md",
+  "result_report": "rc3_s2_results_20261107/README.md",
   "stage_complete_receipt": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/stage_admission/S1-A/COMPLETE.json",
   "audit_receipt": "rc3_s1a_results_20261106/INDEPENDENT_AUDIT.json",
   "approved_source_bytes_changed": false,
   "pending_source_revision": null,
   "compatibility_report": "rc3_navigation_compat_20261106/README.md",
   "S1_A_original_data_bytes_preserved": true,
-  "working_tree_execution_sources": "APPROVED_COMPATIBILITY_REVISION_0f0ffd2; exact independent S1-B receipt consumed for all3 seeds; S2 requires its own authorization.",
+  "working_tree_execution_sources": "APPROVED_COMPATIBILITY_REVISION_0f0ffd2; original source approval 9a45d6e retained; independent S2 authorization 4dba652 consumed for all3 seeds, now complete; S3 not authorized.",
   "original_S1_A_source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
   "source_manifest": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
   "source_revision_approval": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
   "source_revision_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
   "S1_B_authorized": true,
-  "S2_authorized": false,
+  "S2_authorized": true,
   "S3_authorized": false,
-  "S1_B_S2_S3_authorized_scope": "Conjunction: S2 and S3 remain unauthorized; S1-B was explicitly authorized and is complete.",
+  "S1_B_S2_S3_authorized_scope": "S1-B and S2 explicitly authorized; S3 not authorized",
   "S1_B_runtime": "COMPLETE",
   "S1_B_scientific_optimizer_updates": 768,
   "S1_B_report": "rc3_s1b_results_20261106/README.md",
@@ -59,7 +60,7 @@
     "11622028": "3fb6b4bb5d1a85a78f2e051d6ed2d78fe62f0b08ca3f8ce71de3c41c1fd3b7aa"
   },
   "S2_technical": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY",
-  "S2_runtime": "NOT_STARTED",
+  "S2_runtime": "COMPLETE_ALL3_FIXED_ENDPOINTS",
   "S3_runtime": "NOT_STARTED",
   "original60": "SEALED",
   "S3_target_tasks": "SEALED",
@@ -69,5 +70,52 @@
     "approved": true,
     "approval_receipt": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
     "approval_receipt_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4"
-  }
+  },
+  "S2_authorization": "rc3_global_local_execution_v3/authorizations/20261107_S2/S2_AUTHORIZATION.json",
+  "S2_authorization_sha256": "4dba652b2156b88848c4c1c49826952414a5b6d08baa7ce250d710b3ea312423",
+  "S2_report": "rc3_s2_results_20261107/README.md",
+  "S2_completed_seeds": [
+    11622026,
+    11622027,
+    11622028
+  ],
+  "S2_actual_optimizer_updates_completed_seeds": 3072,
+  "S2_status_record_first_updated_utc": "2026-11-07T01:29:41.958317+00:00",
+  "S2_absolute_start_time_scope": "First outer process start was not separately instrumented; stage receipts and monotonic cumulative resource clocks are authoritative. The status update timestamp is not the process-start timestamp.",
+  "S2_scientific_optimizer_updates": 3072,
+  "S2_actual_updates_by_seed": {
+    "11622026": {
+      "RL": 512,
+      "continued_SL": 512
+    },
+    "11622027": {
+      "RL": 512,
+      "continued_SL": 512
+    },
+    "11622028": {
+      "RL": 512,
+      "continued_SL": 512
+    }
+  },
+  "S2_completion_sha256": {
+    "11622026": "278e8e9f4ba6f5524288696f3105bd35a32850d68e0153c17313370af8ba9a2d",
+    "11622027": "3713f5ed84b26441f1378cfaeb7e777c572d20ce7e1e8a0c3fd9d2d4d97e4339",
+    "11622028": "d08d1ea0be225c3dad85d60afb3d3afd876b3a823e0ca9224165009d8c77faaa"
+  },
+  "S2_terminal_receipt_sha256": {
+    "11622026": "278e8e9f4ba6f5524288696f3105bd35a32850d68e0153c17313370af8ba9a2d",
+    "11622027": "3713f5ed84b26441f1378cfaeb7e777c572d20ce7e1e8a0c3fd9d2d4d97e4339",
+    "11622028": "d08d1ea0be225c3dad85d60afb3d3afd876b3a823e0ca9224165009d8c77faaa"
+  },
+  "S2_shared_stage_wall_s_by_seed": {
+    "11622026": 2954.5433328,
+    "11622027": 3029.5197525000003,
+    "11622028": 3253.5610393999996
+  },
+  "S2_metadata_closed_utc": "2026-11-07T08:05:11.954401+00:00",
+  "S3_model_lineage_readiness": "GO",
+  "S3_execution_readiness": "REVISE_PENDING_FROZEN_PROTOCOL_EVALUATOR_AND_SEPARATE_AUTHORIZATION",
+  "S3_target_semantic_consumption": 0,
+  "stage_complete_receipt_scope": "Historical S1-A COMPLETE receipt retained; current S2 completion is the per-seed S2_completion_sha256 map and stage_admission/S2 records.",
+  "audit_receipt_scope": "Historical S1-A audit retained; current S2 audit is rc3_s2_results_20261107/INDEPENDENT_REVIEW.json."
 }

@@ -1,0 +1,29 @@
+{
+  "intended_claim": "大规模复杂父场景DRL训练后，冻结策略可快速完成不同规模局部任务的完整约束规划，并具有可确认的质量—时间收益。",
+  "claim_supported": "partial",
+  "narrow_S2_completion_claim_supported": "yes",
+  "confidence": "high",
+  "what_results_support": [
+    "同一获准v3与源码下，三个固定种子各完成RL512和continuedSL512；总3072次真实S2优化器更新，固定终点与完整Adam/RNG/日志可追溯。",
+    "保存日志、路线、代理约束验证及资源账闭环；三条own-seed S1来源及fresh-Adam分叉未混用，真实付费终局调用均在上限内。",
+    "训练中存在非零策略梯度和优势信号，参数发生变化；这些是训练执行和数值记录结论。"
+  ],
+  "what_results_dont_support": [
+    "尚不能证明RL512优于frozenSL、continuedSL512、untrained或Fixed3/Detour，也没有独立泛化或部署质量—时间收益证据。",
+    "训练任务随更新改变，首末区间与训练曲线是未配对描述，不能解释为因果性能提升；H收益不能记为网络收益。",
+    "代理路线验证不等于实际机械臂IK、关节轨迹或实机安全认证。",
+    "S2完成不等于S3生产评估器已实现，不自动授权保留测试。"
+  ],
+  "missing_evidence": [
+    "符合既有冻结协议的S3评估器及其工程验证：相同任务/端点/H、冷暖完整时间、父场景统计单位、预定AND门槛。",
+    "未来单独授权的S3固定终点对照：三seed的untrained/frozenSL/RL512/continuedSL512与强规则质量、时间和可行性。"
+  ],
+  "suggested_claim_revision": "已按批准协议完成三种子大规模混合父场景/局部窗口DRL训练并冻结RL512端点；保存数据的来源、数值及资源验收通过。其冻结推理的质量—时间表现仍待S3验证。",
+  "next_experiments_needed": [
+    "先在不访问封存任务的条件下补全和验证S3评估器，再依独立授权运行既定S3；不追加S2更新、不更换模型、不改研究目标。"
+  ],
+  "routing_action": "supplement_after_S3_evaluator_and_separate_authorization",
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional — no paper claim audit available",
+  "pending_external_reviewer_delegation": false
+}
