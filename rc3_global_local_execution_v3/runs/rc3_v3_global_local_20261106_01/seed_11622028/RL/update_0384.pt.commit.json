@@ -1,0 +1,19 @@
+{
+  "schema": "rc3-checkpoint-boundary-commit-v1",
+  "checkpoint_sha256": "272e0b52c4ed62d62defac1c1af7f07607a795f0c8d5ba1fe266ca9f49a67a09",
+  "sidecar_sha256": "b65b74914250a9ae4c7041fe619b142d3c7369ba7a177b98c9a77b277ee909b6",
+  "phase": "RL",
+  "cursors": {
+    "S1": 0,
+    "RL": 384,
+    "continued_SL": 0
+  },
+  "snapshot_elapsed_s": 1639.1149569000008,
+  "stage_elapsed_after_checkpoint_IO_s": 1640.6040369000002,
+  "journal_sha256": {
+    "updates.jsonl": "fe70f9f5306be1d90abc2c81b7e75c845bd0d8db3f173b3252e95fa1604eeffb",
+    "events.jsonl": "1fada6af0bd15e812054f01c361bc28f8a3c65072b998642148540e798ba607f"
+  },
+  "terminal_cache_entries": 128,
+  "scope": "Includes checkpoint, integrity sidecar and their hash IO. Final tiny closure-record serialization is included by subsequent live stage clock, but is not self-timed in this record."
+}
