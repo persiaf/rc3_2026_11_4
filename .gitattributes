@@ -7,3 +7,6 @@
 *.pt filter=lfs diff=lfs merge=lfs -text
 *.npz filter=lfs diff=lfs merge=lfs -text
 rc3_rl_g2/outputs/training/ppo_episodes.jsonl filter=lfs diff=lfs merge=lfs -text
+
+# S2 full legal-mask and trajectory journals exceed normal Git blob limits.
+rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_*/RL/updates.jsonl filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,501 @@
+{
+  "problem": {
+    "identity": "f2719e668faffd17554d405359487d048216617dc55a8aea9a3f704024253fae",
+    "parent_identity": "d7a737ecfafcfe58e4efa50aa9f46f51840e344150d48b5358766a4e0f54f21c",
+    "window": {
+      "x0": 0,
+      "y0": 0,
+      "width": 4,
+      "height": 3
+    },
+    "task_ids_global": [
+      0,
+      1,
+      2,
+      12,
+      13,
+      14,
+      22
+    ],
+    "candidate_ids_global": [
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      82,
+      83,
+      84,
+      85,
+      96,
+      97,
+      98,
+      99,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      168,
+      170,
+      171,
+      172,
+      173
+    ],
+    "boundary_candidate_ids_global": [],
+    "entry_global_node": 0,
+    "exit_global_node": 0,
+    "coverage_sha256": "f0406e707dbbdfe2fabd31e0005d35e5ab28bc17f784033b2f9b453fa9ab0896",
+    "effective_F_sha256": "0e4d3f8a571c6c34ac51230ace53f0e1daab2ff12264664a9dbe780d978ff866",
+    "endpoint_D_sha256": "923958fe9baede922c3f90e4fbc2587beee18160002f145ac85087e3ba711a67",
+    "semantics": "Task window on full parent navigation; paths may leave window; no physical-map clipping",
+    "legacy_identity": "0fbf32bc1c2351998a34ec7f884fb92fdc2f2c535fb922942be5c45b8c36cd78",
+    "navigation_content_sha256": "c1873225e328a0bf9a1ecef02d169455284b36c48dd39a2617fb9070da7deeaf",
+    "snapshot_schema": "rc3-bound-local-v1"
+  },
+  "result": {
+    "J": 30.35174933,
+    "L": 26.60174933,
+    "K": 5,
+    "raw_J": 37.671462207800005,
+    "raw_L": 33.921462207800005,
+    "raw_K": 5,
+    "route": [
+      0,
+      8,
+      24,
+      14,
+      22,
+      1,
+      0
+    ],
+    "raw_route": [
+      0,
+      11,
+      6,
+      18,
+      16,
+      24,
+      0
+    ],
+    "plan": {
+      "schema": "rc3-global-local-plan-v1",
+      "method": "S0_endpoint_construction",
+      "status": "complete",
+      "problem_identity": "f2719e668faffd17554d405359487d048216617dc55a8aea9a3f704024253fae",
+      "parent_identity": "d7a737ecfafcfe58e4efa50aa9f46f51840e344150d48b5358766a4e0f54f21c",
+      "entry_global_node": 0,
+      "exit_global_node": 0,
+      "window": {
+        "x0": 0,
+        "y0": 0,
+        "width": 4,
+        "height": 3
+      },
+      "target_task_ids_global": [
+        0,
+        1,
+        2,
+        12,
+        13,
+        14,
+        22
+      ],
+      "visit_order_candidate_ids": [
+        82,
+        168,
+        98,
+        108,
+        16
+      ],
+      "selected_candidate_ids": [
+        82,
+        168,
+        98,
+        108,
+        16
+      ],
+      "navigation_global_nodes": [
+        0,
+        83,
+        169,
+        99,
+        109,
+        17,
+        0
+      ],
+      "assignments": [
+        {
+          "task_id": 12,
+          "candidate_id": 82,
+          "arm": "L"
+        },
+        {
+          "task_id": 22,
+          "candidate_id": 168,
+          "arm": "L"
+        },
+        {
+          "task_id": 13,
+          "candidate_id": 98,
+          "arm": "L"
+        },
+        {
+          "task_id": 14,
+          "candidate_id": 108,
+          "arm": "L"
+        },
+        {
+          "task_id": 0,
+          "candidate_id": 16,
+          "arm": "R"
+        },
+        {
+          "task_id": 1,
+          "candidate_id": 16,
+          "arm": "R"
+        },
+        {
+          "task_id": 2,
+          "candidate_id": 16,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 82,
+          "pose": {
+            "x": 1.015711177015407,
+            "y": 4.203476620388484,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 5.775198963799999,
+          "tasks": [
+            {
+              "task_id": 12,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 168,
+          "pose": {
+            "x": 3.4804869371756535,
+            "y": 4.752648057680071,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 8.7891461613,
+          "tasks": [
+            {
+              "task_id": 22,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 3,
+          "candidate_id": 98,
+          "pose": {
+            "x": 5.98852296924515,
+            "y": 4.206045448139203,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 11.8437848029,
+          "tasks": [
+            {
+              "task_id": 13,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 4,
+          "candidate_id": 108,
+          "pose": {
+            "x": 7.718993487967813,
+            "y": 3.188020702909225,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 15.1431535779,
+          "tasks": [
+            {
+              "task_id": 14,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 5,
+          "candidate_id": 16,
+          "pose": {
+            "x": 6.0342282352817165,
+            "y": 0.2757907806097085,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 20.2917303141,
+          "tasks": [
+            {
+              "task_id": 0,
+              "arm": "R"
+            },
+            {
+              "task_id": 1,
+              "arm": "R"
+            },
+            {
+              "task_id": 2,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.928378892
+        ],
+        [
+          0.0,
+          1.2617615638
+        ],
+        [
+          0.0,
+          2.2407411018
+        ],
+        [
+          0.0,
+          3.2192413103
+        ],
+        [
+          0.0,
+          3.5420648504
+        ],
+        [
+          0.0,
+          4.4814822036
+        ],
+        [
+          1.015711177,
+          4.4814822036
+        ],
+        [
+          1.015711177,
+          4.2034766204
+        ],
+        [
+          1.015711177,
+          4.4814822036
+        ],
+        [
+          1.0218117698,
+          4.4814822036
+        ],
+        [
+          1.453490106,
+          4.4814822036
+        ],
+        [
+          1.4786558583,
+          4.4814822036
+        ],
+        [
+          2.4855453546,
+          4.4814822036
+        ],
+        [
+          3.4804869372,
+          4.4814822036
+        ],
+        [
+          3.4804869372,
+          4.7526480577
+        ],
+        [
+          3.4804869372,
+          4.4814822036
+        ],
+        [
+          3.521022058,
+          4.4814822036
+        ],
+        [
+          3.9402970902,
+          4.4814822036
+        ],
+        [
+          3.9470132443,
+          4.4814822036
+        ],
+        [
+          4.9710907093,
+          4.4814822036
+        ],
+        [
+          5.9885229692,
+          4.4814822036
+        ],
+        [
+          5.9885229692,
+          4.2060454481
+        ],
+        [
+          5.9885229692,
+          4.4814822036
+        ],
+        [
+          6.0124159911,
+          4.4814822036
+        ],
+        [
+          6.4380321856,
+          4.4814822036
+        ],
+        [
+          6.4630104673,
+          4.4814822036
+        ],
+        [
+          7.4566360639,
+          4.4814822036
+        ],
+        [
+          7.4566360639,
+          3.5450752917
+        ],
+        [
+          7.4566360639,
+          3.5009366114
+        ],
+        [
+          7.4566360639,
+          3.2231349789
+        ],
+        [
+          7.4566360639,
+          3.1880207029
+        ],
+        [
+          7.718993488,
+          3.1880207029
+        ],
+        [
+          7.4566360639,
+          3.1880207029
+        ],
+        [
+          7.4566360639,
+          2.2407411018
+        ],
+        [
+          7.4566360639,
+          1.312219879
+        ],
+        [
+          7.4566360639,
+          1.2441077287
+        ],
+        [
+          7.4566360639,
+          0.9934724942
+        ],
+        [
+          7.4566360639,
+          0.93189643
+        ],
+        [
+          7.4566360639,
+          0.0
+        ],
+        [
+          6.4638560127,
+          0.0
+        ],
+        [
+          6.0342282353,
+          0.0
+        ],
+        [
+          6.0342282353,
+          0.2757907806
+        ],
+        [
+          6.0342282353,
+          0.0
+        ],
+        [
+          4.9710907093,
+          0.0
+        ],
+        [
+          3.9410094149,
+          0.0
+        ],
+        [
+          3.5080378155,
+          0.0
+        ],
+        [
+          2.4855453546,
+          0.0
+        ],
+        [
+          1.5006841687,
+          0.0
+        ],
+        [
+          1.0390548497,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        5.775198963799999,
+        3.0139471975,
+        3.0546386416,
+        3.299368774999999,
+        5.1485767362,
+        6.3100190159
+      ],
+      "route_length_m": 26.60174933,
+      "objective_length_plus_stops_m": 30.35174933,
+      "stop_penalty_equivalent_m": 0.75,
+      "arm_joint_trajectories": null,
+      "physical_joint_trajectory_certified": false,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "errors": [],
+        "independent_polyline_length_m": 26.601749329999997,
+        "effective_same_arm_F_and_A": true,
+        "endpoint_constraints_satisfied": true,
+        "physical_joint_trajectory_certified": false,
+        "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+      }
+    },
+    "H_s": 0.0005473000001074979,
+    "export_s": 0.00018600000021251617,
+    "validation_s": 0.003134600000066712,
+    "cache_hit": false
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "contexts": {
+    "11622026/RL": {
+      "ledger": {
+        "terminal": {
+          "RL": {
+            "terminal_requests": 6144,
+            "terminal_cache_hits": 1,
+            "terminal_attempts": 6143,
+            "terminal_completed": 6143,
+            "terminal_failed": 0,
+            "full_H_calls": 6143,
+            "export_attempts": 6143,
+            "exports": 6143,
+            "validation_attempts": 6143,
+            "validation_completed": 6143
+          },
+          "development": {
+            "terminal_requests": 36,
+            "terminal_cache_hits": 0,
+            "terminal_attempts": 36,
+            "terminal_completed": 36,
+            "terminal_failed": 0,
+            "full_H_calls": 36,
+            "export_attempts": 36,
+            "exports": 36,
+            "validation_attempts": 36,
+            "validation_completed": 36
+          }
+        },
+        "internal_H_search": {
+          "RL": {
+            "counts": {
+              "construct": 0,
+              "two_opt": 24555,
+              "joint_search": 6143,
+              "recipe": 0
+            },
+            "inclusive_s": {
+              "construct": 0.0,
+              "two_opt": 37.08028449999165,
+              "joint_search": 16.246376699991288,
+              "recipe": 0.0
+            },
+            "exclusive_s": {
+              "construct": 0.0,
+              "two_opt": 37.08028449999165,
+              "joint_search": 12.709106999989672,
+              "recipe": 0.0
+            }
+          },
+          "development": {
+            "counts": {
+              "construct": 0,
+              "two_opt": 143,
+              "joint_search": 36,
+              "recipe": 0
+            },
+            "inclusive_s": {
+              "construct": 0.0,
+              "two_opt": 0.0438086000012845,
+              "joint_search": 0.05244590000120297,
+              "recipe": 0.0
+            },
+            "exclusive_s": {
+              "construct": 0.0,
+              "two_opt": 0.0438086000012845,
+              "joint_search": 0.043612999999368185,
+              "recipe": 0.0
+            }
+          }
+        },
+        "parent_requests": 4132,
+        "parent_artifact_loads": 3631,
+        "navigation_artifact_loads": 4010,
+        "view_extractions": 4132,
+        "task_scene_generation_attempts": 501,
+        "task_scene_generations": 501,
+        "proxy_feasibility_calls": 501,
+        "optimizer_attempts": 1024,
+        "encode_calls": 8192,
+        "score_calls": 551356,
+        "environment_actions": 489998,
+        "trainer_terminal_requests": 6144,
+        "trainer_terminal_completed": 6144,
+        "policy_trajectories": 6144,
+        "forced_first_actions": 4096,
+        "backward_calls": 4096,
+        "backward_completed": 4096,
+        "optimizer_step_calls": 1024,
+        "optimizer_updates": 1024,
+        "navigation_memory_cache_hits": 119,
+        "navigation_attempts": 3,
+        "navigation_completed": 3,
+        "development_encode_calls": 36,
+        "development_score_calls": 1743,
+        "teacher_label_reads": 2048,
+        "supervised_label_actions": 65454,
+        "supervised_label_terminal_replays": 2048
+      },
+      "elapsed_wall_s": 2954.3908883000004,
+      "wall_cap_s": 7200.0
+    }
+  },
+  "note": "Cumulative per-stage contexts; shared clocks/ledgers are not additive. Resume loading overhead is charged. No S3 or old60 semantic access.",
+  "formal_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "S3_target_queries": 0,
+  "original60_semantic_reads": 0
+}
