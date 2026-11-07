@@ -1,5 +1,5 @@
 {
-  "schema": "rc3-s2-prepush-git-version-audit-v1",
+  "schema": "rc3-s2-published-git-version-audit-v1",
   "generated_utc": "2026-11-07T08:05:11.954401+00:00",
   "baseline_commit": "f69de88efa9655cf20633b61b6b0b46dd600666c",
   "S2_authorization_commit": "13a1495f65bede5f37fcc26dc3d2d6d5b961fff1",
@@ -26,10 +26,10 @@
   "origin_tracking_ref": "refs/remotes/origin/codex/global-local-preflight",
   "observed_local_origin_tracking_HEAD": "f69de88efa9655cf20633b61b6b0b46dd600666c",
   "origin_tracking_equals_baseline": true,
-  "remote_branch_HEAD_live_verified": false,
-  "branch_push_complete": false,
-  "remote_synchronized_claim": false,
-  "remote_verification_scope": "Local tracking refs only; parent must verify the true remote SHA after its actual final push.",
+  "remote_branch_HEAD_live_verified": true,
+  "branch_push_complete": true,
+  "remote_synchronized_claim": true,
+  "remote_verification_scope": "This receipt is saved in a child commit of the already-published anchor. Its own child SHA must be checked independently after the final normal push; no self-referential hash is asserted.",
   "observed_origin_main_tracking_HEAD": "5d5fe25754ffa032f97937a3fb54f15901c2fb7d",
   "local_origin_main_contains_S2_authorization": false,
   "main_merged": false,
@@ -463,5 +463,10 @@
       "sha256": "49c9a0ae155463d6775f63152517b234d1143e51e1e50b35d678859f16b72d5f",
       "mtime_ns": 1793969259372169200
     }
-  }
+  },
+  "verified_published_anchor": "1d4bc80fa160c50c0f733d7276a8ad6ed96bc975",
+  "actual_remote_research_HEAD_at_verification": "1d4bc80fa160c50c0f733d7276a8ad6ed96bc975",
+  "actual_remote_main_HEAD_at_verification": "5d5fe25754ffa032f97937a3fb54f15901c2fb7d",
+  "publication_receipt": "rc3_s2_results_20261107/PUBLICATION_RECEIPT.json",
+  "LFS_objects_fsck_passed": true
 }
