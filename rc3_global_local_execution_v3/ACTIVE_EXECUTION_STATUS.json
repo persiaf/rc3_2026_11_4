@@ -1,18 +1,19 @@
 {
   "schema": "rc3-active-approved-scientific-execution-v1",
-  "status": "APPROVED_V3_S1_A_FROZEN_COMPATIBILITY_FIXED_SOURCE_REVISION_PENDING",
+  "status": "APPROVED_V3_S1_A_AND_S1_B_COMPLETE_S2_NOT_AUTHORIZED",
   "active_protocol": "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
   "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
-  "source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+  "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
   "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
   "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
   "protocol_approval": "rc3_global_local_execution_v3/authorizations/20261106_S1_A/PROTOCOL_APPROVAL.json",
   "protocol_approval_sha256": "0136460e11211847bcfe3db5059322afb2af93a8695cea796cc186fbcf511eb3",
-  "stage_authorization": "rc3_global_local_execution_v3/authorizations/20261106_S1_A/S1_A_AUTHORIZATION.json",
-  "stage_authorization_sha256": "b70f5083d2e2528aafdf0569d93cee32977e88bc0f3e99662316dc398af73361",
+  "stage_authorization": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/S1_B_AUTHORIZATION.json",
+  "stage_authorization_sha256": "ee952e9a3b3d917b96aef803196d16e9807fe7ac527c1b7244210f04d50950e2",
   "experiment_id": "rc3_v3_global_local_20261106_01",
   "authorized_stages": [
-    "S1-A"
+    "S1-A",
+    "S1-B"
   ],
   "S1_B_S2_S3_authorized": false,
   "old_v2_pointer_preserved": true,
@@ -24,18 +25,49 @@
   "S1_A_stage_wall_s": 190.15379480000047,
   "S1_A_optimizer_updates": 0,
   "independent_saved_plan_audit": "PASS_512_RETURN_PLANS",
-  "downstream_S1_B": "TECHNICAL_GO_NEW_SOURCE_APPROVAL_AND_STAGE_AUTHORIZATION_REQUIRED",
-  "result_report": "rc3_s1a_results_20261106/README.md",
+  "downstream_S1_B": "COMPLETE_ALL3_FIXED_ENDPOINTS",
+  "result_report": "rc3_s1b_results_20261106/README.md",
   "stage_complete_receipt": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/stage_admission/S1-A/COMPLETE.json",
   "audit_receipt": "rc3_s1a_results_20261106/INDEPENDENT_AUDIT.json",
   "approved_source_bytes_changed": false,
-  "pending_source_revision": {
-    "path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
-    "sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
-    "approved": false,
-    "technical": "GO"
-  },
+  "pending_source_revision": null,
   "compatibility_report": "rc3_navigation_compat_20261106/README.md",
   "S1_A_original_data_bytes_preserved": true,
-  "working_tree_execution_sources": "NEW_COMPATIBILITY_REVISION_UNAPPROVED; historical approved source identity above retained; explicit new --source-binding and real receipts required."
+  "working_tree_execution_sources": "APPROVED_COMPATIBILITY_REVISION_0f0ffd2; exact independent S1-B receipt consumed for all3 seeds; S2 requires its own authorization.",
+  "original_S1_A_source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+  "source_manifest": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+  "source_revision_approval": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
+  "source_revision_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
+  "S1_B_authorized": true,
+  "S2_authorized": false,
+  "S3_authorized": false,
+  "S1_B_S2_S3_authorized_scope": "Conjunction: S2 and S3 remain unauthorized; S1-B was explicitly authorized and is complete.",
+  "S1_B_runtime": "COMPLETE",
+  "S1_B_scientific_optimizer_updates": 768,
+  "S1_B_report": "rc3_s1b_results_20261106/README.md",
+  "S1_B_mechanical_audit": "PASS_17450_CHECKS",
+  "S1_B_independent_review": "rc3_s1b_results_20261106/INDEPENDENT_REVIEW.md",
+  "S1_B_completed_seeds": [
+    11622026,
+    11622027,
+    11622028
+  ],
+  "S1_B_new_scene_navigation_native_H_teacher": 0,
+  "S1_B_completion_sha256": {
+    "11622026": "5c86800ae865c9d37143e3aa25261f1a4f12f71f6c337d8adaa9171e5232f167",
+    "11622027": "1d9ffb24d732910a8aa5bd7db3d1d415da477a85f19e349081b2cdc0a02359f0",
+    "11622028": "3fb6b4bb5d1a85a78f2e051d6ed2d78fe62f0b08ca3f8ce71de3c41c1fd3b7aa"
+  },
+  "S2_technical": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY",
+  "S2_runtime": "NOT_STARTED",
+  "S3_runtime": "NOT_STARTED",
+  "original60": "SEALED",
+  "S3_target_tasks": "SEALED",
+  "approved_source_revision": {
+    "path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+    "sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+    "approved": true,
+    "approval_receipt": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
+    "approval_receipt_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4"
+  }
 }

@@ -1,0 +1,23 @@
+{
+  "schema": "rc3-s1b-posttraining-diagnostic-plan-v1",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "registered_before_endpoint_evaluation": true,
+  "scope": "Descriptive paired assessment on the original 256 S1 training teachers; no held-out or route-quality claim",
+  "seeds": [11622026, 11622027, 11622028],
+  "checkpoints": ["untrained.pt", "update_0256.pt"],
+  "selection": "All 256 original teachers, in index order, all saved teacher-prefix decisions, both fixed endpoints for each seed; no checkpoint selection",
+  "metrics": ["route_macro_masked_CE", "state_micro_masked_CE", "legal_top1_teacher_agreement", "top3", "top5", "teacher_rank", "teacher_probability", "nontrivial_legal_count_gt_1", "uniform_legal_reference", "parameter_change", "gradient_finiteness", "RNG_and_checkpoint_integrity"],
+  "tie_break": "Lowest local candidate index; exact equality ties",
+  "teacher_forcing": "Each environment advances only by the saved teacher action; predicted alternatives are scored but never executed",
+  "diagnostic_wall_cap_s": 900,
+  "conservative_combined_guard": "min(900, 1800 - largest_completed_seed_stage_wall_s); diagnostics remain separately accounted and do not extend any scientific training budget",
+  "scientific_optimizer_updates": 0,
+  "teacher_queries": 0,
+  "new_scenes": 0,
+  "navigation_solves": 0,
+  "native_calls": 0,
+  "H_calls": 0,
+  "diagnostic_policy_instances": 6,
+  "no_automatic_retry": true,
+  "interpretation": "Training-set imitation and numerical/lineage readiness only. No evidence of new-scene generalization, complete-route improvement or DRL benefit. S2 and S3 remain unauthorized."
+}

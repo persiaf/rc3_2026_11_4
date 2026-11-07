@@ -1,0 +1,142 @@
+{
+  "schema": "rc3-s2-exact-future-execution-plan-v1",
+  "status": "NOT_AUTHORIZED_NOT_EXECUTED",
+  "technical_admission": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY_ONLY",
+  "protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "source_manifest": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+  "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+  "protocol_and_source_approval": "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
+  "protocol_and_source_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
+  "stages": [
+    "S2"
+  ],
+  "optimizer_seeds": [
+    11622026,
+    11622027,
+    11622028
+  ],
+  "required_upstream_completion_hashes": {
+    "S1-A": "595716b2844223613c43477d6d26788df89ccbbfe49db0b32655634c4d726228",
+    "S1-B/11622026": "5c86800ae865c9d37143e3aa25261f1a4f12f71f6c337d8adaa9171e5232f167",
+    "S1-B/11622027": "1d9ffb24d732910a8aa5bd7db3d1d415da477a85f19e349081b2cdc0a02359f0",
+    "S1-B/11622028": "3fb6b4bb5d1a85a78f2e051d6ed2d78fe62f0b08ca3f8ce71de3c41c1fd3b7aa"
+  },
+  "same_stage_seed_predecessors": "Earlier S2 seed completion hashes are captured by production chain when known; do not invent future hashes or require a separate per-seed authorization.",
+  "source_endpoints": [
+    {
+      "seed": 11622026,
+      "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+      "checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+      "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e"
+    },
+    {
+      "seed": 11622027,
+      "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622027/S1/update_0256.pt",
+      "checkpoint_sha256": "365851c8967be6e1eda1bcac4b822a99ba0e7e937c0fef59d6381378499ac8d9",
+      "tensor_sha256": "8c28f3197de5a6544f1ac27d64ec0f4d53e7a3e4213631c76c85253ba189a877"
+    },
+    {
+      "seed": 11622028,
+      "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622028/S1/update_0256.pt",
+      "checkpoint_sha256": "92a3ae629dd40f45a71c8a7129b7ecd06d82e76e45736a6e092aa76629a30ecc",
+      "tensor_sha256": "279bfb935eb3d2542be08f310c2606af4f57c08478a38d76c2e6d523eaa03474"
+    }
+  ],
+  "per_seed_budget": {
+    "RL_updates": 512,
+    "continued_SL_updates": 512,
+    "batch_instances": 4,
+    "RL_terminal_attempts_max": 6144,
+    "development_other_terminal_attempts_max": 2048,
+    "total_terminal_attempts_max": 8192,
+    "cumulative_shared_stage_wall_s": 7200,
+    "new_teacher_queries": 0
+  },
+  "all_seed_budget": {
+    "optimizer_updates_max": 3072,
+    "terminal_attempts_max": 24576,
+    "stage_wall_s_sum_max": 21600
+  },
+  "fork": "Matching SL256 model tensors copied into frozen_SL,RL,continuedSL; RL and continuedSL use separate fresh Adam. Saved S1 Adam is preserved but not inherited into either S2 fork.",
+  "recipe": "Unchanged approved v3 weighted three-start REINFORCE with detached LOO baseline and frozen full-H terminal; no PPO/API substitution, reward/mask/budget changes or rule fallback.",
+  "commands_after_new_stage_authorization_only": [
+    {
+      "seed": 11622026,
+      "argv": [
+        ".\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_global_local_execution_v3.runner",
+        "--stage",
+        "S2",
+        "--seed",
+        "11622026",
+        "--experiment-id",
+        "rc3_v3_global_local_20261106_01",
+        "--output",
+        "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01",
+        "--existing-run",
+        "--source-binding",
+        "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "--protocol-approval",
+        "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
+        "--stage-authorization",
+        "<NEW_EXPLICITLY_APPROVED_S2_STAGE_AUTHORIZATION.json>"
+      ]
+    },
+    {
+      "seed": 11622027,
+      "argv": [
+        ".\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_global_local_execution_v3.runner",
+        "--stage",
+        "S2",
+        "--seed",
+        "11622027",
+        "--experiment-id",
+        "rc3_v3_global_local_20261106_01",
+        "--output",
+        "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01",
+        "--existing-run",
+        "--source-binding",
+        "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "--protocol-approval",
+        "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
+        "--stage-authorization",
+        "<NEW_EXPLICITLY_APPROVED_S2_STAGE_AUTHORIZATION.json>"
+      ]
+    },
+    {
+      "seed": 11622028,
+      "argv": [
+        ".\\rc3_learning\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "rc3_global_local_execution_v3.runner",
+        "--stage",
+        "S2",
+        "--seed",
+        "11622028",
+        "--experiment-id",
+        "rc3_v3_global_local_20261106_01",
+        "--output",
+        "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01",
+        "--existing-run",
+        "--source-binding",
+        "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "--protocol-approval",
+        "rc3_global_local_execution_v3/authorizations/20261106_S1_B/SOURCE_REVISION_APPROVAL.json",
+        "--stage-authorization",
+        "<NEW_EXPLICITLY_APPROVED_S2_STAGE_AUTHORIZATION.json>"
+      ]
+    }
+  ],
+  "resume": "Only explicit --resume to the last complete checkpoint boundary with the SAME S2 authorization, Adam/RNG/cursor and cumulative resource clock; dirty tail/failed/complete stages cannot be silently repeated.",
+  "sealed": [
+    "S3 target tasks",
+    "original60 retained tasks"
+  ],
+  "execution_guard": "This JSON is a plan, not an AUTHORIZED receipt, and is never passed as --stage-authorization. Current S1-B authorization cannot authorize S2."
+}

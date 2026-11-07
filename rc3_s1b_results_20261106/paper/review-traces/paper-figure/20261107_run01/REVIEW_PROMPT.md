@@ -1,0 +1,1 @@
+Verify the two data-generated S1-B learning/endpoint plots and captions against raw logs/CSV, inspect PNGs and vector PDFs. Confirm denominators, smoothing, fixed endpoints, seed styling and narrow claim limits. No science rerun.

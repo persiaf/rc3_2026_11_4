@@ -1,0 +1,1 @@
+Confirm completedS1-B and partial training-teacher-prefix imitation only. Keep fixedDRL objective unproven; registered S2 requires separate real user stage authority. No automatic supplementary experiment, retraining, S3 or old60 access.

@@ -1,5 +1,10 @@
 # v3 执行协议定稿与分阶段科学授权准备
 
+<!-- S1B_CURRENT_BEGIN -->
+**当前：v3及0f0ffd2兼容源码已经明确批准，S1-A/S1-B实际完成。** S1-B三seed各256更新，S2仍未授权/未启动，S3与原60继续封存。见[当前活动执行记录](ACTIVE_EXECUTION_STATUS.json)、[本轮真实收据](authorizations/20261106_S1_B/)及[三种子训练实际结果](../rc3_s1b_results_20261106/README.md)。下文为候选定稿时的历史状态，候选原文件中的PENDING不覆盖其后独立批准收据。
+<!-- S1B_CURRENT_END -->
+
+
 固定研究目标：大规模复杂父场景DRL训练，冻结策略快速完成不同规模局部任务的覆盖、停靠位姿选择与完整路径规划。分支：`codex/global-local-preflight`，基础`aa0247c8c38243504028bfad24795e0db7120264`。
 
 当前候选：[V3_EXECUTION_CANDIDATE.json](V3_EXECUTION_CANDIDATE.json)，**PENDING_USER_APPROVAL_NOT_ACTIVE_NOT_AUTHORIZED**。原活动设计仍为v2，旧指针、v1/v2/v3提案及研究证据不修改。

@@ -1,0 +1,461 @@
+{
+  "schema": "rc3-s1b-independent-result-and-figure-review-v1",
+  "reviewer_role": "Independent paper architect/reviewer delegated to a separate agent",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "execution_baseline_commit": "ffcfcabc4ccc0b071a368b5e6e49684be3de4d64",
+  "authorization_commit": "f83d462db13bdc93b36eefa2898208d3b0768f00",
+  "raw_scientific_evidence_commit": "389910cd87a2cd76247e5c1314f34907de4236e2",
+  "review_scope": "Actual completed three-seed S1-B scientific experiment and saved teacher-prefix diagnostics; no production replay or science rerun",
+  "status": "PASS_WITH_SCOPE_LIMITS",
+  "claim_supported": "partial",
+  "stage_claim_supported": "yes",
+  "overall_fixed_DRL_research_claim": "not_yet_evaluated",
+  "confidence": "high",
+  "confidence_scope": "High for completed S1-B numerical/lineage integrity and descriptive training-prefix imitation improvement; no inference of DRL or generalization benefit",
+  "intended_claim": "Progress toward large complex parent-scene DRL training followed by a frozen policy for fast complete constrained local task/trajectory planning; S1 is auxiliary initialization only",
+  "suggested_claim_revision": "All three registered S1-B seeds completed exactly 256 batch-4 updates with finite numerical states and intact approved source/teacher/Adam/RNG lineage. On the same original 256 training teachers and all 8,292 saved prefix decisions per endpoint, masked route-macro CE decreased and state-micro top-1 teacher agreement increased for every seed. This demonstrates partial imitation on training teacher states and establishes the exact SL256 sources required for later S2; it does not establish route quality, unseen-scene generalization or a DRL contribution.",
+  "what_results_support": [
+    "Actual completion of all three fixed supervised endpoints, 768/768 optimizer updates, rather than merely source preparation or loss-gradient smoke testing.",
+    "Teacher-forcing masked CE and action agreement improved on the full fixed teacher pool at paired untrained/SL256 endpoints for each seed.",
+    "Exact source revision and independent stage authorization, original S1-A teacher evidence, distinct initialization/data streams, Adam steps and committed journal/RNG cursors are coherent.",
+    "No numerical anomaly in saved weights/Adam states/gradients under the registered clipping tolerance; no new scene/navigation solve/teacher/native/H calls recorded for S1-B or diagnostics.",
+    "Complete immutable SL256 source bundles are available for the registered per-seed S2 forks."
+  ],
+  "what_results_dont_support": [
+    "Complete mastery of teacher decisions: final top-1 agreement is only 38.56%-39.40%.",
+    "Autonomous route cost/quality, full-route coverage/feasibility/safety rates or deployment latency: predictions were scored but never executed.",
+    "Generalization to independent scenes/local scales or statistically significant superiority over native methods.",
+    "Any DRL benefit, S2 success or S3 success: these stages have not run and are not authorized by S1-B.",
+    "Real arm calibration, IK or physical joint-trajectory certification."
+  ],
+  "missing_evidence": [
+    "Authorized S2 RL versus frozen-SL and matched continued-SL controls from the same per-seed SL256 sources, at fixed protocol endpoints and budgets.",
+    "Separately authorized later evaluation of complete frozen-policy local planning, cost/time/constraints and generalization under the frozen S3 rules.",
+    "Real physical calibration/IK evidence if claims are extended to physical robot/joint trajectories.",
+    "No paper/PAPER_CLAIM_AUDIT.json is available."
+  ],
+  "next_experiments_needed": [
+    "After a new real S2 stage authorization binds the exact current protocol/source/registry/H and all three S1-B completion receipts, execute only the registered three-seed RL512+continuedSL512 plan; use matching own-seed SL256 weights and separate fresh Adam states.",
+    "Retain fixed512 endpoints and registered development checks; do not select a seed/checkpoint, enlarge budget or replace failed cases.",
+    "Obtain independent S3 authority before any sealed target-task performance evaluation; original60 remains sealed.",
+    "Do not add S1 retraining or unregistered post-hoc teacher/route tests to strengthen this stage result."
+  ],
+  "technical_S2": {
+    "verdict": "GO",
+    "scope": "Source/lineage and numerical prerequisites only; no post-hoc SL quality gate and no forecast of S2 performance or budget sufficiency",
+    "execution_authorized": false,
+    "execution_status": "NOT_STARTED",
+    "required_authorization": "A new explicit S2 stage authorization receipt with current source/protocol/registry/H and the exact parent completion chain",
+    "fixed_per_seed_budgets": {
+      "RL_updates_max": 512,
+      "continued_SL_updates_max": 512,
+      "batch_instances": 4,
+      "RL_terminal_attempts_max": 6144,
+      "development_and_other_terminal_attempts_max": 2048,
+      "total_terminal_attempts_max": 8192,
+      "all_in_stage_wall_s_max": 7200
+    },
+    "risk_factors": [
+      "Teacher-forcing to autonomous-state distribution shift",
+      "Incomplete teacher imitation",
+      "RL return/advantage variance",
+      "Online H and input preparation cost",
+      "Unvisited training declarations are not pre-certified feasible"
+    ],
+    "S3_authorized": false,
+    "original60": "SEALED"
+  },
+  "bindings": {
+    "protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+    "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+    "source_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
+    "stage_authorization_sha256": "ee952e9a3b3d917b96aef803196d16e9807fe7ac527c1b7244210f04d50950e2",
+    "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+    "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14"
+  },
+  "independent_verification": {
+    "assertions_total": 271538,
+    "raw_assertions": 15769,
+    "raw_categories": {
+      "binding": 47,
+      "frozen": 1483,
+      "completion": 57,
+      "updates": 4611,
+      "instances": 9216,
+      "checkpoints": 348,
+      "cross_report": 3,
+      "cross_seed": 4
+    },
+    "CSV_figure_assertions": 255769,
+    "CSV_figure_categories": {
+      "diagnostic_binding": 8,
+      "csv_rows": 248760,
+      "coverage": 7,
+      "route_coverage": 1536,
+      "route_metrics": 4608,
+      "endpoint_aggregates": 72,
+      "plot_data": 773,
+      "resource_math": 5
+    },
+    "assertion_failures": 0,
+    "checkpoint_files_loaded": 27,
+    "update_rows": 768,
+    "teacher_batch_instances": 3072,
+    "original_S1A_files_byte_checked": 1482,
+    "original_S1A_bytes_byte_checked": 564969808,
+    "raw_policy_model_instances_created": 0,
+    "optimizer_instances_created": 0,
+    "optimizer_updates": 0,
+    "scene_navigation_teacher_native_H_calls": 0,
+    "original60_semantic_reads": 0,
+    "S3_task_semantic_reads": 0,
+    "CSV_rows": 49752,
+    "route_groups": 1536,
+    "endpoint_groups": 6,
+    "largest_endpoint_aggregation_absolute_error": 7.105427357601002e-15,
+    "training_curve_points": 768,
+    "production_teacher_replay_repeated": false,
+    "verification_procedure": "Read-only independent Python commands in the review transcript; canonical SHA256 seed tuple reconstructed without importing the production RNG helper; raw torch.load tensor and Adam/RNG checks without policy/model/optimizer construction; all CSV route/state aggregates recomputed independently.",
+    "limitations": "No second inference pass was run. The reviewer validated diagnostic source, saved endpoint identity, per-row coherence and all aggregates; original logits and complete per-state legal masks are not saved in CSV, so scores/mask membership were not independently regenerated.",
+    "timing": {
+      "recorded_review_interval_start_utc": "2026-11-06T12:45:09.748Z",
+      "recorded_review_interval_end_utc": "2026-11-06 15:09:58 UTC",
+      "recorded_interval_includes_deliberate_turn_interruption": true,
+      "recorded_interval_is_active_work_time": false,
+      "raw_read_tensor_verification_loop_wall_s": 3.20278559999997,
+      "raw_verification_tool_process_wall_s": 5.4520949,
+      "CSV_figure_verification_loop_wall_s": 2.365127199998824,
+      "CSV_verification_tool_process_wall_s": 2.7159729,
+      "measured_verification_loops_total_s": 5.567912799998794,
+      "reading_reasoning_image_inspection_and_write_time": "Not separately instrumented; do not infer active work duration from the interrupted review interval",
+      "accounting_class": "Read-only maintenance/review; no scientific training or planning"
+    }
+  },
+  "per_seed_training": [
+    {
+      "seed": 11622026,
+      "unique_teachers": 253,
+      "scores": 33110,
+      "first32_mean_CE": 2.8940457087010145,
+      "last32_mean_CE": 1.9303507348522544,
+      "relative_parameter_L2_change": 0.0718942958860185,
+      "changed_parameters": 61695,
+      "parameter_count": 65088,
+      "gradient_before_min": 1.0828522166755499,
+      "gradient_before_max": 13.602290785748039,
+      "gradient_after_max": 1.000000116051537,
+      "clipped_updates": 256,
+      "wall_s": 369.56512900000007,
+      "data_seed": 5783317336004878955
+    },
+    {
+      "seed": 11622027,
+      "unique_teachers": 253,
+      "scores": 33538,
+      "first32_mean_CE": 3.0776410344988108,
+      "last32_mean_CE": 2.006031520664692,
+      "relative_parameter_L2_change": 0.07161561225488838,
+      "changed_parameters": 61927,
+      "parameter_count": 65088,
+      "gradient_before_min": 1.0908648102119696,
+      "gradient_before_max": 10.54101117243602,
+      "gradient_after_max": 1.000000061876454,
+      "clipped_updates": 256,
+      "wall_s": 385.01636689999987,
+      "data_seed": 2292471752513919717
+    },
+    {
+      "seed": 11622028,
+      "unique_teachers": 251,
+      "scores": 33354,
+      "first32_mean_CE": 2.835227488540113,
+      "last32_mean_CE": 1.9309618077240884,
+      "relative_parameter_L2_change": 0.07203943116121651,
+      "changed_parameters": 63354,
+      "parameter_count": 65088,
+      "gradient_before_min": 0.8342290132041177,
+      "gradient_before_max": 8.389801080619428,
+      "gradient_after_max": 1.0000000357967969,
+      "clipped_updates": 255,
+      "wall_s": 363.1734897000001,
+      "data_seed": 4169098774318213126
+    }
+  ],
+  "independently_recomputed_endpoint_metrics": [
+    {
+      "seed": 11622026,
+      "endpoint": "SL256",
+      "states": 8292,
+      "nontrivial_states": 8290,
+      "route_macro_CE": 1.9483425646235253,
+      "state_micro_CE": 1.9982530530339686,
+      "top1": 0.385552339604438,
+      "top3": 0.6894597202122528,
+      "top5": 0.8293535938253739,
+      "teacher_probability_mean": 0.2149274122910196,
+      "mean_teacher_rank": 3.563675832127352,
+      "uniform_state_micro_CE": 4.4570249132998825,
+      "uniform_top1": 0.02335090354600342,
+      "nontrivial_top1": 0.3854041013268999
+    },
+    {
+      "seed": 11622026,
+      "endpoint": "initial",
+      "states": 8292,
+      "nontrivial_states": 8290,
+      "route_macro_CE": 3.808699935674469,
+      "state_micro_CE": 4.1588525369087685,
+      "top1": 0.10552339604438013,
+      "top3": 0.21237337192474676,
+      "top5": 0.29088277858176553,
+      "teacher_probability_mean": 0.030677924369909917,
+      "mean_teacher_rank": 38.18909792571153,
+      "uniform_state_micro_CE": 4.4570249132998825,
+      "uniform_top1": 0.02335090354600342,
+      "nontrivial_top1": 0.10530759951749095
+    },
+    {
+      "seed": 11622027,
+      "endpoint": "SL256",
+      "states": 8292,
+      "nontrivial_states": 8290,
+      "route_macro_CE": 1.965551677778997,
+      "state_micro_CE": 2.0108943160664197,
+      "top1": 0.38603473227206947,
+      "top3": 0.683068017366136,
+      "top5": 0.8279064158224795,
+      "teacher_probability_mean": 0.21073181188467566,
+      "mean_teacher_rank": 3.5751326579835987,
+      "uniform_state_micro_CE": 4.4570249132998825,
+      "uniform_top1": 0.02335090354600342,
+      "nontrivial_top1": 0.3858866103739445
+    },
+    {
+      "seed": 11622027,
+      "endpoint": "initial",
+      "states": 8292,
+      "nontrivial_states": 8290,
+      "route_macro_CE": 3.794199961256557,
+      "state_micro_CE": 4.131960141694005,
+      "top1": 0.06090207428847082,
+      "top3": 0.16111915098890497,
+      "top5": 0.24276410998552822,
+      "teacher_probability_mean": 0.030369825304214726,
+      "mean_teacher_rank": 34.236131210805596,
+      "uniform_state_micro_CE": 4.4570249132998825,
+      "uniform_top1": 0.02335090354600342,
+      "nontrivial_top1": 0.060675512665862484
+    },
+    {
+      "seed": 11622028,
+      "endpoint": "SL256",
+      "states": 8292,
+      "nontrivial_states": 8290,
+      "route_macro_CE": 1.9130116633588503,
+      "state_micro_CE": 1.9777185828226753,
+      "top1": 0.39399421128798845,
+      "top3": 0.6930776652194887,
+      "top5": 0.8315243608297154,
+      "teacher_probability_mean": 0.21921434783376034,
+      "mean_teacher_rank": 3.510853835021708,
+      "uniform_state_micro_CE": 4.4570249132998825,
+      "uniform_top1": 0.02335090354600342,
+      "nontrivial_top1": 0.39384800965018096
+    },
+    {
+      "seed": 11622028,
+      "endpoint": "initial",
+      "states": 8292,
+      "nontrivial_states": 8290,
+      "route_macro_CE": 3.568781383291023,
+      "state_micro_CE": 3.885034815991882,
+      "top1": 0.09249879401833092,
+      "top3": 0.26603955619874575,
+      "top5": 0.4011095031355523,
+      "teacher_probability_mean": 0.03731452980475105,
+      "mean_teacher_rank": 28.541606367583213,
+      "uniform_state_micro_CE": 4.4570249132998825,
+      "uniform_top1": 0.02335090354600342,
+      "nontrivial_top1": 0.09227985524728588
+    }
+  ],
+  "cross_seed_descriptive": {
+    "SL256_route_macro_CE_mean": 1.9423019685871252,
+    "SL256_route_macro_CE_sample_sd": 0.026785814887241053,
+    "SL256_top1_mean": 0.3885270943881653,
+    "SL256_top1_sample_sd_pp": 0.47408017326919455,
+    "SL256_top1_max_seed_difference_pp": 0.8441871683550428
+  },
+  "metric_interpretation": {
+    "CE": "Route-macro average: mean decision CE within each teacher route, then equal mean over 256 routes",
+    "top1": "State-micro teacher-action agreement across 8,292 decisions; this weights longer routes more",
+    "pairing": "All 256 original teachers and every saved prefix, exactly the same identities/actions/legal counts for each endpoint and seed",
+    "nontrivial_states_per_endpoint": 8290,
+    "forced_single_legal_states_per_endpoint": 2,
+    "tie_break": "Lowest local candidate index under exact logit equality",
+    "uniform_reference": "Uniform expected agreement = 1/legal_count; not deterministic uniform-logit argmax",
+    "uncertainty": "Only three fixed optimization seeds sharing one teacher pool. Descriptive across-seed SD is not independent-scene significance. Prefix states and routes can be correlated.",
+    "sampling": "With-replacement training sampled 253/253/251 unique teachers; unsampled pool entries were not relabeled as independent validation."
+  },
+  "figures": {
+    "verdict": "PASS",
+    "PNGs_visually_inspected": 2,
+    "PDFs_with_vector_font_resources_and_no_raster_image_objects": 2,
+    "scripts_and_captions_reviewed": [
+      "figures/plot_training.py",
+      "figures/plot_teacher_agreement.py",
+      "figures/figure_style.py",
+      "figures/latex_includes.tex"
+    ],
+    "training_curve": "All 256 raw updates per seed retained. Bold trace is trailing mean of up to 16 updates, not a confidence band. Gradient panel log-scale and threshold are labeled; line styles distinguish seeds.",
+    "paired_teacher_plot": "Fixed endpoints only, route-macro CE and state-micro top1 labeled separately. Top1 axis spans 0%-100%. Captions explicitly identify training teachers and teacher-forcing.",
+    "fairness": "Same teachers/prefixes at both endpoints; no best checkpoint, seed or teacher subset chosen. Untrained endpoint is the appropriate same-architecture reference for this stage.",
+    "paper_use": "Use at the intended full figure width. Adequate as descriptive auxiliary-initialization evidence; stronger method claims require later authorized controls.",
+    "required_fixes": []
+  },
+  "resource_review": {
+    "scientific_policy_initializations": 3,
+    "scientific_optimizer_updates": 768,
+    "production_stage_wall_per_seed_s": [
+      {
+        "seed": 11622026,
+        "wall_s": 369.56512900000007
+      },
+      {
+        "seed": 11622027,
+        "wall_s": 385.01636689999987
+      },
+      {
+        "seed": 11622028,
+        "wall_s": 363.1734897000001
+      }
+    ],
+    "production_stage_wall_sum_s": 1117.7549856,
+    "diagnostic_policy_instances": 6,
+    "diagnostic_optimizer_updates": 0,
+    "shared_diagnostic_wall_s": 128.2302307,
+    "shared_diagnostic_cap_s": 900,
+    "production_plus_shared_diagnostic_once_s": 1245.9852163,
+    "conservative_per_seed_all_shared_diagnostic_charged_s": [
+      {
+        "seed": 11622026,
+        "wall_s": 497.79535970000006,
+        "cap_s": 1800
+      },
+      {
+        "seed": 11622027,
+        "wall_s": 513.2465975999999,
+        "cap_s": 1800
+      },
+      {
+        "seed": 11622028,
+        "wall_s": 491.4037204000001,
+        "cap_s": 1800
+      }
+    ],
+    "clock_limitations": "Production and diagnostic receipts are measured internal intervals. Imports/process startup before main and the final tiny receipt/hash/write closure are not independently instrumented exact outer-process durations. Nested clocks must not be summed; the shared diagnostic is counted once for actual total and wholly assigned to each seed only for conservative cap checking.",
+    "other_maintenance_evidence": {
+      "mechanical_audit_wall_s": 2.7931352999999035,
+      "broad_frozen_byte_audit_wall_s": 103.46676019999995,
+      "broad_files": 12347,
+      "broad_bytes": 3806147996,
+      "broad_audit_independently_recomputed_by_reviewer": false,
+      "note": "Broader byte-only audit receipt read; reviewer independently rehashed the 1,482 S1-A files, not the entire broad population."
+    }
+  },
+  "findings": [
+    {
+      "severity": "none",
+      "scope": "S1-B completion",
+      "finding": "No blocking numerical, source, teacher, RNG, journal or checkpoint integrity finding."
+    },
+    {
+      "severity": "scope_limit",
+      "scope": "Claim",
+      "finding": "Loss/teacher agreement improvement supports partial training-prefix imitation only. Keep the fixed DRL and autonomous planning claim unproven."
+    },
+    {
+      "severity": "required_future_action",
+      "scope": "S2 authority",
+      "finding": "Technical GO does not authorize execution. Bind new real S2 authority before invoking the prepared plan."
+    },
+    {
+      "severity": "reporting_limit",
+      "scope": "Clock precision",
+      "finding": "Report measured internal clock scopes and startup/last-write limitations; no invented exact outer times."
+    }
+  ],
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "formal_zero_context_paper_claim_audit_performed": false,
+  "routing_action": "Confirm the narrow completed S1-B result; retain broader claim as partial; await new S2 authority for the registered continuation",
+  "input_sha256": {
+    "rc3_s1b_results_20261106/DIAGNOSTIC_PLAN.json": "6a2b77808272dfacf4e1960e755c9bdc73b4af91a42ea82d195781a2035214cb",
+    "rc3_s1b_results_20261106/DIAGNOSTIC_STARTED.json": "f1de5fff1fce0f5e19068e2a2072b90881a7637dd2d3a527379c5d840b7e5d87",
+    "rc3_s1b_results_20261106/TEACHER_STATE_DIAGNOSTICS.json": "3d3ff1c9c6514bbb1ea67c0eeb74ac8dc1b9a0be99d64eeb0bb0b095a1e8f614",
+    "rc3_s1b_results_20261106/teacher_state_metrics.csv": "00466d4cc3e0d666c7d324af2d4a4ed42dbac54b8c51ce9ac804d8a2d7124ae0",
+    "rc3_s1b_results_20261106/teacher_route_metrics.json": "f565cbd03c191b138d3aa1dfea5d124f753de254cb95490a145d8f23f1a2146f",
+    "rc3_s1b_results_20261106/MECHANICAL_AUDIT.json": "d8d9715266c0cc13d62924848edb41a3710bddd562d121b8fa6bbef2ca9d1169",
+    "rc3_s1b_results_20261106/FROZEN_EVIDENCE_AUDIT.json": "834b4bf732589a83bb66796d262d29b5ff56d4202deabcfee688818924aaa039",
+    "rc3_s1b_results_20261106/EXPERIMENT_REPORT.md": "0c4d329b40270e287050841674ffcee67fd70c7f65d3201004b0cca6b2f28c47",
+    "rc3_s1b_results_20261106/IMPLEMENTATION_REVIEW.md": "1d5f212760ef247ef799ba5f24d71d620fb8fe1ca6216f59efaf13186a72d81e",
+    "rc3_s1b_results_20261106/NEXT_STEP_DECISION.md": "547a17a82ae1f44a38d11655159fc08da896fe5925cabf3ce1d759a28be8a7a5",
+    "rc3_s1b_results_20261106/S2_EXECUTION_PLAN.json": "9413c7bef8f1165e5564a12ea2a0f0db8e20e6f595438acd3fe80616b225ee44",
+    "rc3_s1b_results_20261106/figures/plot_training.py": "e14e20f297852e5511616b720059f1d070d5ae74bdaa060ce06b6d05eed4c3cc",
+    "rc3_s1b_results_20261106/figures/plot_teacher_agreement.py": "9f603691293762306009f091f546b75a7b642f643f2b5114aef5c1b944312388",
+    "rc3_s1b_results_20261106/figures/figure_style.py": "5379b4acad51f0115bf8dcb2154ed632c03eb8eb22ec2703b4ebe1ccf6418efe",
+    "rc3_s1b_results_20261106/figures/latex_includes.tex": "b2f6939d16e36770cc5351294e1a8a61a9b358df3e82424d55df406d23786606",
+    "rc3_s1b_results_20261106/figures/s1b_training_curves.png": "cbf0a9ead8652f43a39f158bf82ba59c0a8c0801d85afd08015a8ce567f2c107",
+    "rc3_s1b_results_20261106/figures/s1b_training_curves.pdf": "e8eca14b4d6017c6db4070ed0df47e32723a9e1798811b48859f3f78bc5b57c6",
+    "rc3_s1b_results_20261106/figures/s1b_teacher_agreement.png": "0b24f78a4d0b5e4d74d5fd27b258076f740959f476798dbbe2377456ef2f17f8",
+    "rc3_s1b_results_20261106/figures/s1b_teacher_agreement.pdf": "19a92b992ba8db92f970cb07355db2d99adaada5ddc9be045475a60469934eed",
+    "rc3_s1b_results_20261106/figures/training_curves.csv": "25777d3d0bc0ccb54c8d135fee77261218fff0098b732b20df33dec06e1206c0"
+  },
+  "artifacts_written_only": [
+    "rc3_s1b_results_20261106/INDEPENDENT_REVIEW.md",
+    "rc3_s1b_results_20261106/INDEPENDENT_REVIEW.json"
+  ],
+  "report_serialization_correction": {
+    "kind": "report_only_64_bit_integer_serialization_correction",
+    "corrected_utc": "2026-11-07T00:01:23.109407+00:00",
+    "before_sha256": "1840087ae6a17a11f21d2ff372cd143c4d66d6f6d5b0613a11e57c22bd781e74",
+    "cause": "JavaScript Number roundtrip rounded the three 64-bit PCG64 data seeds when the review JSON was first generated.",
+    "corrections": [
+      {
+        "path": "/per_seed_training/0/data_seed",
+        "optimizer_seed": 11622026,
+        "previous_serialized_value": "5783317336004879000",
+        "exact_value": "5783317336004878955",
+        "verification": "Independent canonical SHA256 tuple derivation equals original MECHANICAL_AUDIT data_stream_seed"
+      },
+      {
+        "path": "/per_seed_training/1/data_seed",
+        "optimizer_seed": 11622027,
+        "previous_serialized_value": "2292471752513919700",
+        "exact_value": "2292471752513919717",
+        "verification": "Independent canonical SHA256 tuple derivation equals original MECHANICAL_AUDIT data_stream_seed"
+      },
+      {
+        "path": "/per_seed_training/2/data_seed",
+        "optimizer_seed": 11622028,
+        "previous_serialized_value": "4169098774318213000",
+        "exact_value": "4169098774318213126",
+        "verification": "Independent canonical SHA256 tuple derivation equals original MECHANICAL_AUDIT data_stream_seed"
+      }
+    ],
+    "all_integer_fields_over_2_pow_53_scanned": true,
+    "large_integer_fields_found": [
+      "/per_seed_training/0/data_seed",
+      "/per_seed_training/1/data_seed",
+      "/per_seed_training/2/data_seed"
+    ],
+    "other_large_integer_fields_found": [],
+    "method": "Python UTF8 JSON read/write with arbitrary-precision integers; no JavaScript JSON parsing or serialization.",
+    "scientific_files_changed": false,
+    "existing_independent_assertions_retained": 271538,
+    "existing_verdict_retained": "partial",
+    "new_model_optimizer_scene_navigation_teacher_native_H_calls": 0,
+    "training_diagnostic_replay_or_broad_audit_repeated": false
+  }
+}
