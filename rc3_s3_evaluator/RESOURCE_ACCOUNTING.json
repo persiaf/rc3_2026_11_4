@@ -1,0 +1,166 @@
+{
+  "scope": "S3_EVALUATOR_ENGINEERING_ONLY",
+  "scientific_S3_requests": 0,
+  "S3_target_generations": 0,
+  "original60_semantic_reads": 0,
+  "optimizer_updates": 0,
+  "new_teacher_queries": 0,
+  "new_task_generations": 0,
+  "complete_requests": {
+    "attempted": 126,
+    "completed": 126,
+    "failed": 0,
+    "cap": 126
+  },
+  "model_seed": 11622026,
+  "old_cases": 6,
+  "native_attempts": 36,
+  "greedy_constructions": 90,
+  "common_H_invocations": 72,
+  "nonempty_common_H_searches": 72,
+  "native_extra_common_H": 0,
+  "RL_raw_common_H": 0,
+  "navigation_solves": 86,
+  "navigation_solve_breakdown": {
+    "cold_or_quality": 84,
+    "charged_hot_primes": 2
+  },
+  "navigation_only_cache_hits": 42,
+  "task_embedding_cache_hits": 0,
+  "route_result_cache_hits": 0,
+  "export_callbacks": 141,
+  "validation_callbacks": 141,
+  "request_counts": {
+    "input_parse_and_source_verify_attempts": 126,
+    "saved_task_input_loads": 126,
+    "input_parse_and_source_verify_completed": 126,
+    "navigation_access_attempts": 126,
+    "cold_navigation_attempts": 84,
+    "navigation_solves": 84,
+    "cold_navigation_completed": 84,
+    "navigation_access_completed": 126,
+    "whole_parent_and_window_attempts": 126,
+    "whole_parent_and_window_completed": 126,
+    "model_load_and_verify_attempts": 90,
+    "frozen_policy_materializations": 90,
+    "model_load_and_verify_completed": 90,
+    "features_and_global_local_encoding_attempts": 90,
+    "fresh_encodings": 90,
+    "features_and_global_local_encoding_completed": 90,
+    "greedy_construction_attempts": 90,
+    "greedy_actions": 3531,
+    "greedy_construction_completed": 90,
+    "common_H_pipeline_attempts": 72,
+    "common_H_invocations": 72,
+    "export_attempts": 141,
+    "export_completed": 141,
+    "validation_attempts": 141,
+    "validation_completed": 141,
+    "common_H_pipeline_completed": 72,
+    "weight_immutability_verify_attempts": 90,
+    "weight_immutability_verify_completed": 90,
+    "artifact_write_attempts": 126,
+    "native_pipeline_attempts": 36,
+    "native_pipeline_completed": 36,
+    "navigation_only_cache_hits": 42
+  },
+  "native_H_pipeline_counters": {
+    "full_H_calls": 72,
+    "export_attempts": 72,
+    "exports": 72,
+    "validation_attempts": 72,
+    "validation_completed": 72,
+    "baseline_attempts": 36,
+    "endpoint_export_attempts": 51,
+    "endpoint_export_completed": 51,
+    "endpoint_validation_attempts": 51,
+    "endpoint_validation_completed": 51,
+    "baseline_completed": 36,
+    "native_construct_calls": 108,
+    "native_two_opt_calls": 324,
+    "native_joint_search_calls": 108,
+    "native_recipe_calls": 108,
+    "adapter_wall_s": 4.82105980000415
+  },
+  "internal_search_function_entries": {
+    "construct": 108,
+    "two_opt": 612,
+    "joint_search": 180,
+    "recipe": 108
+  },
+  "request_component_seconds_inclusive": {
+    "input_parse_and_source_verify": 3.3295363999750407,
+    "cold_navigation": 22.246415000019624,
+    "navigation_access": 25.37973749999219,
+    "whole_parent_and_window": 12.772913999986486,
+    "model_load_and_verify": 31.623306399993453,
+    "features_and_global_local_encoding": 1.6737045000045327,
+    "greedy_construction": 3.083850800001528,
+    "export": 0.4391298000118695,
+    "validation": 3.6111770999705186,
+    "common_H_pipeline": 3.3932688000168127,
+    "weight_immutability_verify": 1.5871185999822046,
+    "native_pipeline": 4.831187499999942
+  },
+  "hot_prime_counts": {
+    "hot_navigation_prime_attempts": 2,
+    "hot_navigation_prime_completed": 2,
+    "navigation_solves": 2,
+    "warm_geometry_read_attempts": 42,
+    "warm_geometry_read_completed": 42,
+    "hot_prime_existing_navigation": 40
+  },
+  "hot_prime_seconds_inclusive": {
+    "hot_navigation_prime": 0.4586049000026833,
+    "warm_geometry_read": 1.0617669000057504
+  },
+  "complete_request_time_sum_s": 98.69113480001033,
+  "cumulative_supervised_stage_wall_s": 112.33024719999958,
+  "stage_wall_cap_s": 1800,
+  "closed_sessions": [
+    {
+      "token": "c54eac5d5ad496cf3c2f59c90f304a2863d3e79a621845ebd44926f538554e96",
+      "elapsed_s": 18.423746799999208,
+      "status": "CLOSED_BOUNDARY"
+    },
+    {
+      "token": "47cd928fc9ab5a5fa5537593b2c3388a9d2354df30fe9e7279129ee0178b0cd9",
+      "elapsed_s": 93.90650040000037,
+      "status": "CLOSED_BOUNDARY"
+    }
+  ],
+  "unit_test_runs": [
+    {
+      "path": "rc3_s3_evaluator/UNIT_TEST_RESULT_01.json",
+      "sha256": "68212cdffd8eab670fcb945b8a0d7dc590dc5d20ab68d491a049b007f1fe64ed",
+      "elapsed_s": 8.859339700000419,
+      "returncode": 0
+    },
+    {
+      "path": "rc3_s3_evaluator/UNIT_TEST_RESULT_04.json",
+      "sha256": "108f4a020a1b32773567f0028391a53c34fe4b3ddd27e4af00b64e814733b32d",
+      "elapsed_s": 5.22520219999933,
+      "returncode": 0
+    },
+    {
+      "path": "rc3_s3_evaluator/UNIT_TEST_RESULT_05.json",
+      "sha256": "cb0edc8d2a2b6b7abd5fb8ed1fbf53fcecd3d2d22780b38021e71403fd1d095c",
+      "elapsed_s": 5.884302500002377,
+      "returncode": 0
+    }
+  ],
+  "unit_test_scalar_validations": 24,
+  "unit_test_real_planning_or_inference": 0,
+  "frozen_byte_audit": {
+    "path": "rc3_s3_evaluator/FROZEN_EVIDENCE_AUDIT.json",
+    "sha256": "ebfbb5512dcd986ce5cd9cb1aae8aecdb47b82060a0eef9d7af06f7f499a2bb4"
+  },
+  "accounting_notes": [
+    "141 export/validation callbacks, including51 native candidate certifications;126 is the number of complete returned requests.",
+    "Operation counters/predebits and full nested times retained in hash-chained journal; nested durations must not be summed.",
+    "Each complete timer begins after durable request debit and ends after artifact serialization/hash; final request commit and all priming are in supervised stage wall.",
+    "Parent interpreter/module import before supervise() is not measured by the stage perf clock; fixed host-launch overhead is outside the112.3302472s. Child interpreter startup, restore and request model/source load are measured.",
+    "Unit/source/opaque byte audit/reviewer/Git maintenance are separate engineering/maintenance time, not S3 model latency or science queries.",
+    "Registrations02/03 were source snapshots without executed test runs;01/04/05 were actually run. No paid request was repeated after the geometry provenance fix."
+  ]
+}

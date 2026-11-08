@@ -1,9 +1,11 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-07** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.07-s2-closeout**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-07** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.07-s3-evaluator-engineering**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+
+**S3 评估器技术 GO，正式 S3 未执行。** 七方法、完整冷/热导航计时、固定权重身份、请求预扣与恢复、父布局聚类及原 AND 判定已实现。实际完成126/126旧DEV工程请求，累计112.330247秒、optimizer0、新教师0；RL_raw与RL_plus_H的18对原始路线一致，独立审查通过。几何来源校验已补齐并独立绑定V2评估源码；原S1-A/S1-B/S2不改，S3目标与原60继续封存。见 [全部评估器交付](rc3_s3_evaluator/README.md)、[技术报告](rc3_s3_evaluator/S3_EVALUATOR_REPORT.md)、[准确源码绑定](rc3_s3_evaluator/S3_SOURCE_BINDING.json) 和 [一次性执行计划](rc3_s3_evaluator/S3_EXECUTION_PLAN.json)。这些工程结果不支持S3质量或部署性能结论。
 
 <!-- S2_CURRENT_BEGIN -->
-**最新执行状态：S2 `COMPLETE_ALL3_FIXED_ENDPOINTS`，实际完成 3072 次正式更新。** seed11622026: RL512 / continued-SL512；seed11622027: RL512 / continued-SL512；seed11622028: RL512 / continued-SL512。S3模型谱系就绪 `GO`；整个S3执行仍为 `REVISE_PENDING_FROZEN_PROTOCOL_EVALUATOR_AND_SEPARATE_AUTHORIZATION`，无阶段权限、未启动。开发记录是原18个DEV任务在256/512及三seed下的 108 次重复评价（全完成计划108次），不是108个独立案例，也不是封存S3的108目标；S3语义消费0。
+**科学执行状态：S2 `COMPLETE_ALL3_FIXED_ENDPOINTS`，实际完成 3072 次正式更新。** seed11622026: RL512 / continued-SL512；seed11622027: RL512 / continued-SL512；seed11622028: RL512 / continued-SL512。S3模型谱系和评估器技术均已 `GO`；正式S3待其对应独立执行授权，未启动。开发记录是原18个DEV任务在256/512及三seed下的 108 次重复评价（全完成计划108次），不是108个独立案例，也不是封存S3的108目标；S3语义消费0。
 
 训练回报/成本曲线只作诊断，H收益单列；未证明DRL质量提升、泛化或SL对RL优势。原S1-A/S1-B与冻结科学证据保持；新增RL journal的路径专属LFS规则属于交付维护。见[本轮结果与全部报告](rc3_s2_results_20261107/README.md)、[下一步](rc3_s2_results_20261107/NEXT_STEP_DECISION.md)、[当前执行状态](rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json)及[已核验发布收据](rc3_s2_results_20261107/PUBLICATION_RECEIPT.json)。
 

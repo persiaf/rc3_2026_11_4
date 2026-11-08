@@ -41,6 +41,28 @@ def verify_training_anchors():
     return source
 
 
+def verified_geometry():
+    """Read only task-free assets attested by the approved original layout review."""
+    protocol = ROOT/'rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json'
+    require(digest(protocol) == PROTOCOL, 'Wrong geometry evidence protocol')
+    e = read(protocol)['layout_independence_gate']['evidence']
+    gate_path, review_path = project_file(e['path']), project_file(e['independent_review'])
+    require(digest(gate_path) == e['sha256'] and digest(review_path) == e['independent_sha256'],
+            'Approved geometry gate/review bytes changed')
+    gate, review = read(gate_path), read(review_path)
+    require(gate['status'] == 'PASS', 'Geometry gate failed')
+    files = {r['file']:r for r in review['files']}
+    require(len(files) == len(gate['records']) == 111 and set(files) == {r['file'] for r in gate['records']}, 'Unattested geometry assets')
+    records = []
+    for row in gate['records']:
+        attested = files[row['file']]
+        path = project_file(row['file'])
+        require(all(row[k] == attested[k] for k in ('role','label','map_seed','mode','bytes')) and
+                path.stat().st_size == attested['bytes'] and digest(path) == attested['sha256'], 'Geometry source/asset changed')
+        records.append(dict(row, sha256=attested['sha256']))
+    return records
+
+
 class ModelCatalog:
     def __init__(self, index_path=None, verify_files=True):
         self.path = index_path or HERE/'S3_MODEL_INDEX.json'
@@ -110,6 +132,10 @@ def verify_code_binding(path):
         require(digest(project_file(n)) == h, 'Evaluation/dependency source changed: ' + n)
     require(b['environment'] == environment(), 'Evaluation runtime environment changed')
     require(digest(HERE/'S3_MODEL_INDEX.json') == b['model_index_sha256'], 'Model index changed')
+    if b.get('revision') == 2:
+        verified_geometry()
+        for name, sha in b['fixed_data_sha256'].items():
+            require(digest(project_file(name)) == sha, 'Frozen evaluator data changed: ' + name)
     return b
 
 
@@ -154,8 +180,9 @@ def admit_formal(authorization_path, source_approval_path):
     b = read(bpath)
     require(b['status'] == 'TECHNICAL_GO_NOT_S3_AUTHORIZATION' and b['training_source_sha256'] == TRAIN_SOURCE,
             'Evaluator has no finalized technical source binding')
-    verify_code_binding(HERE/'S3_CODE_BINDING.json')
-    require(digest(HERE/'S3_CODE_BINDING.json') == b['code_binding_sha256'], 'Final/code binding mismatch')
+    code_path = project_file(b['code_binding_path'])
+    verify_code_binding(code_path)
+    require(digest(code_path) == b['code_binding_sha256'], 'Final/code binding mismatch')
     for n, h in b['verification_sha256'].items():
         require(digest(project_file(n)) == h, 'Engineering verification changed')
     ap, sp = project_file(label(authorization_path)), project_file(label(source_approval_path))
@@ -176,5 +203,5 @@ def admit_formal(authorization_path, source_approval_path):
     require(a.get('S2_complete_sha256') == read(HERE/'S3_MODEL_INDEX.json')['S2_complete_sha256'], 'Wrong S2 predecessors')
     require(digest(project_file(s['approval_source'])) == s['user_message_sha256'] and
             digest(project_file(a['authorization_source'])) == a['user_message_sha256'], 'User approval/authorization source bytes differ')
-    return Permit('formal', digest(ap), digest(HERE/'S3_CODE_BINDING.json'), digest(HERE/'S3_MODEL_INDEX.json'),
+    return Permit('formal', digest(ap), digest(code_path), digest(HERE/'S3_MODEL_INDEX.json'),
                   digest(bpath), 5292, 14400, SEEDS, None)

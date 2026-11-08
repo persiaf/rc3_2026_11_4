@@ -112,9 +112,8 @@ class FormalInputs:
         require(digest(ROOT/'rc3_global_local_execution_v3/REGISTRY.json') == REGISTRY, 'Registry changed')
         registry = read(ROOT/'rc3_global_local_execution_v3/REGISTRY.json')
         self.cases = []
-        gate = read(ROOT/'rc3_global_local_impl_review/GEOMETRY_GATE.json')
-        require(gate['status'] == 'PASS', 'Physical geometry gate absent')
-        geometries = {(r['map_seed'], r['mode']): r for r in gate['records']}
+        from .provenance import verified_geometry
+        geometries = {(r['map_seed'], r['mode']): r for r in verified_geometry()}
         for row in registry['S3']:
             spec = window_spec(row)
             g = geometries[(row['map_seed'], row['mode'])]
@@ -123,7 +122,7 @@ class FormalInputs:
             require(g['role'] == ('train' if group == 'seen' else 'unseen'), 'Seen/unseen physical source differs')
             self.cases.append(dict(id=f"S3_{row['case']:03}", group=group, spec=spec,
                 size=list(row['size']), endpoint=spec['endpoints'], physical_key=g['map_key'], geometry_file=g['file'],
-                geometry_sha256=digest(project_file(g['file']))))
+                geometry_sha256=g['sha256']))
         require(len(self.cases) == 108 and len({c['id'] for c in self.cases}) == 108, 'S3 declarations must be exact108')
         self.by_id = {c['id']: c for c in self.cases}
         for group, count in (('seen', 6), ('unseen', 12)):

@@ -1,0 +1,78 @@
+{
+  "protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "training_source_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "methods": [
+    {
+      "method": "Fixed3_endpoint_adapter",
+      "weight_role": null,
+      "construction": "native endpoint adapter",
+      "extra_common_H": 0,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    },
+    {
+      "method": "Detour16_endpoint_adapter",
+      "weight_role": null,
+      "construction": "native endpoint adapter",
+      "extra_common_H": 0,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    },
+    {
+      "method": "untrained",
+      "weight_role": "untrained",
+      "construction": "one frozen greedy rollout",
+      "extra_common_H": 1,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    },
+    {
+      "method": "frozen_supervised",
+      "weight_role": "SL256",
+      "construction": "one frozen greedy rollout",
+      "extra_common_H": 1,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    },
+    {
+      "method": "continued_SL",
+      "weight_role": "continuedSL512",
+      "construction": "one frozen greedy rollout",
+      "extra_common_H": 1,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    },
+    {
+      "method": "RL_raw",
+      "weight_role": "RL512",
+      "construction": "one frozen greedy rollout",
+      "extra_common_H": 0,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    },
+    {
+      "method": "RL_plus_H",
+      "weight_role": "RL512",
+      "construction": "one frozen greedy rollout",
+      "extra_common_H": 1,
+      "optimizer": false,
+      "backward": false,
+      "export_validation": true
+    }
+  ],
+  "RL_raw_plus_H": "Separate executions, identical raw route required; no free reused construction",
+  "warm_cache": "Immutable navigation by canonical full-parent geometry/source/namespace only",
+  "complete_timer": "parse/source verification, full input preparation, navigation/subset/F&A, model load/checks, all features/encode, construction, H, export, scalar validation, result serialization/hash",
+  "stage_timer": "Child startup, all requests, navigation-only prime, restore, journal and IO; excludes parent interpreter import before supervisor entry",
+  "order_seed": 11632026,
+  "order_derivation": "PCG64 seed from first16hex SHA256 canonical [11632026,S3_method_order,case_id,model_seed,cache_kind,repeat]",
+  "bootstrap_seed": 11632026,
+  "bootstrap_replicates": 20000
+}

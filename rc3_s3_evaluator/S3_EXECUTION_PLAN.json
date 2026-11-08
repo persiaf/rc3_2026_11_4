@@ -1,0 +1,87 @@
+{
+  "schema": "rc3-s3-execution-plan-v1",
+  "status": "TECHNICAL_GO_NOT_EXECUTION_AUTHORIZATION",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "training_source_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+  "evaluation_code_binding_path": "rc3_s3_evaluator/S3_CODE_BINDING_V2.json",
+  "evaluation_code_binding_sha256": "7a468f817695a2fd38a75f228f83ad8753a7c1abd8b2581206b00548fc1e68a8",
+  "evaluation_source_binding_path": "rc3_s3_evaluator/S3_SOURCE_BINDING.json",
+  "model_index_sha256": "153bf352d2dbec9b17677522674f8bbbf2cb0c3f4b0747c1dbb5c5d7beb2539e",
+  "S2_complete_sha256": {
+    "11622026": "278e8e9f4ba6f5524288696f3105bd35a32850d68e0153c17313370af8ba9a2d",
+    "11622027": "3713f5ed84b26441f1378cfaeb7e777c572d20ce7e1e8a0c3fd9d2d4d97e4339",
+    "11622028": "d08d1ea0be225c3dad85d60afb3d3afd876b3a823e0ca9224165009d8c77faaa"
+  },
+  "policy_seeds": [
+    11622026,
+    11622027,
+    11622028
+  ],
+  "seed_order": "ascending",
+  "methods": [
+    "Fixed3_endpoint_adapter",
+    "Detour16_endpoint_adapter",
+    "untrained",
+    "frozen_supervised",
+    "continued_SL",
+    "RL_raw",
+    "RL_plus_H"
+  ],
+  "grid": {
+    "cases": 108,
+    "methods": 7,
+    "quality_requests_per_case_method": 1,
+    "independent_quality_requests_per_seed": 756,
+    "timing_repeats_per_cache": 3,
+    "cache_modes": 2,
+    "independent_timing_requests_per_seed": 4536,
+    "total_complete_requests_per_seed": 5292,
+    "total_complete_requests_all3seeds": 15876,
+    "cost_and_time_rule": "One separate quality request plus six complete timed requests per case/method/seed. No free reuse of quality construction, H, export or validation in timed requests. Timed complete routes/costs must remain consistent with the frozen deterministic method/input; charge all failures and cache hits separately."
+  },
+  "requests_per_seed_max": 5292,
+  "requests_all_seeds_max": 15876,
+  "wall_s_per_seed_max": 14400,
+  "optimizer_updates_max": 0,
+  "new_teacher_queries_max": 0,
+  "new_training_max": 0,
+  "formal_output": "rc3_s3_evaluator/runs/rc3_v3_global_local_20261106_01",
+  "entry": "python -B -X utf8 -m rc3_s3_evaluator.runner formal --authorization <S3_AUTHORIZATION.json> --source-approval <EVALUATION_SOURCE_APPROVAL.json>",
+  "source_approval_schema": {
+    "schema": "rc3-s3-evaluation-source-approval-v1",
+    "status": "APPROVED",
+    "approved_by": "user",
+    "exact_bindings": "protocol,registry,H,training_source,evaluation_source_binding,model_index,experiment_id",
+    "approval_source": "project-relative saved real user decision",
+    "user_message_sha256": "exact source message file hash"
+  },
+  "stage_authorization_schema": {
+    "schema": "rc3-s3-stage-authorization-v1",
+    "status": "AUTHORIZED",
+    "authorized_by": "user",
+    "stage": "S3",
+    "source_approval_sha256": "hash of separate source receipt",
+    "exact_bindings": "same exact identities + S2_complete map + policy_seeds + caps",
+    "authorization_source": "project-relative saved real user S3 decision",
+    "user_message_sha256": "exact source message hash"
+  },
+  "resume": "Same immutable authority and canonical directory only; closed complete-request boundaries retain all starts, errors, timers and log chain/HEAD. Dirty session or failed request stops for explicit recovery, never free replay.",
+  "statistics": {
+    "bootstrap": "20000 physical-parent-cluster resamples, PCG64 seed11632026, same declared parent resample indices used across matched methods/controls within each cell. Seen6 and unseen12 parents separate; not108 independent environments; intervals not simultaneous familywise coverage.",
+    "quality_aggregation": "Within each group,size,method,seed: average two endpoint-child J values for each physical parent. For pooled estimate then average the three matched optimizer-seed parent values; compute parent-relative gain from these method means, then equally average parent gains. FrozenSL/continuedSL are matched to their own seed lineage. Bootstrap true physical parent clusters only.",
+    "RL_gate_per_cell": "For BOTH frozenSL and continuedSL: all cases valid; mean paired parent-relative gain >=0.5%; percentile two-sided95 bootstrap lower (2.5th percentile)>0; each of3 optimizer-seed point gains strictly positive. All6 group-size cells required for overall independent-RL claim.",
+    "deployment_gate_per_stratum": "For each group,size,cache: all cases valid; parent-aggregated RLplusH degradation versus Detour16 one-sided95 percentile upper (95th percentile)<=0.5%; pooled complete-request median time ratio<=0.7 and p95 ratio<=1; RLplusH not Pareto dominated by Fixed3 on meanJ/median/p95 (all <= and at least one strict is domination). All12 strata required for overall deployment claim.",
+    "timing_aggregation": "Within each group,size,cache, pool all parent x endpoint x seed x3repeat request timings for descriptive median/p95. Quality uses parent units, not request count. Endpoint-specific tables always reported; no causal endpoint/position comparison.",
+    "primary_decision": "Overall independent-RL claim requires all6(group x size) quality cells; overall deployment claim requires all12(group x size x cache) strata. Both classes AND only for a combined quality-and-deployment claim; no pooled rescue. Partial per-cell evidence may be reported with explicit limited scope, not overall pass.",
+    "statistical_scope": "One preregistered data-bank screen with3optimization repeats, not3independent datasets. CIs not advertised as simultaneous acrossallcells. No claim of pure-gradient/equal-FLOPs causality becauseRL states on-policy andSL teacher pool fixed."
+  },
+  "current_scope": {
+    "formal_S3_executed": false,
+    "target_tasks": "SEALED",
+    "original60": "SEALED"
+  },
+  "budget_note": "Hard ceilings, not runtime predictions. Startup/restoration/preparation/cache/IO charged per declared timer scope; scientific outcomes not yet observed."
+}

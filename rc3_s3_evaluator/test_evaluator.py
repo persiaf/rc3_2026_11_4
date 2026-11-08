@@ -11,7 +11,7 @@ import numpy as np
 from .common import SEEDS, SIZES, METHODS, Meter, identity, write_new, read, project_file, HERE
 from .inputs import NavigationPool, FormalInputs, window_spec
 from .journal import Journal, grid, run_root
-from .provenance import Permit, admit_formal, ModelCatalog
+from .provenance import Permit, admit_formal, ModelCatalog, verified_geometry
 from .statistics import analyze, bootstrap, gains, quality_pass, dominated
 from .pipelines import verify_determinism
 from rc3_global_local.validation import validate
@@ -177,6 +177,19 @@ class EvaluatorTests(unittest.TestCase):
         with self.assertRaises(ValueError):catalog.entry(0,'RL512')
         catalog.models[str(SEEDS[0])]['RL512']['path']='rc3_s3_evaluator/engineering_fixture.pt'
         with self.assertRaises(ValueError):catalog.entry(SEEDS[0],'RL512')
+
+    def test_11_original_geometry_attestation(self):
+        assets=verified_geometry()
+        self.assertEqual(len(assets),111)
+        from .provenance import digest as real_digest
+        def damaged(path):
+            return 'bad' if str(path).endswith('GEOMETRY_GATE.json') else real_digest(path)
+        with patch('rc3_s3_evaluator.provenance.digest',side_effect=damaged):
+            with self.assertRaises(ValueError):verified_geometry()
+        def damaged_asset(path):
+            return 'bad' if str(path).endswith('train_00.json') else real_digest(path)
+        with patch('rc3_s3_evaluator.provenance.digest',side_effect=damaged_asset):
+            with self.assertRaises(ValueError):verified_geometry()
 
 
 if __name__=='__main__':unittest.main(verbosity=2)
