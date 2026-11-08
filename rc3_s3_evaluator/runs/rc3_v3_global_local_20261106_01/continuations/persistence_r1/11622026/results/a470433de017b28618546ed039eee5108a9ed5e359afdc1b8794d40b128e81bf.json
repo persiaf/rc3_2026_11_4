@@ -1,0 +1,977 @@
+{
+  "request": {
+    "case_id": "S3_024",
+    "seed": 11622026,
+    "kind": "cold",
+    "repeat": 0,
+    "method": "untrained",
+    "id": "a470433de017b28618546ed039eee5108a9ed5e359afdc1b8794d40b128e81bf"
+  },
+  "case_id": "S3_024",
+  "group": "seen",
+  "size": [
+    4,
+    3
+  ],
+  "endpoint": "closed_depot",
+  "physical_key": "73b542538e571eb530c465e03c60352b4e0b3e436935877bb10b61f0451a9ba6",
+  "source": {
+    "input_kind": "authorized_formal_S3",
+    "content": {
+      "scene": "12455934c511ab9fd8584dd5c128e4f84c824ca58fb12f5958d72a48a7c7f09d",
+      "F": "b8b13eb6a31dcfda602717eb3e0f53ec4515d6fc3c95e2dbd1e77b13b6940025",
+      "A": "758b647d5681d11f01670b29c79a4cd522952da5d5c79b62b642ad649c7a98a5",
+      "spec": {
+        "case": 24,
+        "group": "seen_layout_new_tasks",
+        "parent": 4,
+        "map_seed": 10000000004,
+        "task_seed": 13000000024,
+        "mode": "mixed",
+        "size": [
+          4,
+          3
+        ],
+        "position": "corner",
+        "endpoints": "closed_depot",
+        "A_condition": 1,
+        "note": "Seen means training layout, not unseen-environment generalization",
+        "width": 4,
+        "height": 3,
+        "x0": 0,
+        "y0": 0
+      }
+    },
+    "evaluation_parent_identity": "bd51fe94763b7e6d2a6e6f15e93d903863b4ae42030221248b06cffdd9483032",
+    "view_identity": "29f94e4a66db9b480a2988c271ac6d323e35647d9ea03116ffa6347790464b0f",
+    "F_sha256": "b8b13eb6a31dcfda602717eb3e0f53ec4515d6fc3c95e2dbd1e77b13b6940025",
+    "A_sha256": "758b647d5681d11f01670b29c79a4cd522952da5d5c79b62b642ad649c7a98a5",
+    "D_sha256": "79086d6538fb7583cf2a2ef644128c80e7a51830b0afb50fc4d590f6e99cf573",
+    "global_task_ids": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11,
+      12,
+      13,
+      22,
+      23,
+      24
+    ],
+    "global_candidate_ids": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      11,
+      14,
+      15,
+      24,
+      25,
+      26,
+      28,
+      29,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      160,
+      161,
+      162,
+      163,
+      166,
+      167,
+      176,
+      177,
+      178,
+      179,
+      182,
+      183
+    ],
+    "full_parent_tables": 100,
+    "full_parent_obstacles": 0,
+    "full_parent_geometry": "73b542538e571eb530c465e03c60352b4e0b3e436935877bb10b61f0451a9ba6"
+  },
+  "weight": {
+    "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/untrained.pt",
+    "checkpoint_sha256": "7ae62b55c657bbaef6259902da2188e75718beea9d33cbc6f98515ee789739ac",
+    "checkpoint_bytes": 293589,
+    "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/untrained.pt.json",
+    "sidecar_sha256": "1d07031ca843d94029de6d4b7d50d820afc3f4ead81a866b1ff8e742dea925ce",
+    "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/untrained.pt.commit.json",
+    "commit_sha256": "70b09655723b93a5a79813f84c9734eca65676e63224774085ff5258e1a03f68",
+    "phase": "S1",
+    "cursor": 0,
+    "weight_version": 0,
+    "model_tensor_sha256": "4b27cefcdd7dda13d5946a481bef3a5cc711cf1db2070eed7799bb041e375497",
+    "hash_binding_closed_boundary_ok": true,
+    "tensor_payload_deserialized": false
+  },
+  "training_weight_role": "untrained",
+  "raw_route": [
+    0,
+    17,
+    1,
+    38,
+    6,
+    44,
+    22,
+    31,
+    30,
+    14,
+    41,
+    0
+  ],
+  "route": [
+    0,
+    18,
+    42,
+    24,
+    44,
+    30,
+    14,
+    6,
+    1,
+    0
+  ],
+  "raw_route_sha256": "ce994a8dfbfea0b880bf11be9a992cbb580c15da323daf45432ae4a60b2148c5",
+  "route_sha256": "e3fd52cf3cd30a11961260e250b5256c4aea9467df93a27d9afd42afa7842603",
+  "trace": [
+    {
+      "action_local_node": 17,
+      "action_global_candidate": 81,
+      "served_tasks_global": [
+        9
+      ],
+      "reward": -3.9900569002,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        0,
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        22,
+        23,
+        24
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 1,
+      "action_global_candidate": 1,
+      "served_tasks_global": [
+        0
+      ],
+      "reward": -4.5610594597,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        22,
+        23,
+        24
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 38,
+      "action_global_candidate": 160,
+      "served_tasks_global": [
+        23
+      ],
+      "reward": -6.8028528631,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        2,
+        10,
+        11,
+        12,
+        13,
+        22,
+        24
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 6,
+      "action_global_candidate": 8,
+      "served_tasks_global": [
+        1
+      ],
+      "reward": -6.8191877847,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        2,
+        10,
+        11,
+        12,
+        13,
+        22,
+        24
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 44,
+      "action_global_candidate": 176,
+      "served_tasks_global": [
+        24
+      ],
+      "reward": -6.7905709075,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        2,
+        10,
+        11,
+        12,
+        13,
+        22
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 22,
+      "action_global_candidate": 96,
+      "served_tasks_global": [
+        10,
+        11
+      ],
+      "reward": -4.5493993962,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        2,
+        12,
+        13,
+        22
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 31,
+      "action_global_candidate": 105,
+      "served_tasks_global": [
+        13
+      ],
+      "reward": -3.6786922679,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        2,
+        12,
+        22
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 30,
+      "action_global_candidate": 104,
+      "served_tasks_global": [
+        12
+      ],
+      "reward": -1.4775300123000004,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        2,
+        22
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 14,
+      "action_global_candidate": 28,
+      "served_tasks_global": [
+        2
+      ],
+      "reward": -2.905683808799999,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        22
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 41,
+      "action_global_candidate": 163,
+      "served_tasks_global": [
+        22
+      ],
+      "reward": -17.7787153712,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [],
+      "done": true
+    }
+  ],
+  "metrics": {
+    "J": 31.392262582999997,
+    "L": 25.392262582999997,
+    "K": 8.0,
+    "raw_J": 59.353748771599996,
+    "raw_L": 51.853748771599996,
+    "raw_K": 10.0
+  },
+  "raw_cost_scope": "single frozen greedy construction before common H",
+  "H_gain_J": 27.9614861886,
+  "plan": {
+    "schema": "rc3-global-local-plan-v1",
+    "method": "untrained",
+    "status": "complete",
+    "problem_identity": "29f94e4a66db9b480a2988c271ac6d323e35647d9ea03116ffa6347790464b0f",
+    "parent_identity": "bd51fe94763b7e6d2a6e6f15e93d903863b4ae42030221248b06cffdd9483032",
+    "entry_global_node": 0,
+    "exit_global_node": 0,
+    "window": {
+      "x0": 0,
+      "y0": 0,
+      "width": 4,
+      "height": 3
+    },
+    "target_task_ids_global": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11,
+      12,
+      13,
+      22,
+      23,
+      24
+    ],
+    "visit_order_candidate_ids": [
+      82,
+      166,
+      98,
+      176,
+      104,
+      28,
+      8,
+      1
+    ],
+    "selected_candidate_ids": [
+      82,
+      166,
+      98,
+      176,
+      104,
+      28,
+      8,
+      1
+    ],
+    "navigation_global_nodes": [
+      0,
+      83,
+      167,
+      99,
+      177,
+      105,
+      29,
+      9,
+      2,
+      0
+    ],
+    "assignments": [
+      {
+        "task_id": 9,
+        "candidate_id": 82,
+        "arm": "L"
+      },
+      {
+        "task_id": 22,
+        "candidate_id": 166,
+        "arm": "R"
+      },
+      {
+        "task_id": 23,
+        "candidate_id": 166,
+        "arm": "L"
+      },
+      {
+        "task_id": 10,
+        "candidate_id": 98,
+        "arm": "L"
+      },
+      {
+        "task_id": 11,
+        "candidate_id": 98,
+        "arm": "R"
+      },
+      {
+        "task_id": 24,
+        "candidate_id": 176,
+        "arm": "L"
+      },
+      {
+        "task_id": 12,
+        "candidate_id": 104,
+        "arm": "L"
+      },
+      {
+        "task_id": 13,
+        "candidate_id": 104,
+        "arm": "L"
+      },
+      {
+        "task_id": 2,
+        "candidate_id": 28,
+        "arm": "L"
+      },
+      {
+        "task_id": 1,
+        "candidate_id": 8,
+        "arm": "L"
+      },
+      {
+        "task_id": 0,
+        "candidate_id": 1,
+        "arm": "L"
+      }
+    ],
+    "service_stops": [
+      {
+        "sequence": 1,
+        "candidate_id": 82,
+        "pose": {
+          "x": 0.8435347374385577,
+          "y": 3.5662677123993443,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 4.6532411819999995,
+        "tasks": [
+          {
+            "task_id": 9,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "candidate_id": 166,
+        "pose": {
+          "x": 2.032070832614908,
+          "y": 4.443812651669656,
+          "theta": 3.141592653589793,
+          "h": 0.4
+        },
+        "arrival_distance_m": 6.935057885099999,
+        "tasks": [
+          {
+            "task_id": 22,
+            "arm": "R"
+          },
+          {
+            "task_id": 23,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "candidate_id": 98,
+        "pose": {
+          "x": 5.096337549642971,
+          "y": 3.587297458152499,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 10.8558397956,
+        "tasks": [
+          {
+            "task_id": 10,
+            "arm": "L"
+          },
+          {
+            "task_id": 11,
+            "arm": "R"
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "candidate_id": 176,
+        "pose": {
+          "x": 5.115290128230074,
+          "y": 3.842447667602377,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 11.129942583599998,
+        "tasks": [
+          {
+            "task_id": 24,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 5,
+        "candidate_id": 104,
+        "pose": {
+          "x": 7.285979915412581,
+          "y": 1.9815459071921357,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 15.436638867,
+        "tasks": [
+          {
+            "task_id": 12,
+            "arm": "L"
+          },
+          {
+            "task_id": 13,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 6,
+        "candidate_id": 28,
+        "pose": {
+          "x": 6.516839866568564,
+          "y": 0.7890498789914189,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 17.5923226758,
+        "tasks": [
+          {
+            "task_id": 2,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 7,
+        "candidate_id": 8,
+        "pose": {
+          "x": 3.0257155457647187,
+          "y": 0.10854865751909204,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 21.981045533099998,
+        "tasks": [
+          {
+            "task_id": 1,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 8,
+        "candidate_id": 1,
+        "pose": {
+          "x": 1.3004244753901228,
+          "y": 0.13847642333318255,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 23.9533616843,
+        "tasks": [
+          {
+            "task_id": 0,
+            "arm": "L"
+          }
+        ]
+      }
+    ],
+    "unserved_task_ids": [],
+    "route_polyline": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.7912936435
+      ],
+      [
+        0.0,
+        1.0969280838
+      ],
+      [
+        0.0,
+        1.8439935393
+      ],
+      [
+        0.0,
+        2.6165120824
+      ],
+      [
+        0.0,
+        2.9163491691
+      ],
+      [
+        0.0,
+        3.6879870785
+      ],
+      [
+        0.8435347374,
+        3.6879870785
+      ],
+      [
+        0.8435347374,
+        3.5662677124
+      ],
+      [
+        0.8435347374,
+        3.6879870785
+      ],
+      [
+        0.8523271062,
+        3.6879870785
+      ],
+      [
+        1.2734633611,
+        3.6879870785
+      ],
+      [
+        1.3054895905,
+        3.6879870785
+      ],
+      [
+        2.1399386669,
+        3.6879870785
+      ],
+      [
+        2.1399386669,
+        4.4258590656
+      ],
+      [
+        2.1399386669,
+        4.4438126517
+      ],
+      [
+        2.0320708326,
+        4.4438126517
+      ],
+      [
+        2.1399386669,
+        4.4438126517
+      ],
+      [
+        2.1399386669,
+        4.4258590656
+      ],
+      [
+        2.1399386669,
+        3.6879870785
+      ],
+      [
+        2.9624315222,
+        3.6879870785
+      ],
+      [
+        3.0199045473,
+        3.6879870785
+      ],
+      [
+        3.4320094941,
+        3.6879870785
+      ],
+      [
+        3.4705599847,
+        3.6879870785
+      ],
+      [
+        4.2798773338,
+        3.6879870785
+      ],
+      [
+        5.0963375496,
+        3.6879870785
+      ],
+      [
+        5.0963375496,
+        3.5872974582
+      ],
+      [
+        5.0963375496,
+        3.6879870785
+      ],
+      [
+        5.1152901282,
+        3.6879870785
+      ],
+      [
+        5.1152901282,
+        3.8424476676
+      ],
+      [
+        5.1152901282,
+        3.6879870785
+      ],
+      [
+        5.546728492,
+        3.6879870785
+      ],
+      [
+        5.5647691994,
+        3.6879870785
+      ],
+      [
+        6.4198160007,
+        3.6879870785
+      ],
+      [
+        6.4198160007,
+        2.9387395429
+      ],
+      [
+        6.4198160007,
+        2.9180875909
+      ],
+      [
+        6.4198160007,
+        2.6416237123
+      ],
+      [
+        6.4198160007,
+        2.6270598018
+      ],
+      [
+        6.4198160007,
+        1.8439935393
+      ],
+      [
+        7.249252191,
+        1.8439935393
+      ],
+      [
+        7.2859799154,
+        1.8439935393
+      ],
+      [
+        7.2859799154,
+        1.9815459072
+      ],
+      [
+        7.2859799154,
+        1.8439935393
+      ],
+      [
+        7.249252191,
+        1.8439935393
+      ],
+      [
+        6.4198160007,
+        1.8439935393
+      ],
+      [
+        6.4198160007,
+        1.0930897272
+      ],
+      [
+        6.4198160007,
+        1.0787470457
+      ],
+      [
+        6.4198160007,
+        0.789049879
+      ],
+      [
+        6.5168398666,
+        0.789049879
+      ],
+      [
+        6.4198160007,
+        0.789049879
+      ],
+      [
+        6.4198160007,
+        0.7746674474
+      ],
+      [
+        6.4198160007,
+        0.0
+      ],
+      [
+        5.5995522333,
+        0.0
+      ],
+      [
+        5.159740269,
+        0.0
+      ],
+      [
+        4.2798773338,
+        0.0
+      ],
+      [
+        3.4704054517,
+        0.0
+      ],
+      [
+        3.0257155458,
+        0.0
+      ],
+      [
+        3.0257155458,
+        0.1085486575
+      ],
+      [
+        3.0257155458,
+        0.0
+      ],
+      [
+        2.1399386669,
+        0.0
+      ],
+      [
+        1.3004244754,
+        0.0
+      ],
+      [
+        1.3004244754,
+        0.1384764233
+      ],
+      [
+        1.3004244754,
+        0.0
+      ],
+      [
+        0.8498475043,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "route_leg_costs_m": [
+      4.6532411819999995,
+      2.2818167031,
+      3.9207819105,
+      0.27410278799999954,
+      4.3066962834,
+      2.155683808799999,
+      4.3887228573,
+      1.9723161511999996,
+      1.4389008987
+    ],
+    "route_length_m": 25.392262582999997,
+    "objective_length_plus_stops_m": 31.392262582999997,
+    "stop_penalty_equivalent_m": 0.75,
+    "arm_joint_trajectories": null,
+    "physical_joint_trajectory_certified": false,
+    "validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "collision_count": 0,
+      "errors": [],
+      "independent_polyline_length_m": 25.392262582999987,
+      "effective_same_arm_F_and_A": true,
+      "endpoint_constraints_satisfied": true,
+      "physical_joint_trajectory_certified": false,
+      "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+    }
+  },
+  "pipeline_counters": {
+    "full_H_calls": 1,
+    "export_attempts": 1,
+    "exports": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1
+  },
+  "internal_search": {
+    "counts": {
+      "construct": 0,
+      "two_opt": 4,
+      "joint_search": 1,
+      "recipe": 0
+    },
+    "inclusive_s": {
+      "construct": 0.0,
+      "two_opt": 0.0004442999925231561,
+      "joint_search": 0.0005757000035373494,
+      "recipe": 0.0
+    },
+    "exclusive_s": {
+      "construct": 0.0,
+      "two_opt": 0.0004442999925231561,
+      "joint_search": 0.0004095000185770914,
+      "recipe": 0.0
+    }
+  },
+  "valid": true,
+  "counts": {
+    "input_generation_and_preparation_attempts": 1,
+    "target_task_generations": 1,
+    "proxy_F_A_preparations": 1,
+    "input_generation_and_preparation_completed": 1,
+    "navigation_access_attempts": 1,
+    "cold_navigation_attempts": 1,
+    "navigation_solves": 1,
+    "cold_navigation_completed": 1,
+    "navigation_access_completed": 1,
+    "whole_parent_and_window_attempts": 1,
+    "whole_parent_and_window_completed": 1,
+    "model_load_and_verify_attempts": 1,
+    "frozen_policy_materializations": 1,
+    "model_load_and_verify_completed": 1,
+    "features_and_global_local_encoding_attempts": 1,
+    "fresh_encodings": 1,
+    "features_and_global_local_encoding_completed": 1,
+    "greedy_construction_attempts": 1,
+    "greedy_actions": 10,
+    "greedy_construction_completed": 1,
+    "common_H_pipeline_attempts": 1,
+    "common_H_invocations": 1,
+    "export_attempts": 1,
+    "export_completed": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1,
+    "common_H_pipeline_completed": 1,
+    "weight_immutability_verify_attempts": 1,
+    "weight_immutability_verify_completed": 1,
+    "artifact_write_attempts": 1
+  },
+  "component_seconds": {
+    "input_generation_and_preparation": 0.041437599997152574,
+    "cold_navigation": 0.2955205000034766,
+    "navigation_access": 0.32836519999546,
+    "whole_parent_and_window": 0.10317489999579266,
+    "model_load_and_verify": 0.013542999993660487,
+    "features_and_global_local_encoding": 0.020278399999369867,
+    "greedy_construction": 0.007771300006425008,
+    "export": 0.0005061999981990084,
+    "validation": 0.007070999999996275,
+    "common_H_pipeline": 0.07484470000781585,
+    "weight_immutability_verify": 0.002789399994071573
+  },
+  "timing_note": "Nested inclusive components; do not add. Complete time includes durable result artifact write/hash; final ledger commit is charged to outer stage wall.",
+  "persistence_revision": "767f13bd4619bef37501db997296982baf6b1565cb25ea8cb964c2e39d381bea",
+  "timing_boundary_version": "same-complete-request-boundary-with-repaired-anchor-IO"
+}

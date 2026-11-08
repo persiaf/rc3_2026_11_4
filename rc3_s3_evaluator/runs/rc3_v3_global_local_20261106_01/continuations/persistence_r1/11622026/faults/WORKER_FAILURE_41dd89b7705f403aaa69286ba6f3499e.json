@@ -1,0 +1,11 @@
+{
+  "schema": "rc3-s3-independent-io-receipt-v1",
+  "kind": "WORKER_FAILURE",
+  "utc": "2026-11-08T04:39:48.847871+00:00",
+  "payload": {
+    "seed": 11622026,
+    "token": "bc9d9262d1f37879bdbeb086ad06bf81cc37ff163f0769966a9fac0303203f15",
+    "error": "ValueError('Selected tasks cannot all be served under F&A and endpoints')",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_recovery_20261108\\runner.py\", line 113, in _worker\n    row=evaluate(q,provider,case,pool,catalog,meter,lambda:max(.000001,args.deadline-time.perf_counter()))\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\pipelines.py\", line 52, in evaluate\n    p, sources = prepare_view(provider, case, pool, request['kind'], meter)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\inputs.py\", line 188, in prepare_view\n    extract_snapshot(parent, 0, 0, 10, 10, 0, 0)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local_impl_review\\runtime_guards.py\", line 262, in extract_snapshot\n    return snapshot_local(parent, tasks, tables, entry_node, exit_node,\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local_impl_review\\runtime_guards.py\", line 242, in snapshot_local\n    legacy = LegacyLocalProblem(parent, task_ids, table_ids, entry_node, exit_node, window)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local\\problem.py\", line 89, in __init__\n    if not self.C.any(1).all():raise ValueError('Selected tasks cannot all be served under F&A and endpoints')\nValueError: Selected tasks cannot all be served under F&A and endpoints\n"
+  }
+}

@@ -1,0 +1,901 @@
+{
+  "request": {
+    "case_id": "S3_012",
+    "seed": 11622026,
+    "kind": "hot",
+    "repeat": 0,
+    "method": "frozen_supervised",
+    "id": "2933a14ff33730c554591171f9bc50c1bc8fc25f578233d6456a2e22549c52ab"
+  },
+  "case_id": "S3_012",
+  "group": "seen",
+  "size": [
+    4,
+    3
+  ],
+  "endpoint": "closed_depot",
+  "physical_key": "df2c99bdcc9e8e1f304a8876ba736133b2a1387b4f04b0fda89d436072c9141a",
+  "source": {
+    "input_kind": "authorized_formal_S3",
+    "content": {
+      "scene": "958c43846ff44e7180965c3c11615b92aeb3bda0e08cb6829beedc6953bf5d93",
+      "F": "cf3e14ed1d15d8bf04ca743dea22aa879f9e7ea6cdde81ace7347ee3f8abab2a",
+      "A": "ab491b935e46fc1d89e0c9c878aacd670491896d25953b675156ab919ced10d5",
+      "spec": {
+        "case": 12,
+        "group": "seen_layout_new_tasks",
+        "parent": 2,
+        "map_seed": 10000000002,
+        "task_seed": 13000000012,
+        "mode": "mixed",
+        "size": [
+          4,
+          3
+        ],
+        "position": "corner",
+        "endpoints": "closed_depot",
+        "A_condition": 2,
+        "note": "Seen means training layout, not unseen-environment generalization",
+        "width": 4,
+        "height": 3,
+        "x0": 0,
+        "y0": 0
+      }
+    },
+    "evaluation_parent_identity": "31c91d98b70e12ee2aa9d059c114b9f58d7f07712d25bc16914cec2ea1696719",
+    "view_identity": "f818868f268330bf44a1fd221f0d23bf6c86f3c0f7570d32b6aaf1ab6611cd09",
+    "F_sha256": "cf3e14ed1d15d8bf04ca743dea22aa879f9e7ea6cdde81ace7347ee3f8abab2a",
+    "A_sha256": "ab491b935e46fc1d89e0c9c878aacd670491896d25953b675156ab919ced10d5",
+    "D_sha256": "4dc9ef768827509eb013127e1e7e35ecf6ebda7a32915cdcd4ca41dc16276bef",
+    "global_task_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "global_candidate_ids": [
+      0,
+      1,
+      5,
+      8,
+      9,
+      10,
+      12,
+      14,
+      15,
+      16,
+      17,
+      20,
+      21,
+      23,
+      24,
+      25,
+      30,
+      31,
+      80,
+      82,
+      83,
+      84,
+      85,
+      88,
+      89,
+      92,
+      93,
+      95,
+      98,
+      99,
+      101
+    ],
+    "full_parent_tables": 100,
+    "full_parent_obstacles": 0,
+    "full_parent_geometry": "df2c99bdcc9e8e1f304a8876ba736133b2a1387b4f04b0fda89d436072c9141a"
+  },
+  "weight": {
+    "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+    "checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+    "checkpoint_bytes": 837749,
+    "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.json",
+    "sidecar_sha256": "37e1378d39d7749eb0d26fa12cd311573113bfdee343a7be4bdc830dac52b75a",
+    "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.commit.json",
+    "commit_sha256": "708de69f1e85f3c84630b5db6357c12144dd7967dd53c56827647a65ac71824f",
+    "phase": "S1",
+    "cursor": 256,
+    "weight_version": 256,
+    "model_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+    "hash_binding_closed_boundary_ok": true,
+    "tensor_payload_deserialized": false
+  },
+  "training_weight_role": "SL256",
+  "raw_route": [
+    0,
+    3,
+    22,
+    24,
+    6,
+    31,
+    13,
+    10,
+    15,
+    5,
+    0
+  ],
+  "route": [
+    0,
+    3,
+    22,
+    6,
+    24,
+    31,
+    10,
+    15,
+    5,
+    0
+  ],
+  "raw_route_sha256": "0f55e7c822b1660823032a8cef4e669e129d2221ef8b0d63c8cca1478c6bca50",
+  "route_sha256": "4bc3cb6a95f9ca0a2e70f17ce281d6de0af55a71be6eb91b7583729eca180948",
+  "trace": [
+    {
+      "action_local_node": 3,
+      "action_global_candidate": 5,
+      "served_tasks_global": [
+        0
+      ],
+      "reward": -2.0903012846999998,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 22,
+      "action_global_candidate": 84,
+      "served_tasks_global": [
+        9,
+        10
+      ],
+      "reward": -2.7955281870000004,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        11,
+        12,
+        13
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 24,
+      "action_global_candidate": 88,
+      "served_tasks_global": [
+        11,
+        12
+      ],
+      "reward": -5.093192631500001,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        13
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 6,
+      "action_global_candidate": 10,
+      "served_tasks_global": [
+        2
+      ],
+      "reward": -1.0754711978000002,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        3,
+        4,
+        5,
+        13
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 31,
+      "action_global_candidate": 101,
+      "served_tasks_global": [
+        13
+      ],
+      "reward": -3.6060397797999997,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 13,
+      "action_global_candidate": 21,
+      "served_tasks_global": [
+        3
+      ],
+      "reward": -3.048014346599999,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        4,
+        5
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 10,
+      "action_global_candidate": 16,
+      "served_tasks_global": [
+        4
+      ],
+      "reward": -3.155257047199999,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1,
+        5
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 15,
+      "action_global_candidate": 24,
+      "served_tasks_global": [
+        5
+      ],
+      "reward": -3.2939544845,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        1
+      ],
+      "done": false
+    },
+    {
+      "action_local_node": 5,
+      "action_global_candidate": 9,
+      "served_tasks_global": [
+        1
+      ],
+      "reward": -8.7378143749,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [],
+      "done": true
+    }
+  ],
+  "metrics": {
+    "J": 31.8609645962,
+    "L": 25.8609645962,
+    "K": 8.0,
+    "raw_J": 32.895573334,
+    "raw_L": 26.145573333999998,
+    "raw_K": 9.0
+  },
+  "raw_cost_scope": "single frozen greedy construction before common H",
+  "H_gain_J": 1.0346087377999993,
+  "plan": {
+    "schema": "rc3-global-local-plan-v1",
+    "method": "frozen_supervised",
+    "status": "complete",
+    "problem_identity": "f818868f268330bf44a1fd221f0d23bf6c86f3c0f7570d32b6aaf1ab6611cd09",
+    "parent_identity": "31c91d98b70e12ee2aa9d059c114b9f58d7f07712d25bc16914cec2ea1696719",
+    "entry_global_node": 0,
+    "exit_global_node": 0,
+    "window": {
+      "x0": 0,
+      "y0": 0,
+      "width": 4,
+      "height": 3
+    },
+    "target_task_ids_global": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "visit_order_candidate_ids": [
+      5,
+      84,
+      10,
+      88,
+      101,
+      16,
+      24,
+      9
+    ],
+    "selected_candidate_ids": [
+      5,
+      84,
+      10,
+      88,
+      101,
+      16,
+      24,
+      9
+    ],
+    "navigation_global_nodes": [
+      0,
+      6,
+      85,
+      11,
+      89,
+      102,
+      17,
+      25,
+      10,
+      0
+    ],
+    "assignments": [
+      {
+        "task_id": 0,
+        "candidate_id": 5,
+        "arm": "L"
+      },
+      {
+        "task_id": 9,
+        "candidate_id": 84,
+        "arm": "R"
+      },
+      {
+        "task_id": 10,
+        "candidate_id": 84,
+        "arm": "L"
+      },
+      {
+        "task_id": 2,
+        "candidate_id": 10,
+        "arm": "L"
+      },
+      {
+        "task_id": 11,
+        "candidate_id": 88,
+        "arm": "L"
+      },
+      {
+        "task_id": 12,
+        "candidate_id": 88,
+        "arm": "L"
+      },
+      {
+        "task_id": 13,
+        "candidate_id": 101,
+        "arm": "L"
+      },
+      {
+        "task_id": 3,
+        "candidate_id": 16,
+        "arm": "L"
+      },
+      {
+        "task_id": 4,
+        "candidate_id": 16,
+        "arm": "R"
+      },
+      {
+        "task_id": 5,
+        "candidate_id": 24,
+        "arm": "L"
+      },
+      {
+        "task_id": 1,
+        "candidate_id": 9,
+        "arm": "L"
+      }
+    ],
+    "service_stops": [
+      {
+        "sequence": 1,
+        "candidate_id": 5,
+        "pose": {
+          "x": 0.14621148111538607,
+          "y": 1.1940898035781076,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 1.3403012847,
+        "tasks": [
+          {
+            "task_id": 0,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "candidate_id": 84,
+        "pose": {
+          "x": 0.1985697692791102,
+          "y": 2.894836740174115,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 3.3858294717,
+        "tasks": [
+          {
+            "task_id": 9,
+            "arm": "R"
+          },
+          {
+            "task_id": 10,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "candidate_id": 10,
+        "pose": {
+          "x": 3.0973542840292136,
+          "y": 1.887594579563429,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 7.688995685600001,
+        "tasks": [
+          {
+            "task_id": 2,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "candidate_id": 88,
+        "pose": {
+          "x": 3.102492310192912,
+          "y": 2.207927751152959,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 8.0144668834,
+        "tasks": [
+          {
+            "task_id": 11,
+            "arm": "L"
+          },
+          {
+            "task_id": 12,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 5,
+        "candidate_id": 101,
+        "pose": {
+          "x": 4.602346471839976,
+          "y": 3.238642171627936,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 10.9002570284,
+        "tasks": [
+          {
+            "task_id": 13,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 6,
+        "candidate_id": 16,
+        "pose": {
+          "x": 5.327144091671784,
+          "y": 0.17587574414667073,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 15.3291957368,
+        "tasks": [
+          {
+            "task_id": 3,
+            "arm": "L"
+          },
+          {
+            "task_id": 4,
+            "arm": "R"
+          }
+        ]
+      },
+      {
+        "sequence": 7,
+        "candidate_id": 24,
+        "pose": {
+          "x": 7.572658866184252,
+          "y": 0.1225639658882034,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 17.873150221299998,
+        "tasks": [
+          {
+            "task_id": 5,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 8,
+        "candidate_id": 9,
+        "pose": {
+          "x": 3.5447660227296494,
+          "y": 0.1462957713634634,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 22.169902802099998,
+        "tasks": [
+          {
+            "task_id": 1,
+            "arm": "L"
+          }
+        ]
+      }
+    ],
+    "unserved_task_ids": [],
+    "route_polyline": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.8353307094
+      ],
+      [
+        0.0,
+        1.1940898036
+      ],
+      [
+        0.1462114811,
+        1.1940898036
+      ],
+      [
+        0.0,
+        1.1940898036
+      ],
+      [
+        0.0,
+        2.0303169697
+      ],
+      [
+        0.0,
+        2.8948367402
+      ],
+      [
+        0.1985697693,
+        2.8948367402
+      ],
+      [
+        0.0,
+        2.8948367402
+      ],
+      [
+        0.0,
+        2.0303169697
+      ],
+      [
+        0.8882740158,
+        2.0303169697
+      ],
+      [
+        0.9226034583,
+        2.0303169697
+      ],
+      [
+        1.3706708364,
+        2.0303169697
+      ],
+      [
+        1.3723990853,
+        2.0303169697
+      ],
+      [
+        2.2287674427,
+        2.0303169697
+      ],
+      [
+        3.097354284,
+        2.0303169697
+      ],
+      [
+        3.097354284,
+        1.8875945796
+      ],
+      [
+        3.097354284,
+        2.0303169697
+      ],
+      [
+        3.1024923102,
+        2.0303169697
+      ],
+      [
+        3.1024923102,
+        2.2079277512
+      ],
+      [
+        3.1024923102,
+        2.0303169697
+      ],
+      [
+        3.5447660227,
+        2.0303169697
+      ],
+      [
+        3.5835201022,
+        2.0303169697
+      ],
+      [
+        4.4575348854,
+        2.0303169697
+      ],
+      [
+        4.4575348854,
+        2.8656210889
+      ],
+      [
+        4.4575348854,
+        2.8966892633
+      ],
+      [
+        4.4575348854,
+        3.2386421716
+      ],
+      [
+        4.6023464718,
+        3.2386421716
+      ],
+      [
+        4.4575348854,
+        3.2386421716
+      ],
+      [
+        4.4575348854,
+        2.8966892633
+      ],
+      [
+        4.4575348854,
+        2.8656210889
+      ],
+      [
+        4.4575348854,
+        2.0303169697
+      ],
+      [
+        4.4575348854,
+        1.2226057541
+      ],
+      [
+        4.4575348854,
+        1.2022698775
+      ],
+      [
+        4.4575348854,
+        0.8581190808
+      ],
+      [
+        4.4575348854,
+        0.8316204734
+      ],
+      [
+        4.4575348854,
+        0.0
+      ],
+      [
+        5.3271440917,
+        0.0
+      ],
+      [
+        5.3271440917,
+        0.1758757441
+      ],
+      [
+        5.3271440917,
+        0.0
+      ],
+      [
+        5.7920298188,
+        0.0
+      ],
+      [
+        6.6863023281,
+        0.0
+      ],
+      [
+        7.5726588662,
+        0.0
+      ],
+      [
+        7.5726588662,
+        0.1225639659
+      ],
+      [
+        7.5726588662,
+        0.0
+      ],
+      [
+        6.6863023281,
+        0.0
+      ],
+      [
+        5.7920298188,
+        0.0
+      ],
+      [
+        5.3271440917,
+        0.0
+      ],
+      [
+        4.4575348854,
+        0.0
+      ],
+      [
+        3.5447660227,
+        0.0
+      ],
+      [
+        3.5447660227,
+        0.1462957714
+      ],
+      [
+        3.5447660227,
+        0.0
+      ],
+      [
+        3.097354284,
+        0.0
+      ],
+      [
+        2.2287674427,
+        0.0
+      ],
+      [
+        1.3723990853,
+        0.0
+      ],
+      [
+        0.8882740158,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "route_leg_costs_m": [
+      1.3403012847,
+      2.0455281870000004,
+      4.303166213900001,
+      0.3254711978000002,
+      2.885790145,
+      4.4289387084,
+      2.5439544845,
+      4.2967525808,
+      3.6910617941
+    ],
+    "route_length_m": 25.8609645962,
+    "objective_length_plus_stops_m": 31.8609645962,
+    "stop_penalty_equivalent_m": 0.75,
+    "arm_joint_trajectories": null,
+    "physical_joint_trajectory_certified": false,
+    "validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "collision_count": 0,
+      "errors": [],
+      "independent_polyline_length_m": 25.8609645962,
+      "effective_same_arm_F_and_A": true,
+      "endpoint_constraints_satisfied": true,
+      "physical_joint_trajectory_certified": false,
+      "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+    }
+  },
+  "pipeline_counters": {
+    "full_H_calls": 1,
+    "export_attempts": 1,
+    "exports": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1
+  },
+  "internal_search": {
+    "counts": {
+      "construct": 0,
+      "two_opt": 4,
+      "joint_search": 1,
+      "recipe": 0
+    },
+    "inclusive_s": {
+      "construct": 0.0,
+      "two_opt": 0.0002845999988494441,
+      "joint_search": 0.0002786999975796789,
+      "recipe": 0.0
+    },
+    "exclusive_s": {
+      "construct": 0.0,
+      "two_opt": 0.0002845999988494441,
+      "joint_search": 0.00020730000687763095,
+      "recipe": 0.0
+    }
+  },
+  "valid": true,
+  "counts": {
+    "input_generation_and_preparation_attempts": 1,
+    "target_task_generations": 1,
+    "proxy_F_A_preparations": 1,
+    "input_generation_and_preparation_completed": 1,
+    "navigation_access_attempts": 1,
+    "navigation_only_cache_hits": 1,
+    "navigation_access_completed": 1,
+    "whole_parent_and_window_attempts": 1,
+    "whole_parent_and_window_completed": 1,
+    "model_load_and_verify_attempts": 1,
+    "frozen_policy_materializations": 1,
+    "model_load_and_verify_completed": 1,
+    "features_and_global_local_encoding_attempts": 1,
+    "fresh_encodings": 1,
+    "features_and_global_local_encoding_completed": 1,
+    "greedy_construction_attempts": 1,
+    "greedy_actions": 9,
+    "greedy_construction_completed": 1,
+    "common_H_pipeline_attempts": 1,
+    "common_H_invocations": 1,
+    "export_attempts": 1,
+    "export_completed": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1,
+    "common_H_pipeline_completed": 1,
+    "weight_immutability_verify_attempts": 1,
+    "weight_immutability_verify_completed": 1,
+    "artifact_write_attempts": 1
+  },
+  "component_seconds": {
+    "input_generation_and_preparation": 0.04681699999491684,
+    "navigation_access": 0.04297920000681188,
+    "whole_parent_and_window": 0.1033270000043558,
+    "model_load_and_verify": 0.02358470000035595,
+    "features_and_global_local_encoding": 0.01820219999353867,
+    "greedy_construction": 0.008010799996554852,
+    "export": 0.00040330000047106296,
+    "validation": 0.00561530000413768,
+    "common_H_pipeline": 0.07355590000224765,
+    "weight_immutability_verify": 0.0038154000067152083
+  },
+  "timing_note": "Nested inclusive components; do not add. Complete time includes durable result artifact write/hash; final ledger commit is charged to outer stage wall.",
+  "persistence_revision": "767f13bd4619bef37501db997296982baf6b1565cb25ea8cb964c2e39d381bea",
+  "timing_boundary_version": "same-complete-request-boundary-with-repaired-anchor-IO"
+}

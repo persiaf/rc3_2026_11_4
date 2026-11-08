@@ -1,0 +1,11 @@
+{
+  "schema": "rc3-s3-independent-io-receipt-v1",
+  "kind": "SUPERVISOR_FATAL",
+  "utc": "2026-11-08T04:40:00.868154+00:00",
+  "payload": {
+    "error": "ValueError('Stopped with independent per-seed failure/clock receipts')",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_recovery_20261108\\runner.py\", line 209, in supervise\n    _supervise()\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_recovery_20261108\\runner.py\", line 199, in _supervise\n    ran=run_seed(seed,start,permit,legacy,binding)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_recovery_20261108\\runner.py\", line 181, in run_seed\n    require(final['status']=='CLOSED_BOUNDARY','Stopped with independent per-seed failure/clock receipts')\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\common.py\", line 30, in require\n    raise ValueError(message)\nValueError: Stopped with independent per-seed failure/clock receipts\n",
+    "outer_invocation_elapsed_s": 2295.140623500003,
+    "note": "Supplementary outer clock, not added to per-seed clocks; blocks silent retry and budget reset"
+  }
+}

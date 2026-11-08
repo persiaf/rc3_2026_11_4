@@ -1,13 +1,19 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-08** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.08-s3-interrupted-io-failure**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-08** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.08-s3-persistence-recovery-input-stop**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+
+<!-- S3_RECOVERY_CURRENT_BEGIN -->
+**S3持久化修复工程GO，已实际恢复1895个未执行请求；随后因新的S3_042输入不可行停止。** 累计2059预扣、2057有效结果、2失败，13817未执行。原180文件、旧HEAD/pending与12固定模型来源保持；原第163槽没有补跑。6次真实瞬态锚重试成功，新失败的Journal及父阶段时钟正常闭合。首种子预算账为592保守旧账＋9.8023启动失败＋2295.1254续段＝2896.9277秒，原准确墙钟仍null。后两种子未启动。质量294/2268、cold881/6804、hot882/6804；全部6质量/12部署格INCOMPLETE，不支持总体性能判断。新失败在全父场景F&A检查、模型/native/H之前，不改场景或免费重试；optimizer0，原60未读。见[真实恢复结果与全部交付](rc3_s3_recovery_20261108/README.md)、[累计资源](rc3_s3_recovery_20261108/results/RESOURCE_ACCOUNTING.json)、[请求状态](rc3_s3_recovery_20261108/results/REQUEST_STATE_INDEX.json)与[下一步决定](rc3_s3_recovery_20261108/NEXT_STEP_DECISION.md)。
+
+以下原IO中断段落保留为历史前缀；当前状态以上述恢复记录和活动执行状态为准。
+<!-- S3_RECOVERY_CURRENT_END -->
 
 **正式 S3 已实际启动，因日志 IO 故障中断；执行 REVISE，科学判定 NOT_EVALUATED_INCOMPLETE。** 用户批准准确 b348… 评估绑定并授权完整三种子后，首种子实际预扣163请求、完成162份有效计划；第163次在导航前更新HEAD时遇到Windows访问拒绝，二次错误记录和阶段闭合受阻。后两种子未启动，失败没有重跑或清账。132.83秒仅是已完成请求时间和，准确阶段墙钟不可还原，保守冻结592秒供明确恢复审查；optimizer0，原60未读。见 [本轮实际结果与全部证据](rc3_s3_results_20261108/README.md)、[真实报告](rc3_s3_results_20261108/EXPERIMENT_REPORT.md)、[资源账](rc3_s3_results_20261108/RESOURCE_ACCOUNTING.json) 和 [独立审查](rc3_s3_results_20261108/INDEPENDENT_REVIEW.md)。不能据这四例前缀判定质量或部署门槛。
 
 **此前 S3 评估器工程验收为技术 GO，当时正式 S3 未执行。** 七方法、完整冷/热导航计时、固定权重身份、请求预扣与恢复、父布局聚类及原 AND 判定已实现。实际完成126/126旧DEV工程请求，累计112.330247秒、optimizer0、新教师0；RL_raw与RL_plus_H的18对原始路线一致，独立审查通过。几何来源校验已补齐并独立绑定V2评估源码；原S1-A/S1-B/S2不改，当轮S3目标与原60保持封存。见 [全部评估器交付](rc3_s3_evaluator/README.md)、[技术报告](rc3_s3_evaluator/S3_EVALUATOR_REPORT.md)、[准确源码绑定](rc3_s3_evaluator/S3_SOURCE_BINDING.json) 和 [一次性执行计划](rc3_s3_evaluator/S3_EXECUTION_PLAN.json)。这些原始工程文件保留不改；随后正式运行暴露的日志IO问题以上文本轮记录为准。
 
 <!-- S2_CURRENT_BEGIN -->
-**S2 科学执行状态：`COMPLETE_ALL3_FIXED_ENDPOINTS`，实际完成 3072 次正式更新。** seed11622026: RL512 / continued-SL512；seed11622027: RL512 / continued-SL512；seed11622028: RL512 / continued-SL512。S3模型谱系和工程评估器随后就绪，正式S3现已授权且因IO中断，以上文本轮记录为准。S2开发记录是原18个DEV任务在256/512及三seed下的108次重复评价，不是108个独立案例，也不是S3的108目标；原S2阶段S3消费0的历史记录不改。
+**S2 科学执行状态：`COMPLETE_ALL3_FIXED_ENDPOINTS`，实际完成 3072 次正式更新。** seed11622026: RL512 / continued-SL512；seed11622027: RL512 / continued-SL512；seed11622028: RL512 / continued-SL512。S3模型谱系和工程评估器随后就绪，正式S3已授权且恢复后因新输入可行性失败停止，以上文本轮记录为准。S2开发记录是原18个DEV任务在256/512及三seed下的108次重复评价，不是108个独立案例，也不是S3的108目标；原S2阶段S3消费0的历史记录不改。
 
 训练回报/成本曲线只作诊断，H收益单列；未证明DRL质量提升、泛化或SL对RL优势。原S1-A/S1-B与冻结科学证据保持；新增RL journal的路径专属LFS规则属于交付维护。见[本轮结果与全部报告](rc3_s2_results_20261107/README.md)、[下一步](rc3_s2_results_20261107/NEXT_STEP_DECISION.md)、[当前执行状态](rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json)及[已核验发布收据](rc3_s2_results_20261107/PUBLICATION_RECEIPT.json)。
 

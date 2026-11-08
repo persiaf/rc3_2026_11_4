@@ -1,0 +1,135 @@
+"""Format the saved partial closeout without scientific execution."""
+import csv
+from collections import Counter
+import statistics
+from pathlib import Path
+from rc3_s3_evaluator.common import ROOT, METHODS, read, write_new, digest, now
+from rc3_s3_recovery_20261108.authority import HOME, CONT
+
+
+def main():
+    out = HOME/'results'
+    r = read(out/'RESOURCE_ACCOUNTING.json')
+    a = read(out/'SCIENTIFIC_ANALYSIS.json')
+    audit = read(out/'RECOVERY_AUDIT.json')
+    with (out/'REQUEST_METRICS.csv').open(encoding='utf8',newline='') as f:
+        rows = list(csv.DictReader(f))
+    summaries=[]
+    for group in ('seen','unseen'):
+        for size in ('4x3','6x6','8x8'):
+            for method in METHODS:
+                subset=[x for x in rows if x['group']==group and x['size']==size and x['method']==method]
+                quality=[x for x in subset if x['kind']=='quality']
+                s=dict(group=group,size=size,method=method,quality_n=len(quality),
+                       quality_seeds=','.join(sorted({x['seed'] for x in quality})),
+                       status='OBSERVED_PREFIX_ONLY_NOT_ORIGINAL_GATE')
+                for k in ('J','L','K','raw_J','raw_L','raw_K','H_gain_J'):
+                    s[k+'_mean']=statistics.mean(float(x[k]) for x in quality) if quality else None
+                for cache in ('cold','hot'):
+                    values=[float(x['complete_time_s']) for x in subset if x['kind']==cache]
+                    s[cache+'_n']=len(values)
+                    s[cache+'_median_s']=statistics.median(values) if values else None
+                summaries.append(s)
+    with (out/'OBSERVED_PREFIX_SUMMARY.csv').open('w',encoding='utf8',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(summaries[0]));w.writeheader();w.writerows(summaries)
+    # Canonical detailed scientific account stays immutable in results/.
+    write_new(HOME/'RESOURCE_ACCOUNTING.json',dict(
+        schema='rc3-s3-repair-and-paid-recovery-resource-summary-v1',
+        canonical_scientific_account='results/RESOURCE_ACCOUNTING.json',
+        canonical_sha256=digest(out/'RESOURCE_ACCOUNTING.json'),
+        zero_science_engineering=read(HOME/'ENGINEERING_VERIFICATION_02.json'),
+        scientific_recovery=dict(new_request_debits=r['new_request_debits'],new_success=1895,new_failure=1,
+            cumulative_debits=r['total_debits'],cumulative_success=r['complete_requests'],cumulative_failed=2,
+            unexecuted=r['not_executed_requests'],charged_cumulative_wall_s=r['charged_all_stage_wall_s'],
+            original_exact_wall_s=None,conservative_old_carry_s=592,paid_zero_request_dispatch_wall_s=9.802301499992609),
+        exact_counts_by_seed=r['actual_by_seed'],
+        original180_unchanged=True,frozen_models_unchanged=12,
+        scientific_optimizer_updates=0,new_teacher_queries=0,original60_semantic_reads=0,
+        maintenance_clock_note='Engineering suites, independent review, read-only closeout and Git are separate maintenance; never added to complete-request latency or substituted for stage time',
+        read_only_closeout='results/CLOSEOUT_RECEIPT.json',read_only_helper_failure='READ_ONLY_CLOSEOUT_FAILURE_01.json'))
+    coverage='\n'.join(f"| {k} | {v['observed']} | {v['expected']} | {len(v['missing'])} |" for k,v in a['coverage'].items())
+    report=f'''# S3 持久化修复及实际恢复结果
+
+持久化工程验收 **PASS**；实际恢复新增 **1896 次预扣、1895 次成功、1 次输入可行性失败**。正式 S3 当前 **BLOCKED_INPUT_FEASIBILITY / NOT_EVALUATED_INCOMPLETE**，没有完成三种子网格。
+
+## 原故障与最小修复
+
+原故障是 Windows 原子替换 `HEAD.pending → HEAD.json` 访问拒绝；旧错误路径又试图依赖同一个已失效 Journal，造成日志与父阶段收尾失配。原180文件、3961事件、162结果、163预扣、旧 HEAD 与 pending 全部逐字节核对保持不变，没有删除 pending 或退款。
+
+新增独立持久化模块对同一事件提交锚最多重试8次，只重试替换，不重复追加事件。校验临时文件身份、HEAD前态、链哈希与单写入者OS租约；永久失败保留证据，故障收据不依赖 Journal。父进程先保存独立退出时钟，再尝试 Journal 收尾并保存 FINAL/SEAL。严格旧证据导入与实验外层激活标记防止改目录重置账。原计算方法、每请求计时边界与日志计量不变。
+
+最终17项零科学回归全部通过，覆盖瞬态/持续失败、pending、断链、孤立结果、父收尾失败、重复恢复和预算防清零。工程中真实目标生成、导航、模型、native、H、optimizer均0。实际恢复出现6份瞬态锚重试收据，均成功提交相同事件；未出现新的日志丢失、孤立结果或 pending。
+
+首版工程源码启动时发现 Windows venv redirector 的直接PPID不等于实际监督者PID，0个科学请求即停止。原失败、独立9.802301499992609秒时钟及源码绑定均保留。修订02用真实持有的OS租约校验监督者，不依赖直接父PID；实际子进程回归通过。这9.8023秒仍从首种子预算扣除。
+
+## 准确来源
+
+- 协议：`0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb`，保持原批准。
+- 训练源码：`0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0`，12个固定模型及36份模型/sidecar/commit来源文件哈希保持。
+- 新评估持久化源码：[SOURCE_BINDING_02.json](SOURCE_BINDING_02.json)，SHA256 `767f13bd4619bef37501db997296982baf6b1565cb25ea8cb964c2e39d381bea`。
+- 一次恢复决定：[RECOVERY_REVISION_02.json](RECOVERY_REVISION_02.json)，SHA256 `952b62708bb8a40babf816f8e363ca9a18e211a9ae6e968e2c380082fe5645ee`；依据用户本轮明确限定修复并直接恢复的授权和独立工程PASS，不声称用户预先审阅过当时未知的新哈希。没有重新批准v3或复用S1/S2授权。
+
+## 实际运行与新停止条件
+
+仅首种子11622026执行了续段。原163个终态ID完全排除在新预扣外；原失败 `68e89307…b0ea9`（S3_003/Fixed3/cold/repeat1）仍缺失。续段完成原顺序的1895个未执行请求，成功前缀推进至 S3_041。下一个预扣请求为 S3_042 / RL_plus_H / quality / repeat0，ID `88c202d54990cee9fe80d3b8a01fba6c7275a98069a822d3c25e9b701d7eff68`。
+
+S3_042 在冻结的全父10×10闭合端点有效服务检查中抛出 `Selected tasks cannot all be served under F&A and endpoints`。它是 unseen、blocked、4×3 corner、A1，map_seed12000000001/task_seed13000000042。该请求已完成输入保存与一次冷导航，尚未进行神经模型物化、贪心构造、native或H。失败不是策略给出了坏路线，也不是新的提交锚故障；按原协议保存并停止，没有换seed/删例/免费重试。后两个种子仍未启动。
+
+新Journal46023事件、HEAD及哈希链闭合，最后为 FAILED session_close；独立 FINAL 与 SEAL 均可复核，`journal_close_error=null`。完整请求结果全部有代理约束证书，但只代表已观察前缀，不能代表108例整体可行率或真实机械臂轨迹认证。
+
+## 资源继承
+
+| 项目 | 原故障前缀 | 本轮续段 | 累计 |
+|---|---:|---:|---:|
+| 预扣请求 | 163 | 1896 | 2059 |
+| 成功结果 | 162 | 1895 | 2057 |
+| 请求失败 | 1 | 1 | 2 |
+
+余下13817个原请求仍为UNEXECUTED；两个失败均保留，未补值。首种子已用 `592 + 9.802301499992609 + 2295.1254143999977 = 2896.9277158999903` 秒预算账，剩余11503.07228410001秒；原准确阶段墙钟继续为null。592秒是明确的保守旧账，不伪称精确测时。后两种子各剩5292请求/14400秒，未被消费。所有恢复加载、来源校验、预热、I/O和父收尾都计入新FINAL。共同H累计1176次、native587次、神经贪心1470次、导航求解1184次；新optimizer/教师/原60读取为0。详见[累计资源](results/RESOURCE_ACCOUNTING.json)。
+
+## 科学完整性与结论边界
+
+| 网格 | 现有有效结果 | 原应有结果 | 缺失 |
+|---|---:|---:|---:|
+{coverage}
+
+六个质量格、十二个部署格均INCOMPLETE，`independent_RL_pass=null`、`deployment_pass=null`。未以一个种子和42个已完成案例代替完整三种子/108例，不进行原门槛的选择性子集判定。原失败计时槽位没有被其他重复、种子或平均数填补。
+
+修复前后结果带独立持久化版本标签。所有294个已观察case/seed/method组合路线与成本在重复及版本间一致，294对RL_raw/RL_plus_H原始路线一致。原完整请求边界、CPU/线程及模型方法顺序保持；新锚检查和实际重试属于测得I/O开销，不声称持久化开销严格相等。统计保留版本分层时间，混合时间仅作描述，不能宣称总体部署通过。原始/H后J/L/K、完整时间和结果哈希见[逐请求CSV](results/REQUEST_METRICS.csv)，已观察前缀描述另见[汇总CSV](results/OBSERVED_PREFIX_SUMMARY.csv)。
+
+## 交付与后续
+
+持久化修复与恢复机制达到工程GO，本次授权范围内已实际恢复并按新真实失败停止。保留S1-A/S1-B/S2及旧评估证据，不追加训练、改方法或合并main。下一步应先只读定位已保存 S3_042 的 F&A/有效服务缺口并作单独处置；新的输入失败尚未被明确恢复决定处理，不能套用旧第163次基础设施失败的处置自动跳过。新处置若实质改变生成分布、约束或full-parent检查，必须新增协议，不能回写v3或本轮源码。
+'''
+    (HOME/'EXPERIMENT_REPORT.md').write_text(report,encoding='utf8')
+    (HOME/'PERSISTENCE_REPAIR_REPORT.md').write_text(report,encoding='utf8')
+    (HOME/'NEXT_STEP_DECISION.md').write_text('''# 下一步决定
+
+**持久化工程 GO；正式 S3 BLOCKED_INPUT_FEASIBILITY；科学门槛 NOT_EVALUATED_INCOMPLETE。**
+
+已实际恢复1895个未执行请求，新预扣1896，第1896个新请求在 S3_042 全父场景 F&A 有效服务检查失败。新请求不退款、不补跑。累计2059预扣/2057成功/2失败，13817未执行。旧180文件、旧pending及12权重来源均保持。首种子累计预算账2896.9277158999903秒（旧准确墙钟仍null），剩余11503.07228410001秒；后两种子未启动。
+
+6质量/12部署格全部不完整，不能判为质量失败、DRL无效或部署通过。六次真实瞬态提交锚重试与独立阶段收尾支持持久化修复在此次已访问路径有效，但不保证所有未来I/O故障可恢复。
+
+本次旧未闭合日志的恢复决定已经执行，不重新申请v3设计或旧恢复批准。新输入不可行属于新的真实停止条件；当前没有处置它的恢复修订，故不继续后续请求或其他种子。先审计已保存失败输入和冻结来源；保持全部模型终点、种子、预算、失败及未执行状态。任何新的处置应明确对不可行输入的处理及科学网格影响，不静默跳过/换seed/削弱覆盖检查，不追加训练、不读原60、不合并main。
+
+依据：[实际报告](EXPERIMENT_REPORT.md)、[累计资源](results/RESOURCE_ACCOUNTING.json)、[请求状态](results/REQUEST_STATE_INDEX.json)、[工程验收](ENGINEERING_VERIFICATION_02.json)、[原恢复决定](RECOVERY_REVISION_02.json)。
+''',encoding='utf8')
+    (HOME/'README.md').write_text('''# S3 持久化修复与真实续段（2026-11-08）
+
+**工程GO，实际新增成功1895请求；在新的 S3_042 输入可行性失败后停止。** 累计2059预扣、2057有效结果、2失败、13817未执行。原180文件/HEAD/pending及固定模型原字节保持。质量和部署全部原格仍不完整，尚不能评价科学门槛。
+
+- [实际实验与修复报告](EXPERIMENT_REPORT.md)
+- [17项零科学工程验收](ENGINEERING_VERIFICATION_02.json)及[源码级独立工程审查](INDEPENDENT_REVIEW_02.md)
+- [准确源码绑定02](SOURCE_BINDING_02.json)及[已执行的一次恢复修订](RECOVERY_REVISION_02.json)
+- [完整资源账](results/RESOURCE_ACCOUNTING.json)、[原文件与模型复核](results/RECOVERY_AUDIT.json)
+- [全网格状态](results/REQUEST_STATE_INDEX.json)、[逐请求J/L/K与时间](results/REQUEST_METRICS.csv)
+- [质量/冷/热完整性及版本分层](results/SCIENTIFIC_ANALYSIS.json)
+- [下一步决定](NEXT_STEP_DECISION.md)
+
+源码绑定 `767f13bd4619bef37501db997296982baf6b1565cb25ea8cb964c2e39d381bea`。原版恢复源码、Windows启动器零请求失败与9.8023秒收费证据均保留，旧v3、训练和S3源码不改。原60保持封存。
+''',encoding='utf8')
+    print('Saved actual reports and observed-prefix summaries; no scientific work.')
+
+
+if __name__=='__main__':main()

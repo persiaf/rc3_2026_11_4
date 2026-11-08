@@ -1,0 +1,38 @@
+{
+  "schema": "rc3-s3-independent-io-receipt-v1",
+  "kind": "REQUEST_FAILURE",
+  "utc": "2026-11-08T04:39:48.820022+00:00",
+  "payload": {
+    "request": {
+      "case_id": "S3_042",
+      "seed": 11622026,
+      "kind": "quality",
+      "repeat": 0,
+      "method": "RL_plus_H",
+      "id": "88c202d54990cee9fe80d3b8a01fba6c7275a98069a822d3c25e9b701d7eff68"
+    },
+    "error": "ValueError('Selected tasks cannot all be served under F&A and endpoints')",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_recovery_20261108\\runner.py\", line 113, in _worker\n    row=evaluate(q,provider,case,pool,catalog,meter,lambda:max(.000001,args.deadline-time.perf_counter()))\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\pipelines.py\", line 52, in evaluate\n    p, sources = prepare_view(provider, case, pool, request['kind'], meter)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\inputs.py\", line 188, in prepare_view\n    extract_snapshot(parent, 0, 0, 10, 10, 0, 0)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local_impl_review\\runtime_guards.py\", line 262, in extract_snapshot\n    return snapshot_local(parent, tasks, tables, entry_node, exit_node,\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local_impl_review\\runtime_guards.py\", line 242, in snapshot_local\n    legacy = LegacyLocalProblem(parent, task_ids, table_ids, entry_node, exit_node, window)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local\\problem.py\", line 89, in __init__\n    if not self.C.any(1).all():raise ValueError('Selected tasks cannot all be served under F&A and endpoints')\nValueError: Selected tasks cannot all be served under F&A and endpoints\n",
+    "elapsed_s": 0.6297238999977708,
+    "counts": {
+      "input_generation_and_preparation_attempts": 1,
+      "target_task_generations": 1,
+      "proxy_F_A_preparations": 1,
+      "input_generation_and_preparation_completed": 1,
+      "navigation_access_attempts": 1,
+      "cold_navigation_attempts": 1,
+      "navigation_solves": 1,
+      "cold_navigation_completed": 1,
+      "navigation_access_completed": 1,
+      "whole_parent_and_window_attempts": 1,
+      "whole_parent_and_window_failed": 1
+    },
+    "seconds": {
+      "input_generation_and_preparation": 0.11384839999664109,
+      "cold_navigation": 0.2849671000003582,
+      "navigation_access": 0.31944629999634344,
+      "whole_parent_and_window": 0.09084779999102466
+    },
+    "journal_healthy": true
+  }
+}
