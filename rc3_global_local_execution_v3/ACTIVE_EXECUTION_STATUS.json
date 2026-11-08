@@ -1,6 +1,6 @@
 {
   "schema": "rc3-active-approved-scientific-execution-v1",
-  "status": "APPROVED_V3_S2_COMPLETE_ALL3_FIXED_ENDPOINTS",
+  "status": "APPROVED_V3_S3_AUTHORIZED",
   "active_protocol": "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
   "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
   "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -14,7 +14,8 @@
   "authorized_stages": [
     "S1-A",
     "S1-B",
-    "S2"
+    "S2",
+    "S3"
   ],
   "S1_B_S2_S3_authorized": false,
   "old_v2_pointer_preserved": true,
@@ -41,7 +42,7 @@
   "source_revision_approval_sha256": "9a45d6e7a6b7ccbc8d43b614646ecefe417ba10eaabfe2055c4e896f1e6aa7c4",
   "S1_B_authorized": true,
   "S2_authorized": true,
-  "S3_authorized": false,
+  "S3_authorized": true,
   "S1_B_S2_S3_authorized_scope": "S1-B and S2 explicitly authorized; S3 not authorized",
   "S1_B_runtime": "COMPLETE",
   "S1_B_scientific_optimizer_updates": 768,
@@ -61,9 +62,9 @@
   },
   "S2_technical": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY",
   "S2_runtime": "COMPLETE_ALL3_FIXED_ENDPOINTS",
-  "S3_runtime": "NOT_STARTED",
+  "S3_runtime": "AUTHORIZED_READY_TO_RUN",
   "original60": "SEALED",
-  "S3_target_tasks": "SEALED",
+  "S3_target_tasks": "AUTHORIZED_S3_ONLY",
   "approved_source_revision": {
     "path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
     "sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -114,7 +115,7 @@
   },
   "S2_metadata_closed_utc": "2026-11-07T08:05:11.954401+00:00",
   "S3_model_lineage_readiness": "GO",
-  "S3_execution_readiness": "TECHNICAL_GO_PENDING_SEPARATE_S3_EXECUTION_AUTHORIZATION",
+  "S3_execution_readiness": "GO_USER_SOURCE_AND_STAGE_AUTHORIZED",
   "S3_target_semantic_consumption": 0,
   "stage_complete_receipt_scope": "Historical S1-A COMPLETE receipt retained; current S2 completion is the per-seed S2_completion_sha256 map and stage_admission/S2 records.",
   "audit_receipt_scope": "Historical S1-A audit retained; current S2 audit is rc3_s2_results_20261107/INDEPENDENT_REVIEW.json.",
@@ -124,5 +125,10 @@
   "S3_evaluation_source_binding_sha256": "b348fb7261c8e6b8c5b2391649c8bf8d19dfca31f9b26f473e62eb4b82232492",
   "S3_evaluation_code_binding_sha256": "7a468f817695a2fd38a75f228f83ad8753a7c1abd8b2581206b00548fc1e68a8",
   "S3_engineering_requests": 126,
-  "S3_engineering_optimizer_updates": 0
+  "S3_engineering_optimizer_updates": 0,
+  "S3_source_approval": "rc3_s3_results_20261108/authorizations/EVALUATION_SOURCE_APPROVAL.json",
+  "S3_source_approval_sha256": "f328aa5d05e4eb038e681bbc3e3f328937978f03c2e171882c8f11b2d2756999",
+  "S3_stage_authorization": "rc3_s3_results_20261108/authorizations/S3_AUTHORIZATION.json",
+  "S3_stage_authorization_sha256": "08d5631b13acf95d73a6854789a5d08c8897714a789e1e7ff928a7eb4bf26a8e",
+  "S3_report": "rc3_s3_results_20261108/README.md"
 }
