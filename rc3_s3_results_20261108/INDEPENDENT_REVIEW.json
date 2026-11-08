@@ -1,0 +1,71 @@
+{
+  "schema": "rc3-s3-formal-independent-review-v1",
+  "reviewer": "s3_formal_failure_review",
+  "utc": "2026-11-08T02:43:21.045437+00:00",
+  "execution_judgment": "REVISE",
+  "execution_status": "STOPPED_IO_FAULT",
+  "scientific_decision": "NOT_EVALUATED_INCOMPLETE",
+  "approval_valid": true,
+  "evaluation_source_binding_sha256": "b348fb7261c8e6b8c5b2391649c8bf8d19dfca31f9b26f473e62eb4b82232492",
+  "charged_requests": 163,
+  "committed_results": 162,
+  "incomplete_failed_requests": 1,
+  "original_run_files_preserved": 180,
+  "seeds_not_started": [
+    11622027,
+    11622028
+  ],
+  "requests_attempted_by_reviewer": 0,
+  "model_inferences_by_reviewer": 0,
+  "navigation_or_native_or_H_by_reviewer": 0,
+  "validator_calls_by_reviewer": 0,
+  "optimizer_updates": 0,
+  "new_teacher_queries": 0,
+  "original60_semantic_reads": 0,
+  "journal_hashchain_valid": true,
+  "journal_events": 3961,
+  "HEAD_lag_events": 2,
+  "pending_lag_events": 1,
+  "exact_stage_monotonic_wall_s": null,
+  "complete_request_time_sum_s": 132.82890250005585,
+  "claim_verdict": {
+    "claim_supported": "no",
+    "claim": "Complete formal S3 supports independent DRL quality and deployment advantages",
+    "reason": "Incomplete preregistered grid, not contrary performance evidence",
+    "confidence": "high for saved audit facts; no scientific outcome inference",
+    "what_results_support": "162 saved proxy-valid complete requests, exact frozen-source lineage and matching repeated saved subset routes",
+    "what_results_dont_support": "All108 cases, all3seeds,6qualitycells,12deploymentcells, layoutcluster intervals or deployment advantage",
+    "missing_evidence": "Unconsumed preregistered S3 requests and resolved closed-resource recovery state",
+    "suggested_claim_revision": "Formal S3 started and stopped for persistence failure; scientific decisions NOT_EVALUATED_INCOMPLETE",
+    "next_experiments_needed": "No additional training or performance gate; only engineering persistence fix and explicitly approved safe recovery before continuing original evaluation",
+    "paper_claim_audit": "unavailable",
+    "paper_writing_verdict": "provisional: no performance claim confirmed",
+    "routing_action": "repair_persistence_and_explicit_recovery_without_reset",
+    "pending_external_review": false
+  },
+  "findings": [
+    {
+      "id": "S3-IO-1",
+      "severity": "must_fix",
+      "issue": "HEAD atomic replace failed with WinError5; cause of OS denial not proven",
+      "status": "OPEN"
+    },
+    {
+      "id": "S3-IO-2",
+      "severity": "must_fix",
+      "issue": "Error journaling reuses existing HEAD.pending then supervisor cannot persist session_close; exact stage wall missing",
+      "status": "OPEN"
+    }
+  ],
+  "minimum_recovery_conditions": [
+    "New immutable engineering source revision and bounded zero-science fault-injection regression",
+    "New exact source approval; no repeated approval of already approved v3 design",
+    "Explicit failed-request/session recovery decision preserving163debits162results and failure",
+    "Resource carry-forward including conservative treatment of unknown stage wall; no fresh budget or silent retry"
+  ],
+  "evidence_sha256": {
+    "rc3_s3_results_20261108/INDEPENDENT_REVIEW.md": "981a46566782c8bbbf24d4ca968aa3458b7f20fc58530413f10dfe009244d9e3",
+    "rc3_s3_results_20261108/paper/review-traces/experiment-result-to-claim/20261108_run01/READ_ONLY_AUDIT_V2.json": "fe912efb4188ae32b122e3b620ca6d2802717729c5fde3be3bbca2b43c7d81e4",
+    "rc3_s3_results_20261108/paper/review-traces/experiment-result-to-claim/20261108_run01/WEIGHT_BYTE_AUDIT.json": "93d32facafb5879efee5c208007af1b4fd1658affd73643948d4f45f91e983c9"
+  }
+}

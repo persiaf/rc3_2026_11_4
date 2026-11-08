@@ -1,0 +1,81 @@
+{
+  "status": "PASS_READ_ONLY_EVIDENCE_AUDIT",
+  "observed_after_exit_utc": "2026-11-08T02:41:50.832345+00:00",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "first_seed": 11622026,
+  "journal_chain_valid": true,
+  "journal_events": 3961,
+  "journal_tail_sha256": "adb0e5f4382ecd77cfad3ba1b445dddb124dcaa828091b2e3fb77cd4140b15c8",
+  "head_json": {
+    "sequence": 3959,
+    "sha256": "c7f85f7b076adcbda17be2acfb5638568b9151d5f6999f0c4830b89948079690"
+  },
+  "head_pending": {
+    "sequence": 3960,
+    "sha256": "6d7e55238c3478e1ffc135e2a278213a1a8f6a16bbbb77f47cb22b4852e9fb88"
+  },
+  "head_lag_events": 2,
+  "head_pending_lag_events": 1,
+  "head_is_current": false,
+  "scientific_requests_debited": 163,
+  "completed": 162,
+  "failed": 1,
+  "incomplete_ids": [
+    "68e89307acb21cdff0501aa2c6531990909421d266140a88943876f8fe4b0ea9"
+  ],
+  "failed_records": [
+    {
+      "counts": {
+        "input_generation_and_preparation_attempts": 1,
+        "input_generation_and_preparation_completed": 1,
+        "navigation_access_attempts": 1,
+        "proxy_F_A_preparations": 1,
+        "target_task_generations": 1
+      },
+      "elapsed_s": 0.0638634000060847,
+      "error": "PermissionError",
+      "event": "request_error",
+      "id": "68e89307acb21cdff0501aa2c6531990909421d266140a88943876f8fe4b0ea9",
+      "message": "[WinError 5] 拒绝访问。: 'D:\\\\file_used\\\\西柚\\\\实验室_任务\\\\硕士论文相关\\\\大论文\\\\chatgpt生成文件\\\\rc3_s3_evaluator\\\\runs\\\\rc3_v3_global_local_20261106_01\\\\11622026\\\\HEAD.pending' -> 'D:\\\\file_used\\\\西柚\\\\实验室_任务\\\\硕士论文相关\\\\大论文\\\\chatgpt生成文件\\\\rc3_s3_evaluator\\\\runs\\\\rc3_v3_global_local_20261106_01\\\\11622026\\\\HEAD.json'",
+      "previous": "6d7e55238c3478e1ffc135e2a278213a1a8f6a16bbbb77f47cb22b4852e9fb88",
+      "seconds": {
+        "input_generation_and_preparation": 0.050420300001860596
+      },
+      "sequence": 3960,
+      "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\runner.py\", line 62, in frozen_worker\n    row=evaluate(q,provider,case,pool,catalog,meter,lambda: max(.000001,args.deadline-time.perf_counter()))\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\pipelines.py\", line 52, in evaluate\n    p, sources = prepare_view(provider, case, pool, request['kind'], meter)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\inputs.py\", line 180, in prepare_view\n    with meter.span('navigation_access'):\n  File \"D:\\tools\\anocaonda\\envs\\mobile_dual_arm_planning\\lib\\contextlib.py\", line 135, in __enter__\n    return next(self.gen)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\common.py\", line 102, in span\n    self.record(dict(event='operation_start', operation=name))\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\journal.py\", line 87, in append\n    os.replace(temp,self.folder/'HEAD.json')\nPermissionError: [WinError 5] 拒绝访问。: 'D:\\\\file_used\\\\西柚\\\\实验室_任务\\\\硕士论文相关\\\\大论文\\\\chatgpt生成文件\\\\rc3_s3_evaluator\\\\runs\\\\rc3_v3_global_local_20261106_01\\\\11622026\\\\HEAD.pending' -> 'D:\\\\file_used\\\\西柚\\\\实验室_任务\\\\硕士论文相关\\\\大论文\\\\chatgpt生成文件\\\\rc3_s3_evaluator\\\\runs\\\\rc3_v3_global_local_20261106_01\\\\11622026\\\\HEAD.json'\n",
+      "sha256": "adb0e5f4382ecd77cfad3ba1b445dddb124dcaa828091b2e3fb77cd4140b15c8"
+    }
+  ],
+  "completed_by_method": {
+    "Detour16_endpoint_adapter": 23,
+    "RL_raw": 23,
+    "Fixed3_endpoint_adapter": 23,
+    "untrained": 24,
+    "RL_plus_H": 23,
+    "continued_SL": 23,
+    "frozen_supervised": 23
+  },
+  "completed_by_kind": {
+    "quality": 28,
+    "cold": 71,
+    "hot": 63
+  },
+  "unique_target_cases_started": 4,
+  "all_completed_plans_valid": true,
+  "returned_valid_plans": 162,
+  "deterministic_case_seed_methods": 28,
+  "RL_raw_plus_H_complete_pairs": 23,
+  "missing_result_artifacts_for_completed_requests": 0,
+  "scientific_updates": 0,
+  "new_teacher_queries": 0,
+  "source_and_all12_checkpoint_hashes_unchanged": true,
+  "approved_source_binding_sha256": "b348fb7261c8e6b8c5b2391649c8bf8d19dfca31f9b26f473e62eb4b82232492",
+  "subsequent_seeds_started": {
+    "11622027": false,
+    "11622028": false
+  },
+  "complete_receipt_present": false,
+  "formal_analysis_present": false,
+  "original60_semantic_reads": 0,
+  "statistical_decision": "NOT_EVALUATED_INCOMPLETE_GRID"
+}

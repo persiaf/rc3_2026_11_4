@@ -1,6 +1,6 @@
 {
   "schema": "rc3-active-approved-scientific-execution-v1",
-  "status": "APPROVED_V3_S3_AUTHORIZED",
+  "status": "APPROVED_V3_S3_STOPPED_JOURNAL_IO_FAULT",
   "active_protocol": "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
   "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
   "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -17,7 +17,7 @@
     "S2",
     "S3"
   ],
-  "S1_B_S2_S3_authorized": false,
+  "S1_B_S2_S3_authorized": true,
   "old_v2_pointer_preserved": true,
   "candidate_original_bytes_preserved": true,
   "activated_utc": "2026-11-06T08:33:08.620771+00:00",
@@ -43,7 +43,7 @@
   "S1_B_authorized": true,
   "S2_authorized": true,
   "S3_authorized": true,
-  "S1_B_S2_S3_authorized_scope": "S1-B and S2 explicitly authorized; S3 not authorized",
+  "S1_B_S2_S3_authorized_scope": "S1-B/S2 completed; S3 explicitly authorized but stopped with dirty IO state",
   "S1_B_runtime": "COMPLETE",
   "S1_B_scientific_optimizer_updates": 768,
   "S1_B_report": "rc3_s1b_results_20261106/README.md",
@@ -62,9 +62,9 @@
   },
   "S2_technical": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY",
   "S2_runtime": "COMPLETE_ALL3_FIXED_ENDPOINTS",
-  "S3_runtime": "AUTHORIZED_READY_TO_RUN",
+  "S3_runtime": "STOPPED_IO_FAILURE",
   "original60": "SEALED",
-  "S3_target_tasks": "AUTHORIZED_S3_ONLY",
+  "S3_target_tasks": "FOUR_AUTHORIZED_CASES_MATERIALIZED_REMAINING_NOT_GENERATED",
   "approved_source_revision": {
     "path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
     "sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -115,7 +115,7 @@
   },
   "S2_metadata_closed_utc": "2026-11-07T08:05:11.954401+00:00",
   "S3_model_lineage_readiness": "GO",
-  "S3_execution_readiness": "GO_USER_SOURCE_AND_STAGE_AUTHORIZED",
+  "S3_execution_readiness": "REVISE_JOURNAL_IO_AND_EXPLICIT_RECOVERY",
   "S3_target_semantic_consumption": 0,
   "stage_complete_receipt_scope": "Historical S1-A COMPLETE receipt retained; current S2 completion is the per-seed S2_completion_sha256 map and stage_admission/S2 records.",
   "audit_receipt_scope": "Historical S1-A audit retained; current S2 audit is rc3_s2_results_20261107/INDEPENDENT_REVIEW.json.",
@@ -130,5 +130,19 @@
   "S3_source_approval_sha256": "f328aa5d05e4eb038e681bbc3e3f328937978f03c2e171882c8f11b2d2756999",
   "S3_stage_authorization": "rc3_s3_results_20261108/authorizations/S3_AUTHORIZATION.json",
   "S3_stage_authorization_sha256": "08d5631b13acf95d73a6854789a5d08c8897714a789e1e7ff928a7eb4bf26a8e",
-  "S3_report": "rc3_s3_results_20261108/README.md"
+  "S3_report": "rc3_s3_results_20261108/README.md",
+  "S3_scientific_decision": "NOT_EVALUATED_INCOMPLETE",
+  "S3_requests_debited": 163,
+  "S3_requests_completed": 162,
+  "S3_requests_failed": 1,
+  "S3_seeds_completed": [],
+  "S3_seeds_not_started": [
+    11622027,
+    11622028
+  ],
+  "S3_unique_materialized_target_cases": 4,
+  "S3_recovery_authorized": false,
+  "S3_original_head_pending_preserved": true,
+  "S3_exact_stage_wall_s": null,
+  "S3_conservative_resource_reservation_s": 592
 }
