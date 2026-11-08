@@ -1,6 +1,6 @@
 {
   "schema": "rc3-active-approved-scientific-execution-v1",
-  "status": "APPROVED_V3_S3_STOPPED_JOURNAL_IO_FAULT",
+  "status": "APPROVED_V3_S3_USER_SCOPED_PERSISTENCE_RECOVERY_ACCEPTED",
   "active_protocol": "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
   "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
   "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -62,7 +62,7 @@
   },
   "S2_technical": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY",
   "S2_runtime": "COMPLETE_ALL3_FIXED_ENDPOINTS",
-  "S3_runtime": "STOPPED_IO_FAILURE",
+  "S3_runtime": "RECOVERING_UNEXECUTED_ONLY",
   "original60": "SEALED",
   "S3_target_tasks": "FOUR_AUTHORIZED_CASES_MATERIALIZED_REMAINING_NOT_GENERATED",
   "approved_source_revision": {
@@ -141,8 +141,23 @@
     11622028
   ],
   "S3_unique_materialized_target_cases": 4,
-  "S3_recovery_authorized": false,
+  "S3_recovery_authorized": true,
   "S3_original_head_pending_preserved": true,
   "S3_exact_stage_wall_s": null,
-  "S3_conservative_resource_reservation_s": 592
+  "S3_conservative_resource_reservation_s": 592,
+  "S3_recovery_revision": "rc3_s3_recovery_20261108/RECOVERY_REVISION.json",
+  "S3_recovery_revision_sha256": "ab04e98bdf3f51a25badc7300ded5b507ce1fe1e1603711940f42313ed0cf483",
+  "S3_recovery_source_binding_sha256": "34fbe6c4d8b396681769ff5843a66151de5a4e7c4c300e6792d8528facc6de79",
+  "S3_recovery_report": "rc3_s3_recovery_20261108/README.md",
+  "S3_recovery_remaining_requests": [
+    5129,
+    5292,
+    5292
+  ],
+  "S3_recovery_remaining_wall_s": [
+    13808,
+    14400,
+    14400
+  ],
+  "S3_historical_failed_slot_preserved": true
 }

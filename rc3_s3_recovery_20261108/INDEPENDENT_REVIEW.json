@@ -1,0 +1,102 @@
+{
+  "schema": "rc3-s3-persistence-independent-review-v1",
+  "reviewer": "s3_repair_independent_review",
+  "utc": "2026-11-08T03:43:41.469426+00:00",
+  "judgment": "GO",
+  "scope": "Engineering repair and exact scoped recovery only",
+  "source_binding_sha256": "34fbe6c4d8b396681769ff5843a66151de5a4e7c4c300e6792d8528facc6de79",
+  "old_evaluation_source_sha256": "b348fb7261c8e6b8c5b2391649c8bf8d19dfca31f9b26f473e62eb4b82232492",
+  "original180files_match": true,
+  "original12checkpoint_hashes_match": true,
+  "final_regression_tests": 15,
+  "final_regression_status": "PASS",
+  "final_source_snapshot_consistent": true,
+  "observed_scientific_entries": {
+    "rc3_baseline.baseline.navigation": 0,
+    "rc3_constructive.problem.resample_tasks": 0,
+    "rc3_fast.scenes.make_complex_scene": 0,
+    "rc3_fast.solver.vectorized_feasibility": 0,
+    "rc3_global_local.policy.GlobalLocalPolicy.__init__": 0,
+    "rc3_global_local.terminal.finish": 0,
+    "rc3_global_local_impl_review.endpoint_baselines.run_endpoint": 0,
+    "rc3_s3_evaluator.pipelines.evaluate": 0,
+    "torch.optim.Optimizer.__init__": 0
+  },
+  "reviewer_probe_checks": 5,
+  "reviewer_probe_elapsed_s": 0.14717109999037348,
+  "reviewer_direct_launch_failure_before_probe": true,
+  "reviewer_real_requests": 0,
+  "reviewer_real_generations": 0,
+  "reviewer_model_inferences": 0,
+  "reviewer_navigation_native_H_optimizer": 0,
+  "inherited": {
+    "debits": 163,
+    "success": 162,
+    "infrastructure_failed_missing": 1,
+    "old_exact_wall_s": null,
+    "conservative_carry_s": 592,
+    "remaining_requests": [
+      5129,
+      5292,
+      5292
+    ],
+    "remaining_wall_s": [
+      13808,
+      14400,
+      14400
+    ]
+  },
+  "closed_findings": [
+    {
+      "id": "R1",
+      "severity": "must_fix",
+      "issue": "Heavy closeout work after final clock",
+      "status": "CLOSED"
+    },
+    {
+      "id": "R2",
+      "severity": "must_fix",
+      "issue": "Renamed continuation could hide consumed resources",
+      "status": "CLOSED"
+    },
+    {
+      "id": "R3",
+      "severity": "must_fix",
+      "issue": "Early session-open parent failures lacked per-seed final clock",
+      "status": "CLOSED"
+    },
+    {
+      "id": "R4",
+      "severity": "minor",
+      "issue": "Repeated completed analysis not idempotent",
+      "status": "CLOSED"
+    },
+    {
+      "id": "R5",
+      "severity": "minor",
+      "issue": "Redundant uncharged last-stage admission",
+      "status": "CLOSED"
+    }
+  ],
+  "remaining_blocking_findings": [],
+  "authorization_assessment": "Accept exact generated output under current user-scoped conditional repair/resume grant and engineeringPASS; not a false claim of prior explicit user approval of the unknown generated SHA",
+  "scientific_claims_at_review": "NOT_EVALUATED_NO_CONTINUATION_REQUESTS_BY_REVIEWER",
+  "claim_verdict": {
+    "claim_supported": "yes",
+    "claim": "Exact persistence repair technical readiness for scoped unexecuted-only S3 continuation",
+    "confidence": "high within bounded engineering scope",
+    "what_results_support": "Same-event anchor retry, independent faults and clocks, strict immutable legacy import, no directory/counter reset and missing-aware statistics",
+    "what_results_dont_support": "Actual resumed request counts or any yet-unexecuted S3 quality/deployment result",
+    "missing_evidence": "Actual continuation and later scientific result review",
+    "routing_action": "confirm_engineering_GO_then_execute_existing_user_scoped_recovery",
+    "paper_claim_audit": "unavailable",
+    "pending_external_review": false
+  },
+  "evidence_sha256": {
+    "rc3_s3_recovery_20261108/INDEPENDENT_REVIEW.md": "a688bb22d7c53aba7a9b01d7611ff35fc56098432a4371d12c8fc059d925adb7",
+    "rc3_s3_recovery_20261108/verification/RESULT_05.json": "dff40543bd12a18c537221539ae5ce7e601e279fc52fe4f19d77d611ea66d979",
+    "rc3_s3_recovery_20261108/paper/review-traces/experiment-result-to-claim/20261108_run01/REVIEW_PROBE_REGISTRATION.json": "e07f7e5c4bf924f1aafd57d05fd923743edb6b0e424c9005ff15780f07056dee",
+    "rc3_s3_recovery_20261108/paper/review-traces/experiment-result-to-claim/20261108_run01/REVIEW_PROBE_RESULT.json": "29216bd84027e62f9bf4f242e03d817d6c682ba32ac4bac51e4dcf775b77f10a",
+    "rc3_s3_recovery_20261108/paper/review-traces/experiment-result-to-claim/20261108_run01/REVIEW_PROBE_LAUNCH_01.json": "7a81e1645cfd856eff1f2cbe48da3f8c49a3be51d9beac296edaaa14b4f0ba5d"
+  }
+}

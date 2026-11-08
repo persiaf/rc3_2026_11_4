@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "elapsed_s": 13.722164300008444,
+  "cumulative_wall_s": 73.80869170001824,
+  "registration_sha256": "f44d9383c1fdd41241994e5aaf33648aee5a94eb7d3f85039b3219d1f3d7cfd4",
+  "source_sha256": {
+    "rc3_s3_recovery_20261108/__init__.py": "c96b2027f293c533774ce1e83a7bacbdca5658d9d15e5878925b48c42e4bed42",
+    "rc3_s3_recovery_20261108/analysis.py": "7d1f05d3ac2fc348db36de0683a473d0ce7515d2f1f38b23e55e6d5ae58402d0",
+    "rc3_s3_recovery_20261108/authority.py": "7fd90106f22b504c576f551ccf1e4f15a394b97c6c5c00fcc97c11813c55720e",
+    "rc3_s3_recovery_20261108/runner.py": "80cc207a5979ac98774f556ee3babd9f2789d765d81a0225bc0b3d6b958ccac5",
+    "rc3_s3_recovery_20261108/storage.py": "0ecc4511a1d9724671273db239afc09258f3a50a3783e33790853639dc490d29",
+    "rc3_s3_recovery_20261108/test_recovery.py": "2209995350d42fe7b19d71324e164f57a450ebe79181eb4eb3c765c38018b7e9",
+    "rc3_s3_recovery_20261108/verify.py": "ed017ea1503a75996a6195ba7c0c6f03a2ed13fb225d7ab34c47945e511630f6"
+  },
+  "source_snapshot_consistent": true,
+  "observed_scientific_function_entries": {
+    "rc3_baseline.baseline.navigation": 0,
+    "rc3_constructive.problem.resample_tasks": 0,
+    "rc3_fast.scenes.make_complex_scene": 0,
+    "rc3_fast.solver.vectorized_feasibility": 0,
+    "rc3_global_local.policy.GlobalLocalPolicy.__init__": 0,
+    "rc3_global_local.terminal.finish": 0,
+    "rc3_global_local_impl_review.endpoint_baselines.run_endpoint": 0,
+    "rc3_s3_evaluator.pipelines.evaluate": 0,
+    "torch.optim.Optimizer.__init__": 0
+  },
+  "stdout": "OBSERVED_ZERO_SCIENCE_COUNTERS={\"rc3_baseline.baseline.navigation\": 0, \"rc3_constructive.problem.resample_tasks\": 0, \"rc3_fast.scenes.make_complex_scene\": 0, \"rc3_fast.solver.vectorized_feasibility\": 0, \"rc3_global_local.policy.GlobalLocalPolicy.__init__\": 0, \"rc3_global_local.terminal.finish\": 0, \"rc3_global_local_impl_review.endpoint_baselines.run_endpoint\": 0, \"rc3_s3_evaluator.pipelines.evaluate\": 0, \"torch.optim.Optimizer.__init__\": 0}\r\n",
+  "stderr": "test_01_transient_replace_same_event (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_02_persistent_denial_retains_fault (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_03_single_writer_and_pending_identity (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_04_chain_and_orphan_rejected (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_05_disposed_failure_not_replayed_and_states (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_06_new_failure_still_blocks (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_07_parent_close_failure_has_external_clock (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_08_exact_clock_carry_and_missing_clock_rejected (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_09_legacy_exact_idempotent_read_only (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_10_full_statistics_matches_frozen_reference (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_11_missing_timing_not_filled_quality_independent (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_12_activation_is_idempotent_not_directory_reset (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_13_session_open_failure_gets_per_seed_final_clock (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_14_normal_event_bytes_and_quality_only (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\ntest_15_completed_analysis_is_idempotent_bound_to_inputs (rc3_s3_recovery_20261108.test_recovery.RecoveryTests) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 15 tests in 5.923s\r\n\r\nOK\r\n",
+  "new_target_generations": 0,
+  "new_model_inferences": 0,
+  "new_navigation": 0,
+  "new_native": 0,
+  "new_H": 0,
+  "new_optimizer": 0
+}
