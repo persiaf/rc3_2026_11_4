@@ -1,6 +1,6 @@
 {
   "schema": "rc3-active-approved-scientific-execution-v1",
-  "status": "APPROVED_V3_S3_USER_SCOPED_PERSISTENCE_RECOVERY_ACCEPTED",
+  "status": "APPROVED_V3_S3_RECOVERY_RUNNING_UNEXECUTED_ONLY",
   "active_protocol": "rc3_global_local_execution_v3/V3_EXECUTION_CANDIDATE.json",
   "active_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
   "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
@@ -62,7 +62,7 @@
   },
   "S2_technical": "GO_SOURCE_LINEAGE_AND_NUMERICAL_STABILITY",
   "S2_runtime": "COMPLETE_ALL3_FIXED_ENDPOINTS",
-  "S3_runtime": "RECOVERING_UNEXECUTED_ONLY",
+  "S3_runtime": "RECOVERY_RUNNING_UNEXECUTED_ONLY",
   "original60": "SEALED",
   "S3_target_tasks": "FOUR_AUTHORIZED_CASES_MATERIALIZED_REMAINING_NOT_GENERATED",
   "approved_source_revision": {
@@ -115,7 +115,7 @@
   },
   "S2_metadata_closed_utc": "2026-11-07T08:05:11.954401+00:00",
   "S3_model_lineage_readiness": "GO",
-  "S3_execution_readiness": "REVISE_JOURNAL_IO_AND_EXPLICIT_RECOVERY",
+  "S3_execution_readiness": "GO_SCOPED_PERSISTENCE_REVISION02_ACCEPTED",
   "S3_target_semantic_consumption": 0,
   "stage_complete_receipt_scope": "Historical S1-A COMPLETE receipt retained; current S2 completion is the per-seed S2_completion_sha256 map and stage_admission/S2 records.",
   "audit_receipt_scope": "Historical S1-A audit retained; current S2 audit is rc3_s2_results_20261107/INDEPENDENT_REVIEW.json.",
@@ -145,9 +145,9 @@
   "S3_original_head_pending_preserved": true,
   "S3_exact_stage_wall_s": null,
   "S3_conservative_resource_reservation_s": 592,
-  "S3_recovery_revision": "rc3_s3_recovery_20261108/RECOVERY_REVISION.json",
-  "S3_recovery_revision_sha256": "ab04e98bdf3f51a25badc7300ded5b507ce1fe1e1603711940f42313ed0cf483",
-  "S3_recovery_source_binding_sha256": "34fbe6c4d8b396681769ff5843a66151de5a4e7c4c300e6792d8528facc6de79",
+  "S3_recovery_revision": "rc3_s3_recovery_20261108/RECOVERY_REVISION_02.json",
+  "S3_recovery_revision_sha256": "952b62708bb8a40babf816f8e363ca9a18e211a9ae6e968e2c380082fe5645ee",
+  "S3_recovery_source_binding_sha256": "767f13bd4619bef37501db997296982baf6b1565cb25ea8cb964c2e39d381bea",
   "S3_recovery_report": "rc3_s3_recovery_20261108/README.md",
   "S3_recovery_remaining_requests": [
     5129,
@@ -159,5 +159,13 @@
     14400,
     14400
   ],
-  "S3_historical_failed_slot_preserved": true
+  "S3_historical_failed_slot_preserved": true,
+  "S3_recovery_storage_source_binding_sha256": "34fbe6c4d8b396681769ff5843a66151de5a4e7c4c300e6792d8528facc6de79",
+  "S3_recovery_paid_zero_request_dispatch_wall_s": 9.802301499992609,
+  "S3_recovery_effective_remaining_wall_after_dispatch_s": [
+    13798.197698500007,
+    14400,
+    14400
+  ],
+  "S3_counter_snapshot_scope": "Original interrupted prefix counts; ongoing continuation counts authoritative in continuation journal/logs until closeout"
 }

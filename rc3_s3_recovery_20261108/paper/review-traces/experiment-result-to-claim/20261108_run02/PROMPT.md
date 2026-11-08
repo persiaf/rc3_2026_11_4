@@ -1,0 +1,3 @@
+# Independent follow-up assignment
+
+Review exact Windows venv supervisor-dispatch compatibility source02,17 zero-science regressions and safe continuation of the same scoped recovery. Verify held owner-lease authentication rather than directPPID, retained old storage authority and append-only execution-source revision, exact zero-request FAILED session disposition,9.802301499992609s charged rather than refunded, unchanged163/162/1 request history and old180evidence. No new targets, policy inference, navigation, native, H or optimizer. Preserve first review and source. Judge technicalGO only; root will bind one precise amended acceptance under the already existing user scoped repair/resume grant.

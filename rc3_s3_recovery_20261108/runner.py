@@ -13,8 +13,8 @@ from rc3_s3_evaluator.inputs import FormalInputs,NavigationPool
 from rc3_s3_evaluator.provenance import configure_runtime,ModelCatalog
 from rc3_s3_evaluator.journal import grid
 from rc3_s3_evaluator.pipelines import evaluate
-from .authority import HOME,RUN,CONT,admit,initialize,baseline_for
-from .storage import Journal,Lease,independent_receipt
+from .authority import HOME,RUN,CONT,admit,initialize,baseline_for,ledger_binding,disposed_dispatch_sessions
+from .storage import Journal,Lease,independent_receipt,verify_supervisor_lease
 
 
 class Inputs(FormalInputs):
@@ -36,8 +36,17 @@ def clock_used(folder,events,baseline,current_token=None):
     used=baseline['wall_carry_s']
     for token,p in dirs.items():
         op=read(p/'OPEN.json');final=read(p/'FINAL.json');seal=read(p/'FINAL_SEAL.json')
+        disposed=disposed_dispatch_sessions().get(token)
+        acknowledged=disposed is not None and final['status']=='FAILED' and digest(p/'FINAL.json')==disposed['final_sha256']
+        if acknowledged:
+            active=False
+            for e in events:
+                if e['event']=='session_open' and e['token']==token:active=True
+                elif active and e['event']=='session_close' and e['token']==token:active=False;break
+                elif active:require(e['event']!='request_start','Paid request failure cannot use dispatch disposition')
+            require(not active and final['elapsed_s']==disposed['charged_elapsed_s'],'Unclosed/refunded dispatch session')
         require(op['token']==final['token']==token and seal['final_sha256']==digest(p/'FINAL.json') and
-            final['elapsed_s']>=0 and final['status']=='CLOSED_BOUNDARY','Failed/unclosed session needs explicit recovery')
+            final['elapsed_s']>=0 and (final['status']=='CLOSED_BOUNDARY' or acknowledged),'Failed/unclosed session needs explicit recovery')
         require(op['carried_wall_s']>=baseline['wall_carry_s'],'Baseline wall reservation lost')
         used+=final['elapsed_s']
     return used
@@ -86,10 +95,11 @@ def _worker(args):
     configure_runtime();permit,legacy,binding=admit();check()
     require(args.seed in SEEDS,'Unregistered seed')
     folder=CONT/str(args.seed);session=read(folder/'sessions'/args.token/'OPEN.json')
-    require(session['parent_pid']==os.getppid() and session['token']==args.token and session['binding']==binding,'Worker not owned by admitted supervisor')
+    require(session['token']==args.token and session['binding']==binding,'Worker session/source identity mismatch')
+    verify_supervisor_lease(CONT/'SUPERVISOR.lease',session['parent_pid'],identity(binding))
     provider=Inputs(permit);requests=grid(provider.cases,args.seed);baseline=baseline_for(legacy,args.seed)
     catalog=ModelCatalog();pool=NavigationPool(identity(permit.stable()));cases={c['id']:c for c in provider.cases}
-    with Journal(folder,binding,requests,baseline) as j:
+    with Journal(folder,ledger_binding(binding),requests,baseline) as j:
         j.clean(allow_session=args.token);require(j.session==args.token,'No open supervised session')
         try:
             for q in requests:
@@ -126,7 +136,7 @@ def run_seed(seed,start,permit,legacy,binding):
     used=None;requests=None;status='CLOSED_BOUNDARY';error=None;schedule_sha=None
     try:
         provider=Inputs(permit);requests=grid(provider.cases,seed)
-        with Journal(folder,binding,requests,baseline) as j:
+        with Journal(folder,ledger_binding(binding),requests,baseline) as j:
             j.clean();used=clock_used(folder,j.events,baseline)
             if (folder/'SCHEDULE_COMPLETE.json').exists():
                 done=read(folder/'SCHEDULE_COMPLETE.json');seal=read(folder/'SCHEDULE_SEAL.json')
@@ -155,7 +165,7 @@ def run_seed(seed,start,permit,legacy,binding):
     def close_journal(elapsed):
         nonlocal schedule_sha
         require(requests is not None,'No admitted request grid')
-        with Journal(folder,binding,requests,baseline) as j:
+        with Journal(folder,ledger_binding(binding),requests,baseline) as j:
             if status=='CLOSED_BOUNDARY':
                 j.clean(allow_session=token)
                 require(clock_used(folder,j.events,baseline,current_token=token)==used,'Prior resources changed')
@@ -176,6 +186,11 @@ def run_seed(seed,start,permit,legacy,binding):
 
 def _supervise():
     start=time.perf_counter();permit,legacy,binding=admit();initialize(binding,legacy)
+    allowed=binding.get('resolved_parent_fatal_receipts',{})
+    for folder in (CONT/'supervisor_fatal',HOME/'runtime_emergency'):
+        for p in folder.glob('*.json'):
+            from rc3_s3_evaluator.common import label
+            require(allowed.get(label(p))==digest(p),'Unknown parent failure receipt; no automatic reset')
     with Lease(CONT/'SUPERVISOR.lease',identity(binding)):
         if (CONT/'SCIENTIFIC_ANALYSIS.json').exists():
             from .analysis import analyze_saved
@@ -191,8 +206,6 @@ def _supervise():
 def supervise():
     began=time.perf_counter()
     try:
-        require(not list((CONT/'supervisor_fatal').glob('*.json')) and not list((HOME/'runtime_emergency').glob('*.json')),
-            'Unresolved primary/fallback parent failure receipt cannot reset resources')
         _supervise()
     except BaseException as exc:
         independent_receipt([CONT/'supervisor_fatal',HOME/'runtime_emergency'],'SUPERVISOR_FATAL',

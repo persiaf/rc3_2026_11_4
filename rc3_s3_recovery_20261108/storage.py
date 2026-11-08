@@ -63,6 +63,32 @@ class Lease:
     def __exit__(self,*exc):self.close()
 
 
+def verify_supervisor_lease(path,expected_pid,expected_scope):
+    """Authenticate the live owner lease, not a Windows launcher's direct PPID."""
+    path=Path(path);fid=regular(path)
+    with path.open('r+b') as f:
+        f.seek(1);owner=json.loads(f.read())
+        require(owner['pid']==expected_pid and owner['scope']==expected_scope,'Wrong supervisor lease identity')
+        f.seek(0);locked=False
+        try:
+            if os.name=='nt':
+                import msvcrt
+                msvcrt.locking(f.fileno(),msvcrt.LK_NBLCK,1)
+            else:
+                import fcntl
+                fcntl.flock(f.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB)
+            locked=True
+        except OSError as exc:
+            require(exc.errno in (errno.EACCES,errno.EAGAIN,errno.EDEADLK),'Not an owner-lock contention error')
+        if locked:
+            if os.name=='nt':msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
+            else:fcntl.flock(f.fileno(),fcntl.LOCK_UN)
+            raise ValueError('Supervisor lease is not held')
+        require(regular(path)==fid,'Supervisor lease path changed')
+        f.seek(1);require(json.loads(f.read())==owner,'Supervisor changed during dispatch')
+    return owner
+
+
 def independent_receipt(folders,kind,payload):
     """Immutable first-success receipt; never calls Journal or replaces HEAD."""
     name=kind+'_'+uuid.uuid4().hex+'.json';errors=[]

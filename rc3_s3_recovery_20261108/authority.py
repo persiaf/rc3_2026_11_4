@@ -13,6 +13,19 @@ OLD_INDEX='65088e7e4ff0457d98e053c0413e19a995b6b2983348fc6099a512215ce2d6f5'
 FAILED_ID='68e89307acb21cdff0501aa2c6531990909421d266140a88943876f8fe4b0ea9'
 
 
+def decision_path():
+    newer=HOME/'RECOVERY_REVISION_02.json'
+    return newer if newer.exists() else HOME/'RECOVERY_REVISION.json'
+
+
+def ledger_binding(binding):return binding.get('storage_binding',binding)
+
+
+def disposed_dispatch_sessions():
+    p=decision_path()
+    return read(p).get('disposed_zero_request_dispatch_sessions',{}) if p.exists() else {}
+
+
 def validate_activation(root=RUN,expected_binding=None):
     root=Path(root);parent=root/'continuations';cont=parent/'persistence_r1';marker=root/'PERSISTENCE_RECOVERY_ACTIVATION.json'
     if parent.exists():
@@ -87,7 +100,7 @@ def baseline_for(legacy,seed):
 
 
 def admit():
-    p=HOME/'RECOVERY_REVISION.json';d=read(p)
+    p=decision_path();d=read(p)
     require(d['status']=='ACCEPTED_UNDER_USER_SCOPED_REPAIR_AND_RESUME_AUTHORIZATION','Recovery not accepted')
     require(d['experiment_id']==EXPERIMENT and d['protocol_sha256']==PROTOCOL and d['registry_sha256']==REGISTRY and
         d['H_identity']==H_ID and d['training_source_sha256']==TRAIN_SOURCE and d['old_evaluation_source_sha256']==OLD_SOURCE,'Scientific identity changed')
@@ -105,11 +118,30 @@ def admit():
     binding=dict(experiment_id=EXPERIMENT,old_stage_authorization_sha256=permit.authority_sha256,
         old_scientific_binding=permit.stable(),recovery_revision_sha256=digest(p),
         recovery_source_binding_sha256=d['source_binding_sha256'],legacy_import_identity=identity(legacy))
-    validate_activation(RUN,binding)
+    if d.get('previous_storage_authority_sha256'):
+        require(digest(CONT/'AUTHORITY.json')==d['previous_storage_authority_sha256'],'Original continuation authority changed')
+        stored=read(CONT/'AUTHORITY.json')['binding']
+        require(stored['old_scientific_binding']==permit.stable() and stored['legacy_import_identity']==identity(legacy),'Storage/scientific lineage differs')
+        binding['storage_binding']=stored
+        binding['resolved_parent_fatal_receipts']=d['resolved_parent_fatal_receipts']
+        for name,sha in d['dispatch_evidence_sha256'].items():require(digest(project_file(name))==sha,'Zero-request dispatch evidence changed')
+        ev,_=read_chain(CONT/str(SEEDS[0])/'journal.jsonl')
+        for token,record in d['disposed_zero_request_dispatch_sessions'].items():
+            require(len(ev)>=record['closed_prefix_events'] and ev[record['closed_prefix_events']-1]['sha256']==record['closed_prefix_sha256'],'Closed dispatch prefix changed')
+            between=[];active=False
+            for e in ev:
+                if e['event']=='session_open' and e['token']==token:active=True
+                elif active and e['event']=='session_close' and e['token']==token:active=False;break
+                elif active:between.append(e)
+            require(not active and not any(e['event']=='request_start' for e in between),'Cannot dispose a newly charged/unfinished scientific request')
+            final=CONT/str(SEEDS[0])/'sessions'/token/'FINAL.json'
+            require(digest(final)==record['final_sha256'] and read(final)['elapsed_s']==record['charged_elapsed_s'],'Dispatch clock changed/refunded')
+    validate_activation(RUN,ledger_binding(binding))
     return permit,legacy,binding
 
 
 def initialize(binding,legacy):
+    binding=ledger_binding(binding)
     expected=dict(schema='rc3-s3-continuation-authority-v1',binding=binding)
     path=CONT/'AUTHORITY.json'
     validate_activation(RUN,binding)
@@ -120,3 +152,9 @@ def initialize(binding,legacy):
             canonical_continuation='continuations/persistence_r1',authority_identity=identity(expected)))
         write_new(path,expected);write_new(CONT/'BASELINE_IMPORT.json',legacy)
     require(read(CONT/'BASELINE_IMPORT.json')==legacy,'Baseline import changed')
+    # Append new execution-source acceptance separately; never rewrite storage authority.
+    current=decision_path()
+    revision=CONT/'source_revisions'/(digest(current)+'.json')
+    receipt=dict(decision_path=label(current),decision_sha256=digest(current),source_binding_sha256=read(current)['source_binding_sha256'])
+    if revision.exists():require(read(revision)==receipt,'Source acceptance record changed')
+    else:write_new(revision,receipt)

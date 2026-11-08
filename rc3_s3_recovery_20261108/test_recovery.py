@@ -6,12 +6,14 @@ import errno
 import os
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
 import time
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 from rc3_s3_evaluator.common import read,write_new,digest,identity,SEEDS
-from .storage import Journal,Lease,WriterBusy,commit_anchor
+from .storage import Journal,Lease,WriterBusy,commit_anchor,verify_supervisor_lease
 from .authority import inspect_legacy,baseline_for,FAILED_ID,initialize,validate_activation
 from .runner import finish_session,clock_used,run_seed
 from .analysis import analyze,analyze_saved
@@ -223,6 +225,31 @@ class RecoveryTests(unittest.TestCase):
             with patch('rc3_s3_recovery_20261108.analysis.CONT',p),patch('rc3_s3_recovery_20261108.analysis.admit',return_value=(None,{},binding)), \
                  patch('rc3_s3_recovery_20261108.analysis.saved_rows',return_value=[dict(changed=True)]):
                 with self.assertRaises(ValueError):analyze_saved()
+
+    def test_16_actual_venv_launcher_uses_held_supervisor_lease(self):
+        with tempfile.TemporaryDirectory() as td:
+            path=Path(td)/'SUPERVISOR.lease';scope='synthetic-supervisor'
+            code='import sys,json,os;from rc3_s3_recovery_20261108.storage import verify_supervisor_lease; o=verify_supervisor_lease(sys.argv[1],int(sys.argv[2]),sys.argv[3]); print(json.dumps(dict(owner=o,ppid=os.getppid())))'
+            with Lease(path,scope):
+                child=subprocess.run([sys.executable,'-B','-X','utf8','-c',code,str(path),str(os.getpid()),scope],capture_output=True,timeout=20)
+                self.assertEqual(child.returncode,0,child.stderr.decode('utf8'))
+                self.assertEqual(json.loads(child.stdout)['owner']['pid'],os.getpid())
+                with self.assertRaises(ValueError):verify_supervisor_lease(path,os.getpid()+1,scope)
+            child=subprocess.run([sys.executable,'-B','-X','utf8','-c',code,str(path),str(os.getpid()),scope],capture_output=True,timeout=20)
+            self.assertNotEqual(child.returncode,0)
+            self.assertIn('Supervisor lease is not held',child.stderr.decode('utf8'))
+
+    def test_17_acknowledged_zero_request_clock_is_not_refunded(self):
+        with tempfile.TemporaryDirectory() as td:
+            p=Path(td);token='zero-request'
+            write_new(p/'sessions'/token/'OPEN.json',dict(token=token,carried_wall_s=592))
+            final=finish_session(p,token,time.perf_counter()-.1,'FAILED','dispatch-only',lambda t:None)
+            rec={token:dict(final_sha256=digest(p/'sessions'/token/'FINAL.json'),charged_elapsed_s=final['elapsed_s'])}
+            events=[dict(event='session_open',token=token),dict(event='session_close',token=token)]
+            with patch('rc3_s3_recovery_20261108.runner.disposed_dispatch_sessions',return_value=rec):
+                self.assertAlmostEqual(clock_used(p,events,base()),592+final['elapsed_s'])
+                events.insert(1,dict(event='request_start',request=qs()[1]))
+                with self.assertRaises(ValueError):clock_used(p,events,base())
 
 
 if __name__=='__main__':unittest.main(verbosity=2)
