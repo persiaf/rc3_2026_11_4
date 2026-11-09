@@ -1,6 +1,10 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-s3-scope-r1-formal-results**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-gl-v4-deployment-natural-start**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+
+<!-- GL_V4_CURRENT_BEGIN -->
+**GL-v4独立实验已完成：396部署配对请求、三组384更新、3072训练终局及216新任务完整评价。** 轻量部署与原完整checkpoint参数、mask/logits、路线和J/L/K严格一致，具体完整开销与启动费用逐条件报告；自然起点筛选为REVISE，B未可靠改善共同SL及继续SL。B保留原1/.25/.25，仅改变两辅助首动作的采样与计分。新36例来自3个旧DEV几何上的6个新任务draw，单种子机制筛选不能宣称最终泛化/部署成功。见[本轮全部结果](rc3_gl_v4_20261109/README.md)、[部署对照](rc3_gl_v4_20261109/DEPLOYMENT_EQUIVALENCE.md)、[自然起点结果](rc3_gl_v4_20261109/START_OBJECTIVE_ABLATION.md)和[资源/审查](rc3_gl_v4_20261109/INDEPENDENT_REVIEW.md)。原S3负结论、暴露状态及两个缺失原字节保留；以下是此前各阶段历史记录。
+<!-- GL_V4_CURRENT_END -->
 
 <!-- S3_SCOPE_RESULTS_CURRENT_BEGIN -->
 **S3 scope_r1已实际完成剩余13817/13817请求，新增失败0；当前配置未建立DRL质量或速度优势。** 累计15876预扣、15874有效计划与2个原历史缺失；三seed封账，108输入和816657条同臂F&A服务分配核验通过，12固定模型及2515旧文件未改。5完整质量格／9完整部署格均未通过，另1质量／3部署格INCOMPLETE，全局AND为null。完整质量格RL+H相对frozenSL成本高1.10%–1.96%、相对Detour高3.72%–7.52%；完整部署格中位耗时为Detour的1.76–2.72倍。H收益单列，不归于学习；不追加训练、补缺失或读原60。详见[本轮全部交付](rc3_s3_scope_results_20261109/README.md)、[实际报告](rc3_s3_scope_results_20261109/EXPERIMENT_REPORT.md)、[逐请求CSV](rc3_s3_scope_results_20261109/results/REQUEST_METRICS.csv)、[独立审查](rc3_s3_scope_results_20261109/INDEPENDENT_REVIEW.md)和[下一步](rc3_s3_scope_results_20261109/NEXT_STEP_DECISION.md)。以下记录保留各历史阶段当时状态，当前以上述结果和活动状态为准。

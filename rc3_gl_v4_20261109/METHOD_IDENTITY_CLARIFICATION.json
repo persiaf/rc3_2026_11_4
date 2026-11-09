@@ -1,0 +1,13 @@
+{
+  "finding": "GLV4_META_001",
+  "severity": "Derived adapter role metadata; actual model identities and metrics verified",
+  "cause": "run.complete_request passes generic frozen_supervised to the old evaluation adapter for all four neural study roles. Catalog override_role loads each correct actor, but the inherited training_weight_role and plan.method labels were not relabeled.",
+  "scope": "DEV216: 108 A/B/C artifacts retain default training_weight_role=SL256; 36 true SL and 72 native labels are consistent.",
+  "authoritative_identity": "request.study_method and row.study_method, exact actor path/hash/tensor identity and training provenance, all strictly cross-validated by METHOD_IDENTITY_AUDIT.json",
+  "disposition": "Keep all frozen scientific source, raw result bytes, journals, parameter tensors, costs and CSV bytes unchanged. Append this exact source-bound interpretation map; do not use the generic pipeline label as the scientific group identity.",
+  "future_use": "A later evaluator revision should separate adapter kind from study model identity. No such unapproved new scientific execution or rerun is performed here.",
+  "numerical_impact": "None: 216 CSV group/metric pairs match declared study method and actual bound model source. This is not a claim that the original role metadata was correct.",
+  "audit_sha256": "4c6842eb66e104746083727b91f771473840db4c2d917da9874e3e1cc26e5ad6",
+  "original_artifacts_changed": 0,
+  "new_scientific_calls": 0
+}

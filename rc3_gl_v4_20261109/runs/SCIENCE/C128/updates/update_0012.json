@@ -1,0 +1,180 @@
+{
+  "phase": "continued_SL",
+  "update": 11,
+  "instances": [
+    {
+      "problem": "64688f7aac816a06a6a86209dbecfa6dfd7410870a2197e6eb191f5de294be56",
+      "empty": false,
+      "decisions": 6,
+      "loss": 1.6178592443466187,
+      "actions": [
+        27,
+        15,
+        35,
+        19,
+        4,
+        12
+      ],
+      "legal_counts": [
+        39,
+        31,
+        25,
+        20,
+        12,
+        4
+      ],
+      "label_replay_terminal_calls": 1,
+      "teacher_or_H_queries": 0,
+      "label_route_raw_J": 55.594083782999995
+    },
+    {
+      "problem": "6bfcfec64c7ab4883b7b1da22022c98e3c86787d1ae13839315ea9d56dd1afc0",
+      "empty": false,
+      "decisions": 8,
+      "loss": 1.4907878637313843,
+      "actions": [
+        2,
+        9,
+        19,
+        35,
+        22,
+        33,
+        27,
+        41
+      ],
+      "legal_counts": [
+        44,
+        36,
+        30,
+        24,
+        19,
+        15,
+        11,
+        5
+      ],
+      "label_replay_terminal_calls": 1,
+      "teacher_or_H_queries": 0,
+      "label_route_raw_J": 65.3427259845
+    },
+    {
+      "problem": "7963d2f8f6b8f51502e6f7a2ed8c3ded28efc2aeaace8b45486147319ed8d338",
+      "empty": false,
+      "decisions": 10,
+      "loss": 1.9246774911880493,
+      "actions": [
+        5,
+        22,
+        42,
+        44,
+        30,
+        14,
+        20,
+        36,
+        57,
+        54
+      ],
+      "legal_counts": [
+        58,
+        50,
+        45,
+        39,
+        32,
+        26,
+        20,
+        14,
+        8,
+        4
+      ],
+      "label_replay_terminal_calls": 1,
+      "teacher_or_H_queries": 0,
+      "label_route_raw_J": 59.19640760889998
+    },
+    {
+      "problem": "7af3283f70e5a7ac09c7ee3ccd7f67e3bf64b1d9444c4f3b946b5f596a99bc5d",
+      "empty": false,
+      "decisions": 12,
+      "loss": 2.122645378112793,
+      "actions": [
+        5,
+        29,
+        4,
+        35,
+        56,
+        43,
+        60,
+        53,
+        22,
+        41,
+        18,
+        9
+      ],
+      "legal_counts": [
+        65,
+        61,
+        53,
+        49,
+        41,
+        36,
+        32,
+        26,
+        20,
+        17,
+        13,
+        7
+      ],
+      "label_replay_terminal_calls": 1,
+      "teacher_or_H_queries": 0,
+      "label_route_raw_J": 84.77616935039998
+    }
+  ],
+  "batch_instances": 4,
+  "objective": "route-mean masked teacher CE",
+  "loss": 1.7889924943447113,
+  "empty_instances": 0,
+  "teacher_or_H_queries": 0,
+  "optimizer_updated": true,
+  "gradient_norm_before_clip": 2.430570109799558,
+  "gradient_norm_after_clip": 0.9999996257202304,
+  "gradient_norms": {
+    "global_net.0.weight": 0.015075192786753178,
+    "global_net.0.bias": 0.0062200091779232025,
+    "global_net.2.weight": 0.03925672918558121,
+    "global_net.2.bias": 0.013766821473836899,
+    "task_in.weight": 0.1946287453174591,
+    "task_in.bias": 0.16028206050395966,
+    "candidate_in.weight": 0.7107815742492676,
+    "candidate_in.bias": 0.09255873411893845,
+    "to_task.weight": 0.652834951877594,
+    "to_task.bias": 0.11843380331993103,
+    "to_candidate.weight": 0.5651050806045532,
+    "to_candidate.bias": 0.06898107379674911,
+    "task_norm.weight": 0.0831056609749794,
+    "task_norm.bias": 0.06522607803344727,
+    "candidate_norm.weight": 0.1327744871377945,
+    "candidate_norm.bias": 0.05258156359195709,
+    "key.weight": 1.6717256307601929,
+    "dynamic.weight": 0.6522186398506165,
+    "nav.weight": 0.1554245799779892,
+    "prefix.weight_ih": 0.16422270238399506,
+    "prefix.weight_hh": 0.043647296726703644,
+    "prefix.bias_ih": 0.021582281216979027,
+    "prefix.bias_hh": 0.012230757623910904,
+    "query.weight": 1.1191221475601196,
+    "query.bias": 0.07945245504379272
+  },
+  "weight_version_after": 12,
+  "model_tensor_sha256": "a55f131c1ed1dce7376ab77fc76228d424556e57aaa2c47372dd2d06e8071c08",
+  "cursor_after": 12,
+  "elapsed_s": 0.10176599999977043,
+  "teacher_indices": [
+    18,
+    42,
+    31,
+    212
+  ],
+  "full_gradient_and_weight_artifact": {
+    "path": "rc3_gl_v4_20261109/runs/SCIENCE/C128/gradients_and_weights/update_0012.pt",
+    "sha256": "1f4e1118f911a20fd41cfab612ca2df99052977e178617165c67540cfda6d111",
+    "bytes": 802946
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "source_binding_sha256": "d8cf86b93a7f189c401ba43c2c7f6e656186d03e45b4e5f3087d5e7ca5460df7",
+  "synthetic_objective_checks": {
+    "A": {
+      "weights": [
+        1.0,
+        0.25,
+        0.25
+      ],
+      "gradient": [
+        0.20748644373395153,
+        -0.20748644373395153
+      ],
+      "reference_gradient": [
+        0.20748644373395153,
+        -0.20748644373395153
+      ],
+      "first_logprobs": [
+        -0.9740769841801067,
+        null,
+        null
+      ],
+      "advantages": [
+        0.5,
+        -1.0,
+        0.5
+      ]
+    },
+    "B": {
+      "weights": [
+        1.0,
+        0.25,
+        0.25
+      ],
+      "gradient": [
+        0.3222814994671303,
+        -0.3222814994671303
+      ],
+      "reference_gradient": [
+        0.32228149946713025,
+        -0.3222814994671303
+      ],
+      "first_logprobs": [
+        -0.9740769841801067,
+        -0.9740769841801067,
+        -0.4740769841801067
+      ],
+      "advantages": [
+        0.5,
+        0.5,
+        -1.0
+      ]
+    }
+  },
+  "expected_gradient_enumeration": -0.2444583116907459,
+  "analytic_gradient": -0.24445831169074586,
+  "exact_A_B_schedule_views": 512,
+  "actual_optimizer_updates": 0,
+  "scientific_policy_forwards": 0,
+  "synthetic_logits_only": true,
+  "navigation_native_H_teacher": 0,
+  "wall_s": 0.5248776000007638
+}
