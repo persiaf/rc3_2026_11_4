@@ -1,0 +1,133 @@
+{
+  "schema": "rc3-actor-lifecycle-and-matched-policy-gradient-screen-v1",
+  "experiment_id": "rc3_actor_pg_screen_20261109_01",
+  "baseline": "925a0a1a8957299e3e849b29ac501a99212aa902",
+  "goal": "Large complex parent-scene DRL training; frozen complete constraint-valid rapid variable-size local planning; supervision auxiliary only",
+  "independent_new_experiment": true,
+  "old_S3_results_and_gaps_frozen": true,
+  "old_budgets_reused": false,
+  "old60": "SEALED",
+  "original_v3_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "deployment": {
+    "seed": 11622026,
+    "cases": [
+      "DEV_000",
+      "DEV_001",
+      "DEV_002",
+      "DEV_003",
+      "DEV_004",
+      "DEV_005"
+    ],
+    "methods": [
+      "Fixed3_endpoint_adapter",
+      "Detour16_endpoint_adapter",
+      "untrained",
+      "frozen_supervised",
+      "continued_SL",
+      "RL_raw",
+      "RL_plus_H"
+    ],
+    "modes": [
+      "D0",
+      "D1",
+      "D2"
+    ],
+    "cache": [
+      "cold",
+      "hot"
+    ],
+    "repeats": 3,
+    "complete_requests_cap": 756,
+    "wall_s": 1800,
+    "optimizer_updates": 0,
+    "export_models": "All3seeds x untrained/SL256/continuedSL512/RL512, exact tensors and minimal architecture/source only",
+    "lifecycle": "D0 full checkpoint each neural request; D1 actor-only each neural request; D2 four actor-only models loaded once before requests. D2 caches parameters only, never task encoding/history/route.",
+    "order": "Fixed D0,D1,D2; six fixed old DEV cases; cold then hot;3 repeats; PCG64 seed11642026 method permutations. Sequential lifecycle order is explicit, not a randomized causal speed benchmark.",
+    "timing": "Record process phase wall and each mode startup separately. Requests include parsing/source checks, view/nav, model access, fresh encode, greedy/native, H, export, validation, artifact write/hash. Hot prewarm navigation outside request timer but inside1800 wall. Source/export/preparation and all IO charged inside phase; no free dynamic encoding.",
+    "equivalence": "Exact parameter name/shape/dtype/value/tensor hash for12 exports; exact raw/final route and J/L/K for all same case/method across mode/cache/repeat; no quantization/pruning/distillation"
+  },
+  "mechanism": {
+    "seed": 11622026,
+    "updates_each": 128,
+    "batch": 4,
+    "common_schedule_sha256": "95a855d6dc9562c30c0cdd7d49672266830052bdfb8a05212496ec084fac207c",
+    "start": "Own seed SL256 exact fixed tensor; A/B separate meta materialization and fresh Adam, no inherited moments",
+    "A": "Frozen original Trainer primary + forced_low + forced_high; weights1/.25/.25 normalized1.5; primary first logprob included, forced-first logprobs excluded; detachedLOO",
+    "B": "Three independently sampled complete policy trajectories, first action logprobs included; weights1/1/1 normalized3; detachedLOO",
+    "confound": "B jointly changes forced-start sampling and mixture weights as explicitly requested; not an isolated first-action-only causal ablation",
+    "trajectories_per_update": 12,
+    "terminal_requests_each_cap": 1536,
+    "terminal_requests_training_cap": 3072,
+    "wall_s_each": 1800,
+    "optimizer": {
+      "algorithm": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "clip_global_norm": 1.0,
+      "gamma": 1.0,
+      "entropy_weight": 0.0,
+      "advantage_standardization": false
+    },
+    "sample_mix": "Exactly64 full and64 local batches; cyclic local4x3/6x6/8x8, same parent/task/window/A/endpoints across A/B",
+    "rng": "Both data schedule fixed to original protocol/seed first128. A original primary/forced_low/forced_high roles; B policy_0/1/2 distinct generators; no shared mutable trajectories or reseeding within rows.",
+    "terminal": "Original full H + export + validation, original bounded128 exact input/H/raw-route LRU; every request including hit predebited against1536. No free teacher or native queries.",
+    "checkpoint": "Initial and every32 full model/Adam/RNG/cache/ledger; every update full before/after clip gradients and resulting parameters; all actions/masks/logprob/rewards recorded",
+    "forbidden": [
+      "PPO",
+      "entropy loss",
+      "KL loss",
+      "advantage normalization",
+      "new network",
+      "reward/lr/clip/batch/sample changes"
+    ]
+  },
+  "fixed_endpoint_dev": {
+    "cases": [
+      "DEV_000",
+      "DEV_001",
+      "DEV_002",
+      "DEV_003",
+      "DEV_004",
+      "DEV_005",
+      "DEV_006",
+      "DEV_007",
+      "DEV_008",
+      "DEV_009",
+      "DEV_010",
+      "DEV_011",
+      "DEV_012",
+      "DEV_013",
+      "DEV_014",
+      "DEV_015",
+      "DEV_016",
+      "DEV_017"
+    ],
+    "models": [
+      "SL256",
+      "A128",
+      "B128"
+    ],
+    "requests_cap": 54,
+    "wall_s": 600,
+    "pipeline": "Actor-only per-request frozen greedy + common H, original full saved parent geometry, saved navigation sources; raw and postH J/L/K, complete plans and validation",
+    "aggregation": "Three true development parent layouts, within-parent mean six cases, then equal parent-relative gains; size/endpoint and per-case tables too. Bootstrap20000 parents seed11632026; intervals descriptive, not3seeds or18independent layouts.",
+    "screen": "Report B vs A AND B vs shared SL256 raw/postH. A positive candidate requires postH parent-mean improvement on both and bootstrap95 lower>0, all feasible/numerically valid. Otherwise REVISE; this is exploratory single-seed DEV triage, not S3 confirmation or convergence proof."
+  },
+  "total_mechanism_terminal_cap": 3126,
+  "engineering": {
+    "real_optimizer_cap": 0,
+    "real_model_inference_cap": 0,
+    "navigation_native_H_teacher_cap": 0,
+    "wall_s": 120,
+    "scope": "Synthetic tensor/schema/cache/likelihood/gradient tests only; no full scientific model forward or optimizer"
+  },
+  "stop": "Any invalid source, infeasible prescribed task, nonfinite value, failed validation/IO or cap stops affected phase with evidence. No retry/reseed/replacement or budget reset. New experiment fixed output directory and STARTED reject implicit reruns.",
+  "authority": "Operationalization of current user instruction explicitly authorizing implementation, tests and bounded experiments; not claiming user pre-read generated source SHA; separate source-bound technical attestation before first science"
+}
