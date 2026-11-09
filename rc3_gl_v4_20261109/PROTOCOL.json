@@ -1,0 +1,106 @@
+{
+  "schema": "rc3-gl-v4-natural-start-and-deployment-v1",
+  "experiment_id": "rc3_gl_v4_natural_start_20261109_01",
+  "baseline": "925a0a1a8957299e3e849b29ac501a99212aa902",
+  "fixed_goal": "Large complex parent-scene DRL training, frozen rapid complete variable-size local planning; SL/rules auxiliary only",
+  "old_v3_protocol_sha256": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "scope": "New independent experiment; original S1/S2/S3 bytes, failures, exposure and negative claims remain frozen",
+  "deployment": {
+    "seed": 11622026,
+    "cases": 6,
+    "models": [
+      "SL256",
+      "RL512"
+    ],
+    "modes": [
+      "D0",
+      "D1",
+      "D2"
+    ],
+    "quality_repeats": 1,
+    "cold_repeats": 5,
+    "hot_repeats": 5,
+    "requests_cap": 396,
+    "wall_s_cap": 1800,
+    "optimizer_cap": 0,
+    "export": "Policy tensors only, architecture configuration and exact source inventory. Two fixed seed11622026 endpoints; no quantization/compile/precision change.",
+    "lifecycle": "D0 full checkpoint each request;D1 exact lightweight package each request;D2 same lightweight parameters resident. Identical dynamic task work every request.",
+    "startup": "One common worker hosts all lifecycle catalogs; each catalog readiness/model startup measured separately before paired requests, paid inside1800. Process/import/admission startup also recorded. Model state and cold/hot navigation are separate factors.",
+    "order": "Randomized6 lifecycle/role combinations in every case/cache/repeat block; PCG64 seed6110911622",
+    "navigation": "Each lifecycle has its own identical-source navigation cache namespace; quality/cold never consult or populate hot cache. Only navigation warmed; prewarming paid outside request timer inside phase wall.",
+    "timing": "Complete request includes input/source checks, navigation, full parent/window extraction, model access, fresh features/encoding, greedy,H,export,validation,weight verification,artifact IO. Startup never silently included/excluded as a cache label.",
+    "equivalence": "Exact named tensors/dtypes/shape, actual mask/logits hashes, greedy raw/final route,assignments,J/L/K across all3 lifecycles; no task embedding,route,H result caches"
+  },
+  "mechanism": {
+    "seed": 11622026,
+    "start": "Exact own SL256; three separate tensor storage branches and fresh Adam, old RL512 never continued",
+    "updates_each": 128,
+    "arms": [
+      "A128",
+      "B128",
+      "C128"
+    ],
+    "total_updates_cap": 384,
+    "batch": 4,
+    "A": "Original primary/forced_low/forced_high; normalized weights1/.25/.25; forced first logprobs excluded; detached LOO",
+    "B": "Only forced-first sampling changes: all3 trajectories sample all actions naturally; all first-action logprobs included; same normalized1/.25/.25 and detached LOO",
+    "C": "Original256 teacher pool, route-mean teacher-forcing masked CE, batch4,128 fresh-Adam updates; no teacher/native/H queries",
+    "training_schedule_sha256": "95a855d6dc9562c30c0cdd7d49672266830052bdfb8a05212496ec084fac207c",
+    "schedule": "Exactly original seed11622026 first128 S2 batches, frozen512 views; protocol hash changes never alter data schedule",
+    "rng": "Separate NamedStreams objects using original immutable protocol SHA and seed. Same primary/forced_low/forced_high RNG slot names in A/B for common random numbers; names in B are only stream slots, not forced actions. Each row has distinct generator; record seeds/states.",
+    "mixture": "64full10x10 batches,64local batches4x3/6x6/8x8; identical A/B parent,task,A,window,endpoints",
+    "optimizer": {
+      "algorithm": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "clip_global_norm": 1.0,
+      "gamma": 1.0,
+      "entropy_weight": 0.0,
+      "advantage_standardization": false
+    },
+    "terminal_requests_per_RL_arm_cap": 1536,
+    "RL_terminal_requests_cap": 3072,
+    "terminal": "Original full H/export/validation and128-entry exact input/H/raw-route LRU, separately owned per arm. Every trajectory request incl hit predebited; actual H,internal search,cache hits separately counted.",
+    "checkpoint": "initial and every32 complete updates, full weights/Adam/RNG/ledger/terminal state; gradients and final parameters every update. No best checkpoint selection."
+  },
+  "fixed_endpoint_development": {
+    "cases": 36,
+    "models": [
+      "SL256",
+      "A128",
+      "B128",
+      "C128",
+      "Fixed3",
+      "Detour16"
+    ],
+    "requests_cap": 216,
+    "data": "Six new task draws on3 original DEV physical geometries,36 exact window/endpoint declarations frozen before training. No exposed S3 or original60 task input is used. This is fresh-task DEV, not new-layout independent generalization.",
+    "freeze": "Generate/save new scene,F/A,input receipt and36 view identities at SCIENCE start, before any optimizer. Preserve full parent geometry and boundary candidates,scope_r1 local target hard/full-parent diagnostic.",
+    "navigation": "Identical saved physical-navigation source for all six methods; bank loading/preparation and all validation/IO paid in7200. No free task embeddings or routes.",
+    "neural": "Frozen exact128 endpoint actor package per request,greedy+H,raw and postH J/L/K. NativeFixed3/Detour16 endpoint adapters, no extra commonH.",
+    "statistics": "3 physical-parent clusters; average all12 cases per parent then parent-relative gains;20000 PCG64 parent bootstrap seed11632026. Report per-size/endpoint, no3-seed or final deployment inference.",
+    "candidate_screen": "B postH mean improvement>0 and bootstrap95lower>0 versus EACH A128,sharedSL256,C128,all prescribed results feasible/numerically valid. Raw comparisons separately disclosed. Single-seed mechanism screen only, no final generalization/deployment success."
+  },
+  "science_budget": {
+    "training_and_evaluation_requests_cap": 3288,
+    "total_optimizer_updates_cap": 384,
+    "shared_wall_s_cap": 7200,
+    "includes": "New DEV scene/FA preparation,source reads,navigation,all3 training,checkpoint/export/validation/evaluation/IO and parent closure"
+  },
+  "engineering": {
+    "new_tests": "Synthetic detached LOO/weighted objective,first-action inclusion,gradient and schedule/source checks only; no real model forward/optimizer/nav/native/H",
+    "real_optimizer_cap": 0,
+    "real_model_inference_cap": 0,
+    "wall_s_cap": 120,
+    "charged_inside_deployment1800": true
+  },
+  "stop": "Source mismatch,infeasible declared input,nonfinite,validation/IO failure,or budget cap preserves predebits and evidence and stops affected configuration; no replacement/reseed/free retry or resetting dirs. One-shot fixed experiment roots.",
+  "authority": "Current user GL-v4 task explicitly authorizes registration then bounded execution; not claiming user pre-read generated hashes or changing old approved v3"
+}
