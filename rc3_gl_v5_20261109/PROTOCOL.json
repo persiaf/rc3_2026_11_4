@@ -1,0 +1,96 @@
+{
+  "schema": "rc3-gl-v5-fixed-greedy-reference-v1",
+  "experiment_id": "rc3_gl_v5_frozen_greedy_20261109_01",
+  "baseline": "ce3de0eab485056f4b59b96b2a4c620c8ab22775",
+  "fixed_goal": "Large complex parent-scene DRL training, frozen rapid complete local planning; SL and rules auxiliary only",
+  "network_reward_H_precision_unchanged": true,
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "old_protocol": "0c5bc7d7a9557edf2af76f51a9f418550f0b4ce1ec6a8b47ddea95c6256e78bb",
+  "training": {
+    "seed": 11622026,
+    "start": "Exact original SL256",
+    "fresh_Adam": true,
+    "updates": 128,
+    "batch": 4,
+    "trajectories": 3,
+    "weights": [
+      1.0,
+      0.25,
+      0.25
+    ],
+    "normalize_weight_sum": 1.5,
+    "all_first_logprobs": true,
+    "only_major_variable": "Replace detached LOO by action-independent frozen SL256 greedy+sameH cost on identical input",
+    "objective": "mean_batch sum_r w_r (J_sample_r-J_ref).detach()*logP(full trajectory_r)/1.5",
+    "baseline": "Frozen SL256, D1 actor-only load per input, fresh greedy encode/prefix, sameH, no policy RNG consumption or promotion. Reference and sample terminals have disjoint exact128LRU caches.",
+    "negative_advantages": "Retain all signs; no clamping/filtering",
+    "rng": "Original v3 NamedStreams seed11622026 phaseRL/update/slot/primary,forced_low,forced_high. B slot names retained, no forced actions.",
+    "distribution": "Exact B128 frozen512 views,64full and64local batches",
+    "optimizer": {
+      "algorithm": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "clip_global_norm": 1.0,
+      "gamma": 1.0,
+      "entropy_weight": 0.0,
+      "advantage_standardization": false
+    },
+    "checkpoint": "0,32,64,96,128 full Adam/RNG/ref+sample state; full gradients/new weights every update"
+  },
+  "evaluation": {
+    "cases": 72,
+    "physical_layouts": 12,
+    "balanced_modes": [
+      6,
+      6
+    ],
+    "task_draws": 12,
+    "seed": 11622026,
+    "methods": [
+      "SL256",
+      "B128",
+      "C128",
+      "G128",
+      "Fixed3",
+      "Detour16"
+    ],
+    "requests": 432,
+    "neural": "D1 actor-only each request, greedy+sameH, explicit study_method/checkpoint_role/tensor/source",
+    "native": "Original endpoint adapters, no extra common H",
+    "navigation": "Identical saved physical D source for every method, only navigation cached. First saved-D read paid in actual request, timing descriptive, not paired deployment proof.",
+    "statistics": "Per true physical layout average6 sizes/endpoints; compute (J_control-J_G)/J_control. Equal weight12 parents, bootstrap20000 draws stratified mixed6/blocked6, PCG64 seed11642026, percentile2.5/97.5 linear; raw separately.",
+    "gate": {
+      "controls": [
+        "SL256",
+        "B128",
+        "C128"
+      ],
+      "metric": "J_after_H",
+      "mean_relative_gain_min_strict": 0.0,
+      "lower95_min_strict": 0.0,
+      "logical": "AND all3 plus all432 feasible/finite/identity-valid; only single-seed mechanism candidate, no final deployment/generalization claim"
+    },
+    "no_top1_gate": true,
+    "not_unseen_environments": true
+  },
+  "budgets": {
+    "sample_requests": 1536,
+    "reference_requests": 512,
+    "evaluation_requests": 432,
+    "total_requests": 2480,
+    "optimizer_updates": 128,
+    "shared_wall_s": 7200,
+    "engineering_optimizer": 0,
+    "engineering": "Synthetic logits only, no real policy/nav/native/H, max120s inside shared7200",
+    "charging": "Count requests including cache hits before work. Include registration CPU/IO, all runtime preparation, baseline greedy,H, training, validation, checkpoints and IO. Git publication/read-only post-run audit are separate maintenance."
+  },
+  "mathematics": "State-only frozen baseline subtracts zero expected score, preserving expected J objective; clipping/Adam/finite-sample training do not guarantee monotonic greedy quality.",
+  "stop": "Any source/role/infeasible/nonfinite/validation/IO/cap error retains all debits and last closed checkpoint, no replacement/reseed/free retry, no resetting experiment folders.",
+  "historical": "Old role files and mapping preserved, old108 labels not rewritten; no A/B/C retrain, deployment-grid rerun, oldS3 missing refill or original60/newS3 semantic access."
+}
