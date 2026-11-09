@@ -1,5 +1,14 @@
 # 实验结果到主张记录
 
+## 2026-11-09：S3 scope_r1三种子冻结正式结果
+
+- 实际新13817/13817成功、失败0，累计15874有效/15876预扣，两个旧缺失未补值，全部未执行请求已处理。108局部输入、816657条服务分配、固定模型与2515旧证据复核通过。
+- 独立reviewer `claim_supported=no`，`confidence=high`，具体审计命题与性能命题区分见[独立审查](rc3_s3_scope_results_20261109/INDEPENDENT_REVIEW.md)。完整质量5格与完整部署9格均未通过；另1质量／3部署格缺失，全局AND为null。
+- 当前RL+H未建立相对监督或强规则的质量/完整速度优势，无完整规模通过原部署门槛；H改善属于后处理，不能记为RL学习收益。不外推DRL一般无效，不更改固定研究目标。
+- 路由：归档实际负结果、窄化论文主张；不自动补齐失败、追加训练、挑中间模型或读取原60。论文数字审计/provisional边界按独立审查记录，不能冒充完整论文审计。
+
+依据：[实际结果](rc3_s3_scope_results_20261109/EXPERIMENT_REPORT.md)、[结果到主张](rc3_s3_scope_results_20261109/RESULT_TO_CLAIM.md)、[原始数据](rc3_s3_scope_results_20261109/results/REQUEST_METRICS.csv)。
+
 ## 2026-11-09：S3_042诊断与目标范围修订
 
 - 独立reviewer判定partial/high：具体诊断/工程命题yes，完整S3质量/部署仍no/incomplete，不解释为模型性能失败。

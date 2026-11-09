@@ -1,0 +1,185 @@
+{
+  "schema": "rc3-s3-scope-r1-independent-result-to-claim-review-v1",
+  "reviewer_role": "independently delegated paper architect/reviewer, not the executor",
+  "experiment_id": "rc3_v3_global_local_20261106_01",
+  "source_binding_sha256": "311a58bd867e95c852ec3246c54a398468eb526db391fbb6d12239c6a3379949",
+  "intended_claim": "DRL trained on large complex parent scenes, frozen for variable-size complete local planning, with positive independent quality increment over both matched supervised controls and the original rapid-deployment thresholds.",
+  "claim_supported": "no",
+  "what_results_support": [
+    "Fixed frozen endpoints produce auditable proxy-constraint complete local plans at 4x3, 6x6 and 8x8 in the declared saved cases; successful results retain whole-parent geometry and source identity.",
+    "The 13817 newly authorized unexecuted requests completed without a new failure, while 2057 inherited successes and two failed historical slots retain their original debit and missingness.",
+    "Common H improves identical saved RL raw routes by 16.347%-21.548% in the five complete quality cells. This is postprocessing benefit, not neural policy or independent DRL benefit.",
+    "Training pipeline raw routes outperform untrained raw routes, but supervised initialization is part of that pipeline and both supervised controls outperform RL raw routes."
+  ],
+  "what_results_dont_support": [
+    "A positive independent DRL quality increment: RL+H parent-relative mean gain versus frozenSL is -1.102% to -1.956% and versus continuedSL -1.070% to -2.319% across all five complete cells; every complete quality cell fails the unchanged original gate.",
+    "A cross-size quality advantage over strong native rules: complete-cell RL+H costs are 2.304%-5.532% higher than Fixed3 and 3.720%-7.519% higher than Detour16.",
+    "The registered rapid-planning/deployment goal: all nine complete deployment strata fail. Median time ratios versus Detour16 are 1.765-2.716, p95 ratios 1.574-2.644; Fixed3 dominates all nine complete strata.",
+    "A complete six-quality/twelve-deployment AND pass, or successful completion of the unamended original-v3 scientific grid.",
+    "True IK, arm swept-path, joint trajectory or hardware safety certification; pure-gradient or equal-FLOPs causal benefit; treating repeated requests as independent layouts."
+  ],
+  "missing_evidence": [
+    "Historical S3_042 seed11622026 RL_plus_H quality0 and S3_003 seed11622026 Fixed3 cold repeat1 remain unfilled. Their affected cells are not formally evaluated.",
+    "Positive independent DRL increment and rapid-deployment evidence meeting the already frozen gates. These are substantive failures in complete cells, not just missing-data gaps.",
+    "A single-version deployment comparison for stronger implementation-level speed attribution; observed mixed-revision times retain descriptive scope.",
+    "Real kinematic, arm collision and joint-path evidence for any future physical-execution claim; such claims are outside the present proxy evidence.",
+    "paper/PAPER_CLAIM_AUDIT.json is absent; paper-writing claims remain provisional."
+  ],
+  "suggested_claim_revision": "Report a negative/boundary S3 result: v3+scope_r1 frozen endpoints produce valid proxy-constrained local plans of multiple sizes, but complete evaluated cells show no superiority over matched supervision or native strong rules and do not meet the original deployment thresholds. Attribute H improvement to H. Keep the fixed DRL research goal explicitly unmet rather than replacing it with supervision.",
+  "next_experiments_needed": [
+    {
+      "proposal": "Read-only inspection of saved S2 objective/trajectory/gradient decomposition to explain the observed raw-route regression; no new training implied.",
+      "executed": false
+    },
+    {
+      "proposal": "If algorithm, reward, distribution, budget or inference lifecycle is revised, preregister a separate version with source/H/environment/seed binding and obtain independent approval plus stage execution authority before a fresh DRL-versus-supervision/native comparison.",
+      "executed": false
+    },
+    {
+      "proposal": "A separately authorized unified-version complete deployment evaluation and, for physical claims, real IK/joint-path/collision validation. Preserve the old failures; do not refill them or reset cumulative accounts.",
+      "executed": false
+    }
+  ],
+  "confidence": "high",
+  "confidence_scope": "High for saved-evidence integrity, completed-cell comparisons and original threshold failures. No imputation or inference for incomplete cells or physical deployment.",
+  "technical_audit": "GO",
+  "technical_audit_scope": "Static provenance, saved result consistency, accounting and independent statistics are reportable. Technical GO is not scientific performance GO or execution authority.",
+  "full_grid_scientific_status": "INCOMPLETE_WITH_KNOWN_FAILED_COMPLETE_CELLS",
+  "original_numeric_gates_changed": false,
+  "additional_performance_prerequisite_added": false,
+  "scope": "v3_plus_scope_r1, not unamended_v3_complete_grid",
+  "scientific_input_admission_changed": true,
+  "quality_cells": {
+    "complete": 5,
+    "failed": 5,
+    "passed": 0,
+    "incomplete": 1
+  },
+  "deployment_cells": {
+    "complete": 9,
+    "failed": 9,
+    "passed": 0,
+    "incomplete": 3
+  },
+  "executor_overall_gate_values": {
+    "independent_RL_pass": null,
+    "deployment_pass": null,
+    "combined_pass": null
+  },
+  "AND_interpretation": "Keep global values null for incomplete grids; zero complete cells pass and the already failed complete cells exclude an overall AND pass even if missing cells later became evaluable.",
+  "request_accounting": {
+    "inherited_debits": 2059,
+    "inherited_success": 2057,
+    "inherited_missing": 2,
+    "new_debits": 13817,
+    "new_success": 13817,
+    "new_failures": 0,
+    "total_debits": 15876,
+    "total_success": 15874,
+    "coverage": {
+      "quality": {
+        "expected": 2268,
+        "observed": 2267,
+        "missing": [
+          {
+            "case_id": "S3_042",
+            "seed": 11622026,
+            "kind": "quality",
+            "repeat": 0,
+            "method": "RL_plus_H",
+            "id": "88c202d54990cee9fe80d3b8a01fba6c7275a98069a822d3c25e9b701d7eff68"
+          }
+        ]
+      },
+      "cold": {
+        "expected": 6804,
+        "observed": 6803,
+        "missing": [
+          {
+            "case_id": "S3_003",
+            "seed": 11622026,
+            "kind": "cold",
+            "repeat": 1,
+            "method": "Fixed3_endpoint_adapter",
+            "id": "68e89307acb21cdff0501aa2c6531990909421d266140a88943876f8fe4b0ea9"
+          }
+        ]
+      },
+      "hot": {
+        "expected": 6804,
+        "observed": 6804,
+        "missing": []
+      }
+    },
+    "missing_requests": [
+      {
+        "case_id": "S3_003",
+        "seed": 11622026,
+        "kind": "cold",
+        "repeat": 1,
+        "method": "Fixed3_endpoint_adapter",
+        "id": "68e89307acb21cdff0501aa2c6531990909421d266140a88943876f8fe4b0ea9"
+      },
+      {
+        "case_id": "S3_042",
+        "seed": 11622026,
+        "kind": "quality",
+        "repeat": 0,
+        "method": "RL_plus_H",
+        "id": "88c202d54990cee9fe80d3b8a01fba6c7275a98069a822d3c25e9b701d7eff68"
+      }
+    ],
+    "total_charged_stage_wall_s": 14306.36950219999,
+    "inherited_original_exact_wall_s": null,
+    "inherited_conservative_reservation_s": 592
+  },
+  "static_audit_counts": {
+    "bound_source_files_hashed": 194,
+    "frozen_evidence_files_hashed": 2515,
+    "fixed_model_files_hashed": 36,
+    "saved_artifacts_hashed_and_metrics_routes_validated": 15874,
+    "polyline_route_samples_independently_summed": 294,
+    "checked_saved_case_inputs": 108,
+    "deterministic_case_seed_method_units": 2268
+  },
+  "old_complete_clocks_independently_checked": 2057,
+  "new_complete_clocks_independently_checked": 13817,
+  "independent_statistics": {
+    "bootstrap_replicates": 20000,
+    "rng": "PCG64",
+    "seed": 11632026,
+    "unit": "physical parent cluster",
+    "seen_parents": 6,
+    "unseen_parents": 12,
+    "optimizer_repeats": 3,
+    "quality_max_numeric_difference_from_executor": 0.0,
+    "simultaneous_familywise_intervals": false
+  },
+  "saved_constraint_audit_scope": "All saved result validator flags, coverage, same-arm assignment symbols, endpoints and route arithmetic independently checked. No regeneration of F/A or navigation. Executor full same-arm F&A audit is retained as separate source evidence.",
+  "H_attribution": "RL_raw and RL_plus_H have identical pre-H greedy routes and raw metrics; RL_raw no H and RL_plus_H exactly one H per success. No H effect is labeled an independent neural gain.",
+  "timing_revision_limit": "legacy_b348, 767f13b persistence repair and 311a58b scope_r1 were pooled only descriptively; version-stratified recomputation retained. Equal persistence/anchor IO overhead is not assumed.",
+  "component_profile_audit": {
+    "status": "PASS",
+    "cells_checked": 252,
+    "observation": "Hot RL+H model_load_and_verify median0.55073035s; encoding0.01366870s; greedy0.01733215s. SL load/verify0.01277820s; continuedSL0.20684635s. Observed inclusive components only; no subtraction, counterfactual acceleration or causal speed diagnosis."
+  },
+  "paper_claim_audit": "unavailable",
+  "paper_writing_verdict": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "review_delegation_completed": true,
+  "external_review_note": "Independent delegated paper architect/reviewer completed; not a claim of external venue peer review.",
+  "routing_action": "REVISE_METHOD_OR_PREREGISTERED_PROTOCOL / REPORT_NEGATIVE_CURRENT_RESULT",
+  "route_confirmed_positive_paper_writing": false,
+  "automatic_new_experiment_authority": false,
+  "fixed_DRL_research_goal_preserved": true,
+  "audit_started_utc": "2026-11-09T05:52:32+00:00",
+  "audit_finished_utc": "2026-11-09T06:04:47.910207+00:00",
+  "total_review_wall_s": 735.910207,
+  "script_audit_wall_s": 19.106722900000022,
+  "scientific_calls": 0,
+  "optimizer_updates": 0,
+  "model_deserializations": 0,
+  "original60_semantic_reads": 0,
+  "Git_mutations": 0,
+  "trace_directory": "rc3_s3_scope_results_20261109/paper/review-traces/experiment-result-to-claim/20261109_run01"
+}

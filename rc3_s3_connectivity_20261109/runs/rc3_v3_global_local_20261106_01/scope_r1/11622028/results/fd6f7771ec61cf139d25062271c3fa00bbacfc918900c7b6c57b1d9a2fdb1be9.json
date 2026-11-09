@@ -1,0 +1,852 @@
+{
+  "request": {
+    "case_id": "S3_031",
+    "seed": 11622028,
+    "kind": "hot",
+    "repeat": 1,
+    "method": "Detour16_endpoint_adapter",
+    "id": "fd6f7771ec61cf139d25062271c3fa00bbacfc918900c7b6c57b1d9a2fdb1be9"
+  },
+  "case_id": "S3_031",
+  "group": "seen",
+  "size": [
+    4,
+    3
+  ],
+  "endpoint": "open_first_last_connected",
+  "physical_key": "a535bb167d5819eaf2e9ec06f4681522931b70b6215c8cdee7ee94f384ae8d06",
+  "source": {
+    "input_kind": "authorized_formal_S3",
+    "content": {
+      "scene": "04338ad175e0f6ce92da54e7dae9cad46b45d8f7fa34046cd466ae4feeb76f5a",
+      "F": "9f9ada273fe239621bd15265c875e6cf5aa802997323bfde98abd505d8494546",
+      "A": "95fe82ea0b16221aa8f73460198de5a6eb4cd777d58df5858ee4d1fb7cf02bdb",
+      "spec": {
+        "case": 31,
+        "group": "seen_layout_new_tasks",
+        "parent": 5,
+        "map_seed": 10000000005,
+        "task_seed": 13000000031,
+        "mode": "blocked",
+        "size": [
+          4,
+          3
+        ],
+        "position": "center",
+        "endpoints": "open_first_last_connected",
+        "A_condition": 0,
+        "note": "Seen means training layout, not unseen-environment generalization",
+        "width": 4,
+        "height": 3,
+        "x0": 3,
+        "y0": 3
+      }
+    },
+    "evaluation_parent_identity": "49b381ad02c8cc86db731fe638a246d3052a05a5f926bf36fb90e5a5096c39b6",
+    "view_identity": "80fe12d519e76614956243923614f0918f90403e69207f017e09d3c7a25667c4",
+    "F_sha256": "9f9ada273fe239621bd15265c875e6cf5aa802997323bfde98abd505d8494546",
+    "A_sha256": "95fe82ea0b16221aa8f73460198de5a6eb4cd777d58df5858ee4d1fb7cf02bdb",
+    "D_sha256": "771631e0ddf34278f706bf6459f63b2b6d660502f4c19bddcb0eee83f08e3395",
+    "global_task_ids": [
+      25,
+      26,
+      27,
+      28,
+      33,
+      34,
+      40
+    ],
+    "global_candidate_ids": [
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      280,
+      281,
+      282,
+      283,
+      286,
+      287,
+      368,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      440,
+      442,
+      443,
+      444,
+      445
+    ],
+    "full_parent_tables": 100,
+    "full_parent_obstacles": 8,
+    "full_parent_geometry": "a535bb167d5819eaf2e9ec06f4681522931b70b6215c8cdee7ee94f384ae8d06",
+    "scope_evidence": {
+      "input_contract": "S3_TARGET_SCOPE_R1_FULL_PARENT_DIAGNOSTIC_TARGET_SERVICE_HARD",
+      "full_parent_closed_depot_unservable_task_ids": [],
+      "full_parent_check": "DIAGNOSTIC",
+      "target_check": "HARD",
+      "entry": 1,
+      "exit": 800,
+      "target_task_ids": [
+        25,
+        26,
+        27,
+        28,
+        33,
+        34,
+        40
+      ],
+      "target_unservable_task_ids": [],
+      "target_candidate_ids": [
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        280,
+        281,
+        282,
+        283,
+        286,
+        287,
+        368,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        440,
+        442,
+        443,
+        444,
+        445
+      ],
+      "boundary_candidate_ids": []
+    },
+    "input_contract": "S3_TARGET_SCOPE_R1_FULL_PARENT_DIAGNOSTIC_TARGET_SERVICE_HARD"
+  },
+  "weight": null,
+  "training_weight_role": null,
+  "raw_route": [
+    0,
+    5,
+    9,
+    20,
+    14,
+    0
+  ],
+  "route": [
+    0,
+    5,
+    9,
+    20,
+    14,
+    0
+  ],
+  "raw_route_sha256": "4e30b0a97044a1e5bdbeee5bacc08a3cd92bfa0a73c03c3ab397352cfd409115",
+  "route_sha256": "4e30b0a97044a1e5bdbeee5bacc08a3cd92bfa0a73c03c3ab397352cfd409115",
+  "trace": [],
+  "metrics": {
+    "J": 43.9053659465,
+    "L": 40.9053659465,
+    "K": 4.0,
+    "raw_J": 43.9053659465,
+    "raw_L": 40.9053659465,
+    "raw_K": 4.0
+  },
+  "raw_cost_scope": "native final route, including native internal search; no added common H",
+  "H_gain_J": 0.0,
+  "plan": {
+    "schema": "rc3-global-local-plan-v1",
+    "method": "Detour16_endpoint_adapter",
+    "status": "complete",
+    "problem_identity": "80fe12d519e76614956243923614f0918f90403e69207f017e09d3c7a25667c4",
+    "parent_identity": "49b381ad02c8cc86db731fe638a246d3052a05a5f926bf36fb90e5a5096c39b6",
+    "entry_global_node": 1,
+    "exit_global_node": 800,
+    "window": {
+      "x0": 3,
+      "y0": 3,
+      "width": 4,
+      "height": 3
+    },
+    "target_task_ids_global": [
+      25,
+      26,
+      27,
+      28,
+      33,
+      34,
+      40
+    ],
+    "visit_order_candidate_ids": [
+      276,
+      282,
+      440,
+      370
+    ],
+    "selected_candidate_ids": [
+      276,
+      282,
+      440,
+      370
+    ],
+    "navigation_global_nodes": [
+      1,
+      277,
+      283,
+      441,
+      371,
+      800
+    ],
+    "assignments": [
+      {
+        "task_id": 25,
+        "candidate_id": 276,
+        "arm": "L"
+      },
+      {
+        "task_id": 26,
+        "candidate_id": 276,
+        "arm": "L"
+      },
+      {
+        "task_id": 27,
+        "candidate_id": 282,
+        "arm": "L"
+      },
+      {
+        "task_id": 28,
+        "candidate_id": 282,
+        "arm": "L"
+      },
+      {
+        "task_id": 40,
+        "candidate_id": 440,
+        "arm": "L"
+      },
+      {
+        "task_id": 33,
+        "candidate_id": 370,
+        "arm": "L"
+      },
+      {
+        "task_id": 34,
+        "candidate_id": 370,
+        "arm": "L"
+      }
+    ],
+    "service_stops": [
+      {
+        "sequence": 1,
+        "candidate_id": 276,
+        "pose": {
+          "x": 8.467807340309337,
+          "y": 6.428214187699865,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 14.220224738899997,
+        "tasks": [
+          {
+            "task_id": 25,
+            "arm": "L"
+          },
+          {
+            "task_id": 26,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "candidate_id": 282,
+        "pose": {
+          "x": 11.317929622302042,
+          "y": 7.410413095777052,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 18.420987913999994,
+        "tasks": [
+          {
+            "task_id": 27,
+            "arm": "L"
+          },
+          {
+            "task_id": 28,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "candidate_id": 440,
+        "pose": {
+          "x": 11.323861749692275,
+          "y": 9.49002683053244,
+          "theta": 1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 22.128438987499994,
+        "tasks": [
+          {
+            "task_id": 40,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "candidate_id": 370,
+        "pose": {
+          "x": 13.443825448495407,
+          "y": 9.295073377707018,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 24.443356139099993,
+        "tasks": [
+          {
+            "task_id": 33,
+            "arm": "L"
+          },
+          {
+            "task_id": 34,
+            "arm": "L"
+          }
+        ]
+      }
+    ],
+    "unserved_task_ids": [],
+    "route_polyline": [
+      [
+        0.8101559452,
+        0.1343591561
+      ],
+      [
+        0.8101559452,
+        0.0
+      ],
+      [
+        1.2463707819,
+        0.0
+      ],
+      [
+        2.1013954033,
+        0.0
+      ],
+      [
+        2.1013954033,
+        0.7691101526
+      ],
+      [
+        2.1013954033,
+        0.7981535651
+      ],
+      [
+        2.1013954033,
+        1.1112723714
+      ],
+      [
+        2.1013954033,
+        1.1257423832
+      ],
+      [
+        2.1013954033,
+        1.8831020903
+      ],
+      [
+        2.9134588476,
+        1.8831020903
+      ],
+      [
+        2.925695093,
+        1.8831020903
+      ],
+      [
+        3.3525122016,
+        1.8831020903
+      ],
+      [
+        3.3525470329,
+        1.8831020903
+      ],
+      [
+        4.2027908067,
+        1.8831020903
+      ],
+      [
+        4.2027908067,
+        2.654915191
+      ],
+      [
+        4.2027908067,
+        2.6892053527
+      ],
+      [
+        4.2027908067,
+        2.9788773146
+      ],
+      [
+        4.2027908067,
+        3.011035315
+      ],
+      [
+        4.2027908067,
+        3.7662041806
+      ],
+      [
+        5.0382723317,
+        3.7662041806
+      ],
+      [
+        5.0502680634,
+        3.7662041806
+      ],
+      [
+        5.4735598382,
+        3.7662041806
+      ],
+      [
+        5.4994370342,
+        3.7662041806
+      ],
+      [
+        6.30418621,
+        3.7662041806
+      ],
+      [
+        7.1464925572,
+        3.7662041806
+      ],
+      [
+        7.1731859994,
+        3.7662041806
+      ],
+      [
+        7.583262097,
+        3.7662041806
+      ],
+      [
+        7.6079759996,
+        3.7662041806
+      ],
+      [
+        8.4055816133,
+        3.7662041806
+      ],
+      [
+        8.4055816133,
+        4.5024185123
+      ],
+      [
+        8.4055816133,
+        4.5723891151
+      ],
+      [
+        8.4055816133,
+        4.8491844102
+      ],
+      [
+        8.4055816133,
+        4.9160968909
+      ],
+      [
+        8.4055816133,
+        5.6493062709
+      ],
+      [
+        8.4055816133,
+        6.421900394
+      ],
+      [
+        8.4055816133,
+        6.4282141877
+      ],
+      [
+        8.4678073403,
+        6.4282141877
+      ],
+      [
+        8.4055816133,
+        6.4282141877
+      ],
+      [
+        8.4055816133,
+        6.7424319517
+      ],
+      [
+        8.4055816133,
+        6.7782083991
+      ],
+      [
+        8.4055816133,
+        7.5324083613
+      ],
+      [
+        9.20028894,
+        7.5324083613
+      ],
+      [
+        9.2690229076,
+        7.5324083613
+      ],
+      [
+        9.6652521395,
+        7.5324083613
+      ],
+      [
+        9.7063960145,
+        7.5324083613
+      ],
+      [
+        10.5069770166,
+        7.5324083613
+      ],
+      [
+        11.3179296223,
+        7.5324083613
+      ],
+      [
+        11.3179296223,
+        7.4104130958
+      ],
+      [
+        11.3179296223,
+        7.5324083613
+      ],
+      [
+        10.5069770166,
+        7.5324083613
+      ],
+      [
+        10.5069770166,
+        8.3266440263
+      ],
+      [
+        10.5069770166,
+        8.3315305536
+      ],
+      [
+        10.5069770166,
+        8.6782670432
+      ],
+      [
+        10.5069770166,
+        8.6829301887
+      ],
+      [
+        10.5069770166,
+        9.4155104516
+      ],
+      [
+        11.3238617497,
+        9.4155104516
+      ],
+      [
+        11.3238617497,
+        9.4900268305
+      ],
+      [
+        11.3238617497,
+        9.4155104516
+      ],
+      [
+        11.3371496376,
+        9.4155104516
+      ],
+      [
+        11.7670531941,
+        9.4155104516
+      ],
+      [
+        11.776999866,
+        9.4155104516
+      ],
+      [
+        12.60837242,
+        9.4155104516
+      ],
+      [
+        13.4438254485,
+        9.4155104516
+      ],
+      [
+        13.4438254485,
+        9.2950733777
+      ],
+      [
+        13.4438254485,
+        9.4155104516
+      ],
+      [
+        13.4501377771,
+        9.4155104516
+      ],
+      [
+        13.9076214818,
+        9.4155104516
+      ],
+      [
+        13.9155640689,
+        9.4155104516
+      ],
+      [
+        14.7097678233,
+        9.4155104516
+      ],
+      [
+        14.7097678233,
+        10.1520143813
+      ],
+      [
+        14.7097678233,
+        10.1850513964
+      ],
+      [
+        14.7097678233,
+        10.5007054148
+      ],
+      [
+        14.7097678233,
+        10.5228290729
+      ],
+      [
+        14.7097678233,
+        11.2986125419
+      ],
+      [
+        14.7097678233,
+        12.0908545026
+      ],
+      [
+        14.7097678233,
+        12.091408404
+      ],
+      [
+        14.7097678233,
+        12.426580704
+      ],
+      [
+        14.7097678233,
+        12.429749246
+      ],
+      [
+        14.7097678233,
+        13.1817146322
+      ],
+      [
+        14.7097678233,
+        13.9170603248
+      ],
+      [
+        14.7097678233,
+        13.9356500274
+      ],
+      [
+        14.7097678233,
+        14.2550872464
+      ],
+      [
+        14.7097678233,
+        14.2745723381
+      ],
+      [
+        14.7097678233,
+        15.0648167225
+      ],
+      [
+        14.7097678233,
+        15.802290201
+      ],
+      [
+        14.7097678233,
+        15.8651521142
+      ],
+      [
+        14.7097678233,
+        16.1340264008
+      ],
+      [
+        14.7097678233,
+        16.2088291753
+      ],
+      [
+        14.7097678233,
+        16.9479188128
+      ],
+      [
+        15.4986196037,
+        16.9479188128
+      ],
+      [
+        15.5038493493,
+        16.9479188128
+      ],
+      [
+        15.9473084813,
+        16.9479188128
+      ],
+      [
+        15.949201484,
+        16.9479188128
+      ],
+      [
+        16.8111632266,
+        16.9479188128
+      ],
+      [
+        17.6004715834,
+        16.9479188128
+      ],
+      [
+        17.6470527419,
+        16.9479188128
+      ],
+      [
+        18.0546456445,
+        16.9479188128
+      ],
+      [
+        18.0744120565,
+        16.9479188128
+      ],
+      [
+        18.9125586299,
+        16.9479188128
+      ],
+      [
+        19.7272283237,
+        16.9479188128
+      ],
+      [
+        19.7352366298,
+        16.9479188128
+      ],
+      [
+        20.1613849863,
+        16.9479188128
+      ],
+      [
+        20.1797920518,
+        16.9479188128
+      ],
+      [
+        21.0139540333,
+        16.9479188128
+      ],
+      [
+        21.0139540333,
+        17.7254154878
+      ],
+      [
+        21.0139540333,
+        18.0750703297
+      ],
+      [
+        20.9020697627,
+        18.0750703297
+      ]
+    ],
+    "route_leg_costs_m": [
+      14.220224738899997,
+      4.200763175099998,
+      3.707451073499999,
+      2.3149171515999996,
+      16.4620098074
+    ],
+    "route_length_m": 40.9053659465,
+    "objective_length_plus_stops_m": 43.9053659465,
+    "stop_penalty_equivalent_m": 0.75,
+    "arm_joint_trajectories": null,
+    "physical_joint_trajectory_certified": false,
+    "validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "collision_count": 0,
+      "errors": [],
+      "independent_polyline_length_m": 40.905365946499984,
+      "effective_same_arm_F_and_A": true,
+      "endpoint_constraints_satisfied": true,
+      "physical_joint_trajectory_certified": false,
+      "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+    }
+  },
+  "pipeline_counters": {
+    "full_H_calls": 0,
+    "export_attempts": 0,
+    "exports": 0,
+    "validation_attempts": 0,
+    "validation_completed": 0,
+    "baseline_attempts": 1,
+    "endpoint_export_attempts": 1,
+    "endpoint_export_completed": 1,
+    "endpoint_validation_attempts": 1,
+    "endpoint_validation_completed": 1,
+    "baseline_completed": 1,
+    "native_construct_calls": 3,
+    "native_two_opt_calls": 8,
+    "native_joint_search_calls": 3,
+    "native_recipe_calls": 3,
+    "adapter_wall_s": 0.06084430000009888
+  },
+  "internal_search": {
+    "counts": {
+      "construct": 3,
+      "two_opt": 8,
+      "joint_search": 3,
+      "recipe": 3
+    },
+    "inclusive_s": {
+      "construct": 0.00023879999935161322,
+      "two_opt": 0.00032159999864234123,
+      "joint_search": 0.00040019999869400635,
+      "recipe": 0.0008949999973992817
+    },
+    "exclusive_s": {
+      "construct": 0.00023879999935161322,
+      "two_opt": 0.00032159999864234123,
+      "joint_search": 0.00025319999986095354,
+      "recipe": 8.139999954437371e-05
+    }
+  },
+  "valid": true,
+  "counts": {
+    "input_generation_and_preparation_attempts": 1,
+    "target_task_generations": 1,
+    "proxy_F_A_preparations": 1,
+    "input_generation_and_preparation_completed": 1,
+    "navigation_access_attempts": 1,
+    "navigation_only_cache_hits": 1,
+    "navigation_access_completed": 1,
+    "whole_parent_and_window_attempts": 1,
+    "whole_parent_and_window_completed": 1,
+    "native_pipeline_attempts": 1,
+    "export_attempts": 1,
+    "export_completed": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1,
+    "native_pipeline_completed": 1,
+    "artifact_write_attempts": 1
+  },
+  "component_seconds": {
+    "input_generation_and_preparation": 0.01889339999979711,
+    "navigation_access": 0.02903890000015963,
+    "whole_parent_and_window": 0.056026999998721294,
+    "export": 0.000238199998420896,
+    "validation": 0.00619889999870793,
+    "native_pipeline": 0.060948199999984354
+  },
+  "timing_note": "Nested inclusive components; do not add. Complete time includes durable result artifact write/hash; final ledger commit is charged to outer stage wall.",
+  "input_contract": "S3_TARGET_SCOPE_R1_FULL_PARENT_DIAGNOSTIC_TARGET_SERVICE_HARD",
+  "persistence_revision": "311a58bd867e95c852ec3246c54a398468eb526db391fbb6d12239c6a3379949",
+  "timing_boundary_version": "complete-request-scope-r1-extra-parent-diagnostic-measured"
+}

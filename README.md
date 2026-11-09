@@ -1,6 +1,10 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-08** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-s3-connectivity-target-scope-ready**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-s3-scope-r1-formal-results**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+
+<!-- S3_SCOPE_RESULTS_CURRENT_BEGIN -->
+**S3 scope_r1已实际完成剩余13817/13817请求，新增失败0；当前配置未建立DRL质量或速度优势。** 累计15876预扣、15874有效计划与2个原历史缺失；三seed封账，108输入和816657条同臂F&A服务分配核验通过，12固定模型及2515旧文件未改。5完整质量格／9完整部署格均未通过，另1质量／3部署格INCOMPLETE，全局AND为null。完整质量格RL+H相对frozenSL成本高1.10%–1.96%、相对Detour高3.72%–7.52%；完整部署格中位耗时为Detour的1.76–2.72倍。H收益单列，不归于学习；不追加训练、补缺失或读原60。详见[本轮全部交付](rc3_s3_scope_results_20261109/README.md)、[实际报告](rc3_s3_scope_results_20261109/EXPERIMENT_REPORT.md)、[逐请求CSV](rc3_s3_scope_results_20261109/results/REQUEST_METRICS.csv)、[独立审查](rc3_s3_scope_results_20261109/INDEPENDENT_REVIEW.md)和[下一步](rc3_s3_scope_results_20261109/NEXT_STEP_DECISION.md)。以下记录保留各历史阶段当时状态，当前以上述结果和活动状态为准。
+<!-- S3_SCOPE_RESULTS_CURRENT_END -->
 
 <!-- S3_CONNECTIVITY_CURRENT_BEGIN -->
 **S3_042目标窗口可行，统一目标范围修订和恢复入口技术GO；本轮未启动剩余S3。** 事前登记后实际1次冻结导航诊断，完整2.833479秒；全父唯一阻断task221/table94在窗口外，752/753候选落入0.4米膨胀障碍区，本次23目标均可服务。保留全父诊断、完整地图/上下文/F&A与全部合法边界候选，实际目标仍硬检查；这改变S3输入接纳契约，后续标记v3+scope_r1。独立一次8项/6067断言通过，18旧保存输入语义相同、2515旧文件原字节保持。原2059预扣/2057成功/2失败与2896.9277159秒继承，剩余3233/5292/5292请求，两失败不补跑，原60未读、训练0。见[具体诊断与全部交付](rc3_s3_connectivity_20261109/README.md)、[范围修订](rc3_s3_connectivity_20261109/INPUT_SCOPE_DECISION.md)、[恢复处置](rc3_s3_connectivity_20261109/RECOVERY_DECISION.md)和[资源账](rc3_s3_connectivity_20261109/RESOURCE_ACCOUNTING.json)。下面是原停止和恢复的历史记录。
