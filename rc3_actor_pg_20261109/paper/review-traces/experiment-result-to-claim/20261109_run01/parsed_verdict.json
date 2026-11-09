@@ -1,0 +1,249 @@
+{
+  "schema": "rc3-independent-result-to-claim-verdict-v1",
+  "experiment_id": "rc3_actor_pg_screen_20261109_01",
+  "reviewer_role": "independent delegated paper architect/reviewer",
+  "claim_supported": "partial",
+  "confidence": "high",
+  "confidence_scope": "High for audited saved facts and failure to satisfy the registered gate; mechanism/generalization inference remains limited to one seed and three layouts.",
+  "technical_verdict": "GO",
+  "technical_scope": "Completed bounded execution is technically admissible and saved evidence consistent; GO does not authorize any next optimizer or held-out request.",
+  "scientific_candidate_verdict": "REVISE",
+  "parts": {
+    "actor_exact_quality_and_observed_speed": {
+      "claim_supported": "yes",
+      "confidence": "high",
+      "technical_verdict": "GO",
+      "claim": "In this one-machine, one timing seed, six fixed DEV windows from one parent, D1/D2 preserved exact routes/costs/assignments and recorded shorter complete-request medians for neural methods.",
+      "support": "12/12 actor exports are exact; 756/756 requests follow the fixed grid/order; 42 case-method outputs are identical over lifecycle/cache/repeats; 540 encodings are fresh.",
+      "limit": "Observed timing only. Fixed D0→D1→D2 order and native-control timing drift prevent an unqualified causal/hardware/generalization speed claim. Include startup and separate cold/hot results."
+    },
+    "B_vs_A": {
+      "claim_supported": "partial",
+      "confidence": "medium",
+      "technical_verdict": "REVISE",
+      "support": "Raw equal-parent relative gain is positive in all three parents; mean and descriptive bootstrap interval exceed zero.",
+      "not_supported": "The registered common-H final-quality improvement criterion fails. Positive raw comparison cannot promote the candidate or establish a first-action-only cause."
+    },
+    "B_vs_SL": {
+      "claim_supported": "no",
+      "confidence": "medium",
+      "technical_verdict": "REVISE",
+      "support": "The grand absolute case-mean raw and postH J are lower for B in this saved DEV sample.",
+      "not_supported": "Raw equal-parent interval spans zero and postH equal-parent mean is negative with interval spanning zero; no registered gain over the shared SL256 start."
+    },
+    "overall_DRL_research_goal": {
+      "claim_supported": "no",
+      "confidence": "high",
+      "technical_verdict": "REVISE",
+      "support": "The saved screen verifies implementation/data/weight lineage and exact deployment artifacts while retaining the fixed DRL objective.",
+      "not_supported": "This single-seed 128-update DEV screen does not establish convergence, robust DRL improvement, generalization to unseen layouts/scales, S3 success or real-arm IK/joint trajectory safety."
+    }
+  },
+  "what_results_support": "Exact actor-only export and parameter residency reduce observed lifecycle overhead without changing saved DEV plans. The joint all-policy/equal-weight PG variant improves raw planning cost relative to original A on this small DEV screen, but fails the preregistered final postH candidate gate against A and the common SL256 start.",
+  "what_results_dont_support": "A confirmed postH DRL quality improvement, isolated forcing causality, convergence, unseen-layout generalization, old S3 success, real robot joint-trajectory certification, or an unqualified causal speedup.",
+  "missing_evidence": [
+    "PostH improvement over BOTH matched original A and the common SL start under the preregistered equal-parent statistic.",
+    "Independent optimizer seeds and more independent physical parent layouts; the 18 cases are nested in only three parents.",
+    "A separately preregistered factorial/one-factor design if causal attribution to forced starts versus mixture weights is desired; B changed both jointly.",
+    "Counterbalanced/repeated lifecycle measurements for a causal speed statement and an exact process-to-first-response measurement if that latency is a delivery target.",
+    "Broader frozen-policy evaluation under its own stage authority; this review does not authorize new S3/old60 access or additional training.",
+    "Real robot calibration, IK and arm/joint swept-trajectory evidence before a physical reachability/safety certificate.",
+    "A supplied paper and paper/PAPER_CLAIM_AUDIT.json for non-provisional paper writing."
+  ],
+  "suggested_claim_revision": "Exact actor-only export and parameter residency reduce observed lifecycle overhead without changing saved DEV plans. The joint all-policy/equal-weight PG variant improves raw planning cost relative to original A on this small DEV screen, but fails the preregistered final postH candidate gate against A and the common SL256 start.",
+  "next_experiments_needed": {
+    "action": "supplement_after_design_revision",
+    "candidate_gate": "REVISE",
+    "confirm_paper_writing": false,
+    "immediate": "Close this bounded experiment and retain exact actors plus full negative/mixed mechanism evidence. Keep the DRL research target and old frozen evidence.",
+    "proposed_next": "Prepare a revised DRL protocol using this raw/postH discrepancy and gradient clipping evidence; choose a mechanism question and independent-seed/parent validation before seeking any new execution authorization.",
+    "new_science_executed_by_review": false,
+    "new_execution_authorization_granted": false,
+    "no_supervised_replacement": true
+  },
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional — no supplied paper claim audit",
+  "pendingExternalReview": false,
+  "external_review_basis": "A distinct delegated reviewer independently inspected source and recomputed saved artifacts; no pending reviewer delegation.",
+  "review_trace": "paper/review-traces/experiment-result-to-claim/20261109_run01/",
+  "source_binding_sha256": "57b0d0d2236b4b1f942a393ce2fc41e6408f4e7ec899df038bdfc4b19a65eee6",
+  "protocol_sha256": "e5f55b857238e2bc91f40e4a0de13fe3ad464c6432398e5c8d88be2cfeab46bc",
+  "baseline": "925a0a1a8957299e3e849b29ac501a99212aa902",
+  "audit_script_wall_s": 466.06204430000435,
+  "review_wall_s": 1085.648014,
+  "review_started_utc": "2026-11-09T08:29:29+00:00",
+  "review_finished_utc": "2026-11-09T08:47:34.648014+00:00",
+  "new_scientific_calls": {
+    "model_forward": 0,
+    "rollout": 0,
+    "optimizer_updates": 0,
+    "gradient_backward": 0,
+    "new_scenes": 0,
+    "navigation_solve": 0,
+    "native": 0,
+    "H": 0,
+    "teacher": 0,
+    "old60_semantic_reads": 0,
+    "old_S3_reruns": 0
+  },
+  "evidence": {
+    "primary_audit": "paper/review-traces/experiment-result-to-claim/20261109_run01/independent_numeric_audit.json",
+    "additional_audit": "paper/review-traces/experiment-result-to-claim/20261109_run01/additional_saved_data_checks.json"
+  },
+  "key_numbers": {
+    "deployment_requests": 756,
+    "exact_actor_models": 12,
+    "training_updates": 256,
+    "training_terminal_requests": 3072,
+    "DEV_requests": 54,
+    "DEV_parent_clusters": 3,
+    "DEV_cases": 18,
+    "optimizer_seeds": 1,
+    "comparisons": [
+      {
+        "actor": "B128",
+        "control": "A128",
+        "metric": "raw_J",
+        "mean": 0.07998927673390067,
+        "lower95": 0.03669894992604696,
+        "upper95": 0.12650375678715858,
+        "upper_one_sided95": 0.1099242123542712,
+        "parent_gains": [
+          0.07676512348849646,
+          0.12650375678715858,
+          0.03669894992604696
+        ],
+        "exploratory_positive": true
+      },
+      {
+        "actor": "B128",
+        "control": "SL256",
+        "metric": "raw_J",
+        "mean": 0.012685641130367896,
+        "lower95": -0.017477772995397385,
+        "upper95": 0.06022955758600566,
+        "upper_one_sided95": 0.03858808465750225,
+        "parent_gains": [
+          -0.00469486119950459,
+          0.060229557586005664,
+          -0.017477772995397385
+        ],
+        "exploratory_positive": false
+      },
+      {
+        "actor": "B128",
+        "control": "A128",
+        "metric": "J",
+        "mean": -0.001927368060246723,
+        "lower95": -0.028717081413946428,
+        "upper95": 0.03232858398352051,
+        "upper_one_sided95": 0.018421187072242256,
+        "parent_gains": [
+          -0.009393606750314245,
+          0.03232858398352051,
+          -0.02871708141394643
+        ],
+        "exploratory_positive": false
+      },
+      {
+        "actor": "B128",
+        "control": "SL256",
+        "metric": "J",
+        "mean": -0.0005612725774716351,
+        "lower95": -0.01479473208821735,
+        "upper95": 0.023652406655705487,
+        "upper_one_sided95": 0.012254440337169312,
+        "parent_gains": [
+          -0.01479473208821735,
+          0.023652406655705487,
+          -0.010541492299903043
+        ],
+        "exploratory_positive": false
+      }
+    ],
+    "absolute_model_means": [
+      {
+        "model": "SL256",
+        "n": 18,
+        "J": 156.68383188345555,
+        "L": 128.55883188345558,
+        "K": 37.5,
+        "raw_J": 193.94453654737777,
+        "raw_L": 158.19453654737777,
+        "raw_K": 47.666666666666664,
+        "H_gain_J": 37.26070466392224
+      },
+      {
+        "model": "A128",
+        "n": 18,
+        "J": 156.59453580882226,
+        "L": 128.5528691421556,
+        "K": 37.388888888888886,
+        "raw_J": 208.15671754509998,
+        "raw_L": 172.32338421176667,
+        "raw_K": 47.77777777777778,
+        "H_gain_J": 51.562181736277765
+      },
+      {
+        "model": "B128",
+        "n": 18,
+        "J": 156.3908678883111,
+        "L": 128.47420122164442,
+        "K": 37.22222222222222,
+        "raw_J": 190.39337053960003,
+        "raw_L": 154.43503720626668,
+        "raw_K": 47.94444444444444,
+        "H_gain_J": 34.0025026512889
+      }
+    ],
+    "resources": {
+      "status": "PASS",
+      "phases": {
+        "DEPLOYMENT": {
+          "wall_s": 580.6765548000003,
+          "cap_s": 1800,
+          "status": "COMPLETE"
+        },
+        "A128": {
+          "wall_s": 662.3333095999988,
+          "cap_s": 1800,
+          "status": "COMPLETE"
+        },
+        "B128": {
+          "wall_s": 648.2788165999991,
+          "cap_s": 1800,
+          "status": "COMPLETE"
+        },
+        "DEV54": {
+          "wall_s": 65.91374130000258,
+          "cap_s": 600,
+          "status": "COMPLETE"
+        }
+      },
+      "deployment_requests": 756,
+      "train_terminal_requests": 3072,
+      "DEV_terminal_requests": 54,
+      "mechanism_total": 3126,
+      "optimizer_updates": 256,
+      "terminal_failures": 0,
+      "scientific_request_failures": 0,
+      "old_budgets_reused": false,
+      "engineering_separate": true
+    },
+    "complete_resource_reconciliation": {
+      "actual_new_navigation_solves": 435,
+      "inference_H_invocations": 486,
+      "training_H_invocations": 3072,
+      "total_H_invocations": 3558,
+      "native_complete_requests": 216,
+      "all_scientific_complete_requests": 3882
+    }
+  },
+  "audit_limitations": [
+    "No new model forward/backward allowed: gradient values and logged likelihoods were not regenerated. Audit checks full saved tensors, finite/norm/clip relations, exact loss/return/LOO arithmetic, source code and Adam delta/moment consistency.",
+    "Saved plan validation certificates were checked for consistency; validation/planning/navigation/H was not rerun.",
+    "Historical evidence was byte-hashed without interpreting held-out task/result contents.",
+    "The skill reference review-tracing.md/assurance-contract.md was absent at its documented relative path. Explicit prompt/raw/parsed/routing/pending/manifest requirements were fulfilled directly.",
+    "Git/remote publication is the parent executor responsibility; this reviewer did not change Git or production files."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "training": [
+    {
+      "arm": "A128",
+      "updates": 128,
+      "gradient_norm_min": 79.7789123414165,
+      "gradient_norm_mean": 557.2414536433153,
+      "gradient_norm_max": 2466.0500513504808,
+      "clipped": 128,
+      "zero_signal": 0,
+      "nonfinite": 0,
+      "initial_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "final_tensor_sha256": "d03835e3ce44638d67260d87775bfec4364ec020067119ae1dbf7dee0ea303ba"
+    },
+    {
+      "arm": "B128",
+      "updates": 128,
+      "gradient_norm_min": 48.78160403338416,
+      "gradient_norm_mean": 490.66085289140915,
+      "gradient_norm_max": 1597.0496538126176,
+      "clipped": 128,
+      "zero_signal": 0,
+      "nonfinite": 0,
+      "initial_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "final_tensor_sha256": "b9e201ce68b5cd3a91ad4045d1f9851ed8217128ea1fc5864d36a7189285784c"
+    }
+  ],
+  "weight_changes": {
+    "A128": {
+      "parameter_L2_change": 0.2987530099627916,
+      "relative_L2_change": 0.013561279890935812,
+      "metadata_only_tensor_reads": true,
+      "new_model_forward_backward_optimizer": 0
+    },
+    "B128": {
+      "parameter_L2_change": 0.2820502204787026,
+      "relative_L2_change": 0.01280309103392205,
+      "metadata_only_tensor_reads": true,
+      "new_model_forward_backward_optimizer": 0
+    }
+  }
+}

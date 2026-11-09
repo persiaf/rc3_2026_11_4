@@ -1,0 +1,65 @@
+{
+  "D0": {
+    "mode": "D0",
+    "process_to_ready_s": 4.541368500002136,
+    "resident_models": 0,
+    "model_materializations": 0,
+    "process_start_scope": "Parent timestamp immediately before Python child launch; includes imports/admission/provider/catalog setup",
+    "only_parameters_resident": true,
+    "dynamic_encodings_reused": false,
+    "first_request": {
+      "seed": 11622026,
+      "mode": "D0",
+      "case_id": "DEV_000",
+      "method": "Detour16_endpoint_adapter",
+      "kind": "cold",
+      "repeat": 0,
+      "id": "ce2c2d5fc5cb7b672481b3e2f640ed29714a1f7a844d5b0ec2b9b795aba72132"
+    },
+    "first_complete_request_s": 0.6546267000012449,
+    "first_request_timing_rule": "Sum of measured startup and actual first complete-request spans. Excludes intervening startup receipt/predebit IO, so not exact process-to-response latency. Phase wall includes that IO; no task encoding prewarm.",
+    "startup_plus_first_request_spans_s": 5.195995200003381
+  },
+  "D1": {
+    "mode": "D1",
+    "process_to_ready_s": 3.799154100001033,
+    "resident_models": 0,
+    "model_materializations": 0,
+    "process_start_scope": "Parent timestamp immediately before Python child launch; includes imports/admission/provider/catalog setup",
+    "only_parameters_resident": true,
+    "dynamic_encodings_reused": false,
+    "first_request": {
+      "seed": 11622026,
+      "mode": "D1",
+      "case_id": "DEV_000",
+      "method": "RL_plus_H",
+      "kind": "cold",
+      "repeat": 0,
+      "id": "cf7d2b4ef481c0dee9fd06ada52829085aa024510a59dbafd46910b98a4832af"
+    },
+    "first_complete_request_s": 0.6370541000032972,
+    "first_request_timing_rule": "Sum of measured startup and actual first complete-request spans. Excludes intervening startup receipt/predebit IO, so not exact process-to-response latency. Phase wall includes that IO; no task encoding prewarm.",
+    "startup_plus_first_request_spans_s": 4.43620820000433
+  },
+  "D2": {
+    "mode": "D2",
+    "process_to_ready_s": 3.7538784999997006,
+    "resident_models": 4,
+    "model_materializations": 4,
+    "process_start_scope": "Parent timestamp immediately before Python child launch; includes imports/admission/provider/catalog setup",
+    "only_parameters_resident": true,
+    "dynamic_encodings_reused": false,
+    "first_request": {
+      "seed": 11622026,
+      "mode": "D2",
+      "case_id": "DEV_000",
+      "method": "Detour16_endpoint_adapter",
+      "kind": "cold",
+      "repeat": 0,
+      "id": "dfc042724fe7b23483ac853698aa0b4a3b1e8f461fa5c8e4beca04f347d99bf9"
+    },
+    "first_complete_request_s": 0.6047173000006296,
+    "first_request_timing_rule": "Sum of measured startup and actual first complete-request spans. Excludes intervening startup receipt/predebit IO, so not exact process-to-response latency. Phase wall includes that IO; no task encoding prewarm.",
+    "startup_plus_first_request_spans_s": 4.35859580000033
+  }
+}

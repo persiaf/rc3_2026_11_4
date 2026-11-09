@@ -1,0 +1,212 @@
+{
+  "experiment_id": "rc3_actor_pg_screen_20261109_01",
+  "phase_resources": {
+    "DEPLOYMENT": {
+      "status": "COMPLETE",
+      "phase": "DEPLOYMENT",
+      "wall_s": 580.6765548000003,
+      "cap_s": 1800,
+      "error": null,
+      "utc": "2026-11-09T08:02:13.377930+00:00",
+      "includes_startup_prepare_imports_H_validation_checkpoints_IO": true
+    },
+    "A128": {
+      "status": "COMPLETE",
+      "phase": "A128",
+      "wall_s": 662.3333095999988,
+      "cap_s": 1800,
+      "error": null,
+      "utc": "2026-11-09T08:13:15.713783+00:00",
+      "includes_startup_prepare_imports_H_validation_checkpoints_IO": true
+    },
+    "B128": {
+      "status": "COMPLETE",
+      "phase": "B128",
+      "wall_s": 648.2788165999991,
+      "cap_s": 1800,
+      "error": null,
+      "utc": "2026-11-09T08:24:03.995523+00:00",
+      "includes_startup_prepare_imports_H_validation_checkpoints_IO": true
+    },
+    "DEV54": {
+      "status": "COMPLETE",
+      "phase": "DEV54",
+      "wall_s": 65.91374130000258,
+      "cap_s": 600,
+      "error": null,
+      "utc": "2026-11-09T08:25:09.912462+00:00",
+      "includes_startup_prepare_imports_H_validation_checkpoints_IO": true
+    }
+  },
+  "deployment_complete_requests": 756,
+  "deployment_optimizer_updates": 0,
+  "mechanism": {
+    "A128": {
+      "optimizer_updates": 128,
+      "terminal_requests": 1536,
+      "ledger": {
+        "terminal": {
+          "RL": {
+            "terminal_requests": 1536,
+            "terminal_cache_hits": 0,
+            "terminal_attempts": 1536,
+            "terminal_completed": 1536,
+            "terminal_failed": 0,
+            "full_H_calls": 1536,
+            "export_attempts": 1536,
+            "exports": 1536,
+            "validation_attempts": 1536,
+            "validation_completed": 1536
+          }
+        },
+        "internal_H_search": {
+          "RL": {
+            "counts": {
+              "construct": 0,
+              "two_opt": 6141,
+              "joint_search": 1536,
+              "recipe": 0
+            },
+            "inclusive_s": {
+              "construct": 0.0,
+              "two_opt": 8.751937200187967,
+              "joint_search": 4.01081440010239,
+              "recipe": 0.0
+            },
+            "exclusive_s": {
+              "construct": 0.0,
+              "two_opt": 8.751937200187967,
+              "joint_search": 3.1320632000933983,
+              "recipe": 0.0
+            }
+          }
+        },
+        "parent_requests": 512,
+        "parent_artifact_loads": 512,
+        "navigation_artifact_loads": 501,
+        "view_extractions": 512,
+        "optimizer_attempts": 128,
+        "encode_calls": 1536,
+        "score_calls": 120580,
+        "environment_actions": 121604,
+        "trainer_terminal_requests": 1536,
+        "trainer_terminal_completed": 1536,
+        "policy_trajectories": 1536,
+        "forced_first_actions": 1024,
+        "backward_calls": 512,
+        "backward_completed": 512,
+        "optimizer_step_calls": 128,
+        "optimizer_updates": 128,
+        "navigation_memory_cache_hits": 11
+      },
+      "tensor_sha256": "d03835e3ce44638d67260d87775bfec4364ec020067119ae1dbf7dee0ea303ba"
+    },
+    "B128": {
+      "optimizer_updates": 128,
+      "terminal_requests": 1536,
+      "ledger": {
+        "terminal": {
+          "RL": {
+            "terminal_requests": 1536,
+            "terminal_cache_hits": 0,
+            "terminal_attempts": 1536,
+            "terminal_completed": 1536,
+            "terminal_failed": 0,
+            "full_H_calls": 1536,
+            "export_attempts": 1536,
+            "exports": 1536,
+            "validation_attempts": 1536,
+            "validation_completed": 1536
+          }
+        },
+        "internal_H_search": {
+          "RL": {
+            "counts": {
+              "construct": 0,
+              "two_opt": 6140,
+              "joint_search": 1536,
+              "recipe": 0
+            },
+            "inclusive_s": {
+              "construct": 0.0,
+              "two_opt": 8.524740500062762,
+              "joint_search": 3.9006357999969623,
+              "recipe": 0.0
+            },
+            "exclusive_s": {
+              "construct": 0.0,
+              "two_opt": 8.524740500062762,
+              "joint_search": 2.987584299960872,
+              "recipe": 0.0
+            }
+          }
+        },
+        "parent_requests": 512,
+        "parent_artifact_loads": 512,
+        "navigation_artifact_loads": 501,
+        "view_extractions": 512,
+        "optimizer_attempts": 128,
+        "encode_calls": 1536,
+        "score_calls": 120587,
+        "environment_actions": 120587,
+        "trainer_terminal_requests": 1536,
+        "trainer_terminal_completed": 1536,
+        "policy_trajectories": 1536,
+        "backward_calls": 512,
+        "backward_completed": 512,
+        "optimizer_step_calls": 128,
+        "optimizer_updates": 128,
+        "navigation_memory_cache_hits": 11
+      },
+      "tensor_sha256": "b9e201ce68b5cd3a91ad4045d1f9851ed8217128ea1fc5864d36a7189285784c"
+    }
+  },
+  "mechanism_terminal_requests_training": 3072,
+  "mechanism_terminal_requests_development": 54,
+  "mechanism_total": 3126,
+  "scientific_optimizer_updates": 256,
+  "new_teacher_queries": 0,
+  "old60_reads": 0,
+  "old_S3_slots_refilled": 0,
+  "old_budgets_reused": false,
+  "deployment_operations": {
+    "artifact_write_attempts": 756,
+    "artifact_write_completed": 756,
+    "cold_navigation_attempts": 378,
+    "cold_navigation_completed": 378,
+    "export_attempts": 846,
+    "export_completed": 846,
+    "input_parse_and_source_verify_attempts": 756,
+    "input_parse_and_source_verify_completed": 756,
+    "native_pipeline_attempts": 216,
+    "native_pipeline_completed": 216,
+    "navigation_access_attempts": 756,
+    "navigation_access_completed": 756,
+    "navigation_solves": 378,
+    "saved_task_input_loads": 756,
+    "validation_attempts": 846,
+    "validation_completed": 846,
+    "whole_parent_and_window_attempts": 756,
+    "whole_parent_and_window_completed": 756,
+    "common_H_invocations": 432,
+    "common_H_pipeline_attempts": 432,
+    "common_H_pipeline_completed": 432,
+    "features_and_global_local_encoding_attempts": 540,
+    "features_and_global_local_encoding_completed": 540,
+    "fresh_encodings": 540,
+    "frozen_policy_materializations": 360,
+    "greedy_actions": 21186,
+    "greedy_construction_attempts": 540,
+    "greedy_construction_completed": 540,
+    "model_load_and_verify_attempts": 360,
+    "model_load_and_verify_completed": 360,
+    "weight_immutability_verify_attempts": 540,
+    "weight_immutability_verify_completed": 540,
+    "navigation_only_cache_hits": 378,
+    "resident_actor_access_attempts": 180,
+    "resident_actor_access_completed": 180,
+    "resident_model_hits": 180
+  },
+  "analysis_wall_s": 17.586900199999945,
+  "analysis_scientific_calls": 0
+}

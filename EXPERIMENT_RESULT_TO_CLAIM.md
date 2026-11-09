@@ -1,5 +1,14 @@
 # 实验结果到主张记录
 
+## 2026-11-09：actor-only部署与匹配PG独立小试
+
+- 完成756部署请求、A/B各128更新和3072训练+54DEV终局；十二actor参数精确相等、756 raw/final/JLK等价；D2 RL+H冷/热中位相对D0提速1.924/2.376倍，启动与尾延迟另列，不改旧S3。
+- B postH绝对均值低于A/SL，但预登记等权父相对收益对A−0.1927%、对SL−0.0561%，95%区间均跨零，双对照筛选REVISE。raw对A正信号不代表稳定改善SL或H后质量。
+- 独立审查claim_supported=partial，confidence=high，详见[独立审查](rc3_actor_pg_20261109/INDEPENDENT_REVIEW.md)。窄工程提速与DRL科学收益分开，完整论文claim audit/provisional边界保留。
+- 路由：确认部署工程、保留机制不足及raw信号，固定DRL目标不变；不自动扩训/更换方法/补旧失败或读原60。
+
+依据：[实际报告](rc3_actor_pg_20261109/EXPERIMENT_REPORT.md)、[全部保存数据](rc3_actor_pg_20261109/results/)、[下一步](rc3_actor_pg_20261109/NEXT_STEP_DECISION.md)。
+
 ## 2026-11-09：S3 scope_r1三种子冻结正式结果
 
 - 实际新13817/13817成功、失败0，累计15874有效/15876预扣，两个旧缺失未补值，全部未执行请求已处理。108局部输入、816657条服务分配、固定模型与2515旧证据复核通过。

@@ -1,6 +1,10 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-s3-scope-r1-formal-results**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-actor-deployment-matched-pg-screen**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+
+<!-- ACTOR_PG_SCREEN_CURRENT_BEGIN -->
+**独立actor-only部署/匹配PG小试已实际完成：部署工程GO，机制筛选REVISE。** 756部署请求保持raw/final路线及J/L/K精确一致，12制品不改网络/参数；RL+H D2冷/热中位697.89/465.00ms，相对D0提速1.924/2.376倍，启动成本另报。两组各128真实更新、共3072训练终局及54固定DEV请求。B绝对平均J156.3909略低于SL156.6838/A156.5945，但预登记等权父相对收益对SL−0.0561%、对A−0.1927%，区间跨零，未建立稳定H后增量。B raw对A改善约8%不能充当改善共同起点或完整交付的证据。旧S0—S3、两失败槽与旧结论保持原字节；不使用旧余额、不读原60、不合并main。见[实际结果与全部交付](rc3_actor_pg_20261109/README.md)、[报告](rc3_actor_pg_20261109/EXPERIMENT_REPORT.md)、[独立审查](rc3_actor_pg_20261109/INDEPENDENT_REVIEW.md)。下列S3及更早记录保留其当时状态，不因本次加载优化回写。
+<!-- ACTOR_PG_SCREEN_CURRENT_END -->
 
 <!-- S3_SCOPE_RESULTS_CURRENT_BEGIN -->
 **S3 scope_r1已实际完成剩余13817/13817请求，新增失败0；当前配置未建立DRL质量或速度优势。** 累计15876预扣、15874有效计划与2个原历史缺失；三seed封账，108输入和816657条同臂F&A服务分配核验通过，12固定模型及2515旧文件未改。5完整质量格／9完整部署格均未通过，另1质量／3部署格INCOMPLETE，全局AND为null。完整质量格RL+H相对frozenSL成本高1.10%–1.96%、相对Detour高3.72%–7.52%；完整部署格中位耗时为Detour的1.76–2.72倍。H收益单列，不归于学习；不追加训练、补缺失或读原60。详见[本轮全部交付](rc3_s3_scope_results_20261109/README.md)、[实际报告](rc3_s3_scope_results_20261109/EXPERIMENT_REPORT.md)、[逐请求CSV](rc3_s3_scope_results_20261109/results/REQUEST_METRICS.csv)、[独立审查](rc3_s3_scope_results_20261109/INDEPENDENT_REVIEW.md)和[下一步](rc3_s3_scope_results_20261109/NEXT_STEP_DECISION.md)。以下记录保留各历史阶段当时状态，当前以上述结果和活动状态为准。
