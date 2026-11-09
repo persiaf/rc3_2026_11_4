@@ -1,6 +1,10 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-本仓库归档截至 **2026-11-08** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.08-s3-persistence-recovery-input-stop**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+本仓库归档截至 **2026-11-08** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-s3-connectivity-target-scope-ready**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
+
+<!-- S3_CONNECTIVITY_CURRENT_BEGIN -->
+**S3_042目标窗口可行，统一目标范围修订和恢复入口技术GO；本轮未启动剩余S3。** 事前登记后实际1次冻结导航诊断，完整2.833479秒；全父唯一阻断task221/table94在窗口外，752/753候选落入0.4米膨胀障碍区，本次23目标均可服务。保留全父诊断、完整地图/上下文/F&A与全部合法边界候选，实际目标仍硬检查；这改变S3输入接纳契约，后续标记v3+scope_r1。独立一次8项/6067断言通过，18旧保存输入语义相同、2515旧文件原字节保持。原2059预扣/2057成功/2失败与2896.9277159秒继承，剩余3233/5292/5292请求，两失败不补跑，原60未读、训练0。见[具体诊断与全部交付](rc3_s3_connectivity_20261109/README.md)、[范围修订](rc3_s3_connectivity_20261109/INPUT_SCOPE_DECISION.md)、[恢复处置](rc3_s3_connectivity_20261109/RECOVERY_DECISION.md)和[资源账](rc3_s3_connectivity_20261109/RESOURCE_ACCOUNTING.json)。下面是原停止和恢复的历史记录。
+<!-- S3_CONNECTIVITY_CURRENT_END -->
 
 <!-- S3_RECOVERY_CURRENT_BEGIN -->
 **S3持久化修复工程GO，已实际恢复1895个未执行请求；随后因新的S3_042输入不可行停止。** 累计2059预扣、2057有效结果、2失败，13817未执行。原180文件、旧HEAD/pending与12固定模型来源保持；原第163槽没有补跑。6次真实瞬态锚重试成功，新失败的Journal及父阶段时钟正常闭合。首种子预算账为592保守旧账＋9.8023启动失败＋2295.1254续段＝2896.9277秒，原准确墙钟仍null。后两种子未启动。质量294/2268、cold881/6804、hot882/6804；全部6质量/12部署格INCOMPLETE，不支持总体性能判断。新失败在全父场景F&A检查、模型/native/H之前，不改场景或免费重试；optimizer0，原60未读。见[真实恢复结果与全部交付](rc3_s3_recovery_20261108/README.md)、[累计资源](rc3_s3_recovery_20261108/results/RESOURCE_ACCOUNTING.json)、[请求状态](rc3_s3_recovery_20261108/results/REQUEST_STATE_INDEX.json)与[下一步决定](rc3_s3_recovery_20261108/NEXT_STEP_DECISION.md)。

@@ -1,6 +1,6 @@
 {
   "schema": "rc3-git-content-manifest-v1",
-  "version": "2026.11.08-s3-persistence-recovery-input-stop",
+  "version": "2026.11.09-s3-connectivity-target-scope-ready",
   "files": {
     ".gitattributes": {
       "sha256": "175a2155bdfe5da47c2c53bc6daf638f08d3acd104eb577c748aefd3f69bb1fe",
@@ -15,16 +15,16 @@
       "bytes": 5813
     },
     "EXPERIMENT_RESULT_TO_CLAIM.md": {
-      "sha256": "f0a050309a6688c3af2e0bfc43b2ba063d9c0e3277149e0668d404aeb2845d6a",
-      "bytes": 4796
+      "sha256": "8db8af545eae124f5bab5dd588f558a2abf84d0f17b91fe58bd332f5839c1623",
+      "bytes": 5929
     },
     "G01_audit_G2_tasks.zip": {
       "sha256": "201d0ff376ea6a731230677da2c5dd655a5440e7443c9d9b0f71a09738f51284",
       "bytes": 47270
     },
     "PROJECT_VERSION.json": {
-      "sha256": "c0cfa8e3dd5c61810f0025352b844c552503c19dffe52adfd596298c2274eeba",
-      "bytes": 16730
+      "sha256": "625753bd7de049452d5cc8d408e32f93ee7b1d3ae0563c5455916ff0f6cf10b9",
+      "bytes": 17306
     },
     "RC3_研究模型与实验计划_20261105.docx": {
       "sha256": "8f7f3ddde12f62fb3bbf1d061c56eb1a9995a9310cd1f02b1465c83289ef3f10",
@@ -35,8 +35,8 @@
       "bytes": 39287
     },
     "README.md": {
-      "sha256": "e37c3262e8e9cbf37b4c4f82056bb2b089332bb23f1f565d7e74ad5603e7c128",
-      "bytes": 17864
+      "sha256": "8b8ab04f95ba0a31972143a9bccfd945e263ff3ac16bffadca0da90d26a8c2f2",
+      "bytes": 18962
     },
     "chatgpt生成文件.zip": {
       "sha256": "8f544e2a684f60bbaa594bb49532166210d6b589fbb9d0f6209e5adfb60c1806",
@@ -469,6 +469,14 @@
     "project_management/retention_check.json": {
       "sha256": "5dce533ef1b0f7c92a1665ce817b0ff99eef59ae89544d18dc55a622f750a759",
       "bytes": 731
+    },
+    "project_management/s3_connectivity_delivery/deliver.py": {
+      "sha256": "ca86c355b531ae99805e06509144766d4dcabb2e6fde5aea7f4fc75802b103d7",
+      "bytes": 12393
+    },
+    "project_management/s3_connectivity_delivery/finalize.py": {
+      "sha256": "d94d90c8da210ead2f1be5662d83739fca8c765040041029f3333c827dc9187a",
+      "bytes": 24798
     },
     "project_management/s3_evaluator_delivery/PUBLICATION_RECEIPT.json": {
       "sha256": "795b8f805a08bac00b7139f515ca13bd6f06f16fad887b718dd05b44bf84dc19",
@@ -15163,8 +15171,8 @@
       "bytes": 5565
     },
     "rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json": {
-      "sha256": "3c5d88f316552aaae7e239be7acf671cf1287a74ec45ed79e2a47a499a477fad",
-      "bytes": 9887
+      "sha256": "5c33d76227fd30df840d61613cc7abe454e43f122df22b3331a69aa174a8b606",
+      "bytes": 11422
     },
     "rc3_global_local_execution_v3/AUTHORIZATION_CHAIN.md": {
       "sha256": "b02cea2f5ce1d44f54b7db03c02dc63ed895c5bffb6b72d7fa2b9e57da6d9442",
@@ -128126,6 +128134,278 @@
       "sha256": "805e7c26b6b90ede6fbc014e8ca16632a85376352a17ebbc317dbc1ae7c7e007",
       "bytes": 6653
     },
+    "rc3_s3_connectivity_20261109/BASELINE_IMPORT.json": {
+      "sha256": "f57cd84ec0246b0824620c167c7080eab3915ea0fd8801a2ff9a351f768b3a1b",
+      "bytes": 162144
+    },
+    "rc3_s3_connectivity_20261109/CONNECTIVITY_GEOMETRY_EVIDENCE.json": {
+      "sha256": "f23042541b8b343c29a67bbe994c6ffc6eba667ef36b0954d305a0826fd44336",
+      "bytes": 2736
+    },
+    "rc3_s3_connectivity_20261109/CONNECTIVITY_WITNESS.json": {
+      "sha256": "f0f9f72167c11a6f489b7e3d7e65841e636e261b985b9c281de54f4ecbe197b9",
+      "bytes": 35264
+    },
+    "rc3_s3_connectivity_20261109/DIAGNOSTIC_REGISTRATION.json": {
+      "sha256": "98a4cfb06511558d23dd446245a0d7ddf4b718d226559dbad243191778cd9051",
+      "bytes": 22746
+    },
+    "rc3_s3_connectivity_20261109/ENTRY_CHECK.json": {
+      "sha256": "d5ccc8e148255724caf38456ebe7967b96d75af1ba63581788dc56ebbcc0743f",
+      "bytes": 1117
+    },
+    "rc3_s3_connectivity_20261109/EXPERIMENT_REPORT.md": {
+      "sha256": "221bf304bfa8440dd13307c5b2b2b9f032d707dc32631e1c409d3575c5a61657",
+      "bytes": 1517
+    },
+    "rc3_s3_connectivity_20261109/FROZEN_EVIDENCE_INDEX.json": {
+      "sha256": "1b867426d52060411d31a3e6da554393a80e7c1ae584b68a5ecf74592c9d9cc0",
+      "bytes": 682354
+    },
+    "rc3_s3_connectivity_20261109/GEOMETRY_RESOURCE.json": {
+      "sha256": "39ad80b60f150fd6f737fb2e6c0bd039150e4416283153d6c6b76d1e36b88a61",
+      "bytes": 182
+    },
+    "rc3_s3_connectivity_20261109/GIT_VERSION_AUDIT.json": {
+      "sha256": "128685394df934f767cc40c7e0b14df12bdb19d09498f4f5bc1074386e8d4a68",
+      "bytes": 1007
+    },
+    "rc3_s3_connectivity_20261109/IMPLEMENTATION_REVIEW.md": {
+      "sha256": "0e5c61ea97fc5cdd447dcc6954ed2b32442b9bf5dae9686170d7e460ead8f11b",
+      "bytes": 1116
+    },
+    "rc3_s3_connectivity_20261109/INDEPENDENT_REVIEW.json": {
+      "sha256": "337deb2cd138c9105a433cb36ff97a207bc9fcd924fe81ea65733444482ffc14",
+      "bytes": 6844
+    },
+    "rc3_s3_connectivity_20261109/INDEPENDENT_REVIEW.md": {
+      "sha256": "f03f627dc710f6c3263d25a959e519fff9be50768ab7ec251d6de6b1027347e8",
+      "bytes": 7038
+    },
+    "rc3_s3_connectivity_20261109/INPUT_SCOPE_AMENDMENT.json": {
+      "sha256": "bcd1a819e66e902656457f5f4a6d4c7e80501558b5adebb7b1d573b2279966cb",
+      "bytes": 2205
+    },
+    "rc3_s3_connectivity_20261109/INPUT_SCOPE_DECISION.md": {
+      "sha256": "0d8d03528fbf89552e2f59d4fc5d41f64e7a8bcba14af47cccc923b6270e9479",
+      "bytes": 1608
+    },
+    "rc3_s3_connectivity_20261109/LEDGER_IMPORT_RESOURCE.json": {
+      "sha256": "1014e3f89764354c9fd9b329e27e7d476a4c834e830db9bfd69ceed564940927",
+      "bytes": 199
+    },
+    "rc3_s3_connectivity_20261109/NAVIGATION_SEARCH.json": {
+      "sha256": "80deb21b52940894556c8ec1b8c55f06aaabf62cb3fb6ca9c86e7ac36119125e",
+      "bytes": 194432
+    },
+    "rc3_s3_connectivity_20261109/NAVIGATION_SEARCH_SUPPLEMENT.json": {
+      "sha256": "eba1c44a109792ae26cf9457bfe23896f9173823aa4690c82246e06febfdd7c6",
+      "bytes": 1237
+    },
+    "rc3_s3_connectivity_20261109/NEXT_STEP_DECISION.md": {
+      "sha256": "8279c2dab62e6171e793c2eabe1f0e45188d450d9531fac138c47910e15418c0",
+      "bytes": 1053
+    },
+    "rc3_s3_connectivity_20261109/PREPARATION_RESOURCE.json": {
+      "sha256": "66eaca5e1933c6fe11e5519c0c9fe4bdd9a56035c647cf80c9cbd65beb5ec2b4",
+      "bytes": 432
+    },
+    "rc3_s3_connectivity_20261109/README.md": {
+      "sha256": "30edc170329a0e54adef9cfc39fb160c889e8ef6244484202e77b331a78d4c45",
+      "bytes": 1479
+    },
+    "rc3_s3_connectivity_20261109/RECOVERY_DECISION.json": {
+      "sha256": "63845bfe169be9e291aa76fd59e20d278e9d25b83b1b6ae9df12a0048c6dc37c",
+      "bytes": 3001
+    },
+    "rc3_s3_connectivity_20261109/RECOVERY_DECISION.md": {
+      "sha256": "657b219fb2ee56859288a37c1ea15d12218dd65fc508fc4a4f78f7cbcad89dd4",
+      "bytes": 2239
+    },
+    "rc3_s3_connectivity_20261109/REGRESSION_RESULT.json": {
+      "sha256": "f9232948c3647dfcf2c6ea673fa3fa59dfbd0eec04aeded958d8faca0136effb",
+      "bytes": 915
+    },
+    "rc3_s3_connectivity_20261109/RESOURCE_ACCOUNTING.json": {
+      "sha256": "9cee46da4a348cb534be98bb01e106f6bc0cb3b2de95c86cb8bbfbd1fd5187b6",
+      "bytes": 5030
+    },
+    "rc3_s3_connectivity_20261109/RESULT_TO_CLAIM.md": {
+      "sha256": "f952ab2306737dc8e7068f091957e179bcf9d315a31d89284ee0de48cc93a319",
+      "bytes": 1346
+    },
+    "rc3_s3_connectivity_20261109/S3_042_CONNECTIVITY_DIAGNOSIS.md": {
+      "sha256": "3c8d82eb3cad193d819554d47cee83856b95b6ee376e0b90d090a4209f75fd43",
+      "bytes": 2735
+    },
+    "rc3_s3_connectivity_20261109/SEARCH_RESOURCE.json": {
+      "sha256": "c6a203c119337e8281c16b443464f5808eefa91d7b3e7ce27c55d3094f7cbbb9",
+      "bytes": 255
+    },
+    "rc3_s3_connectivity_20261109/SEARCH_START.json": {
+      "sha256": "563722e40338a4e48efd475e857ccb3ed1badfd099dd20c802fc01e60b13f644",
+      "bytes": 110
+    },
+    "rc3_s3_connectivity_20261109/SOURCE_BINDING.json": {
+      "sha256": "311a58bd867e95c852ec3246c54a398468eb526db391fbb6d12239c6a3379949",
+      "bytes": 22618
+    },
+    "rc3_s3_connectivity_20261109/__init__.py": {
+      "sha256": "932ebaf69a29ed2f5154aa6300534d5c03bdaaf9376827504b453a0ef8f20268",
+      "bytes": 85
+    },
+    "rc3_s3_connectivity_20261109/diagnose.py": {
+      "sha256": "24a390f215a7a72032a68eeb8cd926574eb95ccf1de8cae960bde3783d3af1d0",
+      "bytes": 12289
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/ATTEMPT.json": {
+      "sha256": "ae3414a4a874a2c8b11d09a62d00f0d01d4ee4ec61d2ab84292f9503a0a95e7d",
+      "bytes": 178
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/FINAL.json": {
+      "sha256": "78264abee6984c241a5264b88351de77fda5d9f218f0493d45be2f8d21534d2f",
+      "bytes": 309
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/NAVIGATION_CALL.json": {
+      "sha256": "10e0916ce25872016512b3bed2fa6f490350eeac384e511e5c1183a1ec1005c4",
+      "bytes": 166
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/WORKER_COMPLETE.json": {
+      "sha256": "10aca39d5cbae9e6bd4fd9b5603bb7ff403f7f78be5b450e8c457d590fed8490",
+      "bytes": 313
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/navigation.json": {
+      "sha256": "23599da6e4c51bdcb0f8d8733e091a74900f54161408309e1922aaa4210c730b",
+      "bytes": 630
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/navigation.npz": {
+      "sha256": "67b75559cd63b03079c842c69ce56cde37374883c58e052f763032b7ad8f989b",
+      "bytes": 4598328
+    },
+    "rc3_s3_connectivity_20261109/diagnosis/worker.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "rc3_s3_connectivity_20261109/findings.md": {
+      "sha256": "ff0bf6a05543c00e6235d5cb734fa47b0882a7cf84124983271704af59a2acf9",
+      "bytes": 720
+    },
+    "rc3_s3_connectivity_20261109/independent/CHILD_RESULT.json": {
+      "sha256": "1e0b3d3ef782c48dc361deb5acd710989fb4da59b2a92b4a8ce8aa5e710fe7e5",
+      "bytes": 1462
+    },
+    "rc3_s3_connectivity_20261109/independent/REGISTRATION.json": {
+      "sha256": "106234d70eaa078326a4a07670fe6d8ed25adf3ef57bbb66fc710c2c50816544",
+      "bytes": 3458
+    },
+    "rc3_s3_connectivity_20261109/independent/REGRESSION_RESULT.json": {
+      "sha256": "414d4e812fec15b51001a29237cc49db2bcbe03438d4cc87bef5daca2f30fa61",
+      "bytes": 464
+    },
+    "rc3_s3_connectivity_20261109/independent/START.json": {
+      "sha256": "bb475de02a2b94a2f5bfe22ab9d08ca31386b4d48d73e3e9eed44680aa890369",
+      "bytes": 166
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/activation/SCOPE_RECOVERY_ACTIVATION.json": {
+      "sha256": "e67b1d0344a546621edc0c10bd82f9c30cfbae5d3c70faf7176c7b13f0306b80",
+      "bytes": 249
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/activation/runs/renamed_scope/AUTHORITY.json": {
+      "sha256": "5b9a2f281f86a37b1de820ed42f999648a8130e8c87c14e4795e979358e1c6e1",
+      "bytes": 152
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/closed_clock/sessions/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/FINAL.json": {
+      "sha256": "aaa44615054165cead5eddc799917e708e0d800b098b5867b96d13a2e88e8d9e",
+      "bytes": 134
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/closed_clock/sessions/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/FINAL_SEAL.json": {
+      "sha256": "1ab09e42ea58d7e97f69e3c0e305b0eaa16b2822fa06910524275fc635daf097",
+      "bytes": 89
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/closed_clock/sessions/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/OPEN.json": {
+      "sha256": "fa4ca825e894417411e3767e84f071b0fb9504c5c275f0d51137554e9be445e2",
+      "bytes": 165
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/failed_clock/sessions/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/FINAL.json": {
+      "sha256": "a84fefc9200787161819494c4a62292f4c1426fe226ca373c6768a1a9c4d5159",
+      "bytes": 125
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/failed_clock/sessions/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/FINAL_SEAL.json": {
+      "sha256": "55aecf61d22f35b04d9e44d99c50d11f5bd5086eaf5f58386c5acaa8fedbdac1",
+      "bytes": 89
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/failed_clock/sessions/ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff/OPEN.json": {
+      "sha256": "fa4ca825e894417411e3767e84f071b0fb9504c5c275f0d51137554e9be445e2",
+      "bytes": 165
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/parent_close_failure/sessions/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/EXIT_BEFORE_JOURNAL.json": {
+      "sha256": "3bf709d7658a60f312d8df02f80a77163fdea49b3ed6d1848ca57443a4ec2899",
+      "bytes": 132
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/parent_close_failure/sessions/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/FINAL.json": {
+      "sha256": "c4e725c75b72cff134f25f0d84cd0d61411171e7214acdc0eb96ad88b731d0bd",
+      "bytes": 476
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/parent_close_failure/sessions/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/FINAL_SEAL.json": {
+      "sha256": "1a1f0792de6c09a54701f98261f47ace6c660e3feea86b7684b9086133ff63ca",
+      "bytes": 89
+    },
+    "rc3_s3_connectivity_20261109/independent/fixtures/parent_close_failure/sessions/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/faults/PARENT_CLOSE_FAILURE_e69330cecb6c434db447253e8b2ef5ab.json": {
+      "sha256": "38c3bedb9221eb83c5be3b1777b17c58dc5c5de79aacb8c4ed9cf5117d162d3f",
+      "bytes": 252
+    },
+    "rc3_s3_connectivity_20261109/independent/regression.log": {
+      "sha256": "f3b7ebbba5a59da5b0cf3b80673603e46810ca63e8930ff69097e0479d3f5991",
+      "bytes": 717
+    },
+    "rc3_s3_connectivity_20261109/independent/run_regression.py": {
+      "sha256": "322853a2f2102232d29c2e21a5d1046dc83ac722be70c3e72df9adee5acee123",
+      "bytes": 3534
+    },
+    "rc3_s3_connectivity_20261109/independent/test_scope.py": {
+      "sha256": "cb90e79588be17fc7862d0ef7006887019bfc4d329435d44b288a039b6a478fe",
+      "bytes": 18487
+    },
+    "rc3_s3_connectivity_20261109/paper/review-traces/experiment-result-to-claim/20261109_run01/PROMPT.md": {
+      "sha256": "71cc7995302de3399d3d96a3db524ff47f576febfea80e99046d8bf8c36ed385",
+      "bytes": 1780
+    },
+    "rc3_s3_connectivity_20261109/paper/review-traces/experiment-result-to-claim/20261109_run01/REVIEWER_RESPONSE.md": {
+      "sha256": "12f5fd764355230a099a7569d5242115d6a4f947cb3a2ba1071c956422e7192b",
+      "bytes": 7088
+    },
+    "rc3_s3_connectivity_20261109/paper/review-traces/experiment-result-to-claim/20261109_run01/ROUTING.md": {
+      "sha256": "098076c99fc6e2d10e35febbea9da127f1ef5315f0a7e2c628e92f2db575130a",
+      "bytes": 758
+    },
+    "rc3_s3_connectivity_20261109/paper/review-traces/experiment-result-to-claim/20261109_run01/VERDICT.json": {
+      "sha256": "337deb2cd138c9105a433cb36ff97a207bc9fcd924fe81ea65733444482ffc14",
+      "bytes": 6844
+    },
+    "rc3_s3_connectivity_20261109/postprocess.py": {
+      "sha256": "d7d6fe62221144551f52fea39b28f8c5da1fdf331604106688c860b844b4f370",
+      "bytes": 2484
+    },
+    "rc3_s3_connectivity_20261109/recovery.py": {
+      "sha256": "23e9a986cc9280fe937daaf7a1b77b199b1ef917057acc1289d04ebba0e962fc",
+      "bytes": 7010
+    },
+    "rc3_s3_connectivity_20261109/register.py": {
+      "sha256": "76a86fa9f55d6f0c377a71daa622dd4c6f180924446be14741b780583e2abc26",
+      "bytes": 4832
+    },
+    "rc3_s3_connectivity_20261109/resume.py": {
+      "sha256": "97f3dda502eb2e47fbf295af4946335849fa1c4f88279eae716ecdb76af22d08",
+      "bytes": 12268
+    },
+    "rc3_s3_connectivity_20261109/scan.py": {
+      "sha256": "8c2167411cd411cfe03a12995ea490c3626f84553db138ff81d447b8ab2b44f5",
+      "bytes": 3463
+    },
+    "rc3_s3_connectivity_20261109/scope.py": {
+      "sha256": "8f4e41ad727dc2ece4ec3fb941eed060748407faf742824ed59a8c92b88e3dea",
+      "bytes": 4469
+    },
     "rc3_s3_evaluator/ARTIFACT_INDEX.json": {
       "sha256": "080bacfc5836c232bc0d41521729f301f22d9433a6c091ca66f961cd8e9f6268",
       "bytes": 35710
@@ -142490,10 +142770,11 @@
   "excluded_self_referential_metadata": [
     "project_management/GIT_MANIFEST.json",
     "project_management/PUBLISH_RECEIPT.json",
-    "project_management/s3_recovery_delivery/PUBLICATION_RECEIPT.json"
+    "project_management/s3_recovery_delivery/PUBLICATION_RECEIPT.json",
+    "project_management/s3_connectivity_delivery/PUBLICATION_RECEIPT.json"
   ],
-  "file_count": 35621,
-  "total_bytes": 8978391258,
+  "file_count": 35691,
+  "total_bytes": 8984292169,
   "scope": "Original LFS working-tree bytes retained. Current repair/paid-recovery status is S3_persistence_recovery; older phase objects retain their creation-time statuses. Unrelated live Word release entries are not refreshed.",
   "research_extension": {
     "branch": "codex/global-local-s0",
@@ -142684,5 +142965,21 @@
     "main_merged": false,
     "scope": "Only repair/continuation/delivery files and explicit mutable current metadata refreshed; unrelated Word release entries and old science retained",
     "report": "rc3_s3_recovery_20261108/README.md"
+  },
+  "S3_connectivity_scope_r1": {
+    "baseline": "c4219abe6838a9d5416cb311c09a0565ef21ac8b",
+    "report": "rc3_s3_connectivity_20261109/README.md",
+    "source_binding_sha256": "311a58bd867e95c852ec3246c54a398468eb526db391fbb6d12239c6a3379949",
+    "target042_serviceable": true,
+    "full_parent_unservable": [
+      221
+    ],
+    "scope_changed": true,
+    "diagnostic_navigation": 1,
+    "formal_S3_requests_this_turn": 0,
+    "regression": "PASS_8_TESTS_6067_ASSERTIONS",
+    "original_files_preserved": 2515,
+    "scope": "Only new diagnosis/amendment/delivery files and explicit mutable metadata refreshed; old science and unrelated live Word entries retained",
+    "main_merged": false
   }
 }

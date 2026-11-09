@@ -1,0 +1,3 @@
+# 2026-11-09 findings
+
+Intended claim: identify S3_042 full-parent rejection, uniformly enforce actual S3 targets, retain original ledgers and failures. Independent verdict partial/high: narrow diagnosis/engineering yes, full S3 performance not evaluated. Failure is outside-window task221/table94; target23 serviceable. Input admission truly amended; no model/reward/H/training changes. Diagnosis used one paid frozen navigation call, not zero-call or original-D recovery. One8-test/6067-assertion regressionPASS, old2515 files and18local input semantics preserved. Route: freeze scope_r1/retained-ledger continuation, no reseeding/refill/training, retain original two missing slots and incomplete scientific gates.
