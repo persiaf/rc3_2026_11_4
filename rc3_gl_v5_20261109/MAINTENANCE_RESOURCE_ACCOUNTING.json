@@ -1,0 +1,43 @@
+{
+  "scope": "Post-science saved-data analysis/review/publication; separate from unchanged scientific budget",
+  "analysis_wall_s": 6.541917100000319,
+  "numerical_audit_wall_s": 410.8598832000007,
+  "closeout_wall_s": 1.2178421999997227,
+  "original_phase": {
+    "status": "COMPLETE",
+    "wall_s": 989.3444798999999,
+    "cap_s": 7200,
+    "registration_carry_s": 22.516714800000045,
+    "error": null,
+    "includes_all_registration_tests_prepare_reference_H_train_evaluate_validation_IO": true,
+    "utc": "2026-11-09T13:17:30.898223+00:00"
+  },
+  "read_only_analysis_failure_01": {
+    "scope": "READ_ONLY_POSTPROCESSING_ONLY",
+    "error": "NameError: EXPERIMENT missing from explicit import",
+    "command_wall_s": 8.1783027,
+    "source_before_sha256": "f5b8ddbd309b2791584e3d92c7a5da1bf05103d384d692afd63f294f7ce219f3",
+    "scientific_requests": 0,
+    "optimizer_updates": 0,
+    "partial_outputs_written": false,
+    "disposition": "Add missing constant import, rerun saved-data aggregation only; no scientific rerun or resource refund"
+  },
+  "read_only_audit_failure_01": {
+    "scope": "READ_ONLY_AUDIT_ONLY",
+    "source_before_sha256": "865801be4075981dcb581630ad62925e130dfe81d1779b1827fabcac23e8537a",
+    "error": "Audit incorrectly compared Python float64 summation to production sequential float32 trajectory-logprob accumulation at absolute1e-6",
+    "max_python_double_sum_difference": 0.00037439167499542236,
+    "float32_reconstruction_mismatches": 0,
+    "max_reward_error": 5.115907697472721e-13,
+    "scientific_calls": 0,
+    "original_files_changed": 0,
+    "exact_failed_audit_wall_s": null,
+    "wall_note": "Failure detected on later session poll; no exact process-end wall receipt was written by that auditor. Maintenance duration unavailable, scientific phase unchanged.",
+    "disposition": "Reconstruct the recorded float32 arithmetic exactly, not relax the value check; rerun saved-data audit only."
+  },
+  "new_scientific_requests": 0,
+  "new_model_inferences": 0,
+  "new_optimizer_steps": 0,
+  "new_navigation_native_H": 0,
+  "note": "Measured suboperations only; interactive code/report/reviewer/Git transport time is maintenance, not a fabricated exact optimizer/planning wall or refunded budget."
+}

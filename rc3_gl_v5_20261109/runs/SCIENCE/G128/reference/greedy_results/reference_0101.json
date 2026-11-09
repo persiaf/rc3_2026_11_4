@@ -1,0 +1,824 @@
+{
+  "request": 101,
+  "problem": "7cc10fdbaa36a1cab3b6132f3672f97160123f658525837004c9d0edf7984f2a",
+  "parent": "1fac53f13566ab786227303928db1a3eba339caf9ad17220d5c516132e9df733",
+  "model_identity": {
+    "study_method": "SL256",
+    "checkpoint_role": "SL256",
+    "actor_file": "rc3_gl_v4_20261109/actors/11622026_SL256.pt",
+    "actor_sha256": "a4d0d991d77e9eb7c995015b80c51f30bfb256d764a2c91cc8631bc412c9df12",
+    "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+    "training_run": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1",
+    "fixed_update": 256,
+    "training_checkpoint": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+    "training_checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb"
+  },
+  "raw_route": [
+    0,
+    1,
+    8,
+    24,
+    20,
+    15,
+    0
+  ],
+  "trace": [
+    {
+      "action_local_node": 1,
+      "action_global_candidate": 176,
+      "served_tasks_global": [
+        11,
+        12
+      ],
+      "reward": -10.930825138000001,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        13,
+        28,
+        29,
+        30,
+        31
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "mask_sha256": "b1c43c26ac4cde3466a1fde7a9cce99c75bdf31925a211501e0d2bb5e1d16299",
+      "logits_sha256": "7e11ba551aad56877afa26e58c47d2878e083d4f552809f8b52a9bfdfc1cd9a0"
+    },
+    {
+      "action_local_node": 8,
+      "action_global_candidate": 192,
+      "served_tasks_global": [
+        13
+      ],
+      "reward": -5.915164668399999,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "mask_sha256": "900fd54fc899387db33d443b22b9317fe1f21524ca6ff1b36d199a89ae247b86",
+      "logits_sha256": "79468fb54316ad69717b113141bcea774c76309eb9f2d693574b58fe0efd8315"
+    },
+    {
+      "action_local_node": 24,
+      "action_global_candidate": 364,
+      "served_tasks_global": [
+        30,
+        31
+      ],
+      "reward": -7.7165540018,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        28,
+        29
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "mask_sha256": "c1aea5c21069ae457bbec66e9cdf7730045bae9cfb3dc4f67d6c3354e23d13eb",
+      "logits_sha256": "cab0b1999f44868c230206826a85d0e0eb6ae1b54a152faabbd7e495daf6e99a"
+    },
+    {
+      "action_local_node": 20,
+      "action_global_candidate": 358,
+      "served_tasks_global": [
+        29
+      ],
+      "reward": -1.1801116820999997,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        28
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "mask_sha256": "7d6813a1da460307bfbbcfe4c8ca125c0b6d5768432b45843cb2ca219e1516c7",
+      "logits_sha256": "642b430d638c516cb0d7c4dbe039f7cccac2a8787fda266b9d7a01e995236f9d"
+    },
+    {
+      "action_local_node": 15,
+      "action_global_candidate": 345,
+      "served_tasks_global": [
+        28
+      ],
+      "reward": -22.619558779499997,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [],
+      "done": true,
+      "mask_local_nodes": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "mask_sha256": "74678135c4267538aeb4b5680fe53caaec095a2ef27f34bd75efa797edc2dd6c",
+      "logits_sha256": "9292fc33b5b0b2d2a7c45dbd52c42287bce16f077ca70ed8d408c545fe327526"
+    }
+  ],
+  "result": {
+    "J": 48.3622142698,
+    "L": 44.6122142698,
+    "K": 5,
+    "raw_J": 48.3622142698,
+    "raw_L": 44.6122142698,
+    "raw_K": 5,
+    "route": [
+      0,
+      1,
+      8,
+      24,
+      20,
+      15,
+      0
+    ],
+    "raw_route": [
+      0,
+      1,
+      8,
+      24,
+      20,
+      15,
+      0
+    ],
+    "plan": {
+      "schema": "rc3-global-local-plan-v1",
+      "method": "S0_endpoint_construction",
+      "status": "complete",
+      "problem_identity": "7cc10fdbaa36a1cab3b6132f3672f97160123f658525837004c9d0edf7984f2a",
+      "parent_identity": "1fac53f13566ab786227303928db1a3eba339caf9ad17220d5c516132e9df733",
+      "entry_global_node": 0,
+      "exit_global_node": 0,
+      "window": {
+        "x0": 2,
+        "y0": 2,
+        "width": 4,
+        "height": 3
+      },
+      "target_task_ids_global": [
+        11,
+        12,
+        13,
+        28,
+        29,
+        30,
+        31
+      ],
+      "visit_order_candidate_ids": [
+        176,
+        192,
+        364,
+        358,
+        345
+      ],
+      "selected_candidate_ids": [
+        176,
+        192,
+        364,
+        358,
+        345
+      ],
+      "navigation_global_nodes": [
+        0,
+        177,
+        193,
+        365,
+        359,
+        346,
+        0
+      ],
+      "assignments": [
+        {
+          "task_id": 11,
+          "candidate_id": 176,
+          "arm": "R"
+        },
+        {
+          "task_id": 12,
+          "candidate_id": 176,
+          "arm": "L"
+        },
+        {
+          "task_id": 13,
+          "candidate_id": 192,
+          "arm": "L"
+        },
+        {
+          "task_id": 30,
+          "candidate_id": 364,
+          "arm": "L"
+        },
+        {
+          "task_id": 31,
+          "candidate_id": 364,
+          "arm": "L"
+        },
+        {
+          "task_id": 29,
+          "candidate_id": 358,
+          "arm": "R"
+        },
+        {
+          "task_id": 28,
+          "candidate_id": 345,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 176,
+          "pose": {
+            "x": 5.736745687530016,
+            "y": 4.4440794505487,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 10.180825138000001,
+          "tasks": [
+            {
+              "task_id": 11,
+              "arm": "R"
+            },
+            {
+              "task_id": 12,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 192,
+          "pose": {
+            "x": 10.434894379950268,
+            "y": 4.3967188050222665,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 15.3459898064,
+          "tasks": [
+            {
+              "task_id": 13,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 3,
+          "candidate_id": 364,
+          "pose": {
+            "x": 12.083141370819693,
+            "y": 9.295370485576427,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 22.3125438082,
+          "tasks": [
+            {
+              "task_id": 30,
+              "arm": "L"
+            },
+            {
+              "task_id": 31,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 4,
+          "candidate_id": 358,
+          "pose": {
+            "x": 11.679781245869771,
+            "y": 9.268618928392584,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 22.742655490300002,
+          "tasks": [
+            {
+              "task_id": 29,
+              "arm": "R"
+            }
+          ]
+        },
+        {
+          "sequence": 5,
+          "candidate_id": 345,
+          "pose": {
+            "x": 8.590161194946724,
+            "y": 8.624598194598846,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 27.397454880300003,
+          "tasks": [
+            {
+              "task_id": 28,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.8754671643
+        ],
+        [
+          0.0,
+          1.2067405143
+        ],
+        [
+          0.0,
+          2.0934455699
+        ],
+        [
+          0.0,
+          3.0054087808
+        ],
+        [
+          0.0,
+          3.3547123117
+        ],
+        [
+          0.0,
+          4.1868911398
+        ],
+        [
+          0.9160741357,
+          4.1868911398
+        ],
+        [
+          0.9181156484,
+          4.1868911398
+        ],
+        [
+          1.3820683249,
+          4.1868911398
+        ],
+        [
+          1.3878329783,
+          4.1868911398
+        ],
+        [
+          2.3779089267,
+          4.1868911398
+        ],
+        [
+          3.3326358593,
+          4.1868911398
+        ],
+        [
+          3.3405670604,
+          4.1868911398
+        ],
+        [
+          3.798017094,
+          4.1868911398
+        ],
+        [
+          3.8217986963,
+          4.1868911398
+        ],
+        [
+          4.7558178534,
+          4.1868911398
+        ],
+        [
+          5.7367456875,
+          4.1868911398
+        ],
+        [
+          5.7367456875,
+          4.4440794505
+        ],
+        [
+          5.7367456875,
+          4.1868911398
+        ],
+        [
+          5.740843823,
+          4.1868911398
+        ],
+        [
+          6.2085993843,
+          4.1868911398
+        ],
+        [
+          6.2213256411,
+          4.1868911398
+        ],
+        [
+          7.1337267801,
+          4.1868911398
+        ],
+        [
+          8.0481458082,
+          4.1868911398
+        ],
+        [
+          8.1151935746,
+          4.1868911398
+        ],
+        [
+          8.5421301972,
+          4.1868911398
+        ],
+        [
+          8.6084763768,
+          4.1868911398
+        ],
+        [
+          9.5116357068,
+          4.1868911398
+        ],
+        [
+          10.43489438,
+          4.1868911398
+        ],
+        [
+          10.43489438,
+          4.396718805
+        ],
+        [
+          10.43489438,
+          4.1868911398
+        ],
+        [
+          10.4560908148,
+          4.1868911398
+        ],
+        [
+          10.9163031608,
+          4.1868911398
+        ],
+        [
+          10.9439290829,
+          4.1868911398
+        ],
+        [
+          11.8895446335,
+          4.1868911398
+        ],
+        [
+          11.8895446335,
+          5.0577115908
+        ],
+        [
+          11.8895446335,
+          5.0777843537
+        ],
+        [
+          11.8895446335,
+          5.3796971625
+        ],
+        [
+          11.8895446335,
+          5.4062114105
+        ],
+        [
+          11.8895446335,
+          6.2803367097
+        ],
+        [
+          11.8895446335,
+          7.1653358219
+        ],
+        [
+          11.8895446335,
+          7.1856563541
+        ],
+        [
+          11.8895446335,
+          7.5035298407
+        ],
+        [
+          11.8895446335,
+          7.5293520552
+        ],
+        [
+          11.8895446335,
+          8.3737822796
+        ],
+        [
+          11.8895446335,
+          9.2686189284
+        ],
+        [
+          11.8895446335,
+          9.2953704856
+        ],
+        [
+          12.0831413708,
+          9.2953704856
+        ],
+        [
+          11.8895446335,
+          9.2953704856
+        ],
+        [
+          11.8895446335,
+          9.2686189284
+        ],
+        [
+          11.6797812459,
+          9.2686189284
+        ],
+        [
+          11.8895446335,
+          9.2686189284
+        ],
+        [
+          11.8895446335,
+          8.3737822796
+        ],
+        [
+          10.9494135433,
+          8.3737822796
+        ],
+        [
+          10.9220874766,
+          8.3737822796
+        ],
+        [
+          10.4886781382,
+          8.3737822796
+        ],
+        [
+          10.4529214088,
+          8.3737822796
+        ],
+        [
+          9.5116357068,
+          8.3737822796
+        ],
+        [
+          8.5901611949,
+          8.3737822796
+        ],
+        [
+          8.5901611949,
+          8.6245981946
+        ],
+        [
+          8.5901611949,
+          8.3737822796
+        ],
+        [
+          8.5403935512,
+          8.3737822796
+        ],
+        [
+          8.1157032143,
+          8.3737822796
+        ],
+        [
+          8.0665858466,
+          8.3737822796
+        ],
+        [
+          7.1337267801,
+          8.3737822796
+        ],
+        [
+          7.1337267801,
+          7.5332326852
+        ],
+        [
+          7.1337267801,
+          7.4777980608
+        ],
+        [
+          7.1337267801,
+          7.1999631946
+        ],
+        [
+          7.1337267801,
+          7.1479304944
+        ],
+        [
+          7.1337267801,
+          6.2803367097
+        ],
+        [
+          7.1337267801,
+          5.4204539002
+        ],
+        [
+          7.1337267801,
+          5.4165001359
+        ],
+        [
+          7.1337267801,
+          5.1028709338
+        ],
+        [
+          7.1337267801,
+          5.0969786212
+        ],
+        [
+          7.1337267801,
+          4.1868911398
+        ],
+        [
+          7.1337267801,
+          3.3372668147
+        ],
+        [
+          7.1337267801,
+          3.3367305698
+        ],
+        [
+          7.1337267801,
+          3.0171498347
+        ],
+        [
+          7.1337267801,
+          3.0074271905
+        ],
+        [
+          7.1337267801,
+          2.0934455699
+        ],
+        [
+          7.1337267801,
+          1.1944801375
+        ],
+        [
+          7.1337267801,
+          1.1939801538
+        ],
+        [
+          7.1337267801,
+          0.8724109901
+        ],
+        [
+          7.1337267801,
+          0.8511980112
+        ],
+        [
+          7.1337267801,
+          0.0
+        ],
+        [
+          6.2149260443,
+          0.0
+        ],
+        [
+          5.7244277673,
+          0.0
+        ],
+        [
+          4.7558178534,
+          0.0
+        ],
+        [
+          3.8329569729,
+          0.0
+        ],
+        [
+          3.3767496129,
+          0.0
+        ],
+        [
+          2.3779089267,
+          0.0
+        ],
+        [
+          1.39735062,
+          0.0
+        ],
+        [
+          0.9401752358,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        10.180825138000001,
+        5.165164668399999,
+        6.9665540018,
+        0.4301116820999997,
+        4.654799390000001,
+        17.214759389499996
+      ],
+      "route_length_m": 44.6122142698,
+      "objective_length_plus_stops_m": 48.3622142698,
+      "stop_penalty_equivalent_m": 0.75,
+      "arm_joint_trajectories": null,
+      "physical_joint_trajectory_certified": false,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "errors": [],
+        "independent_polyline_length_m": 44.61221426979998,
+        "effective_same_arm_F_and_A": true,
+        "endpoint_constraints_satisfied": true,
+        "physical_joint_trajectory_certified": false,
+        "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+      }
+    },
+    "H_s": 0.00031570000010106014,
+    "export_s": 0.00015690000054746633,
+    "validation_s": 0.008451400000012654,
+    "cache_hit": false
+  },
+  "counts": {
+    "model_load_and_verify_attempts": 1,
+    "frozen_policy_materializations": 1,
+    "model_load_and_verify_completed": 1,
+    "features_and_global_local_encoding_attempts": 1,
+    "fresh_encodings": 1,
+    "features_and_global_local_encoding_completed": 1,
+    "greedy_construction_attempts": 1,
+    "greedy_actions": 5,
+    "greedy_construction_completed": 1,
+    "reference_H_and_validation_attempts": 1,
+    "reference_H_and_validation_completed": 1
+  },
+  "seconds": {
+    "model_load_and_verify": 0.008062199999585573,
+    "features_and_global_local_encoding": 0.010438000000249303,
+    "greedy_construction": 0.003537499999765714,
+    "reference_H_and_validation": 0.03507420000005368
+  },
+  "cache_namespace": "frozen_SL_reference_only",
+  "policy_sampling_RNG_used": false
+}

@@ -1,0 +1,1141 @@
+{
+  "request": {
+    "seed": 11622026,
+    "case_id": "GLV5_DEV_019",
+    "method": "frozen_supervised",
+    "study_method": "G128",
+    "kind": "quality",
+    "repeat": 0,
+    "id": "463c68bb530fa678c9689a99ba00ceab16624df07bfcc44f2358ba8d69ca8602"
+  },
+  "case_id": "GLV5_DEV_019",
+  "group": "new_task_trained_physical_layout",
+  "size": [
+    4,
+    3
+  ],
+  "endpoint": "open_first_last_connected",
+  "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+  "source": {
+    "input_kind": "GL_v5_new_task_on_training_geometry",
+    "input_source_sha256": {
+      "scene": "b5c47a486ba963ea2a02766ff1d0059ca73db52f9127a5f3990f5e7aab94a034",
+      "arrays": "edb8935b4931d1a4e2d9b7b9023ad5756c424b0238492c1f0ed01f7fc138868c",
+      "receipt": "b7e6284cfe64fa90af14c721fdf8a291157fe89a36492010e678e284a1232428"
+    },
+    "expected_view_identity": "a7438a76040ebd9175727650156bae29e7e44c0119aca88ce1418aff71bebb7d",
+    "evaluation_parent_identity": "9e6ddf6f57f4d94ce983ba692b3d25a6228e56ca474d483c4684dd47531030a4",
+    "view_identity": "a7438a76040ebd9175727650156bae29e7e44c0119aca88ce1418aff71bebb7d",
+    "F_sha256": "d68de7fcab9b681d35e2eb724e5678b52810fcb784b1eea2e6afba9b6ee5a36e",
+    "A_sha256": "1c63fef6ba017be52d69c7d537031644706e82677e898b3443e90c326dbec344",
+    "D_sha256": "78f425eef69e58ce399a11bbeeff5c87d17e86c4d9bd5f5ac77909456c7c0a21",
+    "global_task_ids": [
+      25,
+      30,
+      31,
+      38
+    ],
+    "global_candidate_ids": [
+      272,
+      274,
+      275,
+      276,
+      277,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439
+    ],
+    "full_parent_tables": 100,
+    "full_parent_obstacles": 0,
+    "full_parent_geometry": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+    "scope_evidence": {
+      "input_contract": "S3_TARGET_SCOPE_R1_FULL_PARENT_DIAGNOSTIC_TARGET_SERVICE_HARD",
+      "full_parent_closed_depot_unservable_task_ids": [],
+      "full_parent_check": "DIAGNOSTIC",
+      "target_check": "HARD",
+      "entry": 1,
+      "exit": 800,
+      "target_task_ids": [
+        25,
+        30,
+        31,
+        38
+      ],
+      "target_unservable_task_ids": [],
+      "target_candidate_ids": [
+        272,
+        274,
+        275,
+        276,
+        277,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439
+      ],
+      "boundary_candidate_ids": []
+    },
+    "input_contract": "S3_TARGET_SCOPE_R1_FULL_PARENT_DIAGNOSTIC_TARGET_SERVICE_HARD"
+  },
+  "weight": {
+    "path": "rc3_gl_v5_20261109/actors/11622026_G128.pt",
+    "checkpoint_sha256": "80d9484b5e81465a281fafacb3629a1649f3e7960f6428ea5588058064a855fc",
+    "checkpoint_bytes": 268440,
+    "model_tensor_sha256": "be606c91acf5c0ddf3ec74384ab7ef158ddde2e7108245e52d308d23ffc9a4f4",
+    "phase": "frozen_actor",
+    "cursor": "G128",
+    "role": "G128",
+    "seed": 11622026,
+    "provenance": {
+      "training_checkpoint_path": "rc3_gl_v5_20261109/runs/SCIENCE/G128/checkpoints/update_0128.pt",
+      "training_checkpoint_sha256": "8bb3da0de1f909e07bac4f0d248fe6c71df0e8a83aa060dffd09c9f7f7ab0d9c",
+      "seed": 11622026,
+      "role": "G128"
+    },
+    "parameters": [
+      {
+        "name": "candidate_in.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "ee5557e691aca55d78f8dee9d081e44af0105234a1b04e3139d042e2a4bcde93"
+      },
+      {
+        "name": "candidate_in.weight",
+        "shape": [
+          64,
+          7
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "23964bf5bd22c46c60cefe59a8a08fefabfba37504af8b831bae9882dc256bd8"
+      },
+      {
+        "name": "candidate_norm.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "e76402451aa16aaa3967997b0a50320cbeb14e0c1203c767d94173dd74595aaf"
+      },
+      {
+        "name": "candidate_norm.weight",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "1065e7f60ed4a2c9fb2015c63dc48364277b47c1932f88cef871e2870dd616ae"
+      },
+      {
+        "name": "dynamic.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "a3f94f3f252aa99d029c3255f176f4bea243fbb1dc511f7be12c3dc351f30464"
+      },
+      {
+        "name": "global_net.0.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "585605739893f3fc5bb2de920f0413ede4799b83ecc436e9244a4da5bf30ed4b"
+      },
+      {
+        "name": "global_net.0.weight",
+        "shape": [
+          64,
+          14
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "8f14842954c42e779fd3250be3e7dab368014d47c3290b50acfd23c850ac3dc7"
+      },
+      {
+        "name": "global_net.2.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "bfad1b7f0c72be5bd75f9ea6637d3ccb410e93b6d79ad22d26499a280fd814a2"
+      },
+      {
+        "name": "global_net.2.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "bcc0ee5bdfb979f2a83bb23b235ffb48d7a4a46098c0fb92e06ef71aefb6bcbb"
+      },
+      {
+        "name": "key.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "06edfa8f632513afd8d563c104608725a5f698e6b82f3751aa2a1f1b5d9ef87b"
+      },
+      {
+        "name": "nav.weight",
+        "shape": [
+          64,
+          4
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "e05930fb009fe271c28cf1d2fa18d99095ef3fe9fc158b307817a04ebb050afe"
+      },
+      {
+        "name": "prefix.bias_hh",
+        "shape": [
+          192
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "47e62cd0e95d5eb63d357db478ac7a9d2a764b8014f07ef1148a071c6b350f20"
+      },
+      {
+        "name": "prefix.bias_ih",
+        "shape": [
+          192
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "fc9d22900a5b58aaa3a3e57d383ab306d065efe25d4114cb1b02c0f4216dfdcd"
+      },
+      {
+        "name": "prefix.weight_hh",
+        "shape": [
+          192,
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "481b3bed523ac7c33098e8bf09bd13357eb111b0512997f163fefbe727a331ce"
+      },
+      {
+        "name": "prefix.weight_ih",
+        "shape": [
+          192,
+          66
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "0d2a94bf94bc21c70e6656a55c6900f4f30576ff2c079b251cca3e09490a488f"
+      },
+      {
+        "name": "query.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "635e23c5c57bae667db6281d2959a6200bfcb5a6646ed007943d6f01a80aa386"
+      },
+      {
+        "name": "query.weight",
+        "shape": [
+          64,
+          260
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "8741823b672470b970f2894201461e623bb31ab969dd7116d695cb49283e787a"
+      },
+      {
+        "name": "task_in.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "e71bd414b6b37058f954ff9755de4ca46f1cb775c3ced588ac302b7f3995c956"
+      },
+      {
+        "name": "task_in.weight",
+        "shape": [
+          64,
+          5
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "0392000b57b60773cfb43f92892b810ef9e033436d5df9b30e9d3acc0a279004"
+      },
+      {
+        "name": "task_norm.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "01c85abb6a39fd822e8b315e09b790a732366d3aead56ed147e54721d2032fc8"
+      },
+      {
+        "name": "task_norm.weight",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "4326a3c70b9a9acbc468cafca1433d5274cb6f85680c9f121667145ff551a9a2"
+      },
+      {
+        "name": "to_candidate.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "0e7277fdddd10d44f9af6843bf50df9dd0e52b73fe1089458058ba386241bd48"
+      },
+      {
+        "name": "to_candidate.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "8866e3c7e2e3df4d56cbde61e9490fb2cef8dd09dc669c13e39d36ff7a8f8320"
+      },
+      {
+        "name": "to_task.bias",
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "1745cd481130bf62eb7f2369686c2d7e2aec0cb4e61d20a50f96e20319552277"
+      },
+      {
+        "name": "to_task.weight",
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "torch.float32",
+        "value_sha256": "b27cbf31ffc23edc4a4c8f14ae3d74191e57a139fbce75ef2fe53a68f8f95e47"
+      }
+    ],
+    "export_wall_s": 0.5993436999997357
+  },
+  "training_weight_role": "G128",
+  "raw_route": [
+    0,
+    1,
+    18,
+    8,
+    13,
+    0
+  ],
+  "route": [
+    0,
+    4,
+    18,
+    8,
+    13,
+    0
+  ],
+  "raw_route_sha256": "ad60ee73642518f787fb7fa34a9dc42e8be32d44fe570858ff35a3d9b2fee451",
+  "route_sha256": "c29d839372a33e2f0cc239461f809671cd5128dc90569eb66eefc0738c53a315",
+  "trace": [
+    {
+      "action_local_node": 1,
+      "action_global_candidate": 272,
+      "served_tasks_global": [
+        25
+      ],
+      "reward": -16.6776629554,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        30,
+        31,
+        38
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "mask_sha256": "3fb84dc13205f01cad40127e767f27430c89ad68b7851d48203d1a547adff746",
+      "logits_sha256": "5841e31f8d6636151a4448bd3792c38c35c4339f3eb528bfe646ad32e00d0e94"
+    },
+    {
+      "action_local_node": 18,
+      "action_global_candidate": 438,
+      "served_tasks_global": [
+        38
+      ],
+      "reward": -7.707751174299999,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        30,
+        31
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "mask_sha256": "7e010c13e728b01787360d79211649273800224be667ca468c857cd95589f2b9",
+      "logits_sha256": "19cd96e5a8482ad7791770f037449d187c69c95a16b06d8952534ae426e3c7e4"
+    },
+    {
+      "action_local_node": 8,
+      "action_global_candidate": 370,
+      "served_tasks_global": [
+        30
+      ],
+      "reward": -5.168710021600003,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        31
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "mask_sha256": "d996d299c95ecc8a31ce3ae5c4195c844ea85eb058e17bb08f7851e4e65b6c64",
+      "logits_sha256": "b83699f8bf818d25dd3b594204c336fcf4aed29a3d4555c3cbfad57c60cdd215"
+    },
+    {
+      "action_local_node": 13,
+      "action_global_candidate": 375,
+      "served_tasks_global": [
+        31
+      ],
+      "reward": -21.235872252500002,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [],
+      "done": true,
+      "mask_local_nodes": [
+        6,
+        7,
+        12,
+        13
+      ],
+      "mask_sha256": "94fc9700733573e572013c778d1c93c120e60c56b1f85750688e737787933490",
+      "logits_sha256": "5a528d16eaa468d7f77e48eb541248e5a9e48262b9be8300a8c0080b612057d5"
+    }
+  ],
+  "metrics": {
+    "J": 50.708935069199995,
+    "L": 47.708935069199995,
+    "K": 4.0,
+    "raw_J": 50.789996403800004,
+    "raw_L": 47.789996403800004,
+    "raw_K": 4.0
+  },
+  "raw_cost_scope": "single frozen greedy construction before common H",
+  "H_gain_J": 0.0810613346000082,
+  "plan": {
+    "schema": "rc3-global-local-plan-v1",
+    "method": "G128",
+    "status": "complete",
+    "problem_identity": "a7438a76040ebd9175727650156bae29e7e44c0119aca88ce1418aff71bebb7d",
+    "parent_identity": "9e6ddf6f57f4d94ce983ba692b3d25a6228e56ca474d483c4684dd47531030a4",
+    "entry_global_node": 1,
+    "exit_global_node": 800,
+    "window": {
+      "x0": 3,
+      "y0": 3,
+      "width": 4,
+      "height": 3
+    },
+    "target_task_ids_global": [
+      25,
+      30,
+      31,
+      38
+    ],
+    "visit_order_candidate_ids": [
+      276,
+      438,
+      370,
+      375
+    ],
+    "selected_candidate_ids": [
+      276,
+      438,
+      370,
+      375
+    ],
+    "navigation_global_nodes": [
+      1,
+      277,
+      439,
+      371,
+      376,
+      800
+    ],
+    "assignments": [
+      {
+        "task_id": 25,
+        "candidate_id": 276,
+        "arm": "L"
+      },
+      {
+        "task_id": 38,
+        "candidate_id": 438,
+        "arm": "R"
+      },
+      {
+        "task_id": 30,
+        "candidate_id": 370,
+        "arm": "L"
+      },
+      {
+        "task_id": 31,
+        "candidate_id": 375,
+        "arm": "L"
+      }
+    ],
+    "service_stops": [
+      {
+        "sequence": 1,
+        "candidate_id": 276,
+        "pose": {
+          "x": 9.340848457266395,
+          "y": 7.260958330942729,
+          "theta": 0.0,
+          "h": 0.4
+        },
+        "arrival_distance_m": 15.879641653699998,
+        "tasks": [
+          {
+            "task_id": 25,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 2,
+        "candidate_id": 438,
+        "pose": {
+          "x": 11.285867938448083,
+          "y": 11.532868254573351,
+          "theta": 3.141592653589793,
+          "h": 0.4
+        },
+        "arrival_distance_m": 22.804352795099998,
+        "tasks": [
+          {
+            "task_id": 38,
+            "arm": "R"
+          }
+        ]
+      },
+      {
+        "sequence": 3,
+        "candidate_id": 370,
+        "pose": {
+          "x": 14.674945019626636,
+          "y": 10.5032353141892,
+          "theta": -1.5707963267948966,
+          "h": 0.4
+        },
+        "arrival_distance_m": 27.2230628167,
+        "tasks": [
+          {
+            "task_id": 30,
+            "arm": "L"
+          }
+        ]
+      },
+      {
+        "sequence": 4,
+        "candidate_id": 375,
+        "pose": {
+          "x": 15.884222992124107,
+          "y": 9.811029288460581,
+          "theta": 3.141592653589793,
+          "h": 0.4
+        },
+        "arrival_distance_m": 29.8213349237,
+        "tasks": [
+          {
+            "task_id": 31,
+            "arm": "L"
+          }
+        ]
+      }
+    ],
+    "unserved_task_ids": [],
+    "route_polyline": [
+      [
+        0.8954950728,
+        0.1733299383
+      ],
+      [
+        0.8954950728,
+        0.0
+      ],
+      [
+        1.3459150264,
+        0.0
+      ],
+      [
+        2.2989103494,
+        0.0
+      ],
+      [
+        3.1980354544,
+        0.0
+      ],
+      [
+        3.6702114827,
+        0.0
+      ],
+      [
+        4.5978206988,
+        0.0
+      ],
+      [
+        5.5557675223,
+        0.0
+      ],
+      [
+        6.0128463089,
+        0.0
+      ],
+      [
+        6.8967310483,
+        0.0
+      ],
+      [
+        7.7794750351,
+        0.0
+      ],
+      [
+        8.2419754531,
+        0.0
+      ],
+      [
+        9.1956413977,
+        0.0
+      ],
+      [
+        9.1956413977,
+        0.8909399237
+      ],
+      [
+        9.1956413977,
+        0.9061827252
+      ],
+      [
+        9.1956413977,
+        1.2597912389
+      ],
+      [
+        9.1956413977,
+        1.2669345984
+      ],
+      [
+        9.1956413977,
+        2.128695983
+      ],
+      [
+        9.1956413977,
+        3.0092093085
+      ],
+      [
+        9.1956413977,
+        3.0176131551
+      ],
+      [
+        9.1956413977,
+        3.3746596711
+      ],
+      [
+        9.1956413977,
+        3.3828103211
+      ],
+      [
+        9.1956413977,
+        4.2573919659
+      ],
+      [
+        9.1956413977,
+        5.1183754209
+      ],
+      [
+        9.1956413977,
+        5.1547324218
+      ],
+      [
+        9.1956413977,
+        5.4793216787
+      ],
+      [
+        9.1956413977,
+        5.5063735767
+      ],
+      [
+        9.1956413977,
+        6.3860879489
+      ],
+      [
+        9.1956413977,
+        7.2609583309
+      ],
+      [
+        9.3408484573,
+        7.2609583309
+      ],
+      [
+        9.1956413977,
+        7.2609583309
+      ],
+      [
+        9.1956413977,
+        7.2626329674
+      ],
+      [
+        9.1956413977,
+        7.6198731427
+      ],
+      [
+        9.1956413977,
+        7.6392236413
+      ],
+      [
+        9.1956413977,
+        8.5147839318
+      ],
+      [
+        9.1956413977,
+        9.3838666624
+      ],
+      [
+        9.1956413977,
+        9.4020423564
+      ],
+      [
+        9.1956413977,
+        9.7338529222
+      ],
+      [
+        9.1956413977,
+        9.7660363666
+      ],
+      [
+        9.1956413977,
+        10.6434799148
+      ],
+      [
+        10.1312105779,
+        10.6434799148
+      ],
+      [
+        10.1560559818,
+        10.6434799148
+      ],
+      [
+        10.5676488183,
+        10.6434799148
+      ],
+      [
+        10.5959717103,
+        10.6434799148
+      ],
+      [
+        11.4945517471,
+        10.6434799148
+      ],
+      [
+        11.4945517471,
+        11.5316764527
+      ],
+      [
+        11.4945517471,
+        11.5328682546
+      ],
+      [
+        11.2858679384,
+        11.5328682546
+      ],
+      [
+        11.4945517471,
+        11.5328682546
+      ],
+      [
+        11.4945517471,
+        11.5316764527
+      ],
+      [
+        11.4945517471,
+        10.6434799148
+      ],
+      [
+        12.4175726323,
+        10.6434799148
+      ],
+      [
+        12.4333861052,
+        10.6434799148
+      ],
+      [
+        12.8842695137,
+        10.6434799148
+      ],
+      [
+        12.8862359105,
+        10.6434799148
+      ],
+      [
+        13.7934620965,
+        10.6434799148
+      ],
+      [
+        14.6749450196,
+        10.6434799148
+      ],
+      [
+        14.6749450196,
+        10.5032353142
+      ],
+      [
+        14.6749450196,
+        10.6434799148
+      ],
+      [
+        14.7322277749,
+        10.6434799148
+      ],
+      [
+        15.1477970013,
+        10.6434799148
+      ],
+      [
+        15.1848593713,
+        10.6434799148
+      ],
+      [
+        16.0923724459,
+        10.6434799148
+      ],
+      [
+        16.0923724459,
+        9.8110292885
+      ],
+      [
+        15.8842229921,
+        9.8110292885
+      ],
+      [
+        16.0923724459,
+        9.8110292885
+      ],
+      [
+        16.0923724459,
+        10.6434799148
+      ],
+      [
+        16.0923724459,
+        11.5181514479
+      ],
+      [
+        16.0923724459,
+        11.5354891075
+      ],
+      [
+        16.0923724459,
+        11.8810446891
+      ],
+      [
+        16.0923724459,
+        11.8854089793
+      ],
+      [
+        16.0923724459,
+        12.7721758977
+      ],
+      [
+        16.0923724459,
+        13.6443152982
+      ],
+      [
+        16.0923724459,
+        13.6752526829
+      ],
+      [
+        16.0923724459,
+        13.996326714
+      ],
+      [
+        16.0923724459,
+        14.0396994255
+      ],
+      [
+        16.0923724459,
+        14.9008718807
+      ],
+      [
+        16.0923724459,
+        15.7944888712
+      ],
+      [
+        16.0923724459,
+        15.8071743356
+      ],
+      [
+        16.0923724459,
+        16.1433441979
+      ],
+      [
+        16.0923724459,
+        16.1616744213
+      ],
+      [
+        16.0923724459,
+        17.0295678636
+      ],
+      [
+        16.9864596881,
+        17.0295678636
+      ],
+      [
+        17.0045896566,
+        17.0295678636
+      ],
+      [
+        17.4337922636,
+        17.0295678636
+      ],
+      [
+        17.4680151188,
+        17.0295678636
+      ],
+      [
+        18.3912827954,
+        17.0295678636
+      ],
+      [
+        19.2999973974,
+        17.0295678636
+      ],
+      [
+        19.3279572211,
+        17.0295678636
+      ],
+      [
+        19.7319607303,
+        17.0295678636
+      ],
+      [
+        19.7817800236,
+        17.0295678636
+      ],
+      [
+        20.6901931448,
+        17.0295678636
+      ],
+      [
+        21.5821774585,
+        17.0295678636
+      ],
+      [
+        21.6345883388,
+        17.0295678636
+      ],
+      [
+        22.0542530797,
+        17.0295678636
+      ],
+      [
+        22.0878022747,
+        17.0295678636
+      ],
+      [
+        22.9891034942,
+        17.0295678636
+      ],
+      [
+        22.9891034942,
+        17.8792029742
+      ],
+      [
+        22.9891034942,
+        18.2337276507
+      ],
+      [
+        22.9891034942,
+        19.1582638466
+      ],
+      [
+        22.9891034942,
+        20.0149195468
+      ],
+      [
+        22.9891034942,
+        20.3780478846
+      ],
+      [
+        22.7734024469,
+        20.3780478846
+      ]
+    ],
+    "route_leg_costs_m": [
+      15.879641653699998,
+      6.9247111414,
+      4.418710021600003,
+      2.5982721070000014,
+      17.8876001455
+    ],
+    "route_length_m": 47.708935069199995,
+    "objective_length_plus_stops_m": 50.708935069199995,
+    "stop_penalty_equivalent_m": 0.75,
+    "arm_joint_trajectories": null,
+    "physical_joint_trajectory_certified": false,
+    "validation": {
+      "valid_model_plan": true,
+      "all_tasks_served": true,
+      "collision_count": 0,
+      "errors": [],
+      "independent_polyline_length_m": 47.708935069200024,
+      "effective_same_arm_F_and_A": true,
+      "endpoint_constraints_satisfied": true,
+      "physical_joint_trajectory_certified": false,
+      "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+    },
+    "pipeline_method": "frozen_supervised",
+    "model_identity": {
+      "study_method": "G128",
+      "checkpoint_role": "G128",
+      "actor_file": "rc3_gl_v5_20261109/actors/11622026_G128.pt",
+      "actor_sha256": "80d9484b5e81465a281fafacb3629a1649f3e7960f6428ea5588058064a855fc",
+      "tensor_sha256": "be606c91acf5c0ddf3ec74384ab7ef158ddde2e7108245e52d308d23ffc9a4f4",
+      "training_run": "rc3_gl_v5_20261109/runs/SCIENCE/G128",
+      "fixed_update": 128
+    }
+  },
+  "pipeline_counters": {
+    "full_H_calls": 1,
+    "export_attempts": 1,
+    "exports": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1
+  },
+  "internal_search": {
+    "counts": {
+      "construct": 0,
+      "two_opt": 4,
+      "joint_search": 1,
+      "recipe": 0
+    },
+    "inclusive_s": {
+      "construct": 0.0,
+      "two_opt": 0.00030189999961294234,
+      "joint_search": 0.00032110000029206276,
+      "recipe": 0.0
+    },
+    "exclusive_s": {
+      "construct": 0.0,
+      "two_opt": 0.00030189999961294234,
+      "joint_search": 0.0001962000005732989,
+      "recipe": 0.0
+    }
+  },
+  "valid": true,
+  "counts": {
+    "new_DEV_input_load_and_verify_attempts": 1,
+    "fresh_task_input_reads": 1,
+    "new_DEV_input_load_and_verify_completed": 1,
+    "navigation_access_attempts": 1,
+    "saved_navigation_only_hits": 1,
+    "navigation_access_completed": 1,
+    "whole_parent_and_window_attempts": 1,
+    "whole_parent_and_window_completed": 1,
+    "model_load_and_verify_attempts": 1,
+    "frozen_policy_materializations": 1,
+    "model_load_and_verify_completed": 1,
+    "features_and_global_local_encoding_attempts": 1,
+    "fresh_encodings": 1,
+    "features_and_global_local_encoding_completed": 1,
+    "greedy_construction_attempts": 1,
+    "greedy_actions": 4,
+    "greedy_construction_completed": 1,
+    "common_H_pipeline_attempts": 1,
+    "common_H_invocations": 1,
+    "export_attempts": 1,
+    "export_completed": 1,
+    "validation_attempts": 1,
+    "validation_completed": 1,
+    "common_H_pipeline_completed": 1,
+    "weight_immutability_verify_attempts": 1,
+    "weight_immutability_verify_completed": 1,
+    "artifact_write_attempts": 1
+  },
+  "component_seconds": {
+    "new_DEV_input_load_and_verify": 0.012579299999742943,
+    "navigation_access": 0.011140399999931105,
+    "whole_parent_and_window": 0.062034200000198325,
+    "model_load_and_verify": 0.007141799999772047,
+    "features_and_global_local_encoding": 0.011127200000373705,
+    "greedy_construction": 0.002257600000120874,
+    "export": 0.00021360000027925707,
+    "validation": 0.006413000000065949,
+    "common_H_pipeline": 0.051956799999970826,
+    "weight_immutability_verify": 0.0021768999995401828
+  },
+  "timing_note": "Nested inclusive components; do not add. Complete time includes durable result artifact write/hash; final ledger commit is charged to outer stage wall.",
+  "input_contract": "S3_TARGET_SCOPE_R1_FULL_PARENT_DIAGNOSTIC_TARGET_SERVICE_HARD",
+  "pipeline_method": "frozen_supervised",
+  "study_method": "G128",
+  "checkpoint_role": "G128",
+  "actor_file": "rc3_gl_v5_20261109/actors/11622026_G128.pt",
+  "actor_sha256": "80d9484b5e81465a281fafacb3629a1649f3e7960f6428ea5588058064a855fc",
+  "tensor_sha256": "be606c91acf5c0ddf3ec74384ab7ef158ddde2e7108245e52d308d23ffc9a4f4",
+  "training_run": "rc3_gl_v5_20261109/runs/SCIENCE/G128",
+  "fixed_update": 128,
+  "training_checkpoint": "rc3_gl_v5_20261109/runs/SCIENCE/G128/checkpoints/update_0128.pt",
+  "training_checkpoint_sha256": "8bb3da0de1f909e07bac4f0d248fe6c71df0e8a83aa060dffd09c9f7f7ab0d9c",
+  "new_experiment": "rc3_gl_v5_frozen_greedy_20261109_01",
+  "model_lifecycle": "D1"
+}

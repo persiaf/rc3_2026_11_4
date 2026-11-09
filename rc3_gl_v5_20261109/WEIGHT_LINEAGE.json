@@ -1,0 +1,79 @@
+{
+  "seed": 11622026,
+  "models": {
+    "SL256": {
+      "study_method": "SL256",
+      "checkpoint_role": "SL256",
+      "actor_file": "rc3_gl_v4_20261109/actors/11622026_SL256.pt",
+      "actor_sha256": "a4d0d991d77e9eb7c995015b80c51f30bfb256d764a2c91cc8631bc412c9df12",
+      "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "training_source": {
+        "training_checkpoint_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+        "training_checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+        "seed": 11622026,
+        "role": "SL256"
+      },
+      "fixed_update": 256
+    },
+    "B128": {
+      "study_method": "B128",
+      "checkpoint_role": "B128",
+      "actor_file": "rc3_gl_v4_20261109/endpoint_actors/11622026_B128.pt",
+      "actor_sha256": "128a41b2faf5191dbe55801d09a8794d80074e3bb4ef8d680d73d2c6a41a33ec",
+      "tensor_sha256": "ca773df11933905f514d60e05d5d30b0e38ecf6496a40bf5e63581d0e2d0d7cd",
+      "training_source": {
+        "training_checkpoint_path": "rc3_gl_v4_20261109/runs/SCIENCE/B128/checkpoints/update_0128.pt",
+        "training_checkpoint_sha256": "1cc482df291cc72a753590408021739ab5923da261a9660b581a1a9153db139c",
+        "seed": 11622026,
+        "role": "B128"
+      },
+      "fixed_update": 128
+    },
+    "C128": {
+      "study_method": "C128",
+      "checkpoint_role": "C128",
+      "actor_file": "rc3_gl_v4_20261109/endpoint_actors/11622026_C128.pt",
+      "actor_sha256": "189ccfa12e8d24dbb20dea39b02d8e8562fddc94f0a203debb5986299c48f340",
+      "tensor_sha256": "370ffd07cd70ffd26cf03352367e8c85ac13f4805ff6c37785df07c84778d9c6",
+      "training_source": {
+        "training_checkpoint_path": "rc3_gl_v4_20261109/runs/SCIENCE/C128/checkpoints/update_0128.pt",
+        "training_checkpoint_sha256": "811a07a9227b360b8a427e1e4362f66dc3a3c5da02a35b87d816b93dbb762b4e",
+        "seed": 11622026,
+        "role": "C128"
+      },
+      "fixed_update": 128
+    },
+    "G128": {
+      "study_method": "G128",
+      "checkpoint_role": "G128",
+      "actor_file": "rc3_gl_v5_20261109/actors/11622026_G128.pt",
+      "actor_sha256": "80d9484b5e81465a281fafacb3629a1649f3e7960f6428ea5588058064a855fc",
+      "tensor_sha256": "be606c91acf5c0ddf3ec74384ab7ef158ddde2e7108245e52d308d23ffc9a4f4",
+      "training_source": {
+        "training_checkpoint_path": "rc3_gl_v5_20261109/runs/SCIENCE/G128/checkpoints/update_0128.pt",
+        "training_checkpoint_sha256": "8bb3da0de1f909e07bac4f0d248fe6c71df0e8a83aa060dffd09c9f7f7ab0d9c",
+        "seed": 11622026,
+        "role": "G128"
+      },
+      "fixed_update": 128
+    }
+  },
+  "common_start": {
+    "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+    "checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb",
+    "checkpoint_bytes": 837749,
+    "sidecar_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.json",
+    "sidecar_sha256": "37e1378d39d7749eb0d26fa12cd311573113bfdee343a7be4bdc830dac52b75a",
+    "commit_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt.commit.json",
+    "commit_sha256": "708de69f1e85f3c84630b5db6357c12144dd7967dd53c56827647a65ac71824f",
+    "phase": "S1",
+    "cursor": 256,
+    "weight_version": 256,
+    "model_tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+    "hash_binding_closed_boundary_ok": true,
+    "tensor_payload_deserialized": false
+  },
+  "new_G_source_binding": "0f5e381a80790d531c03c9fd4452c755ab728712bf32ee59317135c42351ddee",
+  "old_B_C_sources_unmodified": true,
+  "old108_role_fields_unmodified": true
+}

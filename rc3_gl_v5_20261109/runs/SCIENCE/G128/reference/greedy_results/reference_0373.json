@@ -1,0 +1,3310 @@
+{
+  "request": 373,
+  "problem": "5be3feee09ad7325c916e3aed85f8e28ccbc80666ba8559fac46d2f6b32df307",
+  "parent": "654c7590fab9c29a7c193bf664f72280619f53ee727681796a3e91eaa0ec59b7",
+  "model_identity": {
+    "study_method": "SL256",
+    "checkpoint_role": "SL256",
+    "actor_file": "rc3_gl_v4_20261109/actors/11622026_SL256.pt",
+    "actor_sha256": "a4d0d991d77e9eb7c995015b80c51f30bfb256d764a2c91cc8631bc412c9df12",
+    "tensor_sha256": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+    "training_run": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1",
+    "fixed_update": 256,
+    "training_checkpoint": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_11622026/S1/update_0256.pt",
+    "training_checkpoint_sha256": "caed2d90d5283f56d816bbf5c103e395e93f2f351fa31e0085274ad204f76bfb"
+  },
+  "raw_route": [
+    0,
+    8,
+    38,
+    44,
+    52,
+    50,
+    56,
+    60,
+    80,
+    74,
+    86,
+    88,
+    64,
+    94,
+    70,
+    98,
+    37,
+    31,
+    27,
+    5,
+    19,
+    13,
+    0
+  ],
+  "trace": [
+    {
+      "action_local_node": 8,
+      "action_global_candidate": 116,
+      "served_tasks_global": [
+        12,
+        13
+      ],
+      "reward": -13.4908064663,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        27,
+        28,
+        29,
+        30,
+        31,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "4154a73c55322d935bbd4ad99dfcf88aff4a6ac3a37fe9ac68673e9843dfbfec",
+      "logits_sha256": "af40b952e530399c66b8c956c956cbb244f99cc271fb1a5dc62b7151d957de15"
+    },
+    {
+      "action_local_node": 38,
+      "action_global_candidate": 272,
+      "served_tasks_global": [
+        27
+      ],
+      "reward": -5.5678589477000004,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        28,
+        29,
+        30,
+        31,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "d88627735314eca253b9510536d40b81e23b9e34d6a6f2ee21c2db85cd0745b7",
+      "logits_sha256": "86e66e0bb1f7130f191ad42b2c1965794278992be3e59c90f178976093e42747"
+    },
+    {
+      "action_local_node": 44,
+      "action_global_candidate": 280,
+      "served_tasks_global": [
+        29
+      ],
+      "reward": -3.5368126757999994,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        28,
+        30,
+        31,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "28b4d24e7bd9e620955e8ddcae61d969d06a1e715cec886929b466314b9fc0de",
+      "logits_sha256": "28d36b66769449f2e3d06048dc5f1e7c8da0ceed95c15a0f8224874f731060f7"
+    },
+    {
+      "action_local_node": 52,
+      "action_global_candidate": 288,
+      "served_tasks_global": [
+        31
+      ],
+      "reward": -3.6063725810999987,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        28,
+        30,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        46,
+        47,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "977049e994b9d3a7faeaf5b69cab25d293ee317b4fb560e05c1498b1932e729c",
+      "logits_sha256": "edb47eb9488f79e60f405edd5538c5b66fd8a9ec835f0227be262d4a17556092"
+    },
+    {
+      "action_local_node": 50,
+      "action_global_candidate": 286,
+      "served_tasks_global": [
+        28
+      ],
+      "reward": -3.1060691549999992,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        30,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        46,
+        47,
+        50,
+        51,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "0fab7078148362e4f902d977bdc3c4583589f648dbbcaae43de4ab72953cc74b",
+      "logits_sha256": "30561115946e3479a2d5e67b6491a4f7e31d2ef5f1aec4a2ede261b1b6d8022f"
+    },
+    {
+      "action_local_node": 56,
+      "action_global_candidate": 292,
+      "served_tasks_global": [
+        30
+      ],
+      "reward": -1.2240933242,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "203102ea76a59a2e4e714d040ddfd76c9df0a6882c3d94cb7c16207e67931765",
+      "logits_sha256": "7be03d5e58c43edea98839c45e8353963672de5f8595ade46b9d09791ac0b0c5"
+    },
+    {
+      "action_local_node": 60,
+      "action_global_candidate": 372,
+      "served_tasks_global": [
+        36
+      ],
+      "reward": -3.268213609100001,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "33ae45512113afd951385d2a5843915e9b4521ca5926826ec8e9bb3f463cb5d0",
+      "logits_sha256": "ce70a45948d2cfa9296fe863390b2287c0355695d9003c04c2d6e7626ec1d8b3"
+    },
+    {
+      "action_local_node": 80,
+      "action_global_candidate": 441,
+      "served_tasks_global": [
+        45
+      ],
+      "reward": -3.4534148384000005,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        37,
+        38,
+        44,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "83753f3f115ad08c9a707a9330525668edb07391c8ac7584579bc374f89ad7ba",
+      "logits_sha256": "6818c37180edef8eb8798467c08cb9a4ef283b47dc71c636bcc46569ccf0734f"
+    },
+    {
+      "action_local_node": 74,
+      "action_global_candidate": 433,
+      "served_tasks_global": [
+        44
+      ],
+      "reward": -3.6306571758000015,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        37,
+        38,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "e4c1fb92cdf5021ebb45450851c6ab3695f32f23c89b070c5658c42c31d28ec8",
+      "logits_sha256": "2d4d111f4b0a95acb398f5d71161b09ad1f6aeb30758776d2702d7b8297e839d"
+    },
+    {
+      "action_local_node": 86,
+      "action_global_candidate": 454,
+      "served_tasks_global": [
+        46
+      ],
+      "reward": -7.732434146000001,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        37,
+        38,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "e7359af306c59e3fceea6f99e3f3d9a590a5e0983b4d51c764eebd4f7817258a",
+      "logits_sha256": "a04a87662046f9292e913d37dcfdc46a9c69f85e181795df31669c8cff3277e7"
+    },
+    {
+      "action_local_node": 88,
+      "action_global_candidate": 456,
+      "served_tasks_global": [
+        47
+      ],
+      "reward": -3.0924627801000018,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        37,
+        38,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "4ff44969a818c87167563067ea98c64cabb903b43c9bc2b4be4f33201b0942bf",
+      "logits_sha256": "0bca507b0579d03904955eab3dbd5ae6063920545d3dab25d1df8a4c21845452"
+    },
+    {
+      "action_local_node": 64,
+      "action_global_candidate": 378,
+      "served_tasks_global": [
+        37
+      ],
+      "reward": -1.2504020537000002,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        38,
+        48,
+        49,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "7056ff0caaae9a9b66045dd5438ad9e11818ae866ec247c23627048b0ef780ca",
+      "logits_sha256": "d333d957dc044e03a837861394dcb0cb9cc6f66659a9263555f3cb06f40c76df"
+    },
+    {
+      "action_local_node": 94,
+      "action_global_candidate": 464,
+      "served_tasks_global": [
+        48,
+        49
+      ],
+      "reward": -3.5585996936000015,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        38,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        68,
+        69,
+        70,
+        71,
+        72,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "333b4e793777d407900d2c673a1e178ba91922df7b65b05ec2eee22137fc9f41",
+      "logits_sha256": "e7e91777764f31f037f08ad3d01bf18d6c15fe1b1dcb9171054a7d6ebbbc8354"
+    },
+    {
+      "action_local_node": 70,
+      "action_global_candidate": 386,
+      "served_tasks_global": [
+        38
+      ],
+      "reward": -1.264270579899998,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        50,
+        51
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        68,
+        69,
+        70,
+        71,
+        72,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "6276295b8f97b7f8f1b518bace66abea786e750eaa01fab8ebdc0c757793fffd",
+      "logits_sha256": "8eb59422b28cc33578774b36286795cd00ee7d629087cff1a950c2c591bf96f2"
+    },
+    {
+      "action_local_node": 98,
+      "action_global_candidate": 474,
+      "served_tasks_global": [
+        50,
+        51
+      ],
+      "reward": -5.682626490900001,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        98,
+        99,
+        100,
+        101
+      ],
+      "mask_sha256": "a72d47c4ba7540b9026eb8a63541f7333be81b2b9bc9af435384bafb6fb7de6e",
+      "logits_sha256": "1cc21b6cfe0d8f4b894da91a8304ec47c6f151747c56a7c69210e1aad8e30166"
+    },
+    {
+      "action_local_node": 37,
+      "action_global_candidate": 231,
+      "served_tasks_global": [
+        22
+      ],
+      "reward": -9.6105603043,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "mask_sha256": "cbad81b1d10a9734645cb8daeefb448ae8fc18c4f0d635bbd7808e2411ede0c0",
+      "logits_sha256": "39e57dcb7f42c17ac872913fd07aa9ac8753d74e965f23f951f9261a879a40ba"
+    },
+    {
+      "action_local_node": 31,
+      "action_global_candidate": 225,
+      "served_tasks_global": [
+        21
+      ],
+      "reward": -3.385542489699997,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        34,
+        35
+      ],
+      "mask_sha256": "df8691611155cfcf1c4635e653456a29faa60d40289d7166ffe765bf90d9414b",
+      "logits_sha256": "86bd34af200ef54eee79650bde8a7627015b38ad39d87de7df22bd7f639cba1c"
+    },
+    {
+      "action_local_node": 27,
+      "action_global_candidate": 147,
+      "served_tasks_global": [
+        17,
+        18
+      ],
+      "reward": -1.2365936070999997,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        7,
+        14,
+        15,
+        16
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "mask_sha256": "773ca34eb7acc209b938a0ad2c78bb5aae4231a3d2dcfce66c85ae46a349ad7a",
+      "logits_sha256": "8cabf8729b3dc43fc472cafdbde7a97387c4894e990607b2bf551713143e3909"
+    },
+    {
+      "action_local_node": 5,
+      "action_global_candidate": 63,
+      "served_tasks_global": [
+        7
+      ],
+      "reward": -5.727190898500002,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        14,
+        15,
+        16
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "mask_sha256": "1b6d8df9629dc9f3f5d9a86fe3e48cda31fc056590216d4bd6d48155f6fe4adb",
+      "logits_sha256": "4fd8349e122023c6a3c172eb23d7bf1c47221269338d05afb7fbb49eeab6dba5"
+    },
+    {
+      "action_local_node": 19,
+      "action_global_candidate": 129,
+      "served_tasks_global": [
+        16
+      ],
+      "reward": -5.424843008099998,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [
+        14,
+        15
+      ],
+      "done": false,
+      "mask_local_nodes": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "mask_sha256": "214b4b9ed4af64bf8ca132532ff1ae160f90e9ace4f37e6ee805aecf6b0287cb",
+      "logits_sha256": "2d8981abe15000f84da5a6fa69132f053b0aceccb8bcc709420de22f8bb7e012"
+    },
+    {
+      "action_local_node": 13,
+      "action_global_candidate": 121,
+      "served_tasks_global": [
+        14,
+        15
+      ],
+      "reward": -19.0845478081,
+      "terminal_H_correction": 0.0,
+      "remaining_tasks_global": [],
+      "done": true,
+      "mask_local_nodes": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "mask_sha256": "3d26e64ce8d814a05bbf28f040b33016fbf1b6c5e7f2bd149e5c0bc853e17bb7",
+      "logits_sha256": "216a9b9dfa12947c187aa3a51dad1bebe4c3b3d9f66d799e138f9c6672536bab"
+    }
+  ],
+  "result": {
+    "J": 103.2927891216,
+    "L": 89.0427891216,
+    "K": 19,
+    "raw_J": 107.9343726334,
+    "raw_L": 92.1843726334,
+    "raw_K": 21,
+    "route": [
+      0,
+      8,
+      38,
+      44,
+      56,
+      50,
+      60,
+      82,
+      77,
+      86,
+      64,
+      88,
+      94,
+      70,
+      98,
+      27,
+      31,
+      5,
+      19,
+      13,
+      0
+    ],
+    "raw_route": [
+      0,
+      8,
+      38,
+      44,
+      52,
+      50,
+      56,
+      60,
+      80,
+      74,
+      86,
+      88,
+      64,
+      94,
+      70,
+      98,
+      37,
+      31,
+      27,
+      5,
+      19,
+      13,
+      0
+    ],
+    "plan": {
+      "schema": "rc3-global-local-plan-v1",
+      "method": "S0_endpoint_construction",
+      "status": "complete",
+      "problem_identity": "5be3feee09ad7325c916e3aed85f8e28ccbc80666ba8559fac46d2f6b32df307",
+      "parent_identity": "654c7590fab9c29a7c193bf664f72280619f53ee727681796a3e91eaa0ec59b7",
+      "entry_global_node": 0,
+      "exit_global_node": 0,
+      "window": {
+        "x0": 4,
+        "y0": 0,
+        "width": 6,
+        "height": 6
+      },
+      "target_task_ids_global": [
+        7,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        27,
+        28,
+        29,
+        30,
+        31,
+        36,
+        37,
+        38,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "visit_order_candidate_ids": [
+        116,
+        272,
+        280,
+        292,
+        286,
+        372,
+        444,
+        438,
+        454,
+        378,
+        456,
+        464,
+        386,
+        474,
+        147,
+        225,
+        63,
+        129,
+        121
+      ],
+      "selected_candidate_ids": [
+        116,
+        272,
+        280,
+        292,
+        286,
+        372,
+        444,
+        438,
+        454,
+        378,
+        456,
+        464,
+        386,
+        474,
+        147,
+        225,
+        63,
+        129,
+        121
+      ],
+      "navigation_global_nodes": [
+        0,
+        117,
+        273,
+        281,
+        293,
+        287,
+        373,
+        445,
+        439,
+        455,
+        379,
+        457,
+        465,
+        387,
+        475,
+        148,
+        226,
+        64,
+        130,
+        122,
+        0
+      ],
+      "assignments": [
+        {
+          "task_id": 12,
+          "candidate_id": 116,
+          "arm": "L"
+        },
+        {
+          "task_id": 13,
+          "candidate_id": 116,
+          "arm": "L"
+        },
+        {
+          "task_id": 27,
+          "candidate_id": 272,
+          "arm": "R"
+        },
+        {
+          "task_id": 29,
+          "candidate_id": 280,
+          "arm": "L"
+        },
+        {
+          "task_id": 30,
+          "candidate_id": 292,
+          "arm": "L"
+        },
+        {
+          "task_id": 31,
+          "candidate_id": 292,
+          "arm": "L"
+        },
+        {
+          "task_id": 28,
+          "candidate_id": 286,
+          "arm": "L"
+        },
+        {
+          "task_id": 36,
+          "candidate_id": 372,
+          "arm": "L"
+        },
+        {
+          "task_id": 45,
+          "candidate_id": 444,
+          "arm": "L"
+        },
+        {
+          "task_id": 44,
+          "candidate_id": 438,
+          "arm": "L"
+        },
+        {
+          "task_id": 46,
+          "candidate_id": 454,
+          "arm": "L"
+        },
+        {
+          "task_id": 37,
+          "candidate_id": 378,
+          "arm": "L"
+        },
+        {
+          "task_id": 47,
+          "candidate_id": 456,
+          "arm": "R"
+        },
+        {
+          "task_id": 48,
+          "candidate_id": 464,
+          "arm": "L"
+        },
+        {
+          "task_id": 49,
+          "candidate_id": 464,
+          "arm": "L"
+        },
+        {
+          "task_id": 38,
+          "candidate_id": 386,
+          "arm": "L"
+        },
+        {
+          "task_id": 50,
+          "candidate_id": 474,
+          "arm": "L"
+        },
+        {
+          "task_id": 51,
+          "candidate_id": 474,
+          "arm": "L"
+        },
+        {
+          "task_id": 17,
+          "candidate_id": 147,
+          "arm": "R"
+        },
+        {
+          "task_id": 18,
+          "candidate_id": 147,
+          "arm": "R"
+        },
+        {
+          "task_id": 21,
+          "candidate_id": 225,
+          "arm": "L"
+        },
+        {
+          "task_id": 22,
+          "candidate_id": 225,
+          "arm": "L"
+        },
+        {
+          "task_id": 7,
+          "candidate_id": 63,
+          "arm": "L"
+        },
+        {
+          "task_id": 16,
+          "candidate_id": 129,
+          "arm": "L"
+        },
+        {
+          "task_id": 14,
+          "candidate_id": 121,
+          "arm": "L"
+        },
+        {
+          "task_id": 15,
+          "candidate_id": 121,
+          "arm": "L"
+        }
+      ],
+      "service_stops": [
+        {
+          "sequence": 1,
+          "candidate_id": 116,
+          "pose": {
+            "x": 9.651438773678308,
+            "y": 3.0893676926381115,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 12.7408064663,
+          "tasks": [
+            {
+              "task_id": 12,
+              "arm": "L"
+            },
+            {
+              "task_id": 13,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 2,
+          "candidate_id": 272,
+          "pose": {
+            "x": 10.33815516602569,
+            "y": 6.685586406357494,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 17.558665414,
+          "tasks": [
+            {
+              "task_id": 27,
+              "arm": "R"
+            }
+          ]
+        },
+        {
+          "sequence": 3,
+          "candidate_id": 280,
+          "pose": {
+            "x": 12.648893296237338,
+            "y": 6.770576940193037,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 20.3454780898,
+          "tasks": [
+            {
+              "task_id": 29,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 4,
+          "candidate_id": 292,
+          "pose": {
+            "x": 14.260275793871871,
+            "y": 7.407562687616228,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 23.1549114143,
+          "tasks": [
+            {
+              "task_id": 30,
+              "arm": "L"
+            },
+            {
+              "task_id": 31,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 5,
+          "candidate_id": 286,
+          "pose": {
+            "x": 13.818442224299865,
+            "y": 7.439822442166376,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 23.6290047385,
+          "tasks": [
+            {
+              "task_id": 28,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 6,
+          "candidate_id": 372,
+          "pose": {
+            "x": 14.291488403081688,
+            "y": 9.525942658544297,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 26.1881711336,
+          "tasks": [
+            {
+              "task_id": 36,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 7,
+          "candidate_id": 444,
+          "pose": {
+            "x": 11.973527186811676,
+            "y": 11.767242651096677,
+            "theta": 0.0,
+            "h": 0.4
+          },
+          "arrival_distance_m": 31.234544583700004,
+          "tasks": [
+            {
+              "task_id": 45,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 8,
+          "candidate_id": 438,
+          "pose": {
+            "x": 11.520679636956466,
+            "y": 11.732893524385723,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 31.721741260200005,
+          "tasks": [
+            {
+              "task_id": 44,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 9,
+          "candidate_id": 454,
+          "pose": {
+            "x": 16.19131312610225,
+            "y": 11.711477127102487,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 38.664556799,
+          "tasks": [
+            {
+              "task_id": 46,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 10,
+          "candidate_id": 378,
+          "pose": {
+            "x": 17.34719573261126,
+            "y": 10.60818232757717,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 40.923734205,
+          "tasks": [
+            {
+              "task_id": 37,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 11,
+          "candidate_id": 456,
+          "pose": {
+            "x": 17.386728479107887,
+            "y": 11.069051634750863,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 41.4241362587,
+          "tasks": [
+            {
+              "task_id": 47,
+              "arm": "R"
+            }
+          ]
+        },
+        {
+          "sequence": 12,
+          "candidate_id": 464,
+          "pose": {
+            "x": 19.68259270735653,
+            "y": 11.081385046429428,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 44.2369558334,
+          "tasks": [
+            {
+              "task_id": 48,
+              "arm": "L"
+            },
+            {
+              "task_id": 49,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 13,
+          "candidate_id": 386,
+          "pose": {
+            "x": 19.72801857496497,
+            "y": 10.612540334051136,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 44.7512264133,
+          "tasks": [
+            {
+              "task_id": 38,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 14,
+          "candidate_id": 474,
+          "pose": {
+            "x": 22.065204378683774,
+            "y": 12.752196580462487,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 49.6838529042,
+          "tasks": [
+            {
+              "task_id": 50,
+              "arm": "L"
+            },
+            {
+              "task_id": 51,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 15,
+          "candidate_id": 147,
+          "pose": {
+            "x": 20.204080899687444,
+            "y": 4.103484459016607,
+            "theta": -1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 60.6494729455,
+          "tasks": [
+            {
+              "task_id": 17,
+              "arm": "R"
+            },
+            {
+              "task_id": 18,
+              "arm": "R"
+            }
+          ]
+        },
+        {
+          "sequence": 16,
+          "candidate_id": 225,
+          "pose": {
+            "x": 20.144066331303648,
+            "y": 4.530063497697222,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 61.1360665526,
+          "tasks": [
+            {
+              "task_id": 21,
+              "arm": "L"
+            },
+            {
+              "task_id": 22,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 17,
+          "candidate_id": 63,
+          "pose": {
+            "x": 18.55094995427453,
+            "y": 1.2258481219422266,
+            "theta": 3.141592653589793,
+            "h": 0.4
+          },
+          "arrival_distance_m": 66.0333983054,
+          "tasks": [
+            {
+              "task_id": 7,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 18,
+          "candidate_id": 129,
+          "pose": {
+            "x": 15.461644636577429,
+            "y": 2.377378309062984,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 70.7082413135,
+          "tasks": [
+            {
+              "task_id": 16,
+              "arm": "L"
+            }
+          ]
+        },
+        {
+          "sequence": 19,
+          "candidate_id": 121,
+          "pose": {
+            "x": 13.098220051753598,
+            "y": 2.4111105647337143,
+            "theta": 1.5707963267948966,
+            "h": 0.4
+          },
+          "arrival_distance_m": 73.5334585051,
+          "tasks": [
+            {
+              "task_id": 14,
+              "arm": "L"
+            },
+            {
+              "task_id": 15,
+              "arm": "L"
+            }
+          ]
+        }
+      ],
+      "unserved_task_ids": [],
+      "route_polyline": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.896436878
+        ],
+        [
+          0.0,
+          1.2443307264
+        ],
+        [
+          0.0,
+          2.1633481335
+        ],
+        [
+          0.9512141312,
+          2.1633481335
+        ],
+        [
+          0.9666820433,
+          2.1633481335
+        ],
+        [
+          1.3924557559,
+          2.1633481335
+        ],
+        [
+          1.3941019193,
+          2.1633481335
+        ],
+        [
+          2.3459942132,
+          2.1633481335
+        ],
+        [
+          3.2903022721,
+          2.1633481335
+        ],
+        [
+          3.3287924179,
+          2.1633481335
+        ],
+        [
+          3.7510977569,
+          2.1633481335
+        ],
+        [
+          3.7851110841,
+          2.1633481335
+        ],
+        [
+          4.6919884265,
+          2.1633481335
+        ],
+        [
+          5.6703454191,
+          2.1633481335
+        ],
+        [
+          5.6772659733,
+          2.1633481335
+        ],
+        [
+          6.0964445506,
+          2.1633481335
+        ],
+        [
+          6.1171892901,
+          2.1633481335
+        ],
+        [
+          7.0379826397,
+          2.1633481335
+        ],
+        [
+          7.9938290446,
+          2.1633481335
+        ],
+        [
+          8.0100803936,
+          2.1633481335
+        ],
+        [
+          8.4376820178,
+          2.1633481335
+        ],
+        [
+          8.4501677477,
+          2.1633481335
+        ],
+        [
+          9.3839768529,
+          2.1633481335
+        ],
+        [
+          9.3839768529,
+          3.0494643929
+        ],
+        [
+          9.3839768529,
+          3.0893676926
+        ],
+        [
+          9.6514387737,
+          3.0893676926
+        ],
+        [
+          9.3839768529,
+          3.0893676926
+        ],
+        [
+          9.3839768529,
+          3.3989417406
+        ],
+        [
+          9.3839768529,
+          3.4583485847
+        ],
+        [
+          9.3839768529,
+          4.326696267
+        ],
+        [
+          9.3839768529,
+          5.2486483973
+        ],
+        [
+          9.3839768529,
+          5.2634197145
+        ],
+        [
+          9.3839768529,
+          5.6101876728
+        ],
+        [
+          9.3839768529,
+          5.6198324264
+        ],
+        [
+          9.3839768529,
+          6.4900444005
+        ],
+        [
+          10.338155166,
+          6.4900444005
+        ],
+        [
+          10.338155166,
+          6.6855864064
+        ],
+        [
+          10.338155166,
+          6.4900444005
+        ],
+        [
+          10.3602384862,
+          6.4900444005
+        ],
+        [
+          10.7800222503,
+          6.4900444005
+        ],
+        [
+          10.8186190163,
+          6.4900444005
+        ],
+        [
+          11.7299710662,
+          6.4900444005
+        ],
+        [
+          12.6488932962,
+          6.4900444005
+        ],
+        [
+          12.6488932962,
+          6.7705769402
+        ],
+        [
+          12.6488932962,
+          6.4900444005
+        ],
+        [
+          12.7008728351,
+          6.4900444005
+        ],
+        [
+          13.0952592483,
+          6.4900444005
+        ],
+        [
+          13.1277264687,
+          6.4900444005
+        ],
+        [
+          14.0759652794,
+          6.4900444005
+        ],
+        [
+          14.0759652794,
+          7.4075626876
+        ],
+        [
+          14.2602757939,
+          7.4075626876
+        ],
+        [
+          14.0759652794,
+          7.4075626876
+        ],
+        [
+          14.0759652794,
+          7.4398224422
+        ],
+        [
+          13.8184422243,
+          7.4398224422
+        ],
+        [
+          14.0759652794,
+          7.4398224422
+        ],
+        [
+          14.0759652794,
+          7.7629831965
+        ],
+        [
+          14.0759652794,
+          7.7783134461
+        ],
+        [
+          14.0759652794,
+          8.6533925339
+        ],
+        [
+          14.0759652794,
+          9.5259426585
+        ],
+        [
+          14.2914884031,
+          9.5259426585
+        ],
+        [
+          14.0759652794,
+          9.5259426585
+        ],
+        [
+          14.0759652794,
+          9.5638896242
+        ],
+        [
+          14.0759652794,
+          9.8843496978
+        ],
+        [
+          14.0759652794,
+          9.90904339
+        ],
+        [
+          14.0759652794,
+          10.8167406674
+        ],
+        [
+          13.1622184611,
+          10.8167406674
+        ],
+        [
+          13.1042177096,
+          10.8167406674
+        ],
+        [
+          12.7030909449,
+          10.8167406674
+        ],
+        [
+          12.651014329,
+          10.8167406674
+        ],
+        [
+          11.7299710662,
+          10.8167406674
+        ],
+        [
+          11.7299710662,
+          11.7328935244
+        ],
+        [
+          11.7299710662,
+          11.7672426511
+        ],
+        [
+          11.9735271868,
+          11.7672426511
+        ],
+        [
+          11.7299710662,
+          11.7672426511
+        ],
+        [
+          11.7299710662,
+          11.7328935244
+        ],
+        [
+          11.520679637,
+          11.7328935244
+        ],
+        [
+          11.7299710662,
+          11.7328935244
+        ],
+        [
+          11.7299710662,
+          10.8167406674
+        ],
+        [
+          12.651014329,
+          10.8167406674
+        ],
+        [
+          12.7030909449,
+          10.8167406674
+        ],
+        [
+          13.1042177096,
+          10.8167406674
+        ],
+        [
+          13.1622184611,
+          10.8167406674
+        ],
+        [
+          14.0759652794,
+          10.8167406674
+        ],
+        [
+          15.0045910763,
+          10.8167406674
+        ],
+        [
+          15.0196294035,
+          10.8167406674
+        ],
+        [
+          15.4307964227,
+          10.8167406674
+        ],
+        [
+          15.4674185519,
+          10.8167406674
+        ],
+        [
+          16.4219594926,
+          10.8167406674
+        ],
+        [
+          16.4219594926,
+          11.7114771271
+        ],
+        [
+          16.1913131261,
+          11.7114771271
+        ],
+        [
+          16.4219594926,
+          11.7114771271
+        ],
+        [
+          16.4219594926,
+          10.8167406674
+        ],
+        [
+          17.3471957326,
+          10.8167406674
+        ],
+        [
+          17.3471957326,
+          10.6081823276
+        ],
+        [
+          17.3471957326,
+          10.8167406674
+        ],
+        [
+          17.3867284791,
+          10.8167406674
+        ],
+        [
+          17.3867284791,
+          11.0690516348
+        ],
+        [
+          17.3867284791,
+          10.8167406674
+        ],
+        [
+          17.7835167058,
+          10.8167406674
+        ],
+        [
+          17.8352170356,
+          10.8167406674
+        ],
+        [
+          18.7679537059,
+          10.8167406674
+        ],
+        [
+          19.6825927074,
+          10.8167406674
+        ],
+        [
+          19.6825927074,
+          11.0813850464
+        ],
+        [
+          19.6825927074,
+          10.8167406674
+        ],
+        [
+          19.728018575,
+          10.8167406674
+        ],
+        [
+          19.728018575,
+          10.6125403341
+        ],
+        [
+          19.728018575,
+          10.8167406674
+        ],
+        [
+          20.1379058696,
+          10.8167406674
+        ],
+        [
+          20.1501791697,
+          10.8167406674
+        ],
+        [
+          21.1139479191,
+          10.8167406674
+        ],
+        [
+          21.1139479191,
+          11.7194711524
+        ],
+        [
+          21.1139479191,
+          11.7592181886
+        ],
+        [
+          21.1139479191,
+          12.0746214378
+        ],
+        [
+          21.1139479191,
+          12.1148844729
+        ],
+        [
+          21.1139479191,
+          12.9800888009
+        ],
+        [
+          22.035723556,
+          12.9800888009
+        ],
+        [
+          22.0652043787,
+          12.9800888009
+        ],
+        [
+          22.0652043787,
+          12.7521965805
+        ],
+        [
+          22.0652043787,
+          12.9800888009
+        ],
+        [
+          22.035723556,
+          12.9800888009
+        ],
+        [
+          21.1139479191,
+          12.9800888009
+        ],
+        [
+          21.1139479191,
+          12.1148844729
+        ],
+        [
+          21.1139479191,
+          12.0746214378
+        ],
+        [
+          21.1139479191,
+          11.7592181886
+        ],
+        [
+          21.1139479191,
+          11.7194711524
+        ],
+        [
+          21.1139479191,
+          10.8167406674
+        ],
+        [
+          21.1139479191,
+          9.9317852504
+        ],
+        [
+          21.1139479191,
+          9.8746259466
+        ],
+        [
+          21.1139479191,
+          9.570275083
+        ],
+        [
+          21.1139479191,
+          9.5173360721
+        ],
+        [
+          21.1139479191,
+          8.6533925339
+        ],
+        [
+          21.1139479191,
+          7.7458935657
+        ],
+        [
+          21.1139479191,
+          7.7268553564
+        ],
+        [
+          21.1139479191,
+          7.4117511937
+        ],
+        [
+          21.1139479191,
+          7.3809416696
+        ],
+        [
+          21.1139479191,
+          6.4900444005
+        ],
+        [
+          21.1139479191,
+          5.5843960346
+        ],
+        [
+          21.1139479191,
+          5.5438335574
+        ],
+        [
+          21.1139479191,
+          5.2222210506
+        ],
+        [
+          21.1139479191,
+          5.2013201843
+        ],
+        [
+          21.1139479191,
+          4.326696267
+        ],
+        [
+          20.2040808997,
+          4.326696267
+        ],
+        [
+          20.2040808997,
+          4.103484459
+        ],
+        [
+          20.2040808997,
+          4.326696267
+        ],
+        [
+          20.1440663313,
+          4.326696267
+        ],
+        [
+          20.1440663313,
+          4.5300634977
+        ],
+        [
+          20.1440663313,
+          4.326696267
+        ],
+        [
+          19.7507336467,
+          4.326696267
+        ],
+        [
+          19.6946159173,
+          4.326696267
+        ],
+        [
+          18.7679537059,
+          4.326696267
+        ],
+        [
+          18.7679537059,
+          3.4367317671
+        ],
+        [
+          18.7679537059,
+          3.4192566861
+        ],
+        [
+          18.7679537059,
+          3.0874365408
+        ],
+        [
+          18.7679537059,
+          3.0508011404
+        ],
+        [
+          18.7679537059,
+          2.1633481335
+        ],
+        [
+          18.7679537059,
+          1.2411457637
+        ],
+        [
+          18.7679537059,
+          1.2258481219
+        ],
+        [
+          18.5509499543,
+          1.2258481219
+        ],
+        [
+          18.7679537059,
+          1.2258481219
+        ],
+        [
+          18.7679537059,
+          1.2411457637
+        ],
+        [
+          18.7679537059,
+          2.1633481335
+        ],
+        [
+          17.8373944119,
+          2.1633481335
+        ],
+        [
+          17.8281071771,
+          2.1633481335
+        ],
+        [
+          17.4102833272,
+          2.1633481335
+        ],
+        [
+          17.3830308039,
+          2.1633481335
+        ],
+        [
+          16.4219594926,
+          2.1633481335
+        ],
+        [
+          15.493793114,
+          2.1633481335
+        ],
+        [
+          15.4616446366,
+          2.1633481335
+        ],
+        [
+          15.4616446366,
+          2.3773783091
+        ],
+        [
+          15.4616446366,
+          2.1633481335
+        ],
+        [
+          15.0567843391,
+          2.1633481335
+        ],
+        [
+          15.0123070551,
+          2.1633481335
+        ],
+        [
+          14.0759652794,
+          2.1633481335
+        ],
+        [
+          13.1419243744,
+          2.1633481335
+        ],
+        [
+          13.0982200518,
+          2.1633481335
+        ],
+        [
+          13.0982200518,
+          2.4111105647
+        ],
+        [
+          13.0982200518,
+          2.1633481335
+        ],
+        [
+          12.708210072,
+          2.1633481335
+        ],
+        [
+          12.6711669142,
+          2.1633481335
+        ],
+        [
+          11.7299710662,
+          2.1633481335
+        ],
+        [
+          11.7299710662,
+          1.2417055394
+        ],
+        [
+          11.7299710662,
+          1.2235393974
+        ],
+        [
+          11.7299710662,
+          0.8752060791
+        ],
+        [
+          11.7299710662,
+          0.8738076779
+        ],
+        [
+          11.7299710662,
+          0.0
+        ],
+        [
+          10.8035173992,
+          0.0
+        ],
+        [
+          10.358658496,
+          0.0
+        ],
+        [
+          9.3839768529,
+          0.0
+        ],
+        [
+          8.4501677477,
+          0.0
+        ],
+        [
+          8.0100803936,
+          0.0
+        ],
+        [
+          7.0379826397,
+          0.0
+        ],
+        [
+          6.0964445506,
+          0.0
+        ],
+        [
+          5.6703454191,
+          0.0
+        ],
+        [
+          4.6919884265,
+          0.0
+        ],
+        [
+          3.7851110841,
+          0.0
+        ],
+        [
+          3.3287924179,
+          0.0
+        ],
+        [
+          2.3459942132,
+          0.0
+        ],
+        [
+          1.3941019193,
+          0.0
+        ],
+        [
+          0.9512141312,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "route_leg_costs_m": [
+        12.7408064663,
+        4.8178589477000004,
+        2.7868126757999994,
+        2.809433324499998,
+        0.47409332420000005,
+        2.559166395100001,
+        5.046373450100003,
+        0.4871966765,
+        6.9428155388,
+        2.259177406000001,
+        0.5004020537000002,
+        2.8128195747000007,
+        0.514270579899998,
+        4.932626490900001,
+        10.965620041300001,
+        0.48659360709999966,
+        4.897331752800001,
+        4.674843008099998,
+        2.8252171916000006,
+        15.5093306165
+      ],
+      "route_length_m": 89.0427891216,
+      "objective_length_plus_stops_m": 103.2927891216,
+      "stop_penalty_equivalent_m": 0.75,
+      "arm_joint_trajectories": null,
+      "physical_joint_trajectory_certified": false,
+      "validation": {
+        "valid_model_plan": true,
+        "all_tasks_served": true,
+        "collision_count": 0,
+        "errors": [],
+        "independent_polyline_length_m": 89.04278912160002,
+        "effective_same_arm_F_and_A": true,
+        "endpoint_constraints_satisfied": true,
+        "physical_joint_trajectory_certified": false,
+        "scope": "Original global roadmap, circular-base inflated AABB navigation, and proxy/externally supplied per-arm service tables; no built-in IK, arm swept path or joint trajectory certificate"
+      }
+    },
+    "H_s": 0.0008805999996184255,
+    "export_s": 0.0005465000003823661,
+    "validation_s": 0.013067400000181806,
+    "cache_hit": false
+  },
+  "counts": {
+    "model_load_and_verify_attempts": 1,
+    "frozen_policy_materializations": 1,
+    "model_load_and_verify_completed": 1,
+    "features_and_global_local_encoding_attempts": 1,
+    "fresh_encodings": 1,
+    "features_and_global_local_encoding_completed": 1,
+    "greedy_construction_attempts": 1,
+    "greedy_actions": 21,
+    "greedy_construction_completed": 1,
+    "reference_H_and_validation_attempts": 1,
+    "reference_H_and_validation_completed": 1
+  },
+  "seconds": {
+    "model_load_and_verify": 0.007087899999532965,
+    "features_and_global_local_encoding": 0.010582199999589648,
+    "greedy_construction": 0.010804499999721884,
+    "reference_H_and_validation": 0.041720299999724375
+  },
+  "cache_namespace": "frozen_SL_reference_only",
+  "policy_sampling_RNG_used": false
+}

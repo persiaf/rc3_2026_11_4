@@ -1,0 +1,39 @@
+{
+  "schema": "rc3-gl-v5-independent-result-to-claim-v1",
+  "experiment_id": "rc3_gl_v5_frozen_greedy_20261109_01",
+  "review_id": "20261109_run01",
+  "reviewer_role": "independent delegated Codex paper architect/reviewer",
+  "intended_claim": "G128 simultaneously improves common SL256, natural-start LOO B128, and continued-SL C128 frozen greedy+sameH complete routes on the fixed new development tasks.",
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "Rejection of this fixed single-seed development-screen claim; not a universal DRL or cross-seed conclusion.",
+  "what_results_support": "One registered seed11622026 G128 run completed128 updates and2480 requests within989.3444799s. Direct recomputation of432 saved results on72 new views over12 trained physical layouts reproduces parent-averaged H-final gains versus SL/B/C of -2.8641351%/-2.4678596%/-3.2426334%, with95% bootstrap intervals strictly negative. All432 result artifacts are valid and finite and match CSV SHA256. H lowers G's own raw mean J by25.8719397199, but the trained G policy loses to every primary control before and after H. The reference adds512 requests,33.3333% relative to1536 sample training requests.",
+  "what_results_dont_support": "G does not improve SL256 or outperform B128/C128 in either registered raw or H-final average gain. The candidate does not pass the predeclared AND screen or warrant direct multiple-seed confirmation as a successful recipe. The evidence does not establish reduced gradient variance, a causal explanation for degradation, unseen-layout generalization, optimization-seed robustness, deployment latency advantage, real-arm/IK certification, or DRL's general ineffectiveness. Toy engineering PASS and expected-score baseline invariance do not imply monotonic greedy improvement.",
+  "missing_evidence": "The separate exhaustive numerical/provenance audit is still running and INDEPENDENT_AUDIT.json is absent at review issuance; do not call it PASS. No paper/PAPER_CLAIM_AUDIT.json or PAPER_PLAN.md is available. Independent optimization seeds, unseen physical layouts, a matched gradient-variance comparison, causal clipping/scale diagnostics and real physical calibration/IK are absent; these omissions limit broader claims and do not make the failed screen a positive result.",
+  "suggested_claim_revision": "Report a negative baseline-replacement study: from exact common SL256 with fresh Adam, fixed schedule and seed11622026, frozen same-input greedy+H reference G128 consumed512 additional training requests and produced worse raw and H-final parent-averaged costs than SL256, B128 and C128 on72 new views from12 trained layouts. Preserve the fixed large-parent DRL to frozen-local complete-planning research goal.",
+  "routing_action": "REVISE: preserve and report the negative result, complete the already-running read-only audit, retain the fixed DRL research goal, and do not automatically extend training or advance this recipe to independent-multiple-seed confirmation, ablations, or confirmed writing.",
+  "next_experiments_needed": "No additional scientific computation is needed to recognize failure of this screen or authorized by this verdict. Any future mechanism revision must first use saved evidence to define a specific hypothesis and obtain separate registered protocol/source/H/seed/budget and execution authorization; a subsequent positive development gate would be needed before candidate-confirmation runs. Do not silently add seeds, updates, alternate tasks or held-out access.",
+  "paper_claim_audit": "unavailable",
+  "provisional": true,
+  "pending_external_review": false,
+  "external_human_peer_review": false,
+  "independent_numeric_audit_status_at_review": "NOT_YET_AVAILABLE; INDEPENDENT_AUDIT.json absent; separate exhaustive audit running",
+  "scientific_execution_during_review": {"model_materializations": 0, "policy_forwards": 0, "optimizer_updates": 0, "navigation_native_H": 0, "task_generation": 0},
+  "candidate_screen": false,
+  "gate_changes": "none; original three-control AND plus432-validity criterion; no Top1 criterion added",
+  "statistics": {"independent_units": 12, "new_cases": 72, "evaluations": 432, "mixed_layouts": 6, "blocked_layouts": 6, "optimization_seeds": 1, "bootstrap_replicates": 20000, "bootstrap_generator": "PCG64", "bootstrap_seed": 11642026, "bootstrap_draw_order": "reset per comparison; mixed (20000,6) then blocked (20000,6)", "quantiles": "linear2.5/97.5", "aggregation": "mean6 cases per physical layout; then per-layout relative gain; equal weight12 layouts", "all_six_primary_mean_and_CI_recomputations_match_summary_exactly": true},
+  "raw_comparisons": [
+    {"control": "SL256", "mean_gain": -0.03226795505001728, "lower95": -0.05568081604367806, "upper95": -0.005000452186260162},
+    {"control": "B128", "mean_gain": -0.025805358033117634, "lower95": -0.038274202434421985, "upper95": -0.014060758931615697},
+    {"control": "C128", "mean_gain": -0.050590603534163114, "lower95": -0.07065697194776384, "upper95": -0.03232925458767968}
+  ],
+  "H_final_comparisons": [
+    {"control": "SL256", "mean_gain": -0.028641351391283914, "lower95": -0.04618019351830565, "upper95": -0.012430282767088107, "layout_wins": 3},
+    {"control": "B128", "mean_gain": -0.024678596268418663, "lower95": -0.041868360588628695, "upper95": -0.009169383940680767, "layout_wins": 2},
+    {"control": "C128", "mean_gain": -0.03242633408395557, "lower95": -0.04942499511176022, "upper95": -0.017734140401850697, "layout_wins": 0}
+  ],
+  "native_H_final_mean_gains": {"Fixed3": -0.05227295192865669, "Detour16": -0.06605980935063129},
+  "resources": {"optimizer_updates": 128, "sample_requests": 1536, "reference_requests": 512, "evaluation_requests": 432, "total_requests": 2480, "extra_reference_request_fraction_vs_sample_requests": 0.3333333333333333, "reference_greedy_constructions": 512, "reference_actual_full_H_calls": 486, "reference_terminal_cache_hits": 26, "phase_wall_s": 989.3444798999999, "phase_cap_s": 7200, "timing_limit": "Nested component clocks and historical internal clocks are descriptive, not a paired deployment-speed or FLOP comparison."},
+  "trace_path": "rc3_gl_v5_20261109/paper/review-traces/experiment-result-to-claim/20261109_run01",
+  "source_binding_sha256": "0f5e381a80790d531c03c9fd4452c755ab728712bf32ee59317135c42351ddee"
+}

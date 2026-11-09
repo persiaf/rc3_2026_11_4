@@ -1,5 +1,13 @@
 # 实验结果到主张记录
 
+## 2026-11-09：GL-v5固定贪心参考自然起点DRL
+
+- intended_claim：在72个新任务窗口上同时改善共同SL、既有B和C的完整成本。claim_supported=no，confidence=high；事前AND筛选REVISE。
+- 实际G128更新128次、1536采样终局＋512参考＋432评价，共2480请求；未重训旧对照，参考模型冻结、独立缓存/RNG，所有优势含负值保留。
+- One registered seed11622026 G128 run completed128 updates and2480 requests within989.3444799s. Direct recomputation of432 saved results on72 new views over12 trained physical layouts reproduces parent-averaged H-final gains versus SL/B/C of -2.8641351%/-2.4678596%/-3.2426334%, with95% bootstrap intervals strictly negative. All432 result artifacts are valid and finite and match CSV SHA256. H lowers G's own raw mean J by25.8719397199, but the trained G policy loses to every primary control before and after H. The reference adds512 requests,33.3333% relative to1536 sample training requests.
+- 缺口：The separate exhaustive numerical/provenance audit is still running and INDEPENDENT_AUDIT.json is absent at review issuance; do not call it PASS. No paper/PAPER_CLAIM_AUDIT.json or PAPER_PLAN.md is available. Independent optimization seeds, unseen physical layouts, a matched gradient-variance comparison, causal clipping/scale diagnostics and real physical calibration/IK are absent; these omissions limit broader claims and do not make the failed screen a positive result.；路由：REVISE: preserve and report the negative result, complete the already-running read-only audit, retain the fixed DRL research goal, and do not automatically extend training or advance this recipe to independent-multiple-seed confirmation, ablations, or confirmed writing.。单优化种子、12已训练布局上的新任务；非最终泛化或部署证明，原研究DRL目标不变。
+- [完整证据](rc3_gl_v5_20261109/EXPERIMENT_REPORT.md) · [独立角色审查及轨迹](rc3_gl_v5_20261109/INDEPENDENT_REVIEW.md)。旧证据和角色原文件保持。
+
 ## 2026-11-09：GL-v4部署拆分与自然起点对照
 
 - 实际396/396部署请求、三组384优化器更新、3072终局请求和216新任务方案；独立数值/来源审计PASS。
