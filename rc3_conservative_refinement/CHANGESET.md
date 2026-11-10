@@ -41,3 +41,6 @@
 - rc3_conservative_refinement/test_lookahead.py
 - rc3_conservative_refinement/test_model.py
 - rc3_conservative_refinement/verify_zero_update.py
+
+发布补充：PUBLICATION_RECEIPT.json记录准确payload与远端核验；后续仅清单/发布元数据提交，不改变候选代码或科学状态。
+- rc3_conservative_refinement/PUBLICATION_RECEIPT.json
