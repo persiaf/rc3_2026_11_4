@@ -1,0 +1,1385 @@
+{
+  "schema": "RC3-Integrated-RPPO-independent-result-to-claim-v1",
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "review_role": "Fresh delegated paper architect/reviewer, independent from implementation; not external human peer review",
+  "review_utc": "2026-11-10T04:53:33.349206+00:00",
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "High for the observed P2 decision and current evidence limits; no claim about all future DRL designs.",
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "external_human_peer_review": false,
+  "intended_claim": "在大规模复杂父场景中训练的残差PPO，在冻结后对不同规模局部完整规划提供可靠、可复现且优于自身SL与匹配残差SL的独立增量，并达到强规则参照下的快速部署条件。",
+  "what_results_support": [
+    "The implemented frozen-base residual actor underwent 1,024 accepted PPO Actor Adam steps, paired with 1,024 accepted control steps and a separate critic, across 96 physical training layouts.",
+    "All 6,834 saved requests completed with valid stored proxy certificates; exact evidence, returns, costs, hashes and model roles are internally consistent in the inspected snapshot.",
+    "The selected RL128 endpoint has a small descriptive post-H gain of 0.2232709% over its own SL256 on the 8-parent development selection set.",
+    "The registered P2 rule correctly stops this configuration: both required 0.5% increment tests fail."
+  ],
+  "what_results_dont_support": [
+    "Reliable independent RL increment over the own-seed SL and matched residual-SL control.",
+    "Replicability across the unexecuted two seeds, independent promotion, unseen physical layouts, final216, or deployment quality/time AND conditions.",
+    "Causal credit from absolute H reductions, falling losses, nonzero gradients, or engineering checks to RL planning quality.",
+    "Same selected optimizer-step counts or equal FLOPs: selected RL128 has512 Actor steps, selected control256 has1,024 control steps.",
+    "Exact trained CUDA/CPU greedy-route equivalence, real-arm IK, joint trajectories or physical robot safety certification.",
+    "Failure of all DRL methods, or failure of stages which never ran."
+  ],
+  "missing_evidence": [
+    "The intended quality gate already fails in the observed single-seed selection evidence.",
+    "No independent promotion or final216 confirmation was authorized by the failed conditional trigger; the other two seeds and timing/P5 therefore remain NOT_STARTED.",
+    "No final group-by-size/seen-unseen deployment measurement exists, and no physical calibration/IK evidence exists.",
+    "No independent paper-to-raw-evidence PAPER_CLAIM_AUDIT.json is available."
+  ],
+  "suggested_claim_revision": "Integrated-RPPO-v1-small256 was implemented with real PPO updates and frozen D1 actors, but did not meet its preregistered first-seed increment gate. On8 trained physical selection layouts, selectedRL128 gained0.2233% over SL256 and lost0.8682% to independently selected residual-SL256; the registered task stopped atP2. No generalization or deployment success claim is supported.",
+  "next_experiments_needed": [],
+  "evidence_needed_for_any_future_positive_claim": [
+    "A future separately scoped effort would need a genuine positive DRL-vs-own-SL and matched-control result, followed by independent multi-seed/promotion/final and deployment measurements. This is an evidence description, not an instruction or authorization to run them."
+  ],
+  "next_action": "Narrow the written claim, preserve the registered negative P2 result and all evidence, finish already authorized delivery/maintenance only; no additional science, no method pivot and no new approval/design cycle in this closeout.",
+  "route": "narrow_claim_and_close_predeclared_P2",
+  "stage_status": {
+    "P0": "ENGINEERING_CHECKS_PASS_WITH_PRE_SCIENCE_SMALL256_REVISION",
+    "seed_11622026_P1": "COMPLETE_256_ROUNDS",
+    "P2": "NOT_PASSED",
+    "seed_11622027": "NOT_STARTED",
+    "seed_11622028": "NOT_STARTED",
+    "P3_promotion": "NOT_STARTED",
+    "P4_final216_quality_timing": "NOT_STARTED",
+    "P5": "NOT_STARTED"
+  },
+  "protocol": {
+    "active_path": "rc3_integrated_rppo/PROTOCOL_SMALL256.json",
+    "active_sha": "5e3f1de29f51da3c88da6ba95c40b1c4272380c3e651a12fc8f3053021d8e88c",
+    "source_binding_path": "rc3_integrated_rppo/SOURCE_BINDING_R03.json",
+    "source_binding_sha": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b",
+    "reduction_scope": "Before scientific queries, all seeds512→256, fixed candidates128/256, exact first256 schedule prefix; no threshold change; original512 retained."
+  },
+  "statistical_interpretation": {
+    "unit": "True physical map_key",
+    "aggregation": "Six matched views averaged within parent before relative gain; eight parent gains equally averaged.",
+    "bootstrap": "20,000 PCG64 draws, seed11652026, stratified mixed/blocked physical parents, linear percentile2.5/97.5.",
+    "selection_warning": "The same8 physical training layouts choose checkpoints and describe effects. CIs are conditional development summaries, not independent confirmation or seed replication. The positive one-sided lower bound against SL does not override the registered mean threshold or multiple selection caveat.",
+    "selected_endpoints": {
+      "RL_round": 128,
+      "RL_Actor_Adam_steps": 512,
+      "residual_SL_round": 256,
+      "residual_SL_Adam_steps": 1024,
+      "training_opportunities": "Same maximum training schedule/candidate opportunities, but selected endpoint steps differ; no equal FLOPs claim."
+    },
+    "P2_required_mean": 0.005,
+    "P2_pass": false
+  },
+  "primary_registered_comparisons": {
+    "SL256": {
+      "reference": "SL256",
+      "metric": "J",
+      "mean": 0.0022327088127032826,
+      "CI95": [
+        -0.0003412180035376844,
+        0.005561936739916171
+      ],
+      "one_sided95_lower": 3.386679319398469e-05,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 137.01146356389998,
+          "RL_mean": 136.563215117,
+          "gain": 0.0032716127194052304
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 143.05726944073334,
+          "RL_mean": 143.05726944073334,
+          "gain": 0.0
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 163.9625225382,
+          "RL_mean": 163.9625225382,
+          "gain": 0.0
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 133.88019127353334,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.0
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 111.38214250003334,
+          "RL_mean": 111.71636448626664,
+          "gain": -0.003000678373853353
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 126.20911189458333,
+          "RL_mean": 125.72327718511666,
+          "gain": 0.0038494424227663374
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 111.55815175365001,
+          "RL_mean": 111.55815175365001,
+          "gain": 0.0
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 119.67377456223335,
+          "RL_mean": 118.02930207380001,
+          "gain": 0.013741293733308044
+        }
+      ],
+      "descriptive_selection_only": true
+    },
+    "residual_SL": {
+      "reference": "residual_SL",
+      "metric": "J",
+      "mean": -0.008681679185042692,
+      "CI95": [
+        -0.017158748495040482,
+        0.0009060881933306885
+      ],
+      "one_sided95_lower": -0.01600750818696632,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 133.6257924807333,
+          "RL_mean": 136.563215117,
+          "gain": -0.021982452502126174
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 140.7782102624,
+          "RL_mean": 143.05726944073334,
+          "gain": -0.01618900520247662
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 163.83527603423332,
+          "RL_mean": 163.9625225382,
+          "gain": -0.0007766734188557796
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 136.50220120603333,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.019208554216223882
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 111.20244006806666,
+          "RL_mean": 111.71636448626664,
+          "gain": -0.004621521055521854
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 124.87322705185,
+          "RL_mean": 125.72327718511666,
+          "gain": -0.006807304923045709
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 108.75390737188333,
+          "RL_mean": 111.55815175365001,
+          "gain": -0.025785228775069044
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 116.57217301346668,
+          "RL_mean": 118.02930207380001,
+          "gain": -0.012499801819470233
+        }
+      ],
+      "descriptive_selection_only": true
+    },
+    "Fixed3": {
+      "reference": "Fixed3",
+      "metric": "J",
+      "mean": -0.019851593917930774,
+      "CI95": [
+        -0.03213086223563268,
+        -0.007110197278177429
+      ],
+      "one_sided95_lower": -0.03015890192718082,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 132.45873427073332,
+          "RL_mean": 136.563215117,
+          "gain": -0.030986864466615735
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 139.22023460193336,
+          "RL_mean": 143.05726944073334,
+          "gain": -0.027560899101851496
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 157.20498338849998,
+          "RL_mean": 163.9625225382,
+          "gain": -0.04298552758343637
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 136.81131868886663,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.021424597346358456
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 110.50671686380001,
+          "RL_mean": 111.71636448626664,
+          "gain": -0.010946371920156935
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 120.80472920328334,
+          "RL_mean": 125.72327718511666,
+          "gain": -0.040714862855713706
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 109.02213436078334,
+          "RL_mean": 111.55815175365001,
+          "gain": -0.023261490959939474
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 117.58467540126667,
+          "RL_mean": 118.02930207380001,
+          "gain": -0.0037813318020909056
+        }
+      ],
+      "descriptive_selection_only": true
+    },
+    "Detour16": {
+      "reference": "Detour16",
+      "metric": "J",
+      "mean": -0.03517769883982179,
+      "CI95": [
+        -0.04658665207728223,
+        -0.02202156957734551
+      ],
+      "one_sided95_lower": -0.045286744739217705,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 131.08810559693333,
+          "RL_mean": 136.563215117,
+          "gain": -0.041766638514873396
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 137.47555219446664,
+          "RL_mean": 143.05726944073334,
+          "gain": -0.04060152628716886
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 155.84131139466666,
+          "RL_mean": 163.9625225382,
+          "gain": -0.052112055980884635
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 135.40762964859996,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.01128029771313862
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 108.02707341603333,
+          "RL_mean": 111.71636448626664,
+          "gain": -0.034151541401340475
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 119.09263075588335,
+          "RL_mean": 125.72327718511666,
+          "gain": -0.055676378858611666
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 107.00541383358335,
+          "RL_mean": 111.55815175365001,
+          "gain": -0.042546799801617116
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 115.05546938693332,
+          "RL_mean": 118.02930207380001,
+          "gain": -0.025846947587216743
+        }
+      ],
+      "descriptive_selection_only": true
+    }
+  },
+  "candidate_gains_vs_own_SL": {
+    "RL": {
+      "64": 0.0012857665032514082,
+      "128": 0.0022327088127032826,
+      "256": 0.00010609550611412306
+    },
+    "residual_SL": {
+      "64": 0.0037261845143110924,
+      "128": 0.004392916791110537,
+      "256": 0.010635694881993018
+    }
+  },
+  "auxiliary_same_round_control_comparisons": [
+    {
+      "reference": "residual_SL",
+      "metric": "raw_J",
+      "mean": 0.0008740460614151584,
+      "CI95": [
+        -0.010172616416525443,
+        0.013525295045456458
+      ],
+      "one_sided95_lower": -0.008909943611099947,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 170.76582657646665,
+          "RL_mean": 165.97048864076663,
+          "gain": 0.028081367518534107
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 171.06024754926668,
+          "RL_mean": 171.0018685291667,
+          "gain": 0.00034127753780529045
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 200.55646352996666,
+          "RL_mean": 201.8364178649333,
+          "gain": -0.00638201488218503
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 167.52349246873328,
+          "RL_mean": 163.03542219046665,
+          "gain": 0.02679069193297943
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 132.90869537156664,
+          "RL_mean": 133.11869102966662,
+          "gain": -0.0015799993936657746
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 149.21029932931668,
+          "RL_mean": 151.93654063271669,
+          "gain": -0.018271133532029266
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 131.2503851444167,
+          "RL_mean": 134.55762559755001,
+          "gain": -0.025197948558355186
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 142.52733809359998,
+          "RL_mean": 142.06980711359998,
+          "gain": 0.0032101278682376954
+        }
+      ],
+      "descriptive_selection_only": true,
+      "round": 64,
+      "RL_accepted_Adam_steps": 256,
+      "control_accepted_Adam_steps": 256,
+      "usage": "Auxiliary arithmetic only; no new gate, selection or experiment"
+    },
+    {
+      "reference": "residual_SL",
+      "metric": "J",
+      "mean": -0.002564328105306957,
+      "CI95": [
+        -0.010813900793015089,
+        0.004486351622604068
+      ],
+      "one_sided95_lower": -0.009492017097975054,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 136.45644493633333,
+          "RL_mean": 135.71843596516666,
+          "gain": 0.005408384862371272
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 141.4872191424,
+          "RL_mean": 143.05726944073334,
+          "gain": -0.011096764130710372
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 162.51574517613335,
+          "RL_mean": 163.9625225382,
+          "gain": -0.008902382722970309
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 135.27105110296665,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.010282021305316871
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 112.39300549109998,
+          "RL_mean": 111.71636448626664,
+          "gain": 0.006020312401797312
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 126.14428292928334,
+          "RL_mean": 125.72327718511666,
+          "gain": 0.0033374936571853525
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 111.59373668455002,
+          "RL_mean": 111.55815175365001,
+          "gain": 0.00031887928442261393
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 116.65445745956667,
+          "RL_mean": 119.67377456223335,
+          "gain": -0.0258825694998684
+        }
+      ],
+      "descriptive_selection_only": true,
+      "round": 64,
+      "RL_accepted_Adam_steps": 256,
+      "control_accepted_Adam_steps": 256,
+      "usage": "Auxiliary arithmetic only; no new gate, selection or experiment"
+    },
+    {
+      "reference": "residual_SL",
+      "metric": "raw_J",
+      "mean": -0.002088578349119319,
+      "CI95": [
+        -0.01641345912445767,
+        0.01125382541006603
+      ],
+      "one_sided95_lower": -0.013871505501471723,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 168.92090488719998,
+          "RL_mean": 169.35829806409996,
+          "gain": -0.002589337164586297
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 173.8013728737333,
+          "RL_mean": 171.0018685291667,
+          "gain": 0.016107492698578623
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 201.89951927536666,
+          "RL_mean": 201.8364178649333,
+          "gain": 0.0003125386858761395
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 166.393281676,
+          "RL_mean": 163.03542219046665,
+          "gain": 0.020180258792369656
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 128.51602184726667,
+          "RL_mean": 132.95100642726663,
+          "gain": -0.03450919594500573
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 148.38213674141664,
+          "RL_mean": 151.93654063271669,
+          "gain": -0.02395439214825601
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 132.28662289661665,
+          "RL_mean": 134.55762559755001,
+          "gain": -0.01716728911212873
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 147.58666774366665,
+          "RL_mean": 143.9100923712,
+          "gain": 0.02491129740019779
+        }
+      ],
+      "descriptive_selection_only": true,
+      "round": 128,
+      "RL_accepted_Adam_steps": 512,
+      "control_accepted_Adam_steps": 512,
+      "usage": "Auxiliary arithmetic only; no new gate, selection or experiment"
+    },
+    {
+      "reference": "residual_SL",
+      "metric": "J",
+      "mean": -0.0023119440434951335,
+      "CI95": [
+        -0.010751637562397614,
+        0.006110324457464074
+      ],
+      "one_sided95_lower": -0.0095327613805026,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 134.1307942572333,
+          "RL_mean": 136.563215117,
+          "gain": -0.01813469362674351
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 141.05927755373332,
+          "RL_mean": 143.05726944073334,
+          "gain": -0.014164200481169502
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 166.1479739227333,
+          "RL_mean": 163.9625225382,
+          "gain": 0.013153644506972125
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 135.31933664546668,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.010635179033605972
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 111.19397440136667,
+          "RL_mean": 111.71636448626664,
+          "gain": -0.004698007133141443
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 125.60551340018337,
+          "RL_mean": 125.72327718511666,
+          "gain": -0.0009375685966752816
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 109.55141195298334,
+          "RL_mean": 111.55815175365001,
+          "gain": -0.018317790386196995
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 119.70127564683332,
+          "RL_mean": 118.02930207380001,
+          "gain": 0.01396788433538757
+        }
+      ],
+      "descriptive_selection_only": true,
+      "round": 128,
+      "RL_accepted_Adam_steps": 512,
+      "control_accepted_Adam_steps": 512,
+      "usage": "Auxiliary arithmetic only; no new gate, selection or experiment"
+    },
+    {
+      "reference": "residual_SL",
+      "metric": "raw_J",
+      "mean": -0.023923347993935792,
+      "CI95": [
+        -0.031875845101522526,
+        -0.015440309879494537
+      ],
+      "one_sided95_lower": -0.030768208390741465,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 164.0633189134333,
+          "RL_mean": 172.53610707999997,
+          "gain": -0.05164340342911908
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 168.29929299056667,
+          "RL_mean": 171.0018685291667,
+          "gain": -0.016058151466812828
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 193.8983874009,
+          "RL_mean": 201.8364178649333,
+          "gain": -0.040939125747450504
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 159.63417797543332,
+          "RL_mean": 163.03542219046665,
+          "gain": -0.021306491242475405
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 129.44440226666666,
+          "RL_mean": 133.11869102966662,
+          "gain": -0.0283850726540543
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 149.75964167211666,
+          "RL_mean": 151.93654063271669,
+          "gain": -0.014535951984755172
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 131.64961319338335,
+          "RL_mean": 134.55762559755001,
+          "gain": -0.02208903113064995
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 142.57887696716668,
+          "RL_mean": 142.06980711359998,
+          "gain": 0.003570443703830896
+        }
+      ],
+      "descriptive_selection_only": true,
+      "round": 256,
+      "RL_accepted_Adam_steps": 1024,
+      "control_accepted_Adam_steps": 1024,
+      "usage": "Auxiliary arithmetic only; no new gate, selection or experiment"
+    },
+    {
+      "reference": "residual_SL",
+      "metric": "J",
+      "mean": -0.010864355401366758,
+      "CI95": [
+        -0.020512123610584652,
+        -5.992260291698896e-05
+      ],
+      "one_sided95_lower": -0.019180692552978128,
+      "parent_count": 8,
+      "parents": [
+        {
+          "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+          "mode": "mixed",
+          "reference_mean": 133.6257924807333,
+          "RL_mean": 137.01146356389998,
+          "gain": -0.02533695793538384
+        },
+        {
+          "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+          "mode": "mixed",
+          "reference_mean": 140.7782102624,
+          "RL_mean": 143.05726944073334,
+          "gain": -0.01618900520247662
+        },
+        {
+          "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+          "mode": "mixed",
+          "reference_mean": 163.83527603423332,
+          "RL_mean": 163.9625225382,
+          "gain": -0.0007766734188557796
+        },
+        {
+          "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+          "mode": "blocked",
+          "reference_mean": 136.50220120603333,
+          "RL_mean": 133.88019127353334,
+          "gain": 0.019208554216223882
+        },
+        {
+          "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+          "mode": "mixed",
+          "reference_mean": 111.20244006806666,
+          "RL_mean": 111.71636448626664,
+          "gain": -0.004621521055521854
+        },
+        {
+          "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+          "mode": "blocked",
+          "reference_mean": 124.87322705185,
+          "RL_mean": 125.72327718511666,
+          "gain": -0.006807304923045709
+        },
+        {
+          "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+          "mode": "blocked",
+          "reference_mean": 108.75390737188333,
+          "RL_mean": 111.55815175365001,
+          "gain": -0.025785228775069044
+        },
+        {
+          "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+          "mode": "blocked",
+          "reference_mean": 116.57217301346668,
+          "RL_mean": 119.67377456223335,
+          "gain": -0.0266067061168051
+        }
+      ],
+      "descriptive_selection_only": true,
+      "round": 256,
+      "RL_accepted_Adam_steps": 1024,
+      "control_accepted_Adam_steps": 1024,
+      "usage": "Auxiliary arithmetic only; no new gate, selection or experiment"
+    }
+  ],
+  "raw_and_H_parent_comparisons": {
+    "SL256": {
+      "raw_J": {
+        "reference": "SL256",
+        "metric": "raw_J",
+        "mean": -0.0009485301308826198,
+        "CI95": [
+          -0.005976402166564474,
+          0.004366383378223298
+        ],
+        "one_sided95_lower": -0.005284309690259318,
+        "parent_count": 8,
+        "parents": [
+          {
+            "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+            "mode": "mixed",
+            "reference_mean": 172.24935300426662,
+            "RL_mean": 169.35829806409996,
+            "gain": 0.016784126556893698
+          },
+          {
+            "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+            "mode": "mixed",
+            "reference_mean": 171.0018685291667,
+            "RL_mean": 171.0018685291667,
+            "gain": 0.0
+          },
+          {
+            "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+            "mode": "mixed",
+            "reference_mean": 201.8364178649333,
+            "RL_mean": 201.8364178649333,
+            "gain": 0.0
+          },
+          {
+            "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+            "mode": "blocked",
+            "reference_mean": 163.03542219046665,
+            "RL_mean": 163.03542219046665,
+            "gain": 0.0
+          },
+          {
+            "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+            "mode": "mixed",
+            "reference_mean": 131.7715123779333,
+            "RL_mean": 132.95100642726663,
+            "gain": -0.008951054959059943
+          },
+          {
+            "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+            "mode": "blocked",
+            "reference_mean": 151.56249573208336,
+            "RL_mean": 151.93654063271669,
+            "gain": -0.0024679251870760983
+          },
+          {
+            "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+            "mode": "blocked",
+            "reference_mean": 134.55762559755001,
+            "RL_mean": 134.55762559755001,
+            "gain": 0.0
+          },
+          {
+            "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+            "mode": "blocked",
+            "reference_mean": 142.06980711359998,
+            "RL_mean": 143.9100923712,
+            "gain": -0.012953387457818615
+          }
+        ],
+        "descriptive_selection_only": true
+      },
+      "J": {
+        "reference": "SL256",
+        "metric": "J",
+        "mean": 0.0022327088127032826,
+        "CI95": [
+          -0.0003412180035376844,
+          0.005561936739916171
+        ],
+        "one_sided95_lower": 3.386679319398469e-05,
+        "parent_count": 8,
+        "parents": [
+          {
+            "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+            "mode": "mixed",
+            "reference_mean": 137.01146356389998,
+            "RL_mean": 136.563215117,
+            "gain": 0.0032716127194052304
+          },
+          {
+            "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+            "mode": "mixed",
+            "reference_mean": 143.05726944073334,
+            "RL_mean": 143.05726944073334,
+            "gain": 0.0
+          },
+          {
+            "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+            "mode": "mixed",
+            "reference_mean": 163.9625225382,
+            "RL_mean": 163.9625225382,
+            "gain": 0.0
+          },
+          {
+            "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+            "mode": "blocked",
+            "reference_mean": 133.88019127353334,
+            "RL_mean": 133.88019127353334,
+            "gain": 0.0
+          },
+          {
+            "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+            "mode": "mixed",
+            "reference_mean": 111.38214250003334,
+            "RL_mean": 111.71636448626664,
+            "gain": -0.003000678373853353
+          },
+          {
+            "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+            "mode": "blocked",
+            "reference_mean": 126.20911189458333,
+            "RL_mean": 125.72327718511666,
+            "gain": 0.0038494424227663374
+          },
+          {
+            "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+            "mode": "blocked",
+            "reference_mean": 111.55815175365001,
+            "RL_mean": 111.55815175365001,
+            "gain": 0.0
+          },
+          {
+            "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+            "mode": "blocked",
+            "reference_mean": 119.67377456223335,
+            "RL_mean": 118.02930207380001,
+            "gain": 0.013741293733308044
+          }
+        ],
+        "descriptive_selection_only": true
+      }
+    },
+    "residual_SL": {
+      "raw_J": {
+        "reference": "residual_SL",
+        "metric": "raw_J",
+        "mean": -0.02295363727824961,
+        "CI95": [
+          -0.027894624771981347,
+          -0.01769924803512502
+        ],
+        "one_sided95_lower": -0.02722299814175093,
+        "parent_count": 8,
+        "parents": [
+          {
+            "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+            "mode": "mixed",
+            "reference_mean": 164.0633189134333,
+            "RL_mean": 169.35829806409996,
+            "gain": -0.032273997537868304
+          },
+          {
+            "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+            "mode": "mixed",
+            "reference_mean": 168.29929299056667,
+            "RL_mean": 171.0018685291667,
+            "gain": -0.016058151466812828
+          },
+          {
+            "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+            "mode": "mixed",
+            "reference_mean": 193.8983874009,
+            "RL_mean": 201.8364178649333,
+            "gain": -0.040939125747450504
+          },
+          {
+            "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+            "mode": "blocked",
+            "reference_mean": 159.63417797543332,
+            "RL_mean": 163.03542219046665,
+            "gain": -0.021306491242475405
+          },
+          {
+            "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+            "mode": "mixed",
+            "reference_mean": 129.44440226666666,
+            "RL_mean": 132.95100642726663,
+            "gain": -0.027089654702689033
+          },
+          {
+            "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+            "mode": "blocked",
+            "reference_mean": 149.75964167211666,
+            "RL_mean": 151.93654063271669,
+            "gain": -0.014535951984755172
+          },
+          {
+            "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+            "mode": "blocked",
+            "reference_mean": 131.64961319338335,
+            "RL_mean": 134.55762559755001,
+            "gain": -0.02208903113064995
+          },
+          {
+            "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+            "mode": "blocked",
+            "reference_mean": 142.57887696716668,
+            "RL_mean": 143.9100923712,
+            "gain": -0.009336694413295668
+          }
+        ],
+        "descriptive_selection_only": true
+      },
+      "J": {
+        "reference": "residual_SL",
+        "metric": "J",
+        "mean": -0.008681679185042692,
+        "CI95": [
+          -0.017158748495040482,
+          0.0009060881933306885
+        ],
+        "one_sided95_lower": -0.01600750818696632,
+        "parent_count": 8,
+        "parents": [
+          {
+            "parent": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+            "mode": "mixed",
+            "reference_mean": 133.6257924807333,
+            "RL_mean": 136.563215117,
+            "gain": -0.021982452502126174
+          },
+          {
+            "parent": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+            "mode": "mixed",
+            "reference_mean": 140.7782102624,
+            "RL_mean": 143.05726944073334,
+            "gain": -0.01618900520247662
+          },
+          {
+            "parent": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+            "mode": "mixed",
+            "reference_mean": 163.83527603423332,
+            "RL_mean": 163.9625225382,
+            "gain": -0.0007766734188557796
+          },
+          {
+            "parent": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+            "mode": "blocked",
+            "reference_mean": 136.50220120603333,
+            "RL_mean": 133.88019127353334,
+            "gain": 0.019208554216223882
+          },
+          {
+            "parent": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+            "mode": "mixed",
+            "reference_mean": 111.20244006806666,
+            "RL_mean": 111.71636448626664,
+            "gain": -0.004621521055521854
+          },
+          {
+            "parent": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+            "mode": "blocked",
+            "reference_mean": 124.87322705185,
+            "RL_mean": 125.72327718511666,
+            "gain": -0.006807304923045709
+          },
+          {
+            "parent": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+            "mode": "blocked",
+            "reference_mean": 108.75390737188333,
+            "RL_mean": 111.55815175365001,
+            "gain": -0.025785228775069044
+          },
+          {
+            "parent": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+            "mode": "blocked",
+            "reference_mean": 116.57217301346668,
+            "RL_mean": 118.02930207380001,
+            "gain": -0.012499801819470233
+          }
+        ],
+        "descriptive_selection_only": true
+      }
+    }
+  },
+  "route_and_H_attribution": {
+    "SL256": {
+      "cases": 48,
+      "raw_route_changes": 6,
+      "final_route_changes": 5,
+      "per_case_absolute_cost_identity_checked": true,
+      "causal_H_or_RL_attribution": false
+    },
+    "residual_SL": {
+      "cases": 48,
+      "raw_route_changes": 44,
+      "final_route_changes": 40,
+      "per_case_absolute_cost_identity_checked": true,
+      "causal_H_or_RL_attribution": false
+    }
+  },
+  "numeric_audit": {
+    "ledger_snapshot_events": 26205,
+    "ledger_snapshot_tail": "77a367697eae3fd194b14b90ced070604ec56f5542021e61a343c63575d7aa4f",
+    "ledger_chain_hashes_checked": true,
+    "immutable_gzip_objects_file_and_content_hashes_checked": 6834,
+    "paid_request_counts": {
+      "engineering": 66,
+      "selection": 432,
+      "warm": 192,
+      "train": 6144
+    },
+    "paid_request_total": 6834,
+    "successes": 6834,
+    "failed_complete_requests": 0,
+    "unclosed_paid_requests": 0,
+    "scientific_source_bindings": [
+      "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b"
+    ],
+    "source_files_byte_hashed": 212,
+    "source_artifacts_byte_hashed": 14,
+    "source_mismatches": [],
+    "all_route_CSV_rows_matched": 432,
+    "stored_constraint_certificates_valid": 6834,
+    "new_independent_constraint_validation_by_this_reviewer": 0,
+    "objective_J_L_075K_max_abs_error": 5.684341886080802e-14,
+    "dense_reward_sum_plus_J_H_max_abs_error": 6.252776074688882e-13,
+    "policy_decisions": 498627,
+    "full_H_calls": 6738,
+    "native_requests": 96,
+    "native_extra_common_H": 0,
+    "actual_train_physical_layouts": 96,
+    "actual_train_parent_task_variant_identities": 768,
+    "train_episodes_by_size": {
+      "(10, 10)": 3072,
+      "(4, 3)": 1024,
+      "(6, 6)": 1024,
+      "(8, 8)": 1024
+    },
+    "actual_train_rounds": 256,
+    "episodes_per_train_round": 24,
+    "selection_physical_parents": 8,
+    "selection_cases": 48,
+    "all_selection_parents_truly_trained": true,
+    "selection_parent_strata": {
+      "mixed": 4,
+      "blocked": 4
+    },
+    "six_views_each": true,
+    "main_actor_accepted_Adam_steps": 1024,
+    "main_matched_SL_Adam_steps": 1024,
+    "main_critic_steps_including_warm": 1260,
+    "warm_critic_steps": 236,
+    "main_actor_PPO_epochs": 1024,
+    "main_all_old_values_and_probabilities_fixed": true,
+    "main_all_parameter_steps_nonzero": true,
+    "main_KL_maxima": {
+      "old_mean": 2.654771555906412e-08,
+      "old_p95": 1.9973672351625278e-07,
+      "base_mean": 2.344177187972819e-06,
+      "ratio_clip_fraction": 0.0
+    },
+    "advantage_diagnostic_rounds_recalculated": 256,
+    "D1_actor_packages_checked": 7,
+    "model_instantiations": 0,
+    "model_forwards": 0,
+    "new_H_calls": 0,
+    "new_optimizers": 0,
+    "new_navigation_solves": 0,
+    "new_task_generation": 0
+  },
+  "actor_tensor_audit": [
+    {
+      "role": "residual_SL",
+      "metadata_update": 64,
+      "file_sha": "e32bc3abc99a7e4ac88ceef8d700b7aea375f308b9929e0246f445db617ac588",
+      "tensor_sha": "7b4ad70be731999b0685e0da35a513c8c777f3f700e3fc2b0896dc4020ef29fa",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 17217,
+      "matched_closed_checkpoint": true,
+      "has_optimizer_or_critic": false
+    },
+    {
+      "role": "residual_SL",
+      "metadata_update": 128,
+      "file_sha": "b79d5e2969c3660f4e785dab5e7f208dff58bc5161428d936aa4e51e793e0004",
+      "tensor_sha": "9ed7d17a77b0ff7e80005432dd5cd6c9e11aff3b28e93ea2ba8e3e42d4793c10",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 17217,
+      "matched_closed_checkpoint": true,
+      "has_optimizer_or_critic": false
+    },
+    {
+      "role": "residual_SL",
+      "metadata_update": 256,
+      "file_sha": "a0f6bd7cdb07e4c05c138390326a676079563dd9e58e331df9ac6a9111353cf4",
+      "tensor_sha": "7b2790d981c12ac0786bfa0896b7e0d9669607ff1c9ac3fbfc5c7678374bfc42",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 17217,
+      "matched_closed_checkpoint": true,
+      "has_optimizer_or_critic": false
+    },
+    {
+      "role": "RL",
+      "metadata_update": 64,
+      "file_sha": "d0e78b41716745b839eb3ed6106b87e3f178a1261c232ed2b7f3165a7f1b7ff7",
+      "tensor_sha": "841609d5a2822ecf56faa413d466dd6512247973ae2445c39462f3cd1a3730bf",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 17217,
+      "matched_closed_checkpoint": true,
+      "has_optimizer_or_critic": false
+    },
+    {
+      "role": "RL",
+      "metadata_update": 128,
+      "file_sha": "1f5f452b11c95f62318f05e7d5113db83c1569bed88524985a397574cd782cde",
+      "tensor_sha": "e842f42fb448ffe35501465d96d8e50e5c30d80de0004c7951c85f19ae3a4bce",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 17217,
+      "matched_closed_checkpoint": true,
+      "has_optimizer_or_critic": false
+    },
+    {
+      "role": "RL",
+      "metadata_update": 256,
+      "file_sha": "d81a10f03cf8988f5ced9c5ba999bb5a9e3efba0adbe5f0e10574c7371497aca",
+      "tensor_sha": "aaf3faedbb3773c3374592b138a0e909234f7a1260413654638da108e9246a6a",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 17217,
+      "matched_closed_checkpoint": true,
+      "has_optimizer_or_critic": false
+    },
+    {
+      "role": "SL256",
+      "metadata_update": 256,
+      "file_sha": "60f5aa4e59983e92d565f0599823b710965cf2c96a041e7eb483d23a8eb0556c",
+      "tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "base_parameter_elements": 65088,
+      "residual_parameter_elements": 0,
+      "matched_closed_checkpoint": false,
+      "has_optimizer_or_critic": false
+    }
+  ],
+  "static_source_review": {
+    "PPO": "Per-action clipped ratio, full gamma=lambda=1 RTG−V_old detached for all epochs; one pooled valid-state RMS with epsilon1e-8;1/E sum_episode sum_valid_step; same legal mask and no padding.",
+    "reward": "Frozen dense increments with terminal raw−H correction; targets scaled only by max(1,target task count). Scaling changes cross-instance training weights, as disclosed.",
+    "critic": "Separate state-value network/Adam; detached frozen-base features; critic fit after Actor epochs; no trainable Actor/critic parameter sharing.",
+    "mask_endpoint_scope": "Read-only source confirms positive newly covered task, finite current→candidate and candidate→specified exit, mapped node+1, and full-parent navigation with task-window selection.",
+    "KL": "Exact masked old→current and base→current KL, explicit thresholds, failed epoch Actor+Adam+cursor restoration; engineering restore checks not rerun by reviewer.",
+    "native_baselines": "Fixed3/Detour16 use original endpoint-native internal pipelines, without extra common H. Their raw fields are returned native pipeline costs, not untreated neural constructions.",
+    "device": "CUDA FP32 residual head/noTF32; frozen base/critic and evaluated D1 inference on CPU. Engineering evidence establishes zero-residual logits/masks and gradient tolerance only, not exact trained-device route equivalence."
+  },
+  "integrity_receipt": {
+    "path": "rc3_integrated_rppo/CLOSEOUT_INTEGRITY_AUDIT.json",
+    "status": "PASS",
+    "old_files_byte_checked": 57764,
+    "reviewer_repeated_all_old_file_audit": false,
+    "interpretation": "Inspected the closeout receipt; independent all-old opaque byte audit was performed by the executor, not repeated by this reviewer."
+  },
+  "postprocess_receipt_observed": {
+    "status": "PASS",
+    "saved_frozen_evaluation_plans_checked": 432,
+    "reported_raw_and_final_metrics_recomputed": true,
+    "full_coverage_same_arm_FA_navigation_endpoints": true,
+    "physical_robot_or_IK_certified": false,
+    "new_model_forward": 0,
+    "new_navigation_solve": 0,
+    "new_H": 0,
+    "new_optimizer": 0,
+    "new_complete_requests": 0,
+    "postprocess_elapsed_s": 1059.2789675000004,
+    "cumulative_analysis_wall_s": 1099.3975606000022,
+    "source_binding_sha256": "9a45dbeeb3db947a7f8578751240fb699dec40683fda3f501f3edc19e9cdcadf",
+    "saved_input_and_navigation_load_counters": {
+      "saved_navigation_loads": 40,
+      "target_view_checks": 432,
+      "parent_memory_hits": 392
+    },
+    "quality_cold_hot_repeated_route_groups": 0,
+    "path": "rc3_integrated_rppo/POSTPROCESS_COMPLETE.json",
+    "receipt_sha256": "18a86bba1eea68f7e0b81fe0afa1666bbd2c97b4ec142ef3b4f414a9bcd33334",
+    "postprocess_source_receipt_path": "rc3_integrated_rppo/POSTPROCESS_SOURCE_BINDING.json",
+    "postprocess_source_receipt_sha256": "55b53f222d782cc0a06a547b5f436e2cd34bd77b8fd8586842a953f3d3825fb6",
+    "reviewer_scope": "Read actual PASS receipt, matched final resource fields and hashed the three bound postprocess sources. Did not rerun actions, constraints, metrics, model forwards or full raw audit.",
+    "saved_action_reward_replays_reported": 6336,
+    "saved_action_reward_replay_evidence": "Executor completion report;192 saved warm+6144 saved train episodes; bound postprocess source invokes verify(True) before writing PASS. Not independently rerun by this reviewer."
+  },
+  "protected_scope": {
+    "original60": "No semantic access/request appears in inspected run; closeout receipt reports0.",
+    "old_S3_missing": "No retries; receipt reports0.",
+    "unexecuted_final_inputs": "Reviewer did not inspect/materialize final task semantics.",
+    "legacy_Word_edits": "Excluded; untouched by reviewer."
+  },
+  "reviewer_execution_limits": "Only source/report/raw-object reads, arithmetic, existing tensor hashes/counts and the six permitted review outputs. No task generation, model instantiation/forward, planner, H, teacher, optimizer, Git mutation or external message.",
+  "open_scientific_errors_found": [],
+  "final_resource_receipt_observed": {
+    "path": "rc3_integrated_rppo/RESOURCE_ACCOUNTING_FINAL.json",
+    "sha256": "a81131e3524a18d78ad64ac71477f989db2896c5aab338feb7f60ac001d4501f",
+    "paid_requests": 6834,
+    "wall_s": {
+      "P0": 513.0743387999992,
+      "seed_11622026": 7189.5194294,
+      "confirmation_and_analysis": 1099.4847357000017
+    },
+    "closed_ledger_tail": "c63e6f8866f293d87e2f329652cef52523fe7c11e42f9df16c29a6a7fce9e1f5",
+    "meaning": "Final closed analysis wall includes clock-close/report overhead; the postprocess receipt records its slightly earlier within-stage observation."
+  },
+  "cache_accounting_reconstruction_observed": {
+    "status": "PASS_ACCOUNTING_RECONSTRUCTION",
+    "source_sha256": "fc1072f18e24cd2fa5680a1ac1d84c71b368bc903c61f9f4b5344bcc6f6343db",
+    "scientific_source_sha256": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b",
+    "method": "Simulate the exact frozen loader4-entry parent/nav LRU and actual observed call schedule; no F/A,D,scene/model generation or solver execution",
+    "recorded_preflight_counts_matched": true,
+    "recorded_R03_counts_matched": true,
+    "unique_frozen_input_keys": 790,
+    "process_R01_counts": {
+      "saved_navigation_loads": 131,
+      "original_bank_loads": 773,
+      "navigation_only_hits": 707,
+      "new_task_draws": 17,
+      "proxy_FA_generations": 17,
+      "target_view_checks": 54
+    },
+    "process_R02_counts": {
+      "target_view_checks": 36,
+      "saved_navigation_loads": 34,
+      "navigation_only_hits": 2
+    },
+    "process_R03_observed_and_reconstructed": {
+      "target_view_checks": 9744,
+      "saved_navigation_loads": 8970,
+      "navigation_only_hits": 697,
+      "parent_memory_hits": 77
+    },
+    "cumulative_source_loading_counts": {
+      "saved_navigation_loads": 9135,
+      "new_task_draws": 17,
+      "original_bank_loads": 773,
+      "parent_memory_hits": 77,
+      "proxy_FA_generations": 17,
+      "navigation_only_hits": 1406,
+      "target_view_checks": 9834
+    },
+    "historical_cache_totals": "Explicit retrospective deterministic reconstruction, not falsely labeled live instrumentation",
+    "teacher_or_oracle_queries": 0,
+    "additional_complete_requests": 0,
+    "new_model_forward": 0,
+    "new_H": 0,
+    "new_navigation_solve": 0,
+    "new_optimizer": 0,
+    "elapsed_s": 1.9919294999999693,
+    "utc": "2026-11-10T05:03:39.781919+00:00",
+    "path": "rc3_integrated_rppo/CACHE_ACCOUNTING_RECONSTRUCTION.json",
+    "receipt_sha256": "e920919157dc6aefd63b697188aa664b2cc6ab0a6ecf354e8a98cdd9ed8a201b",
+    "reviewer_scope": "Read-only receipt observation and equality check against original recorded R03 counters; simulation not independently rerun.",
+    "instrumentation_classification": "Explicit retrospective deterministic reconstruction; not historical live instrumentation."
+  },
+  "closeout_observation_addendum": {
+    "utc": "2026-11-10T05:11:00.998327+00:00",
+    "prior_CLAIM_REVIEW_sha256": "a6a9ec5c235f622f4b07ff9f90ffda3218c1c0ff5af38fa8c61b8d475ad1f7e1",
+    "verdict_unchanged": true,
+    "primary_comparisons_unchanged": true,
+    "science_not_rerun": true
+  }
+}

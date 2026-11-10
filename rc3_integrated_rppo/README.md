@@ -23,3 +23,10 @@
 完整训练checkpoint保留Adam/RNG/游标，Actor-only包只供D1推理。恢复只允许证据闭合的轮边界；已采样请求可以原动作重建，未闭合optimizer不得重放。资源失败不退款，时钟未闭合尾段必须继承。所有新研究对象位于本模块，旧证据不改写。
 
 结果以 `EXPERIMENT_REPORT.md`、逐例CSV、`RESULT_SUMMARY.json`、独立审查与 `RESULT_TO_CLAIM.md` 为准。未触发的阶段明确记NOT_STARTED，开发筛选不能写成最终泛化／部署成功。
+
+
+## 已完成结果
+
+**工程GO／科研REVISE，P2未通过。** 首seed256轮已真实完成，所选RL128相对SL仅+0.2233%、相对监督256为−0.8682%；其余条件阶段未启动。活动版本[small256协议](PROTOCOL_SMALL256.json)及[R03绑定](SOURCE_BINDING_R03.json)，保留原512版本。
+
+[实际报告](EXPERIMENT_REPORT.md) · [Actor索引](ACTOR_INDEX.json) · [部署清单](DEPLOYMENT_PACKAGE_MANIFEST.json) · [完整资源](RESOURCE_ACCOUNTING_FINAL.json) · [独立审查](INDEPENDENT_REVIEW.md) · [下一步](NEXT_STEP_DECISION.md)。上述规划命令调用已实际用于评估的同一冻结Actor实现；显式消费者新推理不能混入本轮科学结果。

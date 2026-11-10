@@ -65,3 +65,10 @@
 - 写作判定：`provisional — no paper claim audit available`；本仓库未提供 `paper/PAPER_CLAIM_AUDIT.json`，不以内部审查冒充论文数字全审计。
 
 依据：[本轮结果到主张](rc3_s2_results_20261107/RESULT_TO_CLAIM.md)、[独立审查](rc3_s2_results_20261107/INDEPENDENT_REVIEW.md)、[完整review trace](paper/review-traces/experiment-result-to-claim/20261107_run01/)。本新记录不替代或改写历史负结果。
+
+
+## Integrated-RPPO-v1-small256（2026-11-10）
+
+固定DRL目标保持；真实完成首seed256轮，P2未通过，claim_supported=no／confidence=high，写作provisional。所选RL128对SL H后+0.223271%、对匹配监督256为−0.868168%；raw对SL−0.094853%。只属8个已训练物理布局的开发选择，未触发其余seed／独立晋级／最终216／计时／P5。不以工程、loss、H收益替代DRL增量。
+
+[实际证据](rc3_integrated_rppo/EXPERIMENT_REPORT.md) · [独立审查](rc3_integrated_rppo/INDEPENDENT_REVIEW.md) · [研究发现与收尾路由](rc3_integrated_rppo/findings.md)。原S0—S3、GL-v4/v5和旧失败保留。

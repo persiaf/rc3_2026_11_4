@@ -1,0 +1,122 @@
+{
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "status": "COMPLETE_CONDITIONAL_TASK",
+  "requests": {
+    "engineering": 66,
+    "warm": 192,
+    "train": 6144,
+    "selection": 432,
+    "promotion": 0,
+    "quality": 0,
+    "timing": 0,
+    "ablation": 0
+  },
+  "paid_requests": 6834,
+  "infrastructure_retries": 0,
+  "failures": 0,
+  "successes": 6834,
+  "request_caps": {
+    "engineering": 96,
+    "warm": 576,
+    "train": 18432,
+    "selection": 1104,
+    "promotion": 528,
+    "quality": 3024,
+    "timing": 3024,
+    "ablation": 3168
+  },
+  "absolute_cap": 50000,
+  "optimizer_attempts": {
+    "('P0_synthetic', 'critic')": 5,
+    "('P0_synthetic', 'actor')": 2,
+    "('matched_control', 'P0_restore_fixture')": 3,
+    "('P0_real', 'actor')": 4,
+    "('P0_real', 'critic')": 4,
+    "('matched_control', 'residual_SL')": 1030,
+    "('P0_GPU', 'actor')": 4,
+    "('P0_GPU', 'critic')": 4,
+    "('main', 'critic')": 1260,
+    "('main', 'actor')": 1024
+  },
+  "scientific_actor_accepted_steps": 1024,
+  "full_H_calls": 6738,
+  "native_requests": 96,
+  "policy_decisions": 498627,
+  "internal_search": {
+    "counts.construct": 288,
+    "counts.joint_search": 7026,
+    "counts.recipe": 288,
+    "counts.two_opt": 27770,
+    "exclusive_s.construct": 0.31903600000441656,
+    "exclusive_s.joint_search": 14.290478600053575,
+    "exclusive_s.recipe": 0.09930220001569978,
+    "exclusive_s.two_opt": 34.190175799923054,
+    "inclusive_s.construct": 0.31903600000441656,
+    "inclusive_s.joint_search": 18.328006300000197,
+    "inclusive_s.recipe": 0.8656186000052912,
+    "inclusive_s.two_opt": 34.190175799923054
+  },
+  "input_preparation": {
+    "saved_navigation_loads": 8970,
+    "target_view_checks": 9744,
+    "navigation_only_hits": 697,
+    "parent_memory_hits": 77
+  },
+  "cold_navigation_solves": 0,
+  "terminal_result_cache_hits": 0,
+  "immutable_completed_request_replay_hits": "No extra terminal compute; request IDs and immutable ledger identify any resume replay",
+  "wall_s": {
+    "P0": 513.0743387999992,
+    "seed_11622026": 7189.5194294,
+    "confirmation_and_analysis": 1099.4847357000017
+  },
+  "old_teacher_queries": 0,
+  "original60_semantic_access": 0,
+  "old_S3_missing_retried": 0,
+  "source_binding_sha256": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b",
+  "timing_boundary": "service includes shared input, D1 load, fresh task encoding, construction,H,export,validation; audit adds object/receipt/committed event IO. Timing-record IO stays in stage wall.",
+  "maintenance": "Git, byte checksum audit and independent editorial review separate from scientific compute; no optimizer/plan claims",
+  "core_accounting_sha256": "cc2c7ede5ff2409b7863221d41616ec67fff9e47ac3be2a3fcb48298a9d91556",
+  "postprocess": {
+    "status": "PASS",
+    "saved_frozen_evaluation_plans_checked": 432,
+    "reported_raw_and_final_metrics_recomputed": true,
+    "full_coverage_same_arm_FA_navigation_endpoints": true,
+    "physical_robot_or_IK_certified": false,
+    "new_model_forward": 0,
+    "new_navigation_solve": 0,
+    "new_H": 0,
+    "new_optimizer": 0,
+    "new_complete_requests": 0,
+    "postprocess_elapsed_s": 1059.2789675000004,
+    "cumulative_analysis_wall_s": 1099.3975606000022,
+    "source_binding_sha256": "9a45dbeeb3db947a7f8578751240fb699dec40683fda3f501f3edc19e9cdcadf",
+    "saved_input_and_navigation_load_counters": {
+      "saved_navigation_loads": 40,
+      "target_view_checks": 432,
+      "parent_memory_hits": 392
+    },
+    "quality_cold_hot_repeated_route_groups": 0
+  },
+  "closed_ledger_tail": "c63e6f8866f293d87e2f329652cef52523fe7c11e42f9df16c29a6a7fce9e1f5",
+  "non_request_bootstrap_failures": {
+    "status": "FAILED_IMPORT_BEFORE_LEDGER_OR_SCIENCE",
+    "error": "rc3_global_local.native is not an existing module; correct frozen adapter is rc3_global_local_impl_review.endpoint_baselines",
+    "stderr": {
+      "path": "rc3_integrated_rppo/runs/rc3_integrated_rppo_v1_20261110_01/process_logs/2026-11-10T021802.529918+0000_1f5627.stderr.txt",
+      "sha256": "5d4738f6f6bce24ac206fc2748201f4ff87fc3f47fd52fb4b83dd5e8278df1cb"
+    },
+    "exact_wall_s": null,
+    "conservative_wall_s": 60,
+    "reason": "Conservative launch/import upper charge; original process had no active stage clock. STDERR created02:18:02UTC,last written02:18:05UTC.",
+    "complete_requests": 0,
+    "models_initialized": 0,
+    "navigation": 0,
+    "H": 0,
+    "optimizer": 0,
+    "original_source_binding_sha256": "d84aaab49aa9fdfe2556788d247d4f1382241ea08c6b13e1a59eee22db17d20f"
+  },
+  "saved_teacher_label_terminal_metric_replays": 6144,
+  "saved_label_replay_note": "Arithmetic on already saved teacher routes; no new teacher, H or oracle completion; label-state preparation distinct from repeated CE forward passes",
+  "resource_adjustments": "CPU/GPU complete-round probes infeasible for512, one pre-science small256 protocol; old reports and budgets retained"
+}

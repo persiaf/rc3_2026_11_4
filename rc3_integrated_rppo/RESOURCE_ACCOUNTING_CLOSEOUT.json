@@ -1,0 +1,203 @@
+{
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "status": "COMPLETE_CONDITIONAL_TASK",
+  "requests": {
+    "engineering": 66,
+    "warm": 192,
+    "train": 6144,
+    "selection": 432,
+    "promotion": 0,
+    "quality": 0,
+    "timing": 0,
+    "ablation": 0
+  },
+  "paid_requests": 6834,
+  "infrastructure_retries": 0,
+  "failures": 0,
+  "successes": 6834,
+  "request_caps": {
+    "engineering": 96,
+    "warm": 576,
+    "train": 18432,
+    "selection": 1104,
+    "promotion": 528,
+    "quality": 3024,
+    "timing": 3024,
+    "ablation": 3168
+  },
+  "absolute_cap": 50000,
+  "optimizer_attempts": {
+    "('P0_synthetic', 'critic')": 5,
+    "('P0_synthetic', 'actor')": 2,
+    "('matched_control', 'P0_restore_fixture')": 3,
+    "('P0_real', 'actor')": 4,
+    "('P0_real', 'critic')": 4,
+    "('matched_control', 'residual_SL')": 1030,
+    "('P0_GPU', 'actor')": 4,
+    "('P0_GPU', 'critic')": 4,
+    "('main', 'critic')": 1260,
+    "('main', 'actor')": 1024
+  },
+  "scientific_actor_accepted_steps": 1024,
+  "full_H_calls": 6738,
+  "native_requests": 96,
+  "policy_decisions": 498627,
+  "internal_search": {
+    "counts.construct": 288,
+    "counts.joint_search": 7026,
+    "counts.recipe": 288,
+    "counts.two_opt": 27770,
+    "exclusive_s.construct": 0.31903600000441656,
+    "exclusive_s.joint_search": 14.290478600053575,
+    "exclusive_s.recipe": 0.09930220001569978,
+    "exclusive_s.two_opt": 34.190175799923054,
+    "inclusive_s.construct": 0.31903600000441656,
+    "inclusive_s.joint_search": 18.328006300000197,
+    "inclusive_s.recipe": 0.8656186000052912,
+    "inclusive_s.two_opt": 34.190175799923054
+  },
+  "input_preparation": {
+    "saved_navigation_loads": 8970,
+    "target_view_checks": 9744,
+    "navigation_only_hits": 697,
+    "parent_memory_hits": 77
+  },
+  "cold_navigation_solves": 0,
+  "terminal_result_cache_hits": 0,
+  "immutable_completed_request_replay_hits": "No extra terminal compute; request IDs and immutable ledger identify any resume replay",
+  "wall_s": {
+    "P0": 513.0743387999992,
+    "seed_11622026": 7189.5194294,
+    "confirmation_and_analysis": 1099.6005716
+  },
+  "old_teacher_queries": 0,
+  "original60_semantic_access": 0,
+  "old_S3_missing_retried": 0,
+  "source_binding_sha256": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b",
+  "timing_boundary": "service includes shared input, D1 load, fresh task encoding, construction,H,export,validation; audit adds object/receipt/committed event IO. Timing-record IO stays in stage wall.",
+  "maintenance": "Git, byte checksum audit and independent editorial review separate from scientific compute; no optimizer/plan claims",
+  "core_accounting_sha256": "cc2c7ede5ff2409b7863221d41616ec67fff9e47ac3be2a3fcb48298a9d91556",
+  "postprocess": {
+    "status": "PASS",
+    "saved_frozen_evaluation_plans_checked": 432,
+    "reported_raw_and_final_metrics_recomputed": true,
+    "full_coverage_same_arm_FA_navigation_endpoints": true,
+    "physical_robot_or_IK_certified": false,
+    "new_model_forward": 0,
+    "new_navigation_solve": 0,
+    "new_H": 0,
+    "new_optimizer": 0,
+    "new_complete_requests": 0,
+    "postprocess_elapsed_s": 1059.2789675000004,
+    "cumulative_analysis_wall_s": 1099.3975606000022,
+    "source_binding_sha256": "9a45dbeeb3db947a7f8578751240fb699dec40683fda3f501f3edc19e9cdcadf",
+    "saved_input_and_navigation_load_counters": {
+      "saved_navigation_loads": 40,
+      "target_view_checks": 432,
+      "parent_memory_hits": 392
+    },
+    "quality_cold_hot_repeated_route_groups": 0
+  },
+  "closed_ledger_tail": "080c8ef9c694d135651144084cbd3a373db75de2e00d283aaa0e7caeff8d038d",
+  "non_request_bootstrap_failures": {
+    "status": "FAILED_IMPORT_BEFORE_LEDGER_OR_SCIENCE",
+    "error": "rc3_global_local.native is not an existing module; correct frozen adapter is rc3_global_local_impl_review.endpoint_baselines",
+    "stderr": {
+      "path": "rc3_integrated_rppo/runs/rc3_integrated_rppo_v1_20261110_01/process_logs/2026-11-10T021802.529918+0000_1f5627.stderr.txt",
+      "sha256": "5d4738f6f6bce24ac206fc2748201f4ff87fc3f47fd52fb4b83dd5e8278df1cb"
+    },
+    "exact_wall_s": null,
+    "conservative_wall_s": 60,
+    "reason": "Conservative launch/import upper charge; original process had no active stage clock. STDERR created02:18:02UTC,last written02:18:05UTC.",
+    "complete_requests": 0,
+    "models_initialized": 0,
+    "navigation": 0,
+    "H": 0,
+    "optimizer": 0,
+    "original_source_binding_sha256": "d84aaab49aa9fdfe2556788d247d4f1382241ea08c6b13e1a59eee22db17d20f"
+  },
+  "saved_teacher_label_terminal_metric_replays": 6144,
+  "saved_label_replay_note": "Arithmetic on already saved teacher routes; no new teacher, H or oracle completion; label-state preparation distinct from repeated CE forward passes",
+  "resource_adjustments": "CPU/GPU complete-round probes infeasible for512, one pre-science small256 protocol; old reports and budgets retained",
+  "cumulative_loading": {
+    "status": "PASS_ACCOUNTING_RECONSTRUCTION",
+    "source_sha256": "fc1072f18e24cd2fa5680a1ac1d84c71b368bc903c61f9f4b5344bcc6f6343db",
+    "scientific_source_sha256": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b",
+    "method": "Simulate the exact frozen loader4-entry parent/nav LRU and actual observed call schedule; no F/A,D,scene/model generation or solver execution",
+    "recorded_preflight_counts_matched": true,
+    "recorded_R03_counts_matched": true,
+    "unique_frozen_input_keys": 790,
+    "process_R01_counts": {
+      "saved_navigation_loads": 131,
+      "original_bank_loads": 773,
+      "navigation_only_hits": 707,
+      "new_task_draws": 17,
+      "proxy_FA_generations": 17,
+      "target_view_checks": 54
+    },
+    "process_R02_counts": {
+      "target_view_checks": 36,
+      "saved_navigation_loads": 34,
+      "navigation_only_hits": 2
+    },
+    "process_R03_observed_and_reconstructed": {
+      "target_view_checks": 9744,
+      "saved_navigation_loads": 8970,
+      "navigation_only_hits": 697,
+      "parent_memory_hits": 77
+    },
+    "cumulative_source_loading_counts": {
+      "saved_navigation_loads": 9135,
+      "new_task_draws": 17,
+      "original_bank_loads": 773,
+      "parent_memory_hits": 77,
+      "proxy_FA_generations": 17,
+      "navigation_only_hits": 1406,
+      "target_view_checks": 9834
+    },
+    "historical_cache_totals": "Explicit retrospective deterministic reconstruction, not falsely labeled live instrumentation",
+    "teacher_or_oracle_queries": 0,
+    "additional_complete_requests": 0,
+    "new_model_forward": 0,
+    "new_H": 0,
+    "new_navigation_solve": 0,
+    "new_optimizer": 0,
+    "elapsed_s": 1.9919294999999693,
+    "utc": "2026-11-10T05:03:39.781919+00:00"
+  },
+  "administrative_byte_audit": {
+    "status": "PASS",
+    "experiment": "rc3_integrated_rppo_v1_20261110_01",
+    "baseline": "7d2cfe75919b25bac59c5274321baca4d8e98f77",
+    "source_binding_sha256": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b",
+    "old_manifest_files": 57770,
+    "old_files_byte_checked": 57764,
+    "unexpected_old_changes": [],
+    "allowed_root_maintenance": [
+      ".gitattributes",
+      ".gitignore",
+      "EXPERIMENT_RESULT_TO_CLAIM.md",
+      "PROJECT_VERSION.json",
+      "README.md",
+      "project_management/GIT_MANIFEST.json"
+    ],
+    "unrelated_user_file_excluded": [
+      "第二章与第三章修订稿_20261029.docx"
+    ],
+    "new_request_predebits": 6834,
+    "new_successes": 6834,
+    "new_failures": 0,
+    "valid_route_certificates": 6834,
+    "role_mismatches": [],
+    "new_H": 6738,
+    "unclosed_requests": [],
+    "ledger_tail": "77a367697eae3fd194b14b90ced070604ec56f5542021e61a343c63575d7aa4f",
+    "source_and_model_identity_distinct": true,
+    "old_missing_slots_reexecuted": 0,
+    "original60_semantic_access": 0,
+    "scope": "Cryptographic byte and existing certificate audit; no new planner/model/H calls. Not an independent physical robot certification.",
+    "wall_s": 152.39407760000176,
+    "utc": "2026-11-10T04:46:39.766090+00:00"
+  },
+  "claim_review_sha256": "aa6c4c9cf4cfdd4d024bbf282d88331b9ba2bc8136f0097ea8a90d5b1e7eafb5"
+}

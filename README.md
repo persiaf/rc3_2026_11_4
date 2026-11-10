@@ -125,3 +125,10 @@ G2.3 测试包含 6 个独立场景、180 份输出；多步模型共 36 次测�
 ## Integrated-RPPO-v1（独立研究）
 
 [Integrated-RPPO-v1](rc3_integrated_rppo/README.md)：冻结SL骨干、残差Actor、独立Critic与受控PPO；按新任务P0—P5条件执行。原S0—S3及GL-v4/v5、两个缺失槽和负结论保留，原60继续封存。阶段与实际结论以模块报告为准。
+
+
+### Integrated-RPPO small256 已收尾（2026-11-10）
+
+首seed已实际完成256轮／1024 PPO Actor更新，预登记P2未通过：所选RL128对SL仅+0.2233%，对匹配监督256为−0.8682%；未启动其余seed／独立确认／正式计时／P5。固定DRL目标保持，原研究证据和60保留任务不变。
+
+[实际报告](rc3_integrated_rppo/EXPERIMENT_REPORT.md) · [冻结Actor](rc3_integrated_rppo/ACTOR_INDEX.json) · [独立审查](rc3_integrated_rppo/INDEPENDENT_REVIEW.md) · [阶段与下一步](rc3_integrated_rppo/NEXT_STEP_DECISION.md)。

@@ -35,6 +35,10 @@ def main(phase):
     if line not in text:
         text+='\n\n## Integrated-RPPO-v1（独立研究）\n\n'+line+'：冻结SL骨干、残差Actor、独立Critic与受控PPO；按新任务P0—P5条件执行。原S0—S3及GL-v4/v5、两个缺失槽和负结论保留，原60继续封存。阶段与实际结论以模块报告为准。\n'
         readme.write_bytes(text.encode('utf8'))
+    closed='### Integrated-RPPO small256 已收尾（2026-11-10）'
+    if phase.startswith('CLOSED') and closed not in text:
+        text+='\n\n'+closed+'\n\n首seed已实际完成256轮／1024 PPO Actor更新，预登记P2未通过：所选RL128对SL仅+0.2233%，对匹配监督256为−0.8682%；未启动其余seed／独立确认／正式计时／P5。固定DRL目标保持，原研究证据和60保留任务不变。\n\n[实际报告](rc3_integrated_rppo/EXPERIMENT_REPORT.md) · [冻结Actor](rc3_integrated_rppo/ACTOR_INDEX.json) · [独立审查](rc3_integrated_rppo/INDEPENDENT_REVIEW.md) · [阶段与下一步](rc3_integrated_rppo/NEXT_STEP_DECISION.md)。\n'
+        readme.write_bytes(text.encode('utf8'))
     # Preserve baseline root Markdown line endings during additive maintenance.
     prior_readme=subprocess.check_output(['git','show',BASE+':README.md'],cwd=ROOT)
     if b'\r\n' in prior_readme:readme.write_bytes(readme.read_text(encoding='utf8').replace('\n','\r\n').encode('utf8'))
@@ -43,6 +47,7 @@ def main(phase):
         policy='Old file identities retained; only declared root metadata and new module artifacts updated; unrelated user Word files excluded')
     paths=[ROOT/'.gitattributes',readme,ROOT/'PROJECT_VERSION.json',ROOT/'EXPERIMENT_RESULT_TO_CLAIM.md',ROOT/'RC3_Integrated_DRL_Plan_and_Codex_Task_v1.md']
     paths+=list(HOME.rglob('*'))+list((ROOT/'project_management/integrated_rppo_delivery').rglob('*'))
+    paths+=list((ROOT/'paper/review-traces/experiment-result-to-claim/20261110_run01').rglob('*'))
     for p in paths:
         if not p.is_file() or '__pycache__' in p.parts or p.suffix in ('.pyc','.pyo') or p.name.endswith('.lease'):continue
         key=p.relative_to(ROOT).as_posix();previous['files'][key]=dict(sha256=sha(p),bytes=p.stat().st_size)
