@@ -60,4 +60,3 @@
 - 新方案性能主张 `claim_supported: no (not_tested)`；它表示本轮尚无实际新科学结果，而不是算法已失败。旧工程和有限机会主张分别保留为 scoped yes／partial。
 - `paper/PAPER_CLAIM_AUDIT.json` 在本次预审检查时不存在。论文级推广仍为 provisional；这不是再次执行全部历史审计的理由，也不阻止已授权的有限研发。
 - 本次 reviewer 的新增模型实例化／forward／backward／optimizer／导航／H／教师／任务生成／原 60 语义读取／旧 S3 任务输入读取均为 0。历史数值来自上述保存汇总，不冒称本 reviewer 已重算全部原始路线或全体验证其字节。
-

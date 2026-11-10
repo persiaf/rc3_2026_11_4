@@ -11,7 +11,12 @@ BASE='7d2cfe75919b25bac59c5274321baca4d8e98f77'
 
 
 def read(p):return json.loads(p.read_text(encoding='utf8'))
-def save(p,d):p.write_bytes((json.dumps(d,ensure_ascii=False,indent=2)+'\n').encode('utf8'))
+def save(p,d):
+    text=json.dumps(d,ensure_ascii=False,indent=2)+'\n'
+    try:old=subprocess.check_output(['git','show',BASE+':'+p.relative_to(ROOT).as_posix()],cwd=ROOT)
+    except subprocess.CalledProcessError:old=b''
+    if b'\r\n' in old:text=text.replace('\n','\r\n')
+    p.write_bytes(text.encode('utf8'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
@@ -27,6 +32,9 @@ def main(phase):
     if line not in text:
         text+='\n\n## Integrated-RPPO-v1（独立研究）\n\n'+line+'：冻结SL骨干、残差Actor、独立Critic与受控PPO；按新任务P0—P5条件执行。原S0—S3及GL-v4/v5、两个缺失槽和负结论保留，原60继续封存。阶段与实际结论以模块报告为准。\n'
         readme.write_bytes(text.encode('utf8'))
+    # Preserve baseline root Markdown line endings during additive maintenance.
+    prior_readme=subprocess.check_output(['git','show',BASE+':README.md'],cwd=ROOT)
+    if b'\r\n' in prior_readme:readme.write_bytes(readme.read_text(encoding='utf8').replace('\n','\r\n').encode('utf8'))
     previous=json.loads(subprocess.check_output(['git','show',BASE+':project_management/GIT_MANIFEST.json'],cwd=ROOT,encoding='utf8'))
     previous['version']=version['version'];previous['integrated_rppo_maintenance']=dict(phase=phase,baseline=BASE,
         policy='Old file identities retained; only declared root metadata and new module artifacts updated; unrelated user Word files excluded')
