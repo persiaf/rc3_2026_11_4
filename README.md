@@ -120,3 +120,8 @@ G2.3 测试包含 6 个独立场景、180 份输出；多步模型共 36 次测�
 清理仅针对可重建计算缓存、迁移测试解压副本和解释器字节码缓存。源码、已保存路径、检查点、训练日志、协议、审查材料、原始 ZIP、机器人资产及本机 Python 环境保留。训练缓存重建方法见 [清理与恢复说明](project_management/ARCHIVE_AND_RESTORE.md)。
 
 前轮归档与清理没有新增训练；本轮构造式C2训练和性能记录单独保存在 `rc3_constructive/`，没有覆盖旧实验。文件通过 SHA256 清单核验。后续研发使用独立输出目录，分支及同步按AGENTS约定执行；Git不存储账号凭据、本机虚拟环境或额外整包备份。
+
+
+## Integrated-RPPO-v1（独立研究）
+
+[Integrated-RPPO-v1](rc3_integrated_rppo/README.md)：冻结SL骨干、残差Actor、独立Critic与受控PPO；按新任务P0—P5条件执行。原S0—S3及GL-v4/v5、两个缺失槽和负结论保留，原60继续封存。阶段与实际结论以模块报告为准。

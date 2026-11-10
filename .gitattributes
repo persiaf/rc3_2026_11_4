@@ -13,3 +13,7 @@ rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/seed_*/RL/upd
 
 # S3 scope-r1 full event journals retain original bytes through Git LFS.
 rc3_s3_connectivity_20261109/runs/rc3_v3_global_local_20261106_01/scope_r1/*/journal.jsonl filter=lfs diff=lfs merge=lfs -text
+
+# Integrated-RPPO content-addressed full episodes and immutable event evidence.
+rc3_integrated_rppo/runs/*/objects/*/*.json.gz filter=lfs diff=lfs merge=lfs -text
+rc3_integrated_rppo/runs/*/ledger/events.jsonl filter=lfs diff=lfs merge=lfs -text
