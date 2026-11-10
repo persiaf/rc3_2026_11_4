@@ -59,7 +59,7 @@ def value_error(critic,episodes):
 
 def checkpoint(actor,critic,ppo,control,control_opt,seed,stage,round_,counts,log,clock,extra=None):
     payload=dict(experiment=EXP,seed=seed,stage=stage,closed_round=round_,source_binding_sha256=digest(source_path()),
-        protocol_sha256=digest(HOME/'PROTOCOL.json'),base_tensor_sha=actor.base_sha,actor=actor.head.state_dict(),critic=critic.state_dict(),
+        protocol_sha256=digest(protocol_path()),base_tensor_sha=actor.base_sha,actor=actor.head.state_dict(),critic=critic.state_dict(),
         actor_opt=ppo.actor_opt.state_dict(),critic_opt=ppo.critic_opt.state_dict(),actor_cursor=ppo.actor_cursor,critic_cursor=ppo.critic_cursor,
         failed_batches=ppo.failed_batches,halved=ppo.halved,control=None if control is None else control.head.state_dict(),
         control_opt=None if control_opt is None else control_opt.state_dict(),counts=copy.deepcopy(counts),
@@ -86,7 +86,7 @@ def restore(seed,stage,actor,critic,ppo,control,control_opt,log,counts):
     require(len(matches)==1,'CURRENT not uniquely sealed by its closed-checkpoint event')
     d=torch.load(path,map_location='cpu',weights_only=False)
     require(d['experiment']==EXP and d['seed']==seed and d['stage']==stage and d['source_binding_sha256']==digest(source_path())
-        and d['protocol_sha256']==digest(HOME/'PROTOCOL.json') and d['base_tensor_sha']==actor.base_sha,'Checkpoint scientific source mismatch')
+        and d['protocol_sha256']==digest(protocol_path()) and d['base_tensor_sha']==actor.base_sha,'Checkpoint scientific source mismatch')
     require(d['closed_round']==matches[0]['round'] and d['actor_cursor']==matches[0]['actor_cursor'] and d['critic_cursor']==matches[0]['critic_cursor'],
         'Closed checkpoint cursor/round mismatch')
     n=d['log_sequence'];require(n<=len(log.events) and (log.events[n-1]['sha256'] if n else '0'*64)==d['log_tail'],'Checkpoint not in current immutable ledger')
@@ -155,7 +155,8 @@ def selection(seed,round_,actor,control,inputs,store,clock):
     return entries,rows
 
 
-def seed_run(seed,inputs,store,clock,*,variant='main',rounds=512,anchor=True,scale=True):
+def seed_run(seed,inputs,store,clock,*,variant='main',rounds=None,anchor=True,scale=True):
+    if rounds is None:rounds=read(protocol_path())['training']['rounds']
     counts={};state,source=base_state(seed);actor=Actor(state,seed,TRAIN_DEVICE);critic=Critic(seed);control=Actor(state,seed,TRAIN_DEVICE) if variant=='main' else None
     ppo=PPO(actor,critic,store.log,counts,anchor=anchor,context=dict(seed=seed,stage=variant));control_opt=adam(control.head.parameters(),3e-5) if control is not None else None
     d=restore(seed,variant,actor,critic,ppo,control,control_opt,store.log,counts)

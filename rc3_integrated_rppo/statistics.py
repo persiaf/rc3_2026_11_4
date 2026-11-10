@@ -48,7 +48,7 @@ def select_candidates(info,rows):
     from .eval import gains
     for role in ('RL','residual_SL'):
         candidates=[]
-        for point in (128,256,512):
+        for point in read(protocol_path())['training']['selection_candidates']:
             if str(point) not in info['candidates']:continue
             entry=info['candidates'][str(point)][role]
             rr=[r for r in rows if r['seed']==seed and r['study_method']==role and r['update']==point]

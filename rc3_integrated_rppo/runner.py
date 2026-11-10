@@ -52,9 +52,15 @@ def execute():
         clock=Clock(log,'P0',1800);inputs=Inputs(log,clock);engineering=p0(inputs,store,clock);clock.close();clock=None
         if (HOME/'GPU_ENGINEERING_VERIFICATION.json').exists():
             gpu=read(HOME/'GPU_ENGINEERING_VERIFICATION.json')
-            require(gpu['old_CPU_report_sha256']==digest(HOME/'ENGINEERING_VERIFICATION.json') and gpu['source_binding_sha256']==digest(source_path()),'GPU engineering provenance mismatch')
+            require(gpu['old_CPU_report_sha256']==digest(HOME/'ENGINEERING_VERIFICATION.json') and gpu['source_binding_sha256']==digest(HOME/'SOURCE_BINDING_R02.json'),'GPU engineering provenance mismatch')
             require(all(engineering['checks'].values()) and gpu['exact_zero_residual_logits_masks'],'Engineering math/equivalence check failed')
             engineering=dict(engineering,status=gpu['status'],benchmark=gpu['benchmark'])
+        if (HOME/'RESOURCE_REDUCTION_DECISION.json').exists():
+            reduction=read(HOME/'RESOURCE_REDUCTION_DECISION.json')
+            require(reduction['original_GPU_report_sha256']==digest(HOME/'GPU_ENGINEERING_VERIFICATION.json') and reduction['protocol_sha256']==digest(protocol_path()),
+                'One-time resource reduction not bound to original evidence')
+            require(reduction['one_time_only'] and reduction['scientific_optimizer_updates_before']==0 and reduction['projected_first_seed_including_P5_s']<14400,'Reduction resource condition')
+            engineering=dict(engineering,status='PASS',benchmark=dict(engineering['benchmark'],conservative_seed_projection_s=reduction['projected_first_seed_including_P5_s']))
         require(engineering['status']=='PASS','P0 resource/engineering condition not passed; scientific training not started')
         path=HOME/'IMPLEMENTATION_REVIEW.md'
         if not path.exists():path.write_text('# 实施评审\n\n**GO：P0准确绑定、数学／恢复／角色检查及真实路线与优化器验收通过。**\n\n'

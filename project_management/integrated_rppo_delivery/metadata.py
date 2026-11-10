@@ -24,9 +24,10 @@ def main(phase):
     version=read(ROOT/'PROJECT_VERSION.json');version['version']='2026.11.10-integrated-rppo-v1'
     pointer=read(HOME/'EXECUTION_SOURCE.json') if (HOME/'EXECUTION_SOURCE.json').exists() else dict(binding_path='rc3_integrated_rppo/SOURCE_BINDING.json')
     binding=ROOT/pointer['binding_path']
+    proto=read(HOME/'EXECUTION_PROTOCOL.json') if (HOME/'EXECUTION_PROTOCOL.json').exists() else dict(protocol_path='rc3_integrated_rppo/PROTOCOL.json')
     version['integrated_rppo']=dict(branch='codex/rc3-integrated-rppo-v1',baseline=BASE,phase=phase,
         fixed_goal='Large-parent DRL training, frozen rapid constrained local complete planning',
-        protocol='rc3_integrated_rppo/PROTOCOL.json',protocol_sha256=sha(HOME/'PROTOCOL.json'),
+        protocol=proto['protocol_path'],protocol_sha256=sha(ROOT/proto['protocol_path']),
         source_binding=pointer['binding_path'],source_binding_sha256=sha(binding),
         old_S0_S3_GL_v4_v5_preserved=True,original60_semantic_access=0,old_missing_slots_reexecuted=0)
     save(ROOT/'PROJECT_VERSION.json',version)

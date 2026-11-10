@@ -1,0 +1,41 @@
+{
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "status": "TASK_AUTHORIZED_PRE_SCIENCE_BUDGET_REDUCTION",
+  "revision": "R03",
+  "reason": "Attachment-authorized one-time pre-science reduction: all seeds256, candidates128/256, unchanged schedule prefixes, algorithm and gates. Retain66 engineering requests and32 updates; full512 resources infeasible.",
+  "prior_binding": {
+    "binding_path": "rc3_integrated_rppo/SOURCE_BINDING_R02.json",
+    "binding_sha256": "f4d11ad2921b567b33069b10c1e53dc0528e1dd6c0c1199fde9e57c37054285b",
+    "revision_receipt": "rc3_integrated_rppo/SOURCE_REVISION_R02.json",
+    "revision_receipt_sha256": "a11c007942c9ccbf79ee4bb8ae5fe510d4508d4069e82fb256b29e0e06920c2c"
+  },
+  "new_binding": {
+    "path": "rc3_integrated_rppo/SOURCE_BINDING_R03.json",
+    "sha256": "2716f97f4977ef4b88ac0b2d0b7c3741aa94f62de9981f3ed1d0b92882accf9b"
+  },
+  "changed_sources": {
+    "rc3_integrated_rppo/common.py": {
+      "before": "422edbeec3fcba4f359c29d2d77365fad3ca4ab7cf545ec17ce50dc6992c045c",
+      "after": "0344b724ccf9c3f3a67ee8dcd7865ae439757263efeb6d9f76d905cf177abd97"
+    },
+    "rc3_integrated_rppo/runner.py": {
+      "before": "9f03089ec14c53d7ee701fe0a60473458d8f4de37551e15b75df42adeedcdc89",
+      "after": "2815831eb971cba2c44ec131a38a5b85d527b3e638ea261ae3da5041685e5319"
+    },
+    "rc3_integrated_rppo/statistics.py": {
+      "before": "0eebe7ff386c393689f757c7188260635f7751f1a70256dc5a2bc2337e92a559",
+      "after": "3308d764b61964952a7c0f63ff94a3d5aae689958973d55af4e123ed2d670ca7"
+    },
+    "rc3_integrated_rppo/training.py": {
+      "before": "17c5c442770ec8c36b6a52d11d12774e1961202be8eb104e8aa4fa489bcc64c9",
+      "after": "cf6a15b505336730f6178eb339b701fbb6479b9a55a498fa8f4e1e1b69b15a3e"
+    }
+  },
+  "protocol_changed": true,
+  "data_schedule_changed": "Prefix truncation only",
+  "algorithm_changed": false,
+  "old_frozen_source_retrieval": "Git d5bda930f12d9874101263167f4b4a2d697514b3",
+  "authorization": "Explicit integrated user task authorizes small engineering corrections in scope; no claim user pre-read generated hash",
+  "original_authorization_sha256": "e1fa10512c102b43f842564c511ab5c7a2cf18196b50dfbbae0527e4bf9dd378",
+  "utc": "2026-11-10T02:39:49.835714+00:00"
+}

@@ -1,0 +1,195 @@
+{
+  "schema": "Integrated-RPPO-v1-small256-pre-science",
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "baseline": "7d2cfe75919b25bac59c5274321baca4d8e98f77",
+  "user_task_sha256": "c8f18ee7d050f46e3b1f7b3882b47a688f4effabad840df19ad308e4bdeb6f61",
+  "old_registry_sha256": "75d110bef7e9954e9ace14198d262a940af6aacb17abad71cf83771ace8b363a",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "fixed_goal": "Large-parent DRL training, frozen rapid variable-size complete local constraint planning",
+  "actor": {
+    "base": "Exact own seed SL256 frozen/eval",
+    "hidden": [
+      64,
+      64
+    ],
+    "features": 202,
+    "residual_amplitude": 2.0,
+    "output_zero": true
+  },
+  "critic": {
+    "features": 268,
+    "hidden": [
+      128,
+      128
+    ],
+    "independent": true
+  },
+  "features": {
+    "actor": "q64 + candidate64 + remaining-coverage pool64 + u10",
+    "critic": "global64 + remaining64 + current64 + ordered-prefix GRU64 + context12",
+    "u10": [
+      "new_cover/n",
+      "sum_remaining(C_ij/max(1,sum_kC_ik))/n",
+      "D_current_j/10",
+      "D_j_exit/10",
+      "remaining/n",
+      "prefix_stops/n",
+      "raw_L/100",
+      "window_width/10",
+      "window_height/10",
+      "entry_ne_exit"
+    ],
+    "context12": [
+      "remaining/n",
+      "prefix_stops/n",
+      "raw_L/100",
+      "current_x/10",
+      "current_y/10",
+      "entry_x/10",
+      "entry_y/10",
+      "exit_x/10",
+      "exit_y/10",
+      "width/10",
+      "height/10",
+      "open_flag"
+    ],
+    "missing": "Finite distance0 only for masked illegal entries; no task/route/H answer features",
+    "cache": "input,prefix,base tensor and endpoint D hash; ephemeral per rollout/SL batch, none across inference requests"
+  },
+  "optimizer": {
+    "actor_lr": 3e-05,
+    "critic_lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 1.0,
+    "actor_epochs": 4,
+    "critic_epochs": 4
+  },
+  "objective": {
+    "gamma": 1.0,
+    "GAE_lambda": 1.0,
+    "reward": "Exact frozen dense increments with terminal raw−H correction",
+    "scale": "max(1,target_task_count)",
+    "note": "Changes cross-instance weighting; reported J/L/K unnormalized",
+    "advantage": "Frozen full RTG−V_old; divide ALL advantages by single RMS over valid sampled states +1e-8, no centering; empirical, not strictly unbiased",
+    "actor": "1/E sum_episode sum_valid_t [-min(exp(new_lp_t−old_lp_t)*A_t,clip(.9,1.1)*A_t)+.02 KL(pi0||pi)]",
+    "critic": "1/(2E) sum_episode sum_valid_t (V−G)^2",
+    "entropy": 0.0,
+    "padding": "No padding in implementation; synthetic padded tests exclude padding"
+  },
+  "KL": {
+    "mean_old_new": 0.01,
+    "p95_old_new": 0.05,
+    "mean_base_current": 0.1,
+    "statistics": "Pooled valid states, not episode-summed KL; exact same mask",
+    "rollback": "Restore failed epoch Actor+Adam+accepted cursor exactly; never refund attempts. Critic independent.",
+    "retries": "At most one persistent LR-halving/retry per rollout batch, then carry lower LR to following batches;3 consecutive noncompliant batches stop"
+  },
+  "warm": {
+    "episodes": 192,
+    "train_valid": "Physical parent split24 valid/72train balanced modes",
+    "initial_steps": 224,
+    "max_steps_including_extra_epochs": 256,
+    "extra": "If valid episode-MSE worse than initial or >1.5train, at most2 full critic-only epochs within256 cap; no extra trajectories",
+    "no_quality_gate": true
+  },
+  "training": {
+    "rounds": 256,
+    "per_round_episodes": 24,
+    "full_local": [
+      6,
+      2,
+      2,
+      2
+    ],
+    "natural_rows_per_input": 2,
+    "checkpoints": [
+      64,
+      128,
+      256
+    ],
+    "selection_candidates": [
+      128,
+      256
+    ],
+    "early_stop": "Both64 and128: every size mean gain<0 AND all-layout gain<−.02. Neither single failure nor non-significant CI stops otherwise."
+  },
+  "matched_SL": {
+    "batch_episodes": 24,
+    "per_round": "Fixed24 existing teacher labels cached for this batch; one masked route-mean CE step for each accepted PPO Actor epoch",
+    "optimizer": "Same residual parameters, fresh Actor Adam lr3e-5,clip1",
+    "no_equal_FLOPs_claim": true,
+    "selection_checkpoints": [
+      64,
+      128,
+      256
+    ]
+  },
+  "statistics": {
+    "cluster": "true physical map_key; average all6 views then relative gain; no windows or seeds counted as independent maps",
+    "bootstrap": 20000,
+    "generator": "PCG64",
+    "seed": 11652026,
+    "stratification": "mixed/blocked physical parents",
+    "interval": "percentile2.5/97.5 linear",
+    "multi_seed": "Within each parent average paired gains across3 matched seeds, then parent bootstrap",
+    "timing": "Within each group/size/cache/boundary report median and linear p95 over all matched-seed RL repeats vs deterministic native repeats; native not counted as three independent models. Fixed3 dominance requires no greater paired parent meanJ and no greater median time, at least one strict. N1/10/100 use first actual N measured service durations plus fresh common ready; insufficient streams stay missing, no extrapolation.",
+    "P2": "Select RL and residual-SL independently from128/256 by parent mean gain vs ownSL, earlier ties. RLvsSL and RLvscontrol both mean>=.005. Same original gate; no added rule gate.",
+    "P3": "Both comparisons aggregate mean>=.005 and lower95>0; each of3 seed point gains>0, all valid; then P4",
+    "deployment": "Detour cost-degradation upper one-sided95<=.005; median ratio<=.7,p95<=1; no Fixed3 simultaneous dominance; byseen/unseen and size"
+  },
+  "caps": {
+    "engineering": 96,
+    "warm": 576,
+    "train": 18432,
+    "selection": 1104,
+    "promotion": 528,
+    "quality": 3024,
+    "timing": 3024,
+    "ablation": 3168
+  },
+  "top_request_total": 29952,
+  "infrastructure_retry_total": 32,
+  "absolute_request_cap": 50000,
+  "clocks": {
+    "P0": 1800,
+    "per_seed": 14400,
+    "confirmation_and_analysis": 10800,
+    "P5": "Resume seed11622026 cumulative remaining14400; no extra reset clock"
+  },
+  "P0": {
+    "engineering_requests_cap": 96,
+    "planned_requests": 42,
+    "optimizer_calls_cap": 32,
+    "scope": "18zero residual equality +24 on-policy engineering trajectories and finite new-math/failure tests; no scientific weight reused"
+  },
+  "P5": {
+    "trigger": "P3 reproducible RL increment; only2 registered variants",
+    "rounds": 64,
+    "terminal_requests": 3168,
+    "warm": "Reuse192 current pi0 warm episodes only because initial policy identical; refit value targets for raw scale without new H",
+    "sampling": "Same first64 problem schedules and paired seeds, own on-policy actions; never reuse main post-update trajectories"
+  },
+  "ready_service": "One source/model/static-source validation ready step; D1 actor each request; all methods same input/nav service; no dynamic reuse; report service vs full audit boundary separately",
+  "preparation_allocation": "Registration/import, immutable shared bank/split feasibility preparation charged to P0; each seed loads/warms/trains/controls/selects under its14400s. Cold/hot final input/nav/IO plus numerical analysis under confirmation10800s. Parent watchdog launch-to-ready charged on startup. Git/checksum/publication administration separate.",
+  "sealed": "No original60; oldS3 exposed retained; final216 tasks materialize only after configs/candidates frozen; unseen actual geometry hashes checked without replacement",
+  "original_full_protocol_sha256": "cbb1c68252dbfc5a88ecb30bedc8c4e5035e00d9625a245e5890084f4dec575c",
+  "original_task_sha256": "c8f18ee7d050f46e3b1f7b3882b47a688f4effabad840df19ad308e4bdeb6f61",
+  "resource_revision": {
+    "one_time": true,
+    "reason": "Actual CPU/GPU P0 complete-round projections exceed14400s for512",
+    "only_changes": [
+      "Main rounds512→256 for every seed",
+      "Selection candidates128/256; no512 opportunity",
+      "Training schedule exact first256 prefix",
+      "Corresponding request ceilings reduced"
+    ],
+    "unchanged": "Network,reward,features,Adam,KL,4epochs,gamma/lambda,H,mask,scope,seed,case splits,thresholds,P3/P4/P5 sizes",
+    "statistical_loss": "Cannot test late512 gains;2 rather than3 selection candidates; half on-policy training episodes; no claim equivalence to original full512 protocol",
+    "training_device": "CUDA FP32 residual head; CPU frozen base/critic and D1 inference; established before science by registered P0GPU"
+  }
+}

@@ -20,8 +20,18 @@ EXP='rc3_integrated_rppo_v1_20261110_01'
 OUT=HOME/'runs'/EXP
 OLD=ROOT/'rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01'
 SEEDS=(11622026,11622027,11622028)
-CAPS=dict(engineering=96,warm=576,train=36864,selection=1392,promotion=528,quality=3024,timing=3024,ablation=3168)
 TRAIN_DEVICE='cuda' if (HOME/'GPU_ENGINEERING_REGISTRATION.json').exists() else 'cpu'
+
+
+def protocol_path():
+    pointer=HOME/'EXECUTION_PROTOCOL.json'
+    if not pointer.exists():return HOME/'PROTOCOL.json'
+    p=read(pointer);path=(ROOT/p['protocol_path']).resolve()
+    require(path.parent==HOME and digest(path)==p['protocol_sha256'],'Execution protocol pointer changed/escaped')
+    return path
+
+
+CAPS=read(protocol_path())['caps'] if (HOME/'PROTOCOL.json').exists() else dict(engineering=96,warm=576,train=36864,selection=1392,promotion=528,quality=3024,timing=3024,ablation=3168)
 
 
 def source_path():
