@@ -1,0 +1,126 @@
+"""Parent-clustered paired analysis from THIS experiment's saved requests only."""
+from __future__ import annotations
+
+import csv
+from pathlib import Path
+import numpy as np
+
+from .storage import read, write_new
+
+
+def csv_new(path, rows):
+    rows = list(rows)
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fields = list(dict.fromkeys(k for row in rows for k in row))
+    with path.open('x', encoding='utf-8-sig', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def parent_contrast(rows, method, control, *, metric='J', bootstrap=20000, seed=11652026):
+    """Each case must have exactly one paired method/control observation.
+
+    Average each method's costs inside its physical parent first, then compute
+    relative savings. Windows, repeated timings, and checkpoints are not extra
+    independent physical layouts. Caller must select one endpoint/cohort.
+    """
+    cells = {}
+    for r in rows:
+        if r['method'] in (method, control):
+            key = (r['physical_key'], r['case_id'])
+            if r['method'] in cells.setdefault(key, {}):
+                raise ValueError('Duplicate observations; choose one endpoint/repeat')
+            cells[key][r['method']] = float(r['metrics'][metric])
+    if not cells or any(set(v) != {method, control} for v in cells.values()):
+        raise ValueError('Incomplete paired cases; no success-only analysis')
+    grouped = {}
+    for (parent, _), v in cells.items():
+        grouped.setdefault(parent, []).append(v)
+    per_parent = []
+    for parent, cases in sorted(grouped.items()):
+        a = float(np.mean([v[method] for v in cases]))
+        b = float(np.mean([v[control] for v in cases]))
+        if b <= 0:
+            raise ValueError('Positive control cost needed for relative savings')
+        per_parent.append(dict(physical_key=parent, cases=len(cases), method_mean=a,
+                               control_mean=b, relative_saving=(b-a)/b))
+    gains = np.array([r['relative_saving'] for r in per_parent])
+    rng = np.random.Generator(np.random.PCG64(seed))
+    samples = gains[rng.integers(0, len(gains), size=(bootstrap, len(gains)))].mean(1)
+    return dict(method=method, control=control, metric=metric, physical_parents=len(gains),
+                point=float(gains.mean()), ci95=np.quantile(samples, [.025, .975]).tolist(),
+                parents=per_parent, bootstrap=bootstrap, bootstrap_seed=seed,
+                inference_scope='Descriptive development comparison; one training seed and few independent layouts')
+
+
+def summarize(rows, output):
+    output = Path(output)
+    flat = []
+    for r in rows:
+        flat.append(dict(case_id=r['case_id'], physical_key=r['physical_key'],
+                         cohort=r['cohort'], width=r['spec']['width'], height=r['spec']['height'],
+                         endpoint=r['endpoint'], method=r['method'], repeat=r.get('repeat', 0),
+                         **r['metrics'], valid=r['valid'],
+                         full_request_s=r['timing']['request_before_IO_s'],
+                         model_load_s=r['timing'].get('model_load_s', 0.),
+                         input_prepare_s=r['timing'].get('input_prepare_s', 0.)))
+    csv_new(output/'ALL_ROUTE_RESULTS.csv', flat)
+    results = []
+    for endpoint in sorted({r['endpoint'] for r in rows}):
+        for cohort in sorted({r['cohort'] for r in rows}):
+            for size in ['all', '4x3', '6x6', '8x8']:
+                chosen = [r for r in rows if r['endpoint']==endpoint and r['cohort']==cohort
+                          and r.get('repeat', 0)==0 and (size=='all' or f"{r['spec']['width']}x{r['spec']['height']}"==size)]
+                if not chosen:
+                    continue
+                for method, control in [('ON','OFF'), ('ON','FrozenSL'), ('OFF','FrozenSL'),
+                                        ('ON','continued_SL'), ('OFF','continued_SL'),
+                                        ('ON','Fixed3'), ('ON','Detour16')]:
+                    for metric in ('J','raw_J','L','K'):
+                        result=parent_contrast(chosen, method, control, metric=metric)
+                        result.update(endpoint=endpoint, cohort=cohort, size=size)
+                        results.append(result)
+    write_new(output/'PARENT_CONTRASTS.json', results)
+    timings=[]
+    for endpoint in sorted({r['endpoint'] for r in rows}):
+        for cohort in sorted({r['cohort'] for r in rows}):
+            for size in ['all', '4x3','6x6','8x8']:
+                for method in sorted({r['method'] for r in rows}):
+                    selected=[r for r in rows if r['endpoint']==endpoint and r['cohort']==cohort
+                              and r['method']==method and (size=='all' or f"{r['spec']['width']}x{r['spec']['height']}"==size)]
+                    if selected:
+                        values=[r['timing']['request_before_IO_s'] for r in selected]
+                        timings.append(dict(endpoint=endpoint,cohort=cohort,size=size,method=method,
+                                            n=len(values), median_s=float(np.median(values)),
+                                            p95_s=float(np.quantile(values,.95))))
+    csv_new(output/'FULL_REQUEST_TIMING.csv', timings)
+    return results
+
+
+def critic_calibration(episodes, constants):
+    """Targets are future outcomes; constants must come from registered WARM only."""
+    rows=[]
+    for e in episodes:
+        record=e['record']
+        targets=e['targets']
+        for t, predicted in enumerate(record['critic_predictions']):
+            if predicted is None:
+                continue
+            n=max(1,e['task_count'])
+            true=dict(raw_remaining_L=targets['raw_remaining_L'][t],
+                      raw_remaining_K=targets['raw_remaining_K'][t],
+                      terminal_H_credit=targets['H_gain'],value=targets['returns'][t])
+            baseline=dict(constants)
+            # A single fixed scalar RTG mean, fitted ONLY on warm states, is
+            # the honest constant value comparator across different task sizes.
+            baseline['value']=constants['value']
+            for key in true:
+                rows.append(dict(problem_identity=record['input_identity'], state=t, component=key,
+                                 predicted=predicted[key], target=true[key], constant=baseline[key],
+                                 error=predicted[key]-true[key],
+                                 squared_error=(predicted[key]-true[key])**2,
+                                 constant_squared_error=(baseline[key]-true[key])**2,
+                                 normalized_squared_error=((predicted[key]-true[key])/ (1 if key=='value' else n))**2))
+    return rows

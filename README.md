@@ -1,10 +1,16 @@
 # RC3：可达约束下的二维静态任务路径规划
 
+## 2026-11-10：206维真实PPO训练器与有界工程验收
+
+[本轮正式训练器集成](rc3_conservative_refinement/integration_20261110/README.md)已实现独立206维PPO、准确SL256永久冻结、L/K/H Critic、逐步guard与Actor/Adam严格回滚、闭合账本恢复、轻量Actor部署及完整请求计时。90项测试与20个真实工程请求通过，实际5次Actor/4次Critic调用仅用于工程验收；此前两次失败原账保留。Fixed3/Detour16真实示例有效。
+
+**正式ON/OFF配对尚未启动。** 用户明确256是建议而非已批准参数；[具体协议R03](rc3_conservative_refinement/integration_20261110/PROTOCOL_DRAFT_R03.json)冻结每组最多256次机会、同一起点/日程、64/128/256终点、5100请求及5小时累计上限，等待参数确认及独立阶段授权。不能由工程PASS推断规划收益。[实际工程报告](rc3_conservative_refinement/integration_20261110/EXPERIMENT_REPORT.md)与[下一步](rc3_conservative_refinement/integration_20261110/NEXT_STEP_DECISION.md)。仍是二维双臂代理约束，非真实IK/实机认证；旧研究与原60封存边界保持。
+
 ## 2026-11-10：老师反馈的独立工程候选
 
 [保守修正与停靠后通行信息](rc3_conservative_refinement/README.md)保留原SL/H/mask/完整回报，加入“假设选择候选并扣除本次服务后，其余任务最近服务距离的均值/最大值”。同结构206维对照只关闭新增距离摘要；原导航信息仍保留。独立候选还提供零输出修正、训练专用L/K/H评估员及逐状态更新检查。
 
-**当前仅58项合成零优化器工程测试通过，未接旧runner、未开展新训练或性能对照，不能声称降本或保持速度。** 已收尾small256负结果保持，原60封存，真实IK/实机未完成。见[工程报告](rc3_conservative_refinement/EXPERIMENT_REPORT.md)、[实验计划](rc3_conservative_refinement/paper/EXPERIMENT_PLAN.md)和[下一步](rc3_conservative_refinement/NEXT_STEP_DECISION.md)。以下保留原研究历史与当时状态。
+**上一轮状态：58项合成零优化器工程测试通过，当时未接runner、未开展新训练或性能对照。** 后续真实训练器进展见上节，尚不能声称降本或保持速度。已收尾small256负结果保持，原60封存，真实IK/实机未完成。见[上轮工程报告](rc3_conservative_refinement/EXPERIMENT_REPORT.md)、[实验计划](rc3_conservative_refinement/paper/EXPERIMENT_PLAN.md)和[上轮下一步](rc3_conservative_refinement/NEXT_STEP_DECISION.md)。以下保留原研究历史与当时状态。
 
 本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-gl-v5-fixed-greedy-reference**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
 

@@ -1,0 +1,18 @@
+{
+  "schema": "rc3-saved-audit-failure-retained-v1",
+  "status": "FAILED_SCHEMA_ASSUMPTION_NO_NEW_SCIENCE",
+  "error": "AssertionError: Unjustified missing scalar",
+  "cause": "The engineering native records store only J/L/K, not any raw_J/raw_L/raw_K. The first audit failure encountered raw_L before looking up raw_J, and the attempt01 explanatory text incorrectly assumed raw_J existed. This correction preserves that failed record and the underlying20 request records.",
+  "source_records_modified": false,
+  "new_requests": 0,
+  "optimizer_calls": 0,
+  "H_calls": 0,
+  "navigation_solves": 0,
+  "model_forwards": 0,
+  "exact_body_wall_s": null,
+  "conservative_charged_wall_s": 2.0,
+  "charge_basis": "Observed failed command tool wall1.7s rounded up to two seconds.",
+  "subsequent_schema_inspection_body_s": 0.11191109999981563,
+  "retry_scope": "Read same immutable20 records. Only native records with no raw_plan and raw_route==route may derive all raw scalar fields from saved legs/stops and compare final J/L/K. Mark the fields as derived rather than originally stored.",
+  "cumulative_audit_cap_s": 30
+}

@@ -1,0 +1,172 @@
+"""Synthetic runtime boundary tests, with no real scene or optimizer execution."""
+import copy
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from types import SimpleNamespace
+import unittest
+from unittest.mock import patch
+
+import numpy as np
+import torch
+from torch import nn
+
+from . import runtime
+from .lookahead import prepare_service_distances, prepared_post_service_distances
+from .model import SmallCorrection
+
+
+class ProblemFixture:
+    def __init__(self):
+        self.C = np.array([[True, False, False], [False, True, True]])
+        self.task_ids = np.array([41, 73])
+        self.candidate_ids = np.array([8, 29, 52])
+        self.D = np.array([[0., 1., 2., 4.], [1., 0., 3., 5.],
+                           [2., 3., 0., 2.], [4., 5., 2., 0.]])
+        self.identity = 'synthetic-problem'
+        self.parent = SimpleNamespace(identity='synthetic-parent')
+        self.entry = self.exit = 0
+        self.penalty = .75
+
+    def metrics(self, route):
+        stops = route[1:-1]
+        if not self.C[:, np.array(stops) - 1].any(1).all():
+            raise ValueError('Incomplete synthetic route')
+        length = sum(self.D[a, b] for a, b in zip(route, route[1:]))
+        return dict(J=float(length + .75 * len(stops)), L=float(length), K=len(stops))
+
+    def global_route(self, route):
+        return [0, *[int(self.candidate_ids[n - 1]) + 1 for n in route[1:-1]], 0]
+
+    def description(self):
+        return dict(identity=self.identity, task_ids_global=self.task_ids.tolist(),
+                    candidate_ids_global=self.candidate_ids.tolist())
+
+
+class ActorFixture(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.correction = SmallCorrection(input_dim=206)
+        self.distances_enabled = True
+        self.initialization_seed = 11622026
+        self.base_identity = dict(path=runtime.SL_PATH, sha256=runtime.SL_SHA256,
+                                  tensor_sha256=runtime.SL_TENSOR_SHA256, training_source={})
+
+    def encode(self, problem):
+        return prepare_service_distances(problem.D[1:, 1:], problem.C, exit_distances=problem.D[1:, 0])
+
+    def features(self, env, encoded):
+        extra = prepared_post_service_distances(encoded, env.remaining, env.mask())
+        mask = torch.as_tensor(env.mask())
+        return dict(x=torch.zeros(3, 206), v=torch.zeros(268),
+                    z0=torch.tensor([.3, .2, -.5]).masked_fill(~mask, -torch.inf), mask=mask,
+                    post_service_distances=extra,
+                    key=('synthetic-problem', tuple(env.prefix), 'synthetic-base', 'synthetic-D',
+                         'post-service-v1', self.distances_enabled, encoded.source_identity))
+
+    def logits(self, features):
+        return self.correction(features['z0'], features['x'], features['mask'])
+
+
+def mock_finish(problem, raw, stats):
+    result = problem.metrics(raw)
+    stats['full_H_calls'] += 1
+    stats['exports'] += 1
+    stats['validation_completed'] += 1
+    return dict(result, raw_J=result['J'], raw_L=result['L'], raw_K=result['K'],
+                route=raw, raw_route=raw, H_s=0., export_s=0., validation_s=0.,
+                plan=dict(validation=dict(valid_model_plan=True)))
+
+
+class RuntimeTests(unittest.TestCase):
+    def test_real_weight_hash_is_required_before_deserialization(self):
+        with patch.object(runtime, 'file_sha256', return_value='0' * 64), \
+             patch.object(torch, 'load', side_effect=AssertionError('Must not deserialize')):
+            with self.assertRaisesRegex(ValueError, 'SL256 file hash'):
+                runtime._read_sl256_payload()
+
+    def test_condition_and_seed_are_explicit(self):
+        self.assertTrue(runtime._condition('ON'))
+        self.assertFalse(runtime._condition('OFF'))
+        self.assertEqual(runtime._seed(11622026, 'init'), runtime._seed(11622026, 'init'))
+        for value in ('on', 1, None):
+            with self.assertRaises(ValueError):
+                runtime._condition(value)
+        with self.assertRaises(ValueError):
+            runtime._seed(True, 'init')
+
+    def test_complete_trace_has_task_ids_and_raw_H_targets(self):
+        actor = ActorFixture()
+        p = ProblemFixture()
+        with patch.object(runtime, '_assert_frozen'), \
+             patch('rc3_global_local.terminal.finish', side_effect=mock_finish), \
+             patch('rc3_global_local.terminal.export', return_value={}), \
+             patch('rc3_global_local.validation.validate', return_value=dict(valid_model_plan=True)):
+            episode = runtime.rollout(p, actor, greedy=True, equivalence=True)
+        self.assertEqual(episode['actions'].tolist(), [0, 1])
+        self.assertEqual(episode['batch']['x'].shape, (2, 3, 206))
+        self.assertEqual(episode['old_logits'].shape, (2, 3))
+        self.assertEqual(episode['record']['actions_global_candidate_ids'], [8, 29])
+        first = episode['record']['post_service_audit'][0]
+        self.assertEqual(first['hypothetical_served_tasks_global'], [41])
+        self.assertEqual(first['hypothetical_remaining_tasks_global'], [73])
+        self.assertEqual(episode['targets']['raw_leg_lengths'], [1., 3., 2.])
+        self.assertEqual(episode['targets']['raw_remaining_K'], [2, 1])
+        self.assertAlmostEqual(episode['targets']['J_raw'], 7.5)
+        self.assertTrue(episode['record']['raw_plan']['validation']['valid_model_plan'])
+        self.assertGreaterEqual(episode['record']['prepared_problem_request_s'], 0.)
+        self.assertEqual(len(episode['record']['post_service_audit']), 2)
+
+    def test_full_request_executes_and_measures_input_factory(self):
+        sentinel = dict(record={})
+        actor = object()
+        with patch.object(runtime, 'rollout', return_value=sentinel) as collect:
+            result = runtime.plan_request(lambda: 'prepared input', actor=actor, greedy=True)
+        self.assertIs(result, sentinel)
+        collect.assert_called_once_with('prepared input', actor, None, greedy=True)
+        self.assertEqual(result['record']['model_startup_s'], 0.)
+        self.assertGreaterEqual(result['record']['service_time_before_IO_s'], result['record']['input_preparation_s'])
+        with self.assertRaises(ValueError):
+            runtime.plan_request(lambda: None, actor=actor, actor_factory=lambda: actor)
+
+    def test_actor_only_roundtrip_rejects_extra_training_payload_and_overwrite(self):
+        actor = ActorFixture()
+        with TemporaryDirectory(prefix='rc3-runtime-test-') as temporary, \
+             patch.object(runtime, '_assert_frozen'):
+            path = Path(temporary) / 'actor.pt'
+            reference = runtime.export_actor(path, actor, dict(update=0))
+            package = torch.load(path, map_location='cpu', weights_only=True)
+            self.assertNotIn('critic', package)
+            self.assertNotIn('optimizer', package)
+            self.assertFalse(package['critic_included'])
+            self.assertFalse(package['optimizer_included'])
+            with self.assertRaisesRegex(ValueError, 'immutable'):
+                runtime.export_actor(path, actor)
+            loaded_actor = ActorFixture()
+            with patch.object(runtime, 'load_actor', return_value=loaded_actor):
+                restored = runtime.load_deployed_actor(path, expected_sha256=reference['sha256'])
+            self.assertTrue(all(not p.requires_grad for p in restored.parameters()))
+            self.assertEqual(runtime.tensor_digest(restored.correction.state_dict()),
+                             runtime.tensor_digest(actor.correction.state_dict()))
+            with self.assertRaisesRegex(ValueError, 'hash differs'):
+                runtime.load_deployed_actor(path, expected_sha256='0' * 64)
+            package['optimizer'] = {'state': {}}
+            changed = Path(temporary) / 'training-payload.pt'
+            torch.save(package, changed)
+            with self.assertRaisesRegex(ValueError, 'Unexpected training'):
+                runtime.load_deployed_actor(changed, expected_sha256=runtime.file_sha256(changed))
+
+    def test_wrong_target_accounting_stops_before_PPO(self):
+        p = ProblemFixture()
+        actor = ActorFixture()
+        original = actor.features
+        def tampered(env, encoded):
+            feature = original(env, encoded)
+            feature['post_service_distances']['remaining_after_count'] = np.full(3, 123)
+            return feature
+        with patch.object(runtime, '_assert_frozen'), patch.object(actor, 'features', side_effect=tampered):
+            with self.assertRaisesRegex(ValueError, 'remaining set count'):
+                runtime.rollout(p, actor, greedy=True)
+
+
+if __name__ == '__main__':
+    unittest.main()

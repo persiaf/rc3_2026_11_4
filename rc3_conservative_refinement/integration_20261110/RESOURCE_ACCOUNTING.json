@@ -1,0 +1,64 @@
+{
+  "status": "ENGINEERING_PASS_FORMAL_NOT_STARTED",
+  "attempts": [
+    {
+      "attempt": "engineering_R01",
+      "status": "FAIL",
+      "counts": {},
+      "closed_wall_s": 8.31204600000001,
+      "source_binding_sha256": "bd9bfe6f5415676af0e79625978cc3582ca77191f0d9c0299fe5b59402018b7a",
+      "resource_path": "rc3_conservative_refinement/integration_20261110/engineering_R01/RESOURCE_ACCOUNTING.json"
+    },
+    {
+      "attempt": "engineering_R02",
+      "status": "FAIL",
+      "counts": {
+        "requests": 1
+      },
+      "closed_wall_s": 5.6054769000002125,
+      "source_binding_sha256": "93f5cca74ee11f39d8c59b0b07b7dce4ae7a1f042c59b34f69492dce16ccbc6d",
+      "resource_path": "rc3_conservative_refinement/integration_20261110/engineering_R02/RESOURCE_ACCOUNTING.json"
+    },
+    {
+      "attempt": "engineering_R03",
+      "status": "PASS",
+      "counts": {
+        "actor_optimizer_attempts": 5,
+        "critic_optimizer_attempts": 4,
+        "requests": 20,
+        "teacher_episodes": 1
+      },
+      "closed_wall_s": 20.260667999999896,
+      "source_binding_sha256": "ea605e87a31c1c6fcf8a7090fbc2681202380fe1a6e6ae29de464529c1e701e7",
+      "resource_path": "rc3_conservative_refinement/integration_20261110/engineering_R03/RESOURCE_ACCOUNTING.json"
+    }
+  ],
+  "cumulative_engineering_counts": {
+    "requests": 21,
+    "actor_optimizer_attempts": 5,
+    "critic_optimizer_attempts": 4,
+    "teacher_episodes": 1
+  },
+  "closed_engineering_wall_s": 34.17819090000012,
+  "requests_completed": 20,
+  "requests_failed": 1,
+  "absolute_engineering_caps": {
+    "requests": 32,
+    "actor_optimizer_attempts": 16,
+    "critic_optimizer_attempts": 16,
+    "teacher_episodes": 2,
+    "wall_s": 1800
+  },
+  "engineering_weight_reused_for_science": false,
+  "formal_actor_updates": 0,
+  "formal_critic_updates": 0,
+  "formal_requests": 0,
+  "original60_semantic_reads": 0,
+  "S3_semantic_reads": 0,
+  "new_tasks": 0,
+  "new_navigation_solves": 0,
+  "independent_saved_audit": "Separate registered read-only check, cap30s; see INDEPENDENT_SAVED_PLAN_AUDIT.json",
+  "maintenance_scope": "Registration, dependency/source/LFS/Git verification and delivery summaries separately identified; no new training or planning",
+  "independent_saved_audit_charged_body_s": 3.7023415999998686,
+  "audit_body_time_is_not_outer_process_wall": true
+}

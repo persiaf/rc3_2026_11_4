@@ -1,0 +1,87 @@
+"""Pure allowlist/schedule tests; no scenes, planning, models or optimizer."""
+import copy
+import unittest
+
+from .saved_inputs import development_spec, select_training_specs, spec_key, producer_variant
+
+
+class SavedInputScheduleTests(unittest.TestCase):
+    def spec(self, width=10, height=10, **kw):
+        return dict(map_seed=1, task_seed=2, mode='mixed', A_condition=0,
+                    width=width, height=height, x0=0, y0=0, endpoints='closed_depot', **kw)
+
+    def test_six_fixed_prefix_views(self):
+        batch = [self.spec(10, 10, slot=i) for i in range(6)]
+        batch += [self.spec(w, h, slot=i) for i, (w, h) in enumerate([(4, 3)]*2+[(6, 6)]*2+[(8, 8)]*2, 6)]
+        selected = select_training_specs(batch)
+        self.assertEqual([s['slot'] for s in selected], [0, 1, 2, 6, 8, 10])
+        selected[0]['width'] = 1
+        self.assertEqual(batch[0]['width'], 10)
+
+    def test_missing_size_rejected_without_substitution(self):
+        with self.assertRaises(ValueError):
+            select_training_specs([self.spec() for _ in range(12)])
+
+    def test_real_interface_identity_fields(self):
+        a = self.spec()
+        b = dict(a, role='uninterpreted_metadata', source_family='bank')
+        self.assertEqual(spec_key(a), spec_key(b))
+        for key, value in [('map_seed', 5), ('task_seed', 8), ('A_condition', 1),
+                           ('x0', 1), ('width', 6), ('endpoints', 'open_first_last_connected')]:
+            self.assertNotEqual(spec_key(a), spec_key(dict(a, **{key: value})))
+
+    def test_inexact_ids_rejected(self):
+        for value in (True, 1.0, '1'):
+            with self.assertRaises(ValueError):
+                spec_key(dict(self.spec(), task_seed=value))
+
+    def test_missing_spec_rejected(self):
+        a = self.spec()
+        del a['endpoints']
+        with self.assertRaises(ValueError):
+            spec_key(a)
+
+    def test_unknown_conditions_rejected(self):
+        for changes in ({'A_condition': 3}, {'mode': 'replace'}, {'endpoints': 'nearest_available'}):
+            with self.assertRaises(ValueError):
+                spec_key(dict(self.spec(), **changes))
+
+    def test_development_window_mapping(self):
+        row = dict(case=2, map_seed=14000000000, task_seed=15000000002,
+                   mode='mixed', size=[6, 6], position='center', A_condition=2)
+        original = copy.deepcopy(row)
+        result = development_spec(row)
+        self.assertEqual((result['x0'], result['y0'], result['endpoints']), (2, 2, 'open_first_last_connected'))
+        self.assertEqual(row, original)
+        row['position'] = 'corner'
+        result = development_spec(row)
+        self.assertEqual((result['x0'], result['y0'], result['endpoints']), (0, 0, 'closed_depot'))
+
+    def test_exact_original_and_current_producers_remain_distinct(self):
+        original = {'shared.py': 'a'*64, 'changed.py': 'b'*64}
+        current = {'shared.py': 'a'*64, 'changed.py': 'c'*64, 'compat.py': 'd'*64}
+        self.assertEqual(producer_variant(dict(original), current, original), 'original33')
+        self.assertEqual(producer_variant(dict(current), current, original), 'current34')
+        self.assertEqual(original['changed.py'], 'b'*64)
+
+    def test_source_count_or_subset_does_not_grant_legacy_compatibility(self):
+        original = {'shared.py': 'a'*64, 'changed.py': 'b'*64}
+        current = {'shared.py': 'a'*64, 'changed.py': 'c'*64, 'compat.py': 'd'*64}
+        unknown = [dict(original, **{'changed.py': 'e'*64}),
+                   {'shared.py': 'a'*64}, dict(original, **{'extra.py': 'f'*64}),
+                   {'shared.py': 'a'*64, 'changed.py': 'c'*64}]
+        for candidate in unknown:
+            with self.assertRaises(ValueError):
+                producer_variant(candidate, current, original)
+
+    def test_ambiguous_or_malformed_producer_configuration_fails_closed(self):
+        source = {'shared.py': 'a'*64}
+        for current, original in [(source, source), ({}, source), (source, None)]:
+            with self.assertRaises(ValueError):
+                producer_variant(source, current, original)
+        with self.assertRaises(ValueError):
+            producer_variant(['shared.py'], dict(source, extra='b'*64), source)
+
+
+if __name__ == '__main__':
+    unittest.main()

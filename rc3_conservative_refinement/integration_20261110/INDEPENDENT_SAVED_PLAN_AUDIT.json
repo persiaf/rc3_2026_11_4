@@ -1,0 +1,853 @@
+{
+  "schema": "rc3-independent-saved-plan-audit-v1",
+  "status": "PASS_SAVED_ARITHMETIC_AND_ORIGINAL_CERTIFICATES",
+  "plan_sha256": "a71d259fd2384e0f549cc58523eefcfc376f3660d7ca0a53f5ecbdb663aa4f84",
+  "source_binding_sha256": "ea605e87a31c1c6fcf8a7090fbc2681202380fe1a6e6ae29de464529c1e701e7",
+  "source_and_artifact_hashes_verified": 617,
+  "input_artifacts_verified": 16,
+  "ledger": {
+    "sha256": "b0c10f76247e081180ca1ec2ae4fc297540b8fb499b58c893ec8fc302e7b8e1d",
+    "events": 87,
+    "tail": "d92738d65127bcda2fd40e972900183e033301e3d48c584cddd83c63a4df3e2f",
+    "request_done": 20,
+    "hash_chain_verified": true
+  },
+  "saved_records_read": 20,
+  "raw_H_plan_entries_checked": 40,
+  "local_global_mapping_checks": 40,
+  "max_absolute_cost_or_polyline_error_m": 2.842170943040401e-14,
+  "native_missing_raw_columns_explicitly_derived": [
+    {
+      "request_id": "native/fixed3",
+      "fields": [
+        "raw_J",
+        "raw_L",
+        "raw_K"
+      ],
+      "rule": "Native raw_route==route/no raw_plan; raw J/L/K derived from saved final native legs/stops and checked against stored final J/L/K"
+    },
+    {
+      "request_id": "native/detour16",
+      "fields": [
+        "raw_J",
+        "raw_L",
+        "raw_K"
+      ],
+      "rule": "Native raw_route==route/no raw_plan; raw J/L/K derived from saved final native legs/stops and checked against stored final J/L/K"
+    }
+  ],
+  "records": [
+    {
+      "request_id": "zero/engineering_full10x10/ON",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/2334a738e3a0833fcd6b42f5c1c8f38bded18ee414cdb5732994c3b18f0e556b.json",
+      "artifact_sha256": "d79e360d7579e5e7fa325e89a621fc68f0e630756296c282fd1d692c03b9161e",
+      "input_identity": "82704580edeb572f2aae7a57a5b74a1dca2b94c098ac94749aeeb7ae0c3d471d",
+      "physical_key": "37c6d48230d072ffd3e65f3c82eb95c5eb1807a8a791fa355a89b43923204d0b",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000052_11000000418_A0/receipt.json",
+        "receipt_sha256": "5dbc329d31578cdb7cd843b7bc432cfbeccfae7213b40945979d3d5ac9472b18",
+        "source_manifest_path": "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json",
+        "source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+        "variant": "original33"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 331.7903374338,
+          "L": 279.2903374338,
+          "K": 70,
+          "polyline_L": 279.2903374338,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 282.0007713978,
+          "L": 233.2507713978,
+          "K": 65,
+          "polyline_L": 233.2507713978,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/engineering_full10x10/OFF",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/5457d3eb510058b46744c9006d36c1d9a681ed99b6b37f71bbd834dcc8f6b0fa.json",
+      "artifact_sha256": "78fabc2c87ef01b3f33448b0f9caa349cd8dd0210fade6f1716ee7816343e31b",
+      "input_identity": "82704580edeb572f2aae7a57a5b74a1dca2b94c098ac94749aeeb7ae0c3d471d",
+      "physical_key": "37c6d48230d072ffd3e65f3c82eb95c5eb1807a8a791fa355a89b43923204d0b",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000052_11000000418_A0/receipt.json",
+        "receipt_sha256": "5dbc329d31578cdb7cd843b7bc432cfbeccfae7213b40945979d3d5ac9472b18",
+        "source_manifest_path": "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json",
+        "source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+        "variant": "original33"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 331.7903374338,
+          "L": 279.2903374338,
+          "K": 70,
+          "polyline_L": 279.2903374338,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 282.0007713978,
+          "L": 233.2507713978,
+          "K": 65,
+          "polyline_L": 233.2507713978,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/engineering_full10x10/FrozenSL",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/92f19a2073e24011c6b82657050ba14766974ad19b6628d2702d9461df60b34d.json",
+      "artifact_sha256": "893a814f30ebebe3489fec48140d43db8ae28d05b40f7db1e867eaf2a1883fee",
+      "input_identity": "82704580edeb572f2aae7a57a5b74a1dca2b94c098ac94749aeeb7ae0c3d471d",
+      "physical_key": "37c6d48230d072ffd3e65f3c82eb95c5eb1807a8a791fa355a89b43923204d0b",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000052_11000000418_A0/receipt.json",
+        "receipt_sha256": "5dbc329d31578cdb7cd843b7bc432cfbeccfae7213b40945979d3d5ac9472b18",
+        "source_manifest_path": "rc3_global_local_execution_v3/EXECUTION_SOURCE_BINDING.json",
+        "source_manifest_sha256": "435b1c8be95d6ec4f14f4aa87913a6eb3e937e3684eaadfabbad160b57ffe968",
+        "variant": "original33"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 331.7903374338,
+          "L": 279.2903374338,
+          "K": 70,
+          "polyline_L": 279.2903374338,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 282.0007713978,
+          "L": 233.2507713978,
+          "K": 65,
+          "polyline_L": 233.2507713978,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_000/ON",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/cc65c494d40a3ef45409286f02c91f39ee5e52b2b59a6008b1a532c1b6161380.json",
+      "artifact_sha256": "c2ec5666e9bcea68c3e9d9ad6b52206c9f6cfcd7cd43045d719baef2022e82ef",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 62.9437753328,
+          "L": 53.1937753328,
+          "K": 13,
+          "polyline_L": 53.1937753328,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 48.2799588378,
+          "L": 40.0299588378,
+          "K": 11,
+          "polyline_L": 40.0299588378,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_000/OFF",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/7e483fd30e9a3ad5ddb9def6e7504b9ed959f29b7ca883b03eef0281ada71f92.json",
+      "artifact_sha256": "76dbc5c2e9bbae4a68e97acfbd0cdf0570f9276873dd12b5fe9d160dc1fa8e68",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 62.9437753328,
+          "L": 53.1937753328,
+          "K": 13,
+          "polyline_L": 53.1937753328,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 48.2799588378,
+          "L": 40.0299588378,
+          "K": 11,
+          "polyline_L": 40.0299588378,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_000/FrozenSL",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/8d06638e465d3e11df7a228f8937892ae0f048510f81d40e01b72141bae29d1b.json",
+      "artifact_sha256": "b1d57e706fff6529cd0bdc97237a78444f43b91ac07228cd6d0b9ade3d2c4a13",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 62.9437753328,
+          "L": 53.1937753328,
+          "K": 13,
+          "polyline_L": 53.1937753328,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 48.2799588378,
+          "L": 40.0299588378,
+          "K": 11,
+          "polyline_L": 40.0299588378,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_002/ON",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/846c77babefbfb36bdaaf25c0afd2e387d450a3cd2cdbff4a3c50cd2b4760fea.json",
+      "artifact_sha256": "f03584ad68395036891388801f45fa2e4cfd2e19a4a6e87179882f3f900821d4",
+      "input_identity": "962595f46af569e6a965cec071c0d9fac161f9e70d7289e761e2d749d026104a",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000002_A2/receipt.json",
+        "receipt_sha256": "8202b6d96153fb683a386419679e0fc1d1c691cae9b1df2b082c6ec8ac6814db",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 154.7750661108,
+          "L": 130.0250661108,
+          "K": 33,
+          "polyline_L": 130.0250661108,
+          "covered_tasks": 43,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 120.94736558739999,
+          "L": 99.19736558739999,
+          "K": 29,
+          "polyline_L": 99.19736558739999,
+          "covered_tasks": 43,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_002/OFF",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/dafc34d3cdaea7881a3375c37029139042ed56b44bbfad5a32275c4a98e49791.json",
+      "artifact_sha256": "30c9974871b15c59dfe4d4c8001e36fa00e19e6e4b7a6f94900965d5c942c7e2",
+      "input_identity": "962595f46af569e6a965cec071c0d9fac161f9e70d7289e761e2d749d026104a",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000002_A2/receipt.json",
+        "receipt_sha256": "8202b6d96153fb683a386419679e0fc1d1c691cae9b1df2b082c6ec8ac6814db",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 154.7750661108,
+          "L": 130.0250661108,
+          "K": 33,
+          "polyline_L": 130.0250661108,
+          "covered_tasks": 43,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 120.94736558739999,
+          "L": 99.19736558739999,
+          "K": 29,
+          "polyline_L": 99.19736558739999,
+          "covered_tasks": 43,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_002/FrozenSL",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/bafbd6d50833655109c05f00ba5c77b47deef7e3f38bc159fcd467f51ab42a81.json",
+      "artifact_sha256": "7c5a711ca16fd5adbb0f3395c951020a2d0410eaa5f18f12d8984d1e5494b680",
+      "input_identity": "962595f46af569e6a965cec071c0d9fac161f9e70d7289e761e2d749d026104a",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000002_A2/receipt.json",
+        "receipt_sha256": "8202b6d96153fb683a386419679e0fc1d1c691cae9b1df2b082c6ec8ac6814db",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 154.7750661108,
+          "L": 130.0250661108,
+          "K": 33,
+          "polyline_L": 130.0250661108,
+          "covered_tasks": 43,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 120.94736558739999,
+          "L": 99.19736558739999,
+          "K": 29,
+          "polyline_L": 99.19736558739999,
+          "covered_tasks": 43,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_004/ON",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/5c8af925bf2c6f28974988992651d29ce7e1c8944e235330d32d50ba5fd23ef1.json",
+      "artifact_sha256": "0613cf7217aa47d46c5ca8c405dcce799e1e6cf251b61a9fa49b4493b3969ce5",
+      "input_identity": "b165d973deca503b98ad2eb11d9aa2053481c7805abd36e44814c0f294c83046",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000004_A1/receipt.json",
+        "receipt_sha256": "a8847794e86d05898a4bb84496e50c46550f7238f8cb0d591fc13639067372ba",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 280.9913617472,
+          "L": 226.99136174720002,
+          "K": 72,
+          "polyline_L": 226.99136174720002,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 215.0371926916,
+          "L": 173.7871926916,
+          "K": 55,
+          "polyline_L": 173.7871926916,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_004/OFF",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/c248338c29b1a812fa1d643cdbd94d9f2ea1f76192bfefa07b21330a23a84259.json",
+      "artifact_sha256": "58bee2e48ca3f0ff10a3d3fb7a86f0647cd757701fec21ce97b422736ac80dba",
+      "input_identity": "b165d973deca503b98ad2eb11d9aa2053481c7805abd36e44814c0f294c83046",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000004_A1/receipt.json",
+        "receipt_sha256": "a8847794e86d05898a4bb84496e50c46550f7238f8cb0d591fc13639067372ba",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 280.9913617472,
+          "L": 226.99136174720002,
+          "K": 72,
+          "polyline_L": 226.99136174720002,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 215.0371926916,
+          "L": 173.7871926916,
+          "K": 55,
+          "polyline_L": 173.7871926916,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "zero/development_004/FrozenSL",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/bdfc03c3c6c452f506544c334bd5f35ba861b42b574d1a88638ecc3d4eed0d81.json",
+      "artifact_sha256": "9621e20976dde67edd1368c054f7949a677fb7350243c376d0209afcf5a4d9f0",
+      "input_identity": "b165d973deca503b98ad2eb11d9aa2053481c7805abd36e44814c0f294c83046",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000004_A1/receipt.json",
+        "receipt_sha256": "a8847794e86d05898a4bb84496e50c46550f7238f8cb0d591fc13639067372ba",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 280.9913617472,
+          "L": 226.99136174720002,
+          "K": 72,
+          "polyline_L": 226.99136174720002,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 215.0371926916,
+          "L": 173.7871926916,
+          "K": 55,
+          "polyline_L": 173.7871926916,
+          "covered_tasks": 87,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "ppo/A/op1",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/9ba97e1e0665bdbe7d667a0b1fc2b92170332010445b0c304f73b557d268d5cc.json",
+      "artifact_sha256": "2033da349ceb142695a9d430766e89e34a2191f47876126cf914bf46c13ed465",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 63.4183220434,
+          "L": 52.9183220434,
+          "K": 14,
+          "polyline_L": 52.9183220434,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 47.576831446999996,
+          "L": 38.576831446999996,
+          "K": 12,
+          "polyline_L": 38.576831446999996,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "ppo/A/op2",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/7776b48a39ff0f3ccdbeb403ef19d57870fb4c95e0d8a8ca83e54445f777409b.json",
+      "artifact_sha256": "13e7fa1977252f9e2623aaf82909d864d49e8f071502ec62ca82ee916b7133d8",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 56.4919130226,
+          "L": 46.7419130226,
+          "K": 13,
+          "polyline_L": 46.7419130226,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 44.445556900599996,
+          "L": 36.195556900599996,
+          "K": 11,
+          "polyline_L": 36.195556900599996,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "ppo/B/op2",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/343851a9cceeedd63291f5f18334b9019db9802c5894bc3d0e8a95718e38a087.json",
+      "artifact_sha256": "97712ae7ae6223efefb9015c907a04dc9b097e40829f12f769b91aab58775fb6",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 56.4919130226,
+          "L": 46.7419130226,
+          "K": 13,
+          "polyline_L": 46.7419130226,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 44.445556900599996,
+          "L": 36.195556900599996,
+          "K": 11,
+          "polyline_L": 36.195556900599996,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "ppo/rejection/op1",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/80c17f426ec4f9071f2439519bab38c80e55b1baf6cc61f74fc23d8d74911a4d.json",
+      "artifact_sha256": "25c4a234bc7facec85452dcc7e67b1b0ec9ec0a991d202b69b052212810fd037",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 63.4183220434,
+          "L": 52.9183220434,
+          "K": 14,
+          "polyline_L": 52.9183220434,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 47.576831446999996,
+          "L": 38.576831446999996,
+          "K": 12,
+          "polyline_L": 38.576831446999996,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "deployment/direct",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/c30c57d273f56e8eee94a6f4d8250bccacb32981dee7f790667d8e2b5b2e4040.json",
+      "artifact_sha256": "c64043f4a36f35a5f87032a5ed0c06875706577c5b172b7b9875a5a544d8b24e",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 62.9437753328,
+          "L": 53.1937753328,
+          "K": 13,
+          "polyline_L": 53.1937753328,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 48.2799588378,
+          "L": 40.0299588378,
+          "K": 11,
+          "polyline_L": 40.0299588378,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "deployment/actor_only_cold",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/01169bf814398382c25033a4511f3334eb462f2277a4d72e25a1e70f8cbca64d.json",
+      "artifact_sha256": "4cac45c6a0c92c7de46493dd70ec6fcc562ce6b8e07026ab732e436bbd275a0a",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 62.9437753328,
+          "L": 53.1937753328,
+          "K": 13,
+          "polyline_L": 53.1937753328,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        },
+        {
+          "kind": "H",
+          "J": 48.2799588378,
+          "L": 40.0299588378,
+          "K": 11,
+          "polyline_L": 40.0299588378,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "native/fixed3",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/c4590e1a813788e61f288ed2773e7772276ebb97039b1b898f048011f56a332d.json",
+      "artifact_sha256": "79f54c9833331817086bb685b959d6d2accd8ea237eb9a59c1e43ef36247b529",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 44.3907323368,
+          "L": 36.1407323368,
+          "K": 11,
+          "polyline_L": 36.1407323368,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": [
+            "raw_J",
+            "raw_L",
+            "raw_K"
+          ]
+        },
+        {
+          "kind": "H",
+          "J": 44.3907323368,
+          "L": 36.1407323368,
+          "K": 11,
+          "polyline_L": 36.1407323368,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    },
+    {
+      "request_id": "native/detour16",
+      "path": "rc3_conservative_refinement/integration_20261110/engineering_R03/requests/254fbd38bf94d6bb2dcdf55a3a9817dea832711ce0a7693bba0a4592ea6cee1f.json",
+      "artifact_sha256": "7daa54e5f78325edae0ed81423f6f73953677c720ae664c6ed79ed646fc3011c",
+      "input_identity": "8d407609bb5ff07d6992d5050339a0d16a8943c8741c7413a19be71d2e73c817",
+      "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+      "input_producer": {
+        "historical_source_not_upgraded": true,
+        "receipt_path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/14000000000_15000000000_A0/receipt.json",
+        "receipt_sha256": "f2a4e110437e57f5d537e112cb4b07c1b3a28f25ba7e88780ddd3540370ce339",
+        "source_manifest_path": "rc3_navigation_compat_20261106/SOURCE_BINDING_UPDATED.json",
+        "source_manifest_sha256": "0f0ffd2d2dda2fefefcfcb5cb26dc5197b5d11bd1332b0a5546992409049bfe0",
+        "variant": "current34"
+      },
+      "plans": [
+        {
+          "kind": "raw",
+          "J": 44.374020251999994,
+          "L": 36.124020251999994,
+          "K": 11,
+          "polyline_L": 36.124020252,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": [
+            "raw_J",
+            "raw_L",
+            "raw_K"
+          ]
+        },
+        {
+          "kind": "H",
+          "J": 44.374020251999994,
+          "L": 36.124020251999994,
+          "K": 11,
+          "polyline_L": 36.124020252,
+          "covered_tasks": 19,
+          "saved_certificate_flags_pass": true,
+          "raw_scalar_columns_derived_not_saved": []
+        }
+      ]
+    }
+  ],
+  "scope": "Saved leg/polyline arithmetic and ID/assignment consistency, plus inspection of existing independent-validator certificates. No input reload or new geometry/reachability validation.",
+  "limits": {
+    "new_requests": 0,
+    "optimizer_calls": 0,
+    "H_calls": 0,
+    "navigation_solves": 0,
+    "model_forwards": 0,
+    "independent_validator_executions": 0,
+    "original60_access": 0,
+    "S3_access": 0
+  },
+  "resource": {
+    "failed_attempt01_conservative_s": 1.0,
+    "failed_attempt02_conservative_s": 2.0,
+    "all_schema_inspections_body_s": 0.1354398,
+    "successful_verification_body_s": 0.5669017999998687,
+    "cumulative_audit_charged_body_s": 3.7023415999998686,
+    "audit_cap_s": 30,
+    "engineering_attempts": [
+      {
+        "revision": "R01",
+        "status": "FAIL",
+        "resource_sha256": "1f726e24373ae98cc8d54914c5e7a50057450b775c1340b013e8bddfc634c7cc",
+        "ledger_sha256": "c818a54c37307bf6171628fda6a7a4929d027cb7bcb14a4212ef58e98b1df484",
+        "counts": {},
+        "closed_session_wall_s": 8.31204600000001
+      },
+      {
+        "revision": "R02",
+        "status": "FAIL",
+        "resource_sha256": "5e70ad191bd4e491436006a83e0eb667454a81f3743d85d2626e9ba34db956b1",
+        "ledger_sha256": "5386b29814ece663068da4c11de4ae59bcaa33c5314b3ddf17e668fb47a04e48",
+        "counts": {
+          "requests": 1
+        },
+        "closed_session_wall_s": 5.6054769000002125
+      },
+      {
+        "revision": "R03",
+        "status": "PASS",
+        "resource_sha256": "ce4330a436a567236edc14a73c6983a1f3702e1ce908f62fa5b8cbf0e9c3d492",
+        "ledger_sha256": "b0c10f76247e081180ca1ec2ae4fc297540b8fb499b58c893ec8fc302e7b8e1d",
+        "counts": {
+          "actor_optimizer_attempts": 5,
+          "critic_optimizer_attempts": 4,
+          "requests": 20,
+          "teacher_episodes": 1
+        },
+        "closed_session_wall_s": 20.260667999999896
+      }
+    ],
+    "engineering_cumulative_counts": {
+      "requests": 21,
+      "actor_optimizer_attempts": 5,
+      "critic_optimizer_attempts": 4,
+      "teacher_episodes": 1
+    },
+    "engineering_closed_wall_s_before_audit": 34.17819090000012,
+    "engineering_wall_plus_audit_charge_s": 37.88053249999999,
+    "engineering_hard_wall_cap_s": 1800,
+    "measurement_boundary": "Successful/inspection Python bodies measured; failed commands conservativelycharged3s from observed toolwall. Parent may add outer process/tool overhead."
+  },
+  "scientific_training_updates": 0,
+  "planning_performance_claim": false
+}
