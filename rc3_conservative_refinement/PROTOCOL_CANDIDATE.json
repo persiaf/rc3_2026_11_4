@@ -1,0 +1,73 @@
+{
+  "schema": "rc3-conservative-refinement-candidate-v1",
+  "status": "INACTIVE_CANDIDATE_NOT_SCIENTIFICALLY_AUTHORIZED",
+  "date": "2026-11-10",
+  "fixed_goal": "Large-parent DRL training; frozen rapid variable-size complete local planning",
+  "source_binding_sha256": "773d2eb20f8571036c2debf38a870eee30c6a9c59447a7bef1c82515dd7b6ee5",
+  "source_binding": "SOURCE_BINDING.json",
+  "protocol_approved": false,
+  "stage_execution_authorized": false,
+  "formal_optimizer_cap": 0,
+  "formal_request_cap": 0,
+  "old_closed_protocol_unchanged": true,
+  "old_authorizations_reused": false,
+  "baseline_weight_lineage": "rc3_integrated_rppo/WEIGHT_LINEAGE.json",
+  "baseline_weights_loaded": false,
+  "feature": {
+    "existing_dim": 202,
+    "new_dim": 206,
+    "form": "per-task min provider distance AFTER serving candidate, then task mean/max",
+    "distance_divisor_m": 10,
+    "remaining_fraction": "n_after/n_current_remaining",
+    "unreachable_fraction": "n_unreachable/n_after",
+    "distance_condition_off": "zero only first two new distance summaries; retain flags/counts and old navigation",
+    "cache": "Per-request source-bound immutable nearest-provider table; O(MN) state validation/aggregation"
+  },
+  "correction": {
+    "initial_output": 0,
+    "amplitude_candidate": 0.25,
+    "initial_amplitude_is_positive": true
+  },
+  "guard_candidates": {
+    "max_step_kl": 0.001,
+    "max_step_probability_change": 0.02,
+    "max_base_total_variation": 0.1,
+    "scope": "Checked states only; inactive candidate limits"
+  },
+  "critic_candidate": {
+    "input_dim": 268,
+    "outputs": [
+      "raw_remaining_L",
+      "raw_remaining_K",
+      "signed_terminal_H_credit"
+    ],
+    "value": "-(L+.75K-H_credit)/fixed_initial_task_count",
+    "training_only": true
+  },
+  "objective": {
+    "full_undiscounted_return": true,
+    "gamma": 1.0,
+    "GAE_lambda": 1.0,
+    "H_unchanged": true,
+    "reward_unchanged": true,
+    "mask_unchanged": true
+  },
+  "proposal_training_ratio": {
+    "full10x10": 0.5,
+    "local4x3": 0.16666666666666666,
+    "local6x6": 0.16666666666666666,
+    "local8x8": 0.16666666666666666
+  },
+  "formal_missing": [
+    "Approved new training/restore/export adapter",
+    "Exact physical layouts/task and teacher provenance/new seeds",
+    "Optimizer/round/credit/clock budgets and measured resource admission",
+    "Separate protocol approval and stage authorization"
+  ],
+  "sealed": {
+    "original60": true,
+    "unapproved_S3": true,
+    "unapproved_final_tasks": true
+  },
+  "performance": "NOT_RUN_NOT_EVALUATED"
+}

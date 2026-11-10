@@ -1,5 +1,11 @@
 # RC3：可达约束下的二维静态任务路径规划
 
+## 2026-11-10：老师反馈的独立工程候选
+
+[保守修正与停靠后通行信息](rc3_conservative_refinement/README.md)保留原SL/H/mask/完整回报，加入“假设选择候选并扣除本次服务后，其余任务最近服务距离的均值/最大值”。同结构206维对照只关闭新增距离摘要；原导航信息仍保留。独立候选还提供零输出修正、训练专用L/K/H评估员及逐状态更新检查。
+
+**当前仅58项合成零优化器工程测试通过，未接旧runner、未开展新训练或性能对照，不能声称降本或保持速度。** 已收尾small256负结果保持，原60封存，真实IK/实机未完成。见[工程报告](rc3_conservative_refinement/EXPERIMENT_REPORT.md)、[实验计划](rc3_conservative_refinement/paper/EXPERIMENT_PLAN.md)和[下一步](rc3_conservative_refinement/NEXT_STEP_DECISION.md)。以下保留原研究历史与当时状态。
+
 本仓库归档截至 **2026-11-09** 的源码、冻结模型、实验结果、审查材料和论文展示文件。版本标识为 **2026.11.09-gl-v5-fixed-greedy-reference**。默认规划方法是 **Fixed3／Detour**；旧 MLP 保留可选入口，Structured 与 G2～G2.3 保留研究及诊断记录。
 
 <!-- GL_V5_CURRENT_BEGIN -->

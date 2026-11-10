@@ -1,6 +1,6 @@
 {
   "schema": "rc3-git-content-manifest-v1",
-  "version": "2026.11.10-integrated-rppo-v1",
+  "version": "2026.11.10-conservative-post-service-distance-candidate",
   "files": {
     ".gitattributes": {
       "sha256": "d7e7420954b6cf6925ffdd1dc424f736fb0fd043304c1a90a06c6362d72c1044",
@@ -35,8 +35,8 @@
       "bytes": 39287
     },
     "README.md": {
-      "sha256": "c6bebd1e6f4c3ed7d04705d32a2745288c0d9bdb7091eb14ee0b9a6de724cbd1",
-      "bytes": 22583
+      "sha256": "35638962ee4055142e4209459c536d1f50c97cab8850a1ed3e6648da45e45a4e",
+      "bytes": 23509
     },
     "chatgpt生成文件.zip": {
       "sha256": "8f544e2a684f60bbaa594bb49532166210d6b589fbb9d0f6209e5adfb60c1806",
@@ -288045,6 +288045,154 @@
     "paper/review-traces/experiment-result-to-claim/20261110_run01/routing.json": {
       "sha256": "8500c7ab9e27cbd95b1a2cedb5ab08fff04bb786dfc5a874c4cde02dedfe068b",
       "bytes": 1486
+    },
+    "rc3_conservative_refinement/adapter.py": {
+      "sha256": "69adb935259f5d41369c4d7375d48425378e565df63387b3b80b2307b3706b64",
+      "bytes": 5241
+    },
+    "rc3_conservative_refinement/CHANGESET.md": {
+      "sha256": "9a0cd4a0fd142b369bce65c6700aecee1d69746d03e80cc776befa8657cef86f",
+      "bytes": 2355
+    },
+    "rc3_conservative_refinement/costs.py": {
+      "sha256": "c207c359ca910e7a5f1b8d2987c0314e38c960318644478fc3620944df27b015",
+      "bytes": 5664
+    },
+    "rc3_conservative_refinement/ENGINEERING_PLAN.json": {
+      "sha256": "7b7404af2fe0175089adca4c8c4e83b6cfcfea711acf5f76ddffe27135897c84",
+      "bytes": 2524
+    },
+    "rc3_conservative_refinement/ENGINEERING_PLAN_R01.json": {
+      "sha256": "bb44b8c1eea5ec9fd08106f495fc332185db7947a3aacc5abe45448082f6774d",
+      "bytes": 2859
+    },
+    "rc3_conservative_refinement/ENGINEERING_PLAN_R02.json": {
+      "sha256": "544c199ee763bdc0fbe92666b82ae5f0b0a698555f4b29d935560de477ca839c",
+      "bytes": 2875
+    },
+    "rc3_conservative_refinement/EXPERIMENT_REPORT.md": {
+      "sha256": "d9efaba0303c981af2ceae6c6245459e4c63d99dc12372b09d7d222923418792",
+      "bytes": 1936
+    },
+    "rc3_conservative_refinement/GIT_VERSION_AUDIT.json": {
+      "sha256": "f1ebd88587cc44141a92219293f549f6e4f5e64a1822bbdd2b7c46b3a3bdd179",
+      "bytes": 938
+    },
+    "rc3_conservative_refinement/guard.py": {
+      "sha256": "609bc490bc72fcc9327911a1f32a59b0d213d18fec1b3a80ec57cac264eef3aa",
+      "bytes": 8191
+    },
+    "rc3_conservative_refinement/IMPLEMENTATION_REVIEW.md": {
+      "sha256": "6e7a9a481656ddd72f526447156360d601acf3afc586efc47598d970ffe70807",
+      "bytes": 1564
+    },
+    "rc3_conservative_refinement/lookahead.py": {
+      "sha256": "807bfd4581e38cec9eafa0ef97e89b4f23f7bea06a8bf9af087136749d014a72",
+      "bytes": 9342
+    },
+    "rc3_conservative_refinement/model.py": {
+      "sha256": "3da26ad43a7a89d0e06a3d5e5ca1ec1f639ab22626ff6c94e777ca84e68c26d7",
+      "bytes": 7274
+    },
+    "rc3_conservative_refinement/NEXT_STEP_DECISION.md": {
+      "sha256": "19217b960e72e2f5f276ce0631ffbd0635a359ae3b4e0c8afe91b1ba357b808d",
+      "bytes": 975
+    },
+    "rc3_conservative_refinement/PROTOCOL_CANDIDATE.json": {
+      "sha256": "781b313ece082747e9a0eff5a7cc3ce14118151e2d8bf3dc2a45d7781844ae65",
+      "bytes": 2627
+    },
+    "rc3_conservative_refinement/README.md": {
+      "sha256": "40ce4ce3aa050b84d767097a263b83904f32ccac07ec430431ee46c6ba13ca6f",
+      "bytes": 5978
+    },
+    "rc3_conservative_refinement/RESOURCE_ACCOUNTING.json": {
+      "sha256": "9a792843e9604e882403a0776ee83e46f1ab215c33ce207177c1def9bf08ba9d",
+      "bytes": 1469
+    },
+    "rc3_conservative_refinement/RESULT_TO_CLAIM.md": {
+      "sha256": "fe90b3ba64333047018eb1f6bd0de6a4131120c0fe8476b446c59aae204e339d",
+      "bytes": 1047
+    },
+    "rc3_conservative_refinement/SOURCE_BINDING.json": {
+      "sha256": "773d2eb20f8571036c2debf38a870eee30c6a9c59447a7bef1c82515dd7b6ee5",
+      "bytes": 4753
+    },
+    "rc3_conservative_refinement/test_adapter.py": {
+      "sha256": "99f3c9c91238ac60cc37a75d05120723b1bd21b8ecc1ece87b4dbaf33a71b9b5",
+      "bytes": 5221
+    },
+    "rc3_conservative_refinement/test_costs.py": {
+      "sha256": "0d171f2d9b334dc8909deb3c69abc5dd4461b87e626ccd6464386a34c206177b",
+      "bytes": 5630
+    },
+    "rc3_conservative_refinement/test_guard.py": {
+      "sha256": "59577a25e6916b34bab1ec4841770ca47ad321752512db97a0673742e7d15198",
+      "bytes": 8234
+    },
+    "rc3_conservative_refinement/test_lookahead.py": {
+      "sha256": "ddb39e8ddb49ef72b3e3628330a577278fabf440e8ab4dff3ea66679fc391885",
+      "bytes": 13503
+    },
+    "rc3_conservative_refinement/test_model.py": {
+      "sha256": "24f0d57a8cc20e49e27f148c4783fdc35cc03ef8a9f41338b1b7f8b4f559fc38",
+      "bytes": 4412
+    },
+    "rc3_conservative_refinement/verify_zero_update.py": {
+      "sha256": "253f06b4b2d2e720c2c0a8961747e282a67a5b43b74d39ff7e0c494bedd0212f",
+      "bytes": 3070
+    },
+    "rc3_conservative_refinement/__init__.py": {
+      "sha256": "d36c91d33b2ada2770383194d9b1210b301a80e234e9e3840037816ef6856063",
+      "bytes": 83
+    },
+    "rc3_conservative_refinement/evidence/DELIVERY_CHECKS.json": {
+      "sha256": "c49816551d9181a896252337f86e59955dc84cc4acccdbe427952f4c72972381",
+      "bytes": 313
+    },
+    "rc3_conservative_refinement/evidence/HISTORICAL_DIAGNOSIS.json": {
+      "sha256": "6f5ae2012ba6203eacdafa178590d323e7e41bc99caf6692814c9d3aa345612f",
+      "bytes": 945
+    },
+    "rc3_conservative_refinement/evidence/INDEPENDENT_ENGINEERING_REVIEW.md": {
+      "sha256": "28860b79274cc9085552a25009195e3957120482ac67efa38f0098b7dadb7f67",
+      "bytes": 1204
+    },
+    "rc3_conservative_refinement/paper/EXPERIMENT_PLAN.md": {
+      "sha256": "d92e2790428f9ce07527933b32e38fc5a0a6fe5bbdcb7e2f767b4bb7f9b801d2",
+      "bytes": 5212
+    },
+    "rc3_conservative_refinement/paper/EXPERIMENT_PLAN_20261110_teacher_feedback.md": {
+      "sha256": "d92e2790428f9ce07527933b32e38fc5a0a6fe5bbdcb7e2f767b4bb7f9b801d2",
+      "bytes": 5212
+    },
+    "rc3_conservative_refinement/paper/EXPERIMENT_TRACKER.md": {
+      "sha256": "4809fc5ac7d70f8cd9ae87314a010f47a906e1d6f2019a9d3e65de708cd2b8ae",
+      "bytes": 756
+    },
+    "rc3_conservative_refinement/paper/EXPERIMENT_TRACKER_20261110_teacher_feedback.md": {
+      "sha256": "4809fc5ac7d70f8cd9ae87314a010f47a906e1d6f2019a9d3e65de708cd2b8ae",
+      "bytes": 756
+    },
+    "rc3_conservative_refinement/paper/MANIFEST.md": {
+      "sha256": "03ee390dfc6fddd774eee242d7b5b4acfdc2681d7baaaa8670a486dbd0c5976c",
+      "bytes": 513
+    },
+    "rc3_conservative_refinement/evidence/engineering_01/UNITTEST_LOG.txt": {
+      "sha256": "311d5507ccca725a116e3836cef8574367010b226708b1d11175d9b9761b426d",
+      "bytes": 6352
+    },
+    "rc3_conservative_refinement/evidence/engineering_01/VERIFICATION.json": {
+      "sha256": "bd5048f416010e8d9770604978449b3e49762397aa68b940a263d13a6fff02cc",
+      "bytes": 759
+    },
+    "rc3_conservative_refinement/evidence/engineering_02/UNITTEST_LOG.txt": {
+      "sha256": "5f9c5103e9b568d4485b0e059bbc2af30cf608ce75243dbf27d35b06eb8509f5",
+      "bytes": 7055
+    },
+    "rc3_conservative_refinement/evidence/engineering_02/VERIFICATION.json": {
+      "sha256": "10f5e7fe25b6ada205a8c1a154447e3fc5d1bdccdf1a6fc6c15e2a9a2cfc1dc2",
+      "bytes": 758
     }
   },
   "excluded_self_referential_metadata": [
@@ -288054,10 +288202,11 @@
     "project_management/s3_connectivity_delivery/PUBLICATION_RECEIPT.json",
     "project_management/s3_scope_execution_delivery/PUBLICATION_RECEIPT.json",
     "project_management/gl_v4_delivery/PUBLICATION_RECEIPT.json",
-    "project_management/gl_v5_delivery/PUBLICATION_RECEIPT.json"
+    "project_management/gl_v5_delivery/PUBLICATION_RECEIPT.json",
+    "rc3_conservative_refinement/PUBLICATION_RECEIPT.json"
   ],
-  "file_count": 57770,
-  "total_bytes": 13201635104,
+  "file_count": 72048,
+  "total_bytes": 13367539655,
   "scope": "Original LFS working-tree bytes retained. Current repair/paid-recovery status is S3_persistence_recovery; older phase objects retain their creation-time statuses. Unrelated live Word release entries are not refreshed.",
   "research_extension": {
     "branch": "codex/global-local-s0",
@@ -288320,5 +288469,20 @@
     "phase": "CLOSED_REMOTE_PAYLOAD_VERIFIED",
     "baseline": "7d2cfe75919b25bac59c5274321baca4d8e98f77",
     "policy": "Old file identities retained; only declared root metadata and new module artifacts updated; unrelated user Word files excluded"
+  },
+  "conservative_refinement_maintenance": {
+    "base_commit": "ba04b5f264411a6ea68382e7325cb85ab5645964",
+    "branch": "codex/rc3-conservative-refinement-20261110",
+    "status": "INACTIVE_CANDIDATE_ENGINEERING58_PASS_FORMAL_NOT_STARTED",
+    "report": "rc3_conservative_refinement/EXPERIMENT_REPORT.md",
+    "protocol": "rc3_conservative_refinement/PROTOCOL_CANDIDATE.json",
+    "source_binding": "rc3_conservative_refinement/SOURCE_BINDING.json",
+    "optimizer_updates": 0,
+    "planning_requests": 0,
+    "sealed_semantic_reads": 0,
+    "old_scientific_sources_unchanged": true,
+    "user_Word_excluded": true,
+    "pushed_at_creation": false,
+    "main_merged": false
   }
 }

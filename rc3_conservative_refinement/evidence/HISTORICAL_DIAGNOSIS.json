@@ -1,0 +1,22 @@
+{
+  "source_commit": "ba04b5f264411a6ea68382e7325cb85ab5645964",
+  "scope": "Read-only previously exposed training diagnostic tables; no route/input/task semantics or model inference",
+  "actor_scientific_rows": 1024,
+  "accepted": 1024,
+  "rolled_back": 0,
+  "lr_halved": 0,
+  "max_old_mean_KL": 2.654771555906412e-08,
+  "max_base_mean_KL": 2.344177187972819e-06,
+  "max_ratio_clip_fraction": 0.0,
+  "critic_scientific_rows": 1024,
+  "critic_gradient_clipped": 1024,
+  "interpretation": "Does not establish aggressive updates, critic inaccuracy or causal failure; small observed distribution change and clipping are diagnostics",
+  "files": {
+    "rc3_integrated_rppo/POLICY_KL.csv": {
+      "sha256": "21ccd62c19c49fb2a0c7cb2dfe9f223c15deff0f0e2335710382c9510eca9245"
+    },
+    "rc3_integrated_rppo/VALUE_DIAGNOSTICS.csv": {
+      "sha256": "768af4306b259855f4f834fc10be325dcbe8511fafd433051675672be484258f"
+    }
+  }
+}
