@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-10T03:35:59.017977+00:00",
+  "purpose": "Memory pressure from repeated background readonly Git/LFS diff processes",
+  "terminated_readonly_diff_jobs": [
+    {
+      "pid": 6432,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 133931008,
+      "children": []
+    },
+    {
+      "pid": 9340,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 137678848,
+      "children": []
+    },
+    {
+      "pid": 17156,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 139358208,
+      "children": []
+    },
+    {
+      "pid": 29300,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 155398144,
+      "children": []
+    },
+    {
+      "pid": 30880,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 136454144,
+      "children": []
+    },
+    {
+      "pid": 32384,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 152625152,
+      "children": []
+    }
+  ],
+  "orphans_only": true,
+  "process_match": "git.exe, exact readonly diff flags, repository cwd; only Git/LFS descendants; no Python/optimizer/planner process touched",
+  "errors": [],
+  "raw_research_files_written": 0,
+  "optimizer_or_budget_reset": false,
+  "local_scan_exclusion": "New live run only; Git force-add verified immutable evidence. Remove temporary line after complete staging.",
+  "journal_storage": "New live journal binary ordinary Git; original committed P0 LFS versions retained. Models/episode archives remain LFS."
+}
