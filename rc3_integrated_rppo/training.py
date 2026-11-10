@@ -37,8 +37,8 @@ def supervised_step(actor,opt,episodes,log,counts,round_):
     for e in episodes:
         if e['batch'] is None:continue
         z=batch_logits(actor,e['batch']);lp=torch.log_softmax(z,-1)
-        term=-lp.gather(1,e['actions'][:,None]).mean()/len(episodes)
-        term.backward();loss+=float(term.detach());decisions+=len(z);correct+=int((z.argmax(-1)==e['actions']).sum())
+        actions=e['actions'].to(lp.device);term=-lp.gather(1,actions[:,None]).mean()/len(episodes)
+        term.backward();loss+=float(term.detach());decisions+=len(z);correct+=int((z.argmax(-1)==actions).sum())
         counts['SL_forwards']=counts.get('SL_forwards',0)+1;counts['SL_backwards']=counts.get('SL_backwards',0)+1
     require(decisions>0 and math.isfinite(loss),'Empty/nonfinite matched SL batch')
     g=norm(actor.head.parameters());require(math.isfinite(g),'Nonfinite SL gradient')
@@ -156,7 +156,7 @@ def selection(seed,round_,actor,control,inputs,store,clock):
 
 
 def seed_run(seed,inputs,store,clock,*,variant='main',rounds=512,anchor=True,scale=True):
-    counts={};state,source=base_state(seed);actor=Actor(state,seed);critic=Critic(seed);control=Actor(state,seed) if variant=='main' else None
+    counts={};state,source=base_state(seed);actor=Actor(state,seed,TRAIN_DEVICE);critic=Critic(seed);control=Actor(state,seed,TRAIN_DEVICE) if variant=='main' else None
     ppo=PPO(actor,critic,store.log,counts,anchor=anchor,context=dict(seed=seed,stage=variant));control_opt=adam(control.head.parameters(),3e-5) if control is not None else None
     d=restore(seed,variant,actor,critic,ppo,control,control_opt,store.log,counts)
     folder=OUT/'seeds'/str(seed)/variant

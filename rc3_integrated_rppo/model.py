@@ -10,7 +10,7 @@ ARCH=dict(actor_input=202,critic_input=268,actor_hidden=[64,64],critic_hidden=[1
 
 
 class Actor(nn.Module):
-    def __init__(self,base_state,seed):
+    def __init__(self,base_state,seed,device='cpu'):
         super().__init__()
         with torch.device('meta'):self.base=GlobalLocalPolicy()
         self.base.load_state_dict(base_state,strict=True,assign=True);self.base.eval().requires_grad_(False)
@@ -18,6 +18,7 @@ class Actor(nn.Module):
             torch.manual_seed(seed_for(seed,'residual_init'))
             self.head=nn.Sequential(nn.Linear(202,64),nn.ReLU(),nn.Linear(64,64),nn.ReLU(),nn.Linear(64,1))
         nn.init.zeros_(self.head[-1].weight);nn.init.zeros_(self.head[-1].bias)
+        self.head.to(device)
         self.base_sha=tensor_digest(self.base.state_dict())
     def train(self,mode=True):super().train(mode);self.base.eval();return self
     def encode(self,p):
@@ -46,7 +47,10 @@ class Actor(nn.Module):
             mask=torch.tensor(env.mask().copy());require(x.shape[1]==202 and v.shape==(268,),'Feature dimensions')
             key=(p.identity,tuple(env.prefix),self.base_sha,encoded['integrated_D_sha256'])
             return dict(x=x.detach(),v=v.detach(),z0=z0.detach(),mask=mask,key=key)
-    def logits(self,features):return (features['z0']+2*torch.tanh(self.head(features['x']).squeeze(-1))).masked_fill(~features['mask'],-torch.inf)
+    def logits(self,features):
+        device=next(self.head.parameters()).device
+        adjustment=2*torch.tanh(self.head(features['x'].to(device)).squeeze(-1))
+        return (features['z0']+adjustment.to(features['z0'].device)).masked_fill(~features['mask'],-torch.inf)
     def score(self,env,encoded):return self.logits(self.features(env,encoded))
 
 
@@ -67,4 +71,5 @@ def pack_states(states):
 
 def batch_logits(actor,b):
     T,M,F=b['x'].shape
-    return (b['z0']+2*torch.tanh(actor.head(b['x'].reshape(T*M,F)).reshape(T,M))).masked_fill(~b['mask'],-torch.inf)
+    device=next(actor.head.parameters()).device
+    return (b['z0'].to(device)+2*torch.tanh(actor.head(b['x'].reshape(T*M,F).to(device)).reshape(T,M))).masked_fill(~b['mask'].to(device),-torch.inf)

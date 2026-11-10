@@ -29,7 +29,7 @@ def norm(parameters):return math.sqrt(sum(float(p.grad.detach().double().square(
 
 
 def same(a,b):
-    if isinstance(a,torch.Tensor):return isinstance(b,torch.Tensor) and torch.equal(a,b)
+    if isinstance(a,torch.Tensor):return isinstance(b,torch.Tensor) and a.dtype==b.dtype and torch.equal(a.cpu(),b.cpu())
     if isinstance(a,dict):return a.keys()==b.keys() and all(same(a[k],b[k]) for k in a)
     if isinstance(a,(list,tuple)):return len(a)==len(b) and all(same(x,y) for x,y in zip(a,b))
     return a==b
@@ -66,11 +66,12 @@ class PPO:
             for e in episodes:
                 if e['batch'] is None:continue
                 b=e['batch'];lp=torch.log_softmax(batch_logits(self.actor,b),-1);self.inc('KL_actor_forwards')
-                old.extend(exact_kl(e['old_logp_all'],lp,b['mask']).double().tolist())
-                base.extend(exact_kl(e['base_logp'],lp,b['mask']).double().tolist())
-                entropy.extend((-(lp.exp()*lp.masked_fill(~b['mask'],0.)).sum(-1)).double().tolist())
-                changes+=int((lp.argmax(-1)!=e['base_logp'].argmax(-1)).sum());total+=len(lp)
-                f=self.actor.head(b['x'].reshape(-1,202)).detach();sat+=int((torch.tanh(f).abs()>.95).sum())
+                mask=b['mask'].to(lp.device);base_lp=e['base_logp'].to(lp.device)
+                old.extend(exact_kl(e['old_logp_all'].to(lp.device),lp,mask).double().tolist())
+                base.extend(exact_kl(base_lp,lp,mask).double().tolist())
+                entropy.extend((-(lp.exp()*lp.masked_fill(~mask,0.)).sum(-1)).double().tolist())
+                changes+=int((lp.argmax(-1)!=base_lp.argmax(-1)).sum());total+=len(lp)
+                f=self.actor.head(b['x'].reshape(-1,202).to(lp.device)).detach();sat+=int((torch.tanh(f).abs()>.95).sum())
         require(old and np.isfinite(old).all() and np.isfinite(base).all(),'Empty/nonfinite KL states')
         return dict(old_mean=float(np.mean(old)),old_p95=float(np.quantile(old,.95)),base_mean=float(np.mean(base)),
             state_count=total,base_action_changes=changes,residual_saturated_candidate_values=sat,entropy=float(np.mean(entropy)))
@@ -89,7 +90,8 @@ class PPO:
                 for e in episodes:
                     if e['batch'] is None:continue
                     b=e['batch'];lp=torch.log_softmax(batch_logits(self.actor,b),-1);self.inc('PPO_actor_forwards')
-                    term,rho,kl=state_loss(lp,e['old_logp'],e['A'],e['base_logp'],b['mask'],e['actions'],.02 if self.anchor else 0.)
+                    device=lp.device
+                    term,rho,kl=state_loss(lp,e['old_logp'].to(device),e['A'].to(device),e['base_logp'].to(device),b['mask'].to(device),e['actions'].to(device),.02 if self.anchor else 0.)
                     prior=[torch.zeros_like(p) if p.grad is None else p.grad.clone() for p in self.actor.head.parameters()]
                     part=term.sum()/len(episodes);part.backward();self.inc('actor_backwards');loss+=float(part.detach())
                     key=e.get('size','synthetic');delta=[p.grad-x for p,x in zip(self.actor.head.parameters(),prior)]

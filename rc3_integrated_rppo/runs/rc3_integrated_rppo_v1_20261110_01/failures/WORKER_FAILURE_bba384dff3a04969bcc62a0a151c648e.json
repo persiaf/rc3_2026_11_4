@@ -1,0 +1,21 @@
+{
+  "schema": "rc3-s3-independent-io-receipt-v1",
+  "kind": "WORKER_FAILURE",
+  "utc": "2026-11-10T02:28:20.796255+00:00",
+  "payload": {
+    "error": "ValueError('P0 resource/engineering condition not passed; scientific training not started')",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_integrated_rppo\\runner.py\", line 53, in execute\n    require(engineering['status']=='PASS','P0 resource/engineering condition not passed; scientific training not started')\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_s3_evaluator\\common.py\", line 30, in require\n    raise ValueError(message)\nValueError: P0 resource/engineering condition not passed; scientific training not started\n",
+    "requests": {
+      "engineering": 42,
+      "warm": 0,
+      "train": 0,
+      "selection": 0,
+      "promotion": 0,
+      "quality": 0,
+      "timing": 0,
+      "ablation": 0
+    },
+    "source_binding_sha256": "a54516c4449ffba357e76cb59f41e6f5704944bfa6d805c945c5cf607278384d",
+    "utc": "2026-11-10T02:28:20.795255+00:00"
+  }
+}

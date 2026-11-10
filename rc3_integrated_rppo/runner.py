@@ -50,6 +50,11 @@ def execute():
             log(dict(event='clock_close',name='P0',open_sequence=-1,elapsed_s=r['conservative_wall_s'],exact_wall_s=None,failed_import=True))
         log(dict(event='clock_close',name='P0',open_sequence=-1,elapsed_s=time.perf_counter()-prep,source_verification_and_startup=True))
         clock=Clock(log,'P0',1800);inputs=Inputs(log,clock);engineering=p0(inputs,store,clock);clock.close();clock=None
+        if (HOME/'GPU_ENGINEERING_VERIFICATION.json').exists():
+            gpu=read(HOME/'GPU_ENGINEERING_VERIFICATION.json')
+            require(gpu['old_CPU_report_sha256']==digest(HOME/'ENGINEERING_VERIFICATION.json') and gpu['source_binding_sha256']==digest(source_path()),'GPU engineering provenance mismatch')
+            require(all(engineering['checks'].values()) and gpu['exact_zero_residual_logits_masks'],'Engineering math/equivalence check failed')
+            engineering=dict(engineering,status=gpu['status'],benchmark=gpu['benchmark'])
         require(engineering['status']=='PASS','P0 resource/engineering condition not passed; scientific training not started')
         path=HOME/'IMPLEMENTATION_REVIEW.md'
         if not path.exists():path.write_text('# 实施评审\n\n**GO：P0准确绑定、数学／恢复／角色检查及真实路线与优化器验收通过。**\n\n'
@@ -143,14 +148,15 @@ def execute():
     finally:log.close()
 
 
-def supervise():
+def supervise(probe=False):
     require((source_path()).exists(),'Register exact protocol/source first');OUT.mkdir(parents=True,exist_ok=True)
     with Lease(OUT/'SUPERVISOR.lease',EXP):
         tag=now().replace(':','').replace(' ','_')+'_'+uuid.uuid4().hex[:6]
         folder=OUT/'process_logs';folder.mkdir(parents=True,exist_ok=True)
         with (folder/(tag+'.stdout.txt')).open('xb') as out,(folder/(tag+'.stderr.txt')).open('xb') as err:
             environment=os.environ.copy();environment['RC3_INTEGRATED_LAUNCH_PERF']=str(time.perf_counter())
-            child=subprocess.Popen([sys.executable,'-B','-X','utf8','-m','rc3_integrated_rppo.runner','--worker'],cwd=ROOT,stdout=out,stderr=err,env=environment,
+            command=[sys.executable,'-B','-X','utf8','-m','rc3_integrated_rppo.runner','--worker']+(['--gpu-probe'] if probe else [])
+            child=subprocess.Popen(command,cwd=ROOT,stdout=out,stderr=err,env=environment,
                 creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
             while child.poll() is None:
                 active=OUT/'ledger/ACTIVE_CLOCK.pt'
@@ -173,9 +179,13 @@ def supervise():
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--execute',action='store_true');parser.add_argument('--worker',action='store_true');a=parser.parse_args()
-    if a.worker:execute()
-    elif a.execute:sys.exit(supervise())
+    parser=argparse.ArgumentParser();parser.add_argument('--execute',action='store_true');parser.add_argument('--worker',action='store_true');parser.add_argument('--gpu-probe',action='store_true');a=parser.parse_args()
+    if a.worker:
+        if a.gpu_probe:
+            from .gpu_probe import main as gpu_main
+            gpu_main()
+        else:execute()
+    elif a.execute:sys.exit(supervise(probe=a.gpu_probe))
     else:parser.error('Use --execute for the already authorized conditional task')
 
 

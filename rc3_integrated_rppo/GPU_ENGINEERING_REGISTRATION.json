@@ -1,0 +1,30 @@
+{
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "stage": "P0_GPU",
+  "reason": "CPU engineering math/route PASS,resource projection20366.6555 exceeds14400. Validate semantic-preserving CUDA residual-head execution before any science.",
+  "original_engineering_report_sha256": "7f2c41c12d435578c29a20d958e989a722c8e84d15f394551a0324a9414daecf",
+  "additional_complete_requests": 24,
+  "planned_total_complete_requests": 66,
+  "absolute_P0_cap": 96,
+  "original_closed_optimizer_attempts": 22,
+  "additional_optimizer_attempts_cap": 10,
+  "cumulative_optimizer_cap": 32,
+  "wall": "Same cumulative P0 1800s, original479.1681329s retained",
+  "seed": 11622026,
+  "input_specs_sha256": "4bb0e5a8cac219c2899f869f18c63d5d22dc08d56e62c3265e685a8add1fbd6e",
+  "input_count": 12,
+  "rows_each": 2,
+  "source_frames_stage": "P0_GPU",
+  "PPO_actor_epochs_cap": 4,
+  "critic_steps": 4,
+  "SL_steps": "min(2,32-actual cumulative attempts) after PPO/critic; no extra retries beyond cap",
+  "precision": "float32; CUBLAS_WORKSPACE_CONFIG=:4096:8; TF32=False; base/critic and deployment remain CPU",
+  "gradient_tolerance": {
+    "absolute": 1e-05,
+    "relative": 0.0002
+  },
+  "zero_residual": "Exact logits and mask, not tolerance",
+  "no_scientific_weights_reused": true,
+  "scientific_optimizer_updates_before": 0,
+  "new_tasks_or_navigation_or_teachers": 0
+}

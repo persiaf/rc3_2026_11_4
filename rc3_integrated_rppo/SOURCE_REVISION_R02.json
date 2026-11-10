@@ -1,0 +1,49 @@
+{
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "status": "TASK_AUTHORIZED_SEMANTIC_PRESERVING_FIX",
+  "revision": "R02",
+  "reason": "P0 resource engineering: FP32 CUDA residual head with frozen CPU base/critic, CPU D1 deployment; bounded24 extra P0 trajectories and at most10 extra engineering steps within original96/32/1800 caps. No scientific optimizer or new protocol reduction.",
+  "prior_binding": {
+    "binding_path": "rc3_integrated_rppo/SOURCE_BINDING_R01.json",
+    "binding_sha256": "a54516c4449ffba357e76cb59f41e6f5704944bfa6d805c945c5cf607278384d",
+    "revision_receipt": "rc3_integrated_rppo/SOURCE_REVISION_R01.json",
+    "revision_receipt_sha256": "78b0af4f66b8182d42bef90a37d0e0332b7a73498677ac5ff237adeda8f23215"
+  },
+  "new_binding": {
+    "path": "rc3_integrated_rppo/SOURCE_BINDING_R02.json",
+    "sha256": "f4d11ad2921b567b33069b10c1e53dc0528e1dd6c0c1199fde9e57c37054285b"
+  },
+  "changed_sources": {
+    "rc3_integrated_rppo/common.py": {
+      "before": "c11db0b2e8e8d385903d6129fad3c96fe1ff3f5339f956412726202bca313768",
+      "after": "422edbeec3fcba4f359c29d2d77365fad3ca4ab7cf545ec17ce50dc6992c045c"
+    },
+    "rc3_integrated_rppo/model.py": {
+      "before": "1c1abbfdbf17b504f050fafced27a6d1078d143a0a78a65dda12a43b0d5a10d8",
+      "after": "6e437c975a7042b876fb612ed140a7fa9a870e1041be0dcf6c5591f42947fad8"
+    },
+    "rc3_integrated_rppo/ppo.py": {
+      "before": "9f1865db567ab5d14654841d39c319e62bdc19af36ef773edb9c6d9cd786ad20",
+      "after": "fd9de48e621a1939c90ee849545b9a307529d8997fed2adf9d74823530b225f8"
+    },
+    "rc3_integrated_rppo/runner.py": {
+      "before": "a73bf0cc30aeaae5dce1aa2b45641bf5860a78009c4f9010611816ba72528af3",
+      "after": "9f03089ec14c53d7ee701fe0a60473458d8f4de37551e15b75df42adeedcdc89"
+    },
+    "rc3_integrated_rppo/training.py": {
+      "before": "ca0eed7b561d3456f6cd7b5ef7932ac256e0833eb0263e2ee819f4ea609cbb66",
+      "after": "17c5c442770ec8c36b6a52d11d12774e1961202be8eb104e8aa4fa489bcc64c9"
+    },
+    "rc3_integrated_rppo/gpu_probe.py": {
+      "before": null,
+      "after": "241ee63a6004bc2a34f527d269babc9d5cd6a8cc10f966aa93bf5a5531d79908"
+    }
+  },
+  "protocol_changed": false,
+  "data_schedule_changed": false,
+  "algorithm_changed": false,
+  "old_frozen_source_retrieval": "Git 840c1bf2946c6f97f9e32b3e08e54371bfe3991e",
+  "authorization": "Explicit integrated user task authorizes small engineering corrections in scope; no claim user pre-read generated hash",
+  "original_authorization_sha256": "e1fa10512c102b43f842564c511ab5c7a2cf18196b50dfbbae0527e4bf9dd378",
+  "utc": "2026-11-10T02:35:33.751796+00:00"
+}

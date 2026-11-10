@@ -21,6 +21,7 @@ OUT=HOME/'runs'/EXP
 OLD=ROOT/'rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01'
 SEEDS=(11622026,11622027,11622028)
 CAPS=dict(engineering=96,warm=576,train=36864,selection=1392,promotion=528,quality=3024,timing=3024,ablation=3168)
+TRAIN_DEVICE='cuda' if (HOME/'GPU_ENGINEERING_REGISTRATION.json').exists() else 'cpu'
 
 
 def source_path():
@@ -211,10 +212,13 @@ class Store:
 
 
 def configure():
+    os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
     torch.set_num_threads(1)
     try:torch.set_num_interop_threads(1)
     except RuntimeError:pass
     torch.use_deterministic_algorithms(True)
+    torch.backends.cuda.matmul.allow_tf32=False
+    torch.backends.cudnn.allow_tf32=False
 
 
 def verify_sources():
