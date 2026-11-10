@@ -1,0 +1,165 @@
+"""Independent, fail-closed journal and cumulative budget for this experiment.
+
+No historical ledger is opened for writing. A request/optimizer is debited before
+execution. Interrupted transactions are preserved and cannot be replayed as free
+work by moving an output directory or loading an older checkpoint.
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import time
+from datetime import datetime, timezone
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def plain(value):
+    if isinstance(value, dict):
+        return {str(k): plain(v) for k, v in value.items()}
+    if isinstance(value, (tuple, list)):
+        return [plain(v) for v in value]
+    if hasattr(value, 'detach'):
+        return value.detach().cpu().tolist()
+    if hasattr(value, 'tolist'):
+        return value.tolist()
+    return value
+
+
+def canonical(value):
+    return json.dumps(plain(value), sort_keys=True, separators=(',', ':'),
+                      ensure_ascii=False, allow_nan=False).encode('utf-8')
+
+
+def identity(value):
+    return hashlib.sha256(canonical(value)).hexdigest()
+
+
+def digest(path):
+    h = hashlib.sha256()
+    with Path(path).open('rb') as f:
+        for chunk in iter(lambda: f.read(1 << 20), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def write_new(path, value):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open('xb') as f:
+        f.write(canonical(value) + b'\n')
+        f.flush()
+        os.fsync(f.fileno())
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+class Ledger:
+    def __init__(self, folder, binding, caps, *, resume=False, started_at=None):
+        self.folder = Path(folder)
+        self.folder.mkdir(parents=True, exist_ok=True)
+        self.binding, self.caps = plain(binding), dict(caps)
+        self.path = self.folder / 'events.jsonl'
+        self.lock = self.folder / 'WRITER.lock'
+        self.fd = os.open(self.lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        os.write(self.fd, canonical({'pid': os.getpid(), 'binding': binding}))
+        self.events, self.tail = [], '0' * 64
+        try:
+            if self.path.exists():
+                if not resume:
+                    raise RuntimeError('Existing experiment cannot be started again')
+                for line in self.path.read_bytes().splitlines():
+                    e = json.loads(line)
+                    body = {k: v for k, v in e.items() if k != 'sha256'}
+                    if (e['previous'] != self.tail or e['sequence'] != len(self.events)
+                            or identity(body) != e['sha256']):
+                        raise RuntimeError('Broken journal; no replay allowed')
+                    self.events.append(e)
+                    self.tail = e['sha256']
+                if not self.events or self.events[0]['binding'] != self.binding or self.events[0]['caps'] != self.caps:
+                    raise RuntimeError('Experiment binding or caps changed')
+            else:
+                if resume:
+                    raise RuntimeError('Cannot resume a nonexistent experiment')
+                self.emit({'event': 'registration', 'binding': self.binding, 'caps': self.caps})
+            self.counts = {}
+            for e in self.events:
+                if e['event'] == 'debit':
+                    for key, n in e['amounts'].items():
+                        self.counts[key] = self.counts.get(key, 0) + n
+            self.wall_charged = sum(e['elapsed_s'] for e in self.events if e['event'] == 'session_close')
+            starts = {e['sequence']: e for e in self.events if e['event'] == 'session_start'}
+            closed = {e['open_sequence'] for e in self.events if e['event'] == 'session_close'}
+            if set(starts) - closed:
+                raise RuntimeError('Unclosed wall-clock session requires an explicit recovery receipt; no budget reset')
+            self.started = time.perf_counter() if started_at is None else float(started_at)
+            if not 0 <= self.started <= time.perf_counter():
+                raise ValueError('Invalid monotonic process start')
+            self.emit({'event': 'session_start', 'utc': datetime.now(timezone.utc).isoformat(),
+                       'carry_wall_s': self.wall_charged,
+                       'pre_registration_elapsed_s': time.perf_counter()-self.started})
+            self.open_sequence = len(self.events) - 1
+        except BaseException:
+            self.release()
+            raise
+
+    def emit(self, row):
+        e = dict(plain(row), previous=self.tail, sequence=len(self.events))
+        e['sha256'] = identity(e)
+        with self.path.open('ab') as f:
+            f.write(canonical(e) + b'\n')
+            f.flush()
+            os.fsync(f.fileno())
+        self.events.append(e)
+        self.tail = e['sha256']
+        return e
+
+    def check(self):
+        if self.wall_charged + time.perf_counter() - self.started >= self.caps['wall_s']:
+            raise TimeoutError('Cumulative stage wall-clock cap exhausted')
+
+    def debit(self, amounts, **context):
+        self.check()
+        if any(type(n) is not int or n < 0 or key not in self.caps
+               or self.counts.get(key, 0) + n > self.caps[key] for key, n in amounts.items()):
+            raise RuntimeError('Cumulative resource cap exceeded: ' + repr(amounts))
+        self.emit(dict(event='debit', amounts=amounts, **context))
+        for key, n in amounts.items():
+            self.counts[key] = self.counts.get(key, 0) + n
+
+    def request(self, request_id, callback, **context):
+        if any(e.get('request_id') == request_id for e in self.events if e['event'] == 'request_start'):
+            raise RuntimeError('Request already attempted; no retry/replay')
+        self.debit({'requests': 1}, request_id=request_id, **context)
+        self.emit(dict(event='request_start', request_id=request_id, **context))
+        tick = time.perf_counter()
+        try:
+            value = callback()
+            self.check()
+            path = self.folder / 'requests' / (identity(request_id) + '.json')
+            write_new(path, value)
+            self.emit(dict(event='request_done', request_id=request_id,
+                           path=path.relative_to(ROOT).as_posix(), sha256=digest(path),
+                           elapsed_through_record_s=time.perf_counter() - tick, **context))
+            return value
+        except BaseException as exc:
+            self.emit(dict(event='request_failed', request_id=request_id,
+                           error=repr(exc), elapsed_s=time.perf_counter() - tick, **context))
+            raise
+
+    def release(self):
+        if getattr(self, 'fd', None) is not None:
+            os.close(self.fd)
+            self.fd = None
+            self.lock.unlink()
+
+    def close(self, status):
+        if getattr(self, 'fd', None) is not None:
+            self.emit(dict(event='session_close', open_sequence=self.open_sequence, status=status,
+                           elapsed_s=time.perf_counter() - self.started, counts=self.counts))
+            self.release()

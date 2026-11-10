@@ -1,18 +1,43 @@
 {
-  "status": "REAL_ENGINEERING_PASS_WAITING_EXPLICIT_PARAMETER_APPROVAL",
+  "status": "STOPPED_REGISTERED_RULE_AT128",
   "source_binding_sha256": "ea605e87a31c1c6fcf8a7090fbc2681202380fe1a6e6ae29de464529c1e701e7",
   "protocol_path": "rc3_conservative_refinement/integration_20261110/PROTOCOL_DRAFT_R03.json",
   "protocol_sha256": "a20eca451e7094bd16390ae5b973c85240a42337e4ef6ae42bd243b9a8cfeb0c",
-  "protocol_approved": false,
-  "stage_execution_authorized": false,
-  "formal_training": "NOT_STARTED",
-  "ON": "NOT_STARTED",
-  "OFF": "NOT_STARTED",
-  "matched_SL": "NOT_STARTED",
-  "quality": "NOT_STARTED",
-  "critic_calibration": "NOT_STARTED",
-  "full_timing_comparison": "NOT_STARTED",
+  "protocol_approved": true,
+  "stage_execution_authorized": true,
+  "formal_training": "CLOSED_AT128_NO_EXTRA_TRAINING",
+  "ON": "128_ACCEPTED_0_REJECTED",
+  "OFF": "128_ACCEPTED_0_REJECTED",
+  "matched_SL": "128_ACCEPTED_0_REJECTED",
+  "quality": "ON_OFF_IDENTICAL_TO_FROZEN_SL_AT64_AND128_ALL66",
+  "critic_calibration": "BOTH_VALUE_MSE_ABOVE1_25_CONSTANT_AT64_AND128",
+  "full_timing_comparison": "COMPLETED_NO_DEPLOYMENT_ADVANTAGE",
   "engineering": "PASS",
   "old_active_protocol_unchanged": true,
-  "old_authorization_reused": false
+  "old_authorization_reused": false,
+  "protocol_approval_sha256": "366cb6a3f08cbdd8058954ff47c4adafa9eb6148a29dc3aab1f251424420c853",
+  "stage_authorization_sha256": "188c6491ac292980056c5f552f89e6fac3d57693a22c10c5be9889b55a011f0a",
+  "completed_evaluation_endpoints": [
+    64,
+    128
+  ],
+  "resume": "SAME_AUTHORIZATION_AND_CUMULATIVE_BUDGET_ENTERED65",
+  "not_started_endpoints": [
+    256
+  ],
+  "actual_debits": {
+    "requests": 2376,
+    "critic_optimizer_attempts": 320,
+    "actor_optimizer_attempts": 384,
+    "teacher_episodes": 768
+  },
+  "exact_cumulative_closed_wall_s": 3733.8607121000005,
+  "analysis": "PASS_SAVED_EVIDENCE_ONLY",
+  "independent_scientific_review": "COMPLETE_AGENT_REVIEW_CLAIM_SUPPORTED_NO_PROVISIONAL",
+  "analysis_helper_selftest": "PASS_2_SYNTHETIC_CASES_0_REAL_CALLS",
+  "claim_supported": "no",
+  "confidence_scope": "High only for frozen configuration; no universal DRL conclusion",
+  "paper_claim_audit": "unavailable",
+  "formal_report": "FORMAL_EXPERIMENT_REPORT.md",
+  "independent_review": "INDEPENDENT_FORMAL_REVIEW.md"
 }

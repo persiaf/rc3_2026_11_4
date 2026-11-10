@@ -1,9 +1,13 @@
-# 下一步
+# 128早停后的决定
 
-真实训练器及准确SL256开发输入工程验收已完成，正式ON/OFF尚未启动。准备工作已落实为实际源码、20个完整请求、真实接受/拒绝/恢复/部署和固定源码绑定，非只有新说明文件。
+本配置已按批准R03终闭合：64、128两终点ON/OFF均未改善冻结SL，Critic value MSE分别为固定warm常数的2.4122、2.3107倍。两项规则同时触发，**停止本配置，不追加训练，不执行256，不放宽guard、不换场景求正**。准确协议、批准、失败工程、完整路线和未用额度保留。见[正式报告](FORMAL_EXPERIMENT_REPORT.md)及[独立审查](INDEPENDENT_FORMAL_REVIEW.md)。
 
-等待明确批准[具体R03参数](PROTOCOL_REVIEW.md)，然后分别保存真实协议批准与warm/train/evaluate阶段执行授权。在没有该确认前不执行新正式optimizer、不把旧P2资源或授权借给本轮、不把PENDING协议变成活动版本。
+三种方法各128次Actor候选全部接受，正式拒绝0；ON/OFF最大相对基座TV约3.49e-5/3.31e-5。不能将无收益归因为guard拒绝；也不能由更新很小认定任意增大学习率会有效。训练G/V/A、Critic量纲和排序响应需要联合查看，因果关系尚未验证。
 
-获准后按同一个累计账依次预热、ON/OFF自己的在线轨迹训练、匹配继续监督、三个固定终点六方法评价；遵守提前停止。任何负结果或失败完整交付，不追加轮数求正。
+老师可立即基于保存证据开展三项具体任务：
 
-原60、S3任务与未批准final继续不可访问；真实IK/实机未完成。旧实验源码/权重/原S3两失败不变，用户Word和新研究资料不纳入提交。GitHub只推独立分支，不合并main。
+1. **核查Critic的尺度和条件信息。** 对照[逐父校准](runs/conservative_paired_11622026_v1/analysis/CRITIC_CALIBRATION_PARENTS.csv)、[预测分位表](runs/conservative_paired_11622026_v1/analysis/CRITIC_CALIBRATION_BINS.csv)及[PPO优势](runs/conservative_paired_11622026_v1/analysis/PER_STATE_ADVANTAGES.csv)，分窗口/任务数检查L、K、H信用与归一化value偏差。先说明为何未胜固定常数，不把损失下降写成长期预测有效。
+2. **核查修正是否改变有效排序。** 对照[逐机会guard](runs/conservative_paired_11622026_v1/analysis/GUARD_UPDATES.csv)、[逐请求raw/H路线](runs/conservative_paired_11622026_v1/analysis/ALL_RAW_H_ROUTES.csv)及冻结源码，检查206维新摘要、logit差异和候选排序间距的关系。区分模型接受更新但贪心选择未变与信息永远无用；不直接放宽既定阈值。
+3. **形成下一版可检验修订。** 根据前两项诊断提出最小Actor/Critic表示或尺度修订，明确同SL起点、ON/OFF因果对照、完整成本/时间目标、源码/H/环境绑定与停止条件，再提交新的实施审查、协议及阶段授权。核心仍为大父布局DRL训练、冻结后不同规模局部完整规划；不替换成动态重规划或纯监督，也不直接增加本配置轮数。
+
+新训练、多seed、额外独立布局或保留测试均未启动。原60、旧S3和未批准final继续封存；历史模型、旧实验和用户Word未覆盖。当前结果为单seed、8个已训练父布局及3个独立但已暴露开发父布局的二维代理证据，未建立泛化、真实IK或实机能力。默认Fixed3/Detour保留。

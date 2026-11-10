@@ -1,5 +1,7 @@
 # 实际工程验收报告
 
+历史口径：本文件为正式执行前的工程验收快照，以下NOT_STARTED/PENDING表示当时状态。后续已获准确R03批准并完成128早停配置，实际结果见[FORMAL_EXPERIMENT_REPORT.md](FORMAL_EXPERIMENT_REPORT.md)和[RESULT_TO_CLAIM.md](RESULT_TO_CLAIM.md)。
+
 本报告仅记录真实训练器工程验收；**正式ON/OFF及性能比较NOT_STARTED**。所有数值来自R01/R02/R03原日志、原请求JSON、CHECKS和UPDATE_REPORTS，无历史实验结果改写。
 
 | 轮次 | 实际结果 | 请求扣账 | Actor / Critic调用 | 闭合墙钟秒 |

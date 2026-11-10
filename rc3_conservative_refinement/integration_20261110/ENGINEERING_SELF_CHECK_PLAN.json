@@ -1,0 +1,51 @@
+{
+  "schema": "rc3-analysis-helper-synthetic-ledger-engineering-plan-v1",
+  "status": "PREPARED_NOT_EXECUTED_ROOT_REGISTRATION_REQUIRED",
+  "purpose": "Two bounded engineering checks of the new offline analysis helper ledger control; not a training, planning, performance or scientific-result experiment",
+  "script": "rc3_conservative_refinement/integration_20261110/postprocess_selftest.py",
+  "output": "rc3_conservative_refinement/integration_20261110/engineering_analysis_helper_selfcheck_20261110",
+  "case_cap": 2,
+  "wall_cap_s": 30,
+  "single_registered_invocation": true,
+  "retry_or_new_output_under_same_registration": false,
+  "source_sha256": {
+    "rc3_conservative_refinement/integration_20261110/postprocess_formal.py": "06e80ff1af49615a60868f14a0bb0495899c7ab82fa431080f337a42c7fec00f",
+    "rc3_conservative_refinement/integration_20261110/postprocess_selftest.py": "09f6a875b226998350813c0454a67fadede8acfe9bf63f5cc473f84ecb68763d",
+    "rc3_conservative_refinement/storage.py": "2586ac5520e45aa02568190ff94ccc543189f55580975e7d9918d16d79a451c2",
+    "rc3_conservative_refinement/__init__.py": "d36c91d33b2ada2770383194d9b1210b301a80e234e9e3840037816ef6856063"
+  },
+  "fixture": {
+    "kind": "Five explicit synthetic JSONL events with canonical SHA256 chain",
+    "events": ["registration", "session_start", "debit", "stage_result", "session_close"],
+    "fictitious_prior_debits": {"requests": 2, "actor_optimizer_attempts": 1, "critic_optimizer_attempts": 1},
+    "fictitious_prior_wall_s": 0.125,
+    "debit_semantics": "Literal fictional history only. No actual request, optimizer attempt or optimizer update is executed or claimed by these numbers.",
+    "contains_scene_task_route_model_or_teacher_content": false
+  },
+  "cases": [
+    {
+      "id": "canonical_prefix_sequence_counters_and_closed_session",
+      "checks": ["Original prefix bytes remain identical", "Canonical sequence/tail extend by exactly one start and one close", "Original binding/caps/debit counters and carry wall remain unchanged", "Analysis request/debit APIs reject without invoking callbacks", "Synthetic session closes and releases its own writer lock"]
+    },
+    {
+      "id": "duplicate_attempt_blocked_including_failed_or_moved_output",
+      "checks": ["analysis_start blocks one-shot admission", "terminal_analysis_only session_start blocks one-shot admission", "The real locked constructor rejects a second analysis on the same synthetic journal", "Rejected repeat does not change journal bytes or leave a writer lock"]
+    }
+  ],
+  "actual_resource_caps": {
+    "formal_run_semantic_or_log_reads": 0,
+    "original60_reads": 0,
+    "S3_reads": 0,
+    "planning_requests": 0,
+    "navigation_solves": 0,
+    "model_weight_reads_or_loads": 0,
+    "H_calls": 0,
+    "validator_calls": 0,
+    "optimizer_attempts": 0,
+    "optimizer_updates": 0,
+    "teacher_reads": 0
+  },
+  "numerical_tolerance": "Exact bytes/identity/counters/sequence and exact representable literal wall value 0.125; no planner or learning numeric tolerance is used",
+  "failure_policy": "Retain fixture, partial files and failure report. Do not delete or retry, alter a formal ledger, reset any failure/budget, or infer planning-quality improvement.",
+  "evidence_limit": "A PASS can establish these two engineering control checks only. It does not verify formal requests/results, planning performance, DRL benefit, physical safety, IK or joint trajectories."
+}

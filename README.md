@@ -1,10 +1,10 @@
 # RC3：可达约束下的二维静态任务路径规划
 
-## 2026-11-10：206维真实PPO训练器与有界工程验收
+## 2026-11-10：206维真实PPO与ON/OFF有界训练结果
 
 [本轮正式训练器集成](rc3_conservative_refinement/integration_20261110/README.md)已实现独立206维PPO、准确SL256永久冻结、L/K/H Critic、逐步guard与Actor/Adam严格回滚、闭合账本恢复、轻量Actor部署及完整请求计时。90项测试与20个真实工程请求通过，实际5次Actor/4次Critic调用仅用于工程验收；此前两次失败原账保留。Fixed3/Detour16真实示例有效。
 
-**正式ON/OFF配对尚未启动。** 用户明确256是建议而非已批准参数；[具体协议R03](rc3_conservative_refinement/integration_20261110/PROTOCOL_DRAFT_R03.json)冻结每组最多256次机会、同一起点/日程、64/128/256终点、5100请求及5小时累计上限，等待参数确认及独立阶段授权。不能由工程PASS推断规划收益。[实际工程报告](rc3_conservative_refinement/integration_20261110/EXPERIMENT_REPORT.md)与[下一步](rc3_conservative_refinement/integration_20261110/NEXT_STEP_DECISION.md)。仍是二维双臂代理约束，非真实IK/实机认证；旧研究与原60封存边界保持。
+**正式ON/OFF已按预定规则在128终点停止：64/128各66视图的raw/H路线和成本均未改善FrozenSL，Critic未优于常数；256未执行。** [具体协议R03](rc3_conservative_refinement/integration_20261110/PROTOCOL_DRAFT_R03.json)冻结每组最多256次机会、同一起点/日程、64/128/256终点、5100请求及5小时累计上限；用户随后明确批准参数，[协议批准与独立阶段授权](rc3_conservative_refinement/integration_20261110/authorizations)分别保存。不能由工程PASS或训练诊断推断规划收益。[实际正式报告](rc3_conservative_refinement/integration_20261110/FORMAL_EXPERIMENT_REPORT.md)、[完整资源账](rc3_conservative_refinement/integration_20261110/FORMAL_RESOURCE_ACCOUNTING.json)、[判读与边界](rc3_conservative_refinement/integration_20261110/RESULT_TO_CLAIM.md)与[下一步](rc3_conservative_refinement/integration_20261110/NEXT_STEP_DECISION.md)。仍是二维双臂代理约束，非真实IK/实机认证；旧研究与原60封存边界保持。
 
 ## 2026-11-10：老师反馈的独立工程候选
 

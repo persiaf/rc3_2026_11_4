@@ -1,0 +1,102 @@
+{
+  "schema": "rc3-failed-engineering-source-posthoc-reconstruction-v1",
+  "date": "2026-11-10",
+  "status": "POST_HOC_EXACT_HASH_RECONSTRUCTION_NOT_CONTEMPORANEOUS_SNAPSHOT",
+  "bound_sources_modified": false,
+  "optimizer_calls": 0,
+  "planning_requests": 0,
+  "entries": [
+    {
+      "path": "rc3_conservative_refinement/analysis.py",
+      "revisions": [
+        "R01",
+        "R02"
+      ],
+      "sha256": "58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse only the scalar RTG-mean correction using recorded earlier source text"
+    },
+    {
+      "path": "rc3_conservative_refinement/runner.py",
+      "revisions": [
+        "R02"
+      ],
+      "sha256": "79f5477ebeda4b390b78506a1aa431e7131dcc50d8d574e8dc60a05d6f947d41",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/79f5477ebeda4b390b78506a1aa431e7131dcc50d8d574e8dc60a05d6f947d41.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse R03 engineering gate additions and warm RTG mean collection"
+    },
+    {
+      "path": "rc3_conservative_refinement/runner.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "a535c9a1af11ba012c009ca6c86de9597e64a421aefd77ff8b7324cc895560c6",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/a535c9a1af11ba012c009ca6c86de9597e64a421aefd77ff8b7324cc895560c6.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Also reverse R02 checkpoint artifact-hash field fix"
+    },
+    {
+      "path": "rc3_conservative_refinement/storage.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "d15e002a5673b1350734c7023a26ee7b27047ced6a94220484892209fb1eeedd",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/d15e002a5673b1350734c7023a26ee7b27047ced6a94220484892209fb1eeedd.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse reserved-key protection and request artifact-hash field fix"
+    },
+    {
+      "path": "rc3_conservative_refinement/test_runtime.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "d48673d67d76e1ff624b29ba7954135ebceb87082fd79c63c4064df6e6e46309",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/d48673d67d76e1ff624b29ba7954135ebceb87082fd79c63c4064df6e6e46309.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse synthetic entry/exit fixture fix"
+    },
+    {
+      "path": "rc3_conservative_refinement/test_execution.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "957f450b00dc54f1c7328817c6a42c2bc053ea87e67a897839906b33e27626bd",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/957f450b00dc54f1c7328817c6a42c2bc053ea87e67a897839906b33e27626bd.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse added reserved-hash regression test"
+    },
+    {
+      "path": "rc3_conservative_refinement/engineering.py",
+      "revisions": [
+        "R02"
+      ],
+      "sha256": "553a9c7c0bb7826a3d2891289c4fab49897bd2a2266933958fcf0f1651cc0bd0",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/553a9c7c0bb7826a3d2891289c4fab49897bd2a2266933958fcf0f1651cc0bd0.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse R03 matched-SL/native engineering block and teacher cap addition"
+    }
+  ],
+  "limits": "Only exact SHA256 matches saved. Unreconstructed differences remain explicit gaps, not guessed source. saved_inputs/test_saved_inputs handled by separate data-agent receipt.",
+  "remaining_missing": [
+    {
+      "path": "rc3_conservative_refinement/engineering.py",
+      "revision": "R01",
+      "expected_sha256": "32f8f119c5459a9e0f3c3d443456c13c0819e0cf68a8c256bbd6a955ff9f288b",
+      "status": "MISSING_EXACT_OLD_BYTES"
+    },
+    {
+      "path": "rc3_conservative_refinement/register.py",
+      "revision": "R01",
+      "expected_sha256": "58efd879729c91b34ddf97ab8f8d89cd71708045d29c605961728ed68d0ed938",
+      "status": "MISSING_EXACT_OLD_BYTES"
+    },
+    {
+      "path": "rc3_conservative_refinement/register.py",
+      "revision": "R02",
+      "expected_sha256": "261388d7beaeea9725217ae5d307e5d4340536a8801de2fbcf2d6fbf4de69d1e",
+      "status": "MISSING_EXACT_OLD_BYTES"
+    }
+  ]
+}

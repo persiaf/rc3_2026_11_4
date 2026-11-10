@@ -1,0 +1,26 @@
+{
+  "schema": "rc3-posthoc-source-restoration-v1",
+  "date": "2026-11-10",
+  "revision": "R02",
+  "restoration_timing": "POST_HOC_AFTER_ENGINEERING_FAILURE_NOT_A_PRERUN_SNAPSHOT",
+  "binding_path": "rc3_conservative_refinement/integration_20261110/SOURCE_BINDING_R02.json",
+  "binding_sha256": "93f5cca74ee11f39d8c59b0b07b7dce4ae7a1f042c59b34f69492dce16ccbc6d",
+  "method": "Reverse only known later alias compatibility edits in memory; persist only exact original binding SHA matches",
+  "records": [
+    {
+      "original_path": "rc3_conservative_refinement/saved_inputs.py",
+      "expected_sha256": "febd3d08e068b1efa6b479595dd0aef0f2236d74484c47549bfe5c73baa7b39d",
+      "reconstructed_sha256": "febd3d08e068b1efa6b479595dd0aef0f2236d74484c47549bfe5c73baa7b39d",
+      "status": "RESTORED_EXACT_HASH_MATCH",
+      "object_path": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/febd3d08e068b1efa6b479595dd0aef0f2236d74484c47549bfe5c73baa7b39d",
+      "bytes": 12927
+    },
+    {
+      "original_path": "rc3_conservative_refinement/test_saved_inputs.py",
+      "expected_sha256": "914c6cc58e9eecd291af7156c21da50b18fed72b6314ae59bd37647f5b348575",
+      "reconstructed_sha256": "96f7db1e44055f435783bc7e150dc9ca09c1699911bb754df7f1f82b0720950c",
+      "status": "MISSING_NOT_BYTE_MATCHED"
+    }
+  ],
+  "old_sources_must_not_be_executed": true
+}

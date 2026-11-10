@@ -1,0 +1,52 @@
+{
+  "status": "PAUSE_CLOSED_OBSERVED_RESUME_PENDING",
+  "checkpoint": {
+    "checkpoint_sha256": "7d4ef4fcf06e2c1d2b7abee177f84faec7bb0471dc4563d303d4719701f980e5",
+    "event": "checkpoint",
+    "path": "rc3_conservative_refinement/integration_20261110/runs/conservative_paired_11622026_v1/checkpoints/closed_005253.pt",
+    "previous": "7aeeb2bc304fc1b3c845c0481616987416a40b01e5f8111bce4fe194c29639f1",
+    "progress": {
+      "critic_bad": [
+        [
+          true,
+          true
+        ]
+      ],
+      "evaluated": [
+        64
+      ],
+      "quality_no_gain": [
+        true
+      ],
+      "round": 64,
+      "warm_batches": {
+        "OFF": 4,
+        "ON": 4
+      }
+    },
+    "resource_counts": {
+      "actor_optimizer_attempts": 192,
+      "critic_optimizer_attempts": 192,
+      "requests": 1212,
+      "teacher_episodes": 384
+    },
+    "sequence": 5253,
+    "sha256": "cb8d9e12e63d2b41783633d739a3b39606e5ccb81ebf0f1da1d323c56885a5af"
+  },
+  "session_close": {
+    "counts": {
+      "actor_optimizer_attempts": 192,
+      "critic_optimizer_attempts": 192,
+      "requests": 1212,
+      "teacher_episodes": 384
+    },
+    "elapsed_s": 2414.1435362,
+    "event": "session_close",
+    "open_sequence": 1,
+    "previous": "cb8d9e12e63d2b41783633d739a3b39606e5ccb81ebf0f1da1d323c56885a5af",
+    "sequence": 5254,
+    "sha256": "52a043fef0010f1209e51d99300f21fe15319f50fcb76a86955fc1eeb1c9dc08",
+    "status": "PAUSED_CLEAN_BOUNDARY"
+  },
+  "resume_policy": "Same protocol/approval/authorization/output/budget; runner verifies source, Adam, RNG, cursors and exact journal prefix before resume; this record does not claim a counterfactual full continuous run"
+}

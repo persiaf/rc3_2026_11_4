@@ -1,5 +1,7 @@
 # 具体正式配置待审批
 
+后续状态：用户已明确批准下列准确SHA与同一硬上限，已分别记录[协议批准](authorizations/PROTOCOL_APPROVAL.json)和[阶段授权](authorizations/STAGE_AUTHORIZATION.json)。下列原始提案说明保留其审批前状态，协议原字节未改。
+
 准确协议：[PROTOCOL_DRAFT_R03.json](PROTOCOL_DRAFT_R03.json)。SHA256：`a20eca451e7094bd16390ae5b973c85240a42337e4ef6ae42bd243b9a8cfeb0c`。准确源码绑定SHA256：`ea605e87a31c1c6fcf8a7090fbc2681202380fe1a6e6ae29de464529c1e701e7`。**尚未批准，不是活动协议。**
 
 | 项目 | 冻结提案 |

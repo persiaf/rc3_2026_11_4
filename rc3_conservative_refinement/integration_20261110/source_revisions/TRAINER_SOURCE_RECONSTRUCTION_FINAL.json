@@ -1,0 +1,208 @@
+{
+  "schema": "rc3-failed-engineering-source-posthoc-reconstruction-final-v1",
+  "status": "ALL_OWNED_CHANGED_SOURCE_BYTES_RECOVERED_EXACTLY_POST_HOC",
+  "date": "2026-11-10",
+  "baseline": "3f7507611b85dac757f126555258f32e0888dcb2",
+  "source_bindings": {
+    "R01": {
+      "path": "rc3_conservative_refinement/integration_20261110/SOURCE_BINDING_R01.json",
+      "sha256": "bd9bfe6f5415676af0e79625978cc3582ca77191f0d9c0299fe5b59402018b7a"
+    },
+    "R02": {
+      "path": "rc3_conservative_refinement/integration_20261110/SOURCE_BINDING_R02.json",
+      "sha256": "93f5cca74ee11f39d8c59b0b07b7dce4ae7a1f042c59b34f69492dce16ccbc6d"
+    },
+    "R03": {
+      "path": "rc3_conservative_refinement/integration_20261110/SOURCE_BINDING_R03.json",
+      "sha256": "ea605e87a31c1c6fcf8a7090fbc2681202380fe1a6e6ae29de464529c1e701e7"
+    }
+  },
+  "scope": [
+    "analysis.py",
+    "runner.py",
+    "storage.py",
+    "test_runtime.py",
+    "test_execution.py",
+    "engineering.py",
+    "register.py"
+  ],
+  "entries": [
+    {
+      "path": "rc3_conservative_refinement/analysis.py",
+      "revisions": [
+        "R01",
+        "R02"
+      ],
+      "sha256": "58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse only the scalar RTG-mean correction using recorded earlier source text"
+    },
+    {
+      "path": "rc3_conservative_refinement/runner.py",
+      "revisions": [
+        "R02"
+      ],
+      "sha256": "79f5477ebeda4b390b78506a1aa431e7131dcc50d8d574e8dc60a05d6f947d41",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/79f5477ebeda4b390b78506a1aa431e7131dcc50d8d574e8dc60a05d6f947d41.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse R03 engineering gate additions and warm RTG mean collection"
+    },
+    {
+      "path": "rc3_conservative_refinement/runner.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "a535c9a1af11ba012c009ca6c86de9597e64a421aefd77ff8b7324cc895560c6",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/a535c9a1af11ba012c009ca6c86de9597e64a421aefd77ff8b7324cc895560c6.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Also reverse R02 checkpoint artifact-hash field fix"
+    },
+    {
+      "path": "rc3_conservative_refinement/storage.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "d15e002a5673b1350734c7023a26ee7b27047ced6a94220484892209fb1eeedd",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/d15e002a5673b1350734c7023a26ee7b27047ced6a94220484892209fb1eeedd.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse reserved-key protection and request artifact-hash field fix"
+    },
+    {
+      "path": "rc3_conservative_refinement/test_runtime.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "d48673d67d76e1ff624b29ba7954135ebceb87082fd79c63c4064df6e6e46309",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/d48673d67d76e1ff624b29ba7954135ebceb87082fd79c63c4064df6e6e46309.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse synthetic entry/exit fixture fix"
+    },
+    {
+      "path": "rc3_conservative_refinement/test_execution.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "957f450b00dc54f1c7328817c6a42c2bc053ea87e67a897839906b33e27626bd",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/957f450b00dc54f1c7328817c6a42c2bc053ea87e67a897839906b33e27626bd.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse added reserved-hash regression test"
+    },
+    {
+      "path": "rc3_conservative_refinement/engineering.py",
+      "revisions": [
+        "R02"
+      ],
+      "sha256": "553a9c7c0bb7826a3d2891289c4fab49897bd2a2266933958fcf0f1651cc0bd0",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/553a9c7c0bb7826a3d2891289c4fab49897bd2a2266933958fcf0f1651cc0bd0.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse R03 matched-SL/native engineering block and teacher cap addition"
+    },
+    {
+      "path": "rc3_conservative_refinement/engineering.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "32f8f119c5459a9e0f3c3d443456c13c0819e0cf68a8c256bbd6a955ff9f288b",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/32f8f119c5459a9e0f3c3d443456c13c0819e0cf68a8c256bbd6a955ff9f288b.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reconstruct recorded R01 prior-wall expression from exact original root tool text"
+    },
+    {
+      "path": "rc3_conservative_refinement/register.py",
+      "revisions": [
+        "R02"
+      ],
+      "sha256": "261388d7beaeea9725217ae5d307e5d4340536a8801de2fbcf2d6fbf4de69d1e",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/261388d7beaeea9725217ae5d307e5d4340536a8801de2fbcf2d6fbf4de69d1e.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Reverse R03 changes using exact recorded earlier plan and component-mean wording"
+    },
+    {
+      "path": "rc3_conservative_refinement/register.py",
+      "revisions": [
+        "R01"
+      ],
+      "sha256": "58efd879729c91b34ddf97ab8f8d89cd71708045d29c605961728ed68d0ed938",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/58efd879729c91b34ddf97ab8f8d89cd71708045d29c605961728ed68d0ed938.txt",
+      "status": "EXACT_HASH_RECONSTRUCTION",
+      "method": "Also reverse R02 ledger-receipt and wall fix from exact recorded first tool text"
+    }
+  ],
+  "revision_checks": [
+    {
+      "path": "rc3_conservative_refinement/analysis.py",
+      "revision": "R01",
+      "sha256": "58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/analysis.py",
+      "revision": "R02",
+      "sha256": "58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/58299257068c53742f3b894ebce0c2b8c6423f537f8058b3176617f3cfaa5762.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/runner.py",
+      "revision": "R01",
+      "sha256": "a535c9a1af11ba012c009ca6c86de9597e64a421aefd77ff8b7324cc895560c6",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/a535c9a1af11ba012c009ca6c86de9597e64a421aefd77ff8b7324cc895560c6.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/runner.py",
+      "revision": "R02",
+      "sha256": "79f5477ebeda4b390b78506a1aa431e7131dcc50d8d574e8dc60a05d6f947d41",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/79f5477ebeda4b390b78506a1aa431e7131dcc50d8d574e8dc60a05d6f947d41.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/storage.py",
+      "revision": "R01",
+      "sha256": "d15e002a5673b1350734c7023a26ee7b27047ced6a94220484892209fb1eeedd",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/d15e002a5673b1350734c7023a26ee7b27047ced6a94220484892209fb1eeedd.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/test_runtime.py",
+      "revision": "R01",
+      "sha256": "d48673d67d76e1ff624b29ba7954135ebceb87082fd79c63c4064df6e6e46309",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/d48673d67d76e1ff624b29ba7954135ebceb87082fd79c63c4064df6e6e46309.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/test_execution.py",
+      "revision": "R01",
+      "sha256": "957f450b00dc54f1c7328817c6a42c2bc053ea87e67a897839906b33e27626bd",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/957f450b00dc54f1c7328817c6a42c2bc053ea87e67a897839906b33e27626bd.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/engineering.py",
+      "revision": "R01",
+      "sha256": "32f8f119c5459a9e0f3c3d443456c13c0819e0cf68a8c256bbd6a955ff9f288b",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/32f8f119c5459a9e0f3c3d443456c13c0819e0cf68a8c256bbd6a955ff9f288b.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/engineering.py",
+      "revision": "R02",
+      "sha256": "553a9c7c0bb7826a3d2891289c4fab49897bd2a2266933958fcf0f1651cc0bd0",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/553a9c7c0bb7826a3d2891289c4fab49897bd2a2266933958fcf0f1651cc0bd0.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/register.py",
+      "revision": "R01",
+      "sha256": "58efd879729c91b34ddf97ab8f8d89cd71708045d29c605961728ed68d0ed938",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/58efd879729c91b34ddf97ab8f8d89cd71708045d29c605961728ed68d0ed938.txt"
+    },
+    {
+      "path": "rc3_conservative_refinement/register.py",
+      "revision": "R02",
+      "sha256": "261388d7beaeea9725217ae5d307e5d4340536a8801de2fbcf2d6fbf4de69d1e",
+      "object": "rc3_conservative_refinement/integration_20261110/source_revisions/objects/261388d7beaeea9725217ae5d307e5d4340536a8801de2fbcf2d6fbf4de69d1e.txt"
+    }
+  ],
+  "unique_objects": 10,
+  "revision_entries": 11,
+  "unresolved_in_scope": [],
+  "exclusions": "saved_inputs.py and test_saved_inputs.py handled by data-agent reconstruction receipt",
+  "limitations": "Created after failures by reversing known changes and accepting only exact registered SHA256 bytes. This is not a contemporaneous snapshot or evidence that full scientific execution occurred under failed revisions. First-pass missing entries in earlier receipt are resolved here.",
+  "bound_sources_modified": false,
+  "planning_requests": 0,
+  "optimizer_calls": 0
+}

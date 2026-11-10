@@ -72,3 +72,10 @@
 固定DRL目标保持；真实完成首seed256轮，P2未通过，claim_supported=no／confidence=high，写作provisional。所选RL128对SL H后+0.223271%、对匹配监督256为−0.868168%；raw对SL−0.094853%。只属8个已训练物理布局的开发选择，未触发其余seed／独立晋级／最终216／计时／P5。不以工程、loss、H收益替代DRL增量。
 
 [实际证据](rc3_integrated_rppo/EXPERIMENT_REPORT.md) · [独立审查](rc3_integrated_rppo/INDEPENDENT_REVIEW.md) · [研究发现与收尾路由](rc3_integrated_rppo/findings.md)。原S0—S3、GL-v4/v5和旧失败保留。
+
+
+## 2026-11-10：R03保守长期规划DRL正式配对
+
+conservative_paired_11622026_v1：claim_supported=no，confidence=high仅限当前配置；provisional，paper_claim_audit=unavailable。已真实执行ON/OFF及匹配继续监督各128机会，64/128终点六方法×66视图；ON/OFF全部raw/H路线及J/L/K与冻结SL相同，完整时间无优势，Critic value MSE连续高于warm固定常数。按两条预注册规则在128终闭合，256未开始，不增加轮数求正。2376请求完成/0失败，384 Actor/320 Critic尝试，累计正式含保存后分析3733.860712秒；工程另账。
+
+[独立判读](rc3_conservative_refinement/integration_20261110/INDEPENDENT_FORMAL_REVIEW.md)、[事实报告](rc3_conservative_refinement/integration_20261110/FORMAL_EXPERIMENT_REPORT.md)、[研究发现](rc3_conservative_refinement/integration_20261110/findings.md)、[下一步](rc3_conservative_refinement/integration_20261110/NEXT_STEP_DECISION.md)。固定DRL研究目标和原60/旧S3封存保持；只路由保存证据诊断与新协议评审，不声称当前方法有效或DRL目标不可能。
