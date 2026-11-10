@@ -1,0 +1,69 @@
+{
+  "utc": "2026-11-10T03:16:48.678026+00:00",
+  "purpose": "Memory pressure from repeated background readonly Git/LFS diff processes",
+  "terminated_readonly_diff_jobs": [
+    {
+      "pid": 15468,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 113213440,
+      "children": []
+    },
+    {
+      "pid": 21056,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 77787136,
+      "children": []
+    },
+    {
+      "pid": 22296,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 131022848,
+      "children": []
+    },
+    {
+      "pid": 24088,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 77578240,
+      "children": []
+    },
+    {
+      "pid": 25364,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 113422336,
+      "children": []
+    },
+    {
+      "pid": 30044,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 119390208,
+      "children": []
+    },
+    {
+      "pid": 32096,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 141799424,
+      "children": []
+    }
+  ],
+  "orphans_only": true,
+  "process_match": "git.exe, exact readonly diff flags, repository cwd; only Git/LFS descendants; no Python/optimizer/planner process touched",
+  "errors": [
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess",
+    "NoSuchProcess"
+  ],
+  "raw_research_files_written": 0,
+  "optimizer_or_budget_reset": false,
+  "local_scan_exclusion": "New live run only; Git force-add verified immutable evidence. Remove temporary line after complete staging.",
+  "journal_storage": "New live journal binary ordinary Git; original committed P0 LFS versions retained. Models/episode archives remain LFS."
+}

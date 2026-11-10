@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-10T03:22:57.418987+00:00",
+  "purpose": "Memory pressure from repeated background readonly Git/LFS diff processes",
+  "terminated_readonly_diff_jobs": [
+    {
+      "pid": 17348,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 138088448,
+      "children": []
+    },
+    {
+      "pid": 26192,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 157163520,
+      "children": []
+    },
+    {
+      "pid": 27484,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 135909376,
+      "children": []
+    },
+    {
+      "pid": 32112,
+      "kind": "Codex-app readonly working-tree diff",
+      "private_bytes": 154308608,
+      "children": []
+    }
+  ],
+  "orphans_only": true,
+  "process_match": "git.exe, exact readonly diff flags, repository cwd; only Git/LFS descendants; no Python/optimizer/planner process touched",
+  "errors": [],
+  "raw_research_files_written": 0,
+  "optimizer_or_budget_reset": false,
+  "local_scan_exclusion": "New live run only; Git force-add verified immutable evidence. Remove temporary line after complete staging.",
+  "journal_storage": "New live journal binary ordinary Git; original committed P0 LFS versions retained. Models/episode archives remain LFS."
+}

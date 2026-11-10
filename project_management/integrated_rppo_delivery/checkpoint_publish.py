@@ -40,6 +40,8 @@ def main():
         requests_predebit=counts,completed_requests=len(completions),closed_rounds={str(k):v for k,v in last.items()},
         scope='Only immutable result objects/receipts/closed checkpoint archives and policy frames; live journal/HEAD/CURRENT excluded',utc=now()))
     files.add(label(snapshot));files.add('project_management/integrated_rppo_delivery/checkpoint_publish.py')
+    files.add('.gitattributes');files.add('project_management/integrated_rppo_delivery/git_contention.py')
+    for p in HOME.glob('GIT_CONTENTION_RECEIPT_*.json'):files.add(label(p))
     v=read(ROOT/'PROJECT_VERSION.json');v['integrated_rppo'].update(phase='RUNNING_SMALL256',partial_publication=label(snapshot))
     text=json.dumps(v,ensure_ascii=False,indent=2)+'\n';(ROOT/'PROJECT_VERSION.json').write_bytes(text.replace('\n','\r\n').encode('utf8'));files.add('PROJECT_VERSION.json')
     manifest=read(ROOT/'project_management/GIT_MANIFEST.json')
@@ -48,7 +50,17 @@ def main():
     manifest['integrated_rppo_maintenance']['phase']='RUNNING_IMMUTABLE_PARTIAL_EVIDENCE'
     text=json.dumps(manifest,ensure_ascii=False,indent=2)+'\n';(ROOT/'project_management/GIT_MANIFEST.json').write_bytes(text.replace('\n','\r\n').encode('utf8'))
     files.add('project_management/GIT_MANIFEST.json');names=sorted(files)
-    for i in range(0,len(names),40):subprocess.run(['git','add','--',*names[i:i+40]],cwd=ROOT,check=True)
+    for i in range(0,len(names),40):subprocess.run(['git','add','-f','--',*names[i:i+40]],cwd=ROOT,check=True)
+    journal=label(OUT/'ledger/events.jsonl')
+    old_journal=subprocess.check_output(['git','show','HEAD:'+journal],cwd=ROOT)
+    if old_journal.startswith(b'version https://git-lfs.github.com/spec/v1'):
+        # Change storage representation using the EXACT already frozen P0
+        # content, not by staging or touching the growing working journal.
+        oid=next(x.split(b':',1)[1].decode() for x in old_journal.splitlines() if x.startswith(b'oid sha256:'))
+        source=ROOT/'.git/lfs/objects'/oid[:2]/oid[2:4]/oid;require(digest(source)==oid,'Original frozen LFS prefix missing')
+        content=source.read_bytes();blob=subprocess.check_output(['git','hash-object','-w','--stdin'],input=content,cwd=ROOT).decode().strip()
+        subprocess.run(['git','update-index','--cacheinfo','100644,'+blob+','+journal],cwd=ROOT,check=True)
+        require(subprocess.check_output(['git','show',':'+journal],cwd=ROOT)==content,'P0 prefix storage normalization altered bytes')
     subprocess.run(['git','-c','core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol','diff','--cached','--check'],cwd=ROOT,check=True)
     subprocess.run(['git','commit','-q','-m','Publish immutable Integrated RPPO partial evidence '+args.label],cwd=ROOT,check=True)
     print(json.dumps(dict(commit=git('rev-parse','HEAD'),files=len(files),live_model_or_log_written=False)),flush=True)

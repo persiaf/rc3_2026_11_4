@@ -16,4 +16,6 @@ rc3_s3_connectivity_20261109/runs/rc3_v3_global_local_20261106_01/scope_r1/*/jou
 
 # Integrated-RPPO content-addressed full episodes and immutable event evidence.
 rc3_integrated_rppo/runs/*/objects/*/*.json.gz filter=lfs diff=lfs merge=lfs -text
-rc3_integrated_rppo/runs/*/ledger/events.jsonl filter=lfs diff=lfs merge=lfs -text
+# The live append-only journal stays ordinary binary Git data. Applying the LFS
+# clean filter during background UI diffs repeatedly copied each growing prefix.
+rc3_integrated_rppo/runs/*/ledger/events.jsonl -filter -diff -merge -text
