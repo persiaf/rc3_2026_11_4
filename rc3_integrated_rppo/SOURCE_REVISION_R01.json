@@ -1,0 +1,55 @@
+{
+  "experiment": "rc3_integrated_rppo_v1_20261110_01",
+  "status": "TASK_AUTHORIZED_SEMANTIC_PRESERVING_FIX",
+  "revision": "R01",
+  "reason": "Correct import of the existing frozen native endpoint adapter; append explicit source-version resolution and bootstrap charge; flatten nested internal search summaries. No algorithm or schedule changes.",
+  "prior_binding": {
+    "binding_path": "rc3_integrated_rppo/SOURCE_BINDING.json",
+    "binding_sha256": "d84aaab49aa9fdfe2556788d247d4f1382241ea08c6b13e1a59eee22db17d20f"
+  },
+  "new_binding": {
+    "path": "rc3_integrated_rppo/SOURCE_BINDING_R01.json",
+    "sha256": "a54516c4449ffba357e76cb59f41e6f5704944bfa6d805c945c5cf607278384d"
+  },
+  "changed_sources": {
+    "rc3_integrated_rppo/common.py": {
+      "before": "a1fe5c0db8e9317a3dc7e6280a322d5691179d437a14e86816cf4ad581de57f2",
+      "after": "c11db0b2e8e8d385903d6129fad3c96fe1ff3f5339f956412726202bca313768"
+    },
+    "rc3_integrated_rppo/data.py": {
+      "before": "9a66f2b02b66c566c5b77e399b409ebe9e0c78237585faf5c792753b79fbb718",
+      "after": "a3787881b1495f7e51e59b137ec94a01a4ff946d152fef54f9924fc15714f498"
+    },
+    "rc3_integrated_rppo/eval.py": {
+      "before": "2762f7d533be7050055202272984036a0268c133b6f8e81e27c09de335c115d4",
+      "after": "9e27f154b085b06ac15134a5c7248f4fd2c664843a1c937b580703b9f7e38151"
+    },
+    "rc3_integrated_rppo/ready.py": {
+      "before": "e2f444ff21c530cb3d9d08c68f591492086cbb7abe6590b9f347436d1645f55e",
+      "after": "1af4a2d7b46f3cf9d9f4e63d1265975181c1ef108b775707cd4761f1f301f172"
+    },
+    "rc3_integrated_rppo/report.py": {
+      "before": "7344bfee379ce691ac44a7bf2e91922febf5b20bbe626f8892da5ffc97522562",
+      "after": "12f94fea951861619e570f859839e4520772ac879574dd1a6302139abfdc3d24"
+    },
+    "rc3_integrated_rppo/runner.py": {
+      "before": "0a2631e50fe9e0e798208cb3b1882eee110d7cf2cfe2a34e2e1e65a1725441be",
+      "after": "a73bf0cc30aeaae5dce1aa2b45641bf5860a78009c4f9010611816ba72528af3"
+    },
+    "rc3_integrated_rppo/training.py": {
+      "before": "76a19de7aa8d64a71b0dc2df4b655e44c1fb13470cdae40a94e99c3ccba0ada7",
+      "after": "ca0eed7b561d3456f6cd7b5ef7932ac256e0833eb0263e2ee819f4ea609cbb66"
+    },
+    "rc3_integrated_rppo/verification.py": {
+      "before": "5451d304a4413f124c11ad49c9408881c1581a31a9d5c549dfcc8ff780e1bc3a",
+      "after": "27572ff0e65c619f306702ce09317b3a96be37904baf680b4efb24b72362e58b"
+    }
+  },
+  "protocol_changed": false,
+  "data_schedule_changed": false,
+  "algorithm_changed": false,
+  "old_frozen_source_retrieval": "Git 11040b5bc36492fee3e6cf006dda0d8a8f4d75b5",
+  "authorization": "Explicit integrated user task authorizes small engineering corrections in scope; no claim user pre-read generated hash",
+  "original_authorization_sha256": "e1fa10512c102b43f842564c511ab5c7a2cf18196b50dfbbae0527e4bf9dd378",
+  "utc": "2026-11-10T02:22:28.180612+00:00"
+}

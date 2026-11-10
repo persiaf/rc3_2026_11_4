@@ -106,7 +106,7 @@ class Inputs:
             self.clock.check()
         write_new(HOME/'INPUT_FEASIBILITY.json',dict(status='PASS_TRAIN_SELECTION_PROMOTION',unique_declared_views=checked,
             physical_layouts=len(physical),empty_targets=empty,final_confirmation_materialized=False,counts=self.counts,
-            source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'),original60_access=0))
+            source_binding_sha256=digest(source_path()),original60_access=0))
 
 
 def base_state(seed):

@@ -58,7 +58,7 @@ def value_error(critic,episodes):
 
 
 def checkpoint(actor,critic,ppo,control,control_opt,seed,stage,round_,counts,log,clock,extra=None):
-    payload=dict(experiment=EXP,seed=seed,stage=stage,closed_round=round_,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'),
+    payload=dict(experiment=EXP,seed=seed,stage=stage,closed_round=round_,source_binding_sha256=digest(source_path()),
         protocol_sha256=digest(HOME/'PROTOCOL.json'),base_tensor_sha=actor.base_sha,actor=actor.head.state_dict(),critic=critic.state_dict(),
         actor_opt=ppo.actor_opt.state_dict(),critic_opt=ppo.critic_opt.state_dict(),actor_cursor=ppo.actor_cursor,critic_cursor=ppo.critic_cursor,
         failed_batches=ppo.failed_batches,halved=ppo.halved,control=None if control is None else control.head.state_dict(),
@@ -85,7 +85,7 @@ def restore(seed,stage,actor,critic,ppo,control,control_opt,log,counts):
         and e['checkpoint']['path']==label(path) and e['checkpoint']['sha256']==digest(path)]
     require(len(matches)==1,'CURRENT not uniquely sealed by its closed-checkpoint event')
     d=torch.load(path,map_location='cpu',weights_only=False)
-    require(d['experiment']==EXP and d['seed']==seed and d['stage']==stage and d['source_binding_sha256']==digest(HOME/'SOURCE_BINDING.json')
+    require(d['experiment']==EXP and d['seed']==seed and d['stage']==stage and d['source_binding_sha256']==digest(source_path())
         and d['protocol_sha256']==digest(HOME/'PROTOCOL.json') and d['base_tensor_sha']==actor.base_sha,'Checkpoint scientific source mismatch')
     require(d['closed_round']==matches[0]['round'] and d['actor_cursor']==matches[0]['actor_cursor'] and d['critic_cursor']==matches[0]['critic_cursor'],
         'Closed checkpoint cursor/round mismatch')
@@ -142,7 +142,7 @@ def warm_seed(actor,critic,ppo,seed,inputs,store,clock,counts,stage='main',scale
                 clock.check();steps.append(ppo.critic_step(train[start:start+24]));extra+=1
     info=dict(seed=seed,episodes=192,training_episodes=len(train),valid_episodes=len(val),physical_split=True,
         initial_valid_MSE=initial,train_MSE=value_error(critic,train),valid_MSE=value_error(critic,val),critic_steps=len(steps),
-        extra_steps=extra,actor_steps=0,step_diagnostics=steps,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'))
+        extra_steps=extra,actor_steps=0,step_diagnostics=steps,source_binding_sha256=digest(source_path()))
     require(all(torch.count_nonzero(v)==0 for v in actor.head[-1].state_dict().values()),'Warm changed zero residual')
     info['critic_state']=atomic(result_path.with_suffix('.pt'),dict(critic=critic.state_dict(),optimizer=ppo.critic_opt.state_dict(),cursor=ppo.critic_cursor,counts=counts.copy()))
     write_new(result_path,info);store.log(dict(event='warm_complete',seed=seed,stage=stage,receipt_sha256=digest(result_path)));return info

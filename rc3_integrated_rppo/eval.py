@@ -8,7 +8,7 @@ from rc3_global_local.policy import GlobalLocalPolicy
 from rc3_global_local.environment import Environment
 from rc3_global_local.terminal import finish,export
 from rc3_global_local.validation import validate
-from rc3_global_local.native import run_endpoint
+from rc3_global_local_impl_review.endpoint_baselines import run_endpoint
 from rc3_nav_value.r1.oracle import _instrument,_empty_internal
 
 

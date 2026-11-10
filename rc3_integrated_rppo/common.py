@@ -23,6 +23,14 @@ SEEDS=(11622026,11622027,11622028)
 CAPS=dict(engineering=96,warm=576,train=36864,selection=1392,promotion=528,quality=3024,timing=3024,ablation=3168)
 
 
+def source_path():
+    pointer=HOME/'EXECUTION_SOURCE.json'
+    if not pointer.exists():return HOME/'SOURCE_BINDING.json'
+    p=read(pointer);path=(ROOT/p['binding_path']).resolve()
+    require(path.parent==HOME and digest(path)==p['binding_sha256'],'Execution source pointer changed or escaped')
+    return path
+
+
 def plain(x):
     if isinstance(x,dict):return {str(k):plain(v) for k,v in x.items()}
     if isinstance(x,(list,tuple)):return [plain(v) for v in x]
@@ -176,7 +184,7 @@ class Store:
             require(sum(self.counts.values())<50000 and (attempt>0 or initial<CAPS[q['kind']]),'Request cap')
             if q['kind']=='engineering':require(self.counts['engineering']<96,'Engineering hard cap including retries')
             if attempt:require(self.retry<32,'Infrastructure retry pool exhausted');self.retry+=1
-            clock.check();event=dict(event='request_start',key=k,query=q,attempt=attempt,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'))
+            clock.check();event=dict(event='request_start',key=k,query=q,attempt=attempt,source_binding_sha256=digest(source_path()))
             self.log(event);self.starts[k]=event;self.counts[q['kind']]+=1;t=time.perf_counter()
             try:
                 v=fn();pi=v.get('plan',v.get('result',{}).get('plan'))
@@ -186,7 +194,7 @@ class Store:
                 v['request']=q;v['attempt']=attempt;ref=object_new(v);clock.check()
                 e=dict(event='request_done',key=k,object=ref,complete_time_s=time.perf_counter()-t)
                 receipt=self.log.folder/'request_receipts'/(k.replace(':','_')+'.json')
-                write_new(receipt,dict(query=q,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'),completion=e))
+                write_new(receipt,dict(query=q,source_binding_sha256=digest(source_path()),completion=e))
                 self.log(e);self.done[k]=e
                 elapsed=time.perf_counter()-t
                 self.log(dict(event='request_close_timing',key=k,full_audit_s=elapsed,
@@ -210,7 +218,7 @@ def configure():
 
 
 def verify_sources():
-    b=read(HOME/'SOURCE_BINDING.json')
+    b=read(source_path())
     require(all(digest(ROOT/n)==h for n,h in b['source_sha256'].items()),'Bound source changed')
     for n,h in b['artifacts'].items():require(digest(ROOT/n)==h,'Registration changed: '+n)
     return b

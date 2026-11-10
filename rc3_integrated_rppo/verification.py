@@ -126,5 +126,5 @@ def run(inputs,store,clock):
         zero_equivalence=zero,real_optimizer_calls=calls,request_count=store.counts['engineering'],counts=counts,
         benchmark=dict(rollout24_s=collect_s,PPO4_and_critic4_s=ppo_s,matched_SL_s=sl_s,round_s=one,
             conservative_seed_projection_s=projected,seed_cap_s=14400),real_PPO=out,matched_SL=sl,
-        source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'),scientific_weights_reused=False,wall_used_s=clock.elapsed())
+        source_binding_sha256=digest(source_path()),scientific_weights_reused=False,wall_used_s=clock.elapsed())
     write_new(HOME/'ENGINEERING_VERIFICATION.json',result);return result

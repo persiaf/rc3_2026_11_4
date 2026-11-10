@@ -38,19 +38,22 @@ def execute():
     try:
         if (HOME/'RESOURCE_CLOSEOUT.json').exists():
             closed=read(HOME/'RESOURCE_CLOSEOUT.json');n=closed['ledger_sequence']
-            require(read(HOME/'RUN_COMPLETE.json')['source_binding_sha256']==digest(HOME/'SOURCE_BINDING.json') and n<=len(log.events)
+            require(read(HOME/'RUN_COMPLETE.json')['source_binding_sha256']==digest(source_path()) and n<=len(log.events)
                 and log.events[n-1]['sha256']==closed['ledger_tail'] and digest(HOME/'RESOURCE_ACCOUNTING.json')==closed['resource_accounting_sha256'],
                 'Completed research closeout changed')
             print('ALREADY_COMPLETE_VERIFIED_NO_NEW_REQUEST',flush=True);return
         if not any(e['event']=='registration_cost' for e in log.events):
             r=read(HOME/'REGISTRATION_RESOURCE.json');log(dict(event='registration_cost',**r))
             log(dict(event='clock_close',name='P0',open_sequence=-1,elapsed_s=r['wall_s'],registration_preparation=True))
+        if (HOME/'BOOTSTRAP_FAILURE_RESOURCE.json').exists() and not any(e['event']=='bootstrap_failure_cost' for e in log.events):
+            r=read(HOME/'BOOTSTRAP_FAILURE_RESOURCE.json');log(dict(event='bootstrap_failure_cost',**r))
+            log(dict(event='clock_close',name='P0',open_sequence=-1,elapsed_s=r['conservative_wall_s'],exact_wall_s=None,failed_import=True))
         log(dict(event='clock_close',name='P0',open_sequence=-1,elapsed_s=time.perf_counter()-prep,source_verification_and_startup=True))
         clock=Clock(log,'P0',1800);inputs=Inputs(log,clock);engineering=p0(inputs,store,clock);clock.close();clock=None
         require(engineering['status']=='PASS','P0 resource/engineering condition not passed; scientific training not started')
         path=HOME/'IMPLEMENTATION_REVIEW.md'
         if not path.exists():path.write_text('# 实施评审\n\n**GO：P0准确绑定、数学／恢复／角色检查及真实路线与优化器验收通过。**\n\n'
-            f"执行源码绑定：`{digest(HOME/'SOURCE_BINDING.json')}`。P0保守单seed投影 `{engineering['benchmark']['conservative_seed_projection_s']:.1f}` 秒，硬上限14400秒。\n\n"
+            f"执行源码绑定：`{digest(source_path())}`。P0保守单seed投影 `{engineering['benchmark']['conservative_seed_projection_s']:.1f}` 秒，硬上限14400秒。\n\n"
             '本GO允许按已授权的条件任务继续；P0工程模型不进入正式训练，不说明规划性能改善。原始奖励、H、mask、scope_r1、训练银行及封存边界保持。'
             '任务数归一改变实例加权，PPO使用episode平均的逐步损失之和；Critic独立；Actor与Adam在KL失败后精确回滚。\n\n'
             '恢复限于可证明的已关闭优化轮边界；中途已采样请求可从冻结旧Actor重建，未闭合优化器事务拒绝回放，失败与墙钟不退款。\n',encoding='utf8')
@@ -107,7 +110,7 @@ def execute():
                         evaluate_set(timing,finalroles,'timing','final_timing',0,store,inputs,clock,
                             order_seed=seed_for('timing',repeat,cache),cache=cache,repeat=repeat)
                 seal_or_verify(HOME/'FINAL_CONFIRMATION_COMPLETE.json',dict(quality=3024,timing=3024,choices=choices,
-                    effects={c:paired_effects(quality,c) for c in ('SL256','residual_SL','Fixed3','Detour16')},source_binding_sha256=digest(HOME/'SOURCE_BINDING.json')))
+                    effects={c:paired_effects(quality,c) for c in ('SL256','residual_SL','Fixed3','Detour16')},source_binding_sha256=digest(source_path())))
             clock.close();clock=None
             if go:
                 clock=Clock(log,'seed_11622026',14400);inputs.clock=clock
@@ -117,7 +120,7 @@ def execute():
                 clock.close();clock=None
         log(dict(event='conditional_task_complete',P2_pass=bool(p2),seed_choices=choices))
         seal_or_verify(HOME/'RUN_COMPLETE.json',dict(experiment=EXP,P2_pass=bool(p2),seeds_completed=list(seed_info),
-            requests=store.counts,retries=store.retry,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json')))
+            requests=store.counts,retries=store.retry,source_binding_sha256=digest(source_path())))
         from .report import summarize
         clock=Clock(log,'confirmation_and_analysis',10800);summarize(store,inputs);clock.close();clock=None
         # Seal exact closed analysis wall after derived-report IO, without
@@ -129,7 +132,7 @@ def execute():
             exact_closed_stage_wall_s=wall,ledger_sequence=len(log.events),ledger_tail=log.tail,
             science_request_predebits=sum(store.counts.values()),optimizer_attempts=sum(e['event']=='optimizer_attempt' for e in log.events)))
     except BaseException as exc:
-        payload=dict(error=repr(exc),traceback=traceback.format_exc(),requests=store.counts,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'),utc=now())
+        payload=dict(error=repr(exc),traceback=traceback.format_exc(),requests=store.counts,source_binding_sha256=digest(source_path()),utc=now())
         independent_receipt([OUT/'failures',OUT/'emergency'],'WORKER_FAILURE',payload)
         print(payload['traceback'],file=sys.stderr,flush=True)
         try:
@@ -141,7 +144,7 @@ def execute():
 
 
 def supervise():
-    require((HOME/'SOURCE_BINDING.json').exists(),'Register exact protocol/source first');OUT.mkdir(parents=True,exist_ok=True)
+    require((source_path()).exists(),'Register exact protocol/source first');OUT.mkdir(parents=True,exist_ok=True)
     with Lease(OUT/'SUPERVISOR.lease',EXP):
         tag=now().replace(':','').replace(' ','_')+'_'+uuid.uuid4().hex[:6]
         folder=OUT/'process_logs';folder.mkdir(parents=True,exist_ok=True)

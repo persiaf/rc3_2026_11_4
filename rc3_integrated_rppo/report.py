@@ -92,8 +92,11 @@ def summarize(store,inputs):
     H=sum(r.get('counts',r.get('counters',{})).get('full_H_calls',0) for r in rows)
     internal=collections.Counter()
     for r in rows:
-        for k,v in r.get('internal_search',{}).items():
-            if isinstance(v,(int,float)):internal[k]+=v
+        for group,items in r.get('internal_search',{}).items():
+            if isinstance(items,dict):
+                for k,v in items.items():
+                    if isinstance(v,(int,float)):internal[group+'.'+k]+=v
+            elif isinstance(items,(int,float)):internal[group]+=items
     resource=dict(experiment=EXP,status='COMPLETE_CONDITIONAL_TASK',requests=store.counts,paid_requests=sum(store.counts.values()),
         infrastructure_retries=store.retry,failures=len(store.failed),successes=len(store.done),request_caps=CAPS,absolute_cap=50000,
         optimizer_attempts={str(k):v for k,v in calls.items()},scientific_actor_accepted_steps=sum(d['actor_accepted_steps'] for d in complete.values()),
@@ -101,14 +104,14 @@ def summarize(store,inputs):
         policy_decisions=sum(r.get('policy_steps',0) for r in trajectory),internal_search=dict(internal),input_preparation=inputs.counts,
         cold_navigation_solves=sum(r.get('navigation_solves',0) for r in evalrows),terminal_result_cache_hits=0,
         immutable_completed_request_replay_hits='No extra terminal compute; request IDs and immutable ledger identify any resume replay',
-        wall_s=wall,old_teacher_queries=0,original60_semantic_access=0,old_S3_missing_retried=0,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json'),
+        wall_s=wall,old_teacher_queries=0,original60_semantic_access=0,old_S3_missing_retried=0,source_binding_sha256=digest(source_path()),
         timing_boundary='service includes shared input, D1 load, fresh task encoding, construction,H,export,validation; audit adds object/receipt/committed event IO. Timing-record IO stays in stage wall.',
         maintenance='Git, byte checksum audit and independent editorial review separate from scientific compute; no optimizer/plan claims')
     write_new(HOME/'RESOURCE_ACCOUNTING.json',resource)
     write_new(HOME/'FAILURE_AND_RECOVERY.json',dict(failed_requests=list(store.failed.values()),unclosed=[k for k in store.starts if k not in store.done and k not in store.failed],
         clock_recoveries=[e for e in events if e['event']=='clock_close' and e.get('interrupted_recovery')],
         policy='No refunds; first success; one registered transient-IO retry per slot/max32; dirty optimizer transaction rejects resume; old2missing slots preserved',
-        old_failed_slots_reexecuted=0,source_binding_sha256=digest(HOME/'SOURCE_BINDING.json')))
+        old_failed_slots_reexecuted=0,source_binding_sha256=digest(source_path())))
     seedlist=tuple(int(s) for s in choices)
     effects={c:paired_effects(quality,c,seeds=seedlist) for c in ('SL256','residual_SL','Fixed3','Detour16')} if quality else {}
     write_new(HOME/'RESULT_SUMMARY.json',dict(scope=scope,choices=choices,effects=effects,request_counts=store.counts,
