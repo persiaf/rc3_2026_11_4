@@ -1,0 +1,226 @@
+{
+  "scope": "Two newly generated engineering plans, not a performance experiment",
+  "utc": "2026-11-10T03:11:57.526250+00:00",
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\.venv-handoff\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+  "cpu_count": 16,
+  "dependencies": {
+    "numpy": "2.1.3",
+    "scipy": "1.15.3",
+    "threadpoolctl": "3.5.0"
+  },
+  "base_commit": "0c268426f3760f4d06596a29f65b3d1a5309987f",
+  "scene": {
+    "scale": "4x3",
+    "mode": "regular",
+    "seed": 27182818,
+    "origin": "make_complex_scene; no saved input dataset"
+  },
+  "commands": [
+    {
+      "argv": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\.venv-handoff\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "rc3_v5.plan",
+        "--method",
+        "fixed3",
+        "--budget",
+        "0",
+        "--scale",
+        "4x3",
+        "--mode",
+        "regular",
+        "--seed",
+        "27182818",
+        "--output",
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\outputs\\teacher_handoff\\fixed3.json"
+      ],
+      "kind": "plan",
+      "timeout_s": 180,
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"complete\", \"method\": \"fixed3\", \"objective\": 33.55, \"timing\": {\"preprocessing_s\": 0.048340299999836134, \"planning_s\": 0.019960399999945366, \"total_s\": 0.07472560000041994, \"cache_hit\": false}, \"dp_calls\": 0}\n",
+      "stderr": "",
+      "elapsed_s": 10.525281799999902
+    },
+    {
+      "argv": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\.venv-handoff\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "rc3_baseline.validator",
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\outputs\\teacher_handoff\\fixed3.json",
+        "--report",
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\outputs\\teacher_handoff\\fixed3_validation.json"
+      ],
+      "kind": "validate",
+      "timeout_s": 180,
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "files=1 plans=1 all_valid=True all_tasks_served=True\n",
+      "stderr": "",
+      "elapsed_s": 0.47640750000027765
+    },
+    {
+      "argv": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\.venv-handoff\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "rc3_v5.plan",
+        "--method",
+        "detour",
+        "--budget",
+        "16",
+        "--scale",
+        "4x3",
+        "--mode",
+        "regular",
+        "--seed",
+        "27182818",
+        "--output",
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\outputs\\teacher_handoff\\detour16.json"
+      ],
+      "kind": "plan",
+      "timeout_s": 180,
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"status\": \"complete\", \"method\": \"detour\", \"objective\": 33.55, \"timing\": {\"preprocessing_s\": 0.036618999999518564, \"planning_s\": 0.056943800000226474, \"total_s\": 0.09947170000032202, \"cache_hit\": false}, \"dp_calls\": 10}\n",
+      "stderr": "",
+      "elapsed_s": 3.2894047999998293
+    },
+    {
+      "argv": [
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\.venv-handoff\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "rc3_baseline.validator",
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\outputs\\teacher_handoff\\detour16.json",
+        "--report",
+        "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\rc3_teacher_handoff_worktree_20261110\\outputs\\teacher_handoff\\detour16_validation.json"
+      ],
+      "kind": "validate",
+      "timeout_s": 180,
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "files=1 plans=1 all_valid=True all_tasks_served=True\n",
+      "stderr": "",
+      "elapsed_s": 0.4700588000005155
+    }
+  ],
+  "optimizer_updates": 0,
+  "weight_loads": 0,
+  "sealed60_semantic_reads": 0,
+  "S3_semantic_reads": 0,
+  "plan_requests_predebit": 2,
+  "independent_validation_requests": 2,
+  "fixed3": {
+    "status": "complete",
+    "tasks": 19,
+    "candidates": 96,
+    "J": 33.55,
+    "L": 26.049999999999997,
+    "K": 10,
+    "dp_calls": 0,
+    "planning_timing": {
+      "preprocessing_s": 0.048340299999836134,
+      "planning_s": 0.019960399999945366,
+      "total_s": 0.07472560000041994,
+      "cache_hit": false
+    },
+    "validation": {
+      "files": 1,
+      "plans": 1,
+      "all_valid": true,
+      "all_tasks_served": true,
+      "checks": [
+        {
+          "file": "fixed3.json",
+          "method": "fixed3",
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 26.05000000000001,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      ]
+    }
+  },
+  "detour16": {
+    "status": "complete",
+    "tasks": 19,
+    "candidates": 96,
+    "J": 33.55,
+    "L": 26.049999999999997,
+    "K": 10,
+    "dp_calls": 10,
+    "planning_timing": {
+      "preprocessing_s": 0.036618999999518564,
+      "planning_s": 0.056943800000226474,
+      "total_s": 0.09947170000032202,
+      "cache_hit": false
+    },
+    "validation": {
+      "files": 1,
+      "plans": 1,
+      "all_valid": true,
+      "all_tasks_served": true,
+      "checks": [
+        {
+          "file": "detour16.json",
+          "method": "detour",
+          "valid_model_plan": true,
+          "all_tasks_served": true,
+          "collision_count": 0,
+          "point_collision_count": 0,
+          "unserved_task_ids": [],
+          "independent_polyline_length_m": 26.05000000000001,
+          "errors": [],
+          "scope": "base AABB-inflation collision and spherical-sector reachability proxy only; no IK"
+        }
+      ]
+    }
+  },
+  "distinct_new_engineering_scenes": 1,
+  "total_elapsed_s": 14.797335000000203,
+  "artifacts": {
+    "detour16.csv": {
+      "sha256": "4fd02c3f1f7a19845db433394cb31356f6b2106ffceb0ca68a6d183dbd207d6a",
+      "bytes": 2645
+    },
+    "detour16.json": {
+      "sha256": "0546bac6c53b0b7eb2857083a743cc57eaf3b2ec482b4a8700f40e626d0e4f74",
+      "bytes": 52619
+    },
+    "detour16_validation.json": {
+      "sha256": "8bf34b31e0d811772e670faaa427aa3deb9b20a5e5ded03ba444d34820cfb609",
+      "bytes": 520
+    },
+    "fixed3.csv": {
+      "sha256": "a1c50ec1f6a347060213106de818d04a7b59ed48ced8f4cc0ab4a53de117fcff",
+      "bytes": 2645
+    },
+    "fixed3.json": {
+      "sha256": "70fbcaa0dbb21bc71c5e80d8bca578f4b9f4bde38a1b54e3578d04ec8238b557",
+      "bytes": 50306
+    },
+    "fixed3_validation.json": {
+      "sha256": "aac522e7498cf8e9f9cec1b02248183d2625234ddb43cf9dc1be3a8dbf1f8f91",
+      "bytes": 518
+    }
+  },
+  "status": "PASS_TWO_PROXY_PLANS"
+}

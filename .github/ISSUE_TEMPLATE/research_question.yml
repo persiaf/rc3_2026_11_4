@@ -1,0 +1,29 @@
+name: 研究问题与证据缺口
+description: 记录可检验假设、现有证据、范围及继续条件
+title: "[研究] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 具体问题与可检验假设
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 已有证据与来源
+      description: 填精确提交、报告和原始明细；区分已完成、门槛未通过、未运行。
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 本次范围与交付物
+      description: 说明是只读审查、维护还是新实验；新实验另需协议和阶段授权。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 对照、验收、资源与停止条件
+      description: 不以loss下降或H收益替代DRL增量；原60继续封存。
