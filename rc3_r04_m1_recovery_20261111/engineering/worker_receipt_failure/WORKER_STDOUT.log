@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\synthetic_worker.py", line 21, in main
+    try:raise RuntimeError('Registered synthetic worker failure')
+RuntimeError: Registered synthetic worker failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\synthetic_worker.py", line 36, in <module>
+    if __name__=='__main__':main()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\synthetic_worker.py", line 24, in main
+    target.write_text('cannot write to directory',encoding='utf-8')
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\pathlib.py", line 1154, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+PermissionError: [Errno 13] Permission denied: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_recovery_20261111\\engineering\\worker_receipt_failure\\unwritable_receipt'

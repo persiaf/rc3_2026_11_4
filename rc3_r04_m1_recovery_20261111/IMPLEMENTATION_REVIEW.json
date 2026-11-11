@@ -1,0 +1,39 @@
+{
+  "schema": "rc3-r04-m1-recovery-independent-admission-v1",
+  "reviewer": "/root/m1_recovery_independent",
+  "status": "GO",
+  "source_binding_sha256": "cfc0a4b3fc007e047843f24a08acfff84ee30fe0c3a0e9b3d040144d54887594",
+  "scientific_protocol_sha256": "99e7030e0293b87cf4302f5d76f6802fceb3d2d9c0f3816de24d46cc18ed3982",
+  "scope": "One explicitly authorized new M1 attempt only; noG2/M3/Actor/newrequests",
+  "engineering_status": "GO",
+  "engineering_cases": 7,
+  "engineering_supervisor_wall_s": 13.979909658432007,
+  "engineering_cap_s": 300,
+  "interruptions": [
+    {
+      "case": "blocked",
+      "termination_s": 0.0601048469543457,
+      "overshoot_s": 0.09439253807067871
+    },
+    {
+      "case": "unresponsive",
+      "termination_s": 0.062000000001717126,
+      "overshoot_s": 0.10900000000037835
+    },
+    {
+      "case": "child_tree",
+      "termination_s": 0.057814973832137184,
+      "overshoot_s": 0.08881497383117676
+    }
+  ],
+  "unrelated_synthetic_sibling_survived": true,
+  "duplicate_run_refused_before_spawn": true,
+  "worker_tree_exits_confirmed": true,
+  "primary_receipt_fault_fallback_verified": true,
+  "source_review": "worker reuses frozen M1 scientific functions; only execution timing/source verification/control differs",
+  "engineering_artifact_sha256": "d32b40e15fdb8c41138ceae0d5a18fb229309e8300c23866c93ceacb71403f93",
+  "supervisor_receipt_sha256": "8519de6483e496576fbe605576cceefa9ad7c85211196e20f66e3552b8475f41",
+  "scientific_tests_or_optimizer_started_by_reviewer": false,
+  "review_wall_s": 0.008499299998220522,
+  "authorization_basis": "Explicit current user task; engineeringGO gate now actually satisfied; no new permission inferred for future stages"
+}
