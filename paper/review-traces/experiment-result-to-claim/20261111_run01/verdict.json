@@ -1,0 +1,163 @@
+{
+  "schema": "rc3-independent-mechanism-review-v1",
+  "experiment_id": "rc3_critic_diagnostics_20261111",
+  "reviewer_role": "independent paper architect/reviewer",
+  "review_date": "2026-11-11",
+  "claim_supported": "partial",
+  "confidence": "medium",
+  "provisional": true,
+  "provisional_reason": "no paper claim audit available",
+  "paper_claim_audit": "unavailable",
+  "pending_external_review": false,
+  "review_execution_scope": "Saved evidence document review only; no new scientific or numerical computation",
+  "intended_claim": "Offline Critic scaling and composed-value loss improve calibration on calibration-held-out physical parents; Actor nonresponse has identifiable constraint/common-offset mechanisms. Route benefit unestablished.",
+  "what_results_support": [
+    "Saved online Critic is strongly biased toward near-zero value predictions, underpredicts normalized L/K/H, and has remaining within-parent/state conditional error.",
+    "C1 and C2 improve held-out value MSE versus their own initial endpoints, final C0 and fitting-only global constants under both state_pooled and parent_equal aggregation.",
+    "C2 improves value MSE over matched C1 but beats the conditional constant only under parent_equal, not state_pooled, and worsens H-component calibration.",
+    "2426 multiple-legal states have strict base gap > 0.5; 6 single-legal states are separate. Actual residual state-equal energy is mostly common offset; 92 full rankings change but top1 changes zero."
+  ],
+  "what_results_dont_support": [
+    "Route quality, full cost, planning time, unseen DRL-parent generalization, real IK/joint trajectory or robot benefit.",
+    "Uniform wins over the strongest conditional constant or improvement of every cost component.",
+    "Pure scale-only causal identification for C0 versus C1 because identical net tensors imply different initial physical predictions.",
+    "A fourth fitted configuration formed from mixed online checkpoint predictions.",
+    "A complete causal explanation of online failure, guard rejection, universal amplitude lock or automatic benefit from larger amplitude or more training."
+  ],
+  "missing_evidence": [
+    "Physically matched initialization control and robustness across preregistered splits/initializations, with parent-cluster uncertainty.",
+    "Stable state-pooled superiority to the conditional constant and uniform component calibration; current evidence includes explicit failures.",
+    "A separately authorized online causal chain from a single Critic change through advantages and effective action changes to raw/H route cost and time.",
+    "A separate intervention testing common-offset suppression and useful ranking acquisition.",
+    "Paper-level claim audit."
+  ],
+  "suggested_claim_revision": "On 128 historical R03 trajectories from 50 physical parents, a preregistered 33/17 complete-parent offline split shows direct initial_n-normalized component parameterization improves fixed-budget Critic calibration. Adding composed-value loss further reduces held-out value MSE, surpassing a fit-only conditional constant under parent-equal but not state-pooled aggregation, while sacrificing H calibration. Actor saved-state evidence shows a strict residual-bound sufficient condition for about 30% of states and residual energy dominated by common offset, with some lower-rank changes but no top1 change. These are offline numerical/mechanism findings; online DRL route benefit is unestablished.",
+  "next_experiments_needed": [
+    "None executed or authorized in this review.",
+    "Prepare only a C0-to-C1 direct initial_n-normalized output parameterization candidate protocol as the single priority change relative to R03.",
+    "If later separately approved, preregister physical-initialization controls, both aggregations, global and conditional fit-only constants, parent-cluster inference, same SL start/ON-OFF causal control, full raw/H cost/time and resource/stop rules before any online test.",
+    "C2 composed-value loss remains a separate future factor; do not label R03 C0-to-C2 a single-factor change.",
+    "Do not enlarge residual bound, add rounds, replace seeds/layouts or unseal original60/S3 to seek a positive result."
+  ],
+  "single_next_change": {
+    "from": "Original R03 C0 raw-output Critic",
+    "to": "C1 direct per-initial_n normalized L/K/H output parameterization",
+    "confidence_scope": "Enough for a candidate design and implementation review; insufficient for training authorization or predicted route gain",
+    "exclude_simultaneous_value_loss": true,
+    "initialization_caveat": "Net tensors matched but initial physical predictions differ; pure optimization-scale attribution is not identified",
+    "C2_reason_not_selected_as_single_R03_change": "Would change both parameterization and loss relative to R03, and has H degradation plus pooled conditional-baseline deficit"
+  },
+  "key_metrics": {
+    "holdout": {
+      "physical_parents": 17,
+      "trajectories": 38,
+      "states": 1804,
+      "scope": "Calibration holdout only; historical R03 training parents"
+    },
+    "value_mse": {
+      "C0_initial": {
+        "state_pooled": 1.6192993764872539,
+        "parent_equal": 2.202408050018714
+      },
+      "C0_256": {
+        "state_pooled": 1.1709644587760009,
+        "parent_equal": 1.4426349426187959
+      },
+      "C1_initial": {
+        "state_pooled": 0.8642474699335073,
+        "parent_equal": 1.013953443165959
+      },
+      "C1_256": {
+        "state_pooled": 0.4936364011671858,
+        "parent_equal": 0.5739954848689158
+      },
+      "C2_initial": {
+        "state_pooled": 0.8642474699335073,
+        "parent_equal": 1.013953443165959
+      },
+      "C2_256": {
+        "state_pooled": 0.35167467470467845,
+        "parent_equal": 0.41805839110594833
+      },
+      "fit_only_global_constant": {
+        "state_pooled": 0.9801119966601112,
+        "parent_equal": 1.0037333556996773
+      },
+      "fit_only_conditional_constant": {
+        "state_pooled": 0.3244870376043528,
+        "parent_equal": 0.45120440081157126
+      }
+    },
+    "holdout_H_mse_final": {
+      "normalized_H": {
+        "C1_256": {"state_pooled": 0.08770585385603788, "parent_equal": 0.14157969336271917},
+        "C2_256": {"state_pooled": 0.14383114443792216, "parent_equal": 0.17162508288928463}
+      },
+      "terminal_H_credit": {
+        "C1_256": {"state_pooled": 666.0221451095787, "parent_equal": 391.1943286936655},
+        "C2_256": {"state_pooled": 2307.0885695867332, "parent_equal": 977.6335347261967}
+      },
+      "interpretation": "C2 worsens H calibration relative to C1 under both representations and both aggregations"
+    },
+    "original_saved_online": {
+      "endpoint": "collection_mixed_checkpoints; descriptive only",
+      "state_pooled": {
+        "value_mse": 1.6399554184086722,
+        "bias": 0.8750349639311034,
+        "bias_squared_fraction_of_mse": 0.46689451402580784
+      },
+      "parent_equal": {
+        "value_mse": 2.2333522209997176,
+        "bias": 1.114239529900134,
+        "bias_squared_fraction_of_mse": 0.5559041329523582
+      }
+    },
+    "actor": {
+      "states": 8150,
+      "multiple_legal_states": 8144,
+      "single_legal_states": 6,
+      "gap_gt_0_5_states": 2426,
+      "gap_gt_0_5_fraction_all": 0.2976687116564417,
+      "gap_gt_0_5_fraction_multiple": 0.29788801571709234,
+      "single_or_strictly_locked_fraction": 0.2984049079754601,
+      "residual_bound": 0.25,
+      "max_pairwise_bound": 0.5,
+      "actual_residual_state_equal_energy_common_fraction": 0.9952877456825568,
+      "actual_residual_rms": 0.00039345758127726146,
+      "actual_residual_centered_rms": 0.000027009234677388398,
+      "actual_residual_max_span": 0.0002198127913288772,
+      "post_update_any_rank_changes": 92,
+      "post_update_top1_changes": 0,
+      "pre_update_ratio_min": 1,
+      "pre_update_ratio_max": 1,
+      "post_update_ratio_min": 0.9999963517953163,
+      "post_update_ratio_max": 1.0000036894605966
+    }
+  },
+  "saved_verification": {
+    "numerical_recheck_status": "PASS",
+    "coverage": "all Actor state/variant and legal-candidate rows; all Critic predictions and summaries; all optimizer log rows",
+    "reconstruction": "Original full candidate logits and original feature tensors not persisted; reconstructed from saved prefixes/exact source-bound checkpoints; selected logit/probability tolerances 1e-6/2e-6",
+    "original_critic_predictions_missing": []
+  },
+  "resource_boundary": {
+    "cumulative_wall_s": 418.65731119999964,
+    "critic_optimizer_attempts": 768,
+    "critic_optimizer_cap": 768,
+    "actor_optimizer_attempts": 0,
+    "numerical_rechecks": 1,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "S3_reads": 0,
+    "new_scientific_computation_in_review": false,
+    "original_R03_ledger_unchanged": true
+  },
+  "routing": "NARROW_CLAIM_AND_PREPARE_SINGLE_CRITIC_CHANGE_PROPOSAL_NO_EXECUTION",
+  "original_R03_status": "STOPPED_REGISTERED_RULE_AT128;256_NOT_STARTED",
+  "does_not_authorize_training": true,
+  "does_not_modify_active_protocol": true
+}
