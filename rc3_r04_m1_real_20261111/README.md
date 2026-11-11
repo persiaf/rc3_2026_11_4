@@ -13,3 +13,5 @@
 本轮只拟合Critic，没有Actor更新或新场景、导航、教师、native、H请求。MSE改善不代表路线收益；G3失败不否证Actor居中假设。`control register/launch` 是有明确run_id和预算的执行入口，已消费的01/02不能重复；本结果不授权另起03或追加训练。
 
 ![保存数值曲线](attempts/02/M1_CURVES.svg)
+
+[GitHub提交与9个实际新增LFS对象远端字节核对](GIT_LFS_VERIFICATION.json)。
