@@ -1,0 +1,37 @@
+# Independent result-to-claim judgment
+
+Overall verdict: **partial**, with **high confidence for the bounded recorded observations**. Judge the three claims separately: shared feasibility **yes**; rank acceptance criterion **no**; fixed-endpoint rank-versus-CE numerical difference **yes, only descriptively on these known states**. This is an experiment judgment, not permission to write a confirmed general paper claim or to execute the next experiment.
+
+## 1. Shared feasibility
+
+The artifact supports a constructive existence claim on the exact saved 32-state set. One actual float32 parameter set of the registered 206-64-64-1 A1, using 32 bumps, 64 first-layer and 32 second-layer units, was checked simultaneously on all 32 states. It achieved strict target ordering everywhere with minimum margin 0.00019979476928710938, exceeding the witness requirement 1e-4. Its maximum base-to-witness KL was 0.0009515560698552198 < 0.001, maximum probability change 0.018326818283076696 < 0.02, base TV 0.018326818283076633 < 0.1, and maximum absolute correction 0.12383925914764404 < 0.25. The reported mask and finite checks passed.
+
+This improves the evidential scope over the older separate-per-state witnesses: the new witness has a single shared parameter set. FEATURE_SEPARATION reports 32 distinct teacher-feature groups and no state-ID/query-table input. Thus an unavoidable representational conflict or insufficient capacity is ruled out for this exact finite set under the tested construction and endpoint protections. It does not establish a useful smooth representation near these points, robustness to feature perturbations, or capacity on unseen scenes. The localized construction can fit this finite set without providing any generalization evidence.
+
+The independent NumPy audit records 224 passing checks of full-legal probability and centered-tanh arithmetic using actual shared-network float32 outputs. Its explicit scope excludes an independent GEMM implementation. I reviewed the saved artifacts; I did not rerun the network or duplicate this audit.
+
+## 2. Fixed rank endpoint versus CE
+
+The preregistered fixed step-128 rank result is 18/32 = 56.25%, versus 14/32 = 43.75% in the archived LR-3e-4 CE control. The finite endpoint difference is four states, or 12.5 percentage points. The registered zero-output initialization, fixed states and order, Adam settings, update count, and protections make this a relevant conditional objective diagnostic. The witness was not used as the fitting initialization.
+
+The rank acceptance criterion failed: at least 80% of 32 requires at least 26 strict successes; 18 is eight short. Its 128 accepted updates satisfy the update-acceptance component, but do not repair the ordering failure. Fourteen states remain below the strict 1e-5 margin bound, with minimum margin -0.10425472259521484, and all fourteen are listed in FAILURE_STATE_ANALYSIS.csv. Do not replace this endpoint with the intermediate rank 20/32 or compare against a cherry-picked CE intermediate.
+
+The numerical contrast supports only a point observation for this saved-state, initialization, seed and budget. It does not show a statistically reliable advantage, an objective that consistently dominates CE, or improved routes. Repeated independent runs and distributional evaluation are absent. The smaller recorded rank correction extent (maximum residual range 0.36230480670928955 and maximum absolute correction 0.22316668927669525, versus CE 0.49728673696517944 and 0.2498357892036438) is descriptive and does not by itself establish a causal mechanism or better planning.
+
+## 3. Failure interpretation and guard semantics
+
+This run had 128 accepted updates, zero rejected updates, zero rollbacks, and no repeated rejected candidate. It is incorrect to say that the guard blocked this run or that rejection replay explains its endpoint failure. The allowed protections were satisfied on every actually applied incremental update according to the artifacts.
+
+The field labeled max_step_KL in the rank endpoint description is SL-to-endpoint cumulative KL, 0.003125059112063625. It must not be compared with the incremental 0.001 threshold to declare a guard failure. The actual final previous-applied-to-candidate KL is 9.767219182753513e-7, candidate maximum probability change 0.00026614546332845435, and base TV 0.0336766038663573 < 0.1. The protocol explicitly distinguishes these references.
+
+Together, the existence witness and unsuccessful rank trajectory show that this bounded optimizer procedure did not find an already demonstrated finite-set feasible solution. They do not identify whether shared gradient interference, conditioning, the hinge objective, initialization, Adam dynamics, finite update budget, or another optimization mechanism is responsible. They also do not prove that every allowed optimizer path fails. A base-to-witness output jump passed the witness guard, but the construction was not a sequence of registered Adam updates from the sealed initialization; it therefore cannot establish reachability by that optimizer or a connected, useful learning trajectory. Conversely, absence of rejected proposals does not prove all constraint geometry is irrelevant; it specifically removes guard rejection as the observed blocking mechanism for this run.
+
+## 4. Recommended design direction and scope
+
+Prioritize a source-bound design review of shared optimization dynamics and reachability by allowed updates from the sealed initialization, including how the training objective distributes effort among successful and still-negative-margin states. On this exact set, immediately replacing the feature representation or widening the network is not justified by an impossibility argument: a shared feasible network already exists. This priority is narrower than claiming the current representation is adequate for the full task distribution. Another unstructured learning-rate sweep would not resolve the current existence-versus-optimization gap.
+
+Any new optimizer study needs a separately registered question, source and state binding, tolerances, and cumulative budget and authorization. No supplementary experiment is automatically routed or executed by this review. There is no evidence here for unseen-state generalization, complete-task feasibility, route/cost improvement, navigation, native baseline superiority, real IK certification, successful online DRL, or satisfaction of the full research objective. No critic, new tasks, navigation solves, teacher requests, native requests, full-H requests, or complete-task requests were executed in this package. All produced weights remain diagnostic_only and forbidden for deployment or formal initialization.
+
+Suggested claim: “For the exact 32 saved states, a single shared A1 parameter set constructively satisfies strict teacher ordering and the recorded protections. From the original zero-output initialization, a fixed 128-update rank diagnostic reaches 18/32 strict successes versus 14/32 for the archived same-LR CE reference, while all updates are accepted; it fails the preregistered 80% criterion. This isolates a finite-set existence-versus-optimization gap without establishing optimizer reachability, generalization, or planning benefit.”
+
+The paper claim audit is unavailable. This does not change the three experiment-level verdicts; any downstream paper-writing verdict remains provisional pending paper-to-evidence audit. The intended large-parent/frozen-local DRL research objective remains fixed.

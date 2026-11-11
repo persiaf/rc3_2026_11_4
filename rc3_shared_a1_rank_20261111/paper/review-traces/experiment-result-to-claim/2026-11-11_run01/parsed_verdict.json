@@ -1,0 +1,82 @@
+{
+  "schema": "experiment-result-to-claim-review-v1",
+  "experiment_id": "rc3_shared_a1_rank_20261111",
+  "reviewer_role": "independent_paper_architect_reviewer",
+  "claim_supported": "partial",
+  "confidence": "high",
+  "confidence_scope": "Recorded bounded finite-state observations; causal failure mechanism remains unresolved.",
+  "claims": {
+    "shared_feasibility": {
+      "claim_supported": "yes",
+      "scope": "Exact saved 32 states, one actual float32 shared 206-64-64-1 A1, original endpoint protections",
+      "all_states_strict_success": 32,
+      "minimum_margin": 0.00019979476928710938,
+      "parameter_sha256": "000b5ba7e01819f25e15396cd51661a0f6be212fa3b5c8800902e2780294ddd8",
+      "numpy_audit": "PASS: 224 probability/centered-tanh checks on actual network outputs; not independent GEMM"
+    },
+    "rank_pass": {
+      "claim_supported": "no",
+      "registered_endpoint_step": 128,
+      "strict_successes": 18,
+      "state_count": 32,
+      "fraction": 0.5625,
+      "required_fraction": 0.8,
+      "required_count": 26,
+      "accepted": 128,
+      "rejected": 0,
+      "rollbacks": 0,
+      "failed_state_margins": 14,
+      "reason": "Ordering component failed despite update acceptance and applied protections passing."
+    },
+    "rank_vs_CE_fixed_endpoint": {
+      "claim_supported": "yes",
+      "qualification": "Finite descriptive point difference only; no reliable general superiority claim",
+      "learning_rate": 0.0003,
+      "step": 128,
+      "rank_successes": 18,
+      "CE_successes": 14,
+      "difference_states": 4,
+      "difference_percentage_points": 12.5,
+      "intermediate_checkpoint_selection": false,
+      "both_miss_registered_80_percent": true
+    }
+  },
+  "what_results_support": [
+    "Shared finite-set representability and endpoint guard feasibility for the exact 32 saved states.",
+    "The fixed rank trajectory has a descriptive +4-state endpoint difference versus archived same-LR CE.",
+    "The tested registered optimizer trajectory fails to find the demonstrated finite-set solution within 128 updates.",
+    "No guard rejection or rollback blocked this rank run."
+  ],
+  "what_results_dont_support": [
+    "Passing the registered rank diagnostic.",
+    "A fundamental shared representation impossibility on this exact finite set.",
+    "Guard rejection, repeated rejected candidates, or cumulative KL as the observed cause of rank failure.",
+    "Reachability of the witness by the registered Adam update path from the sealed initialization.",
+    "Any general optimizer impossibility or statistically reliable rank-over-CE superiority.",
+    "Unseen-state robustness or generalization, complete tasks, routes/cost gains, navigation, native baseline superiority, real IK certification, successful online DRL, or full research-goal achievement."
+  ],
+  "guard_semantics": {
+    "endpoint_SL_to_model_KL_descriptive": 0.003125059112063625,
+    "final_incremental_candidate_KL": 9.767219182753513e-7,
+    "final_incremental_candidate_probability_change": 0.00026614546332845435,
+    "final_base_TV": 0.0336766038663573,
+    "endpoint_cumulative_KL_is_not_incremental_guard_failure": true,
+    "all_applied_incremental_guards_passed": true,
+    "observed_guard_blocking": false
+  },
+  "missing_evidence": [
+    "A source-bound mechanism review distinguishing shared optimization/conditioning/objective dynamics from other causes.",
+    "Reachability by an authorized optimizer update trajectory from the sealed initialization.",
+    "Independent repeats and unseen-state evaluation for any broader comparative or generalization claim.",
+    "Separate complete-task and route evidence before planning-performance claims."
+  ],
+  "suggested_claim_revision": "On the exact saved 32 states, one shared A1 constructively satisfies strict teacher ordering and recorded protections. A fixed rank diagnostic from the original zero-output initialization reaches 18/32 at step128 versus archived same-LR CE 14/32, with 128/128 updates accepted; it still fails the original 80% threshold. This is an existence-versus-optimization diagnostic, not optimizer reachability, generalization, or route benefit.",
+  "next_experiments_needed": "No experiment is launched. First prioritize a separately authorized, source-bound design review of shared optimization dynamics and allowed-update reachability; do not automatically replace representation or perform another LR sweep.",
+  "paper_claim_audit": "unavailable",
+  "experiment_verdict_blocked_by_missing_paper_audit": false,
+  "downstream_writing_verdict": "provisional - no paper claim audit available",
+  "pending_external_review": false,
+  "diagnostic_only": true,
+  "deployment_or_formal_initialization_authorized": false,
+  "fixed_DRL_research_goal_changed": false
+}

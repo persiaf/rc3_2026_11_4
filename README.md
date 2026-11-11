@@ -1,7 +1,7 @@
 <!-- SHARED_A1_RANK_CURRENT_BEGIN -->
-## 当前：共享A1可行性与条件排序诊断
+## 当前：共享A1见证PASS，排序固定终点仍FAIL
 
-[独立任务入口](rc3_shared_a1_rank_20261111/README.md)。固定原32封存状态，先验证一套共享A1参数；通过后才运行最多128次lr3e-4排序诊断。旧三学习率FAIL、323次尝试及在线NOT_RUN保持，不自动触发在线DRL。
+[实际全部交付](rc3_shared_a1_rank_20261111/README.md)：原32封存状态上，一套实际float32 A1同时满足32/32排序和原保护。条件排序损失固定step128为18/32，对旧同LR CE14/32净增4状态，仍低于原80%标准；128次全部接受、无拒绝/回滚，不能归因guard挡住本run。全部权重仅诊断，在线不运行，旧三LR FAIL/323尝试/在线NOT_RUN保持。
 <!-- SHARED_A1_RANK_CURRENT_END -->
 
 <!-- ACTOR_POSITIVE_SCALE_CURRENT_BEGIN -->
