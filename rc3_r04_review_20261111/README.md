@@ -23,3 +23,5 @@
 必须使用原准确Python3.10.20/Torch2.12.1+cu126/NumPy2.2.6环境。现有闭合/失败账本存在即拒绝重启，不能改目录重置消费。代码准备、Git/LFS维护与工程计算分账；结果见UNIT_TEST_RESULTS、OFFLINE_INTERFACE_RESULTS、EVIDENCE_AUDIT和RESOURCE_ACCOUNTING。
 
 37个人工单元用例及8个保存base-logit状态的人工feature接口，不重建真实状态、不加载真实SL权重、不生成完整路线。所有Actor/Critic optimizer、新场景、导航、教师、native、H、原60和旧S3请求均为0。R03的128停止、256未运行及前轮全部负结论原样保留。
+
+实际完成：37/37单元和离线接口PASS；41,624,938项保存CSV/来源检查PASS，包含1568条窗口阶段summary复算；累计150.839秒、256 module调用/4次反向、所有optimizer0。独立终审为[GO_ENGINEERING_AND_DESIGN](FINAL_INDEPENDENT_REVIEW.md)，科学仍NOT_READY/NOT_AUTHORIZED。具体消费与未执行项见[实际报告](EXPERIMENT_REPORT.md)及[资源账](RESOURCE_ACCOUNTING.json)。

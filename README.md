@@ -1,5 +1,11 @@
 # RC3：可达约束下的二维静态任务路径规划
 
+## 2026-11-11：R04长期价值与相对策略方案及工程审查
+
+[本轮R04完整设计和交付](rc3_r04_review_20261111/README.md)已完成C1、训练折条件基线、合法集合pre-tanh居中Actor的数学与接口原型。37项人工单元、8个保存SL-logit状态接口和41,624,938项保存CSV检查PASS，累计150.839秒；所有Actor/Critic optimizer和新规划请求为0。独立终审为设计/工程GO，生产schema迁移及校准门槛仍未通过，**未获联合PPO许可、未启动科学训练**。居中不保证post-tanh均值为0或突破原gap界；条件基线尚非必需。
+
+[前轮Critic尺度与Actor响应诊断](rc3_critic_diagnostics_20261111/README.md)保留C1/C2的数值改善与H代价、29.79%理论锁定和99.53%共同能量。R03在128停止、256未开始、ON/OFF路线未变；原60和旧S3、旧模型与结果保持原边界。以下历史全文保留。
+
 ## 2026-11-10：206维真实PPO与ON/OFF有界训练结果
 
 [本轮正式训练器集成](rc3_conservative_refinement/integration_20261110/README.md)已实现独立206维PPO、准确SL256永久冻结、L/K/H Critic、逐步guard与Actor/Adam严格回滚、闭合账本恢复、轻量Actor部署及完整请求计时。90项测试与20个真实工程请求通过，实际5次Actor/4次Critic调用仅用于工程验收；此前两次失败原账保留。Fixed3/Detour16真实示例有效。

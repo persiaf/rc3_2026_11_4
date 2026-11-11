@@ -36,3 +36,5 @@
 新增代码位于本目录：相对head、严格mapping loader、typed C1、fit-only条件表、排序/ratio接口及独立人工测试。没有改旧科学源码、历史模型、用户Word或根.gitattributes。源码和输入在首次工程计算前绑定，全部optimizer与科学请求cap为0；实际消费及失败保留在本目录RESOURCE_ACCOUNTING。
 
 未完成的生产阻断会在R04_ACCEPTANCE_CRITERIA的G2保持未通过；工程成功只允许记录“原型工程通过”，不得升级为“联合PPO已获许可”或“R04性能改善”。
+
+本轮实际结果现已闭合：37/37单元、8组保存logit接口及41,624,938项保存算术检查PASS，累计150.839秒；独立终审为GO_ENGINEERING_AND_DESIGN，G2/G3仍阻断。详见FINAL_INDEPENDENT_REVIEW与RESOURCE_ACCOUNTING，原静态REVISE及首算前修复未删除。
