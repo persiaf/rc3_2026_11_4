@@ -1,7 +1,7 @@
 <!-- SHARED_CONSTRAINT_OPT_CURRENT_BEGIN -->
-## 当前：固定A1共享约束优化诊断
+## 当前：固定A1共享约束优化FAIL，结束此诊断支线
 
-[独立任务入口](rc3_shared_constraint_opt_20261111/README.md)。固定原32状态与零初始化，最多32个Jacobian共同更新子问题/192候选；此集合最后一轮机制筛选，不自动启动在线DRL。旧共享32/32、rank18/32FAIL、CE14/32与全部资源保持。
+[全部实际交付](rc3_shared_constraint_opt_20261111/README.md)：32最终软约束QP完整收敛，112参数候选、32接受、80精确恢复；最终13/32，未达26/32。隔离22位置存在性核验PASS不改变优化FAIL。旧共享32/32、rank18/32FAIL、CE14/32与全部资源保持，不追加损失/配置/训练，不启动在线DRL。
 <!-- SHARED_CONSTRAINT_OPT_CURRENT_END -->
 
 <!-- SHARED_A1_RANK_CURRENT_BEGIN -->

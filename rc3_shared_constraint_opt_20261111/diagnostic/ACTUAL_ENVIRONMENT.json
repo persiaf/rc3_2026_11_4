@@ -1,0 +1,42 @@
+{
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "real_Torch_classification": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "solver",
+        "path": "rc3_shared_constraint_opt_20261111/solver.py",
+        "sha256": "15eef4d5b445d8abf6cc4bd0a714576c22ff318e76efa7ea5f2fcb876efa8566",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "experiment",
+        "path": "rc3_shared_constraint_opt_20261111/experiment.py",
+        "sha256": "b82c839fd48d81e86ffe8dd0642d52ac1a2aa4b979929a73a5c6fd60d1d93cd8",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "code_commit": "9df485861b568d8dd7b358ec8e03f21e2f33b765"
+}

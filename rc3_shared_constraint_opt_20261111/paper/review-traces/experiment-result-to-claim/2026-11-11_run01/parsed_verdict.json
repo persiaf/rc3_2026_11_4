@@ -1,0 +1,123 @@
+{
+  "schema": "independent-result-to-claim-v1",
+  "experiment": "rc3_shared_constraint_opt_20261111",
+  "reviewer_role": "independent paper architect/reviewer",
+  "claim_supported": "no",
+  "confidence": "high",
+  "quality_status": "FAIL",
+  "engineering_completion": "32 final outer subproblems COMPLETE; 22 intermediate cuts incomplete before completion",
+  "intended_claim": "Frozen single QP mechanism reaches >=26/32 strict margins >1e-5 from the exact original zero-output shared Actor within 32 outer QPs/192 candidates under actual hinge and original incremental guards.",
+  "what_results_support": [
+    "Final retained model improves original actual float32 hinge from 0.057234799256548285 to 0.01057092403061688 but has only 13/32 strict teacher top1.",
+    "All 32 final soft-slack linearized QPs complete at registered full-gap and all-constraint tolerances; active-row rank scope only.",
+    "Recorded certificate arithmetic is consistent within the reported errors, without fresh model or solver calls.",
+    "112 actual candidates produce 32 accepted updates and 80 exact rejection restores; actual nonlinear full-step response usually does not realize predicted descent.",
+    "Post-optimization isolated 22-position witness-informed parameter assignment passes inspected finite/guard checks and leaves optimized model unchanged."
+  ],
+  "what_results_dont_support": [
+    "Passing the >=26/32 frozen quality gate, DRL/complete-route or long-horizon improvement.",
+    "Hard all-margin separability from mere feasibility of a soft-slack QP, or full-Jacobian rank from active-row rank.",
+    "Unique failure attribution to gradient conflicts, guards, representation capacity, or impossibility of DRL.",
+    "Label-independent optimization or learning reachability from a diagnostic path that directly uses a shared witness.",
+    "Continuous safety of the untested output-parameter jump between the last zero-output position and shared endpoint.",
+    "Equal-compute or general superiority claims against historical hinge18/32 and CE14/32."
+  ],
+  "metrics": {
+    "final_teacher_top1": 13,
+    "states": 32,
+    "minimum_required": 26,
+    "final_hinge": 0.01057092403061688,
+    "terminal": "OUTER_LIMIT",
+    "outer_subproblems": 32,
+    "actual_candidates": 112,
+    "accepted": 32,
+    "rejected": 80
+  },
+  "rejection_taxonomy": {
+    "loss_only": 67,
+    "guard_only": 1,
+    "both": 12,
+    "loss_failed_total": 79,
+    "protection_failed_total": 13,
+    "protection_failure_metric": "incremental KL >0.001; no recorded probability-change/base-TV excess",
+    "full_step_actual_descent_count": 1,
+    "full_step_accepted_count": 0,
+    "accepted_scales": {
+      "0.5": 1,
+      "0.25": 14,
+      "0.125": 17
+    }
+  },
+  "certificate_arithmetic": {
+    "scope": "read-only arithmetic on 54 new certificate records; final record of each of 32 outer subproblems",
+    "certificate_count": 54,
+    "final_outer_count": 32,
+    "alpha_nonnegative": true,
+    "per_state_alpha_sum_le_1_over_32": true,
+    "maximum_direction_norm_squared_vs_alpha_Gram_alpha_over_REG_squared_absolute_error": 5.329070518200751e-15,
+    "maximum_full_primal_reconstruction_absolute_error": 6.938893903907228e-18,
+    "maximum_dual_using_direction_reconstruction_absolute_error": 7.589415207398531e-19,
+    "maximum_gap_reconstruction_absolute_error": 6.938893903907228e-18,
+    "maximum_full_constraint_residual_reconstruction_absolute_error": 2.859583229930518e-18,
+    "maximum_full_slack_reconstruction_absolute_error": 3.469446951953614e-18,
+    "maximum_final_full_duality_gap": 9.095879532900931e-07,
+    "maximum_final_all_constraint_residual": 7.578421666598611e-08,
+    "status": "PASS_RECORDED_ARITHMETIC_ONLY",
+    "new_model_or_solver_calls": 0
+  },
+  "missing_evidence": [
+    "Learning reachability without witness-informed assignment",
+    "Unseen-state generalization",
+    "Complete planning and long-horizon return",
+    "Equal-compute comparison",
+    "Unique causal identification"
+  ],
+  "suggested_claim_revision": "On the fixed32 states, this single complete linearized soft-slack QP plus guarded actual backtracking reduces hinge but ends at13/32, below26/32; an isolated shared assignment gives label-dependent existence evidence only.",
+  "next_experiments_needed": [],
+  "next_experiments_scope_note": "Evidence gaps are not an authorization or recommendation to continue this final screen; close the diagnostic branch under the user instruction.",
+  "paper_claim_audit": "unavailable",
+  "downstream_paper_writing_status": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "independent_review_completed": true,
+  "all_weights_diagnostic_only": true,
+  "deployment_or_formal_initialization_forbidden": true,
+  "resource_counts": {
+    "subproblem_optimizations": 32,
+    "cutting_rounds": 54,
+    "dual_projected_iterations": 9050,
+    "exact_Jacobian_rows": 1050,
+    "all_constraint_JVP_checks": 54,
+    "actual_parameter_candidates": 112,
+    "applied_updates": 32,
+    "exact_restores": 80,
+    "isolated_path_assignments": 22
+  },
+  "core_charged_wall_s": 62.6488287773127,
+  "full_review_wall_accounting": "Parent executor closes timer after all review artifacts; total task cap1800s, no reset.",
+  "source_hashes": {
+    "PROTOCOL.json": "19034425ca548c5b93265888476ed11a7c0690bd8121f7de702f197feff1ebd9",
+    "IMPLEMENTATION_REVIEW.md": "c36818aa897f93ee7bba8c03409525fe21d253a0a4623928b0db3a2d6ed8ebd4",
+    "OPTIMIZATION_RESULT.json": "e2cde6da00073e41773eec8dd11faa179b92403dfb805ce43633998d48bce811",
+    "LOCAL_SUBPROBLEM_LOG.csv": "fe93a30f2d351d9f4c4e42593b8b755983ca6621f62598b6d4b27b425fab5a4b",
+    "ACTUAL_STEP_RESPONSE.csv": "2ffcb8dc04d68d7f94a6ba037325d78eaae14b57aeb1f88ce6377be2f28bd090",
+    "ISOLATED_PATH_PROBE.json": "5603eca6889d3729e010169f7f6ab912dba9ad8a38d8a0ea2d5cf26503c9cb31",
+    "diagnostic/RESOURCE_ACCOUNTING.json": "63248ea30dbe8c774639faefeb3544c923af2790fd02099cfdc9a601c01d75eb",
+    "ENTRY_CONSUMPTION.json": "3c213f924aa4b44afd7b8c0e93fa04c2a40c918447e58e0efd79dbceec3cef83",
+    "solver.py": "15eef4d5b445d8abf6cc4bd0a714576c22ff318e76efa7ea5f2fcb876efa8566",
+    "experiment.py": "b82c839fd48d81e86ffe8dd0642d52ac1a2aa4b979929a73a5c6fd60d1d93cd8",
+    "diagnostic/SUBPROBLEM_CERTIFICATES.jsonl.gz": "8a51ea2960101bf2b6b13cbb9649f514519cf6f63484262a0e02dc53cb1817a1",
+    "diagnostic/PREFLIGHT_TRACE.jsonl": "116d0b7a5ac5c6daf4354e84a11cf29767a1cba3f0eb469f1081724846ed847f",
+    "diagnostic/EVENTS.jsonl": "1037ba49b889cd64600605623426dc38009d427814e2fb7e88d850a102cacf38",
+    "REVIEW_START.json": "87e0d79bf09111ad5b9e459c696fd18a9e0c2b28de756e8fe9f52cc07182ecf5",
+    "control.py": "1ec878d4c74d34fbfc1b80e6601aa85c8eae0c5cba636c1a000877e05dd58dcf",
+    "REGISTRATION_RECEIPT.json": "084489e0a4975bc475d999699dee10945a216bd3c4f0fee860ccc28fe29d9766"
+  },
+  "completed_utc": "2026-11-11T12:53:21.193508+00:00",
+  "witness_isolation": {
+    "pre_registration_integrity_byte_read": true,
+    "first_parameter_semantic_load": "after JOINT_final and OPTIMIZATION_RESULT save, into isolated deepcopy",
+    "used_for_main_optimization_initialization_target_or_direction": false,
+    "literal_protocol_bytes_first_read_claim": "inaccurate if read as all byte I/O; registration hashes WITNESS before computation",
+    "frozen_evidence_rewritten": false
+  }
+}
