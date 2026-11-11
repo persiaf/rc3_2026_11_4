@@ -15,3 +15,5 @@
 - [历史字节边界](HISTORICAL_BOUNDARY_VERIFICATION.json) · [Git关系/网络修复](GIT_BASELINE_RELATIONS.json) · [远端SHA/LFS实际字节核对](GIT_LFS_VERIFICATION.json)
 
 共享可行不等于有限步优化可达，更不等于路线收益。优先研究固定表示上的共享排序优化/允许路径，不再自动扫学习率、增步、扩幅或放宽guard。不合并main，不提交用户Word和无关文件。
+
+结果提交`09b1a5c08b2ac78d341eeb46bda175d6add50c59`已推送，实际远端SHA匹配。全新下载核验6条LFS路径、5个唯一对象、32,789,060字节，SHA256/大小/指针全部PASS。后续提交仅记录收据与索引。网络失败及修复见[GIT_PUBLICATION_ATTEMPTS.json](GIT_PUBLICATION_ATTEMPTS.json)。

@@ -1,5 +1,70 @@
 {
-  "status": "PENDING_PUBLICATION",
-  "expected_new_unique_objects": 5,
-  "main_merge": false
+  "status": "PASS",
+  "repository": "https://github.com/persiaf/rc3_2026_11_4",
+  "branch": "codex/rc3-shared-a1-rank-20261111",
+  "base_commit": "32c42f95297250629dc990270a689ff138cc5cbc",
+  "executed_source_commit": "58a1ada7e42160c93f2d02bf66a5a517e8282c10",
+  "verified_results_commit": "09b1a5c08b2ac78d341eeb46bda175d6add50c59",
+  "remote_branch_sha_observed_after_results_push": "09b1a5c08b2ac78d341eeb46bda175d6add50c59",
+  "verified_utc": "2026-11-11T12:25:42.657110+00:00",
+  "method": "Push reported5/5 unique objects and successful ls-remote matched result SHA; fresh git-lfs fetch from origin/result SHA into initially absent isolated storage. All5 actual-object SHA256/size and6 committed-pointer/local-artifact assertions completed before an additional redundant ref lookup failed TLS. Completed byte checks retained without rehashing; final receipt child remote ref verified after its push.",
+  "lfs_paths": [
+    {
+      "path": "rc3_shared_a1_rank_20261111/diagnostic/RANK_STATE_DETAILS.jsonl.gz",
+      "oid_sha256": "0558561cf20d590f640d00df1a6c35c8520f5168c6ac617f0ab08d2a2a519633",
+      "bytes": 32373450,
+      "remote_actual_bytes_match": true,
+      "committed_pointer_match": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_a1_rank_20261111/diagnostic/RANK_step0000.diagnostic.pt",
+      "oid_sha256": "8d0f887dbe038dbd9cf5b0f17cf9e0a80fc35b796e72c76c0e397c8003d5f88e",
+      "bytes": 73365,
+      "remote_actual_bytes_match": true,
+      "committed_pointer_match": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_a1_rank_20261111/diagnostic/RANK_step0128_final.diagnostic.pt",
+      "oid_sha256": "4ddea309da4decd5fc9b64065cc205b7d10a640f5049bf33505b7c78e63a684f",
+      "bytes": 217371,
+      "remote_actual_bytes_match": true,
+      "committed_pointer_match": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_a1_rank_20261111/diagnostic/SHARED_attempt01.diagnostic.pt",
+      "oid_sha256": "6d5f482c12f42692f7d27af402515838a1d5a9b839c0f5fa4d212fda5643dfe7",
+      "bytes": 72853,
+      "remote_actual_bytes_match": true,
+      "committed_pointer_match": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_a1_rank_20261111/diagnostic/SHARED_CONSTRUCTION_STATES.jsonl.gz",
+      "oid_sha256": "862119cc8a22351088060e556b046c295eba5003f93b3d64ac07108ccb844067",
+      "bytes": 52021,
+      "remote_actual_bytes_match": true,
+      "committed_pointer_match": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_a1_rank_20261111/diagnostic/SHARED_WITNESS.diagnostic.pt",
+      "oid_sha256": "6d5f482c12f42692f7d27af402515838a1d5a9b839c0f5fa4d212fda5643dfe7",
+      "bytes": 72853,
+      "remote_actual_bytes_match": true,
+      "committed_pointer_match": true,
+      "local_bytes_match": true
+    }
+  ],
+  "lfs_path_count": 6,
+  "new_unique_object_count": 5,
+  "new_unique_object_bytes": 32789060,
+  "duplicate_role_paths_share_one_oid": true,
+  "redundant_post_byte_ref_lookup": "TLS handshake failed; previous actual successful result-ref lookup retained",
+  "temporary_verification_store_removed": true,
+  "main_merged": false,
+  "user_unrelated_changes_submitted": false,
+  "followup": "Receipt and metadata only committed in child of verified_results_commit; final child SHA verified after push and reported in delivery."
 }

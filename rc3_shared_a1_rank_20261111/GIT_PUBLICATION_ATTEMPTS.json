@@ -1,0 +1,60 @@
+{
+  "status": "RESULTS_PUSHED_REMOTE_BYTES_VERIFIED",
+  "scientific_entry_repeated": false,
+  "scientific_results_unchanged": true,
+  "attempts": [
+    {
+      "action": "initial_fetch",
+      "backend": "OpenSSL",
+      "status": "TLS_EOF"
+    },
+    {
+      "action": "fetch_HTTP1.1",
+      "backend": "OpenSSL",
+      "status": "TLS_EOF"
+    },
+    {
+      "action": "fetch_and_baseline_lsremote",
+      "backend": "Schannel",
+      "status": "PASS"
+    },
+    {
+      "action": "result_push1",
+      "backend": "Schannel",
+      "LFS_unique_upload": "5/5 completed",
+      "git_pack": "RPC35 handshake disconnect"
+    },
+    {
+      "action": "result_push2",
+      "backend": "Schannel+HTTP1.1",
+      "status": "handshake failure"
+    },
+    {
+      "action": "result_push3",
+      "backend": "Schannel+TLS1.2+HTTP1.1",
+      "status": "LFS_lock_verify_EOF"
+    },
+    {
+      "action": "result_push4",
+      "backend": "Schannel+TLS1.2+HTTP1.1; per-command lfs.locksverify=false",
+      "status": "PASS",
+      "remote_sha": "09b1a5c08b2ac78d341eeb46bda175d6add50c59",
+      "note": "Only new non-lockable diagnostic paths; normal LFS upload checks retained, no global/TLS verification changes"
+    },
+    {
+      "action": "fresh_remote_LFS_fetch_and_all_byte_checks",
+      "status": "PASS",
+      "paths": 6,
+      "unique_objects": 5,
+      "bytes": 32789060
+    },
+    {
+      "action": "extra_post_byte_ref_lookup",
+      "status": "TLS handshake failure",
+      "effect": "None on completed byte checks; previous successful result ref lookup used; no repeated science"
+    }
+  ],
+  "no_force_push": true,
+  "no_main_merge": true,
+  "maintenance_separate_from_scientific_900s": true
+}
