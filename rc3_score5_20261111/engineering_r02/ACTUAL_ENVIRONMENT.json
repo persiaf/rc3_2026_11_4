@@ -1,0 +1,48 @@
+{
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "real_Torch_classification": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "actor",
+        "path": "rc3_score5_20261111/actor.py",
+        "sha256": "b90b8fbace6e79a0e921438a7e154eb81b80fba9667ee56b9e4b814ee9262a0a",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "trainer",
+        "path": "rc3_score5_20261111/trainer.py",
+        "sha256": "43bd8c315d5bc664c0684416bf354230db983911cd288432f90d944dc53d46bb",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "runtime",
+        "path": "rc3_score5_20261111/runtime.py",
+        "sha256": "cc6a2acb0e133d504a672047d5db65e7c7599707e7c89efa4f6d28a5f77efed0",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "code_commit": "ebe566f857a519d2ce19009e49fcd1a3f6fbff8b"
+}

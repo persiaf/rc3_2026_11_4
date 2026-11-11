@@ -1,0 +1,105 @@
+{
+  "schema": "rc3-process-tree-supervision-v1",
+  "run_id": "score5-20261111-engineering-r02",
+  "supervisor_pid": 28812,
+  "command": [
+    "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "rc3_score5_20261111.worker",
+    "engineering"
+  ],
+  "start_utc": "2026-11-11T14:46:31.273422+00:00",
+  "wall_limit_s": 595.2625157781999,
+  "closeout_reserve_s": 15.0,
+  "force_termination_at_s": 580.2625157781999,
+  "termination_tolerance_s": 2.0,
+  "poll_interval_s": 0.05,
+  "root_pid": 10200,
+  "worker_exit_code": 1,
+  "root_exit_confirmed": true,
+  "job_active_processes_at_end": 0,
+  "assigned_before_resume": true,
+  "timeout_triggered": false,
+  "job_termination_requested": true,
+  "status": "WORKER_FAILED",
+  "events": [
+    {
+      "event": "private_job_created",
+      "elapsed_s": 0.10477662086486816,
+      "utc": "2026-11-11T14:46:31.378198+00:00",
+      "job_name": "RC3_M1_b067cdf2db6642874ecb056c871bee0a"
+    },
+    {
+      "event": "worker_created_suspended",
+      "elapsed_s": 0.11117386817932129,
+      "utc": "2026-11-11T14:46:31.384595+00:00",
+      "pid": 10200
+    },
+    {
+      "event": "worker_resumed",
+      "elapsed_s": 0.11117386817932129,
+      "utc": "2026-11-11T14:46:31.384595+00:00"
+    },
+    {
+      "event": "root_exit_observed",
+      "elapsed_s": 20.942915439605713,
+      "utc": "2026-11-11T14:46:52.216337+00:00",
+      "exit_code": 1,
+      "active_processes": 1
+    },
+    {
+      "event": "job_termination_requested",
+      "elapsed_s": 20.942915439605713,
+      "utc": "2026-11-11T14:46:52.216337+00:00",
+      "reason": "root_exited_descendants_remain"
+    },
+    {
+      "event": "entire_experiment_tree_exit_confirmed",
+      "elapsed_s": 21.00406265258789,
+      "utc": "2026-11-11T14:46:52.277484+00:00"
+    }
+  ],
+  "receipt_write_errors": [],
+  "worker_last_heartbeat": {
+    "run_id": "score5-engineering-r02",
+    "pid": 24172,
+    "wall_unix_s": 1794408410.2189705,
+    "monotonic_s": 11653.0770434,
+    "stage": "engineering_real_execution",
+    "operation_in_progress": null,
+    "last_completed_operation": {
+      "event": "hash_end",
+      "run_id": "score5-engineering-r02",
+      "monotonic_s": 11652.7744408,
+      "wall_unix_s": 1794408409.9165006,
+      "elapsed_s": 18.383484100000715,
+      "stage": "engineering_real_execution",
+      "operation": "hash",
+      "path": "rc3_nav_value/r1/oracle.py",
+      "sha256": "cd0192bed7be7ce8b82c4f5bde4f0fba528c79cf732d057b92a3a06b613489c3",
+      "bytes": 21550,
+      "seconds": 0.021452799999678973,
+      "status": "GO"
+    },
+    "last_event": "stage_end"
+  },
+  "arbitrary_process_enumeration": false,
+  "unrelated_process_termination": false,
+  "temporary_system_sleep_prevention_requested": true,
+  "sleep_prevention_scope": "Temporary thread ES_SYSTEM_REQUIRED; does not override explicit user/system suspension or alter power settings",
+  "heartbeat_writer_still_blocked_at_close": false,
+  "temporary_system_sleep_prevention_restored": true,
+  "termination_started_s": 20.942915439605713,
+  "entire_tree_exit_confirmed_s": 21.00406265258789,
+  "termination_elapsed_s": 0.061147212982177734,
+  "actual_deadline_overshoot_s": 0.0,
+  "monotonic_elapsed_s": 21.10900000000038,
+  "utc_wall_elapsed_s": 21.112284660339355,
+  "elapsed_s": 21.112284660339355,
+  "finish_utc": "2026-11-11T14:46:52.385706+00:00",
+  "execution_wall_violation": false,
+  "receipt_path": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_score5_20261111\\engineering_control_r02\\SUPERVISOR_RECEIPT.json"
+}

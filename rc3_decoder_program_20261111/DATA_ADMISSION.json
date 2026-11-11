@@ -1,0 +1,23 @@
+{
+  "status": "BLOCKED_MISSING_FULL_TEACHERS",
+  "source": "rc3_score5_20261111/SAVED_TEACHER_METADATA.json",
+  "source_sha256": "5c0db1f1208d6e1a448d529272258221214106668bf0ccd02f941c8c816cbd15",
+  "legal_teacher_pool_size": 256,
+  "physical_training_parents": 96,
+  "existing_labels_by_size": {
+    "10x10": 0,
+    "4x3": 86,
+    "6x6": 84,
+    "8x8": 86
+  },
+  "requirement": "Same PG/SL task schedule, 50% full10x10, every SL task has an existing legal full sequence",
+  "complete_teacher_labels_missing": true,
+  "minimum_32768_slot_full_occurrences": 16384,
+  "minimum_distinct_missing_full_task_labels": 1,
+  "no_implicit_new_teacher_queries": true,
+  "no_local_only_SL_substitution": true,
+  "original60_and_oldS3_reads": 0,
+  "new_teacher_pool_scan": 0,
+  "actual_teacher_labels_read_this_registration": 0,
+  "registration_reads": "Only existing saved metadata plus S1_teacher and S2_train registry fields; no task/result semantics from sealed branches"
+}

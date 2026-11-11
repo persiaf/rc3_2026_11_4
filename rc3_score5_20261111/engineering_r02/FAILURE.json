@@ -1,0 +1,42 @@
+{
+  "error_type": "KeyError",
+  "error": "'export_attempts'",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_score5_20261111\\worker.py\", line 42, in main\n    (engineering.run if stage=='engineering' else science.run)(ledger,trace,inputs,identity)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_score5_20261111\\engineering.py\", line 24, in run\n    a=request(ledger,inputs,spec,f'eng:init:{i}','Score5-PG',actor=pg,greedy=True)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_score5_20261111\\runtime.py\", line 75, in request\n    result=ledger.request(rid,compute,role=role,op=op,kind=kind)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_frozen_reference_pg_20261111\\common.py\", line 63, in request\n    result=compute();record=result['record'] if 'record' in result else result\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_score5_20261111\\runtime.py\", line 58, in compute\n    states.append(capture(env));actions.append(a);logits.append(z.detach().clone());env.step(a+1)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local\\environment.py\", line 41, in step\n    self.result=self.terminal(self.problem,raw)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_score5_20261111\\runtime.py\", line 49, in terminal\n    with _instrument(internal):return finish(p,r,stats)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_global_local\\terminal.py\", line 47, in finish\n    if stats is not None:stats['export_attempts']+=1\nKeyError: 'export_attempts'\n",
+  "resource": {
+    "stage": "engineering",
+    "status": "FAILED_PRESERVED",
+    "wall_s": 21.50397539649788,
+    "counts": {
+      "requests": 1,
+      "requests_completed": 0,
+      "requests_failed": 1,
+      "actor_optimizer_attempts": 0,
+      "actor_optimizer_completed": 0,
+      "critic_optimizer_attempts": 0,
+      "teacher_replays": 0,
+      "new_teacher_requests": 0,
+      "new_scenes": 0,
+      "navigation_solves": 0,
+      "original60_reads": 0,
+      "oldS3_reads": 0,
+      "full_H_calls": 0,
+      "native_requests": 0,
+      "feature_states": 0,
+      "feature_s": 0.0,
+      "input_prepare_s": 0.0,
+      "request_io_s": 0.0,
+      "internal_search_counts": {},
+      "internal_search_inclusive_s": {},
+      "internal_search_exclusive_s": {},
+      "cache_rebuilds": 1,
+      "teacher_label_replays": 0,
+      "backward_calls": 0
+    },
+    "caps": {
+      "requests": 24,
+      "actor_optimizer_attempts": 12,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 600
+    }
+  }
+}

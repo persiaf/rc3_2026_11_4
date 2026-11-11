@@ -1,0 +1,1885 @@
+{
+  "schema": "rc3-decoder-program-v1",
+  "run_id": "decoder-program-20261111-v1",
+  "base_commit": "2f6dc749ba3533d18f12254dd2ba50e1d52bcc40",
+  "normative_sha256": "663da4662b3b4ed412df07678a78cc2e327ad27731b83f3648d587fcb9528e03",
+  "seeds": [
+    2026111101,
+    2026111102,
+    2026111103
+  ],
+  "deploy_seed": 2026111101,
+  "model": {
+    "architecture": "Unchanged GlobalLocalPolicy hidden64",
+    "total_scalars": 65088,
+    "D5_trainable_scalars": 25152,
+    "allowlist": [
+      "key.weight",
+      "dynamic.weight",
+      "nav.weight",
+      "query.weight",
+      "query.bias"
+    ],
+    "frozen_scalars": 39936,
+    "FullPG_parameters": "All original Actor parameters",
+    "main_input": "Original global14/task5/candidate7/prefixGRU64; not detached206 residual input"
+  },
+  "optimization": {
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "clip_norm": 1,
+    "entropy_weight": 0,
+    "batch": 8,
+    "full": 4,
+    "local_rotation": [
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "PG_updates": 4096,
+    "SL_U": 4096,
+    "SL_max": 16384,
+    "PG_loss": "mean_i detach(J_H_sample_i-J_H_FrozenSL_same_task_i)*sum_t logpi(a_it)",
+    "SL_loss": "mean_episode mean_action masked CE",
+    "gamma": 1,
+    "critic_updates": 0,
+    "guard": false,
+    "extra_A1_amplitude": false,
+    "reference": "FrozenSL same-task complete greedy+unchanged H; no B-cond/global table, no normalization or critic",
+    "formal_initialization": "Exact legal SL256 only, never engineering or diagnostic weights"
+  },
+  "budget": {
+    "total_wall_s": 345600,
+    "training_pool_wall_s": 259200,
+    "P0_wall_s": 21600,
+    "deployment_wall_s": 28800,
+    "independent_wall_s": 28800,
+    "reproduction_wall_s": 7200,
+    "each_training_stream_s": 28800,
+    "actual_optimizer_attempts": 80000,
+    "PG_logical_updates": 24576,
+    "SL_logical_updates": 49152,
+    "complete_planning_attempts": 300000,
+    "teacher_label_replays": 393216,
+    "per_stream_failure_replay_limit": 64,
+    "same_root_cause_repairs": 2,
+    "new_teacher_queries": 0
+  },
+  "stage_rules": "Exact gates, data boundaries, timing, statistics and exits in frozen MASTER_PLAN.md and NORMATIVE_TASKBOOK.txt",
+  "evaluation": {
+    "development": [
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_000",
+        "mode": "mixed",
+        "physical_key": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000058,
+          "mode": "mixed",
+          "parent": 58,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000000,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_001",
+        "mode": "mixed",
+        "physical_key": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000058,
+          "mode": "mixed",
+          "parent": 58,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000000,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_002",
+        "mode": "mixed",
+        "physical_key": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000058,
+          "mode": "mixed",
+          "parent": 58,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000000,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_003",
+        "mode": "mixed",
+        "physical_key": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000058,
+          "mode": "mixed",
+          "parent": 58,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000000,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_004",
+        "mode": "mixed",
+        "physical_key": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000058,
+          "mode": "mixed",
+          "parent": 58,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000000,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_005",
+        "mode": "mixed",
+        "physical_key": "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000058,
+          "mode": "mixed",
+          "parent": 58,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000000,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_006",
+        "mode": "mixed",
+        "physical_key": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000060,
+          "mode": "mixed",
+          "parent": 60,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000001,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_007",
+        "mode": "mixed",
+        "physical_key": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000060,
+          "mode": "mixed",
+          "parent": 60,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000001,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_008",
+        "mode": "mixed",
+        "physical_key": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000060,
+          "mode": "mixed",
+          "parent": 60,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000001,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_009",
+        "mode": "mixed",
+        "physical_key": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000060,
+          "mode": "mixed",
+          "parent": 60,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000001,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_010",
+        "mode": "mixed",
+        "physical_key": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000060,
+          "mode": "mixed",
+          "parent": 60,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000001,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_011",
+        "mode": "mixed",
+        "physical_key": "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000060,
+          "mode": "mixed",
+          "parent": 60,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000001,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_012",
+        "mode": "mixed",
+        "physical_key": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000034,
+          "mode": "mixed",
+          "parent": 34,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000002,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_013",
+        "mode": "mixed",
+        "physical_key": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000034,
+          "mode": "mixed",
+          "parent": 34,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000002,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_014",
+        "mode": "mixed",
+        "physical_key": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000034,
+          "mode": "mixed",
+          "parent": 34,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000002,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_015",
+        "mode": "mixed",
+        "physical_key": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000034,
+          "mode": "mixed",
+          "parent": 34,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000002,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_016",
+        "mode": "mixed",
+        "physical_key": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000034,
+          "mode": "mixed",
+          "parent": 34,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000002,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_017",
+        "mode": "mixed",
+        "physical_key": "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000034,
+          "mode": "mixed",
+          "parent": 34,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000002,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_018",
+        "mode": "mixed",
+        "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000072,
+          "mode": "mixed",
+          "parent": 72,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000003,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_019",
+        "mode": "mixed",
+        "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000072,
+          "mode": "mixed",
+          "parent": 72,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000003,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_020",
+        "mode": "mixed",
+        "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000072,
+          "mode": "mixed",
+          "parent": 72,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000003,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_021",
+        "mode": "mixed",
+        "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000072,
+          "mode": "mixed",
+          "parent": 72,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000003,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_022",
+        "mode": "mixed",
+        "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000072,
+          "mode": "mixed",
+          "parent": 72,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000003,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_023",
+        "mode": "mixed",
+        "physical_key": "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000072,
+          "mode": "mixed",
+          "parent": 72,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000003,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_024",
+        "mode": "blocked",
+        "physical_key": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000061,
+          "mode": "blocked",
+          "parent": 61,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000004,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_025",
+        "mode": "blocked",
+        "physical_key": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000061,
+          "mode": "blocked",
+          "parent": 61,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000004,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_026",
+        "mode": "blocked",
+        "physical_key": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000061,
+          "mode": "blocked",
+          "parent": 61,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000004,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_027",
+        "mode": "blocked",
+        "physical_key": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000061,
+          "mode": "blocked",
+          "parent": 61,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000004,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_028",
+        "mode": "blocked",
+        "physical_key": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000061,
+          "mode": "blocked",
+          "parent": 61,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000004,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_029",
+        "mode": "blocked",
+        "physical_key": "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000061,
+          "mode": "blocked",
+          "parent": 61,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000004,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_030",
+        "mode": "blocked",
+        "physical_key": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000021,
+          "mode": "blocked",
+          "parent": 21,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000005,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_031",
+        "mode": "blocked",
+        "physical_key": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000021,
+          "mode": "blocked",
+          "parent": 21,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000005,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_032",
+        "mode": "blocked",
+        "physical_key": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000021,
+          "mode": "blocked",
+          "parent": 21,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000005,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_033",
+        "mode": "blocked",
+        "physical_key": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000021,
+          "mode": "blocked",
+          "parent": 21,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000005,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_034",
+        "mode": "blocked",
+        "physical_key": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000021,
+          "mode": "blocked",
+          "parent": 21,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000005,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_035",
+        "mode": "blocked",
+        "physical_key": "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000021,
+          "mode": "blocked",
+          "parent": 21,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000005,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_036",
+        "mode": "blocked",
+        "physical_key": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000069,
+          "mode": "blocked",
+          "parent": 69,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000006,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_037",
+        "mode": "blocked",
+        "physical_key": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000069,
+          "mode": "blocked",
+          "parent": 69,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000006,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_038",
+        "mode": "blocked",
+        "physical_key": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000069,
+          "mode": "blocked",
+          "parent": 69,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000006,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_039",
+        "mode": "blocked",
+        "physical_key": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000069,
+          "mode": "blocked",
+          "parent": 69,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000006,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_040",
+        "mode": "blocked",
+        "physical_key": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000069,
+          "mode": "blocked",
+          "parent": 69,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000006,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_041",
+        "mode": "blocked",
+        "physical_key": "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 0,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000069,
+          "mode": "blocked",
+          "parent": 69,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000006,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_042",
+        "mode": "blocked",
+        "physical_key": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 10000000065,
+          "mode": "blocked",
+          "parent": 65,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000007,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_043",
+        "mode": "blocked",
+        "physical_key": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 10000000065,
+          "mode": "blocked",
+          "parent": 65,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000007,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_044",
+        "mode": "blocked",
+        "physical_key": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 10000000065,
+          "mode": "blocked",
+          "parent": 65,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000007,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_045",
+        "mode": "blocked",
+        "physical_key": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 10000000065,
+          "mode": "blocked",
+          "parent": 65,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000007,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "endpoint": "closed_depot",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_046",
+        "mode": "blocked",
+        "physical_key": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 10000000065,
+          "mode": "blocked",
+          "parent": 65,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000007,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "endpoint": "open_first_last_connected",
+        "group": "trained_parent_new_tasks_exposed_selection",
+        "id": "selection_047",
+        "mode": "blocked",
+        "physical_key": "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 10000000065,
+          "mode": "blocked",
+          "parent": 65,
+          "role": "selection",
+          "source_family": "new",
+          "task_seed": 26100000007,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_000",
+        "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "case": 0,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 14000000000,
+          "mode": "mixed",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            4,
+            3
+          ],
+          "task_seed": 15000000000,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_001",
+        "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "case": 1,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 14000000000,
+          "mode": "mixed",
+          "position": "center",
+          "role": "development",
+          "size": [
+            4,
+            3
+          ],
+          "task_seed": 15000000001,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_002",
+        "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "case": 2,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 14000000000,
+          "mode": "mixed",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            6,
+            6
+          ],
+          "task_seed": 15000000002,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_003",
+        "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "case": 3,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 14000000000,
+          "mode": "mixed",
+          "position": "center",
+          "role": "development",
+          "size": [
+            6,
+            6
+          ],
+          "task_seed": 15000000003,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_004",
+        "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "case": 4,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 14000000000,
+          "mode": "mixed",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            8,
+            8
+          ],
+          "task_seed": 15000000004,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_005",
+        "physical_key": "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "case": 5,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 14000000000,
+          "mode": "mixed",
+          "position": "center",
+          "role": "development",
+          "size": [
+            8,
+            8
+          ],
+          "task_seed": 15000000005,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_006",
+        "physical_key": "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "case": 6,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 14000000001,
+          "mode": "blocked",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            4,
+            3
+          ],
+          "task_seed": 15000000006,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_007",
+        "physical_key": "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "case": 7,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 14000000001,
+          "mode": "blocked",
+          "position": "center",
+          "role": "development",
+          "size": [
+            4,
+            3
+          ],
+          "task_seed": 15000000007,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_008",
+        "physical_key": "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "case": 8,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 14000000001,
+          "mode": "blocked",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            6,
+            6
+          ],
+          "task_seed": 15000000008,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_009",
+        "physical_key": "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "case": 9,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 14000000001,
+          "mode": "blocked",
+          "position": "center",
+          "role": "development",
+          "size": [
+            6,
+            6
+          ],
+          "task_seed": 15000000009,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_010",
+        "physical_key": "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "case": 10,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 14000000001,
+          "mode": "blocked",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            8,
+            8
+          ],
+          "task_seed": 15000000010,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_011",
+        "physical_key": "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "case": 11,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 14000000001,
+          "mode": "blocked",
+          "position": "center",
+          "role": "development",
+          "size": [
+            8,
+            8
+          ],
+          "task_seed": 15000000011,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_012",
+        "physical_key": "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 0,
+          "case": 12,
+          "endpoints": "closed_depot",
+          "height": 3,
+          "map_seed": 14000000002,
+          "mode": "mixed",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            4,
+            3
+          ],
+          "task_seed": 15000000012,
+          "width": 4,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_013",
+        "physical_key": "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588",
+        "size": [
+          4,
+          3
+        ],
+        "spec": {
+          "A_condition": 1,
+          "case": 13,
+          "endpoints": "open_first_last_connected",
+          "height": 3,
+          "map_seed": 14000000002,
+          "mode": "mixed",
+          "position": "center",
+          "role": "development",
+          "size": [
+            4,
+            3
+          ],
+          "task_seed": 15000000013,
+          "width": 4,
+          "x0": 3,
+          "y0": 3
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_014",
+        "physical_key": "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 2,
+          "case": 14,
+          "endpoints": "closed_depot",
+          "height": 6,
+          "map_seed": 14000000002,
+          "mode": "mixed",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            6,
+            6
+          ],
+          "task_seed": 15000000014,
+          "width": 6,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_015",
+        "physical_key": "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588",
+        "size": [
+          6,
+          6
+        ],
+        "spec": {
+          "A_condition": 0,
+          "case": 15,
+          "endpoints": "open_first_last_connected",
+          "height": 6,
+          "map_seed": 14000000002,
+          "mode": "mixed",
+          "position": "center",
+          "role": "development",
+          "size": [
+            6,
+            6
+          ],
+          "task_seed": 15000000015,
+          "width": 6,
+          "x0": 2,
+          "y0": 2
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_016",
+        "physical_key": "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 1,
+          "case": 16,
+          "endpoints": "closed_depot",
+          "height": 8,
+          "map_seed": 14000000002,
+          "mode": "mixed",
+          "position": "corner",
+          "role": "development",
+          "size": [
+            8,
+            8
+          ],
+          "task_seed": 15000000016,
+          "width": 8,
+          "x0": 0,
+          "y0": 0
+        }
+      },
+      {
+        "group": "independent_parent_exposed_development",
+        "id": "development_017",
+        "physical_key": "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588",
+        "size": [
+          8,
+          8
+        ],
+        "spec": {
+          "A_condition": 2,
+          "case": 17,
+          "endpoints": "open_first_last_connected",
+          "height": 8,
+          "map_seed": 14000000002,
+          "mode": "mixed",
+          "position": "center",
+          "role": "development",
+          "size": [
+            8,
+            8
+          ],
+          "task_seed": 15000000017,
+          "width": 8,
+          "x0": 1,
+          "y0": 1
+        }
+      }
+    ],
+    "checkpoints": [
+      0,
+      1024,
+      2048,
+      4096
+    ],
+    "retained_layers": [
+      24,
+      24
+    ],
+    "tasks_per_parent": 6,
+    "bootstrap": 20000,
+    "statistics_seed": 2026111199,
+    "method_order_seed": 2026111198,
+    "cold_warm_repeats": 3,
+    "final_endpoint": 4096,
+    "no_best_checkpoint_or_seed_selection": true
+  },
+  "P0": {
+    "ordinary_training_specs": [
+      {
+        "A_condition": 0,
+        "endpoints": "closed_depot",
+        "height": 10,
+        "map_seed": 10000000052,
+        "mode": "mixed",
+        "parent": 52,
+        "role": "train",
+        "source_family": "bank",
+        "task_draw": 2,
+        "task_seed": 11000000418,
+        "width": 10,
+        "x0": 0,
+        "y0": 0
+      },
+      {
+        "case": 0,
+        "parent": 0,
+        "map_seed": 10000000000,
+        "task_seed": 11000000000,
+        "width": 4,
+        "height": 3,
+        "x0": 0,
+        "y0": 0,
+        "endpoints": "closed_depot",
+        "A_condition": 0,
+        "role": "train",
+        "mode": "mixed"
+      },
+      {
+        "case": 2,
+        "parent": 2,
+        "map_seed": 10000000002,
+        "task_seed": 11000000016,
+        "width": 6,
+        "height": 6,
+        "x0": 1,
+        "y0": 0,
+        "endpoints": "open_first_last_connected",
+        "A_condition": 2,
+        "role": "train",
+        "mode": "mixed"
+      },
+      {
+        "case": 4,
+        "parent": 4,
+        "map_seed": 10000000004,
+        "task_seed": 11000000032,
+        "width": 8,
+        "height": 8,
+        "x0": 0,
+        "y0": 2,
+        "endpoints": "closed_depot",
+        "A_condition": 1,
+        "role": "train",
+        "mode": "mixed"
+      }
+    ],
+    "teacher_indices": [
+      0,
+      2,
+      4
+    ],
+    "complete_request_cap": 60,
+    "Actor_attempt_cap": 24,
+    "new_planned_complete_requests": 13,
+    "new_planned_Actor_attempts": 5,
+    "checks": [
+      "exact initialization logits/mask/raw/H",
+      "five-tensor finite graph, frozen bitwise, strict optimizer identity",
+      "complete scalar return=-J_H, legal probability zero",
+      "real PG and existing-label SL updates",
+      "FullActor graph with the same PG recipe",
+      "weight/cache versions after step and restore",
+      "frozen export equality",
+      "exact resume Model/Adam/RNG/cursor/queries/next update"
+    ],
+    "teacher_Top1_or_fixed32_gate": false,
+    "engineering_models_scientific_initialization": false
+  },
+  "admission": {
+    "P0_engineering_authorized": true,
+    "P1_requires": [
+      "P0 engineering PASS",
+      "DATA_ADMISSION PASS",
+      "8h-stream throughput admissible"
+    ],
+    "data_admission": "BLOCKED_MISSING_FULL_TEACHERS",
+    "known_failure_exit": "P6_TECHNICAL_DATA_INCOMPLETE"
+  }
+}
