@@ -1,0 +1,73 @@
+{
+  "schema": "rc3-r04-m1-real-cumulative-resource-v1",
+  "prior_new_task_consumption_s": 13.675729074478731,
+  "step0_started": true,
+  "run_id": "rc3-r04-m1-real-20261111-02",
+  "caps": {
+    "wall_s": 1800,
+    "critic_optimizer_attempts": 512,
+    "actor_optimizer_attempts": 0,
+    "saved_trajectories": 116,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0
+  },
+  "counts": {
+    "critic_optimizer_attempts": 256,
+    "actor_optimizer_attempts": 0,
+    "saved_trajectories": 116,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0,
+    "source_reads": 3703,
+    "source_hashes": 3113,
+    "module_forward_calls": 59033,
+    "model_loads": 1,
+    "saved_view_loads": 116,
+    "base_encoder_forwards": 116,
+    "base_state_forwards": 7992,
+    "feature_states": 7992,
+    "checkpoint_saves": 4,
+    "checkpoint_loads": 4,
+    "backward_calls": 256,
+    "critic_optimizer_completed": 256
+  },
+  "wall_s": 148.25472907448028,
+  "sessions": [
+    {
+      "phase": "real_environment_and_M1",
+      "wall_s": 148.25472907448028,
+      "status": "COMPLETE_FAIL"
+    }
+  ],
+  "sequence": 377,
+  "event_sha256": "0277f69f5a0712e273d4eaec1210c27bedbc52a9881452556c6bad2976626b58",
+  "failures": [],
+  "session_open": false,
+  "status": "COMPLETE_FAIL",
+  "prior_attempt": {
+    "path": "rc3_r04_m1_20261111/RESOURCE_ACCOUNTING.json",
+    "wall_s": 2859.2566758999983,
+    "included_in_new_1800_limit": false,
+    "retained_original_bytes": true
+  },
+  "clock": "max(supervisor-origin monotonic elapsed, UTC elapsed); imports/preflight/restoration/fit/evaluate/save/recheck included",
+  "work_admission_cutoff_s": 1650,
+  "cooperative_deadline_s": 1780,
+  "supervisor_force_stop_s": 1790,
+  "read_counter_scope": "Instrumented scientific entry paths; complete file provenance timings in PREFLIGHT_TRACE.jsonl",
+  "opened_utc": "2026-11-11T06:36:45.290441+00:00",
+  "component_seconds": {
+    "saved_view_restore": 62.843990599998506,
+    "base_encoder_forward": 2.812072900003841,
+    "base_state_features": 23.986169100015104
+  }
+}

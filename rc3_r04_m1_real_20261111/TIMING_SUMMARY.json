@@ -1,0 +1,75 @@
+{
+  "attempt02_stage_seconds": [
+    {
+      "stage": "heavy_imports",
+      "seconds": 2.5448075999993307,
+      "status": "GO"
+    },
+    {
+      "stage": "preflight_and_imports",
+      "seconds": 3.624703599998611,
+      "status": "GO"
+    },
+    {
+      "stage": "zero_update_critic_interface_tests",
+      "seconds": 0.39372369999910006,
+      "status": "GO"
+    },
+    {
+      "stage": "saved_input_loader",
+      "seconds": 1.444501300000411,
+      "status": "GO"
+    },
+    {
+      "stage": "frozen_SL_loading",
+      "seconds": 0.4028407000005245,
+      "status": "GO"
+    },
+    {
+      "stage": "restore_116_saved_trajectories",
+      "seconds": 96.00137090000135,
+      "status": "GO"
+    },
+    {
+      "stage": "dataset_save_and_fit_references",
+      "seconds": 0.17152450000139652,
+      "status": "GO"
+    },
+    {
+      "stage": "endpoint_0",
+      "seconds": 4.535641399997985,
+      "status": "GO"
+    },
+    {
+      "stage": "matched_fit_1_128",
+      "seconds": 5.221978300000046,
+      "status": "GO"
+    },
+    {
+      "stage": "endpoint_128",
+      "seconds": 5.34385470000052,
+      "status": "GO"
+    },
+    {
+      "stage": "saved_result_curves",
+      "seconds": 0.02204830000118818,
+      "status": "GO"
+    },
+    {
+      "stage": "save_summaries",
+      "seconds": 0.091008100000181,
+      "status": "GO"
+    },
+    {
+      "stage": "independent_numerical_review",
+      "seconds": 8.827779300001566,
+      "status": "GO"
+    }
+  ],
+  "nesting": "heavy_imports is within preflight; saved_result_curves within save_summaries. Do not double-sum nested stages.",
+  "dominant_stage": "restore_116_saved_trajectories",
+  "dominant_stage_s": 96.00137090000135,
+  "first_entry_failure": "WinError5 during atomic heartbeat replacement; lock holder/cause UNKNOWN",
+  "timeout_supervision": "Previously accepted real interruption tests reused without rerun; both new process trees exited and active count0",
+  "scientific_stop": "Original midpoint rule, not a runtime timeout"
+}

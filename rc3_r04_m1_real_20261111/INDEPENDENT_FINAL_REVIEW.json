@@ -1,0 +1,101 @@
+{
+  "schema": "rc3-r04-m1-independent-final-receipt-review-v1",
+  "status": "PASS",
+  "reviewer": "Independent child agent real_m1_review",
+  "scientific_G3": "FAIL",
+  "claim_supported": "no",
+  "narrower_C1_vs_C0_claim": "partial",
+  "confidence_current_fixed_G3": "high",
+  "numerical_audit_status": "PASS",
+  "numerical_audit_checks": 2679495,
+  "independent_audit_rerun": false,
+  "actual_endpoints": [
+    0,
+    128
+  ],
+  "completed_C0_updates": 128,
+  "completed_C1_updates": 128,
+  "actual_saved_trajectories": 116,
+  "actual_restored_states": 7992,
+  "actor_optimizer_attempts": 0,
+  "new_scientific_requests": 0,
+  "exact_count_check_from_current_training_small_table": "PASS",
+  "gate_receipt_and_independent_math_agree": "PASS",
+  "C1_vs_conditional_ratios": [
+    2.863347186215548,
+    3.3828713556732057
+  ],
+  "paired_parent_ci95": [
+    [
+      2.08351081706255,
+      4.180973504755475
+    ],
+    [
+      2.4465990880801165,
+      4.5762236603022695
+    ]
+  ],
+  "size_coverage": "GO_16_11_12_13_physical_parents",
+  "all_size_error_gates": "FAIL",
+  "initial_net_tensors_matched": true,
+  "initial_physical_predictions_equal": false,
+  "step256": "NOT_RUN_REGISTERED_MIDPOINT_STOP",
+  "next_step": "STOP_THIS_C1_CONFIGURATION",
+  "checkpoint_receipt_limitation": "Step0 roundtrip was followed by fitting; step128 roundtrip/export was not followed by step129. Preserve original receipt; continued-once wording is overbroad.",
+  "new_task_consumption_at_supervisor_exit_s": 149.47272907448104,
+  "prior_science_and_engineering_preserved_s": 2885.2303396420666,
+  "supervisor_exit_confirmed": true,
+  "job_active_processes_at_end": 0,
+  "G2": "NOT_RUN",
+  "M2": "NOT_AUTHORIZED_NOT_RUN",
+  "M3": "NOT_AUTHORIZED_NOT_RUN",
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional",
+  "pending_external_review": false,
+  "reviewer_role": "Paper architect/reviewer task delegated by parent executor; separate from worker execution",
+  "source_identities": [
+    {
+      "path": "attempts/02/M1_METRICS.csv",
+      "sha256": "f407d8d3d51132871d87397e8aa47c22df6eb641f0e2f65410c2c3d260618b90",
+      "bytes": 499544
+    },
+    {
+      "path": "attempts/02/M1_GATE_DECISION.json",
+      "sha256": "1d998a963c60b7c7838c4061822a22a15e097d8254730e703278d1d286c80d1b",
+      "bytes": 4600
+    },
+    {
+      "path": "attempts/02/INDEPENDENT_NUMERICAL_RECHECK.json",
+      "sha256": "fe8fb5eac410e12512218e884b3c13435fcce95fc8cebcfbabcb7cb2cadf606b",
+      "bytes": 7853
+    },
+    {
+      "path": "attempts/02/INITIALIZATION.json",
+      "sha256": "82fe28e832fb117e90ee5880caed7dd1d25f7259ae86eb8cbadf8b9e09b1248a",
+      "bytes": 589
+    },
+    {
+      "path": "attempts/02/CHECKPOINT_INTERFACE_RESULTS.json",
+      "sha256": "db8b868076244242ee507e079e3bec218a8d9baa64e599efd8786eea6e7de549",
+      "bytes": 2024
+    },
+    {
+      "path": "attempts/02/RESOURCE_ACCOUNTING.json",
+      "sha256": "badc67aacd0dbe4c230bb34afbfe5361e23f741df516d608f5d63ec1704dadb3",
+      "bytes": 2273
+    },
+    {
+      "path": "attempts/02/ENTRY_CONSUMPTION.json",
+      "sha256": "5636b8be4d34802770bdf15550970f6c68f155b7aeecb31c16c2fdfe441fa997",
+      "bytes": 1290
+    },
+    {
+      "path": "attempts/02/TRAINING_LOG.csv",
+      "sha256": "98e401807882fb16738d1b2cc525f1927cf8940a22ea049a48c579152ebd20f2",
+      "bytes": 93116
+    }
+  ],
+  "scope": "New small tables and receipts only; no model, bootstrap, large prediction-table or historical audit rerun",
+  "reviewer_new_optimizer_attempts": 0,
+  "reviewer_model_forwards": 0
+}

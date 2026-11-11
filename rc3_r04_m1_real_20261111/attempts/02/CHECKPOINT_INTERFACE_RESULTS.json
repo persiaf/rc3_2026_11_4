@@ -1,0 +1,46 @@
+{
+  "status": "GO",
+  "roundtrips": [
+    {
+      "configuration": "C0",
+      "endpoint": 0,
+      "checkpoint_sha256": "a08f59b018af9968fb3fe382b031e2d9c61fba8f7cdb396f5f0d45181ee7de8d",
+      "export_sha256": "1aa4315976bdb7d5a63d5f101540ece2e96adf71c681ed2036b43fc9ad2ed4f2",
+      "model_adam_rng_cursor_resource_exact": true,
+      "predictions_bitwise_equal": true,
+      "loaded_as_next_step_state": true,
+      "scope": "Critic-only; not Actor candidate rollback/G2"
+    },
+    {
+      "configuration": "C1",
+      "endpoint": 0,
+      "checkpoint_sha256": "bd592233ff019aa84836c1c58a749519ca90fc7ee31dabacea151dc9c1deba11",
+      "export_sha256": "372c43fc78f3ccef9b56094c00b94abb1b79c39c71af83c4e4d38dc7df59eda9",
+      "model_adam_rng_cursor_resource_exact": true,
+      "predictions_bitwise_equal": true,
+      "loaded_as_next_step_state": true,
+      "scope": "Critic-only; not Actor candidate rollback/G2"
+    },
+    {
+      "configuration": "C0",
+      "endpoint": 128,
+      "checkpoint_sha256": "9b3652723b22a61a8ec23a73cae2796e8d10341f803b8d80d1186dcb79c1c7ad",
+      "export_sha256": "60a1ca92c6ea5258940801915e6e4afe3267fb81ebeac4c5bc9fdd807b5961ff",
+      "model_adam_rng_cursor_resource_exact": true,
+      "predictions_bitwise_equal": true,
+      "loaded_as_next_step_state": true,
+      "scope": "Critic-only; not Actor candidate rollback/G2"
+    },
+    {
+      "configuration": "C1",
+      "endpoint": 128,
+      "checkpoint_sha256": "b744e923bddeebea6653e6ff15b689912652fbc195e074bf718065b3fedad2b4",
+      "export_sha256": "ac2649abb15549c6b76ae2ba2cdaf8b797a6d320fe56beafe2e9d6ba8298214b",
+      "model_adam_rng_cursor_resource_exact": true,
+      "predictions_bitwise_equal": true,
+      "loaded_as_next_step_state": true,
+      "scope": "Critic-only; not Actor candidate rollback/G2"
+    }
+  ],
+  "resume_scope": "Each actual endpoint loaded into fresh same-role Critic+Adam and continued once; no duplicated update or independent full continuous-run equivalence claim; Actor/G2 not tested"
+}

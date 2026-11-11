@@ -1,0 +1,113 @@
+{
+  "accepted_engineering_receipt": {
+    "path": "rc3_r04_m1_recovery_20261111/engineering/ENGINEERING_TEST_RESULTS.json",
+    "sha256": "d32b40e15fdb8c41138ceae0d5a18fb229309e8300c23866c93ceacb71403f93"
+  },
+  "timeout_tests_rerun": false,
+  "runtime_classification": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "critic",
+        "path": "rc3_r04_m1_20261111/critic.py",
+        "sha256": "e8b6a58f34190a1b70182a3f6ce4466206ed429e21691977ebba0ae0b93ba0af",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "data",
+        "path": "rc3_r04_m1_20261111/data.py",
+        "sha256": "4f3fa4130dcb74b8e9c908c1ac391ebf38d9f686329a68411d1eaccb4cc8f57c",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "runtime",
+        "path": "rc3_conservative_refinement/runtime.py",
+        "sha256": "1b86fe7566a3c8a780929afe0532ef77687a9d4157a193107aabdd60798fab43",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "checked_project_module_count": 25,
+  "used_for_scientific_attempt": true,
+  "critic_interface_tests": {
+    "status": "GO",
+    "tests_run": 14,
+    "optimizer_attempts": 0
+  },
+  "status": "GO",
+  "first_fixed_trajectory": {
+    "trajectory_id": "train:OFF:74:2",
+    "parent_id": "a27f0336df0b6590ac4ddd8968e946e2d9fb3b49a9968bdcf9f528c7d0e0e274",
+    "split": "fit",
+    "window": "10x10",
+    "source_stage": "late_065_128",
+    "task_count": 226,
+    "states": 149,
+    "feature_tensor_sha256": "d891cb24c06adfe6c58c9dfe7b3e914f365d001e3f1a3117f19247cdfd9aeb60",
+    "request_source": {
+      "path": "rc3_conservative_refinement/integration_20261110/runs/conservative_paired_11622026_v1/requests/36d147b1e2080051dfb9c05a57e39867b441e1c77c86f27f94070bd14db4d5f3.json",
+      "sha256": "1c934a9dc427dc9e19f4c74e5ab5acbab8708d084d94c7db48846410725ec5bb",
+      "bytes": 486996
+    }
+  },
+  "feature_shape": [
+    149,
+    268
+  ],
+  "label_shapes": {
+    "value": [
+      149
+    ],
+    "raw_remaining_L": [
+      149
+    ],
+    "raw_remaining_K": [
+      149
+    ],
+    "terminal_H_credit": [
+      149
+    ],
+    "normalized_L": [
+      149
+    ],
+    "normalized_K": [
+      149
+    ],
+    "normalized_H": [
+      149
+    ]
+  },
+  "label_tensor_sha256": "c172d10efead767622cea4913c71ee5715803cedfb5334a351fbe92db7776393",
+  "units": {
+    "raw_L": "distance",
+    "raw_K": "stops",
+    "raw_H": "distance-equivalent H credit",
+    "normalized_L": "distance/initial_task",
+    "normalized_K": "stops/initial_task",
+    "normalized_H": "distance-equivalent H credit/initial_task",
+    "value": "negative distance-equivalent/initial_task"
+  },
+  "RTG_identity": "-(L/n + 0.75*K/n - H/n); original label validator tolerance unchanged",
+  "task_count": 226,
+  "base_tensor_sha256": "e32dd1219880e3e9c3a6f3355e40eafcc88b419291cb787f38f5811a4d317f2e",
+  "real_torch_version": "2.12.1+cu126",
+  "real_numpy_version": "2.2.6",
+  "same_supervised_process_pid": 37192,
+  "new_labels_or_actions": 0,
+  "continued_restore_expected_count": 115,
+  "source_binding_sha256": "8806070b0c8937ceb6fb8e44bf2b1f1c788905ac4c1ad6b6945d837235a78dbf"
+}

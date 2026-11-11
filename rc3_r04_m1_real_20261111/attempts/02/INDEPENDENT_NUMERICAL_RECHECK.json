@@ -1,0 +1,234 @@
+{
+  "schema": "r04-m1-independent-numerical-review-v1",
+  "status": "PASS",
+  "checks": 2679495,
+  "failures": [],
+  "implementation_independence": "fresh saved-table arithmetic; no production metric/loss/model imports",
+  "source_identity": {
+    "path": "independent_review.py",
+    "bytes": 23888,
+    "sha256": "394129fc1713affee803dea987635dadd444dbfc64ef60fe5fe6fb2b5fbecb34"
+  },
+  "inputs": [
+    {
+      "path": "M1_STATE_PREDICTIONS.csv.gz",
+      "bytes": 6428499,
+      "sha256": "dc8d8819c24e33abed5871662298c618c6339b6403d41fdc554e2924e132a99b"
+    },
+    {
+      "path": "M1_METRICS.csv",
+      "bytes": 499544,
+      "sha256": "f407d8d3d51132871d87397e8aa47c22df6eb641f0e2f65410c2c3d260618b90"
+    },
+    {
+      "path": "M1_GATE_DECISION.json",
+      "bytes": 4600,
+      "sha256": "1d998a963c60b7c7838c4061822a22a15e097d8254730e703278d1d286c80d1b"
+    },
+    {
+      "path": "M1_DATA_AND_SOURCE_IDENTITY.json",
+      "bytes": 440842,
+      "sha256": "8cb63231f748e2dbf47f3c18135ea721af589a2d0d4d4e55857e69ca582feeff"
+    },
+    {
+      "path": "BATCH_SCHEDULE.json",
+      "bytes": 54417,
+      "sha256": "3676a96d0c05efb417a6be0ab00c7d3bae574cacfb6bf46e33a06bb773db90a3"
+    },
+    {
+      "path": "TRAINING_LOG.csv",
+      "bytes": 93116,
+      "sha256": "98e401807882fb16738d1b2cc525f1927cf8940a22ea049a48c579152ebd20f2"
+    },
+    {
+      "path": "RESOURCE_ACCOUNTING.json",
+      "bytes": 2141,
+      "sha256": "b1a0f0bb9f3bc20259accb397a25f30d0291d10c6c928947e15a0423a7bec36c"
+    },
+    {
+      "path": "EVENTS.jsonl",
+      "bytes": 136400,
+      "sha256": "2ebf025dd29f2f03d51d50ba8ce1f60c804b626595f9b3f2b69b56424740d212"
+    }
+  ],
+  "previous_split_identity": {
+    "path": "CALIBRATION_SPLIT.json",
+    "bytes": 10206,
+    "sha256": "fec0820b7f0e9793e0db9558c1fadb70485d7804582b88b1ebf25bd8c88e663e"
+  },
+  "state_component_rows": 223776,
+  "summary_groups": 1680,
+  "fit_parents": 33,
+  "holdout_parents": 16,
+  "saved_trajectories": 116,
+  "endpoints": [
+    0,
+    128
+  ],
+  "independently_verified_optimizer_steps": {
+    "C0": 128,
+    "C1": 128
+  },
+  "live_resource_snapshot_note": "Captured while registered execution is RUNNING; later close/final hash maintenance advances resource ledger without extra optimizer steps.",
+  "last_endpoint": 128,
+  "independent_G3": "FAIL",
+  "gate_checks": {
+    "value_point": false,
+    "paired_CI": false,
+    "versus_C0": true,
+    "components": true,
+    "size_coverage": true,
+    "size_error": false
+  },
+  "paired_parent_CI": {
+    "state_pooled": {
+      "lower": 2.08351081706255,
+      "upper": 4.180973504755475
+    },
+    "parent_equal": {
+      "lower": 2.4465990880801165,
+      "upper": 4.5762236603022695
+    }
+  },
+  "size_rows": [
+    {
+      "window": "10x10",
+      "aggregation": "state_pooled",
+      "parents": 16,
+      "ratio_conditional": 2.688831454954092
+    },
+    {
+      "window": "10x10",
+      "aggregation": "parent_equal",
+      "parents": 16,
+      "ratio_conditional": 3.2707850675167642
+    },
+    {
+      "window": "4x3",
+      "aggregation": "state_pooled",
+      "parents": 11,
+      "ratio_conditional": 2.2932546937775866
+    },
+    {
+      "window": "4x3",
+      "aggregation": "parent_equal",
+      "parents": 11,
+      "ratio_conditional": 2.651867026395887
+    },
+    {
+      "window": "6x6",
+      "aggregation": "state_pooled",
+      "parents": 12,
+      "ratio_conditional": 4.114160785772326
+    },
+    {
+      "window": "6x6",
+      "aggregation": "parent_equal",
+      "parents": 12,
+      "ratio_conditional": 3.9027543532698536
+    },
+    {
+      "window": "8x8",
+      "aggregation": "state_pooled",
+      "parents": 13,
+      "ratio_conditional": 3.101848454077944
+    },
+    {
+      "window": "8x8",
+      "aggregation": "parent_equal",
+      "parents": 13,
+      "ratio_conditional": 3.344180469258834
+    }
+  ],
+  "midpoint_stop": true,
+  "optimizer_attempts": 0,
+  "model_forwards": 0,
+  "new_requests": 0,
+  "wall_s": 8.823740499999985,
+  "current_attempt_directory": "rc3_r04_m1_real_20261111/attempts/02",
+  "current_run_id": "rc3-r04-m1-real-20261111-02",
+  "preserved_prior_receipts": [
+    {
+      "path": "rc3_r04_m1_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "2256fe392db3bf3830e364b5db695cf14b2220f0e4fa2690d0e929f67bb8d70e",
+      "wall_s": 2859.2566758999983
+    },
+    {
+      "path": "rc3_r04_m1_recovery_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "12d6b3af248cec43e496f973f215dc6e50dd2a69e5d183a4b52616039941e5b2",
+      "wall_s": 11.586754083633423
+    },
+    {
+      "path": "rc3_r04_m1_recovery_20261111/ENGINEERING_ACCOUNTING.json",
+      "sha256": "4ed739cec8a6c7686d5002595f984a94fbf91f983cbca3c8eebb72bd9f52baf1",
+      "wall_s": 14.386909658434888
+    }
+  ],
+  "preserved_prior_science_and_engineering_wall_s": 2885.2303396420666,
+  "exact_metadata_and_prior_receipt_checks": [
+    {
+      "check": "registered_current_attempt_identity",
+      "status": "PASS",
+      "run_id": "rc3-r04-m1-real-20261111-02",
+      "source_binding": {
+        "path": "SOURCE_BINDING.json",
+        "bytes": 343961,
+        "sha256": "8806070b0c8937ceb6fb8e44bf2b1f1c788905ac4c1ad6b6945d837235a78dbf"
+      }
+    },
+    {
+      "check": "exact_frozen_scientific_bytes",
+      "name": "M1_DATA_AND_SOURCE_IDENTITY.json",
+      "sha256": "8cb63231f748e2dbf47f3c18135ea721af589a2d0d4d4e55857e69ca582feeff",
+      "status": "PASS"
+    },
+    {
+      "check": "exact_frozen_scientific_bytes",
+      "name": "BATCH_SCHEDULE.json",
+      "sha256": "3676a96d0c05efb417a6be0ab00c7d3bae574cacfb6bf46e33a06bb773db90a3",
+      "status": "PASS"
+    },
+    {
+      "check": "exact_frozen_scientific_bytes",
+      "name": "M1_EXECUTION_PROTOCOL.json",
+      "sha256": "99e7030e0293b87cf4302f5d76f6802fceb3d2d9c0f3816de24d46cc18ed3982",
+      "status": "PASS"
+    },
+    {
+      "check": "both_failures_and_engineering_original_bytes_preserved",
+      "status": "PASS",
+      "receipts": [
+        {
+          "path": "rc3_r04_m1_20261111/RESOURCE_ACCOUNTING.json",
+          "sha256": "2256fe392db3bf3830e364b5db695cf14b2220f0e4fa2690d0e929f67bb8d70e",
+          "wall_s": 2859.2566758999983
+        },
+        {
+          "path": "rc3_r04_m1_recovery_20261111/RESOURCE_ACCOUNTING.json",
+          "sha256": "12d6b3af248cec43e496f973f215dc6e50dd2a69e5d183a4b52616039941e5b2",
+          "wall_s": 11.586754083633423
+        },
+        {
+          "path": "rc3_r04_m1_recovery_20261111/ENGINEERING_ACCOUNTING.json",
+          "sha256": "4ed739cec8a6c7686d5002595f984a94fbf91f983cbca3c8eebb72bd9f52baf1",
+          "wall_s": 14.386909658434888
+        }
+      ]
+    }
+  ],
+  "review_source_adaptation": {
+    "frozen_source": "rc3_r04_m1_20261111/independent_review.py",
+    "frozen_source_sha256": "394129fc1713affee803dea987635dadd444dbfc64ef60fe5fe6fb2b5fbecb34",
+    "exact_original_line": "    old_split_path = folder.parent/'rc3_critic_diagnostics_20261111/CALIBRATION_SPLIT.json'",
+    "exact_replacement_line": "    old_split_path = Path(__file__).resolve().parents[1]/'rc3_critic_diagnostics_20261111/CALIBRATION_SPLIT.json'",
+    "replacement_count": 1,
+    "adapted_source_sha256": "1d6c5b7fa9c333361977db19d327d8ffce2fe35814d2a24e507d9e539203842a",
+    "numerical_formula_changes": 0
+  },
+  "review_implementation_scope": "Frozen independently implemented M1 saved-table arithmetic reused on NEW tables only. One exact path substitution supports nested attempts; all numerical formulas, gates, source split checks, hash chain and per-worker counters are unchanged. Not a new independent mathematical implementation; no prior large CSV audit rerun. Cumulative retry accounting is verified separately from the per-attempt audit.",
+  "review_wrapper_identity": {
+    "path": "review_adapter.py",
+    "bytes": 7560,
+    "sha256": "ac4f90e88eb65cd34e99e56009839a4749713b9d7aeb96589a004112f2161d0d"
+  }
+}

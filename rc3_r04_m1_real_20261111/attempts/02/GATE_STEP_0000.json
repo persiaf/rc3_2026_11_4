@@ -1,0 +1,175 @@
+{
+  "schema": "rc3-r04-m1-g3-decision-v1",
+  "status": "FAIL",
+  "endpoint": 0,
+  "checks": [
+    {
+      "check": "value_vs_condition_state_pooled",
+      "status": "FAIL",
+      "actual": 3.62383552649889,
+      "maximum": 0.95
+    },
+    {
+      "check": "paired_upper_state_pooled",
+      "status": "FAIL",
+      "actual": 5.055881769194544,
+      "strict_upper": 1.0,
+      "interval": {
+        "aggregation": "state_pooled",
+        "reference": "conditional_constant",
+        "point_ratio": 3.62383552649889,
+        "ci95_low": 2.755151409801771,
+        "ci95_high": 5.055881769194544
+      }
+    },
+    {
+      "check": "value_vs_C0_state_pooled",
+      "status": "GO",
+      "C1_mse": 0.8974670123384344,
+      "C0_mse": 1.3718890415096037,
+      "ratio": 0.654183381588118
+    },
+    {
+      "check": "normalized_L_vs_C0_state_pooled",
+      "status": "GO",
+      "actual": 0.5046596096896458,
+      "maximum": 1.1,
+      "C1_mse": 1.5404445450517927,
+      "C0_mse": 3.052442706875494
+    },
+    {
+      "check": "normalized_K_vs_C0_state_pooled",
+      "status": "GO",
+      "actual": 0.5183355571780099,
+      "maximum": 1.1,
+      "C1_mse": 0.09288178344587318,
+      "C0_mse": 0.1791923825398981
+    },
+    {
+      "check": "normalized_H_vs_C0_state_pooled",
+      "status": "GO",
+      "actual": 0.8359290217954591,
+      "maximum": 1.1,
+      "C1_mse": 1.0635327048619265,
+      "C0_mse": 1.272276326257469
+    },
+    {
+      "check": "size_10x10_state_pooled",
+      "status": "FAIL",
+      "parents": 16,
+      "actual": 3.671203595029112,
+      "maximum": 1.0
+    },
+    {
+      "check": "size_4x3_state_pooled",
+      "status": "FAIL",
+      "parents": 11,
+      "actual": 2.331224590262977,
+      "maximum": 1.0
+    },
+    {
+      "check": "size_6x6_state_pooled",
+      "status": "FAIL",
+      "parents": 12,
+      "actual": 4.642595352501675,
+      "maximum": 1.0
+    },
+    {
+      "check": "size_8x8_state_pooled",
+      "status": "FAIL",
+      "parents": 13,
+      "actual": 3.87423461450297,
+      "maximum": 1.0
+    },
+    {
+      "check": "value_vs_condition_parent_equal",
+      "status": "FAIL",
+      "actual": 4.1517665133155,
+      "maximum": 0.95
+    },
+    {
+      "check": "paired_upper_parent_equal",
+      "status": "FAIL",
+      "actual": 5.42423112864576,
+      "strict_upper": 1.0,
+      "interval": {
+        "aggregation": "parent_equal",
+        "reference": "conditional_constant",
+        "point_ratio": 4.151766513315501,
+        "ci95_low": 3.1589961701967306,
+        "ci95_high": 5.42423112864576
+      }
+    },
+    {
+      "check": "value_vs_C0_parent_equal",
+      "status": "GO",
+      "C1_mse": 0.9569571938306806,
+      "C0_mse": 1.5953159237766896,
+      "ratio": 0.5998543483257015
+    },
+    {
+      "check": "normalized_L_vs_C0_parent_equal",
+      "status": "GO",
+      "actual": 0.5271181607557623,
+      "maximum": 1.1,
+      "C1_mse": 1.806511378380279,
+      "C0_mse": 3.427146914821092
+    },
+    {
+      "check": "normalized_K_vs_C0_parent_equal",
+      "status": "GO",
+      "actual": 0.4836733759979193,
+      "maximum": 1.1,
+      "C1_mse": 0.09114170746007097,
+      "C0_mse": 0.18843647796827057
+    },
+    {
+      "check": "normalized_H_vs_C0_parent_equal",
+      "status": "GO",
+      "actual": 0.8369194384491279,
+      "maximum": 1.1,
+      "C1_mse": 1.088480442101046,
+      "C0_mse": 1.3005797118514524
+    },
+    {
+      "check": "size_10x10_parent_equal",
+      "status": "FAIL",
+      "parents": 16,
+      "actual": 4.324151475978757,
+      "maximum": 1.0
+    },
+    {
+      "check": "size_4x3_parent_equal",
+      "status": "FAIL",
+      "parents": 11,
+      "actual": 2.6869313830432047,
+      "maximum": 1.0
+    },
+    {
+      "check": "size_6x6_parent_equal",
+      "status": "FAIL",
+      "parents": 12,
+      "actual": 4.332277192268634,
+      "maximum": 1.0
+    },
+    {
+      "check": "size_8x8_parent_equal",
+      "status": "FAIL",
+      "parents": 13,
+      "actual": 4.054948900363836,
+      "maximum": 1.0
+    }
+  ],
+  "midpoint_stop_triggered": false,
+  "midpoint_rule": "C1 value/conditional >1.25 in both aggregations at128 stops paired C0/C1 block",
+  "current_ratios": [
+    3.62383552649889,
+    4.1517665133155
+  ],
+  "endpoint256": "PENDING",
+  "G2": "NOT_PASSED_REAL_ACTOR_ADAM_TRANSACTION_NOT_EXECUTED",
+  "M2": "NOT_AUTHORIZED_NOT_RUN",
+  "M3": "NOT_AUTHORIZED_NOT_RUN",
+  "next_step": "STOP_THIS_C1_CONFIGURATION",
+  "interpretation": "Offline calibration only. MSE is not route benefit. Failure does not falsify relative Actor H2."
+}

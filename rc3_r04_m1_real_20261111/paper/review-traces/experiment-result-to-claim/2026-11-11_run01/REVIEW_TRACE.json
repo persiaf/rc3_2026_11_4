@@ -1,0 +1,30 @@
+{
+  "skill": "experiment-result-to-claim",
+  "skill_path": "C:/Users/Administrator/.codex/skills/experiment-result-to-claim/SKILL.md",
+  "review_mode": "full",
+  "role": "paper architect/reviewer delegated by parent executor to independent child agent real_m1_review",
+  "prompt": "Judge the intended claim that matched normalized C1 reaches preregistered G3 on the new held-out physical parents and is ready as the next Critic foundation. Review completed R04-M1 attempt02, C0/C1 each128, 116 trajectories, no Actor/planning requests. Compare both aggregations, fit-only conditional constant, physical-parent paired intervals, normalized components, sizes and initial physical predictions. Do not rerun models or old audit; do not infer route benefit or automatically start G2/M3. Save honest claim_supported, supported/unsupported claims, gaps and routing.",
+  "raw_reviewer_response": "The intended G3 claim is not supported. C1 step128 value MSE is 0.709127/0.779731 (state-pooled/parent-equal), lower than C0 1.377308/1.602134, but conditional-constant MSE is 0.247657/0.230494. C1/conditional ratios 2.863347/3.382871 and paired95 intervals [2.083511,4.180974]/[2.446599,4.576224] fail G3. All four size error gates fail while physical-parent coverage is sufficient. Normalized components versus C0 pass. The registered128 stop applies, so256 is correctly unrun. The narrower within-run C1-vs-C0 error claim is partial: initial physical outputs and initial MSE already differ, seed/layout coverage is limited, and no route or Actor evidence exists. Stop this configuration; do not use lower MSE versus C0 as permission for G2/M3 or a route-benefit claim.",
+  "parsed_verdict": {
+    "claim_supported": "no",
+    "narrower_C1_vs_C0_claim": "partial",
+    "what_results_support": "Fixed-protocol C1 has lower new holdout MSE than matched C0 at128, improves from its own step0, but does not outperform conditional constants.",
+    "what_results_dont_support": "G3 readiness, route gain, planning speed gain, Actor effectiveness, or joint PPO readiness.",
+    "missing_evidence": "Acceptable preregistered holdout calibration; route benefit and Actor transaction evidence are untested. No further experiments are authorized here.",
+    "suggested_claim_revision": "Under one fixed M1 schedule, normalized C1 lowers error relative to C0 but fails the fit-only conditional-constant calibration threshold and stops at128.",
+    "next_experiments_needed": "None automatically. Stop this configuration; any later minimal revised hypothesis requires a separate authorized protocol.",
+    "confidence": "high for this fixed G3 result; insufficient for broader generalization"
+  },
+  "routing_action": "STOP_THIS_C1_CONFIGURATION",
+  "pending_external_review": false,
+  "paper_claim_audit": "unavailable",
+  "writing_verdict": "provisional",
+  "shared_trace_reference": "Referenced ../shared-references/review-tracing.md was absent; no matching file found in the skill root. Required prompt/raw verdict/parsed verdict/routing fields are retained here.",
+  "evidence": [
+    "attempts/02/M1_METRICS.csv",
+    "attempts/02/M1_GATE_DECISION.json",
+    "attempts/02/INDEPENDENT_NUMERICAL_RECHECK.json",
+    "INDEPENDENT_FINAL_REVIEW.json",
+    "RESULT_TO_CLAIM.md"
+  ]
+}

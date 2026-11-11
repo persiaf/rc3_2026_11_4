@@ -1,0 +1,45 @@
+{
+  "schema": "rc3-r04-m1-report-read-accounting-v1",
+  "scope": "Only existing attempt02 small calibration summaries/intervals/gate/receipts/trace; no state CSV reread or scientific recalculation",
+  "sessions": [
+    {
+      "scope": "Small table extraction and phase-log read",
+      "wall_s": 0.04976309999983641
+    },
+    {
+      "scope": "Read existing small result tables and phase trace; select saved rows and render two Markdown reports",
+      "wall_s": 0.04643140000189305,
+      "scientific_metrics_recomputed": false
+    }
+  ],
+  "prior_small_receipt_tool_elapsed_s_rounded": 3.8,
+  "prior_small_receipt_tool_elapsed_scope": "Three initial read tool responses reported 1.3 s, 1.1 s, 1.4 s; conservative rounded full-response envelope, includes source/skill inspection and tool overhead. Not a fabricated precise subprocess duration.",
+  "counts": {
+    "actor_optimizer_attempts": 0,
+    "critic_optimizer_attempts": 0,
+    "model_forwards": 0,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0
+  },
+  "manuscript_writing_and_git": "maintenance; not scientific execution time",
+  "bounded_script_host_wall_s": 0.3578697,
+  "bounded_script_host_wall_scope": "Measured exec_command wall for the first extraction; contains its internal 0.0497631 s, so do not sum both.",
+  "report_metric_rows_source": "attempts/02/M1_METRICS.csv; existing paired intervals/gate only; no state CSV read",
+  "bounded_script_host_sessions": [
+    {
+      "scope": "Small table/trace extraction",
+      "wall_s": 0.3578697
+    },
+    {
+      "scope": "Small table read and Markdown render",
+      "wall_s": 0.3741404
+    }
+  ],
+  "report_reading_rendering_debit_s": 4.5320101,
+  "debit_rule": "3.8 s conservative rounded initial tool envelope + 0.3578697 s + 0.3741404 s measured command walls; internal timers are contained and not counted again. Markdown authoring outside commands and Git remain maintenance."
+}
