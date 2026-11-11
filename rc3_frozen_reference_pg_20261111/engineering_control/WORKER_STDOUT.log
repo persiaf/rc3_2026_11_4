@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_frozen_reference_pg_20261111\worker.py", line 191, in <module>
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=('engineering','science'));main(p.parse_args().stage)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_frozen_reference_pg_20261111\worker.py", line 172, in main
+    ledger,trace,inputs,ref,identity=bootstrap(stage)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_frozen_reference_pg_20261111\worker.py", line 26, in bootstrap
+    from . import actor,reference,trainer,runtime,analysis,audit
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_frozen_reference_pg_20261111\actor.py", line 7, in <module>
+    from rc3_r04_review_20261111.relative_actor import RelativeCorrection,SCHEMA as CORRECTION_SCHEMA
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 266, in verified_code
+    payload=owner.read_bytes(path)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 233, in read_bytes
+    return self._verified_bytes(path,expected)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 194, in _verified_bytes
+    self.check(); p,relative,sha = self._identity(path,expected)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 148, in _identity
+    if admitted is None: raise ValueError('Unregistered actual dependency: '+relative)
+ValueError: Unregistered actual dependency: rc3_r04_review_20261111/__init__.py

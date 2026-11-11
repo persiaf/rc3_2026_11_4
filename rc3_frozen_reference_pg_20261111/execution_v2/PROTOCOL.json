@@ -1,0 +1,178 @@
+{
+  "schema": "rc3-frozen-reference-online-PG-protocol-v1",
+  "base_commit": "16f5d05952c03c7ddf20623ddcc59b09c0011040",
+  "fixed_research_goal": "large complex parent DRL training; frozen Actor rapidly completes variable-size local constrained task routes",
+  "experiment": "frozen-reference-online-PG-11622026-v1",
+  "seed": 11622026,
+  "frozen_reference": {
+    "path": "rc3_r04_m2_20261111/attempts/02/FIT_ONLY_COMPONENT_ANCHORS.json",
+    "sha256": "495790b78e383bf78072d613da2e5b0a100c1aa391b3055eec19121e244b3d6b",
+    "fit_parent_ids": [
+      "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2",
+      "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e",
+      "332f029648e4c26225677e43f1c47fbcc814d2073ba18fe975f703c9663d785d",
+      "33a2a685ab4d6cc25404c516aa03fb5f56444c392a33cf34c3856c031c4cbfec",
+      "35b31259f821b362eb5ccb9fff467d2a3822819c02a9900c076640c946f738c9",
+      "364e52ade7d135248e0f3dff1ecdfb3b03ddc1e83ba068657f2817a49fa57919",
+      "36f6235f2431d243211d5845af606adcbb1cf71fb43913c9b8684ab078a2fdf7",
+      "4725977b414190fe8aaf5c433fc3f3144ff39559d188a5ebbc7f7211fa204bb4",
+      "564b85260fa57e730675ba9f68937de094ebac8ba7c3f4df2343b8fa23a92bfc",
+      "5afd8d33eb3483364a5e08779ecd12cc2fa7377be526606709bc39bd7aa23057",
+      "73b542538e571eb530c465e03c60352b4e0b3e436935877bb10b61f0451a9ba6",
+      "74e358f431f5e679625c2b0d9d1aa910dae50b02e33b5497c4cfb789fc4ca31b",
+      "7a2b6e13e276297dd1400d7abc61470f60798632d32d4e35633a1d0351f90a5e",
+      "8263125451ca2f1c476f4ec2da82a8ca6ad2ab3838df2038015d3243cd9ed5e4",
+      "8df6554643464cae59fc926125cb004266c8abffac1e4dfec400d156ff270184",
+      "9037fef46ce00d260d6b87b25326dc8293a9334050e3ca340df8f977af029bf8",
+      "9100eae9190cfa9feefab2d8e148af1c3cd823dde6ec539051152c65fe1cfc68",
+      "910f4c72f8170c68533d7fdfd0f0af148a47888dbc4ffcb00e2f580c9223f828",
+      "9140d94d7770af36d6a956e6ef400f800854090ab3d42d567fcfcdfbf7808589",
+      "994fe3329f9ed29570c08d264ba565c851927317306eb1e377d31d39b32f47c7",
+      "9b52a6fc47f65139b178f66390f238f493edab650083012b464a033802913f38",
+      "a27f0336df0b6590ac4ddd8968e946e2d9fb3b49a9968bdcf9f528c7d0e0e274",
+      "c2a3bda5d409b6be2d1e072b3ee93a33a178b0172efbc9f365c2315624dd9f69",
+      "d24c3fd21288c9fbeaae3391d22c2c8b9901a1bd049ce1ce7d13134ff9139cfc",
+      "d5b82895cb42d41a02276ad013b07e9f61eb054e097bce53e18bed8a89ec0981",
+      "d751d66a7d9658bd794334708823f185afba35b162aa148b4723f2387ce23341",
+      "da1f842137972f54c7f92657ef66650cd3d2ea4315c65f9f807a579e50e7bcb1",
+      "dd751a1ba6cec6541d10d0649b1d334f8c0be9ed7464c8cb20dad65d23d7f3ac",
+      "e2729c3decf454f7fee1daa920ae0a6cd56ba4c05388bd1e57a53f588d6869e1",
+      "e5ce1c50987bc04c9b3bfae9e73b5c4d4876e89f4e631111c68d3112630b64a3",
+      "e61827760e36dd1298202d2ad38bd7e24e80b5196f8c463cd84bb44e749f80e4",
+      "f52778bd4e31f44573a175d27000ace650b77a2e6602e118580ab6bccc687d39",
+      "f56947449321e8c29e58de09091537dfe4b00648f98f5e1baff2ec60fa493a11"
+    ],
+    "condition": "saved window size x min(3,max(0,floor(4*(1-clamp(v[256],0,1))))); v[256]=observable remaining task fraction",
+    "unknown": "fit-global",
+    "value": "-b_L-0.75*b_K+b_H; ALREADY normalized, NEVER divide n again",
+    "update": "NEVER",
+    "role": "action-independent training return reference only; absent from Actor-only deployment"
+  },
+  "actor": {
+    "base_path": "rc3_integrated_rppo/runs/rc3_integrated_rppo_v1_20261110_01/actors/11622026/SL256_0256_1817f58aa650.pt",
+    "base_sha256": "60f5aa4e59983e92d565f0599823b710965cf2c96a041e7eb483d23a8eb0556c",
+    "schema": "relative_pre_tanh_centered_v1",
+    "input_dim": 206,
+    "hidden": [
+      64,
+      64
+    ],
+    "distances_enabled": true,
+    "amplitude": 0.25,
+    "zero_final_layer": true,
+    "initialization": "same runtime._seed(11622026,A1_residual_init) fresh hidden/net tensors; no M1/M2/R03/oldM3 residual weights"
+  },
+  "update": {
+    "gamma": 1.0,
+    "gae_lambda": 1.0,
+    "A_sample": "detach(G_complete-b_frozen(state))",
+    "online_own_current_policy": true,
+    "off_policy_sharing": false,
+    "actor_candidates_per_opportunity": 1,
+    "PPO_epochs": 1,
+    "actor_lr": 3e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "gradient_clip": 1.0,
+    "ratio_clip": 0.1,
+    "beta_base_KL": 0.02,
+    "entropy_term": "unchanged:none",
+    "advantage_scaling": "same prior per-batch all-state RMS+1e-8; raw unscaled A recorded; no advantage mean subtraction",
+    "reduction": "RL state_SUM then episode_MEAN; matched SL state_MEAN CE then episode_MEAN",
+    "critic": "NONE"
+  },
+  "guard": {
+    "max_step_kl": 0.001,
+    "max_step_probability_change": 0.02,
+    "max_base_total_variation": 0.1,
+    "consecutive_rejections_stop": 16
+  },
+  "schedule_sha256": "a8ded14fa8fd9e77602b11dfefff547c96d0f468d63cde509d1f48cf07aae764",
+  "roles": [
+    "PG-global",
+    "PG-cond",
+    "continued_SL_A1"
+  ],
+  "evaluation_methods": [
+    "FrozenSL",
+    "continued_SL_A1",
+    "PG-global",
+    "PG-cond",
+    "Fixed3",
+    "Detour16"
+  ],
+  "endpoints": [
+    64,
+    128
+  ],
+  "sampling_stream": "common random numbers: int(SHA256(11622026|frozen-reference-PG|opportunity|slot)[:15],16), then unchanged runtime._seed(seed,action_sampling); independent current-policy sampling per arm, no trajectory sharing",
+  "caps": {
+    "engineering": {
+      "requests": 24,
+      "actor_optimizer_attempts": 16,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 300
+    },
+    "science": {
+      "requests": 2328,
+      "actor_optimizer_attempts": 384,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 7200
+    }
+  },
+  "scientific_counts": {
+    "online_rollouts": 1536,
+    "endpoint_evaluation_requests": 792,
+    "teacher_replays": 768,
+    "actor_opportunities": 384,
+    "per_RL_opportunity": {
+      "10x10": 3,
+      "4x3": 1,
+      "6x6": 1,
+      "8x8": 1
+    },
+    "per_SL_opportunity": 6
+  },
+  "engineering": {
+    "actual_requests": 19,
+    "planned_Actor_attempts": 6,
+    "models_discarded": true,
+    "tests": [
+      "zero correction exact logits and complete raw/H SL routes",
+      "frozen component table units/fallback/detach",
+      "both current-policy RL real updates and matched SL",
+      "registered forced rejection AFTER actual candidate/real guard, exact Actor+Adam rollback",
+      "actual checkpoint model/Adam/RNG/cursor/usedIDs/query resource exact restore and next-step equivalence",
+      "strict Actor-only production schema/role/stage, complete route export equivalence"
+    ],
+    "tolerance": {
+      "logits_atol": 1e-06,
+      "route_cost_atol": 1e-07,
+      "rollback_and_restore": "bitwise"
+    },
+    "no_neural_critic": true
+  },
+  "quality_gate": "PG-cond saving>=0.5% AND physical-parent paired bootstrap95% lower>0 versus FrozenSL AND continued_SL_A1, THEN PG-global, separately raw_J and H_J and both exposed cohorts; each local size raw/H point saving>=0 versus FrozenSL/continuedSL; all routes valid",
+  "inference": {
+    "unit": "physical parent; average case costs within parent first",
+    "bootstrap": 20000,
+    "generator": "PCG64",
+    "seed": 11652026,
+    "quantile": "linear",
+    "cohorts": "8 exposed trained-parent new-task selection;3 exposed development parents; descriptive, not confirmatory"
+  },
+  "stop": [
+    "source/unit/nonfinite/invalid-current-policy/input/constraint failure: stop preserve; no resampling",
+    "resource cap or16 consecutive guard rejections: stop paired run, no refill",
+    "always fixed64/128 if healthy; neither endpoint has valid route gain: end candidate; never256",
+    "even if screen passes, no automatic further training or final test"
+  ],
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "native": "original endpoint Fixed3/Detour16 search/H; no extra common H; native final route is raw comparison convention, every H pre/postprocess route separately retained",
+  "timing": "entire request including saved input/navigation restoration, source check, cold deployment load, provider/features/actions/native/H/export/validation/evidence and separate IO; all caches counted; feature stage separately",
+  "boundaries": "No new scenes/navigation solve/teachers; original60/oldS3/final tests0; M1G3FAIL and M2deleteCB unchanged; historical active design pointers preserved",
+  "old_scientific_identity_excludes_current_authorization": true
+}
