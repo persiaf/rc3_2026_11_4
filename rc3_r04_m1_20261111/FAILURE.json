@@ -1,0 +1,19 @@
+{
+  "error": "Cumulative 1800-second cap reached",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_20261111\\run.py\", line 41, in main\n    if checked_hash(ROOT/name)!=sha: raise ValueError('Frozen source/evidence changed: '+name)\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_20261111\\run.py\", line 37, in checked_hash\n    budget.charge('source_reads');budget.charge('source_hashes')\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_20261111\\ledger.py\", line 83, in charge\n    self.check()\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_20261111\\ledger.py\", line 71, in check\n    if self.elapsed() > CAPS['wall_s']: raise RuntimeError('Cumulative 1800-second cap reached')\nRuntimeError: Cumulative 1800-second cap reached\n",
+  "attempts": {
+    "critic_optimizer_attempts": 0,
+    "actor_optimizer_attempts": 0,
+    "saved_trajectories": 0,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0,
+    "source_reads": 82,
+    "source_hashes": 82
+  },
+  "next_action": "No automatic extra attempts/configuration/data change; consumed budget and original evidence retained"
+}

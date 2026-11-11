@@ -1,0 +1,29 @@
+{
+  "schema": "rc3-r04-m1-final-failure-delivery-review-v1",
+  "reviewer": "/root/m1_independent_review",
+  "status": "PASS_REPORT_CONSISTENCY",
+  "execution": "FAIL",
+  "G3": "INSUFFICIENT",
+  "checks": {
+    "execution_FAIL_G3_INSUFFICIENT": true,
+    "all_G3_checks_missing": true,
+    "no_checkpoints_or_quality_stop_claim": true,
+    "wall_overrun_disclosed": true,
+    "explicit_missing_rows": true,
+    "no_fabricated_numeric_metrics": true,
+    "zero_evaluated_rows": true,
+    "no_scientific_C1_verdict": true,
+    "no_automatic_retry_or_G2": true,
+    "manual_text_consistency": true
+  },
+  "input_sha256": {
+    "M1_CALIBRATION_REPORT.md": "863998b2be592353863a2a147b670aa2e210afcb8bea6efd13143dc320372e77",
+    "M1_GATE_DECISION.json": "4a16d3e131b459218b4d537a104dc36a2e5a8f761d32567467c0a6cfba7a7642",
+    "PRODUCTION_MIGRATION_STATUS.md": "efe315f58e72ca7c24b1766067bd25324c7ad6f1052f1c450e9bf3ea2e446fb2",
+    "M1_METRICS.csv": "92a5df7675278826549e11712660f7379aa60781b3ad3f0fa2cd324151118435"
+  },
+  "review_scope": "Read-only report/gate/explicit missing-CSV consistency, not statistical or model computation. No old audit, trajectory, model, optimizer, or bound source/resource mutation.",
+  "current_production_state": "Code statically reviewed; 14 engineering tests and actual checkpoint/export calibration remain NOT_RUN. Earlier pending table is explicitly historical; appended stop status controls.",
+  "remaining_block": "Consumed wall exceeds1800; no present authorization budget remains. Hard timeout/stall require a separately authorized recovery; no G2 admission.",
+  "maintenance_review_wall_s": 0.0011164999996253755
+}

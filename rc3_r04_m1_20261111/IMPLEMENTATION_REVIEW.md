@@ -38,3 +38,13 @@ G2真实Actor／Adam候选更新、guard拒绝回滚、完整Actor恢复、A0/A1
 ## 实际运行结果追加位置
 
 本文件完成时尚未启动本阶段工程测试或科学拟合。实际结果由`UNIT_TEST_RESULTS.json`、`CHECKPOINT_INTERFACE_RESULTS.json`、`M1_GATE_DECISION.json`、`INDEPENDENT_NUMERICAL_RECHECK.json`及`M1_CALIBRATION_REPORT.md`给出；不存在的文件不代表通过。运行后的结果说明应追加或由最终报告引用，不能把此静态审查写成已完成验收。
+
+## 2026-11-11实际执行追加：预算耗尽，未进入工程测试与拟合
+
+**实际执行状态：FAILED_PRESERVED；G3：INSUFFICIENT。** 此追加保留上述首次优化器前的静态审查原文，但不将静态GO解释为实际工程或校准通过。
+
+按`RESOURCE_ACCOUNTING.json`与`FAILURE.json`，本次runner在来源hash检查循环中触发`Cumulative 1800-second cap reached`。已登记累计墙钟为**2859.2566758999983秒**，超过1800秒上限，不能写成在预算内完成。这里仅记录实际检测位置与消费；不能仅凭该traceback认定全部延迟由hash运算造成。先前元数据初始化故障及其保守计入的1.5秒仍保留，未清零。
+
+实际Critic优化器尝试0、Actor优化器尝试0、完整保存轨迹恢复0；新场景、导航、教师、native、H、原60与旧S3读取计数均0。14项单元测试为**NOT_RUN**，真实模型前向／Critic拟合未开始，step0/128/256预测和模型均未产生。实际checkpoint／export往返为**NOT_RUN**，不存在实际PASS依据。
+
+因此本次M1不能判断C1是否优于条件常数或C0，也不能把缺失数据记作C1科学失败。当前授权预算已耗尽，本配置停止，不继续工程测试、拟合、换样本、加步数或另起目录重置资源。G3未通过，不能转入G2最终验收或M3；Actor居中假设在本次未被检验，更未被否证。最终缺项表与状态以`M1_CALIBRATION_REPORT.md`、`M1_METRICS.csv`和`M1_GATE_DECISION.json`为准。

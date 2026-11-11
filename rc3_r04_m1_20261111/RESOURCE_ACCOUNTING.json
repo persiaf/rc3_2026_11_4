@@ -24,10 +24,10 @@
     "H_requests": 0,
     "original60_reads": 0,
     "oldS3_reads": 0,
-    "source_reads": 5,
-    "source_hashes": 5
+    "source_reads": 82,
+    "source_hashes": 82
   },
-  "wall_s": 2.29855999999927,
+  "wall_s": 2859.2566758999983,
   "sessions": [
     {
       "phase": "metadata_initialization_failure",
@@ -38,10 +38,15 @@
       "phase": "metadata",
       "wall_s": 0.797529499999655,
       "status": "METADATA_REGISTERED"
+    },
+    {
+      "phase": "engineering_and_M1",
+      "wall_s": 2856.6304356,
+      "status": "FAILED_PRESERVED"
     }
   ],
-  "sequence": 3,
-  "event_sha256": "6705774be955b43a58974b5dddbb1539ce178952740f9c642def49398c6d40ff",
+  "sequence": 5,
+  "event_sha256": "c6b7500133e86e5f4851eb164ecff7cb9ce35de71fa6df58fd3bfb8aa97c7fee",
   "scientific_clock": "Cumulative active registration + engineering + saved-input reads/restoration + fit/evaluation/save/recheck process wall; code authoring and Git transport are separate maintenance, never reset prior consumption",
   "read_counter_scope": "Instrumented entry paths only; nested immutable navigation/legacy provenance helpers may perform additional reads/hashes. Their entire elapsed cost remains inside cumulative wall. These counters are not a complete filesystem syscall census.",
   "failures": [
@@ -57,12 +62,16 @@
       "original_ledger_sha256": "323f50b4c97d876b3bd652ef8f21881fea2c18a4a887801a244ac356421d152a",
       "fix": "Remove duplicate phase keyword from session_start event; no protocol/data/configuration change",
       "preservation": "Carry this failure and 1.5 seconds into same stage cumulative resource ledger; no budget reset"
+    },
+    {
+      "phase": "engineering_and_M1",
+      "error": "Cumulative 1800-second cap reached"
     }
   ],
   "session_open": false,
-  "status": "METADATA_REGISTERED",
-  "active_phase": "metadata",
-  "opened_utc": "2026-11-11T04:44:31.937458+00:00",
+  "status": "FAILED_PRESERVED",
+  "active_phase": "engineering_and_M1",
+  "opened_utc": "2026-11-11T04:45:39.910487+00:00",
   "component_seconds": {
     "source_read": 0.0656342999991466,
     "source_hash": 0.017245200000616023

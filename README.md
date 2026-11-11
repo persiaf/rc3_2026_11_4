@@ -1,5 +1,9 @@
 # RC3：可达约束下的二维静态任务路径规划
 
+## 2026-11-11：R04-M1执行失败，未开始拟合
+
+[本次M1实际报告](rc3_r04_m1_20261111/M1_CALIBRATION_REPORT.md)：已锁定33fit/16holdout父、116条轨迹及C0/C1生产接口源码；真实入口在源码预检发现墙钟超限，累计2859.26秒，Critic/Actor更新及轨迹恢复均0。**执行FAIL、G3 INSUFFICIENT；无新校准模型或性能结果，不进入G2/M3。** 时间硬上限未被严格守住，失败和全部消费保留，不自动补跑。[资源账](rc3_r04_m1_20261111/RESOURCE_ACCOUNTING.json)、[独立失败复核](rc3_r04_m1_20261111/INDEPENDENT_FAILURE_REVIEW.md)。下文历史原文保留。
+
 ## 2026-11-11：R04长期价值与相对策略方案及工程审查
 
 [本轮R04完整设计和交付](rc3_r04_review_20261111/README.md)已完成C1、训练折条件基线、合法集合pre-tanh居中Actor的数学与接口原型。37项人工单元、8个保存SL-logit状态接口和41,624,938项保存CSV检查PASS，累计150.839秒；所有Actor/Critic optimizer和新规划请求为0。独立终审为设计/工程GO，生产schema迁移及校准门槛仍未通过，**未获联合PPO许可、未启动科学训练**。居中不保证post-tanh均值为0或突破原gap界；条件基线尚非必需。
