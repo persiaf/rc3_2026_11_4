@@ -38,20 +38,35 @@ class Ledger(OldLedger):
         if os.environ.get('RC3_CONTROLLER_DEADLINE') and time.time()>float(os.environ['RC3_CONTROLLER_DEADLINE'])-15:
             raise TimeoutError('Supervised job deadline')
     def request(self,rid,compute,**kw):
-        # H/search calls are transferred by the caller in finally, including failures.
+        # Terminal/search/forward costs are charged by runtime finally even
+        # on failure. Persist their actual per-request values, without a
+        # second aggregation in this writer.
+        self.check();role=kw['role'];kind=kw.get('kind','engineering');op=kw.get('op',0)
+        if rid in self.ids or self.counts['requests']>=self.cap['requests']:raise RuntimeError('Duplicate request or total request cap')
+        self.ids.add(rid);self.counts['requests']+=1;self.event('request_debit',request_id=rid,role=role,kind=kind)
+        tick=time.perf_counter()
         try:
-            result=super().request(rid,compute,**kw)
-        except BaseException:raise
-        # The old request writer also adds action rows; our finally already
-        # counts them so failed and successful requests use the same boundary.
-        self.counts['feature_states']-=len(result['record'].get('actions',[]))
-        return result
+            result=compute();r=result['record'];r.update(request_id=rid,method=role,opportunity=op,request_kind=kind,stage=self.stage)
+            io_start=time.perf_counter();ref=archive(self.path/'REQUESTS.jsonl.gz',r);io_s=time.perf_counter()-io_start
+            self.counts['request_io_s']+=io_s;self.counts['requests_completed']+=1
+            self.counts['input_prepare_s']+=r.get('timing',{}).get('input_prepare_s',0.)
+            row=dict(request_id=rid,role=role,width=r['spec']['width'],height=r['spec']['height'],physical_key=r['physical_key'],
+                **r['metrics'],valid=bool(r['plan']['validation']['valid_model_plan']),H_calls=r['counts']['full_H_calls'],
+                internal_search=r['internal_search']['counts'],**ref)
+            csvrow(self.path/'REQUEST_INDEX.csv',row);self.event('request_complete',request_id=rid,record=ref)
+            csvrow(self.path/'REQUEST_TIMING.csv',dict(request_id=rid,full_request_s=time.perf_counter()-tick,archive_IO_s=io_s))
+            return result
+        except BaseException as exc:
+            self.counts['requests_failed']+=1;self.event('request_failure',request_id=rid,error=repr(exc));raise
+
+def current_binding():
+    return HOME/read(HOME/'ACTIVE_SOURCE_BINDING.json')['path'] if (HOME/'ACTIVE_SOURCE_BINDING.json').exists() else HOME/'SOURCE_BINDING.json'
 
 def binding_identity():
-    return {k:sha(HOME/f) for k,f in [('protocol_sha256','PROGRAM_PROTOCOL.json'),('plan_sha256','MASTER_PLAN.md'),('source_binding_sha256','SOURCE_BINDING.json')]}
+    return dict(protocol_sha256=sha(HOME/'PROGRAM_PROTOCOL.json'),plan_sha256=sha(HOME/'MASTER_PLAN.md'),source_binding_sha256=sha(current_binding()))
 
 def verify_binding():
-    b=read(HOME/'SOURCE_BINDING.json')
+    b=read(current_binding())
     for name,expected in b['source_sha256'].items():
         if name.startswith(HOME.name+'/') and sha(ROOT/name)!=expected:raise ValueError('New executable source changed: '+name)
     for name in ('MASTER_PLAN.md','PROGRAM_PROTOCOL.json','DATA_ADMISSION.json','APPROVAL_RECEIPT.json'):

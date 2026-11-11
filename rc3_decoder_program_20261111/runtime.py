@@ -44,7 +44,7 @@ def request(ledger,inputs,spec,rid,role,*,actor=None,entry=None,greedy=False,see
                 actor_tensor_sha256=before,parameter_version=getattr(policy,'revision',256),actions=actions,
                 action_masks=[s.mask().tolist() for s in states],ordered_prefixes=[s.prefix for s in states],
                 complete_return=-result['J'],environment_reward_sum=math.fsum(env.rewards),environment_rewards=env.rewards,
-                counts=dict(stats,full_H_calls=0),H_s=result['H_s'],internal_search={},
+                counts=dict(stats),H_s=result['H_s'],internal_search=internal,
                 timing=dict(input_prepare_s=prepare,original_features_and_forward_s=forward_s),
                 raw_semantics='Complete original Actor route before unchanged H; exact same verifier',
                 timer_scope='Input/source/navigation restore,original features,decode,H,raw/final export and validation; journal I/O included in request timing receipt')
