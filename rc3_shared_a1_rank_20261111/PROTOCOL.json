@@ -1,0 +1,76 @@
+{
+  "schema": "shared-a1-witness-conditional-rank-v1",
+  "base_commit": "32c42f95297250629dc990270a689ff138cc5cbc",
+  "seed": 11622026,
+  "fixed_goal": "Large complex parent DRL training; frozen Actor quickly completes local complete constrained tasks",
+  "data_path": "rc3_actor_positive_scale_20261111/positive/SELECTED_TEACHER_STATES.pt",
+  "data_sha256": "a2dd0a6330618e5cc5f19acf13cfd5b2185fc9502e3857b475e6ba7aadc0dc47",
+  "states": "EXACT saved32 in original order, teacher/features/candidate order/mask unchanged; no pool scan or reselection",
+  "architecture": [
+    206,
+    64,
+    64,
+    1
+  ],
+  "amplitude": 0.25,
+  "distances": "ON",
+  "old_witness_scope": "Separate per-state weights; no old shared32-state witness",
+  "construction": {
+    "bumps_max": 32,
+    "first_hidden_max": 64,
+    "second_hidden_max": 64,
+    "projections": "Fixed206 coordinate axes +128 L2-normalized Rademacher +128 L2-normalized Gaussian vectors, PCG64seed11622026, float32 weights; no extra inputs/stateID/query lookup",
+    "candidate_count": 462,
+    "attempts_max": 8,
+    "choice": "For each distinct exact teacher feature, stable sort candidates by decreasing minimum distinct-row projection separation divided by max(1+abs(X)@abs(p)); attempt k uses kth candidate clipped to last available for every bump; a group with zero choices fails construction; no pool changes",
+    "normalized_separation_min": 2e-06,
+    "half_width": "min distinct projection gap/3",
+    "duplicate_policy": "Exact teacher feature groups merge; all occurrences and near-neighbor distances reported; no dropping conflicts",
+    "scalar_scale": "Per-target isolated float32 spike minimal scale for margin2e-4,48 fixed bisections on[0,64*legal_count]; max over exact duplicate target group, divide by actual minimum positive float32 target bump peak; no optimizer",
+    "success": "ONE actual float32 A1 parameter set simultaneously all32 strict margin>=1e-4, original full-legal base->witness guard, mask, finite and abs(delta)<=.25000001; then independent NumPy probability/A1 arithmetic",
+    "failure": "No shared witness found within this construction only; not a proof shared network impossible",
+    "diagnostic_only": true
+  },
+  "rank": {
+    "prerequisite": "JOINT_FEASIBILITY.status PASS only",
+    "initial": "EXACT sealed original zero-output initial_correction; never old fitted or constructed weights",
+    "learning_rate": 0.0003,
+    "Adam": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "gradient_clip": 1.0
+    },
+    "loss": "mean32(relu(1e-4+max_other_legal_logit-teacher_logit))",
+    "order": "Same fixed32 every step",
+    "attempts_max": 128,
+    "success": "EXACT step128 strict target margin>1e-5 fraction>=80%; accepted>=ceil(.9*128)=116; finite, mask, amplitude, all actually applied incremental guards",
+    "CE_reference": "Accurate frozen original3e-4 CE step128:14/32,128 accepted; read saved results, no CE retrain",
+    "records": "Every state margin/residual/probability change, full candidate+applied logits, rejected state+constraint, candidate model+Adam hashes; exact repeated candidates explicitly linked",
+    "endpoint_guard_semantics": "Candidate reports compare previous applied->candidate, baseTV toSL. Descriptive applied-endpoint KL/probability columns compare SL->endpoint; these are not incremental step-guard failures.",
+    "diagnostic_only": true
+  },
+  "guard": {
+    "max_step_kl": 0.001,
+    "max_step_probability_change": 0.02,
+    "max_base_total_variation": 0.1,
+    "consecutive_rejection_limit": 16
+  },
+  "caps": {
+    "diagnostic": {
+      "requests": 0,
+      "actor_optimizer_attempts": 128,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 650
+    }
+  },
+  "total_wall_cap_s": 900,
+  "review_wall_reserve_s": 250,
+  "pre_registration_source_read_upper_s": 10,
+  "wall_scope": "Source reading/registration, real provenance, frozen-data load, construction/forwards/fitting/new-output audits and complete independent review charged; code authorship/prose/Git-LFS maintenance separate. No historical huge CSV audit.",
+  "stop": "Source/input/nonfinite error stops and preserves failed consumption;16 consecutive rejections stop rank config; no repeat entries/refill/extra LR/steps/guard/amplitude. No online DRL trigger.",
+  "frozen_history": "Old3 LR FAIL,323 attempts,online NOT_RUN and resource bytes preserved. All diagnostic weights forbidden formal initialization/deployment. original60/oldS3/userWord untouched."
+}

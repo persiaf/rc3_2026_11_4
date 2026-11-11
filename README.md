@@ -1,3 +1,9 @@
+<!-- SHARED_A1_RANK_CURRENT_BEGIN -->
+## 当前：共享A1可行性与条件排序诊断
+
+[独立任务入口](rc3_shared_a1_rank_20261111/README.md)。固定原32封存状态，先验证一套共享A1参数；通过后才运行最多128次lr3e-4排序诊断。旧三学习率FAIL、323次尝试及在线NOT_RUN保持，不自动触发在线DRL。
+<!-- SHARED_A1_RANK_CURRENT_END -->
+
 <!-- ACTOR_POSITIVE_SCALE_CURRENT_BEGIN -->
 ## 当前：Actor阳性对照已完成，条件在线试验未触发
 
