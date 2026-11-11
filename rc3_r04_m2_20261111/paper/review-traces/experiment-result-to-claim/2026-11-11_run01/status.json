@@ -1,0 +1,67 @@
+{
+  "schema": "rc3-r04-m2-result-to-claim-trace-status-v1",
+  "review_type": "delegated independent paper architect/reviewer",
+  "review_task": "/root/m2_result_to_claim_review",
+  "status": "COMPLETE",
+  "trace_mode": "full",
+  "pending_external_review": false,
+  "claim_supported": "no",
+  "confidence": "high",
+  "paper_claim_audit": "unavailable",
+  "paper_audit_paths_checked": [
+    "paper/PAPER_CLAIM_AUDIT.json",
+    "rc3_r04_m2_20261111/paper/PAPER_CLAIM_AUDIT.json"
+  ],
+  "downstream_paper_status": "provisional — no paper claim audit available",
+  "skill": "C:/Users/Administrator/.codex/skills/experiment-result-to-claim/SKILL.md",
+  "missing_skill_references": [
+    "C:/Users/Administrator/.codex/skills/shared-references/review-tracing.md",
+    "C:/Users/Administrator/.codex/skills/shared-references/assurance-contract.md"
+  ],
+  "missing_reference_handling": "Read the skill body and produced its full five-file prompt/raw/parsed/routing/status trace; no claimed verification against unavailable subsidiary contracts.",
+  "evidence_read": [
+    "AGENTS.md",
+    "rc3_r04_m2_20261111/attempts/02/M2_PROTOCOL.json",
+    "rc3_r04_m2_20261111/attempts/02/M2_DECISION.json",
+    "rc3_r04_m2_20261111/attempts/02/M2_METRICS.csv",
+    "rc3_r04_m2_20261111/attempts/02/PAIRED_PARENT_INTERVALS.csv",
+    "rc3_r04_m2_20261111/attempts/02/INDEPENDENT_NUMERICAL_RECHECK.json",
+    "rc3_r04_m2_20261111/attempts/02/DATA_REUSE_VERIFICATION.json",
+    "rc3_r04_m2_20261111/attempts/02/C1_REFERENCE_IDENTITY.json",
+    "rc3_r04_m2_20261111/attempts/02/WORKER_RESOURCE_ACCOUNTING.json",
+    "rc3_r04_m2_20261111/attempts/02/REGISTRATION_RECEIPT.json",
+    "rc3_r04_m2_20261111/attempts/02/ENTRY_CONSUMPTION.json",
+    "rc3_r04_m2_20261111/model.py",
+    "rc3_r04_m2_20261111/analysis.py",
+    "rc3_r04_m2_20261111/audit.py",
+    "rc3_r04_m2_20261111/worker.py",
+    "rc3_r04_m2_20261111/entry2.py"
+  ],
+  "resource_accounting": {
+    "scientific_numerical_recomputations": 0,
+    "scientific_numerical_recomputation_wall_s": 0,
+    "optimizer_attempts": 0,
+    "data_tensor_loads": 0,
+    "planning_or_navigation_requests": 0,
+    "old_large_csv_audits": 0,
+    "reported_functions_exec_read_wall_s_before_trace_write": 7.7,
+    "reported_read_wall_note": "Sum of four displayed functions.exec wall durations: 1.8 + 1.7 + 2.3 + 1.9 seconds. This is tool I/O and receipt/table/source inspection, not new scientific computation; parent accounts the full independent-review elapsed wall conservatively within the 1800-second task cap.",
+    "first_observed_clock": "2026-11-11T15:39:20.5672526+08:00",
+    "pre_trace_write_clock_utc": "2026-11-11 07:40:57 UTC",
+    "full_review_elapsed_wall_owner": "parent executor; include the complete delegated-review interval, not only tool I/O",
+    "reviewed_worker_new_critic_attempts": 256,
+    "reviewed_worker_CG_attempts": 128,
+    "reviewed_worker_CB_attempts": 128,
+    "reviewed_worker_actor_and_planning_counts": 0,
+    "historical_M1_resources": "not modified or reset"
+  },
+  "write_scope": "Only the five files in this review-trace directory",
+  "project_note_integration": "Parent executor records the compact verdict in existing project notes; reviewer has no write authorization outside this directory.",
+  "artifacts": [
+    "prompt.md",
+    "raw_response.md",
+    "parsed_verdict.json",
+    "routing_action.json",
+    "status.json"
+  ]
+}

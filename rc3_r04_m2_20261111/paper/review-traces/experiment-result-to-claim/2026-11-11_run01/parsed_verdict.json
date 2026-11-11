@@ -1,0 +1,83 @@
+{
+  "schema": "rc3-r04-m2-result-to-claim-v1",
+  "experiment": "R04-M2-attempt02-CG128-CB128",
+  "reviewer_role": "independent paper architect/reviewer",
+  "claim": "CB神经残差有足够增益值得保留",
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "Pre-registered retention/deletion decision for this candidate on the exposed development set; no confidence claim about unseen-route performance.",
+  "paper_claim_audit": "unavailable",
+  "paper_use_verdict": "provisional — no paper claim audit available",
+  "pending_external_review": false,
+  "review_status": "COMPLETE",
+  "what_results_support": [
+    "CB has a visible pooled incremental Value-MSE improvement over its own conditional anchor: ratio 0.8320688974639446, paired-parent 95% interval [0.7670512092738667, 0.9401564507929151].",
+    "CB is better than matched CG128 in both aggregations, with Value ratios 0.3314353460587894 and 0.297003694068379; both paired-parent interval upper bounds are below 1.",
+    "CG improves over its own global anchor in both aggregations: ratios 0.6357037709058408 and 0.6804749391406629, with upper bounds 0.7159908493669743 and 0.7605210256785443.",
+    "Fit-only observable conditioning is a strong zero-update reference: B-cond0/B-global0 Value ratios are 0.253217852443745 and 0.22623583302403572.",
+    "All normalized component guard checks pass. The current CB retention rule still fails because it is conjunctive.",
+    "The recorded arithmetic is consistent: the existing independent numerical recheck reports PASS, 5880 checks, 55944 exported system-state rows and 32 gate checks."
+  ],
+  "what_results_dont_support": [
+    "The current CB residual is sufficiently reliable and size-consistent to retain: 3 of 32 registered checks fail.",
+    "All observed improvement is due to initial statistics, or learned residuals have no observable effect: both statements are too strong for these results.",
+    "CG should be promoted because it beats its own global anchor or fixed C1: CG remains 2.5105013914730563 / 3.007812378989353 times worse than B-cond0.",
+    "Beating C1 alone identifies learned residual value.",
+    "Independent holdout generalization, cross-seed robustness, online Actor/PPO benefit, route reward, route completion, coverage, navigation safety, real manipulation/IK certification or deployment performance."
+  ],
+  "registered_gate": {
+    "checks": 32,
+    "passed": 29,
+    "failed": 3,
+    "decision": "STOP_DELETE_CB_RESIDUAL",
+    "failure_details": [
+      {
+        "check": "CB_value_B-cond0_parent_equal",
+        "ratio": 0.8933313876244371,
+        "ci95_low": 0.793903007488311,
+        "ci95_high": 1.0154808880820239,
+        "reason": "Point ratio passes <=0.95, but paired-parent 95% upper bound fails <1."
+      },
+      {
+        "check": "CB_size_B-cond0_state_pooled_6x6",
+        "n_parents": 12,
+        "ratio": 1.0374282880585626,
+        "reason": "Fails per-size Value-MSE ratio <=1."
+      },
+      {
+        "check": "CB_size_B-cond0_parent_equal_6x6",
+        "n_parents": 12,
+        "ratio": 1.1066706396296173,
+        "reason": "Fails per-size Value-MSE ratio <=1."
+      }
+    ]
+  },
+  "missing_evidence": [
+    "CB lacks the registered equal-parent reliability and 6x6 no-degradation evidence. These gaps are sufficient to delete this candidate; the protocol does not permit automatic rescue experiments.",
+    "A frozen DRL policy's complete local-task routes have not been evaluated for completion, coverage, navigation validity, operation reachability/safety, route/task cost, latency or scaling in M2.",
+    "The reused holdout is already exposed, so independent unseen-layout generalization and cross-seed robustness are absent.",
+    "No actual robot/IK certification is supplied; arithmetic and proxy checks cannot establish it.",
+    "No paper/PAPER_CLAIM_AUDIT.json is available at the project root or within the M2 package."
+  ],
+  "suggested_claim_revision": "在已暴露holdout的M2开发机制筛选中，fit-only可观测条件统计是强零更新参考。残差训练存在可见预测改善，但当前CB未满足预注册的父布局等权可靠性及6x6不退化标准，故删除当前候选残差复杂性；未证明路线收益或独立泛化。",
+  "training_period_reference": {
+    "preferred": "B-cond0",
+    "role": "Frozen fit-only component reference/initialization or control during DRL training; never a substitute for the DRL core.",
+    "retain_as_comparators": ["B-global0", "C1_fixed128"],
+    "CG128": "Retain diagnostic evidence of learning over its own anchor, without promotion to preferred reference or automatic online stage.",
+    "CB128": "Delete from the retained candidate design; preserve experiment evidence and checkpoints."
+  },
+  "next_experiments_needed": {
+    "for_current_deletion_decision": "none",
+    "execute_now": false,
+    "future_evidence_only": "Any future claim about the fixed DRL planning objective needs a separately registered and authorized online/frozen-policy evaluation. This review does not launch or register it."
+  },
+  "routing_action": "pivot",
+  "automatic_followup_authorized": false,
+  "frozen_history": {
+    "M1_G3": "FAIL_FROZEN",
+    "M1_step256": "NOT_RUN_FROZEN",
+    "historical_resources": "unchanged",
+    "DRL_research_objective": "unchanged"
+  }
+}

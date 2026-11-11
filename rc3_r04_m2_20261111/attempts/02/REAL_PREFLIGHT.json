@@ -1,0 +1,60 @@
+{
+  "status": "GO",
+  "actual_environment": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "real_Torch": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "model",
+        "path": "rc3_r04_m2_20261111/model.py",
+        "sha256": "b57811960c428b2d22b58401c22336d8072ea16b406e7e45d80d16459d629d38",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "units",
+        "path": "rc3_r04_m1_20261111/critic.py",
+        "sha256": "e8b6a58f34190a1b70182a3f6ce4466206ed429e21691977ebba0ae0b93ba0af",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "analysis",
+        "path": "rc3_r04_m2_20261111/analysis.py",
+        "sha256": "63bb487ff1faad2e9987a838c7c297d2fb30883d5b80b38cee604f74ecbfeffa",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "audit",
+        "path": "rc3_r04_m2_20261111/audit.py",
+        "sha256": "3b99e0790610866cc446a390654c8ee434eff8ce47de4ed33181f22a3b162223",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "accepted_supervisor_receipt": {
+    "path": "rc3_r04_m1_recovery_20261111/engineering/ENGINEERING_TEST_RESULTS.json",
+    "sha256": "d32b40e15fdb8c41138ceae0d5a18fb229309e8300c23866c93ceacb71403f93"
+  },
+  "historical_supervisor_tests_rerun": false,
+  "code_commit": "a8df31312c9aeb5edf2c51ee65d1fe095d08bca8"
+}

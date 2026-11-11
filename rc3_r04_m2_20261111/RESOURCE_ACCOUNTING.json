@@ -1,0 +1,83 @@
+{
+  "schema": "rc3-r04-m2-task-cumulative-closeout-v1",
+  "status": "COMPLETE_STOP_DELETE_CB_RESIDUAL",
+  "new_task_cap_s": 1800,
+  "new_task_accounted_wall_s": 426.05683014165726,
+  "accounting_entries": [
+    {
+      "kind": "registration_and_two_supervised_entries",
+      "wall_s": 25.18614006093412,
+      "receipt": "attempts/02/ENTRY_CONSUMPTION.json"
+    },
+    {
+      "kind": "pre_registration_metadata_inspection_tool_envelope",
+      "wall_s": 0.2862669
+    },
+    {
+      "kind": "registration_and_launch_tool_envelope_padding",
+      "wall_s": 0.9010599022952483
+    },
+    {
+      "kind": "failed_entry_diagnosis_and_exact_python_metadata_tool_envelopes",
+      "wall_s": 0.4966501
+    },
+    {
+      "kind": "saved_small_summary_extract_tool_envelope",
+      "wall_s": 0.2669885
+    },
+    {
+      "kind": "complete_independent_claim_review_and_overlapping_root_work",
+      "wall_s": 398.9183232784271,
+      "receipt": "CLAIM_REVIEW_ACCOUNTING.json"
+    },
+    {
+      "kind": "resource_closeout_script",
+      "wall_s": 0.0014014000007591676
+    }
+  ],
+  "worker_registration_and_execution_wall_s": 25.18614006093412,
+  "counts": {
+    "critic_optimizer_attempts": 256,
+    "critic_optimizer_completed": 256,
+    "backward_calls": 256,
+    "actor_optimizer_attempts": 0,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0,
+    "dataset_loads": 1,
+    "base_model_loads": 0,
+    "base_encoder_forwards": 0,
+    "new_labels": 0,
+    "restored_trajectories": 0
+  },
+  "per_configuration_optimizer_attempts": {
+    "CG": 128,
+    "CB": 128
+  },
+  "optimizer_cap": 256,
+  "old_consumption_preserved_s": 3042.1237521165453,
+  "cumulative_M1_M2_family_accounted_wall_s": 3468.180582258203,
+  "old_M1_critic_optimizer_attempts": 256,
+  "cumulative_M1_M2_critic_optimizer_attempts": 512,
+  "old_resource": {
+    "path": "rc3_r04_m1_real_20261111/RESOURCE_ACCOUNTING.json",
+    "sha256": "9bbb092a5825dbf6fd094d344ed12474f0f5f41b52cca7a6dcec7fc285811d72"
+  },
+  "worker_launches": 2,
+  "first_entry": {
+    "status": "IMPORT_FAILURE_PRESERVED",
+    "critic_optimizer_attempts": 0,
+    "data_loads": 0,
+    "receipt": "ENTRY_CONSUMPTION.json"
+  },
+  "execution_wall_violation": false,
+  "both_process_trees_exited": true,
+  "job_active_processes_at_end": 0,
+  "scientific_execution_stopped": true,
+  "further_optimizer_or_planning_authorized": false,
+  "accounting_scope": "All active engineering/import/provenance, exact data load, fitting/evaluation/save/numerical audit, failure and full independent reviewer interval charged. Code/prose and Git transport otherwise maintenance; conservative review interval also overcharges overlapping prose work. Original worker/supervisor and old receipts remain exact; no reset or double-sum of nested worker stages."
+}
