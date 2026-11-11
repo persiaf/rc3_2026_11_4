@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\worker.py", line 278, in <module>
+    if __name__=='__main__':main()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\worker.py", line 45, in main
+    provenance.check_loaded_modules()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 281, in check_loaded_modules
+    self.hash_file(source);relative=source.relative_to(self.root).as_posix()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 228, in hash_file
+    _,_,sha=self._identity(path,expected)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 148, in _identity
+    if admitted is None: raise ValueError('Unregistered actual dependency: '+relative)
+ValueError: Unregistered actual dependency: _ops.py

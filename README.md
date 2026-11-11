@@ -1,5 +1,9 @@
 # RC3：可达约束下的二维静态任务路径规划
 
+## 2026-11-11：M1监督修复真实验收，唯一恢复仍未拟合
+
+[本轮实际报告](rc3_r04_m1_recovery_20261111/M1_CALIBRATION_REPORT.md)：系统电源日志确认原长停顿主要为主机睡眠，旧2859.2566759秒不扣减。独立进程监督7项真实验收通过；唯一新M1尝试11.586754秒因来源分类器误认Torch虚拟命名空间失败，轨迹恢复及C0/C1更新均0，**G3未评价，不进入G2/M3**。分类修正另通过9项标准库测试，未再次启动科学尝试。[超时测试](rc3_r04_m1_recovery_20261111/TIMEOUT_FIX_AND_TEST.md)、[资源账](rc3_r04_m1_recovery_20261111/RESOURCE_ACCOUNTING.json)。历史原文保留。
+
 ## 2026-11-11：R04-M1执行失败，未开始拟合
 
 [本次M1实际报告](rc3_r04_m1_20261111/M1_CALIBRATION_REPORT.md)：已锁定33fit/16holdout父、116条轨迹及C0/C1生产接口源码；真实入口在源码预检发现墙钟超限，累计2859.26秒，Critic/Actor更新及轨迹恢复均0。**执行FAIL、G3 INSUFFICIENT；无新校准模型或性能结果，不进入G2/M3。** 时间硬上限未被严格守住，失败和全部消费保留，不自动补跑。[资源账](rc3_r04_m1_20261111/RESOURCE_ACCOUNTING.json)、[独立失败复核](rc3_r04_m1_20261111/INDEPENDENT_FAILURE_REVIEW.md)。下文历史原文保留。

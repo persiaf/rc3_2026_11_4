@@ -1,0 +1,209 @@
+{
+  "schema": "rc3-m1-recovery-independent-failure-review-v1",
+  "reviewer": "/root/m1_recovery_independent",
+  "review_status": "PASS_FAILURE_EVIDENCE",
+  "execution_verdict": "FAIL",
+  "G3": "INSUFFICIENT",
+  "scientific_configuration_verdict": "NOT_EVALUATED",
+  "cause": "Our project-source classifier treated torch.ops virtual namespace relative __file__=_ops.py as a real cwd project source; closed on unregistered path after imports. Not a missing user file or LFS object.",
+  "old_attempt_wall_s": 2859.2566758999983,
+  "initial_timeout_engineering_wall_s": 13.979909658432007,
+  "new_attempt_supervisor_wall_s": 11.586754083633423,
+  "new_attempt_worker_wall_s": 10.985000000000582,
+  "known_cumulative_wall_before_any_later_classifier_engineering_s": 2884.8233396420637,
+  "timing": {
+    "heavy_imports_and_nested_source_verification_s": 10.544230899999093,
+    "hashes_completed": 26,
+    "total_observed_hash_s": 0.08736850000059349,
+    "largest_single_hash_s": 0.01108389999717474,
+    "hash_wait_stall_observed": false
+  },
+  "trajectory_count_restored": 0,
+  "C0_updates": 0,
+  "C1_updates": 0,
+  "Actor_updates": 0,
+  "models_saved": 0,
+  "engineering_critic_tests": "NOT_RUN",
+  "true_process_interruption_tests": "GO_7_SYNTHETIC_CASES",
+  "new_science_attempt_consumed": true,
+  "automatic_retry": false,
+  "G2": "NOT_RUN",
+  "M3": "NOT_RUN",
+  "checks": [
+    {
+      "check": "old2859_resource_bytes_exact",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "worker_resource_original_exact",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "supervisor_receipt_bound",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "joined_account_preserves_counters_and_ledger",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "actual_wall_includes_supervisor_and_worker",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "failed_worker_tree_exit_confirmed",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "new_failure_not_timeout_violation",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "one_science_attempt_consumed_no_retry",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "zero_models_trajectories_optimizers_new_requests",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "event_hash_sequence_1",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "event_hash_sequence_2",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "exact_terminal_event_tail",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "all26_observed_hash_operations_completed",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "hash_start_end_paths_paired",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "localized_classifier_failure_after_imports",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_UNIT_TEST_RESULTS.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_RESTORED_INPUT_INDEX.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_M1_RESTORED_DATASET.pt",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_TRAINING_LOG.csv",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_M1_STATE_PREDICTIONS.csv.gz",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_INITIALIZATION.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_CHECKPOINT_INTERFACE_RESULTS.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "not_executed_models",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "failed_attempt_bound_control_sources_unchanged",
+      "status": "PASS",
+      "evidence": 9
+    },
+    {
+      "check": "locked_science_bytes_M1_DATA_AND_SOURCE_IDENTITY.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "locked_science_bytes_BATCH_SCHEDULE.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "locked_science_bytes_M1_EXECUTION_PROTOCOL.json",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "installed_torch_virtual_namespace_explains_relative_pseudofile",
+      "status": "PASS",
+      "evidence": null
+    },
+    {
+      "check": "initial_registered_interrupt_engineering_still_GO",
+      "status": "PASS",
+      "evidence": null
+    }
+  ],
+  "torch_source_read_only_evidence": [
+    {
+      "path": "D:\\tools\\anocaonda\\envs\\mobile_dual_arm_planning\\Lib\\site-packages\\torch\\_ops.py",
+      "sha256": "aed883c8a88051df15c7e8793f8dd1ff875e7b065c0f3ffede80113744e4104e"
+    },
+    {
+      "path": "D:\\tools\\anocaonda\\envs\\mobile_dual_arm_planning\\Lib\\site-packages\\torch\\__init__.py",
+      "sha256": "b508de5a66ebc368fc8fa2161b1e0e88ae0034d9d9540e7c020460237a5464a9"
+    },
+    {
+      "path": "D:\\tools\\anocaonda\\envs\\mobile_dual_arm_planning\\Lib\\site-packages\\torch\\_classes.py",
+      "sha256": "3ea58190980b19fdc478b60cf157ab74472c44b20cc4d53164cdcea98648b321"
+    }
+  ],
+  "artifact_sha256": {
+    "RESOURCE_ACCOUNTING.json": "e2e2286b52b6bd2dc69e9b2cd7f94397ecf942364f9d2cd2b24d9f2d8cc5854e",
+    "WORKER_RESOURCE_ACCOUNTING.json": "02104997aefb988d8e8def36829f297f5c63803f8941484dfb91424b72c2a8b8",
+    "FAILURE.json": "7b68d15242c956001f6672bd8040966bf1c5fbb786d052a30a38a262bdf6515f",
+    "EVENTS.jsonl": "598a5c189b81112a2cd8cec131a203a5926ff3cb7b696df93be9a7197f00377c",
+    "PREFLIGHT_TRACE.jsonl": "2892c73d4871cb0f1d3054d7bab49b5e170f62cd8022fb3f159ef7d7ac9e7650",
+    "ATTEMPT_LINK.json": "fdabb13446347f4b8aa2a44855ae442cc70fa75030862a4652c3282797a68ee1"
+  },
+  "scope": "Small receipt/source read-only maintenance review. No Torch import, model forward, trajectory recovery, optimizer, new calibration arithmetic or old full CSV audit.",
+  "maintenance_read_failure": {
+    "error": "LookupError unknown encoding utf8-sig in reviewer helper",
+    "scientific_work": 0,
+    "measured_tool_wall_s": 0.3869013,
+    "resolution": "Correct encoding spelling utf-8-sig; no project scientific source/data/ledger changed"
+  },
+  "maintenance_review_wall_s": 0.021036099999037106
+}
