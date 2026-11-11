@@ -1,5 +1,7 @@
 <!-- ACTOR_POSITIVE_SCALE_CURRENT_BEGIN -->
-**Actor阳性对照与条件步幅试验已登记，尚未计算。** 固定原教师池和实际A1排序见证，比较3e-5/3e-4/1e-3；仅原学习率失败且新增学习率通过时触发64机会在线对照。旧PG128停止及Critic边界保留。见[本轮协议与交付](rc3_actor_positive_scale_20261111/README.md)。
+## 当前：Actor阳性对照已完成，条件在线试验未触发
+
+[实际报告与全部交付](rc3_actor_positive_scale_20261111/README.md)：32个完整A1可行排序见证状态；三档LR终点拟合分别1/32、14/32、14/32，均未通过事前80%标准。实际323次Actor尝试，1e-3于67次尝试因16连续guard拒绝停止。在线阶段NOT_RUN，无路线收益结论；诊断权重禁止正式初始化。旧PG128停止及全部历史负结果保持，未合并main。
 <!-- ACTOR_POSITIVE_SCALE_CURRENT_END -->
 
 <!-- FROZEN_REFERENCE_PG_CURRENT_BEGIN -->

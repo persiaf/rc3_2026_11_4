@@ -1,0 +1,13 @@
+# Independent result-to-claim review
+
+Role: independent paper architect/reviewer, delegated by the paper executor. Skill: experiment-result-to-claim. One compact review; no model execution, training, planning, numerical rechecks, historical CSV audit, or supplementary experiment.
+
+Intended claim: 已有通过的最小新增LR，足以触发在线步幅对照。
+
+Evaluate against the protocol frozen before numerical execution at commit 7b7d7c9621dc0e1915211a2976bae4d557f7d479, based on original baseline 664de37687c4db603169a8dd0c105c27481cd07a. Positive-control success requires at least 16 witnessed states, the exact step128 endpoint reaching strict teacher-top1 margin>1e-5 on at least80%, at least ceil(.9*128) accepted updates, and all applied protections. Stop each configuration after16 consecutive rejections. Trigger only when original3e-5 FAIL and a new LR PASS; choose the minimum passing new LR. Never substitute a midpoint or route-selected weight.
+
+Evidence scope: PROTOCOL.json; POSITIVE_CONTROL_SUMMARY.json; TRIGGER_DECISION.json; positive/WITNESS_INDEPENDENT_RECHECK.json; positive/ENDPOINT_RECHECK.json; UPDATE_SCALE_RESULTS.csv (all323 rows, descriptive column projection); CONDITIONAL_ONLINE_RESULTS.csv; ONLINE_STAGE_STATUS.json; POSITIVE_ENTRY_CONSUMPTION.json; witness.py and positive.py; FEASIBLE_RANK_WITNESSES.json selection statistics and first witness only. Check for paper/PAPER_CLAIM_AUDIT.json. No frozen historical evidence is changed.
+
+Results supplied and checked against these small artifacts: same32 states and identical initial tensor SHA across three LR arms. 3e-5:128 attempts/128 accepted, endpoint1/32, CE1.689010918. 3e-4:128/128,14/32, CE1.618361643. 1e-3:67 attempts/51 accepted/16 rejected, final14/32, CE1.615694378; first rejection at52 due candidate baseTV .100191890>.1, then exact rollback repeats until registered stop. No endpoint substitution. All three FAIL, no LR selected, online NOT_RUN with blank numeric metrics. Existing per-state actual A1 witnesses passed independent full-legal arithmetic; no shared-weight feasibility claim is registered. Stage execution consumption197.89 seconds before this independent review; review elapsed time is charged by the parent.
+
+Return claim_supported yes|partial|no, supported and unsupported conclusions, missing evidence, revised claim, next experiments, confidence, paper audit context, routing. Do not equate observed CE/ranking movement with online route improvement, nor declare Actor unable to learn. Missing paper audit makes downstream writing provisional; this delegated independent review itself can be COMPLETE with pending_external_review=false. Write only the five trace files in this directory.

@@ -1,0 +1,57 @@
+{
+  "status": "COMPLETE",
+  "selected_states": 32,
+  "configurations": [
+    {
+      "learning_rate": 3e-05,
+      "status": "FAIL",
+      "success": false,
+      "completed_attempts": 128,
+      "accepted": 128,
+      "rejected": 0,
+      "initial_tensor_sha256": "0fe392e9ecce47abbc957ad9942369ffd647a2b5f427bab7db5d642b55ca0d27",
+      "final": {
+        "target_top1_count": 1,
+        "target_top1_fraction": 0.03125,
+        "CE": 1.6890109181404114,
+        "max_effective_residual_range": 0.01151680201292038,
+        "max_abs_delta": 0.006377368234097958
+      }
+    },
+    {
+      "learning_rate": 0.0003,
+      "status": "FAIL",
+      "success": false,
+      "completed_attempts": 128,
+      "accepted": 128,
+      "rejected": 0,
+      "initial_tensor_sha256": "0fe392e9ecce47abbc957ad9942369ffd647a2b5f427bab7db5d642b55ca0d27",
+      "final": {
+        "target_top1_count": 14,
+        "target_top1_fraction": 0.4375,
+        "CE": 1.6183616425842047,
+        "max_effective_residual_range": 0.49728673696517944,
+        "max_abs_delta": 0.2498357892036438
+      }
+    },
+    {
+      "learning_rate": 0.001,
+      "status": "FAIL",
+      "success": false,
+      "completed_attempts": 67,
+      "accepted": 51,
+      "rejected": 16,
+      "initial_tensor_sha256": "0fe392e9ecce47abbc957ad9942369ffd647a2b5f427bab7db5d642b55ca0d27",
+      "final": {
+        "target_top1_count": 14,
+        "target_top1_fraction": 0.4375,
+        "CE": 1.6156943775713444,
+        "max_effective_residual_range": 0.49951982498168945,
+        "max_abs_delta": 0.24997837841510773
+      }
+    }
+  ],
+  "success_standard": ">=16 witnessed states; exact step128 target strict-top1>=80%, accepted>=90%, all applied amplitude/mask/guard/finite protection",
+  "scope": "Known saved training states only, not generalization or route benefit",
+  "diagnostic_weights_forbidden_for_online": true
+}

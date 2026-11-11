@@ -1,0 +1,36 @@
+{
+  "schema": "experiment-result-to-claim-independent-review-v1",
+  "experiment": "rc3_actor_positive_scale_20261111",
+  "intended_claim": "已有通过的最小新增LR，足以触发在线步幅对照",
+  "claim_supported": "no",
+  "confidence": "high",
+  "what_results_support": [
+    "All three registered learning rates FAIL the registered positive-control criterion; no passing new rate exists.",
+    "Under matched initialization, fixed saved training states and guard conditions, higher CE rates show visible but insufficient fitting movement: final strict teacher-top1 is1/32 at3e-5 and14/32 at3e-4 and1e-3.",
+    "Actual per-state A1 witnesses establish individual-state feasibility under the full original guard; the supplied independent witness and saved-endpoint checks report PASS.",
+    "The1e-3 candidate reaches the baseTV guard boundary and stops after16 consecutive rejected, rolled-back attempts."
+  ],
+  "what_results_dont_support": [
+    "A passing minimum added learning rate or an online trigger.",
+    "A statement that Actor cannot learn.",
+    "A single shared witness-weight solution for all32 states or guaranteed reachability under joint guarded optimization.",
+    "An explanation assigning every failure exclusively to learning rate.",
+    "Generalization, online learning performance, complete-route benefit, or real-arm certification."
+  ],
+  "missing_evidence": [
+    "Shared-weight joint feasibility and optimization reachability.",
+    "Unseen-state and frozen-policy complete-task generalization.",
+    "Online and complete-route comparisons; these were NOT_RUN.",
+    "Paper-to-evidence claim audit and physical-operation validation."
+  ],
+  "suggested_claim_revision": "The fixed32 saved training states show stronger but insufficient Actor CE fitting at larger learning rates; no registered rate passes the fixed-budget positive criterion, so conditional online comparison is not triggered.",
+  "next_experiments_needed": [],
+  "next_experiments_scope": "No automatic supplementary experiment is routed or authorized. Any future scientific follow-up requires a separate question, protocol and execution authorization.",
+  "trigger_decision": false,
+  "selected_learning_rate": null,
+  "online_status": "NOT_RUN",
+  "paper_claim_audit": "unavailable",
+  "downstream_paper_verdict": "provisional — no paper claim audit available",
+  "review_status": "COMPLETE",
+  "pending_external_review": false
+}

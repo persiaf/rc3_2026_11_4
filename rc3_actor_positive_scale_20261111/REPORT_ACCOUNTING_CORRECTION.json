@@ -1,0 +1,8 @@
+{
+  "status": "CORRECTED_OUTPUT_MAINTENANCE_ONLY",
+  "issue": "An uncommitted report-authoring assertion used current time instead of actual completed review time; it consequently included excluded prose authoring and prevented the first root resource report from being written.",
+  "resolution": "Use recorded reviewer start and final status-file write time for the complete review interval; retain conservative20s bound for outside-review small-output checks. No scientific entry, state selection, optimizer, checkpoint or result was rerun or reset.",
+  "scientific_failures": 0,
+  "administrative_failed_report_write": 1,
+  "resource_counters_preserved": true
+}

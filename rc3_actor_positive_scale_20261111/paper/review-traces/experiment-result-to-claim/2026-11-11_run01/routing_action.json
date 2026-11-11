@@ -1,0 +1,25 @@
+{
+  "schema": "experiment-result-to-claim-routing-v1",
+  "claim_supported": "no",
+  "action": "narrow_claim_and_close_current_registered_stage",
+  "online_execution": "DO_NOT_START",
+  "trigger": false,
+  "selected_learning_rate": null,
+  "reason": "NO_NEW_RATE_PASS",
+  "automatic_supplementary_experiments": false,
+  "extend_steps": false,
+  "extend_amplitude": false,
+  "relax_guard": false,
+  "select_midpoint_or_diagnostic_weights": false,
+  "preserve_visible_learning_signal": true,
+  "preserve_historical_negative_results": true,
+  "parent_actions": [
+    "Record this independent verdict in this round's required report/status and resource-accounting artifacts.",
+    "Charge all independent-review elapsed time conservatively to the positive-stage wall budget.",
+    "Keep online result fields blank and NOT_RUN; do not report a route success or failure.",
+    "Finish the authorized documentation and Git delivery without new numerical work."
+  ],
+  "paper_claim_audit": "unavailable",
+  "downstream_paper_verdict": "provisional — no paper claim audit available",
+  "pending_external_review": false
+}

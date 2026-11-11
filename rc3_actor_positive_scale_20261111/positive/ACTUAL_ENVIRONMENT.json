@@ -1,0 +1,48 @@
+{
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "real_Torch_classification": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "witness",
+        "path": "rc3_actor_positive_scale_20261111/witness.py",
+        "sha256": "c7b6da6955a655f3379d22e6728cc8f18504eb3054cf6427793169f61f9378bb",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "positive",
+        "path": "rc3_actor_positive_scale_20261111/positive.py",
+        "sha256": "5b3cb0e423d1ef4d9de476e84d4f1889ca22469f59c09c31745fd2724f50bbbe",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "online",
+        "path": "rc3_actor_positive_scale_20261111/online.py",
+        "sha256": "abb336eca53fc63122480741d1a1cdfb87677d498b7ab0ac5b4bf3d43b5f52e1",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "code_commit": "7b7d7c9621dc0e1915211a2976bae4d557f7d479"
+}
