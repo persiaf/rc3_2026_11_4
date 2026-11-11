@@ -1,0 +1,31 @@
+{
+  "schema": "rc3-r04-m1-distinct-recovery-attempt-link-v1",
+  "old_attempt": {
+    "directory": "rc3_r04_m1_20261111",
+    "base_commit": "ff749ff1e6a994138ebafb1b88bdbc077a528216",
+    "resource_path": "rc3_r04_m1_20261111/RESOURCE_ACCOUNTING.json",
+    "resource_sha256": "2256fe392db3bf3830e364b5db695cf14b2220f0e4fa2690d0e929f67bb8d70e",
+    "wall_s": 2859.2566758999983,
+    "status": "FAILED_PRESERVED",
+    "critic_optimizer_attempts": 0
+  },
+  "new_attempt": {
+    "run_id": "rc3-r04-m1-recovery-20261111-01",
+    "directory": "rc3_r04_m1_recovery_20261111",
+    "wall_cap_s": 1800,
+    "max_attempts": 1
+  },
+  "engineering": {
+    "cap_s": 300,
+    "run_id": "rc3-r04-m1-engineering-20261111-01",
+    "required_before_science": true
+  },
+  "scientific_files_unchanged": {
+    "M1_DATA_AND_SOURCE_IDENTITY.json": "8cb63231f748e2dbf47f3c18135ea721af589a2d0d4d4e55857e69ca582feeff",
+    "BATCH_SCHEDULE.json": "3676a96d0c05efb417a6be0ab00c7d3bae574cacfb6bf46e33a06bb773db90a3",
+    "M1_EXECUTION_PROTOCOL.json": "99e7030e0293b87cf4302f5d76f6802fceb3d2d9c0f3816de24d46cc18ed3982"
+  },
+  "prior_consumption_not_reset": true,
+  "cumulative_disclosure": "old2859.2566759 + actual engineering + actual new scientific attempt, all separately retained",
+  "user_authority": "2026-11-11 explicit instruction: minimal runtime repair; <=300s synthetic acceptance; onGO directly one new <=1800s M1; frozen116 inputs/settings; no Actor/G2/M3/new requests"
+}

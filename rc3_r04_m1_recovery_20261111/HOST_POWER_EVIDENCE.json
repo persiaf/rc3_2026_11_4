@@ -1,0 +1,58 @@
+{
+  "schema": "rc3-m1-host-power-evidence-v1",
+  "source": "Windows System event log, bounded prior-attempt interval",
+  "queried_for": "rc3-r04-m1 recovery failure-cause investigation",
+  "events": [
+    {
+      "time_utc": "2026-11-11T05:33:16.2146396Z",
+      "record_id": 392766,
+      "provider": "Microsoft-Windows-Power-Troubleshooter",
+      "event_id": 1,
+      "message": "系统已从低功耗状态中恢复。\r\n\r\n睡眠时间:  ‎2026‎-‎11‎-‎11T04:45:51.449057300Z\r\n唤醒时间: ‎2026‎-‎11‎-‎11T05:33:13.772387200Z\r\n\r\n唤醒源: Unknown"
+    },
+    {
+      "time_utc": "2026-11-11T05:33:13.9737221Z",
+      "record_id": 392764,
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "event_id": 507,
+      "message": "系统正在退出新型待机状态 \r\n\r\n原因: Power Button。"
+    },
+    {
+      "time_utc": "2026-11-11T05:33:12.5824086Z",
+      "record_id": 392763,
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "event_id": 506,
+      "message": "系统正在进入新型待机状态 \r\n\r\n原因: Sleep, Hibernate, or Shutdown。"
+    },
+    {
+      "time_utc": "2026-11-11T05:33:06.5004236Z",
+      "record_id": 392748,
+      "provider": "Microsoft-Windows-Kernel-General",
+      "event_id": 1,
+      "message": "系统时间已从 ‎2026‎-‎11‎-‎11T04:45:57.380321300Z.\r\n时间增量更改为 ‎2026‎-‎11‎-‎11T05:33:06.500000000Z： 2829119 ms\r\n\r\n更改原因： System time synchronized with the hardware clock.\r\n进程： '' (PID 4).\r\n\r\nRTC 时间： ‎2026‎-‎11‎-‎11T13:33:06.500000000Z\r\n当前时区偏差 -480\r\nRTC 时间以 UTC： false\r\n系统时间基于 RTC 时间： false"
+    },
+    {
+      "time_utc": "2026-11-11T04:45:57.3807347Z",
+      "record_id": 392747,
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "event_id": 107,
+      "message": "系统已从睡眠状态恢复。"
+    },
+    {
+      "time_utc": "2026-11-11T04:45:56.2383255Z",
+      "record_id": 392746,
+      "provider": "Microsoft-Windows-Kernel-General",
+      "event_id": 1,
+      "message": "系统时间已从 ‎2026‎-‎11‎-‎11T04:45:56.237585300Z.\r\n时间增量更改为 ‎2026‎-‎11‎-‎11T04:45:54.500000000Z： -1737 ms\r\n\r\n更改原因： System time synchronized with the hardware clock.\r\n进程： '' (PID 4).\r\n\r\nRTC 时间： ‎2026‎-‎11‎-‎11T12:45:54.500000000Z\r\n当前时区偏差 -480\r\nRTC 时间以 UTC： false\r\n系统时间基于 RTC 时间： false"
+    },
+    {
+      "time_utc": "2026-11-11T04:45:56.0342309Z",
+      "record_id": 392745,
+      "provider": "Microsoft-Windows-Kernel-Power",
+      "event_id": 42,
+      "message": "系统正在进入睡眠状态。\r\n\r\n睡眠原因: Application API"
+    }
+  ],
+  "prior_attempt_wall_not_discounted": true,
+  "evidence_scope": "Host sleep/resume directly documented; no file-level stall attribution available"
+}

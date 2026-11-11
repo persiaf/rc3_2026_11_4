@@ -1,0 +1,26 @@
+{
+  "schema": "rc3-m1-synthetic-timeout-preregistration-v1",
+  "cap_s": 300,
+  "outer_force_stop_s": 290,
+  "outer_termination_tolerance_s": 5,
+  "each_case_wall_cap_s": 8,
+  "each_case_force_stop_s": 4,
+  "each_case_termination_tolerance_s": 2,
+  "cases": [
+    "normal",
+    "duplicate_run_id",
+    "blocked",
+    "unresponsive",
+    "child_tree",
+    "worker_receipt_failure",
+    "supervisor_receipt_failure"
+  ],
+  "child_scope": "PrivateJobassignedbeforeresume; ActiveProcesses0 plusroot/knownchildexit; knownsiblingsurvives andowner cleansonlyitsownhandle",
+  "counters": {
+    "Actor_updates": 0,
+    "Critic_updates": 0,
+    "model_forwards": 0,
+    "new_tasks": 0
+  },
+  "failure_policy": "Any failed engineeringcase stops task before science; retain all consumption and errors"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "rc3-m1-runtime-recovery-controls-v1",
+  "base_commit": "ff749ff1e6a994138ebafb1b88bdbc077a528216",
+  "scientific_protocol_sha256": "99e7030e0293b87cf4302f5d76f6802fceb3d2d9c0f3816de24d46cc18ed3982",
+  "scientific_modifications": [],
+  "worker_module": "rc3_r04_m1_recovery_20261111.worker",
+  "supervisor_module": "rc3_r04_m1_recovery_20261111.supervisor",
+  "source_verification": "actual imports/read dependencies only; exact SHA source bytes compiled; lazy frozen catalogue is not an eager whole-repository audit",
+  "work_admission_cutoff_s": 1650,
+  "worker_cooperative_deadline_s": 1780,
+  "supervisor_force_termination_s": 1790,
+  "total_scientific_cap_s": 1800,
+  "termination_tolerance_s": 5,
+  "supervisor_poll_s": 0.05,
+  "host_suspend": "Use max(monotonic,UTC) from supervisor entry; retainactualoverrun andviolation. Temporarysystemexecutionrequest doesnotpreventforcedsleep.",
+  "failed_attempt_policy": "one new science launch only, durable exclusive run_id; no automatic retry or resetting prior consumption",
+  "outputs": "new directory only, raw/normalized meanings and fixed scientificunits unchanged"
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "rc3-r04-m1-execution-v1",
+  "base_commit": "ec4f5fafe788dc27c592db765cc87c3c855ca891",
+  "parent_proposal": {
+    "path": "rc3_r04_review_20261111/R04_ABLATION_PROTOCOL.json",
+    "sha256": "f1e8165ffe426c5e2843e01e7d99c27089bbd7d96ef1a9f3330e8a7b6777f130"
+  },
+  "seed": 11622026,
+  "scope": "M1 offline C0/C1 only; M2/M3 and Actor optimizer not authorized",
+  "original_M1": {
+    "status": "NOT_AUTHORIZED_NOT_RUN",
+    "systems": [
+      "C0",
+      "C1",
+      "fit_only_global_constant",
+      "fit_only_conditional_constant"
+    ],
+    "data": "at most128 existing R03 complete trajectories; no new task/H label",
+    "fit_parents": "the previous33 fixed fit physical parents",
+    "validation_reserve_rule": "before approval select16 by SHA256(11622026|R04-validation|physical_key) from the46 R03 training parents outside previous50 calibration parents; metadata selection only, never outcomes",
+    "validation_scope": "new offline calibration holdout only; these remain historical SL/DRL-seen parents, not unseen-scene evidence",
+    "coverage_failure_policy": "if fixed reserve lacks registered size/phase coverage, report insufficient; do not replace parents or read sealed data",
+    "batch": "8 parent-balanced trajectories; identical fixed schedule",
+    "net": [
+      268,
+      128,
+      128,
+      3
+    ],
+    "initialization": "same fixed net tensors; physical outputs differ between raw and normalized semantics; evaluate step0 and do not claim pure gradient-scale causation",
+    "optimizer": {
+      "name": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "gradient_clip": 1
+    },
+    "loss": "C0 original per-state0.5 component normalized squared error; C1 equivalent normalized-unit loss; prospective fitting uses state_SUM per trajectory then episode_mean to match R03 and proposed PPO. Reported MSE remains state_mean within each aggregation. Prior offline state_MEAN results remain historical and are not relabelled.",
+    "extra_value_loss": 0,
+    "constant_condition": "window_width,height and observable v[256] remaining_fraction four bins; never final trajectory length/H/validation targets",
+    "constant_estimation": "fit parents equal, trajectories equal, state mean; freeze before validation; unknown bins fallback fit-global",
+    "endpoints": [
+      0,
+      128,
+      256
+    ],
+    "caps": {
+      "critic_optimizer_attempts": 512,
+      "actor_optimizer_attempts": 0,
+      "wall_s": 1800,
+      "saved_trajectories": 128,
+      "new_planning_requests": 0
+    },
+    "metrics": [
+      "value",
+      "normalized_L",
+      "normalized_K",
+      "normalized_H",
+      "raw_L_K_H",
+      "bias_squared_and_state_residual_error",
+      "state_pooled",
+      "parent_equal",
+      "all_sizes_and_phases"
+    ],
+    "uncertainty": "paired physical-parent resampling,20000 draws, PCG64 seed11622026; states never treated independent",
+    "go_gate": "both value MSE point ratios <=0.95 versus conditional constant and paired95% upper bounds <1; both improve C0; no normalized component versus C0 ratio>1.10; each size >=3 reserve parents and value point ratio<=1 versus conditional reference",
+    "stop": "nonfinite/leakage/schema failure immediately; at128 both aggregations >1.25 conditional constant stops paired block; at256 failure means stop, no extra steps or configs",
+    "current_gate_status": "NOT_MET_BY_EXISTING_EVIDENCE"
+  },
+  "execution_status": "AUTHORIZED_THIS_TASK",
+  "caps": {
+    "wall_s": 1800,
+    "critic_optimizer_attempts": 512,
+    "actor_optimizer_attempts": 0,
+    "saved_trajectories": 128,
+    "new_scenes": 0,
+    "navigation_requests": 0,
+    "teacher_requests": 0,
+    "native_requests": 0,
+    "H_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0
+  },
+  "selection": "64 fit records: fixed33 parent roundrobin, withinparent SHA256(seed|R04-M1-trajectory|request_id). 16 reserve parents selected by exact R04-validation hash from46outsideprevious50; eachreserve x4sizes one smallest trajectory hash, missingcells not replaced.",
+  "input_recovery": "Full268 tensors were not saved; restore exact saved prefixes with accurate frozen SL and immutable existing inputs; no new action/task/navigation/H. Persist reconstructed features for reproducibility.",
+  "clock": "Cumulative active registration + engineering + saved-input reads/restoration + fit/evaluation/save/recheck process wall; code authoring and Git transport are separate maintenance, never reset prior consumption",
+  "midpoint_rule": "At128 C1 value MSE / fit-only conditional constant >1.25 in BOTH state_pooled and parent_equal stops BOTH arms. C0 error alone does not terminate C1.",
+  "per_size_rule": "Each of10x10,4x3,6x6,8x8 >=3 reserve physicalparents; C1value/conditional<=1 in BOTH aggregations",
+  "component_rule": "Each normalizedL,K,H C1/C0<=1.10 in BOTH aggregations",
+  "initialization": "Same default fresh network tensors, seed11622026; no target-informed bias. Physical prediction differs due only to output units.",
+  "normalization": "fixed initial taskcount n>0; no empirical normalization fitted on either fold",
+  "fit_reduction": "state_SUM_per_trajectory_then_episode_MEAN",
+  "bootstrap": {
+    "draws": 20000,
+    "generator": "PCG64",
+    "seed": 11622026,
+    "quantile": "linear",
+    "unit": "complete physical_parent",
+    "paired": true
+  },
+  "engineering": "Zero-step unit tests and exact actual endpoint Critic/Adam/RNG/cursor/accounting save/load; no duplicate optimizer attempts, no Actor transaction/G2 claim",
+  "source_identity_excludes_mutable_downstream_authorization": true
+}
