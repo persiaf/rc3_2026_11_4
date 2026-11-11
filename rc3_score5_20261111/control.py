@@ -4,7 +4,7 @@ import ast
 import argparse
 import subprocess
 from pathlib import Path
-from .common import HOME,ROOT,BASE,read,put,sha,admit
+from .common import HOME,ROOT,BASE,read,put,sha,admit,BINDING
 
 def register():
     if (HOME/'SOURCE_BINDING.json').exists():raise FileExistsError('No registration reset')
@@ -70,25 +70,44 @@ def register():
         charged_wall_s=elapsed+prep['second_metadata_registration']['elapsed_s']+prep['first_metadata_inspection']['tool_wall_upper_s'],Actor_attempts=0,complete_requests=0))
     print('Five-tensor candidate, engineering limits, source/data and proposed1428-request route protocol frozen')
 
+def register_repair():
+    if BINDING.exists():raise FileExistsError('One repair registration, no reset')
+    b=read(HOME/'SOURCE_BINDING.json')
+    for p in HOME.glob('*.py'):
+        ast.parse(p.read_text(encoding='utf-8'));b['source_sha256'][p.relative_to(ROOT).as_posix()]=sha(p)
+    b.update(revision='R02_ledger_interface_only',prior_source_binding_sha256=sha(HOME/'SOURCE_BINDING.json'),protocol_and_schedule_unchanged=True)
+    put(BINDING,b)
+    put(HOME/'IMPLEMENTATION_REVIEW_R02.json',dict(status='GO',scope='New ledger interface correction only, original protocol/Actor/Trainer/math unchanged; engineering authority only',source_binding_sha256=sha(BINDING)))
+    fields=dict(source_binding_sha256=sha(BINDING),protocol_sha256=sha(HOME/'PROTOCOL.json'),schedule_sha256=sha(HOME/'SCHEDULE.json'))
+    put(HOME/'ENGINEERING_AUTHORIZATION_R02.json',dict(authorized=True,stage='engineering',authority='User already authorized necessary new-interface fixes; same engineering cap/no added scientific scope',**fields))
+    put(HOME/'SCIENCE_AUTHORIZATION_R02.json',dict(authorized=False,stage='science',status='NOT_AUTHORIZED',**fields))
+    prior=read(HOME/'ENGINEERING_ENTRY_CONSUMPTION.json')['cumulative_wall_s'];elapsed=max(time.monotonic()-START_M,time.time()-START_W)
+    put(HOME/'REPAIR_REGISTRATION_R02.json',dict(reason='Inherited ledger expected historical wall_s; standalone new ledger uses registered charged_wall_s. No Actor/math/task/protocol changes.',
+        prior_failure_wall_s=prior,repair_registration_s=elapsed,cumulative_prior_wall_s=prior+elapsed,prior_requests=0,prior_Actor_attempts=0,caps_unchanged=True))
+    put(HOME/'engineering/FAILURE_EARLY.json',dict(status='FAILED_BEFORE_MODEL_OR_REQUEST',error="KeyError: wall_s in inherited ledger constructor",requests=0,Actor_attempts=0,
+        cumulative_wall_s=prior,original_stdout='engineering_control/WORKER_STDOUT.log',consumption_preserved=True))
+
 def launch(stage,authorization):
     admit(stage,authorization)
-    if (HOME/(stage+'_control')).exists():raise FileExistsError('No repeated entry/resource reset')
-    b=read(HOME/'SOURCE_BINDING.json')
+    folder=HOME/(stage+'_control_r02')
+    if folder.exists():raise FileExistsError('No repeated entry/resource reset')
+    b=read(BINDING)
     for name in ['__init__.py','supervisor.py']:
         p=ROOT/'rc3_r04_m1_recovery_20261111'/name;assert sha(p)==b['source_sha256'][p.relative_to(ROOT).as_posix()]
     from rc3_r04_m1_recovery_20261111.supervisor import launch_supervised
-    prior=read(HOME/'REGISTRATION_RECEIPT.json')['charged_wall_s'] if stage=='engineering' else 0.;cap=read(HOME/'PROTOCOL.json')['caps'][stage]['wall_s']
+    prior=read(HOME/'REPAIR_REGISTRATION_R02.json')['cumulative_prior_wall_s'] if stage=='engineering' else 0.;cap=read(HOME/'PROTOCOL.json')['caps'][stage]['wall_s']
     cmd=[str(ROOT/'rc3_learning/.venv/Scripts/python.exe'),'-B','-X','utf8','-m',HOME.name+'.worker',stage]
     if authorization:cmd+=['--authorization',str(Path(authorization).resolve())]
-    receipt=launch_supervised(cmd,HOME/(stage+'_control'),'score5-20261111-'+stage+'-01',wall_limit_s=cap-prior-2,closeout_reserve_s=15,termination_tolerance_s=2,cwd=ROOT,
-        entry_monotonic=START_M,entry_wall=START_W,worker_heartbeat_path=HOME/stage/'WORKER_HEARTBEAT.json')
+    receipt=launch_supervised(cmd,folder,'score5-20261111-'+stage+'-r02',wall_limit_s=cap-prior-2,closeout_reserve_s=15,termination_tolerance_s=2,cwd=ROOT,
+        entry_monotonic=START_M,entry_wall=START_W,worker_heartbeat_path=HOME/('engineering_r02' if stage=='engineering' else stage)/'WORKER_HEARTBEAT.json')
     elapsed=max(time.monotonic()-START_M,time.time()-START_W)
-    put(HOME/(stage.upper()+'_ENTRY_CONSUMPTION.json'),dict(status=receipt['status'],entry_wall_s=elapsed,prior_charged_s=prior,cumulative_wall_s=elapsed+prior,
+    put(HOME/(stage.upper()+'_ENTRY_CONSUMPTION_R02.json'),dict(status=receipt['status'],entry_wall_s=elapsed,prior_charged_s=prior,cumulative_wall_s=elapsed+prior,
         root_exit_confirmed=receipt['root_exit_confirmed'],active_processes_at_end=receipt['job_active_processes_at_end']))
     print(dict(status=receipt['status'],stage=stage,cumulative_wall_s=elapsed+prior));raise SystemExit(0 if receipt['status']=='COMPLETE' else 1)
 if __name__=='__main__':
     from pathlib import Path
-    p=argparse.ArgumentParser();p.add_argument('action',choices=['register','engineering','science','status']);p.add_argument('--authorization');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['register','register-repair','engineering','science','status']);p.add_argument('--authorization');a=p.parse_args()
     if a.action=='register':register()
-    elif a.action=='status':print(dict(engineering=(HOME/'engineering/CHECKS.json').exists(),science_authorized=read(HOME/'SCIENCE_AUTHORIZATION.json')['authorized']))
+    elif a.action=='register-repair':register_repair()
+    elif a.action=='status':print(dict(engineering=(HOME/'ENGINEERING_ACCEPTANCE.json').exists(),science_authorized=False,active_source=str(BINDING)))
     else:launch(a.action,a.authorization)

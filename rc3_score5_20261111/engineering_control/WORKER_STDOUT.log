@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_score5_20261111\worker.py", line 51, in <module>
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['engineering','science']);p.add_argument('--authorization');a=p.parse_args();main(a.stage,a.authorization)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_score5_20261111\worker.py", line 13, in main
+    ledger=Ledger(stage,START_M,START_W)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_score5_20261111\common.py", line 23, in __init__
+    prior.HOME=HOME;super().__init__(stage,m,w)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_frozen_reference_pg_20261111\common.py", line 40, in __init__
+    self.prior=read(HOME/'REGISTRATION_RECEIPT.json')['wall_s'] if stage=='engineering' else 0.
+KeyError: 'wall_s'

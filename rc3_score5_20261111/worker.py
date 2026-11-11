@@ -6,14 +6,14 @@ import platform
 import subprocess
 import traceback
 from pathlib import Path
-from .common import HOME,ROOT,read,put,sha,Ledger,admit
+from .common import HOME,ROOT,read,put,sha,Ledger,admit,BINDING
 
 def main(stage,authorization=None):
     admit(stage,authorization)
     ledger=Ledger(stage,START_M,START_W)
     try:
         from rc3_r04_m1_real_20261111.provenance_use import ScientificTracedProvenance,verify_real_environment
-        b=read(HOME/'SOURCE_BINDING.json');trace=ScientificTracedProvenance(ROOT,ledger.path,b,ledger.check,'score5-'+stage+'-01');trace.install_import_guard()
+        b=read(BINDING);trace=ScientificTracedProvenance(ROOT,ledger.path,b,ledger.check,'score5-'+stage+'-r02');trace.install_import_guard()
         assert sha(HOME/'PROTOCOL.json')==b['protocol_sha256'] and sha(HOME/'SCHEDULE.json')==b['schedule_sha256']
         with trace.stage('real_Torch_and_exact_saved_input_sources'):
             import torch
@@ -37,12 +37,13 @@ def main(stage,authorization=None):
             inputs=si.SavedInputs()
             if inputs.evaluation_cases!=read(HOME/'SCHEDULE.json')['evaluation']:raise ValueError('Saved evaluation identity differs')
             put(ledger.path/'ACTUAL_ENVIRONMENT.json',dict(environment=env,real_Torch_classification=actual,code_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()))
-        identity=dict(protocol_sha256=sha(HOME/'PROTOCOL.json'),schedule_sha256=sha(HOME/'SCHEDULE.json'),source_binding_sha256=sha(HOME/'SOURCE_BINDING.json'))
+        identity=dict(protocol_sha256=sha(HOME/'PROTOCOL.json'),schedule_sha256=sha(HOME/'SCHEDULE.json'),source_binding_sha256=sha(BINDING))
         with trace.stage(stage+'_real_execution'):
             (engineering.run if stage=='engineering' else science.run)(ledger,trace,inputs,identity)
         trace.check_loaded_modules();put(ledger.path/'ACTUAL_DEPENDENCY_VERIFICATION.json',trace.summary())
         ledger.status='COMPLETE';ledger.event('stage_complete',counts=ledger.counts,input_counts=inputs.counts)
         put(ledger.path/'RESOURCE_ACCOUNTING.json',dict(ledger.snapshot(),input_counts=inputs.counts));print(ledger.snapshot(),flush=True)
+        if stage=='engineering':put(HOME/'ENGINEERING_ACCEPTANCE.json',dict(status=read(ledger.path/'CHECKS.json')['status'],path=str(ledger.path/'CHECKS.json'),source_binding_sha256=sha(BINDING),models_forbidden_as_scientific_initialization=True))
     except BaseException as e:
         ledger.status='FAILED_PRESERVED';put(ledger.path/'FAILURE.json',dict(error_type=type(e).__name__,error=str(e),traceback=traceback.format_exc(),resource=ledger.snapshot()))
         put(ledger.path/'RESOURCE_ACCOUNTING.json',ledger.snapshot());raise
