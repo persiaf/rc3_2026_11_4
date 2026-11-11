@@ -1,3 +1,9 @@
+<!-- TASK_LEVEL_DECISION_CURRENT_BEGIN -->
+## 当前：固定32支线封存，主线任务级决策材料已整理
+
+[供老师决定下一版的短材料](rc3_task_level_decision_20261111/TEACHER_DECISION_BRIEF.md) · [完整证据入口](rc3_task_level_decision_20261111/README.md)。三个实验53行任务表分别保留raw/H、父布局、完整时间和暴露范围；共享32/32及CE14/Adam18/QP13诊断仅封存，不当路线指标。本轮训练/前向/规划0，不生成新实验预算，不自动恢复在线DRL。
+<!-- TASK_LEVEL_DECISION_CURRENT_END -->
+
 <!-- SHARED_CONSTRAINT_OPT_CURRENT_BEGIN -->
 ## 当前：固定A1共享约束优化FAIL，结束此诊断支线
 

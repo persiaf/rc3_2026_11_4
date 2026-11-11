@@ -1,0 +1,165 @@
+{
+  "status": "SEALED_NO_AUTOMATIC_CONTINUATION",
+  "base_commit": "e9b3fb86c3ee541ed815cd16dd0bb2d4d6967654",
+  "states": "Exact original32 saved teacher states; all outcomes are known-training-state diagnostics only",
+  "retained_results": {
+    "shared_witness": "PASS32/32",
+    "CE_lr3e4_step128": "FAIL14/32",
+    "Adam_rank_step128": "FAIL18/32",
+    "joint_QP_final32": "FAIL13/32",
+    "isolated_path": "PASS22 positions, label-related assignments not learning"
+  },
+  "historical_resource_accounts": [
+    {
+      "stage": "Actor CE三学习率阳性对照",
+      "source": "rc3_actor_positive_scale_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "8a785c59644106ab6e1d82ed22210a7c8621a1afdbcb49bb1239e8ea974fd94c",
+      "original_caps": {
+        "actor_optimizer_attempts": 384,
+        "complete_requests": 0,
+        "wall_s": 600
+      },
+      "actual_counts": {
+        "requests": 0,
+        "requests_completed": 0,
+        "requests_failed": 0,
+        "actor_optimizer_attempts": 323,
+        "actor_optimizer_completed": 323,
+        "critic_optimizer_attempts": 0,
+        "teacher_replays": 0,
+        "new_teacher_requests": 0,
+        "new_scenes": 0,
+        "navigation_solves": 0,
+        "original60_reads": 0,
+        "oldS3_reads": 0,
+        "full_H_calls": 0,
+        "native_requests": 0,
+        "feature_states": 0,
+        "feature_s": 0.0,
+        "input_prepare_s": 0.0,
+        "request_io_s": 0.0,
+        "internal_search_counts": {},
+        "internal_search_inclusive_s": {},
+        "internal_search_exclusive_s": {},
+        "existing_teacher_label_reads": 256,
+        "restored_teacher_states": 8292,
+        "witness_parameterizations": 1779,
+        "witness_verified": 292,
+        "diagnostic_optimizer_attempts": 323
+      },
+      "actual_attempts_by_LR": [
+        128,
+        128,
+        67
+      ],
+      "charged_wall_upper_s": 448.4297992134052
+    },
+    {
+      "stage": "共享A1构造及Adam排序损失",
+      "source": "rc3_shared_a1_rank_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "1162fd8b384087d283cfe00c99daa1ca1b4b159be144ce0f032abb263b0e54fa",
+      "original_caps": {
+        "actor_attempts": 128,
+        "wall_s": 900
+      },
+      "actual_counts": {
+        "requests": 0,
+        "requests_completed": 0,
+        "requests_failed": 0,
+        "actor_optimizer_attempts": 128,
+        "actor_optimizer_completed": 128,
+        "critic_optimizer_attempts": 0,
+        "teacher_replays": 0,
+        "new_teacher_requests": 0,
+        "new_scenes": 0,
+        "navigation_solves": 0,
+        "original60_reads": 0,
+        "oldS3_reads": 0,
+        "full_H_calls": 0,
+        "native_requests": 0,
+        "feature_states": 0,
+        "feature_s": 0.0,
+        "input_prepare_s": 0.0,
+        "request_io_s": 0.0,
+        "internal_search_counts": {},
+        "internal_search_inclusive_s": {},
+        "internal_search_exclusive_s": {},
+        "saved_state_file_loads": 1,
+        "fixed_states": 32,
+        "shared_construction_attempts": 1,
+        "diagnostic_target_presentations": 4096,
+        "guard_rejections": 0,
+        "exact_rollbacks": 0
+      },
+      "charged_wall_upper_s": 512.2608814239502
+    },
+    {
+      "stage": "最终共享约束QP诊断",
+      "source": "rc3_shared_constraint_opt_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "df7ddbb039c19a4ffd1706d4cc593d00a7f1125914c967dcd690e8e43f64241b",
+      "original_caps": {
+        "outer_QP": 32,
+        "actor_candidates": 192,
+        "wall_s": 1800
+      },
+      "actual_counts": {
+        "requests": 0,
+        "requests_completed": 0,
+        "requests_failed": 0,
+        "actor_optimizer_attempts": 112,
+        "actor_optimizer_completed": 112,
+        "critic_optimizer_attempts": 0,
+        "teacher_replays": 0,
+        "new_teacher_requests": 0,
+        "new_scenes": 0,
+        "navigation_solves": 0,
+        "original60_reads": 0,
+        "oldS3_reads": 0,
+        "full_H_calls": 0,
+        "native_requests": 0,
+        "feature_states": 0,
+        "feature_s": 0.0,
+        "input_prepare_s": 0.0,
+        "request_io_s": 0.0,
+        "internal_search_counts": {},
+        "internal_search_inclusive_s": {},
+        "internal_search_exclusive_s": {},
+        "subproblem_optimizations": 32,
+        "cutting_rounds": 54,
+        "dual_projected_iterations": 9050,
+        "exact_Jacobian_rows": 1050,
+        "all_constraint_JVP_checks": 54,
+        "actor_parameter_candidate_checks": 112,
+        "actor_applied_updates": 32,
+        "actor_rejected_candidates": 80,
+        "exact_restores": 80,
+        "path_parameter_assignments": 22,
+        "saved_state_file_loads": 1,
+        "shared_witness_loads_after_optimization": 1
+      },
+      "charged_wall_upper_s": 418.0884828891749
+    }
+  ],
+  "historical_results_and_model_bytes_preserved": true,
+  "no_more": [
+    "loss",
+    "optimizer_configuration",
+    "learning_rate",
+    "amplitude",
+    "network",
+    "state_selection",
+    "training_rounds"
+  ],
+  "diagnostic_weights_forbidden": [
+    "deployment",
+    "formal_initialization"
+  ],
+  "automatic_resume": false,
+  "online_DRL_authorized": false,
+  "new_experiment_budget": null,
+  "retained_source_reports": [
+    "rc3_actor_positive_scale_20261111/ACTOR_POSITIVE_CONTROL.md",
+    "rc3_shared_a1_rank_20261111/SHARED_A1_WITNESS.md",
+    "rc3_shared_constraint_opt_20261111/SHARED_OPTIMIZATION_REPORT.md"
+  ]
+}
