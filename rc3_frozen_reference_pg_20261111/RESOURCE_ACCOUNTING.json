@@ -1,0 +1,192 @@
+{
+  "schema": "rc3-frozen-reference-online-PG-task-closeout-v1",
+  "status": "COMPLETE_STOP_CURRENT_CONFIGURATION",
+  "engineering": {
+    "cap": {
+      "requests": 24,
+      "actor_optimizer_attempts": 16,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 300
+    },
+    "cumulative_registered_entries_wall_s": 41.234825502393505,
+    "additional_pre_registration_metadata_and_failure_diagnosis_tool_s": 1.2464801,
+    "total_accounted_wall_s": 42.481305602393505,
+    "counts": {
+      "requests": 19,
+      "requests_completed": 19,
+      "requests_failed": 0,
+      "actor_optimizer_attempts": 6,
+      "actor_optimizer_completed": 6,
+      "critic_optimizer_attempts": 0,
+      "teacher_replays": 6,
+      "new_teacher_requests": 0,
+      "new_scenes": 0,
+      "navigation_solves": 0,
+      "original60_reads": 0,
+      "oldS3_reads": 0,
+      "full_H_calls": 19,
+      "native_requests": 0,
+      "feature_states": 1233,
+      "feature_s": 2.973405599979742,
+      "input_prepare_s": 7.600434699994366,
+      "request_io_s": 0.125952900001721,
+      "internal_search_counts": {
+        "construct": 0,
+        "two_opt": 74,
+        "joint_search": 19,
+        "recipe": 0
+      },
+      "internal_search_inclusive_s": {
+        "construct": 0.0,
+        "two_opt": 0.07724710000911728,
+        "joint_search": 0.03738139999404666,
+        "recipe": 0.0
+      },
+      "internal_search_exclusive_s": {
+        "construct": 0.0,
+        "two_opt": 0.07724710000911728,
+        "joint_search": 0.02968769998915377,
+        "recipe": 0.0
+      },
+      "H_function_attempts": 19,
+      "H_function_completed": 19,
+      "H_function_s": 0.08071800000107032
+    },
+    "first_failure_preserved": {
+      "path": "engineering/FAILURE.json",
+      "requests": 0,
+      "actor_attempts": 0
+    },
+    "worker_launches": 2
+  },
+  "science": {
+    "cap": {
+      "requests": 2328,
+      "actor_optimizer_attempts": 384,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 7200
+    },
+    "outer_execution_wall_s": 2490.280999999999,
+    "post_run_review_reporting_interval_s": 583.451687335968,
+    "total_accounted_wall_s": 3073.732687335967,
+    "counts": {
+      "requests": 2328,
+      "requests_completed": 2328,
+      "requests_failed": 0,
+      "actor_optimizer_attempts": 384,
+      "actor_optimizer_completed": 384,
+      "critic_optimizer_attempts": 0,
+      "teacher_replays": 768,
+      "new_teacher_requests": 0,
+      "new_scenes": 0,
+      "navigation_solves": 0,
+      "original60_reads": 0,
+      "oldS3_reads": 0,
+      "full_H_calls": 2064,
+      "native_requests": 264,
+      "feature_states": 138110,
+      "feature_s": 319.3456102996752,
+      "input_prepare_s": 829.4242379000134,
+      "request_io_s": 15.680213800045749,
+      "internal_search_counts": {
+        "construct": 792,
+        "two_opt": 10582,
+        "joint_search": 2856,
+        "recipe": 792
+      },
+      "internal_search_inclusive_s": {
+        "construct": 0.9102337999829615,
+        "two_opt": 8.118297799715947,
+        "joint_search": 5.196149499970488,
+        "recipe": 2.450466400005098
+      },
+      "internal_search_exclusive_s": {
+        "construct": 0.9102337999829615,
+        "two_opt": 8.118297799715947,
+        "joint_search": 4.218470700136095,
+        "recipe": 0.28096470009040786
+      },
+      "H_function_attempts": 2064,
+      "H_function_completed": 2064,
+      "H_function_s": 7.99544590001824
+    },
+    "input_loader_counts": {
+      "view_loads": 3096,
+      "teacher_loads": 768,
+      "source_file_hashes": 14902,
+      "task_generations": 0,
+      "navigation_solves": 0,
+      "original60_access": 0,
+      "S3_access": 0
+    },
+    "worker_launches": 1
+  },
+  "task_total_accounted_wall_s": 3116.2139929383607,
+  "task_actual_complete_requests": 2347,
+  "task_Actor_optimizer_attempts": 390,
+  "task_Critic_optimizer_attempts": 0,
+  "historical_ledgers_preserved": [
+    {
+      "path": "rc3_r04_m1_real_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "9bbb092a5825dbf6fd094d344ed12474f0f5f41b52cca7a6dcec7fc285811d72",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_r04_m1_real_20261111/attempts/02/M1_GATE_DECISION.json",
+      "sha256": "1d998a963c60b7c7838c4061822a22a15e097d8254730e703278d1d286c80d1b",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_r04_m2_20261111/RESOURCE_ACCOUNTING.json",
+      "sha256": "4c0aecb416f926f4738bff1bececfcbd68d781cf2f113b3321f9fe2acb10fea2",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/M2_DECISION.json",
+      "sha256": "98eefa83a0781ef5274891bfc01ed741d62777534355332c522a950688f72076",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/FIT_ONLY_COMPONENT_ANCHORS.json",
+      "sha256": "495790b78e383bf78072d613da2e5b0a100c1aa391b3055eec19121e244b3d6b",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_global_local/FUTURE_DESIGN_STATUS.json",
+      "sha256": "ffbea7edc92f16ffab44ba7a6ef65e6b1fbbacc08bcc408380a1281557548d49",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_global_local/S2_S3_protocol_v2.json",
+      "sha256": "42174b5fa9d736b29d52ef14e929460c3edde20c780b66ead1518ecb1a68ba2c",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_global_local/future_seeds_v2.json",
+      "sha256": "3712e257eb5421899e3803f2616a70a8dedb2615ab24b4878f5211db239d82e6",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_global_local_execution_v3/ACTIVE_EXECUTION_STATUS.json",
+      "sha256": "6bb5112935ba0cbdac40f53423cdff7a4d11df77a6f376843584b93bef4a78df",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_conservative_refinement/integration_20261110/NEXT_STEP_DECISION.md",
+      "sha256": "4573419cc9636101cc424b6d4be7a9762458de7c55c39c16dd6108092fc763ce",
+      "matches_base_bytes": true
+    },
+    {
+      "path": "rc3_conservative_refinement/integration_20261110/FORMAL_RESOURCE_ACCOUNTING.json",
+      "sha256": "3381a0e2c7bcbedcd0c33a650baf9468dd8ca38a61ae9920a35910ec63ed3753",
+      "matches_base_bytes": true
+    }
+  ],
+  "historical_consumption_not_reset": true,
+  "all_stage_caps_met": true,
+  "all_process_trees_exited": true,
+  "active_processes_at_end": 0,
+  "further_training_planning_or_final_test_authorized": false,
+  "accounting_scope": "All registered entry/failure/preflight/runtime/engineering/fit/evaluation/teacher replay/IO/new-output numeric audit charged. Post-run interval conservatively includes overlapping prose work once, not duplicate sums of nested stages. Subsequent prose, manifest, Git/LFS publication and byte checks are maintenance, not new scientific experiments.",
+  "native_H_scope": "2064 explicit shared postprocess calls;264 native complete requests and full per-request internal-search counters. Native all intermediate pre/post-H routes not separately captured; no independent native H attribution."
+}

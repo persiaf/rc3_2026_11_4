@@ -1,5 +1,5 @@
 <!-- FROZEN_REFERENCE_PG_CURRENT_BEGIN -->
-**冻结参考在线PG对照已登记，尚未实际运行。** 从`16f5d0595`建立独立研究分支，比较同一A1 Actor与冻结B-global/B-cond，Critic更新0；工程验收后执行已授权128机会及64/128终点。见[协议与本轮交付](rc3_frozen_reference_pg_20261111/README.md)。M1 G3FAIL、M2删除CB及旧停止/权重保持冻结。
+**冻结参考在线PG已实际完成并停止当前配置。** PG-global/PG-cond/继续SL-A1各128机会，384次Actor更新、Critic0；1536在线轨迹＋768已有标签重放，64/128两终点共792评价，总2328完整请求全成功。PG-cond两个终点均未改善FrozenSL或PG-global，未通过对继续SL的主门槛；不延长256。工程19请求/6真实尝试PASS，新输出独立数值复核1326384项PASS；科学含报告/独立主张审查3073.73秒<7200。见[全部实际交付](rc3_frozen_reference_pg_20261111/README.md)、[端点成本/完整时间](rc3_frozen_reference_pg_20261111/ENDPOINT_RESULTS.md)和[结果到主张](rc3_frozen_reference_pg_20261111/RESULT_TO_CLAIM.md)。原生H中间链记录范围如实披露；M1 G3FAIL、M2删除CB及旧停止/权重保持冻结，原60/旧S3/最终测试0。
 <!-- FROZEN_REFERENCE_PG_CURRENT_END -->
 
 <!-- R04_M2_CURRENT_BEGIN -->

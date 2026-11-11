@@ -1,0 +1,48 @@
+{
+  "actual": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "source_classification": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "actor",
+        "path": "rc3_frozen_reference_pg_20261111/actor.py",
+        "sha256": "fa2321ff06fb3177008228826ef7f58e3425dc43616d3154f03264b47624b6f3",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "trainer",
+        "path": "rc3_frozen_reference_pg_20261111/trainer.py",
+        "sha256": "5681f45ebc85738b6ea44a04cec99a7c09fd2fa8eb74d480550ad78b05dfdb2e",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "runtime",
+        "path": "rc3_frozen_reference_pg_20261111/runtime.py",
+        "sha256": "b7eab205e533225eab177d4df8d9a6ec80567f88d9248f04392118d6e09b6022",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "commit": "1b422402ad05e085ce7c198041e6694eb7a1fd7f"
+}

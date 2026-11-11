@@ -1,0 +1,10 @@
+{
+  "scope": "documentation wording only; no numerical recomputation, model, request, gate or scientific worker change",
+  "executed_source_sha256": "6cefe2c75259e5413892e4c928d0180a1d5063522ee85b3c4b210d8f78aaf0eb",
+  "current_helper_sha256": "5f25cf48c99144211f082c0b292eda5343751a726aa4f77e9e3b4e165d035ff0",
+  "reverse_patch": {
+    "replace": "显式共享postprocess前后路线、原生最终路线和内部搜索调用均保留；原生全部H中间路线未单独捕获，见[记录边界](SCHEMA_AND_ACCOUNTING_NOTES.md)。",
+    "with": "每次原生内部H前后路线与调用均在完整请求归档。"
+  },
+  "original_executed_source_reconstructible": true
+}

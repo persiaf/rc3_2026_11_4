@@ -1,0 +1,95 @@
+{
+  "schema": "experiment-result-to-claim-independent-review-v1",
+  "experiment": "frozen-reference-online-PG-11622026-v1",
+  "reviewed_execution": "rc3_frozen_reference_pg_20261111/execution_v2",
+  "claim_supported": "no",
+  "confidence": "high",
+  "confidence_scope": "Observed bounded development screen and STOP_CURRENT_CONFIGURATION; not a population equivalence or universal method impossibility claim.",
+  "intended_claim": "冻结B-cond相比B-global能使当前A1 Actor产生值得保留的完整路线收益，并改善FrozenSL和匹配继续SL。",
+  "what_results_support": [
+    "Completed fresh own-current-policy PG-global/PG-cond and matched continued_SL_A1 comparison with exact shared initialization, no neural Critic, and fully counted requests/real updates.",
+    "Both endpoints fail preregistered complete-route benefit gate; PG-cond vs FrozenSL/PG-global raw_J and common-H J savings are0 with [0,0] descriptive parent intervals in both exposed cohorts.",
+    "128 development vs continued_SL_A1 has tiny opposite-sign raw/H effects, no strictly positive lower CI and no0.5% gain;8x8 common-H J also fails no-point-regression condition.",
+    "Valid complete routes under saved proxy model constraints and successful engineering transaction/export checks; those are separate from quality gains.",
+    "Conditional centering changes observed pooled scalar return-reference dispersion; does not demonstrate policy-gradient variance or planning improvement."
+  ],
+  "what_results_dont_support": [
+    "Useful B-cond route gain versus B-global, FrozenSL or matched continuation SL.",
+    "Isolated A1/distance-feature efficacy, large-parent DRL/frozen-local goal achievement, unseen-parent/multi-seed generalization, or real IK/robot certification.",
+    "Native-H component attribution or a no-native-H control; fresh-process cold-start or PG-cond latency superiority."
+  ],
+  "missing_evidence": [
+    "Positive prespecified full-route benefit over required matched controls.",
+    "Unexposed parent/task and multi-seed evidence needed for any future generalization claim.",
+    "Native intermediate pre/postprocessing routes not comprehensively captured, so standalone native-H gain is unidentifiable from this run.",
+    "No paper/PAPER_CLAIM_AUDIT.json; downstream paper writing remains provisional."
+  ],
+  "suggested_claim_revision": "在当前单seed暴露开发筛选与固定128次机会预算内，B-cond改变了中心化回报诊断，但64/128均未产生达到预登记门槛的完整路线收益；停止当前配置。",
+  "next_experiments_needed": [
+    "None to establish the bounded negative-screen verdict.",
+    "For a future positive claim only: independently review and authorize a revised causal design with frozen gate/controls, then seek reproducible complete-route gains followed by unexposed-parent and multi-seed validation. Do not execute under this review."
+  ],
+  "numeric_evidence": {
+    "64_all_primary_comparisons": {
+      "saving_pct": 0,
+      "ci95_pct": [
+        0,
+        0
+      ]
+    },
+    "128_PGcond_vs_FrozenSL_or_PGglobal_both_cohorts_raw_and_H": {
+      "saving_pct": 0,
+      "ci95_pct": [
+        0,
+        0
+      ]
+    },
+    "128_development_vs_continued_SL_A1_H_J": {
+      "saving_pct": -0.004556013373871259,
+      "ci95_pct": [
+        -0.01366804012161378,
+        0
+      ]
+    },
+    "128_development_vs_continued_SL_A1_raw_J": {
+      "saving_pct": 0.00033320364186200643,
+      "ci95_pct": [
+        0,
+        0.0009996109255860192
+      ]
+    },
+    "128_8x8_ALL_vs_continued_SL_A1_H_J": {
+      "saving_pct": -0.0023121771725039424,
+      "ci95_pct": [
+        -0.006936531517511827,
+        0
+      ]
+    },
+    "counts": {
+      "requests": 2328,
+      "online_rollouts": 1536,
+      "endpoint_requests": 792,
+      "actor_updates": 384,
+      "teacher_replays": 768,
+      "failed_requests": 0,
+      "critic_updates": 0
+    },
+    "science_entry_wall_s": 2490.280999999999,
+    "engineering_cumulative_wall_s": 41.234825502393505
+  },
+  "native_H_limitation": {
+    "affects_primary_actor_SL_global_stop_verdict": false,
+    "affects_native_H_attribution": true,
+    "original_expectation": "All native pre/post-H intermediate routes",
+    "actual": "Native final routes/native_info/internal counts and timing, plus H_invocations only for explicit shared postprocess.",
+    "active_doc_correction_status": "Discrepancy independently found; parent executor subsequently reported active-summary/helper wording corrected with POSTPROCESS_FORMAT_REVISION.json. No reviewer rerun or source mutation; native intermediate-route limitation remains."
+  },
+  "paper_claim_audit": "unavailable",
+  "downstream_writing_status": "provisional — no paper claim audit available",
+  "independent_review_complete": true,
+  "pending_external_review": false,
+  "routing_action": "pivot",
+  "execution_recommendation": "STOP_CURRENT_CONFIGURATION",
+  "automatically_authorizes_new_execution": false
+}
+
