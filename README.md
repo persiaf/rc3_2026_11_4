@@ -1,3 +1,9 @@
+<!-- SHARED_CONSTRAINT_OPT_CURRENT_BEGIN -->
+## 当前：固定A1共享约束优化诊断
+
+[独立任务入口](rc3_shared_constraint_opt_20261111/README.md)。固定原32状态与零初始化，最多32个Jacobian共同更新子问题/192候选；此集合最后一轮机制筛选，不自动启动在线DRL。旧共享32/32、rank18/32FAIL、CE14/32与全部资源保持。
+<!-- SHARED_CONSTRAINT_OPT_CURRENT_END -->
+
 <!-- SHARED_A1_RANK_CURRENT_BEGIN -->
 ## 当前：共享A1见证PASS，排序固定终点仍FAIL
 
