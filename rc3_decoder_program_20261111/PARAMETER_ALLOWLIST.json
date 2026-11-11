@@ -1,0 +1,39 @@
+{
+  "allowlist": [
+    "key.weight",
+    "dynamic.weight",
+    "nav.weight",
+    "query.weight",
+    "query.bias"
+  ],
+  "shapes": {
+    "key.weight": [
+      64,
+      64
+    ],
+    "dynamic.weight": [
+      64,
+      64
+    ],
+    "nav.weight": [
+      64,
+      4
+    ],
+    "query.weight": [
+      64,
+      260
+    ],
+    "query.bias": [
+      64
+    ]
+  },
+  "trainable_scalars": 25152,
+  "total_scalars": 65088,
+  "frozen_scalars": 39936,
+  "forbidden_initializations": [
+    "fixed32 diagnostic weights",
+    "P0 engineering weights",
+    "CB/CG critics"
+  ],
+  "optimizer_identity": "Exactly owned five parameter objects, no duplicates/foreign tensors"
+}

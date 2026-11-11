@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "check": "exact_SL256_and_independent_storage_and_five_tensor25152_of65088",
+      "status": "PASS"
+    },
+    {
+      "check": "initial_logits_masks_raw_H_routes_equal_in_full_and_three_local_sizes_complete_return_minus_J",
+      "status": "PASS"
+    },
+    {
+      "check": "exact_D5_whitelist_and_Full_all_parameters_foreign_optimizers_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "no_grad_collection_cache_reenters_grad_key_rebuilt_frozen_prefix_detached",
+      "status": "PASS"
+    },
+    {
+      "check": "real_complete_return_PG_update_finite_gradients_and_cache_version",
+      "status": "PASS",
+      "gradient_norms": {
+        "key.weight": 523.3462524414062,
+        "dynamic.weight": 260.5306396484375,
+        "nav.weight": 43.748077392578125,
+        "query.weight": 351.6063232421875,
+        "query.bias": 31.099348068237305
+      },
+      "parameter_changed": true,
+      "loss_sources": [
+        {
+          "episode_id": "p0:pg_sample",
+          "sample_J": 278.95832047659997,
+          "reference_J": 282.0007713978,
+          "factor": -3.0424509048461914,
+          "action_count": 73
+        }
+      ]
+    },
+    {
+      "check": "real_existing_label_SL_all_five_nonzero_gradients_frozen_weights_bitwise",
+      "status": "PASS",
+      "gradient_norms": {
+        "key.weight": 1.7344334125518799,
+        "dynamic.weight": 1.8954274654388428,
+        "nav.weight": 0.3075801134109497,
+        "query.weight": 1.8666492700576782,
+        "query.bias": 0.14462655782699585
+      }
+    },
+    {
+      "check": "FullActor_same_PG_recipe_all_original_parameters_graph_connected",
+      "status": "PASS",
+      "trainable_scalars": 65088,
+      "gradient_norms": {
+        "global_net.0.weight": 1.5518758296966553,
+        "global_net.0.bias": 0.6439388990402222,
+        "global_net.2.weight": 4.86967134475708,
+        "global_net.2.bias": 1.7206230163574219,
+        "task_in.weight": 16.83911895751953,
+        "task_in.bias": 26.173049926757812,
+        "candidate_in.weight": 36.43791961669922,
+        "candidate_in.bias": 14.159239768981934,
+        "to_task.weight": 65.6043472290039,
+        "to_task.bias": 23.157485961914062,
+        "to_candidate.weight": 81.98365020751953,
+        "to_candidate.bias": 9.243824005126953,
+        "task_norm.weight": 9.390585899353027,
+        "task_norm.bias": 6.609921455383301,
+        "candidate_norm.weight": 9.237186431884766,
+        "candidate_norm.bias": 3.762610673904419,
+        "key.weight": 89.56867980957031,
+        "dynamic.weight": 65.25200653076172,
+        "nav.weight": 12.306102752685547,
+        "prefix.weight_ih": 10.682178497314453,
+        "prefix.weight_hh": 2.0982272624969482,
+        "prefix.bias_ih": 1.3809973001480103,
+        "prefix.bias_hh": 0.7774595022201538,
+        "query.weight": 78.99308013916016,
+        "query.bias": 6.757857799530029
+      }
+    },
+    {
+      "check": "Actor_only_frozen_export_logits_masks_full_raw_H_routes_equal_usage_isolated",
+      "status": "PASS"
+    },
+    {
+      "check": "resume_model_Adam_RNG_cursor_ids_resource_and_next_update_exact",
+      "status": "PASS"
+    }
+  ],
+  "new_complete_requests": 13,
+  "carried_failed_requests": 1,
+  "new_actor_attempts": 5,
+  "critic_updates": 0,
+  "engineering_models_forbidden_as_scientific_initialization": true,
+  "no_teacher_Top1_or_fixed32_gate": true,
+  "science_quality_claim": false
+}

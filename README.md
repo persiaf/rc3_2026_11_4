@@ -1,3 +1,9 @@
+<!-- DECODER_PROGRAM_CURRENT_BEGIN -->
+## 当前：原Actor五张量工程PASS，完整周期在教师数据准入处停止
+
+[本周期实际交付](rc3_decoder_program_20261111/README.md) · [完整主计划](rc3_decoder_program_20261111/MASTER_PLAN.md) · [结果与停止原因](rc3_decoder_program_20261111/EXPERIMENT_REPORT.md)。准确SL256，五张量25152/65088标量，原输入/评分可微；普通任务P0通过。含前置失败与一次记账修复，共15次完整尝试（14完成/1失败）、Actor5、Critic0。准确256教师池没有完整10×10标签，无法满足PG/SL同清单50%完整父任务，P1—P5均NOT_RUN；按P6技术数据未完成收口，不称科学失败，不自动生成教师或改分布。275项只读复核及独立审查已完成；原逐请求搜索缺项保留UNKNOWN。旧53行表、固定32封存、用户文件及历史结果保持，不合并main。
+<!-- DECODER_PROGRAM_CURRENT_END -->
+
 <!-- TASK_LEVEL_DECISION_CURRENT_BEGIN -->
 ## 当前：固定32支线封存，主线任务级决策材料已整理
 

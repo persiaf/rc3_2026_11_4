@@ -1,0 +1,7 @@
+# 执行身份说明
+
+1. 原P0数学/代码身份为SOURCE_BINDING.json，首次前向前提交6799a5546；P0 CHECKS和模型checkpoint的identity按该绑定记录，不回写。
+2. 活动接口修订R02为SOURCE_BINDING_R02.json，ACTIVE_SOURCE_BINDING.json指向它。只修逐请求计数持久化及避免重复累计，不改Actor/Trainer/数据/MDP/损失/门槛。1次登记普通任务验收该接口，原P0不重跑。
+3. 当前程序协议/主计划的权威哈希位于绑定中的program_artifacts。顶层protocol_sha256、schedule_sha256等字段来自复制的旧score5绑定，仅是继承历史元数据，不是本周期活动协议；不得用其替代program_artifacts。binding_identity()明确分别计算本周期协议、计划及活动源码SHA。
+4. SAVED_OUTPUT_AUDIT_BINDING.json只绑定只读审查脚本。INDEPENDENT_NUMERICAL_REVIEW.json中source_binding_sha256字段指该审查自身绑定，非P0执行绑定；审查未运行模型。
+5. STATUS最终分别记录原P0执行绑定、活动R02、只读审查及完整计划。用户批准仅覆盖原任务书默认配方及条件；没有伪造一个之前不存在的完整周期计划文件。已知教师缺口维持NOGO，未因该批准变成数据PASS。

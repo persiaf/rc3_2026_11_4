@@ -1,0 +1,19 @@
+{
+  "unit": "Top-level policy.encode and policy.score calls; nested override/super dispatch is counted once; not Torch operator/kernel FLOPs",
+  "P0_request_encode_calls": 13,
+  "P0_request_score_calls": 470,
+  "P0_training_replay_encode_calls": 6,
+  "P0_training_replay_score_calls": 154,
+  "P0_direct_engineering_encode_calls": 16,
+  "P0_direct_engineering_score_calls": 506,
+  "P0_successful_encode_total": 35,
+  "P0_successful_score_total": 1130,
+  "P0_stale_score_rejected_before_tensor_forward": 1,
+  "accounting_repair_encode_calls": 1,
+  "accounting_repair_score_calls": 12,
+  "precursor_forward_calls": null,
+  "precursor_forward_status": "UNKNOWN_NOT_PERSISTED; not assumed zero",
+  "original_483_field_scope": "Request encode+score only, excludes training/direct engineering",
+  "original_cache_rebuilds_field_scope": "Request plus Trainer encode only, excludes direct engineering",
+  "reconstruction_source": "Frozen engineering.py loop structure plus saved request actions and UPDATES.loss_sources.action_count; no model forward"
+}

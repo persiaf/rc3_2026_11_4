@@ -1,0 +1,47 @@
+{
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "real_Torch_classification": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "actor",
+        "path": "rc3_decoder_program_20261111/actor.py",
+        "sha256": "da60d000bd4be8eed75b5f641faf8728012fbdef45937a961a4fba236119f2d8",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "trainer",
+        "path": "rc3_decoder_program_20261111/trainer.py",
+        "sha256": "b7913aecb86f8338fd92d768322ba085a658883caf0a44d8aceb32041203a0cc",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      },
+      {
+        "module": "runtime",
+        "path": "rc3_decoder_program_20261111/runtime.py",
+        "sha256": "1e2f96cf263647c2da67fd83407aec043106f05f48164f4df6d107e12e40f107",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  }
+}
