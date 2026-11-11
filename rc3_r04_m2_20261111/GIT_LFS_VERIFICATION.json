@@ -1,7 +1,63 @@
 {
-  "status": "PENDING_PUBLICATION",
+  "schema": "rc3-r04-m2-github-lfs-publication-v1",
+  "status": "PASS",
+  "verified_utc": "2026-11-11T07:47:24.645053+00:00",
   "branch": "codex/rc3-r04-m2-conditional-anchor-20261111",
-  "scientific_execution_commit": "a8df31312",
-  "expected_new_LFS_objects": 5,
-  "main_merge": false
+  "remote": "https://github.com/persiaf/rc3_2026_11_4.git",
+  "baseline": "7aeab00d50793a3bd8f35adf99e74581e29350fb",
+  "protocol_preregistration_commit": "26ab03306fd5caf615d644c0a6d1d8147dc54819",
+  "actual_scientific_execution_commit": "a8df31312c9aeb5edf2c51ee65d1fe095d08bca8",
+  "results_commit": "2c56a5e518b163be352febb138d60abf3ce3c74d",
+  "verified_remote_results_sha": "2c56a5e518b163be352febb138d60abf3ce3c74d",
+  "publication_success": true,
+  "main_merge": false,
+  "new_LFS_objects": [
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/models/CB_step0000.checkpoint.pt",
+      "sha256": "7218ee69522b5d462f7f8395f9046b18985dfc100038f2e2ec41f73b41ccb1a0",
+      "bytes": 228113,
+      "remote_byte_sha256": "7218ee69522b5d462f7f8395f9046b18985dfc100038f2e2ec41f73b41ccb1a0",
+      "remote_bytes": 228113,
+      "status": "PASS"
+    },
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/models/CB_step0128.checkpoint.pt",
+      "sha256": "90670c1e84a68e351915c311150c4f6e41307b6c08ae7ec9f1667178f730e562",
+      "bytes": 643416,
+      "remote_byte_sha256": "90670c1e84a68e351915c311150c4f6e41307b6c08ae7ec9f1667178f730e562",
+      "remote_bytes": 643416,
+      "status": "PASS"
+    },
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/models/CG_step0000.checkpoint.pt",
+      "sha256": "b7e8f20b5428b46c99aae4c7fb322be129e46aac47cb4a90c2259483df19a4a8",
+      "bytes": 228113,
+      "remote_byte_sha256": "b7e8f20b5428b46c99aae4c7fb322be129e46aac47cb4a90c2259483df19a4a8",
+      "remote_bytes": 228113,
+      "status": "PASS"
+    },
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/models/CG_step0128.checkpoint.pt",
+      "sha256": "4783800975abb20ec01031ba60b318ea88ad2fe5e23b24293a5d7e988d710aae",
+      "bytes": 643416,
+      "remote_byte_sha256": "4783800975abb20ec01031ba60b318ea88ad2fe5e23b24293a5d7e988d710aae",
+      "remote_bytes": 643416,
+      "status": "PASS"
+    },
+    {
+      "path": "rc3_r04_m2_20261111/attempts/02/M2_STATE_PREDICTIONS.csv.gz",
+      "sha256": "d0697135d53d7912c91d1f299b4f47db12bb252e94cd6e01ccd8400dd4c14c5f",
+      "bytes": 4200392,
+      "remote_byte_sha256": "d0697135d53d7912c91d1f299b4f47db12bb252e94cd6e01ccd8400dd4c14c5f",
+      "remote_bytes": 4200392,
+      "status": "PASS"
+    }
+  ],
+  "remote_LFS_object_count": 5,
+  "remote_LFS_verification": "Fresh empty task-scoped lfs.storage fetched only this task5 objects from origin at verified results commit; actual downloaded payload bytes match Git pointers and preregistered publication hashes",
+  "previous_M1_LFS_not_refetched": true,
+  "temporary_storage_removed": true,
+  "receipt_commit_note": "This receipt and its manifest update are committed after the verified results commit. Final current branch SHA is independently checked by ls-remote after that receipt commit and reported in the final answer; no self-referential commit hash is claimed here.",
+  "unrelated_user_changes_staged": false,
+  "scientific_execution_complete": true
 }
