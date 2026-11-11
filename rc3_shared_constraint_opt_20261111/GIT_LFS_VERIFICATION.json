@@ -1,5 +1,82 @@
 {
-  "status": "PENDING_PUBLICATION",
-  "expected_new_unique_objects": 5,
-  "main_merge": false
+  "status": "PASS",
+  "repository": "https://github.com/persiaf/rc3_2026_11_4",
+  "branch": "codex/rc3-shared-constraint-opt-20261111",
+  "base_commit": "6250a3f75e7e36ae81c2aadc4346c7c55f580173",
+  "executed_source_commit": "9df485861b568d8dd7b358ec8e03f21e2f33b765",
+  "verified_results_commit": "e7d4dc3aacb31c14b7c8be06f9adc830622b9aa3",
+  "actual_remote_ref_observed_after_results_push": "e7d4dc3aacb31c14b7c8be06f9adc830622b9aa3",
+  "verified_utc": "2026-11-11T13:10:45.339583+00:00",
+  "method": "Push reported5/5 LFS objects; successful ls-remote matched result SHA. Fresh origin/result-SHA fetch into initially absent isolated lfs.storage, then SHA256+size on all5 actual downloaded object files and matching committed Git LFS pointers/local artifacts. No second redundant ref lookup inside byte audit.",
+  "paths": [
+    {
+      "path": "rc3_shared_constraint_opt_20261111/diagnostic/CANDIDATE_STATES.jsonl.gz",
+      "oid_sha256": "461c1e0024641a35829bb4c1c7affa845205dae60a96fd3c948d250bedb3d81d",
+      "bytes": 14078618,
+      "remote_downloaded_bytes_verified": true,
+      "exact_committed_pointer_verified": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_constraint_opt_20261111/diagnostic/JOINT_final.diagnostic.pt",
+      "oid_sha256": "3ed0692a9579f4e7dbebd1e84b9bbef1b69ace055913010a27dcf1839d7f61fc",
+      "bytes": 73045,
+      "remote_downloaded_bytes_verified": true,
+      "exact_committed_pointer_verified": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_constraint_opt_20261111/diagnostic/JOINT_step0000.diagnostic.pt",
+      "oid_sha256": "315ebd51a6f19a522250454676e620682df364579fc6bf969282d8c7d25a290c",
+      "bytes": 72981,
+      "remote_downloaded_bytes_verified": true,
+      "exact_committed_pointer_verified": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_constraint_opt_20261111/diagnostic/PATH_PROBE_STATES.jsonl.gz",
+      "oid_sha256": "53d83736f385807825b408114f9718c01ef28b0c3ea467cd632aa28722f43fa9",
+      "bytes": 989365,
+      "remote_downloaded_bytes_verified": true,
+      "exact_committed_pointer_verified": true,
+      "local_bytes_match": true
+    },
+    {
+      "path": "rc3_shared_constraint_opt_20261111/diagnostic/SUBPROBLEM_CERTIFICATES.jsonl.gz",
+      "oid_sha256": "8a51ea2960101bf2b6b13cbb9649f514519cf6f63484262a0e02dc53cb1817a1",
+      "bytes": 10837124,
+      "remote_downloaded_bytes_verified": true,
+      "exact_committed_pointer_verified": true,
+      "local_bytes_match": true
+    }
+  ],
+  "new_unique_object_count": 5,
+  "new_unique_object_bytes": 26051133,
+  "temporary_verification_store_removed": true,
+  "no_main_merge": true,
+  "user_Word_not_submitted": true,
+  "publication_attempts": [
+    {
+      "attempt": 1,
+      "LFS_upload": "5/5 completed,26MB,83KB/s",
+      "Git_push": "RPC35 Schannel handshake failure"
+    },
+    {
+      "action": "task_specific_LFS_process_termination_check",
+      "executed_termination": false,
+      "reason": "LFS process had already exited; exact identity check prevented termination; no interruption/reupload"
+    },
+    {
+      "attempt": 2,
+      "Git_push": "PASS",
+      "remote_sha": "e7d4dc3aacb31c14b7c8be06f9adc830622b9aa3",
+      "LFS_reported_duplicate_transfer_bytes": 0,
+      "settings": "Per-command Schannel/TLS1.2/HTTP1.1,normal LFS upload checks,lock-query disabled for new non-lockable files,finite timeouts; no global proxy/config/certificate changes"
+    },
+    {
+      "action": "fresh_remote_LFS_fetch",
+      "status": "PASS"
+    }
+  ],
+  "final_followup": "Receipt/readme/resource/index only are committed in metadata child; final child remote SHA separately verified after push and reported in final delivery."
 }

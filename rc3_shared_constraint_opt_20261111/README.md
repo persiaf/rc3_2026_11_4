@@ -14,3 +14,5 @@
 - [历史字节核对](HISTORICAL_BOUNDARY_VERIFICATION.json) · [Git/远端LFS字节核对](GIT_LFS_VERIFICATION.json)
 
 不追加损失/配置/训练，不自动启动在线DRL。共享权重不作优化初值/目标/方向，全部模型禁止部署及正式初始化；无泛化或路线收益结论。未合并main，未提交用户Word或无关文件。
+
+结果提交`e7d4dc3aacb31c14b7c8be06f9adc830622b9aa3`已推送且远端SHA匹配；从远端重新下载核验5个新增LFS对象、26,051,133字节，SHA256/大小/指针全部PASS。后续提交只记录此核对收据和索引。
