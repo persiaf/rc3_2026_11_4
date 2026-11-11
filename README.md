@@ -1,3 +1,7 @@
+<!-- FROZEN_REFERENCE_PG_CURRENT_BEGIN -->
+**冻结参考在线PG对照已登记，尚未实际运行。** 从`16f5d0595`建立独立研究分支，比较同一A1 Actor与冻结B-global/B-cond，Critic更新0；工程验收后执行已授权128机会及64/128终点。见[协议与本轮交付](rc3_frozen_reference_pg_20261111/README.md)。M1 G3FAIL、M2删除CB及旧停止/权重保持冻结。
+<!-- FROZEN_REFERENCE_PG_CURRENT_END -->
+
 <!-- R04_M2_CURRENT_BEGIN -->
 **R04-M2已完成：CG/CB各128步，共256次Critic更新；当前CB神经残差按预登记门槛删除并停止。** CB对条件锚点的Value MSE下降16.79%/10.67%，但父布局等权区间上界1.015、6×6两聚合点比1.037/1.107未通过。CG虽优于全局锚点，仍弱于零更新条件锚点，后续训练期优先保留fit-only条件分量参考。独立数值复核5880项PASS；Actor、导航、教师、native、H和新场景0。见[全部交付](rc3_r04_m2_20261111/README.md)、[端点表](rc3_r04_m2_20261111/ENDPOINT_RESULTS.md)与[结果到主张](rc3_r04_m2_20261111/RESULT_TO_CLAIM.md)。M1的G3FAIL及256未运行和旧资源冻结；本轮仅暴露holdout开发机制筛选，不启动联合PPO，不证明路线收益。
 <!-- R04_M2_CURRENT_END -->

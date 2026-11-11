@@ -22,3 +22,7 @@ rc3_integrated_rppo/runs/*/ledger/events.jsonl -filter -diff -merge -text
 
 # R04-M2 new compact state evidence uses the existing LFS archive workflow.
 rc3_r04_m2_20261111/**/M2_STATE_PREDICTIONS.csv.gz filter=lfs diff=lfs merge=lfs -text
+
+# New frozen-reference online PG request and update evidence archives.
+rc3_frozen_reference_pg_20261111/**/REQUESTS.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+rc3_frozen_reference_pg_20261111/**/ONLINE_UPDATE_DIAGNOSTICS.jsonl.gz filter=lfs diff=lfs merge=lfs -text
