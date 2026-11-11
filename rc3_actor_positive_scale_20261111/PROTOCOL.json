@@ -1,0 +1,120 @@
+{
+  "schema": "actor-positive-and-conditional-step-scale-v1",
+  "base_commit": "664de37687c4db603169a8dd0c105c27481cd07a",
+  "seed": 11622026,
+  "fixed_research_goal": "large complex parent DRL; frozen Actor quickly completes local full constrained tasks",
+  "positive_selection": {
+    "pool": "fixed original256 saved training teacher labels/actions/views; no new teacher or alternate task",
+    "state_restoration": "accurate frozenSL256 plus exact saved prefixes, stop before final teacher env.step, no terminal/H/planning/cost labels",
+    "eligible": "teacher legal and different from SL argmax; construct actual206-64-64-1 float32 A1 network weights with strict teacher margin>=1e-4, abs(delta)<=.25, FULL legal-mask original guard",
+    "witness": "two-hinge one-bump actual A1 network at a stable candidate-feature coordinate;48 scalar bisections, zero optimizer; no gap-only substitution",
+    "witness_scope": "per-state actual-network existence; not a shared witness-weight fit proof; actual CE trials fit all selected states jointly",
+    "deterministic_order": "SL teacher rank2 FIRST, then SHA256 canonical(teacher index,view identity,prefix,state index); first32 verified witnesses",
+    "max_states": 32,
+    "minimum_interpretable_states": 16,
+    "insufficient": "report exact count, do not generate/replace tasks; online NOT_RUN",
+    "selection_seal": "write selected data/feature identities and FEASIBLE_RANK_WITNESSES before FIRST actual CE optimizer call"
+  },
+  "positive_rates": [
+    3e-05,
+    0.0003,
+    0.001
+  ],
+  "positive_updates": {
+    "per_rate": 128,
+    "total_max": 384,
+    "loss": "CE state mean over SAME fixed selected states in SAME order every step",
+    "Adam": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "gradient_clip": 1.0
+    },
+    "start": "same accurateSL256-derived fresh A1 zero output and identical hidden tensors for all rates",
+    "success": "at least16 witnessed states; exact step128 strict target-top1 margin>1e-5 fraction>=80%, accepted>=ceil(.9*128), finite+mask+amplitude+all applied guards satisfied",
+    "no_midpoint_or_best_weight_selection": true,
+    "diagnostic_weights_forbidden_as_online_start": true
+  },
+  "actor": {
+    "input": 206,
+    "hidden": [
+      64,
+      64
+    ],
+    "distances": "ON",
+    "correction": "relative_pre_tanh_centered_v1",
+    "amplitude": 0.25,
+    "zero_output": true,
+    "base_path": "rc3_integrated_rppo/runs/rc3_integrated_rppo_v1_20261110_01/actors/11622026/SL256_0256_1817f58aa650.pt",
+    "base_sha256": "60f5aa4e59983e92d565f0599823b710965cf2c96a041e7eb483d23a8eb0556c"
+  },
+  "guard": {
+    "max_step_kl": 0.001,
+    "max_step_probability_change": 0.02,
+    "max_base_total_variation": 0.1,
+    "consecutive_rejection_limit": 16
+  },
+  "caps": {
+    "positive": {
+      "requests": 0,
+      "actor_optimizer_attempts": 384,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 600
+    },
+    "online": {
+      "requests": 984,
+      "actor_optimizer_attempts": 192,
+      "critic_optimizer_attempts": 0,
+      "wall_s": 3600
+    }
+  },
+  "trigger": "ONLY original3e-5 FAIL and a new rate PASS: take MINIMUM passed new rate; originalPASS or allFAIL/insufficient => online NOT_RUN; NEVER select from complete-route evaluation",
+  "online": {
+    "arms": {
+      "A": "B-cond lr3e-5",
+      "B": "B-cond calibrated minimum passing LR",
+      "C": "continuedSL-A1 calibrated LR"
+    },
+    "fresh_initialization": "new identical SL256 plus zeroA1; NO diagnostic weights loaded",
+    "opportunities_per_arm": 64,
+    "RL_per_opportunity": {
+      "10x10": 3,
+      "4x3": 1,
+      "6x6": 1,
+      "8x8": 1
+    },
+    "online_rollouts": 768,
+    "teacher_replays": 384,
+    "endpoints": [
+      32,
+      64
+    ],
+    "evaluation_cases": 18,
+    "methods": [
+      "A",
+      "B",
+      "C",
+      "FrozenSL",
+      "Fixed3",
+      "Detour16"
+    ],
+    "evaluation_requests": 216,
+    "update": "same prior Trainer: complete gamma=lambda1 detach(G-Bcond), per-batch RMS, one candidate, .1 ratio clip, .02 baseKL, no entropy change; CE control same route-mean reduction",
+    "random_stream": "int(SHA256 canonical([actor-positive-scale,11622026,op,slot])[:15],16) then frozen runtime action seed transform; CRN, each arm OWN current-policy fresh calls, no sharing trajectories",
+    "table": "exact frozen M2 B-cond, already normalized, no repeated division by n, no update, absent from deployed Actor",
+    "quality": "B saves>=.5% vs BOTH FrozenSL andC in complete raw_J and H_J, parent-cluster descriptive95% lower>0; no per-size point regression vs either. BvsA reported, not replacement for strong controls.",
+    "inference": "3 physical DEV parents, case costs averaged within parent; paired20000 PCG64seed11652026 linear quantile; exposed single-seed mechanism screen only",
+    "timing": "current complete request, saved input/source/nav restore, cold model, features/policy/native/H/validation/archive/index; actual first-choice, ratio/KL/TV and all failures",
+    "native": "original Fixed3/Detour16 full pipeline; final native route is native raw convention, not a new H ablation; full internal-search counters retained"
+  },
+  "table_path": "rc3_r04_m2_20261111/attempts/02/FIT_ONLY_COMPONENT_ANCHORS.json",
+  "table_sha256": "495790b78e383bf78072d613da2e5b0a100c1aa391b3055eec19121e244b3d6b",
+  "schedule_sha256": "94ebd0c13aef24e8da05e7863b1de38e699d53f7626968e3bf71bad3173d4b00",
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "stop": "source/input/nonfinite failure stops stage and preserves consumption; no task/seed replacement.16 consecutive rejections stop configuration. No automatic step/feature/guard/amplitude extension.",
+  "historical_boundary": "PG-global/PG-cond128 STOP and all negative results frozen; no256, no Critic fitting/new reference; original60/oldS3/final test/Word untouched",
+  "wall_scope": "all active registration/restore/witness/fit/new-output audit charged; code authorship/prose/Git maintenance separate. Failed entries retained. No old million-row CSV audit."
+}

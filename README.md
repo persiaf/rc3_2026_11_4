@@ -1,3 +1,7 @@
+<!-- ACTOR_POSITIVE_SCALE_CURRENT_BEGIN -->
+**Actor阳性对照与条件步幅试验已登记，尚未计算。** 固定原教师池和实际A1排序见证，比较3e-5/3e-4/1e-3；仅原学习率失败且新增学习率通过时触发64机会在线对照。旧PG128停止及Critic边界保留。见[本轮协议与交付](rc3_actor_positive_scale_20261111/README.md)。
+<!-- ACTOR_POSITIVE_SCALE_CURRENT_END -->
+
 <!-- FROZEN_REFERENCE_PG_CURRENT_BEGIN -->
 **冻结参考在线PG已实际完成并停止当前配置。** PG-global/PG-cond/继续SL-A1各128机会，384次Actor更新、Critic0；1536在线轨迹＋768已有标签重放，64/128两终点共792评价，总2328完整请求全成功。PG-cond两个终点均未改善FrozenSL或PG-global，未通过对继续SL的主门槛；不延长256。工程19请求/6真实尝试PASS，新输出独立数值复核1326384项PASS；科学含报告/独立主张审查3073.73秒<7200。见[全部实际交付](rc3_frozen_reference_pg_20261111/README.md)、[端点成本/完整时间](rc3_frozen_reference_pg_20261111/ENDPOINT_RESULTS.md)和[结果到主张](rc3_frozen_reference_pg_20261111/RESULT_TO_CLAIM.md)。原生H中间链记录范围如实披露；M1 G3FAIL、M2删除CB及旧停止/权重保持冻结，原60/旧S3/最终测试0。
 <!-- FROZEN_REFERENCE_PG_CURRENT_END -->
