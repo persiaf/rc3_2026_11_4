@@ -1,0 +1,57 @@
+{
+  "schema": "rc3-r04-m1-authorized-entry-repair-review-v1",
+  "eligible": true,
+  "failed_run_id": "rc3-r04-m1-real-20261111-01",
+  "permitted_next_run_id": "rc3-r04-m1-real-20261111-02",
+  "reviewer": "Independent child agent real_m1_review; owner requested review under explicit user bounded retry authorization",
+  "authority": "User permits up to two entry repairs before any optimizer attempt or step0, for import/source-classification/recording interfaces only, cumulative new task budget unchanged",
+  "failure_identity": {
+    "FAILURE.json": "16aff9220e834ea3de9102def1fa829f80ca487cd59046ef187dbf9b9e66cc12",
+    "RESOURCE_ACCOUNTING.json": "cc0658512fafb8c9a4a3dee4e24157c957717c72e17ee44ea13eb1ced7af934d",
+    "ENTRY_CONSUMPTION.json": "f88da6b587c208b21cb17f7845b7b478e70e630172c3438668cbabfbcb0b79af",
+    "SOURCE_BINDING.json": "0a68cade7caf91f2502a76077e44c7f1b084783032a7437d02627dd4a46b052a"
+  },
+  "observed_failure": {
+    "exception": "PermissionError WinError 5",
+    "operation": "Path.replace of attempts/01/WORKER_HEARTBEAT.tmp to WORKER_HEARTBEAT.json",
+    "exact_source": "rc3_r04_m1_recovery_20261111/provenance.py:175, TracedProvenance.emit",
+    "outer_phase": "heavy_imports",
+    "category": "recording_interface",
+    "source_SHA_mismatch": false,
+    "source_classification_fault": false,
+    "data_corruption_observed": false,
+    "lock_owner_or_underlying_OS_cause": "UNKNOWN",
+    "explanation": "A verified-source hash completed and its trace/heartbeat emit failed on heartbeat replacement. The outer import phase is where recording occurred; the exception is a recording operation, not a numerical, source identity or dataset failure."
+  },
+  "automatic_eligibility_record": {
+    "preserved_original_value": false,
+    "preserved_original_category": null,
+    "reason_for_separate_manual_classification": "The initial classifier accepts recording OSError only in environment_record/real_preflight_record. This exact heartbeat recording error occurred within heavy_imports. The original failure and eligibility are retained unchanged; this additive review applies the user's operation-based recording-interface permission."
+  },
+  "prerequisites_verified": {
+    "critic_optimizer_attempts": 0,
+    "actor_optimizer_attempts": 0,
+    "saved_trajectories": 0,
+    "step0_started": false,
+    "root_exit_confirmed": true,
+    "job_active_processes_at_end": 0,
+    "forbidden_request_and_sealed_read_counts": 0
+  },
+  "retained_consumption": {
+    "failed_entry_wall_s": 12.34400000000096,
+    "prior_new_task_consumption_s": 1.0709999999996218,
+    "cumulative_new_task_wall_s": 13.415000000000582,
+    "old_science_and_engineering_wall_s": 2885.2303396420666,
+    "all_disclosed_research_wall_s": 2898.645339642067,
+    "new_task_limit_s": 1800,
+    "no_budget_reset": true
+  },
+  "allowed_patch": "New provenance adapter heartbeat recording only: bounded retry for exact Windows sharing/access-denied errors on its own heartbeat replacement, with deadline checks and retained retry evidence. Do not swallow unrelated errors or change source verification, model/data/random schedule/loss/thresholds/scientific budget.",
+  "conditions_for_02": [
+    "Preserve all attempt01 source snapshots, failure and resource bytes.",
+    "Register exact patched source, distinct run_id and output directory; separately bind implementation GO before launch.",
+    "Carry all consumed time and repeated reads into the same new 1800-second cumulative allowance.",
+    "No retry after step0 begins or any optimizer attempt; maximum three worker launches in this task.",
+    "G2/M3, Actor, new tasks/navigation/teacher/native/H and original60/oldS3 remain unauthorized."
+  ]
+}

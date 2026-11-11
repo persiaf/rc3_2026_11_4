@@ -1,0 +1,23 @@
+{
+  "run_id": "rc3-r04-m1-real-20261111-02",
+  "scientific_modifications": [],
+  "total_new_task_wall_cap_s": 1800,
+  "work_admission_cutoff_s": 1650,
+  "cooperative_deadline_s": 1780,
+  "supervisor_force_stop_s": 1790,
+  "termination_tolerance_s": 5,
+  "max_entries": 3,
+  "critic_optimizer_attempts": 512,
+  "per_configuration_attempts": 256,
+  "actor_optimizer_attempts": 0,
+  "retry_conditions": [
+    "zero Actor/Critic attempts",
+    "step0 not started",
+    "import/source classification/recording interface only",
+    "no SHA mismatch, data corruption, sealed access or scientific semantics change"
+  ],
+  "scientific_inputs": "original 33 fit / 16 holdout / 116 trajectories, unchanged batches",
+  "accepted_supervisor": "existing Windows Job / temporary sleep prevention; no new synthetic suite",
+  "clock": "Cumulative registration + full supervisor/worker elapsed across all entries; no truncation",
+  "pre_registration_stdlib_AST_check_s": 0.555
+}

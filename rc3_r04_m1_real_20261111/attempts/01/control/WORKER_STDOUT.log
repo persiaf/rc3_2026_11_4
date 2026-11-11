@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 220, in _verified_bytes
+    self.emit('hash_end',**self.last_completed_operation,status='GO')
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_real_20261111\provenance_use.py", line 123, in emit
+    return super().emit(event, **fields)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 175, in emit
+    temp.replace(self.output/'WORKER_HEARTBEAT.json')
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\pathlib.py", line 1247, in replace
+    self._accessor.replace(self, target)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_real_20261111\\attempts\\01\\WORKER_HEARTBEAT.tmp' -> 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_real_20261111\\attempts\\01\\WORKER_HEARTBEAT.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 243, in stage
+    yield
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_real_20261111\worker.py", line 128, in main
+    from rc3_r04_m1_20261111 import critic,data,metrics,test_critic,restricted_inputs
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_20261111\data.py", line 16, in <module>
+    from rc3_critic_diagnostics_20261111 import data as saved
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 266, in verified_code
+    payload=owner.read_bytes(path)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 233, in read_bytes
+    return self._verified_bytes(path,expected)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 223, in _verified_bytes
+    self.emit('hash_end',path=relative,bytes=total,seconds=time.perf_counter()-tick,
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_real_20261111\provenance_use.py", line 123, in emit
+    return super().emit(event, **fields)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 175, in emit
+    temp.replace(self.output/'WORKER_HEARTBEAT.json')
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\pathlib.py", line 1247, in replace
+    self._accessor.replace(self, target)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_real_20261111\\attempts\\01\\WORKER_HEARTBEAT.tmp' -> 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_real_20261111\\attempts\\01\\WORKER_HEARTBEAT.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_real_20261111\worker.py", line 425, in <module>
+    if __name__=='__main__':main()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_real_20261111\worker.py", line 125, in main
+    with provenance.stage('heavy_imports'):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 245, in stage
+    self.emit('stage_end',name=name,status='FAIL',seconds=time.perf_counter()-tick,error=repr(exc));raise
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_real_20261111\provenance_use.py", line 123, in emit
+    return super().emit(event, **fields)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_r04_m1_recovery_20261111\provenance.py", line 175, in emit
+    temp.replace(self.output/'WORKER_HEARTBEAT.json')
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\pathlib.py", line 1247, in replace
+    self._accessor.replace(self, target)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_real_20261111\\attempts\\01\\WORKER_HEARTBEAT.tmp' -> 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_r04_m1_real_20261111\\attempts\\01\\WORKER_HEARTBEAT.json'

@@ -8,8 +8,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
+import time
 import types
 
 from rc3_r04_m1_recovery_20261111.provenance import build_manifest
@@ -120,7 +122,50 @@ class ScientificTracedProvenance(RevisedTracedProvenance):
         if event == 'loaded_modules_checked':
             fields['used_for_scientific_attempt'] = True
             fields['integration'] = 'existing_reviewed_classifier_real_M1'
-        return super().emit(event, **fields)
+        # Original emit retained from the frozen provenance.py source SHA256
+        # 4b03affa3636b65975d97b8b7d6324d830b812ebeebe59c5b584369fefac457e.
+        # Only Windows transient replacement failures receive bounded retries;
+        # the durable trace event is written once, never replayed through super.
+        record = dict(event=event,run_id=self.run_id,monotonic_s=time.perf_counter(),
+                      wall_unix_s=time.time(),elapsed_s=time.perf_counter()-self.started,
+                      stage=self.active_stage)
+        record.update(fields)
+        with self.lock, self.trace_path.open('a',encoding='utf-8',newline='\n') as stream:
+            stream.write(json.dumps(record,ensure_ascii=False,allow_nan=False)+'\n')
+            stream.flush()
+            # Per-file operation boundaries remain visible while another read
+            # stalls; the independent supervisor owns crash/timeout receipts.
+            os.fsync(stream.fileno())
+            if event.endswith('_start'):
+                self.operation_in_progress={k:v for k,v in record.items() if k not in ('run_id',)}
+            if (event.endswith('_end') and record.get('status','GO')=='GO') or event.endswith('_cache_hit'):
+                self.last_completed_operation=dict(record)
+                self.operation_in_progress=None
+            heartbeat=dict(run_id=self.run_id,pid=os.getpid(),wall_unix_s=record['wall_unix_s'],
+                monotonic_s=record['monotonic_s'],stage=record.get('stage'),
+                operation_in_progress=self.operation_in_progress,last_completed_operation=self.last_completed_operation,
+                last_event=event)
+            temp=self.output/'WORKER_HEARTBEAT.tmp'
+            with temp.open('w',encoding='utf-8',newline='\n') as state:
+                json.dump(heartbeat,state,ensure_ascii=False,allow_nan=False);state.write('\n');state.flush()
+            replace_deadline = time.perf_counter()+1.0
+            while True:
+                self.check()
+                try:
+                    temp.replace(self.output/'WORKER_HEARTBEAT.json')
+                    break
+                except OSError as error:
+                    if getattr(error, 'winerror', None) not in (5, 32):
+                        raise
+                    self.check()
+                    remaining = replace_deadline-time.perf_counter()
+                    if remaining <= 0:
+                        raise
+                    time.sleep(min(0.01, remaining))
+                    self.check()
+                    if time.perf_counter() >= replace_deadline:
+                        raise
+        return record
 
 
 def verify_real_environment(provenance, torch_module, ordinary_modules):
