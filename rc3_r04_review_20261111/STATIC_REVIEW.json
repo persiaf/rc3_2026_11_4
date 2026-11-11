@@ -1,0 +1,73 @@
+{
+  "schema": "rc3-r04-independent-static-review-v1",
+  "base_commit": "853eb6b016df3aee08c233894ab6c24beb3765d8",
+  "review_scope": "Source/protocol reading only; no torch import, model instantiation, test, numerical scan, optimizer or planning execution",
+  "initial_verdict": "REVISE",
+  "final_static_verdict": "GO_FOR_REGISTERED_ZERO_OPTIMIZER_ENGINEERING_ONLY",
+  "engineering_admission": "S01 resolved by source review; bind exact revised sources before one registered zero-optimizer run; this does not guarantee numerical PASS or authorize retries",
+  "scientific_readiness": "NOT_READY_NOT_AUTHORIZED",
+  "current_engineering_results_claimed": false,
+  "reviewer_execution": {
+    "torch_imports": 0,
+    "model_instances": 0,
+    "tests": 0,
+    "CSV_arithmetic_audits": 0,
+    "optimizer_updates": 0,
+    "planning_requests": 0
+  },
+  "issues": [
+    {
+      "id": "R04-S01",
+      "scope": "CURRENT_ENGINEERING_ADMISSION",
+      "severity": "BLOCKING_REVISE",
+      "resolution": "CLOSED_BY_STATIC_SOURCE_REVIEW: explicit Meter.check_wall, final pre-PASS check, audit periodic check/row heartbeat",
+      "source": "run_engineering.py:Meter.charge and main; evidence_audit.py long CSV scans",
+      "finding": "Wall time is checked only on charge admission. Long scans/final writes can exceed 900 seconds while final status remains PASS.",
+      "remedy": "Add explicit wall checks, periodic long-reader heartbeat and final pre-PASS check; preserve failure debit and never reset budget."
+    },
+    {
+      "id": "R04-S02",
+      "scope": "FUTURE_PRODUCTION",
+      "severity": "BLOCKING_NOT_READY",
+      "finding": "Legacy wrapper export calls a missing method on RelativeCorrection; current standalone mapping tests bypass it. Legacy production schema may mislabel relative weights as absolute.",
+      "remedy": "Migrate wrapper/export/loader/checkpoint together with explicit semantic, feature and base identities before production."
+    },
+    {
+      "id": "R04-S03",
+      "scope": "FUTURE_SCIENTIFIC",
+      "severity": "BLOCKING_NOT_AUTHORIZED",
+      "finding": "Fake-state restoration is not guarded real optimizer or full recovery acceptance.",
+      "remedy": "Separate exact real-optimizer engineering registration/authorization and complete Adam/RNG/cursor/resource restore checks."
+    },
+    {
+      "id": "R04-S04",
+      "scope": "FUTURE_SCIENTIFIC",
+      "severity": "BLOCKING_GATE_UNMET",
+      "finding": "Existing C1 evidence has not beaten the conditional constant in both aggregations; C2 has normalized-H regression.",
+      "remedy": "Retain unmet G3 and future authorization boundaries; engineering PASS cannot count as scientific evidence."
+    }
+  ],
+  "protocol_cautions": [
+    "C0/C1 identical net tensors imply different physical initialization, so pure gradient-scale causation is not identified.",
+    "G3 is a strict multifactor admission rule, not a calibrated familywise 5-percent test.",
+    "Fixed16 parent coverage can be insufficient and must not be resampled.",
+    "Blocking H2 pilot on G3 is a project decision, not evidence that H2 is false.",
+    "M3 now explicitly states 66 TOTAL evaluation cases already including both endpoint conventions.",
+    "Prospective M1 now fits state_SUM per trajectory then episode_mean, matching proposed PPO; historical state_MEAN fitting evidence remains unchanged."
+  ],
+  "resolved_source_sha256": {
+    "run_engineering.py": "28d1dcc7e9a5e40d26a103141592a15dbc0ae9e7a9b3b0d8f8d50869ba479b74",
+    "evidence_audit.py": "d8253042b1a85328f26fdf594cb766af20debcbf0af2c9ec1ac1a179127e758e",
+    "relative_actor.py": "4fd0fe1c9cb6d34739a9e10b097aaa66bbc970b7994779b29473a00095eee3b9",
+    "test_relative_actor.py": "b2fb422e09c96ba5141f2d78f124d805688263aa0fdf3b6ad254904f82071472",
+    "R04_ABLATION_PROTOCOL.json": "f1e8165ffe426c5e2843e01e7d99c27089bbd7d96ef1a9f3330e8a7b6777f130",
+    "R04_ACCEPTANCE_CRITERIA.md": "9849dd228ae09515d82a47ca0691033d4499ee7d30ddfeeb574233952d261ec5",
+    "R04_IMPLEMENTATION_PLAN.md": "6d069fb31f6dcc2c2d9bda9775e8af388387a5cd71b77f663c25155eaf456c13"
+  },
+  "hardening_followups": [
+    "CLOSED_STATICALLY: rank_response now rejects nonfinite log-probabilities and actual-action ratios, with two fixtures inside the existing nonfinite unit case.",
+    "Baseline artifact loader needs external expected identity and full schema/domain validation beyond its self-contained content hash.",
+    "Lock or register C1 hidden width for production."
+  ],
+  "final_followup": "Read execution outputs and exact diff only; no independent rerun or new scientific execution"
+}
