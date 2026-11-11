@@ -1,0 +1,13 @@
+{
+  "schema": "rc3-r04-m1-preregistration-failure-v1",
+  "phase": "metadata_session_initialization",
+  "error": "TypeError: dict() got multiple values for keyword argument phase",
+  "consumed_metadata_reads": 0,
+  "critic_optimizer_attempts": 0,
+  "actor_optimizer_attempts": 0,
+  "measured_tool_wall_s": 1.3070723,
+  "conservative_charged_wall_s": 1.5,
+  "original_ledger_sha256": "323f50b4c97d876b3bd652ef8f21881fea2c18a4a887801a244ac356421d152a",
+  "fix": "Remove duplicate phase keyword from session_start event; no protocol/data/configuration change",
+  "preservation": "Carry this failure and 1.5 seconds into same stage cumulative resource ledger; no budget reset"
+}
