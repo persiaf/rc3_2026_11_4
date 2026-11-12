@@ -1,26 +1,26 @@
 {
   "schema": "d5-cumulative-budget-r1",
   "counts": {
-    "requests": 236,
-    "requests_completed": 235,
-    "requests_failed": 1,
-    "actor_optimizer_attempts": 7,
-    "actor_optimizer_completed": 7,
+    "requests": 33954,
+    "requests_completed": 33952,
+    "requests_failed": 2,
+    "actor_optimizer_attempts": 8202,
+    "actor_optimizer_completed": 8202,
     "critic_optimizer_attempts": 0,
-    "teacher_replays": 10,
+    "teacher_replays": 32778,
     "new_teacher_requests": 96,
     "new_scenes": 0,
     "navigation_solves": 0,
     "original60_reads": 0,
     "oldS3_reads": 0,
-    "full_H_calls": 140,
-    "native_requests": 96,
+    "full_H_calls": 33725,
+    "native_requests": 228,
     "feature_states": 482,
     "feature_s": 1.0869324000068445,
     "input_prepare_s": 10.36945150000247,
     "request_io_s": 0.08732390000295709,
-    "cache_rebuilds": 65,
-    "backward_calls": 24,
+    "cache_rebuilds": 99210,
+    "backward_calls": 65584,
     "internal_search_counts": {
       "construct": 0,
       "two_opt": 56,
@@ -40,54 +40,61 @@
       "recipe": 0.0
     },
     "original_forward_calls": 496,
-    "engineering_requests": 44,
-    "engineering_optimizer_attempts": 7,
-    "scientific_optimizer_attempts": 0,
+    "engineering_requests": 59,
+    "engineering_optimizer_attempts": 10,
+    "scientific_optimizer_attempts": 8192,
     "teacher_native_attempts": 96,
     "teacher_uniform_H_attempts": 96,
     "teacher_recovery_attempts": 0,
     "teacher_requests": 192,
-    "reference_requests": 12,
-    "train_requests": 0,
-    "eval_requests": 0,
+    "reference_requests": 352,
+    "train_requests": 32769,
+    "eval_requests": 594,
     "deployment_requests": 0,
     "confirmation_requests": 0,
     "final_requests": 0,
-    "immutable_input_preparations": 364,
-    "internal_construct_calls": 288,
-    "internal_two_opt_calls": 1290,
-    "internal_joint_search_calls": 413,
-    "internal_recipe_calls": 288,
-    "internal_construct_inclusive_s": 1.662261800000124,
-    "internal_two_opt_inclusive_s": 1.1528611999929126,
-    "internal_joint_search_inclusive_s": 1.192853200004265,
-    "internal_recipe_inclusive_s": 3.8167455999991944,
-    "internal_construct_exclusive_s": 1.662261800000124,
-    "internal_two_opt_exclusive_s": 1.1528611999929126,
-    "internal_joint_search_exclusive_s": 0.9882118000091396,
-    "internal_recipe_exclusive_s": 0.4010335999964809,
+    "immutable_input_preparations": 1973,
+    "internal_construct_calls": 684,
+    "internal_two_opt_calls": 136751,
+    "internal_joint_search_calls": 34394,
+    "internal_recipe_calls": 684,
+    "internal_construct_inclusive_s": 2.118539899995085,
+    "internal_two_opt_inclusive_s": 235.44393170085368,
+    "internal_joint_search_inclusive_s": 92.43010610024749,
+    "internal_recipe_inclusive_s": 5.048761299982289,
+    "internal_construct_exclusive_s": 2.118539899995085,
+    "internal_two_opt_exclusive_s": 235.44393170085368,
+    "internal_joint_search_exclusive_s": 69.35119789939517,
+    "internal_recipe_exclusive_s": 0.5386330999863276,
     "full_teachers_completed": 96,
     "existing_label_validation_replays": 256,
-    "immutable_input_cache_hits": 45,
-    "encode_calls": 45,
-    "encode_s": 0.6614603999978499,
-    "score_calls": 3607,
-    "score_s": 2.6731850000305712,
-    "engineering_2026111101_D5-PG_optimizer_attempts": 1,
+    "immutable_input_cache_hits": 66352,
+    "encode_calls": 99190,
+    "encode_s": 3897.3833192004467,
+    "score_calls": 7159193,
+    "score_s": 6334.0119378005475,
+    "engineering_2026111101_D5-PG_optimizer_attempts": 4,
     "engineering_teacher_replays": 8,
     "engineering_2026111101_D5-SL_optimizer_attempts": 1,
     "purpose_teacher_requests": 192,
-    "purpose_reference_requests": 12,
-    "purpose_engineering_requests": 32
+    "purpose_reference_requests": 352,
+    "purpose_engineering_requests": 47,
+    "reference_cache_reads": 32802,
+    "purpose_eval_requests": 594,
+    "purpose_train_requests": 32769,
+    "scientific_2026111101_D5-PG_optimizer_attempts": 4096,
+    "recovered_on_policy_episodes": 11,
+    "scientific_teacher_replays": 32768,
+    "scientific_2026111101_D5-SL_optimizer_attempts": 4096
   },
   "wall": {
-    "total_s": 444.28764106188885,
-    "engineering_s": 108.96888562954395,
-    "training_s": 335.3187554323449,
+    "total_s": 30929.881902254398,
+    "engineering_s": 6515.670951165511,
+    "training_s": 20763.648071163396,
     "data_s": 335.3187554323449,
     "deployment_s": 0,
     "independent_s": 0,
-    "reproduction_s": 0
+    "reproduction_s": 3650.5628799254914
   },
   "jobs": {
     "data-01": {
@@ -104,11 +111,92 @@
       "pool": "engineering",
       "wall_s": 23.596238613128662,
       "status": "WORKER_FAILED"
+    },
+    "reference-01": {
+      "pool": "training",
+      "wall_s": 236.95421290397644,
+      "status": "COMPLETE"
+    },
+    "acceptance-02": {
+      "pool": "engineering",
+      "wall_s": 24.564045906066895,
+      "status": "COMPLETE"
+    },
+    "science-01": {
+      "pool": "training",
+      "wall_s": 2295.9840000000004,
+      "status": "WORKER_FAILED"
+    },
+    "io-acceptance-01": {
+      "pool": "engineering",
+      "wall_s": 0.2649999999994179,
+      "status": "COMPLETE"
+    },
+    "science-02": {
+      "pool": "training",
+      "wall_s": 6061.953102827072,
+      "status": "WORKER_FAILED",
+      "exit_classification": "REGISTERED_MAINTENANCE_FOR_TIMING_INTERFACE; original supervisor status preserved"
+    },
+    "clock-acceptance-01": {
+      "pool": "engineering",
+      "wall_s": 0.5617234,
+      "status": "FAILED_PRESERVED"
+    },
+    "clock-acceptance-02": {
+      "pool": "engineering",
+      "wall_s": 1.2871101,
+      "status": "COMPLETE"
+    },
+    "science-03": {
+      "pool": "training",
+      "wall_s": 11833.438000000002,
+      "status": "COMPLETE"
+    },
+    "post-audit-01": {
+      "pool": "reproduction",
+      "wall_s": 276.950322,
+      "status": "FAILED_CHECKER_PRESERVED",
+      "wall_kind": "Conservative full-interval upper bound"
+    },
+    "post-audit_saved_results-01": {
+      "pool": "reproduction",
+      "wall_s": 715.594000000001,
+      "status": "COMPLETE"
+    },
+    "post-build_saved_tables-01": {
+      "pool": "reproduction",
+      "wall_s": 3.7190000000009604,
+      "status": "COMPLETE"
+    },
+    "post-figures-01": {
+      "pool": "reproduction",
+      "wall_s": 11.328000000001339,
+      "status": "COMPLETE"
     }
   },
   "inherited_resource": {
     "path": "rc3_decoder_program_20261111/RESOURCE_ACCOUNTING.json",
     "sha256": "6ba4d4bf3ff6d06d38f1b9a35a07b0deeb160f05a94711f1076e0b590c7ebfa4"
   },
-  "old_missing_details_preserved": "Original13 request search and precursor forward remain UNKNOWN; new counters are actual, no zero replacement"
+  "old_missing_details_preserved": "Original13 request search and precursor forward remain UNKNOWN; new counters are actual, no zero replacement",
+  "recording_limits": {
+    "maintenance_1772_uncommitted_forward_backward_tail": "UNKNOWN; actual optimizer attempts1771 and supervisor wall fully retained"
+  },
+  "delivery_accounting": {
+    "status": "PUBLICATION_IN_PROGRESS",
+    "scientific_tree_finish_utc": "2026-11-12T09:10:31.834998+00:00",
+    "root_closeout_through_utc": "2026-11-12T09:59:08.639225+00:00",
+    "root_full_calendar_s": 2916.804227,
+    "measured_post_jobs_s": 1007.5913220000033,
+    "root_other_closeout_s": 1909.2129049999967,
+    "parallel_reviewer_window_s": 733.7586529254913,
+    "reviewer_window_kind": "Conservative prompt-to-final-trace full wall, including idle; charged in addition to root interval",
+    "final_metadata_tail_charged_upper_bound_s": 0,
+    "final_metadata_tail_rule": null,
+    "not_scientific_compute": true,
+    "requests_unchanged": true,
+    "earliest_unmeasured_reads": "UNKNOWN preserved; no false zero",
+    "note": "Scientific raw ledger retained; data is a subset of training wall, not an additional pool."
+  }
 }

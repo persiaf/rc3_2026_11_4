@@ -1,0 +1,50 @@
+{
+  "status": "ACTUAL_P1_RESUME_OBSERVED",
+  "from_committed_cursor": 740,
+  "observed_committed_cursor": 764,
+  "recovered_on_policy_episodes": 3,
+  "failed_slot_exact_attempt_history": [
+    {
+      "event": "request_attempt",
+      "job": "science-01",
+      "pool": "science",
+      "job_wall_s": 2293.2659999999996,
+      "request_id": "2026111101:D5-PG:741:3",
+      "purpose": "train",
+      "attempt_number": 6713
+    },
+    {
+      "event": "request_failure",
+      "job": "science-01",
+      "pool": "science",
+      "request_id": "2026111101:D5-PG:741:3",
+      "purpose": "train",
+      "error": "WinError5 atomic resource replacement after attempt was charged, before model/H execution",
+      "reconstructed_after_confirmed_worker_exit": true,
+      "exact_stdout_evidence": "rc3_d5_revision_20261112/source_revisions/io_failure01/WORKER_STDOUT.log",
+      "failed_at_utc": "2026-11-12T03:46:27.477089+00:00"
+    },
+    {
+      "event": "request_attempt",
+      "job": "science-02",
+      "pool": "science",
+      "job_wall_s": 16.39099999999962,
+      "request_id": "2026111101:D5-PG:741:3",
+      "purpose": "train",
+      "attempt_number": 6714
+    },
+    {
+      "event": "request_complete",
+      "job": "science-02",
+      "pool": "science",
+      "job_wall_s": 17.083739757537842,
+      "request_id": "2026111101:D5-PG:741:3",
+      "purpose": "train",
+      "full_request_s": 0.6908329000016238
+    }
+  ],
+  "current_critic_updates": 0,
+  "old_failure_not_refunded": true,
+  "current_binding_sha256": "12190762ccb1c580c4ac07500d6e13c7b4ddfa05ce695d168ad8b0b9ff66adff",
+  "utc": "2026-11-12T03:57:03.142022+00:00"
+}

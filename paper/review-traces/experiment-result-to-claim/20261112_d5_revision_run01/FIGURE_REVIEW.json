@@ -1,0 +1,130 @@
+{
+  "schema": "independent-figure-quality-review-v1",
+  "experiment_id": "d5-data-revision-20261112-r1",
+  "reviewer_role": "same independent paper architect/reviewer agent",
+  "verdict": "PASS_WITH_MINOR_PRESENTATION_REVISIONS",
+  "scientific_validity": "PASS",
+  "blocking_scientific_issue": false,
+  "claim_supported_unchanged": "no",
+  "pending_external_review": false,
+  "paper_claim_audit": "unavailable",
+  "writing_status": "provisional - no paper claim audit available; exposed single-seed development evidence only",
+  "visual_review": {
+    "all_three_PNGs_viewed": true,
+    "font_style": "serif",
+    "base_font_pt": 10,
+    "main_tick_pt": 9,
+    "route_tick_legend_pt": 7,
+    "figure_width_in": 7.1,
+    "width_requirement": "Keep figure* full-width; route labels are small for single-column reduction",
+    "grayscale_encoding": "PASS via solid/dashed/dotted lines and circle/square markers, not color alone",
+    "legend_overlap": "No material overlap",
+    "titles_inside_figures": false,
+    "PDF_vector_evidence": "All three PDF files have font descriptors and no Image XObject; source uses vector lines/scatter/text",
+    "no_additional_print_or_colorblind_render": true
+  },
+  "data_checks": {
+    "plot_source_hashes_match": 8,
+    "figure_plan_hash_match": true,
+    "endpoint_raw_H_means_match_independent_recomputation": true,
+    "all22_parent_gain_values_match_independent_recomputation": true,
+    "route_counts_independently_recomputed": {
+      "improved": 22,
+      "tied": 0,
+      "degraded": 44
+    },
+    "tie_tolerance": 1e-08,
+    "route_selection_rule": "Lexicographically first within each after-H J difference sign class",
+    "route_selected_cases": {
+      "improved": "development_000",
+      "tied": null,
+      "degraded": "development_001"
+    },
+    "invented_tied_case": false,
+    "same_parent_selected_for_two_nonempty_categories": "Allowed by prespecified case-ID rule; examples are not two independent parents",
+    "native_no_H_ablation_claim": false,
+    "independent_generalization_claim": false,
+    "deployment_speed_claim": false,
+    "new_scientific_calls": 0
+  },
+  "per_figure": {
+    "fixed_endpoint_quality": {
+      "type_appropriate": true,
+      "fair_comparison": true,
+      "data_valid": true,
+      "caption_status": "MINOR_REVISION",
+      "issue": "English caption omits within-parent-six/equal-parent aggregation and J formula/units; cost axes lack explicit units. Chinese caption has aggregation/formula."
+    },
+    "parent_paired_HJ": {
+      "type_appropriate": true,
+      "fair_comparison": true,
+      "data_valid": true,
+      "caption_status": "PASS",
+      "note": "Original1%/.5% thresholds, zero/mean lines and development-group limitations are correct. No request-level pseudo-independent interval."
+    },
+    "saved_route_examples": {
+      "type_appropriate": true,
+      "fair_comparison": true,
+      "data_valid": true,
+      "caption_status": "MINOR_REVISION",
+      "issue": "English caption should identify4096, D5-PG versusFrozenSL, tolerance1e-8, actual22/0/44 classes and selectedcase IDs; all are available without new experiments."
+    }
+  },
+  "minor_revisions": [
+    {
+      "id": "F1",
+      "file": "rc3_d5_revision_20261112/figures/latex_includes.tex",
+      "severity": "minor presentation",
+      "requested_change": "Make first caption state six requests averaged within each parent, equal average over11 parents, J=L+.75K and meter-equivalent units; optional future axis label unit expansion.",
+      "new_experiment_needed": false
+    },
+    {
+      "id": "F2",
+      "file": "rc3_d5_revision_20261112/figures/latex_includes.tex",
+      "severity": "minor presentation",
+      "requested_change": "Make route caption state update4096, controls, absolute tie tolerance1e-8,22/0/44 counts and the selecteddevelopment_000/development_001 IDs; align Chinese caption.",
+      "new_experiment_needed": false
+    }
+  ],
+  "method_diagram": {
+    "verdict": "PASS",
+    "independent_streams_explained": true,
+    "frozen_trainable_scopes_correct": true,
+    "proxy_vs_physical_certification_distinguished": true
+  },
+  "status_normalization": {
+    "verdict": "PASS",
+    "raw_snapshot_preserved": true,
+    "historical_fields_match_original": true,
+    "currentP1_result_unambiguous": true,
+    "later_stages_NOT_RUN": true,
+    "new_automatic_experiments": false,
+    "original_state_ambiguity_resolved": true
+  },
+  "plot_process": {
+    "observed_receipt": "FIGURE_RENDER_RECEIPT.json",
+    "status": "COMPLETE",
+    "full_process_wall_s": 11.328000000001339,
+    "new_forward_optimizer_or_planning": 0,
+    "reviewer_rerendered": false
+  },
+  "next_experiments_needed": [],
+  "routing": "P6_CLOSEOUT; minor caption clarification only",
+  "reviewed_artifact_sha256": {
+    "figures/fixed_endpoint_quality.png": "23aefa8672c9ac0663dbf274ca8fe34d6bc92034f5da415c4ec43e27ac84bda9",
+    "figures/fixed_endpoint_quality.pdf": "5192c240d30ff6ce8747470154b995a1b6b0d5bd7ebb762e930624c8a1332145",
+    "figures/parent_paired_HJ.png": "e74944f4a7485122947e0f82d1ae169a1daa7f6e0267910a5b97bde85fd56fd7",
+    "figures/parent_paired_HJ.pdf": "980c9936209e1a969895cbb58f040d11340ad65556f8eebcedf3bf62f16ef7a2",
+    "figures/saved_route_examples.png": "fadb0c35bf685d9cc445bae10c66a18069ff720df4158afe164958191b10fd10",
+    "figures/saved_route_examples.pdf": "cfd7589e97561fae833b0c2c2670491c7cc6ef4f4f36929f139f3af85cfa1d4b",
+    "figures/CAPTIONS.md": "9e514340135d41ff7c0828cdfefca6ada2b682efdac05a54a9c209e8ef1436fa",
+    "figures/latex_includes.tex": "08d8170c9c0360a6b5ad273b9a9a4e9e81907d506c6d5dd51242d1b4c3724eac",
+    "figures/ROUTE_EXAMPLE_SELECTION.json": "ee400dae9c7470fea4ab017b25154a6f8d2e659f615bee5b7c9a1a82eb9f0c92",
+    "FIGURE_PLAN.md": "53b522bab946134e10f958ef82101f36f1f7835efb6df41250281aa99bcdef70",
+    "METHOD_DIAGRAM.md": "0181c2f18574ad017e2f124d994969700974a95a97b51e00b83dff9a99d07970",
+    "FIGURE_SOURCE_BINDING.json": "a916a2056642e0d520ec550c1b137212f9473386f10ac8a2bfbe1875b5ee075f",
+    "FIGURE_RENDER_RECEIPT.json": "d78a287d4d8d64f78c1d2f313cb06217cf241f23f989ce31cf2ab0c065736d7e",
+    "STATUS.json": "fe0949a11df92bd171f55e25c5db7f3d9f2738fc0241f02a149e044195f2e7dd",
+    "STATUS_WORKER_FINAL_RAW.json": "17caf154b082b491f2d8bd13e6e367c6c14545499d0d9640cd7e0fb3e642185d"
+  }
+}

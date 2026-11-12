@@ -1,3 +1,9 @@
+<!-- D5_REVISION_CURRENT_BEGIN -->
+## 当前：完整教师与科学驱动完成，D5固定P1负结果收口
+
+[本轮交付](rc3_d5_revision_20261112/README.md) · [完整任务结果](rc3_d5_revision_20261112/EXPERIMENT_REPORT.md) · [给老师的短材料](rc3_d5_revision_20261112/TEACHER_DECISION_BRIEF.md)。新增96条完整10×10强教师覆盖96个训练父布局，旧256标签原字节不变；PG和SL-U逐任务同日程，各完成4096更新。固定终点H后J父配对收益对FrozenSL为−2.6431%、对匹配SL-U为−3.7371%，SEL8/DEV3均负，按原门槛NO_DEVELOPMENT_SIGNAL→P6；P2—P5均NOT_RUN。累计33954请求、Actor8202（科学8192、工程10）、Critic0；449149项保存输出复核及独立角色主张审查完成。实际模型、逐请求、raw/H分量、时间/资源和恢复证据完整保存；旧v1技术停止、封存数据、历史权重与用户文件保持，不合并main。
+<!-- D5_REVISION_CURRENT_END -->
+
 <!-- DECODER_PROGRAM_CURRENT_BEGIN -->
 ## 当前：原Actor五张量工程PASS，完整周期在教师数据准入处停止
 

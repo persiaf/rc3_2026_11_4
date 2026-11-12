@@ -1,0 +1,11 @@
+# Independent review assignment
+
+Judge whether the fixed first-seed D5-PG experiment in `rc3_d5_revision_20261112` supports improvement over FrozenSL and the same-five-tensor, same-task-exposure SL-U at the original fixed4096 P1 gate. Start from the new files independently; do not adopt the parent agent's interpretation.
+
+Read the new revision protocol, implementation/data/source/admission/acceptance records, raw final scientific status and resource snapshots, provenance notes, saved development evaluations and their compressed raw/H members, actual source/dependency/environment/supervisor/recovery records, and necessary unchanged Actor/Trainer/policy source. Do not read original60, oldS3, confirmation/final retained semantics, historical large CSVs or teacher pools. Hash-only verification of explicitly bound old label bytes is allowed.
+
+Independently recompute parent-equal paired gains: first average six requests within each parent, compute `(control-candidate)/control`, then average across11 parents and report SEL8/DEV3 separately. Check raw/H arithmetic `J=L+.75K`, saved feasibility certificates and full request times. Review legal SL initialization, five-tensor scope, immutable matched schedules, actual recovery and nonrefunded accounting. The native raw baselines are native-final, not neural no-H; development timing is not a cold/warm deployment experiment.
+
+Do not run model construction/forward, optimizer/training, planning/H/native/teacher/navigation. Do not modify scientific code/model/data/reports/status/resource accounts or run Git. Write only to `paper/review-traces/experiment-result-to-claim/20261112_d5_revision_run01/`.
+
+Output REVIEWER_RAW.md and REVIEWER_VERDICT.json with claim_supported yes|partial|no; what_results_support; what_results_dont_support; missing_evidence; suggested_claim_revision; next_experiments_needed; confidence. Preserve unknown counters and old-v1 technical stop. If P1 fails, route this cycle directly to closeout and do not design or start additional experiments. SL-C candidate slots are not completed time-matched controls. Distinguish exposed development from independent generalization. No paper claim audit exists, so downstream writing is provisional; actual independent-agent review is not pending external review. Add figure-quality review when current figures and captions are supplied.

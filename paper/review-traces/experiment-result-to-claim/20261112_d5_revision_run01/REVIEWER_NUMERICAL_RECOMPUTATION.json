@@ -1,0 +1,4384 @@
+{
+  "scope": "Pure saved-evidence statistics and SHA/arithmetic checks; no project imports, model construction, forward, optimizer, planning, H, native, teacher or navigation",
+  "evaluation_records_verified": 594,
+  "raw_H_plan_checks": 1188,
+  "saved_plan_certificates_only": true,
+  "grids": {
+    "2026111101_D5-PG_1024": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 142.05959793321517,
+        "L": 115.41187066048789,
+        "K": 35.53030303030303,
+        "raw_J": 191.9480909506303,
+        "raw_L": 157.39127276881212,
+        "raw_K": 46.07575757575758
+      },
+      "full_request_p50_s": 0.4448280999995404,
+      "full_request_p95_s": 0.6141458000010971
+    },
+    "2026111101_D5-PG_2048": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 144.62270319790304,
+        "L": 117.41815774335758,
+        "K": 36.27272727272727,
+        "raw_J": 214.07198349967575,
+        "raw_L": 178.3333471360394,
+        "raw_K": 47.65151515151515
+      },
+      "full_request_p50_s": 0.490503400000307,
+      "full_request_p95_s": 0.6971799250013646
+    },
+    "2026111101_D5-PG_4096": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 141.57343055106665,
+        "L": 115.00524873288485,
+        "K": 35.42424242424242,
+        "raw_J": 201.01155282576363,
+        "raw_L": 166.7160982803091,
+        "raw_K": 45.72727272727273
+      },
+      "full_request_p50_s": 0.13856049999958486,
+      "full_request_p95_s": 0.3070752000012362
+    },
+    "2026111101_D5-SL-U_1024": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 137.63712361352424,
+        "L": 111.06894179534243,
+        "K": 35.42424242424242,
+        "raw_J": 159.95747876383334,
+        "raw_L": 127.6961151274697,
+        "raw_K": 43.015151515151516
+      },
+      "full_request_p50_s": 0.11058780000166735,
+      "full_request_p95_s": 0.24863375000040833
+    },
+    "2026111101_D5-SL-U_2048": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 138.10913144408485,
+        "L": 111.55231326226667,
+        "K": 35.40909090909091,
+        "raw_J": 160.08072930663332,
+        "raw_L": 128.1943656702697,
+        "raw_K": 42.515151515151516
+      },
+      "full_request_p50_s": 0.12647015000038664,
+      "full_request_p95_s": 0.29189832500014745
+    },
+    "2026111101_D5-SL-U_4096": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 136.2774242647788,
+        "L": 110.03878790114243,
+        "K": 34.984848484848484,
+        "raw_J": 156.9755190957212,
+        "raw_L": 125.8164281866303,
+        "raw_K": 41.54545454545455
+      },
+      "full_request_p50_s": 0.2839848499988875,
+      "full_request_p95_s": 0.6545205499978692
+    },
+    "baseline_Detour16": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 132.9267049937515,
+        "L": 107.14261408466061,
+        "K": 34.378787878787875,
+        "raw_J": 132.9267049937515,
+        "raw_L": 107.14261408466061,
+        "raw_K": 34.378787878787875
+      },
+      "full_request_p50_s": 0.1184829499998159,
+      "full_request_p95_s": 0.3027796999999737
+    },
+    "baseline_Fixed3": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 134.76430801620302,
+        "L": 109.15067165256666,
+        "K": 34.15151515151515,
+        "raw_J": 134.76430801620302,
+        "raw_L": 109.15067165256666,
+        "raw_K": 34.15151515151515
+      },
+      "full_request_p50_s": 0.043353600000045844,
+      "full_request_p95_s": 0.10350152500018339
+    },
+    "baseline_FrozenSL": {
+      "requests": 66,
+      "success_rate": 1.0,
+      "parent_count": 11,
+      "mean_metrics": {
+        "J": 137.88964756156668,
+        "L": 110.91237483429393,
+        "K": 35.96969696969697,
+        "raw_J": 168.1743738229212,
+        "raw_L": 134.3902829138303,
+        "raw_K": 45.04545454545455
+      },
+      "full_request_p50_s": 0.4732276499994441,
+      "full_request_p95_s": 0.607315399999834
+    }
+  },
+  "comparisons": {
+    "D5-PG_1024_vs_baseline_FrozenSL": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.028982845280097102,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 143.57064461943335,
+            "control_parent_mean": 137.01146356389998,
+            "gain": -0.047873228158564075
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 150.63256332293335,
+            "control_parent_mean": 143.05726944073334,
+            "gain": -0.05295287622792461
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 166.7576437797333,
+            "control_parent_mean": 163.9625225382,
+            "gain": -0.017047317876450096
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 137.26548025996667,
+            "control_parent_mean": 133.8801912735333,
+            "gain": -0.025285958693596424
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 110.26961542133334,
+            "control_parent_mean": 111.38214250003334,
+            "gain": 0.009988379229638761
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 129.78150407501667,
+            "control_parent_mean": 126.20911189458333,
+            "gain": -0.028305342829899594
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.75623097498334,
+            "control_parent_mean": 111.55815175365001,
+            "gain": -0.019703438850325095
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 123.05962192746667,
+            "control_parent_mean": 119.67377456223333,
+            "gain": -0.028292308633355648
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 138.64928952511667,
+            "control_parent_mean": 132.64933201435002,
+            "gain": -0.0452317205043865
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 196.64639603715003,
+            "control_parent_mean": 187.1130762979833,
+            "gain": -0.050949511000421076
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.26658732223333,
+            "control_parent_mean": 150.2890873380333,
+            "gain": -0.013157974535783752
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.03949744834552699,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.19564461943337,
+            "control_parent_mean": 105.0114635639,
+            "gain": -0.0684133028120474
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 122.88256332293334,
+            "control_parent_mean": 116.18226944073332,
+            "gain": -0.057670537117696395
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 132.7576437797333,
+            "control_parent_mean": 127.5875225382,
+            "gain": -0.040522154037322594
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 112.51548025996665,
+            "control_parent_mean": 108.50519127353333,
+            "gain": -0.036959420460572164
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 91.14461542133334,
+            "control_parent_mean": 91.88214250003334,
+            "gain": 0.008026881596712115
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 100.78150407501668,
+            "control_parent_mean": 95.95911189458333,
+            "gain": -0.050254656230364375
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.25623097498334,
+            "control_parent_mean": 96.18315175365001,
+            "gain": -0.021553454877867004
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 97.30962192746667,
+            "control_parent_mean": 93.04877456223333,
+            "gain": -0.04579154733933192
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 114.27428952511667,
+            "control_parent_mean": 109.14933201435002,
+            "gain": -0.04695363147154087
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 160.27139603715003,
+            "control_parent_mean": 151.1130762979833,
+            "gain": -0.06060573951328494
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.14158732223335,
+            "control_parent_mean": 125.41408733803331,
+            "gain": -0.013774369537481393
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": 0.009498330893239112,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 41.833333333333336,
+            "control_parent_mean": 42.666666666666664,
+            "gain": 0.01953124999999989
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 37.0,
+            "control_parent_mean": 35.833333333333336,
+            "gain": -0.03255813953488365
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.333333333333336,
+            "control_parent_mean": 48.5,
+            "gain": 0.06529209621993122
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.0,
+            "control_parent_mean": 33.833333333333336,
+            "gain": 0.02463054187192125
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 25.5,
+            "control_parent_mean": 26.0,
+            "gain": 0.019230769230769232
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 40.333333333333336,
+            "gain": 0.04132231404958689
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.5,
+            "gain": -0.008130081300813066
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.333333333333336,
+            "control_parent_mean": 35.5,
+            "gain": 0.03286384976525815
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03723404255319153
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 48.5,
+            "control_parent_mean": 48.0,
+            "gain": -0.010416666666666666
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 33.166666666666664,
+            "gain": -0.010050251256281478
+          }
+        },
+        "positive_parents": 6,
+        "negative_parents": 5
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.14200504092212898,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 201.25500560413332,
+            "control_parent_mean": 172.24935300426662,
+            "gain": -0.16839339070927148
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 190.84834907770005,
+            "control_parent_mean": 171.0018685291667,
+            "gain": -0.11606002156139167
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 232.68663316426662,
+            "control_parent_mean": 201.83641786493334,
+            "gain": -0.15284761603318733
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 183.45466152586664,
+            "control_parent_mean": 163.03542219046665,
+            "gain": -0.12524418964331047
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 144.36665194466664,
+            "control_parent_mean": 131.7715123779333,
+            "gain": -0.09558317529671566
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 185.79958504738332,
+            "control_parent_mean": 151.56249573208333,
+            "gain": -0.22589420390530388
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 137.55594981534998,
+            "control_parent_mean": 134.55762559755,
+            "gain": -0.022282826443205186
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 177.4624065558667,
+            "control_parent_mean": 142.06980711359998,
+            "gain": -0.24912119021859833
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 187.29024894251666,
+            "control_parent_mean": 161.77919540628332,
+            "gain": -0.1576905699905744
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 265.1154702436167,
+            "control_parent_mean": 241.34974716208333,
+            "gain": -0.09847005584626949
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 205.59403853556668,
+            "control_parent_mean": 178.70466707376667,
+            "gain": -0.15046821049559087
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.0261840115050596,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 143.57064461943335,
+              "control_parent_mean": 137.01146356389998,
+              "gain": -0.047873228158564075
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 150.63256332293335,
+              "control_parent_mean": 143.05726944073334,
+              "gain": -0.05295287622792461
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 166.7576437797333,
+              "control_parent_mean": 163.9625225382,
+              "gain": -0.017047317876450096
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 137.26548025996667,
+              "control_parent_mean": 133.8801912735333,
+              "gain": -0.025285958693596424
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 110.26961542133334,
+              "control_parent_mean": 111.38214250003334,
+              "gain": 0.009988379229638761
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 129.78150407501667,
+              "control_parent_mean": 126.20911189458333,
+              "gain": -0.028305342829899594
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.75623097498334,
+              "control_parent_mean": 111.55815175365001,
+              "gain": -0.019703438850325095
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 123.05962192746667,
+              "control_parent_mean": 119.67377456223333,
+              "gain": -0.028292308633355648
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.03644640201353044,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 138.64928952511667,
+              "control_parent_mean": 132.64933201435002,
+              "gain": -0.0452317205043865
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 196.64639603715003,
+              "control_parent_mean": 187.1130762979833,
+              "gain": -0.050949511000421076
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.26658732223333,
+              "control_parent_mean": 150.2890873380333,
+              "gain": -0.013157974535783752
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_1024_vs_2026111101_D5-SL-U_1024": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.029318955471708263,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 143.57064461943335,
+            "control_parent_mean": 136.56079456053334,
+            "gain": -0.05133135085701889
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 150.63256332293335,
+            "control_parent_mean": 144.65714901456667,
+            "gain": -0.041307424825336274
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 166.7576437797333,
+            "control_parent_mean": 158.6237788329,
+            "gain": -0.051277715148885836
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 137.26548025996667,
+            "control_parent_mean": 135.5717432762,
+            "gain": -0.012493289109043973
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 110.26961542133334,
+            "control_parent_mean": 113.31758570506668,
+            "gain": 0.026897592856119715
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 129.78150407501667,
+            "control_parent_mean": 127.86711363878332,
+            "gain": -0.014971718542434466
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.75623097498334,
+            "control_parent_mean": 110.92616432678334,
+            "gain": -0.02551306687088501
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 123.05962192746667,
+            "control_parent_mean": 119.97062214353333,
+            "gain": -0.02574796836710274
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 138.64928952511667,
+            "control_parent_mean": 135.47398987151666,
+            "gain": -0.023438444948816053
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 196.64639603715003,
+            "control_parent_mean": 183.18370188104998,
+            "gain": -0.07349285999713019
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.26658732223333,
+            "control_parent_mean": 147.85571649783333,
+            "gain": -0.02983226437825719
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.036551483014590914,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.19564461943337,
+            "control_parent_mean": 104.06079456053334,
+            "gain": -0.07817401446197775
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 122.88256332293334,
+            "control_parent_mean": 117.65714901456666,
+            "gain": -0.04441221253559138
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 132.7576437797333,
+            "control_parent_mean": 123.87377883289999,
+            "gain": -0.07171707386772508
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 112.51548025996665,
+            "control_parent_mean": 110.5717432762,
+            "gain": -0.017578966616374536
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 91.14461542133334,
+            "control_parent_mean": 93.81758570506668,
+            "gain": 0.028491143357028206
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 100.78150407501668,
+            "control_parent_mean": 98.74211363878332,
+            "gain": -0.020653704494252818
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.25623097498334,
+            "control_parent_mean": 95.42616432678334,
+            "gain": -0.029657135107186587
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 97.30962192746667,
+            "control_parent_mean": 93.84562214353333,
+            "gain": -0.03691168223740128
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 114.27428952511667,
+            "control_parent_mean": 111.72398987151666,
+            "gain": -0.022826786409372496
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 160.27139603715003,
+            "control_parent_mean": 148.68370188105,
+            "gain": -0.07793520076175131
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.14158732223335,
+            "control_parent_mean": 123.35571649783333,
+            "gain": -0.030690680025895013
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.0027160724801581233,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 41.833333333333336,
+            "control_parent_mean": 43.333333333333336,
+            "gain": 0.03461538461538461
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 37.0,
+            "control_parent_mean": 36.0,
+            "gain": -0.027777777777777776
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.333333333333336,
+            "control_parent_mean": 46.333333333333336,
+            "gain": 0.021582733812949638
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.0,
+            "control_parent_mean": 33.333333333333336,
+            "gain": 0.01000000000000007
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 25.5,
+            "control_parent_mean": 26.0,
+            "gain": 0.019230769230769232
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 38.833333333333336,
+            "gain": 0.004291845493562353
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.666666666666668,
+            "gain": 0.0
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.333333333333336,
+            "control_parent_mean": 34.833333333333336,
+            "gain": 0.014354066985645932
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.666666666666668,
+            "gain": -0.02631578947368417
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 48.5,
+            "control_parent_mean": 46.0,
+            "gain": -0.05434782608695652
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 32.666666666666664,
+            "gain": -0.025510204081632726
+          }
+        },
+        "positive_parents": 6,
+        "negative_parents": 4
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.1957765438334744,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 201.25500560413332,
+            "control_parent_mean": 162.51673818376665,
+            "gain": -0.23836478539560135
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 190.84834907770005,
+            "control_parent_mean": 166.42967677766666,
+            "gain": -0.14672066168015388
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 232.68663316426662,
+            "control_parent_mean": 194.1157848408666,
+            "gain": -0.19870021572444432
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 183.45466152586664,
+            "control_parent_mean": 152.43322225886666,
+            "gain": -0.203508387524069
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 144.36665194466664,
+            "control_parent_mean": 129.33207134743336,
+            "gain": -0.11624789149819531
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 185.79958504738332,
+            "control_parent_mean": 146.01605319501667,
+            "gain": -0.27245998629501655
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 137.55594981534998,
+            "control_parent_mean": 132.1413281849167,
+            "gain": -0.04097598915349287
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 177.4624065558667,
+            "control_parent_mean": 142.04700770296665,
+            "gain": -0.2493216817840816
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 187.29024894251666,
+            "control_parent_mean": 153.56173699168335,
+            "gain": -0.21964138079956722
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 265.1154702436167,
+            "control_parent_mean": 212.06244277218332,
+            "gain": -0.2501764422681283
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 205.59403853556668,
+            "control_parent_mean": 168.8762041468,
+            "gain": -0.21742456004546826
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.024468117608073433,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 143.57064461943335,
+              "control_parent_mean": 136.56079456053334,
+              "gain": -0.05133135085701889
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 150.63256332293335,
+              "control_parent_mean": 144.65714901456667,
+              "gain": -0.041307424825336274
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 166.7576437797333,
+              "control_parent_mean": 158.6237788329,
+              "gain": -0.051277715148885836
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 137.26548025996667,
+              "control_parent_mean": 135.5717432762,
+              "gain": -0.012493289109043973
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 110.26961542133334,
+              "control_parent_mean": 113.31758570506668,
+              "gain": 0.026897592856119715
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 129.78150407501667,
+              "control_parent_mean": 127.86711363878332,
+              "gain": -0.014971718542434466
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.75623097498334,
+              "control_parent_mean": 110.92616432678334,
+              "gain": -0.02551306687088501
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 123.05962192746667,
+              "control_parent_mean": 119.97062214353333,
+              "gain": -0.02574796836710274
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.042254523108067814,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 138.64928952511667,
+              "control_parent_mean": 135.47398987151666,
+              "gain": -0.023438444948816053
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 196.64639603715003,
+              "control_parent_mean": 183.18370188104998,
+              "gain": -0.07349285999713019
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.26658732223333,
+              "control_parent_mean": 147.85571649783333,
+              "gain": -0.02983226437825719
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_1024_vs_baseline_Fixed3": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.05208839347130017,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 143.57064461943335,
+            "control_parent_mean": 132.45873427073332,
+            "gain": -0.08388960086232083
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 150.63256332293335,
+            "control_parent_mean": 139.22023460193333,
+            "gain": -0.081973204208647
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 166.7576437797333,
+            "control_parent_mean": 157.20498338849998,
+            "gain": -0.06076563341268822
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 137.26548025996667,
+            "control_parent_mean": 136.81131868886663,
+            "gain": -0.003319619863710801
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 110.26961542133334,
+            "control_parent_mean": 110.50671686380001,
+            "gain": 0.002145583989784941
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 129.78150407501667,
+            "control_parent_mean": 120.80472920328334,
+            "gain": -0.0743081411707626
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.75623097498334,
+            "control_parent_mean": 109.02213436078334,
+            "gain": -0.04342326117496113
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 123.05962192746667,
+            "control_parent_mean": 117.58467540126667,
+            "gain": -0.04656173525602999
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 138.64928952511667,
+            "control_parent_mean": 131.69786472001667,
+            "gain": -0.05278312461540966
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 196.64639603715003,
+            "control_parent_mean": 180.45997111515,
+            "gain": -0.08969537577766534
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.26658732223333,
+            "control_parent_mean": 146.63602556389998,
+            "gain": -0.03839821583189127
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.05672333990511039,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.19564461943337,
+            "control_parent_mean": 100.95873427073332,
+            "gain": -0.11130201294488189
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 122.88256332293334,
+            "control_parent_mean": 113.47023460193333,
+            "gain": -0.08294975994382618
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 132.7576437797333,
+            "control_parent_mean": 126.0799833885,
+            "gain": -0.052963683939082754
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 112.51548025996665,
+            "control_parent_mean": 111.93631868886665,
+            "gain": -0.005174027320925342
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 91.14461542133334,
+            "control_parent_mean": 91.75671686380001,
+            "gain": 0.006670917000825625
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 100.78150407501668,
+            "control_parent_mean": 92.05472920328334,
+            "gain": -0.09479985381807066
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.25623097498334,
+            "control_parent_mean": 93.77213436078334,
+            "gain": -0.047819073808725236
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 97.30962192746667,
+            "control_parent_mean": 91.83467540126667,
+            "gain": -0.059617421222185586
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 114.27428952511667,
+            "control_parent_mean": 108.07286472001665,
+            "gain": -0.057381886018900215
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 160.27139603715003,
+            "control_parent_mean": 147.70997111515,
+            "gain": -0.0850411439875479
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.14158732223335,
+            "control_parent_mean": 123.01102556389998,
+            "gain": -0.03357879295289419
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.03746001946941781,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 41.833333333333336,
+            "control_parent_mean": 42.0,
+            "gain": 0.003968253968253912
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 37.0,
+            "control_parent_mean": 34.333333333333336,
+            "gain": -0.07766990291262128
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.333333333333336,
+            "control_parent_mean": 41.5,
+            "gain": -0.09236947791164664
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.0,
+            "control_parent_mean": 33.166666666666664,
+            "gain": 0.0050251256281406325
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 25.5,
+            "control_parent_mean": 25.0,
+            "gain": -0.02
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 38.333333333333336,
+            "gain": -0.008695652173912919
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.333333333333332,
+            "gain": -0.01639344262295094
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.333333333333336,
+            "control_parent_mean": 34.333333333333336,
+            "gain": 0.0
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.5,
+            "gain": -0.031746031746031744
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 48.5,
+            "control_parent_mean": 43.666666666666664,
+            "gain": -0.11068702290076342
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 31.5,
+            "gain": -0.06349206349206349
+          }
+        },
+        "positive_parents": 2,
+        "negative_parents": 8
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.41999770607546144,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 201.25500560413332,
+            "control_parent_mean": 132.45873427073332,
+            "gain": -0.5193788972253565
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 190.84834907770005,
+            "control_parent_mean": 139.22023460193333,
+            "gain": -0.3708377207047873
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 232.68663316426662,
+            "control_parent_mean": 157.20498338849998,
+            "gain": -0.4801479453690674
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 183.45466152586664,
+            "control_parent_mean": 136.81131868886663,
+            "gain": -0.34093190010890323
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 144.36665194466664,
+            "control_parent_mean": 110.50671686380001,
+            "gain": -0.3064061266302857
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 185.79958504738332,
+            "control_parent_mean": 120.80472920328334,
+            "gain": -0.5380158233270017
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 137.55594981534998,
+            "control_parent_mean": 109.02213436078334,
+            "gain": -0.26172497559202634
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 177.4624065558667,
+            "control_parent_mean": 117.58467540126667,
+            "gain": -0.5092307390419942
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 187.29024894251666,
+            "control_parent_mean": 131.69786472001667,
+            "gain": -0.42212061934858797
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 265.1154702436167,
+            "control_parent_mean": 180.45997111515,
+            "gain": -0.46910956820695
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 205.59403853556668,
+            "control_parent_mean": 146.63602556389998,
+            "gain": -0.402070451275116
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.04901195149491695,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 143.57064461943335,
+              "control_parent_mean": 132.45873427073332,
+              "gain": -0.08388960086232083
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 150.63256332293335,
+              "control_parent_mean": 139.22023460193333,
+              "gain": -0.081973204208647
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 166.7576437797333,
+              "control_parent_mean": 157.20498338849998,
+              "gain": -0.06076563341268822
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 137.26548025996667,
+              "control_parent_mean": 136.81131868886663,
+              "gain": -0.003319619863710801
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 110.26961542133334,
+              "control_parent_mean": 110.50671686380001,
+              "gain": 0.002145583989784941
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 129.78150407501667,
+              "control_parent_mean": 120.80472920328334,
+              "gain": -0.0743081411707626
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.75623097498334,
+              "control_parent_mean": 109.02213436078334,
+              "gain": -0.04342326117496113
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 123.05962192746667,
+              "control_parent_mean": 117.58467540126667,
+              "gain": -0.04656173525602999
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.06029223874165542,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 138.64928952511667,
+              "control_parent_mean": 131.69786472001667,
+              "gain": -0.05278312461540966
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 196.64639603715003,
+              "control_parent_mean": 180.45997111515,
+              "gain": -0.08969537577766534
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.26658732223333,
+              "control_parent_mean": 146.63602556389998,
+              "gain": -0.03839821583189127
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_1024_vs_baseline_Detour16": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.06715311642546307,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 143.57064461943335,
+            "control_parent_mean": 131.08810559693333,
+            "gain": -0.095222514397157
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 150.63256332293335,
+            "control_parent_mean": 137.47555219446664,
+            "gain": -0.09570437011124275
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 166.7576437797333,
+            "control_parent_mean": 155.84131139466666,
+            "gain": -0.07004774464083624
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 137.26548025996667,
+            "control_parent_mean": 135.40762964859996,
+            "gain": -0.013720427838431698
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 110.26961542133334,
+            "control_parent_mean": 108.02707341603333,
+            "gain": -0.020759073946801678
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 129.78150407501667,
+            "control_parent_mean": 119.09263075588335,
+            "gain": -0.089752600570588
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.75623097498334,
+            "control_parent_mean": 107.00541383358335,
+            "gain": -0.0630885569201104
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 123.05962192746667,
+            "control_parent_mean": 115.05546938693332,
+            "gain": -0.06956777094720505
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 138.64928952511667,
+            "control_parent_mean": 129.88025450048335,
+            "gain": -0.06751630614182921
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 196.64639603715003,
+            "control_parent_mean": 178.70538168505004,
+            "gain": -0.10039437079583416
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.26658732223333,
+            "control_parent_mean": 144.6149325186333,
+            "gain": -0.05291054437005754
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.07706872460804605,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.19564461943337,
+            "control_parent_mean": 99.46310559693332,
+            "gain": -0.12801268315608097
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 122.88256332293334,
+            "control_parent_mean": 111.47555219446666,
+            "gain": -0.10232746915276451
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 132.7576437797333,
+            "control_parent_mean": 123.84131139466666,
+            "gain": -0.07199804560088535
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 112.51548025996665,
+            "control_parent_mean": 110.65762964859998,
+            "gain": -0.01678917773014287
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 91.14461542133334,
+            "control_parent_mean": 89.15207341603333,
+            "gain": -0.022349923327096347
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 100.78150407501668,
+            "control_parent_mean": 90.46763075588335,
+            "gain": -0.11400622778509757
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.25623097498334,
+            "control_parent_mean": 91.50541383358335,
+            "gain": -0.07377505721877167
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 97.30962192746667,
+            "control_parent_mean": 89.18046938693332,
+            "gain": -0.09115395552879227
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 114.27428952511667,
+            "control_parent_mean": 106.38025450048333,
+            "gain": -0.07420582947183561
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 160.27139603715003,
+            "control_parent_mean": 145.83038168505,
+            "gain": -0.09902610269023558
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.14158732223335,
+            "control_parent_mean": 120.61493251863332,
+            "gain": -0.054111499026803726
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.030362729706124424,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 41.833333333333336,
+            "control_parent_mean": 42.166666666666664,
+            "gain": 0.007905138339920837
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 37.0,
+            "control_parent_mean": 34.666666666666664,
+            "gain": -0.06730769230769237
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.333333333333336,
+            "control_parent_mean": 42.666666666666664,
+            "gain": -0.06250000000000011
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.0,
+            "control_parent_mean": 33.0,
+            "gain": 0.0
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 25.5,
+            "control_parent_mean": 25.166666666666668,
+            "gain": -0.013245033112582735
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 38.166666666666664,
+            "gain": -0.013100436681222708
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.666666666666668,
+            "gain": 0.0
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.333333333333336,
+            "control_parent_mean": 34.5,
+            "gain": 0.0048309178743960665
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03723404255319153
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 48.5,
+            "control_parent_mean": 43.833333333333336,
+            "gain": -0.10646387832699614
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 32.0,
+            "gain": -0.046875
+          }
+        },
+        "positive_parents": 2,
+        "negative_parents": 7
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.4402805315819636,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 201.25500560413332,
+            "control_parent_mean": 131.08810559693333,
+            "gain": -0.5352651919690375
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 190.84834907770005,
+            "control_parent_mean": 137.47555219446664,
+            "gain": -0.3882348245289074
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 232.68663316426662,
+            "control_parent_mean": 155.84131139466666,
+            "gain": -0.49309981468899416
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 183.45466152586664,
+            "control_parent_mean": 135.40762964859996,
+            "gain": -0.354832530500348
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 144.36665194466664,
+            "control_parent_mean": 108.02707341603333,
+            "gain": -0.3363932519830701
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 185.79958504738332,
+            "control_parent_mean": 119.09263075588335,
+            "gain": -0.5601266330931609
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 137.55594981534998,
+            "control_parent_mean": 107.00541383358335,
+            "gain": -0.28550458231281034
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 177.4624065558667,
+            "control_parent_mean": 115.05546938693332,
+            "gain": -0.5424073927251374
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 187.29024894251666,
+            "control_parent_mean": 129.88025450048335,
+            "gain": -0.44202249728283105
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 265.1154702436167,
+            "control_parent_mean": 178.70538168505004,
+            "gain": -0.4835337791385354
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 205.59403853556668,
+            "control_parent_mean": 144.6149325186333,
+            "gain": -0.4216653491787672
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.0647328824215466,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 143.57064461943335,
+              "control_parent_mean": 131.08810559693333,
+              "gain": -0.095222514397157
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 150.63256332293335,
+              "control_parent_mean": 137.47555219446664,
+              "gain": -0.09570437011124275
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 166.7576437797333,
+              "control_parent_mean": 155.84131139466666,
+              "gain": -0.07004774464083624
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 137.26548025996667,
+              "control_parent_mean": 135.40762964859996,
+              "gain": -0.013720427838431698
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 110.26961542133334,
+              "control_parent_mean": 108.02707341603333,
+              "gain": -0.020759073946801678
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 129.78150407501667,
+              "control_parent_mean": 119.09263075588335,
+              "gain": -0.089752600570588
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.75623097498334,
+              "control_parent_mean": 107.00541383358335,
+              "gain": -0.0630885569201104
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 123.05962192746667,
+              "control_parent_mean": 115.05546938693332,
+              "gain": -0.06956777094720505
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 8
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.0736070737692403,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 138.64928952511667,
+              "control_parent_mean": 129.88025450048335,
+              "gain": -0.06751630614182921
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 196.64639603715003,
+              "control_parent_mean": 178.70538168505004,
+              "gain": -0.10039437079583416
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.26658732223333,
+              "control_parent_mean": 144.6149325186333,
+              "gain": -0.05291054437005754
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_2048_vs_baseline_FrozenSL": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.04823636411742052,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 146.45940950993335,
+            "control_parent_mean": 137.01146356389998,
+            "gain": -0.06895733904504274
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 145.91683963706666,
+            "control_parent_mean": 143.05726944073334,
+            "gain": -0.019988989077678456
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 175.24661399586668,
+            "control_parent_mean": 163.9625225382,
+            "gain": -0.06882116280589491
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 148.97709724573332,
+            "control_parent_mean": 133.8801912735333,
+            "gain": -0.11276429939777434
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 112.55380051826667,
+            "control_parent_mean": 111.38214250003334,
+            "gain": -0.010519262710653815
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 143.27279219735001,
+            "control_parent_mean": 126.20911189458333,
+            "gain": -0.13520165102674356
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 111.02913392731665,
+            "control_parent_mean": 111.55815175365001,
+            "gain": 0.004742081309320814
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.26537592940001,
+            "control_parent_mean": 119.67377456223333,
+            "gain": -0.013299500019856083
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 140.37134095985002,
+            "control_parent_mean": 132.64933201435002,
+            "gain": -0.05821370396848004
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 193.23595603168334,
+            "control_parent_mean": 187.1130762979833,
+            "gain": -0.03272288529931052
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.52137522446665,
+            "control_parent_mean": 150.2890873380333,
+            "gain": -0.014853293249512073
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.05879801778057326,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 113.58440950993334,
+            "control_parent_mean": 105.0114635639,
+            "gain": -0.08163819125153572
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 119.66683963706667,
+            "control_parent_mean": 116.18226944073332,
+            "gain": -0.029992271739113285
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 138.74661399586668,
+            "control_parent_mean": 127.5875225382,
+            "gain": -0.08746224737082435
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 123.60209724573332,
+            "control_parent_mean": 108.50519127353333,
+            "gain": -0.1391353334804216
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 92.92880051826667,
+            "control_parent_mean": 91.88214250003334,
+            "gain": -0.011391310539291686
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 111.39779219735,
+            "control_parent_mean": 95.95911189458333,
+            "gain": -0.16088811159201805
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 95.27913392731665,
+            "control_parent_mean": 96.18315175365001,
+            "gain": 0.009398920807344542
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 95.14037592940001,
+            "control_parent_mean": 93.04877456223333,
+            "gain": -0.022478548234590234
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.99634095985,
+            "control_parent_mean": 109.14933201435002,
+            "gain": -0.06273065367545991
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 157.86095603168334,
+            "control_parent_mean": 151.1130762979833,
+            "gain": -0.04465450574504717
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.39637522446668,
+            "control_parent_mean": 125.41408733803331,
+            "gain": -0.015805942765348472
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.009380700974169596,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 43.833333333333336,
+            "control_parent_mean": 42.666666666666664,
+            "gain": -0.02734375000000011
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 35.0,
+            "control_parent_mean": 35.833333333333336,
+            "gain": 0.023255813953488438
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 48.666666666666664,
+            "control_parent_mean": 48.5,
+            "gain": -0.0034364261168384393
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.833333333333336,
+            "control_parent_mean": 33.833333333333336,
+            "gain": 0.0
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.166666666666668,
+            "control_parent_mean": 26.0,
+            "gain": -0.006410256410256456
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 42.5,
+            "control_parent_mean": 40.333333333333336,
+            "gain": -0.05371900826446275
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 21.0,
+            "control_parent_mean": 20.5,
+            "gain": -0.024390243902439025
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.833333333333336,
+            "control_parent_mean": 35.5,
+            "gain": 0.01877934272300463
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03723404255319153
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.166666666666664,
+            "control_parent_mean": 48.0,
+            "gain": 0.01736111111111116
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 33.166666666666664,
+            "gain": -0.010050251256281478
+          }
+        },
+        "positive_parents": 3,
+        "negative_parents": 7
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.27110857616296175,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 246.6511555717001,
+            "control_parent_mean": 172.24935300426662,
+            "gain": -0.4319424210875876
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 211.95908541073334,
+            "control_parent_mean": 171.0018685291667,
+            "gain": -0.23951327101774228
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 280.23947660639993,
+            "control_parent_mean": 201.83641786493334,
+            "gain": -0.38844852465590746
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 198.80280247106666,
+            "control_parent_mean": 163.03542219046665,
+            "gain": -0.21938410561365404
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 162.11914834063333,
+            "control_parent_mean": 131.7715123779333,
+            "gain": -0.2303049833385846
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 200.7467538653833,
+            "control_parent_mean": 151.56249573208333,
+            "gain": -0.32451470197642346
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 144.63660365258332,
+            "control_parent_mean": 134.55762559755,
+            "gain": -0.07490454747751471
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 199.7073351688667,
+            "control_parent_mean": 142.06980711359998,
+            "gain": -0.4056986436898543
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 206.01112843251667,
+            "control_parent_mean": 161.77919540628332,
+            "gain": -0.27340927809136223
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 293.13354954748337,
+            "control_parent_mean": 241.34974716208333,
+            "gain": -0.21455917395522925
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 210.78477942906667,
+            "control_parent_mean": 178.70466707376667,
+            "gain": -0.17951468688871905
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.05310126534679038,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 146.45940950993335,
+              "control_parent_mean": 137.01146356389998,
+              "gain": -0.06895733904504274
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 145.91683963706666,
+              "control_parent_mean": 143.05726944073334,
+              "gain": -0.019988989077678456
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 175.24661399586668,
+              "control_parent_mean": 163.9625225382,
+              "gain": -0.06882116280589491
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 148.97709724573332,
+              "control_parent_mean": 133.8801912735333,
+              "gain": -0.11276429939777434
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 112.55380051826667,
+              "control_parent_mean": 111.38214250003334,
+              "gain": -0.010519262710653815
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 143.27279219735001,
+              "control_parent_mean": 126.20911189458333,
+              "gain": -0.13520165102674356
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 111.02913392731665,
+              "control_parent_mean": 111.55815175365001,
+              "gain": 0.004742081309320814
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.26537592940001,
+              "control_parent_mean": 119.67377456223333,
+              "gain": -0.013299500019856083
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.03526329417243421,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 140.37134095985002,
+              "control_parent_mean": 132.64933201435002,
+              "gain": -0.05821370396848004
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 193.23595603168334,
+              "control_parent_mean": 187.1130762979833,
+              "gain": -0.03272288529931052
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.52137522446665,
+              "control_parent_mean": 150.2890873380333,
+              "gain": -0.014853293249512073
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_2048_vs_2026111101_D5-SL-U_2048": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.04582389480838966,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 146.45940950993335,
+            "control_parent_mean": 134.12516979133335,
+            "gain": -0.09196066433905827
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 145.91683963706666,
+            "control_parent_mean": 143.73027432580002,
+            "gain": -0.015212976678178777
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 175.24661399586668,
+            "control_parent_mean": 163.22549804779996,
+            "gain": -0.07364729219295373
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 148.97709724573332,
+            "control_parent_mean": 135.0756707641,
+            "gain": -0.10291584267540788
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 112.55380051826667,
+            "control_parent_mean": 111.33855315143335,
+            "gain": -0.010914883770587957
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 143.27279219735001,
+            "control_parent_mean": 130.76251341088332,
+            "gain": -0.09567175224872569
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 111.02913392731665,
+            "control_parent_mean": 113.12654697028334,
+            "gain": 0.018540414245275708
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.26537592940001,
+            "control_parent_mean": 119.71125281506669,
+            "gain": -0.012982264221511199
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 140.37134095985002,
+            "control_parent_mean": 132.83375991268335,
+            "gain": -0.05674446806385218
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 193.23595603168334,
+            "control_parent_mean": 187.3755154062833,
+            "gain": -0.03127644832726908
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.52137522446665,
+            "control_parent_mean": 147.89569128926667,
+            "gain": -0.031276664620017165
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.051977490174432546,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 113.58440950993334,
+            "control_parent_mean": 101.75016979133335,
+            "gain": -0.11630683017895052
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 119.66683963706667,
+            "control_parent_mean": 117.48027432580001,
+            "gain": -0.01861219105773289
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 138.74661399586668,
+            "control_parent_mean": 128.22549804779996,
+            "gain": -0.08205166763434724
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 123.60209724573332,
+            "control_parent_mean": 110.2006707641,
+            "gain": -0.1216093004580794
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 92.92880051826667,
+            "control_parent_mean": 92.08855315143335,
+            "gain": -0.009124341061712577
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 111.39779219735,
+            "control_parent_mean": 100.88751341088333,
+            "gain": -0.10417819243558504
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 95.27913392731665,
+            "control_parent_mean": 97.62654697028334,
+            "gain": 0.024044823009885054
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 95.14037592940001,
+            "control_parent_mean": 93.83625281506669,
+            "gain": -0.013897860104276535
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.99634095985,
+            "control_parent_mean": 109.33375991268333,
+            "gain": -0.060938003526884756
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 157.86095603168334,
+            "control_parent_mean": 152.1255154062833,
+            "gain": -0.037702029209776715
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.39637522446668,
+            "control_parent_mean": 123.52069128926667,
+            "gain": -0.031376799261297474
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.02383345705535097,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 43.833333333333336,
+            "control_parent_mean": 43.166666666666664,
+            "gain": -0.015444015444015555
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 35.0,
+            "control_parent_mean": 35.0,
+            "gain": 0.0
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 48.666666666666664,
+            "control_parent_mean": 46.666666666666664,
+            "gain": -0.04285714285714286
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.833333333333336,
+            "control_parent_mean": 33.166666666666664,
+            "gain": -0.020100502512562957
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.166666666666668,
+            "control_parent_mean": 25.666666666666668,
+            "gain": -0.01948051948051948
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 42.5,
+            "control_parent_mean": 39.833333333333336,
+            "gain": -0.06694560669456061
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 21.0,
+            "control_parent_mean": 20.666666666666668,
+            "gain": -0.016129032258064457
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.833333333333336,
+            "control_parent_mean": 34.5,
+            "gain": -0.00966183574879234
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03723404255319153
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.166666666666664,
+            "control_parent_mean": 47.0,
+            "gain": -0.0035460992907800915
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 32.5,
+            "gain": -0.03076923076923077
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 10
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.33243995965491197,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 246.6511555717001,
+            "control_parent_mean": 164.01283403070002,
+            "gain": -0.5038527748720675
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 211.95908541073334,
+            "control_parent_mean": 163.25005505160001,
+            "gain": -0.29837068259326094
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 280.23947660639993,
+            "control_parent_mean": 192.2443870119333,
+            "gain": -0.45772514330420716
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 198.80280247106666,
+            "control_parent_mean": 152.8701759022,
+            "gain": -0.30046819988126683
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 162.11914834063333,
+            "control_parent_mean": 124.99962602406664,
+            "gain": -0.2969570669709038
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 200.7467538653833,
+            "control_parent_mean": 153.37697672548333,
+            "gain": -0.3088454222479766
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 144.63660365258332,
+            "control_parent_mean": 131.04494410711666,
+            "gain": -0.10371754239031745
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 199.7073351688667,
+            "control_parent_mean": 135.72568706283332,
+            "gain": -0.47140412025627476
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 206.01112843251667,
+            "control_parent_mean": 153.27320480608336,
+            "gain": -0.3440779077670865
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 293.13354954748337,
+            "control_parent_mean": 219.78758888485,
+            "gain": -0.3337129318119068
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 210.78477942906667,
+            "control_parent_mean": 170.3025427661,
+            "gain": -0.2377077641087633
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.048095657735143474,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 146.45940950993335,
+              "control_parent_mean": 134.12516979133335,
+              "gain": -0.09196066433905827
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 145.91683963706666,
+              "control_parent_mean": 143.73027432580002,
+              "gain": -0.015212976678178777
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 175.24661399586668,
+              "control_parent_mean": 163.22549804779996,
+              "gain": -0.07364729219295373
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 148.97709724573332,
+              "control_parent_mean": 135.0756707641,
+              "gain": -0.10291584267540788
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 112.55380051826667,
+              "control_parent_mean": 111.33855315143335,
+              "gain": -0.010914883770587957
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 143.27279219735001,
+              "control_parent_mean": 130.76251341088332,
+              "gain": -0.09567175224872569
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 111.02913392731665,
+              "control_parent_mean": 113.12654697028334,
+              "gain": 0.018540414245275708
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.26537592940001,
+              "control_parent_mean": 119.71125281506669,
+              "gain": -0.012982264221511199
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.03976586033704614,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 140.37134095985002,
+              "control_parent_mean": 132.83375991268335,
+              "gain": -0.05674446806385218
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 193.23595603168334,
+              "control_parent_mean": 187.3755154062833,
+              "gain": -0.03127644832726908
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.52137522446665,
+              "control_parent_mean": 147.89569128926667,
+              "gain": -0.031276664620017165
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_2048_vs_baseline_Fixed3": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.07168201902429178,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 146.45940950993335,
+            "control_parent_mean": 132.45873427073332,
+            "gain": -0.10569839215422336
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 145.91683963706666,
+            "control_parent_mean": 139.22023460193333,
+            "gain": -0.04810080269064807
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 175.24661399586668,
+            "control_parent_mean": 157.20498338849998,
+            "gain": -0.11476500438144824
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 148.97709724573332,
+            "control_parent_mean": 136.81131868886663,
+            "gain": -0.08892377234177412
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 112.55380051826667,
+            "control_parent_mean": 110.50671686380001,
+            "gain": -0.018524517898669456
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 143.27279219735001,
+            "control_parent_mean": 120.80472920328334,
+            "gain": -0.18598661776112
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 111.02913392731665,
+            "control_parent_mean": 109.02213436078334,
+            "gain": -0.018409101769110595
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.26537592940001,
+            "control_parent_mean": 117.58467540126667,
+            "gain": -0.03130255295235261
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 140.37134095985002,
+            "control_parent_mean": 131.69786472001667,
+            "gain": -0.0658588980031889
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 193.23595603168334,
+            "control_parent_mean": 180.45997111515,
+            "gain": -0.07079678023654942
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.52137522446665,
+            "control_parent_mean": 146.63602556389998,
+            "gain": -0.04013576907812467
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.07609144336470539,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 113.58440950993334,
+            "control_parent_mean": 100.95873427073332,
+            "gain": -0.1250577805912534
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 119.66683963706667,
+            "control_parent_mean": 113.47023460193333,
+            "gain": -0.05460996054931719
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 138.74661399586668,
+            "control_parent_mean": 126.0799833885,
+            "gain": -0.10046504026206933
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 123.60209724573332,
+            "control_parent_mean": 111.93631868886665,
+            "gain": -0.10421799370847958
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 92.92880051826667,
+            "control_parent_mean": 91.75671686380001,
+            "gain": -0.01277381857729778
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 111.39779219735,
+            "control_parent_mean": 92.05472920328334,
+            "gain": -0.2101256845952108
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 95.27913392731665,
+            "control_parent_mean": 93.77213436078334,
+            "gain": -0.016070867713591848
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 95.14037592940001,
+            "control_parent_mean": 91.83467540126667,
+            "gain": -0.03599621290856926
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.99634095985,
+            "control_parent_mean": 108.07286472001665,
+            "gain": -0.07331605635106114
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 157.86095603168334,
+            "control_parent_mean": 147.70997111515,
+            "gain": -0.06872240810757417
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.39637522446668,
+            "control_parent_mean": 123.01102556389998,
+            "gain": -0.03565005364733477
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.05763296480183082,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 43.833333333333336,
+            "control_parent_mean": 42.0,
+            "gain": -0.043650793650793704
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 35.0,
+            "control_parent_mean": 34.333333333333336,
+            "gain": -0.01941747572815527
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 48.666666666666664,
+            "control_parent_mean": 41.5,
+            "gain": -0.1726907630522088
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.833333333333336,
+            "control_parent_mean": 33.166666666666664,
+            "gain": -0.020100502512562957
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.166666666666668,
+            "control_parent_mean": 25.0,
+            "gain": -0.04666666666666672
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 42.5,
+            "control_parent_mean": 38.333333333333336,
+            "gain": -0.10869565217391297
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 21.0,
+            "control_parent_mean": 20.333333333333332,
+            "gain": -0.0327868852459017
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.833333333333336,
+            "control_parent_mean": 34.333333333333336,
+            "gain": -0.014563106796116504
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.5,
+            "gain": -0.031746031746031744
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.166666666666664,
+            "control_parent_mean": 43.666666666666664,
+            "gain": -0.0801526717557252
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 31.5,
+            "gain": -0.06349206349206349
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.5818470339744143,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 246.6511555717001,
+            "control_parent_mean": 132.45873427073332,
+            "gain": -0.8620980860919907
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 211.95908541073334,
+            "control_parent_mean": 139.22023460193333,
+            "gain": -0.522473267027449
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 280.23947660639993,
+            "control_parent_mean": 157.20498338849998,
+            "gain": -0.7826373602536845
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 198.80280247106666,
+            "control_parent_mean": 136.81131868886663,
+            "gain": -0.45311663081897285
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 162.11914834063333,
+            "control_parent_mean": 110.50671686380001,
+            "gain": -0.46705243754952797
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 200.7467538653833,
+            "control_parent_mean": 120.80472920328334,
+            "gain": -0.6617458206257643
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 144.63660365258332,
+            "control_parent_mean": 109.02213436078334,
+            "gain": -0.32667191392476497
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 199.7073351688667,
+            "control_parent_mean": 117.58467540126667,
+            "gain": -0.6984129478382298
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 206.01112843251667,
+            "control_parent_mean": 131.69786472001667,
+            "gain": -0.5642708321086787
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 293.13354954748337,
+            "control_parent_mean": 180.45997111515,
+            "gain": -0.6243688156219269
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 210.78477942906667,
+            "control_parent_mean": 146.63602556389998,
+            "gain": -0.43746926185756735
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.07646384524366831,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 146.45940950993335,
+              "control_parent_mean": 132.45873427073332,
+              "gain": -0.10569839215422336
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 145.91683963706666,
+              "control_parent_mean": 139.22023460193333,
+              "gain": -0.04810080269064807
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 175.24661399586668,
+              "control_parent_mean": 157.20498338849998,
+              "gain": -0.11476500438144824
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 148.97709724573332,
+              "control_parent_mean": 136.81131868886663,
+              "gain": -0.08892377234177412
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 112.55380051826667,
+              "control_parent_mean": 110.50671686380001,
+              "gain": -0.018524517898669456
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 143.27279219735001,
+              "control_parent_mean": 120.80472920328334,
+              "gain": -0.18598661776112
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 111.02913392731665,
+              "control_parent_mean": 109.02213436078334,
+              "gain": -0.018409101769110595
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.26537592940001,
+              "control_parent_mean": 117.58467540126667,
+              "gain": -0.03130255295235261
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 8
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.05893048243928767,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 140.37134095985002,
+              "control_parent_mean": 131.69786472001667,
+              "gain": -0.0658588980031889
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 193.23595603168334,
+              "control_parent_mean": 180.45997111515,
+              "gain": -0.07079678023654942
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.52137522446665,
+              "control_parent_mean": 146.63602556389998,
+              "gain": -0.04013576907812467
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_2048_vs_baseline_Detour16": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.0869697325615978,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 146.45940950993335,
+            "control_parent_mean": 131.08810559693333,
+            "gain": -0.11725933365963308
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 145.91683963706666,
+            "control_parent_mean": 137.47555219446664,
+            "gain": -0.061402098830338606
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 175.24661399586668,
+            "control_parent_mean": 155.84131139466666,
+            "gain": -0.12451963107558991
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 148.97709724573332,
+            "control_parent_mean": 135.40762964859996,
+            "gain": -0.10021198681601509
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 112.55380051826667,
+            "control_parent_mean": 108.02707341603333,
+            "gain": -0.041903635441460384
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 143.27279219735001,
+            "control_parent_mean": 119.09263075588335,
+            "gain": -0.20303658830940832
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 111.02913392731665,
+            "control_parent_mean": 107.00541383358335,
+            "gain": -0.03760295810818564
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.26537592940001,
+            "control_parent_mean": 115.05546938693332,
+            "gain": -0.05397315378013601
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 140.37134095985002,
+            "control_parent_mean": 129.88025450048335,
+            "gain": -0.08077506854075057
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 193.23595603168334,
+            "control_parent_mean": 178.70538168505004,
+            "gain": -0.0813102224992975
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.52137522446665,
+            "control_parent_mean": 144.6149325186333,
+            "gain": -0.05467238111676064
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.09669947160529407,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 113.58440950993334,
+            "control_parent_mean": 99.46310559693332,
+            "gain": -0.14197529655091942
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 119.66683963706667,
+            "control_parent_mean": 111.47555219446666,
+            "gain": -0.0734805729269723
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 138.74661399586668,
+            "control_parent_mean": 123.84131139466666,
+            "gain": -0.12035808110670516
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 123.60209724573332,
+            "control_parent_mean": 110.65762964859998,
+            "gain": -0.11697763306732019
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 92.92880051826667,
+            "control_parent_mean": 89.15207341603333,
+            "gain": -0.04236275116798485
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 111.39779219735,
+            "control_parent_mean": 90.46763075588335,
+            "gain": -0.23135525122730716
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 95.27913392731665,
+            "control_parent_mean": 91.50541383358335,
+            "gain": -0.04124040245964455
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 95.14037592940001,
+            "control_parent_mean": 89.18046938693332,
+            "gain": -0.0668297283411689
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.99634095985,
+            "control_parent_mean": 106.38025450048333,
+            "gain": -0.09039352748796986
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 157.86095603168334,
+            "control_parent_mean": 145.83038168505,
+            "gain": -0.08249703667796585
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.39637522446668,
+            "control_parent_mean": 120.61493251863332,
+            "gain": -0.05622390664427655
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.05038512334051523,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 43.833333333333336,
+            "control_parent_mean": 42.166666666666664,
+            "gain": -0.039525691699604855
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 35.0,
+            "control_parent_mean": 34.666666666666664,
+            "gain": -0.009615384615384684
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 48.666666666666664,
+            "control_parent_mean": 42.666666666666664,
+            "gain": -0.140625
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.833333333333336,
+            "control_parent_mean": 33.0,
+            "gain": -0.025252525252525325
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.166666666666668,
+            "control_parent_mean": 25.166666666666668,
+            "gain": -0.03973509933774834
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 42.5,
+            "control_parent_mean": 38.166666666666664,
+            "gain": -0.1135371179039302
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 21.0,
+            "control_parent_mean": 20.666666666666668,
+            "gain": -0.016129032258064457
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.833333333333336,
+            "control_parent_mean": 34.5,
+            "gain": -0.00966183574879234
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.5,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03723404255319153
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.166666666666664,
+            "control_parent_mean": 43.833333333333336,
+            "gain": -0.07604562737642574
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 33.5,
+            "control_parent_mean": 32.0,
+            "gain": -0.046875
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.6043275901428543,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 246.6511555717001,
+            "control_parent_mean": 131.08810559693333,
+            "gain": -0.8815677780110527
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 211.95908541073334,
+            "control_parent_mean": 137.47555219446664,
+            "gain": -0.5417947557024952
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 280.23947660639993,
+            "control_parent_mean": 155.84131139466666,
+            "gain": -0.798236129422038
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 198.80280247106666,
+            "control_parent_mean": 135.40762964859996,
+            "gain": -0.4681802124960405
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 162.11914834063333,
+            "control_parent_mean": 108.02707341603333,
+            "gain": -0.5007270234590255
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 200.7467538653833,
+            "control_parent_mean": 119.09263075588335,
+            "gain": -0.6856353965080759
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 144.63660365258332,
+            "control_parent_mean": 107.00541383358335,
+            "gain": -0.351675569214887
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 199.7073351688667,
+            "control_parent_mean": 115.05546938693332,
+            "gain": -0.7357482980426411
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 206.01112843251667,
+            "control_parent_mean": 129.88025450048335,
+            "gain": -0.5861620322875946
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 293.13354954748337,
+            "control_parent_mean": 178.70538168505004,
+            "gain": -0.6403174139663084
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 210.78477942906667,
+            "control_parent_mean": 144.6149325186333,
+            "gain": -0.4575588824612391
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.09248867325259588,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 146.45940950993335,
+              "control_parent_mean": 131.08810559693333,
+              "gain": -0.11725933365963308
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 145.91683963706666,
+              "control_parent_mean": 137.47555219446664,
+              "gain": -0.061402098830338606
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 175.24661399586668,
+              "control_parent_mean": 155.84131139466666,
+              "gain": -0.12451963107558991
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 148.97709724573332,
+              "control_parent_mean": 135.40762964859996,
+              "gain": -0.10021198681601509
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 112.55380051826667,
+              "control_parent_mean": 108.02707341603333,
+              "gain": -0.041903635441460384
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 143.27279219735001,
+              "control_parent_mean": 119.09263075588335,
+              "gain": -0.20303658830940832
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 111.02913392731665,
+              "control_parent_mean": 107.00541383358335,
+              "gain": -0.03760295810818564
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.26537592940001,
+              "control_parent_mean": 115.05546938693332,
+              "gain": -0.05397315378013601
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 8
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.0722525573856029,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 140.37134095985002,
+              "control_parent_mean": 129.88025450048335,
+              "gain": -0.08077506854075057
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 193.23595603168334,
+              "control_parent_mean": 178.70538168505004,
+              "gain": -0.0813102224992975
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.52137522446665,
+              "control_parent_mean": 144.6149325186333,
+              "gain": -0.05467238111676064
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_4096_vs_baseline_FrozenSL": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.026430806084833412,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 144.97532050873332,
+            "control_parent_mean": 137.01146356389998,
+            "gain": -0.05812547897584586
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 148.95925184770002,
+            "control_parent_mean": 143.05726944073334,
+            "gain": -0.04125608177787701
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 163.92529563056664,
+            "control_parent_mean": 163.9625225382,
+            "gain": 0.00022704522385409674
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 138.25890008506667,
+            "control_parent_mean": 133.8801912735333,
+            "gain": -0.032706173855003906
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 113.32776971666665,
+            "control_parent_mean": 111.38214250003334,
+            "gain": -0.017468035476447492
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 126.39081098738336,
+            "control_parent_mean": 126.20911189458333,
+            "gain": -0.0014396669945019162
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.72911933575,
+            "control_parent_mean": 111.55815175365001,
+            "gain": -0.01946041188360724
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.91453246163333,
+            "control_parent_mean": 119.67377456223333,
+            "gain": -0.018723884222727052
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 139.46692256545,
+            "control_parent_mean": 132.64933201435002,
+            "gain": -0.05139558901331259
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 194.14807840901668,
+            "control_parent_mean": 187.1130762979833,
+            "gain": -0.037597597400568214
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.2117345137667,
+            "control_parent_mean": 150.2890873380333,
+            "gain": -0.012792992557130355
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.03635342351664644,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.85032050873332,
+            "control_parent_mean": 105.0114635639,
+            "gain": -0.07464763063761454
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 121.8342518477,
+            "control_parent_mean": 116.18226944073332,
+            "gain": -0.04864754694648016
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 129.55029563056664,
+            "control_parent_mean": 127.5875225382,
+            "gain": -0.01538373857662275
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 113.38390008506667,
+            "control_parent_mean": 108.50519127353333,
+            "gain": -0.04496290688280978
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 93.57776971666668,
+            "control_parent_mean": 91.88214250003334,
+            "gain": -0.018454371769059754
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 97.39081098738336,
+            "control_parent_mean": 95.95911189458333,
+            "gain": -0.014919886861529478
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.22911933575,
+            "control_parent_mean": 96.18315175365001,
+            "gain": -0.021271579739248345
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 96.41453246163333,
+            "control_parent_mean": 93.04877456223333,
+            "gain": -0.0361719744857993
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.21692256544999,
+            "control_parent_mean": 109.14933201435002,
+            "gain": -0.055589809292669365
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 158.89807840901668,
+            "control_parent_mean": 151.1130762979833,
+            "gain": -0.05151772633945957
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.7117345137667,
+            "control_parent_mean": 125.41408733803331,
+            "gain": -0.01832048715181775
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": 0.011645248494664834,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 42.833333333333336,
+            "control_parent_mean": 42.666666666666664,
+            "gain": -0.003906250000000111
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 36.166666666666664,
+            "control_parent_mean": 35.833333333333336,
+            "gain": -0.009302325581395217
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.833333333333336,
+            "control_parent_mean": 48.5,
+            "gain": 0.05498281786941576
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.166666666666664,
+            "control_parent_mean": 33.833333333333336,
+            "gain": 0.019704433497537085
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.333333333333332,
+            "control_parent_mean": 26.0,
+            "gain": -0.012820512820512775
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 40.333333333333336,
+            "gain": 0.04132231404958689
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.5,
+            "gain": -0.008130081300813066
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.0,
+            "control_parent_mean": 35.5,
+            "gain": 0.04225352112676056
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.333333333333336,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03191489361702139
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.0,
+            "control_parent_mean": 48.0,
+            "gain": 0.020833333333333332
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 32.666666666666664,
+            "control_parent_mean": 33.166666666666664,
+            "gain": 0.015075376884422112
+          }
+        },
+        "positive_parents": 6,
+        "negative_parents": 5
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.19706936754751966,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 216.60693833009998,
+            "control_parent_mean": 172.24935300426662,
+            "gain": -0.2575196048761624
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 199.67956085703335,
+            "control_parent_mean": 171.0018685291667,
+            "gain": -0.16770397057372083
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 247.2310715185666,
+            "control_parent_mean": 201.83641786493334,
+            "gain": -0.22490814162194883
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 200.25312417696668,
+            "control_parent_mean": 163.03542219046665,
+            "gain": -0.22827985162034503
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 157.52556722849997,
+            "control_parent_mean": 131.7715123779333,
+            "gain": -0.1954447845806123
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 191.58445709078333,
+            "control_parent_mean": 151.56249573208333,
+            "gain": -0.26406243289531683
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 142.28814416078333,
+            "control_parent_mean": 134.55762559755,
+            "gain": -0.057451359808879554
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 187.75848039676666,
+            "control_parent_mean": 142.06980711359998,
+            "gain": -0.3215931253192574
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 191.19345139005,
+            "control_parent_mean": 161.77919540628332,
+            "gain": -0.1818172967784723
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 275.57458877915,
+            "control_parent_mean": 241.34974716208333,
+            "gain": -0.1418059973938249
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 201.43169715470003,
+            "control_parent_mean": 178.70466707376667,
+            "gain": -0.12717647755417588
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.02361908599526955,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 144.97532050873332,
+              "control_parent_mean": 137.01146356389998,
+              "gain": -0.05812547897584586
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 148.95925184770002,
+              "control_parent_mean": 143.05726944073334,
+              "gain": -0.04125608177787701
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 163.92529563056664,
+              "control_parent_mean": 163.9625225382,
+              "gain": 0.00022704522385409674
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 138.25890008506667,
+              "control_parent_mean": 133.8801912735333,
+              "gain": -0.032706173855003906
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 113.32776971666665,
+              "control_parent_mean": 111.38214250003334,
+              "gain": -0.017468035476447492
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 126.39081098738336,
+              "control_parent_mean": 126.20911189458333,
+              "gain": -0.0014396669945019162
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.72911933575,
+              "control_parent_mean": 111.55815175365001,
+              "gain": -0.01946041188360724
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.91453246163333,
+              "control_parent_mean": 119.67377456223333,
+              "gain": -0.018723884222727052
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.03392872632367039,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 139.46692256545,
+              "control_parent_mean": 132.64933201435002,
+              "gain": -0.05139558901331259
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 194.14807840901668,
+              "control_parent_mean": 187.1130762979833,
+              "gain": -0.037597597400568214
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.2117345137667,
+              "control_parent_mean": 150.2890873380333,
+              "gain": -0.012792992557130355
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_4096_vs_2026111101_D5-SL-U_4096": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.037370868961219036,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 144.97532050873332,
+            "control_parent_mean": 131.29983017933336,
+            "gain": -0.10415466882722968
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 148.95925184770002,
+            "control_parent_mean": 143.7153144044,
+            "gain": -0.03648836914167766
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 163.92529563056664,
+            "control_parent_mean": 161.3499237991667,
+            "gain": -0.015961407174914545
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 138.25890008506667,
+            "control_parent_mean": 130.99175979866666,
+            "gain": -0.05547784301523658
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 113.32776971666665,
+            "control_parent_mean": 111.9329068541,
+            "gain": -0.012461597771107665
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 126.39081098738336,
+            "control_parent_mean": 128.04507154118335,
+            "gain": 0.01291936139274149
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.72911933575,
+            "control_parent_mean": 111.07339689581669,
+            "gain": -0.02390961755157535
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.91453246163333,
+            "control_parent_mean": 119.1191214606,
+            "gain": -0.023467357438141812
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 139.46692256545,
+            "control_parent_mean": 133.3353526356167,
+            "gain": -0.0459860780253072
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 194.14807840901668,
+            "control_parent_mean": 180.3570303370833,
+            "gain": -0.07646526473716168
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.2117345137667,
+            "control_parent_mean": 147.8319590066,
+            "gain": -0.029626716283798704
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.0437768674817933,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.85032050873332,
+            "control_parent_mean": 99.42483017933334,
+            "gain": -0.1350315640990718
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 121.8342518477,
+            "control_parent_mean": 117.09031440439999,
+            "gain": -0.040515199463173925
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 129.55029563056664,
+            "control_parent_mean": 126.72492379916667,
+            "gain": -0.022295312924216902
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 113.38390008506667,
+            "control_parent_mean": 106.24175979866665,
+            "gain": -0.06722535752358327
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 93.57776971666668,
+            "control_parent_mean": 92.9329068541,
+            "gain": -0.006939015300350878
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 97.39081098738336,
+            "control_parent_mean": 99.29507154118335,
+            "gain": 0.019177795274664566
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.22911933575,
+            "control_parent_mean": 95.69839689581669,
+            "gain": -0.02644477360146814
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 96.41453246163333,
+            "control_parent_mean": 92.9941214606,
+            "gain": -0.03678093784113546
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.21692256544999,
+            "control_parent_mean": 110.08535263561669,
+            "gain": -0.04661446602091414
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 158.89807840901668,
+            "control_parent_mean": 146.1070303370833,
+            "gain": -0.0875457398759195
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.7117345137667,
+            "control_parent_mean": 123.8319590066,
+            "gain": -0.031330970924556834
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 10
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.013624537040415042,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 42.833333333333336,
+            "control_parent_mean": 42.5,
+            "gain": -0.007843137254902016
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 36.166666666666664,
+            "control_parent_mean": 35.5,
+            "gain": -0.01877934272300463
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.833333333333336,
+            "control_parent_mean": 46.166666666666664,
+            "gain": 0.007220216606498093
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.166666666666664,
+            "control_parent_mean": 33.0,
+            "gain": -0.005050505050504979
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.333333333333332,
+            "control_parent_mean": 25.333333333333332,
+            "gain": -0.03947368421052632
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 38.333333333333336,
+            "gain": -0.008695652173912919
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.5,
+            "gain": -0.008130081300813066
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.0,
+            "control_parent_mean": 34.833333333333336,
+            "gain": 0.02392344497607662
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.333333333333336,
+            "control_parent_mean": 31.0,
+            "gain": -0.04301075268817212
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.0,
+            "control_parent_mean": 45.666666666666664,
+            "gain": -0.029197080291970857
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 32.666666666666664,
+            "control_parent_mean": 32.0,
+            "gain": -0.02083333333333326
+          }
+        },
+        "positive_parents": 2,
+        "negative_parents": 9
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.28007260303520554,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 216.60693833009998,
+            "control_parent_mean": 154.97925469136666,
+            "gain": -0.39765118087231566
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 199.67956085703335,
+            "control_parent_mean": 160.2003216734,
+            "gain": -0.24643670356742217
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 247.2310715185666,
+            "control_parent_mean": 184.82360354620002,
+            "gain": -0.3376596212548508
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 200.25312417696668,
+            "control_parent_mean": 144.71783813726665,
+            "gain": -0.38374872617309363
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 157.52556722849997,
+            "control_parent_mean": 120.842332199,
+            "gain": -0.30356278600359166
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 191.58445709078333,
+            "control_parent_mean": 151.16733289048332,
+            "gain": -0.26736678770128947
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 142.28814416078333,
+            "control_parent_mean": 133.19040465008334,
+            "gain": -0.06830626826760904
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 187.75848039676666,
+            "control_parent_mean": 137.07054872683332,
+            "gain": -0.3697944754780902
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 191.19345139005,
+            "control_parent_mean": 153.10796457448336,
+            "gain": -0.24874922033882152
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 275.57458877915,
+            "control_parent_mean": 217.10800974851665,
+            "gain": -0.2692971995752581
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 201.43169715470003,
+            "control_parent_mean": 169.52309921529996,
+            "gain": -0.188225664154919
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.032375187440892725,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 144.97532050873332,
+              "control_parent_mean": 131.29983017933336,
+              "gain": -0.10415466882722968
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 148.95925184770002,
+              "control_parent_mean": 143.7153144044,
+              "gain": -0.03648836914167766
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 163.92529563056664,
+              "control_parent_mean": 161.3499237991667,
+              "gain": -0.015961407174914545
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 138.25890008506667,
+              "control_parent_mean": 130.99175979866666,
+              "gain": -0.05547784301523658
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 113.32776971666665,
+              "control_parent_mean": 111.9329068541,
+              "gain": -0.012461597771107665
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 126.39081098738336,
+              "control_parent_mean": 128.04507154118335,
+              "gain": 0.01291936139274149
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.72911933575,
+              "control_parent_mean": 111.07339689581669,
+              "gain": -0.02390961755157535
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.91453246163333,
+              "control_parent_mean": 119.1191214606,
+              "gain": -0.023467357438141812
+            }
+          },
+          "positive_parents": 1,
+          "negative_parents": 7
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.050692686348755865,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 139.46692256545,
+              "control_parent_mean": 133.3353526356167,
+              "gain": -0.0459860780253072
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 194.14807840901668,
+              "control_parent_mean": 180.3570303370833,
+              "gain": -0.07646526473716168
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.2117345137667,
+              "control_parent_mean": 147.8319590066,
+              "gain": -0.029626716283798704
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_4096_vs_baseline_Fixed3": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.04931014043508734,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 144.97532050873332,
+            "control_parent_mean": 132.45873427073332,
+            "gain": -0.09449423102909367
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 148.95925184770002,
+            "control_parent_mean": 139.22023460193333,
+            "gain": -0.06995403558694653
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 163.92529563056664,
+            "control_parent_mean": 157.20498338849998,
+            "gain": -0.0427487227008496
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 138.25890008506667,
+            "control_parent_mean": 136.81131868886663,
+            "gain": -0.010580859903061781
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 113.32776971666665,
+            "control_parent_mean": 110.50671686380001,
+            "gain": -0.025528338303124166
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 126.39081098738336,
+            "control_parent_mean": 120.80472920328334,
+            "gain": -0.046240588600633965
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.72911933575,
+            "control_parent_mean": 109.02213436078334,
+            "gain": -0.043174581038653945
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.91453246163333,
+            "control_parent_mean": 117.58467540126667,
+            "gain": -0.036823310908421496
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 139.46692256545,
+            "control_parent_mean": 131.69786472001667,
+            "gain": -0.05899152474453539
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 194.14807840901668,
+            "control_parent_mean": 180.45997111515,
+            "gain": -0.07585121071050376
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.2117345137667,
+            "control_parent_mean": 146.63602556389998,
+            "gain": -0.038024141260136424
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.05338451917794818,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.85032050873332,
+            "control_parent_mean": 100.95873427073332,
+            "gain": -0.11778660186162046
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 121.8342518477,
+            "control_parent_mean": 113.47023460193333,
+            "gain": -0.07371111265530218
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 129.55029563056664,
+            "control_parent_mean": 126.0799833885,
+            "gain": -0.027524688287539657
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 113.38390008506667,
+            "control_parent_mean": 111.93631868886665,
+            "gain": -0.012932186918024849
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 93.57776971666668,
+            "control_parent_mean": 91.75671686380001,
+            "gain": -0.019846534565635877
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 97.39081098738336,
+            "control_parent_mean": 92.05472920328334,
+            "gain": -0.05796640574887155
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.22911933575,
+            "control_parent_mean": 93.77213436078334,
+            "gain": -0.04752995125202807
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 96.41453246163333,
+            "control_parent_mean": 91.83467540126667,
+            "gain": -0.04987067292779361
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.21692256544999,
+            "control_parent_mean": 108.07286472001665,
+            "gain": -0.06610408509056719
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 158.89807840901668,
+            "control_parent_mean": 147.70997111515,
+            "gain": -0.07574375114557955
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.7117345137667,
+            "control_parent_mean": 123.01102556389998,
+            "gain": -0.03821372050446703
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.035108966399746026,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 42.833333333333336,
+            "control_parent_mean": 42.0,
+            "gain": -0.0198412698412699
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 36.166666666666664,
+            "control_parent_mean": 34.333333333333336,
+            "gain": -0.05339805825242704
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.833333333333336,
+            "control_parent_mean": 41.5,
+            "gain": -0.10441767068273099
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.166666666666664,
+            "control_parent_mean": 33.166666666666664,
+            "gain": 0.0
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.333333333333332,
+            "control_parent_mean": 25.0,
+            "gain": -0.05333333333333329
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 38.333333333333336,
+            "gain": -0.008695652173912919
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.333333333333332,
+            "gain": -0.01639344262295094
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.0,
+            "control_parent_mean": 34.333333333333336,
+            "gain": 0.009708737864077738
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.333333333333336,
+            "control_parent_mean": 31.5,
+            "gain": -0.02645502645502653
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.0,
+            "control_parent_mean": 43.666666666666664,
+            "gain": -0.07633587786259548
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 32.666666666666664,
+            "control_parent_mean": 31.5,
+            "gain": -0.03703703703703696
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 9
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.48834141520362,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 216.60693833009998,
+            "control_parent_mean": 132.45873427073332,
+            "gain": -0.6352786361930318
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 199.67956085703335,
+            "control_parent_mean": 139.22023460193333,
+            "gain": -0.43427111316087696
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 247.2310715185666,
+            "control_parent_mean": 157.20498338849998,
+            "gain": -0.5726668849141096
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 200.25312417696668,
+            "control_parent_mean": 136.81131868886663,
+            "gain": -0.46371752056844096
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 157.52556722849997,
+            "control_parent_mean": 110.50671686380001,
+            "gain": -0.4254840945338272
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 191.58445709078333,
+            "control_parent_mean": 120.80472920328334,
+            "gain": -0.5859019622352356
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 142.28814416078333,
+            "control_parent_mean": 109.02213436078334,
+            "gain": -0.3051307883031705
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 187.75848039676666,
+            "control_parent_mean": 117.58467540126667,
+            "gain": -0.5967937977974301
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 191.19345139005,
+            "control_parent_mean": 131.69786472001667,
+            "gain": -0.45175817236306826
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 275.57458877915,
+            "control_parent_mean": 180.45997111515,
+            "gain": -0.5270676764284095
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 201.43169715470003,
+            "control_parent_mean": 146.63602556389998,
+            "gain": -0.37368492074221965
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.04619308350884815,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 144.97532050873332,
+              "control_parent_mean": 132.45873427073332,
+              "gain": -0.09449423102909367
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 148.95925184770002,
+              "control_parent_mean": 139.22023460193333,
+              "gain": -0.06995403558694653
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 163.92529563056664,
+              "control_parent_mean": 157.20498338849998,
+              "gain": -0.0427487227008496
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 138.25890008506667,
+              "control_parent_mean": 136.81131868886663,
+              "gain": -0.010580859903061781
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 113.32776971666665,
+              "control_parent_mean": 110.50671686380001,
+              "gain": -0.025528338303124166
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 126.39081098738336,
+              "control_parent_mean": 120.80472920328334,
+              "gain": -0.046240588600633965
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.72911933575,
+              "control_parent_mean": 109.02213436078334,
+              "gain": -0.043174581038653945
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.91453246163333,
+              "control_parent_mean": 117.58467540126667,
+              "gain": -0.036823310908421496
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 8
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.05762229223839185,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 139.46692256545,
+              "control_parent_mean": 131.69786472001667,
+              "gain": -0.05899152474453539
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 194.14807840901668,
+              "control_parent_mean": 180.45997111515,
+              "gain": -0.07585121071050376
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.2117345137667,
+              "control_parent_mean": 146.63602556389998,
+              "gain": -0.038024141260136424
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "D5-PG_4096_vs_baseline_Detour16": {
+      "J": {
+        "parent_count": 11,
+        "gain": -0.06435983170150968,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 144.97532050873332,
+            "control_parent_mean": 131.08810559693333,
+            "gain": -0.10593802426667201
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 148.95925184770002,
+            "control_parent_mean": 137.47555219446664,
+            "gain": -0.08353266795385593
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 163.92529563056664,
+            "control_parent_mean": 155.84131139466666,
+            "gain": -0.05187317896361487
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 138.25890008506667,
+            "control_parent_mean": 135.40762964859996,
+            "gain": -0.021056940763722956
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 113.32776971666665,
+            "control_parent_mean": 108.02707341603333,
+            "gain": -0.049068220891436205
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 126.39081098738336,
+            "control_parent_mean": 119.09263075588335,
+            "gain": -0.061281543494155044
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 113.72911933575,
+            "control_parent_mean": 107.00541383358335,
+            "gain": -0.0628351899336932
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 121.91453246163333,
+            "control_parent_mean": 115.05546938693332,
+            "gain": -0.05961527175759779
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 139.46692256545,
+            "control_parent_mean": 129.88025450048335,
+            "gain": -0.07381158977426382
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 194.14807840901668,
+            "control_parent_mean": 178.70538168505004,
+            "gain": -0.08641427906845474
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 152.2117345137667,
+            "control_parent_mean": 144.6149325186333,
+            "gain": -0.052531241849139924
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": -0.07368484107046767,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 112.85032050873332,
+            "control_parent_mean": 99.46310559693332,
+            "gain": -0.13459478096381458
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 121.8342518477,
+            "control_parent_mean": 111.47555219446666,
+            "gain": -0.09292351057533063
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 129.55029563056664,
+            "control_parent_mean": 123.84131139466666,
+            "gain": -0.04609919074343587
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 113.38390008506667,
+            "control_parent_mean": 110.65762964859998,
+            "gain": -0.024636985674861542
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 93.57776971666668,
+            "control_parent_mean": 89.15207341603333,
+            "gain": -0.04964210175999585
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 97.39081098738336,
+            "control_parent_mean": 90.46763075588335,
+            "gain": -0.07652660043879594
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 98.22911933575,
+            "control_parent_mean": 91.50541383358335,
+            "gain": -0.07347877268108687
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 96.41453246163333,
+            "control_parent_mean": 89.18046938693332,
+            "gain": -0.08111712266632154
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 115.21692256544999,
+            "control_parent_mean": 106.38025450048333,
+            "gain": -0.08306680696018179
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 158.89807840901668,
+            "control_parent_mean": 145.83038168505,
+            "gain": -0.08960887692243018
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 127.7117345137667,
+            "control_parent_mean": 120.61493251863332,
+            "gain": -0.05883850238888969
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": -0.02802778494632827,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 42.833333333333336,
+            "control_parent_mean": 42.166666666666664,
+            "gain": -0.01581027667984201
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 36.166666666666664,
+            "control_parent_mean": 34.666666666666664,
+            "gain": -0.043269230769230775
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 45.833333333333336,
+            "control_parent_mean": 42.666666666666664,
+            "gain": -0.07421875000000011
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.166666666666664,
+            "control_parent_mean": 33.0,
+            "gain": -0.005050505050504979
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 26.333333333333332,
+            "control_parent_mean": 25.166666666666668,
+            "gain": -0.04635761589403964
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.666666666666664,
+            "control_parent_mean": 38.166666666666664,
+            "gain": -0.013100436681222708
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.666666666666668,
+            "control_parent_mean": 20.666666666666668,
+            "gain": 0.0
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.0,
+            "control_parent_mean": 34.5,
+            "gain": 0.014492753623188406
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 32.333333333333336,
+            "control_parent_mean": 31.333333333333332,
+            "gain": -0.03191489361702139
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 47.0,
+            "control_parent_mean": 43.833333333333336,
+            "gain": -0.0722433460076045
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 32.666666666666664,
+            "control_parent_mean": 32.0,
+            "gain": -0.02083333333333326
+          }
+        },
+        "positive_parents": 1,
+        "negative_parents": 9
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": -0.5096106970359322,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 216.60693833009998,
+            "control_parent_mean": 131.08810559693333,
+            "gain": -0.6523767533579131
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 199.67956085703335,
+            "control_parent_mean": 137.47555219446664,
+            "gain": -0.452473241020889
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 247.2310715185666,
+            "control_parent_mean": 155.84131139466666,
+            "gain": -0.5864283308836913
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 200.25312417696668,
+            "control_parent_mean": 135.40762964859996,
+            "gain": -0.47889099526111656
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 157.52556722849997,
+            "control_parent_mean": 108.02707341603333,
+            "gain": -0.45820452454393795
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 191.58445709078333,
+            "control_parent_mean": 119.09263075588335,
+            "gain": -0.6087011922970623
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 142.28814416078333,
+            "control_parent_mean": 107.00541383358335,
+            "gain": -0.3297284601139181
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 187.75848039676666,
+            "control_parent_mean": 115.05546938693332,
+            "gain": -0.631895305779267
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 191.19345139005,
+            "control_parent_mean": 129.88025450048335,
+            "gain": -0.4720748132606907
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 275.57458877915,
+            "control_parent_mean": 178.70538168505004,
+            "gain": -0.5420609395234781
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 201.43169715470003,
+            "control_parent_mean": 144.6149325186333,
+            "gain": -0.39288311135328996
+          }
+        },
+        "positive_parents": 0,
+        "negative_parents": 11
+      },
+      "groups": {
+        "trained_parent_new_tasks_exposed_selection": {
+          "parent_count": 8,
+          "gain": -0.0619001297530935,
+          "parent_gains": {
+            "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+              "candidate_parent_mean": 144.97532050873332,
+              "control_parent_mean": 131.08810559693333,
+              "gain": -0.10593802426667201
+            },
+            "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+              "candidate_parent_mean": 148.95925184770002,
+              "control_parent_mean": 137.47555219446664,
+              "gain": -0.08353266795385593
+            },
+            "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+              "candidate_parent_mean": 163.92529563056664,
+              "control_parent_mean": 155.84131139466666,
+              "gain": -0.05187317896361487
+            },
+            "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+              "candidate_parent_mean": 138.25890008506667,
+              "control_parent_mean": 135.40762964859996,
+              "gain": -0.021056940763722956
+            },
+            "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+              "candidate_parent_mean": 113.32776971666665,
+              "control_parent_mean": 108.02707341603333,
+              "gain": -0.049068220891436205
+            },
+            "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+              "candidate_parent_mean": 126.39081098738336,
+              "control_parent_mean": 119.09263075588335,
+              "gain": -0.061281543494155044
+            },
+            "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+              "candidate_parent_mean": 113.72911933575,
+              "control_parent_mean": 107.00541383358335,
+              "gain": -0.0628351899336932
+            },
+            "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+              "candidate_parent_mean": 121.91453246163333,
+              "control_parent_mean": 115.05546938693332,
+              "gain": -0.05961527175759779
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 8
+        },
+        "independent_parent_exposed_development": {
+          "parent_count": 3,
+          "gain": -0.07091903689728617,
+          "parent_gains": {
+            "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+              "candidate_parent_mean": 139.46692256545,
+              "control_parent_mean": 129.88025450048335,
+              "gain": -0.07381158977426382
+            },
+            "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+              "candidate_parent_mean": 194.14807840901668,
+              "control_parent_mean": 178.70538168505004,
+              "gain": -0.08641427906845474
+            },
+            "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+              "candidate_parent_mean": 152.2117345137667,
+              "control_parent_mean": 144.6149325186333,
+              "gain": -0.052531241849139924
+            }
+          },
+          "positive_parents": 0,
+          "negative_parents": 3
+        }
+      }
+    },
+    "SL-U_4096_vs_FrozenSL": {
+      "J": {
+        "parent_count": 11,
+        "gain": 0.010124447066153251,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 131.29983017933336,
+            "control_parent_mean": 137.01146356389998,
+            "gain": 0.041687266422804174
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 143.7153144044,
+            "control_parent_mean": 143.05726944073334,
+            "gain": -0.004599870850598666
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 161.3499237991667,
+            "control_parent_mean": 163.9625225382,
+            "gain": 0.01593412139914241
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 130.99175979866666,
+            "control_parent_mean": 133.8801912735333,
+            "gain": 0.021574748641979734
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 111.9329068541,
+            "control_parent_mean": 111.38214250003334,
+            "gain": -0.004944817380097469
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 128.04507154118335,
+            "control_parent_mean": 126.20911189458333,
+            "gain": -0.01454696589683247
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 111.07339689581669,
+            "control_parent_mean": 111.55815175365001,
+            "gain": 0.004345310945127439
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 119.1191214606,
+            "control_parent_mean": 119.67377456223333,
+            "gain": 0.004634708846296991
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 133.3353526356167,
+            "control_parent_mean": 132.64933201435002,
+            "gain": -0.005171685457054922
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 180.3570303370833,
+            "control_parent_mean": 187.1130762979833,
+            "gain": 0.03610675477399979
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 147.8319590066,
+            "control_parent_mean": 150.2890873380333,
+            "gain": 0.016349346282918738
+          }
+        },
+        "positive_parents": 7,
+        "negative_parents": 4
+      },
+      "L": {
+        "parent_count": 11,
+        "gain": 0.006327257441520733,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 99.42483017933334,
+            "control_parent_mean": 105.0114635639,
+            "gain": 0.053200224003802775
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 117.09031440439999,
+            "control_parent_mean": 116.18226944073332,
+            "gain": -0.007815693117699673
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 126.72492379916667,
+            "control_parent_mean": 127.5875225382,
+            "gain": 0.006760839319339135
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 106.24175979866665,
+            "control_parent_mean": 108.50519127353333,
+            "gain": 0.02086012151400885
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 92.9329068541,
+            "control_parent_mean": 91.88214250003334,
+            "gain": -0.011436001876711533
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 99.29507154118335,
+            "control_parent_mean": 95.95911189458333,
+            "gain": -0.03476438642184145
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 95.69839689581669,
+            "control_parent_mean": 96.18315175365001,
+            "gain": 0.005039914465216383
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 92.9941214606,
+            "control_parent_mean": 93.04877456223333,
+            "gain": 0.0005873597141978624
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 110.08535263561669,
+            "control_parent_mean": 109.14933201435002,
+            "gain": -0.008575596423655657
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 146.1070303370833,
+            "control_parent_mean": 151.1130762979833,
+            "gain": 0.03312781450513562
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 123.8319590066,
+            "control_parent_mean": 125.41408733803331,
+            "gain": 0.012615236174935755
+          }
+        },
+        "positive_parents": 7,
+        "negative_parents": 4
+      },
+      "K": {
+        "parent_count": 11,
+        "gain": 0.02494377424482058,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 42.5,
+            "control_parent_mean": 42.666666666666664,
+            "gain": 0.0039062499999999445
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 35.5,
+            "control_parent_mean": 35.833333333333336,
+            "gain": 0.009302325581395415
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 46.166666666666664,
+            "control_parent_mean": 48.5,
+            "gain": 0.04810996563573888
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 33.0,
+            "control_parent_mean": 33.833333333333336,
+            "gain": 0.02463054187192125
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 25.333333333333332,
+            "control_parent_mean": 26.0,
+            "gain": 0.025641025641025685
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 38.333333333333336,
+            "control_parent_mean": 40.333333333333336,
+            "gain": 0.04958677685950413
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 20.5,
+            "control_parent_mean": 20.5,
+            "gain": 0.0
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 34.833333333333336,
+            "control_parent_mean": 35.5,
+            "gain": 0.01877934272300463
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 31.0,
+            "control_parent_mean": 31.333333333333332,
+            "gain": 0.010638297872340389
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 45.666666666666664,
+            "control_parent_mean": 48.0,
+            "gain": 0.04861111111111116
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 32.0,
+            "control_parent_mean": 33.166666666666664,
+            "gain": 0.035175879396984855
+          }
+        },
+        "positive_parents": 10,
+        "negative_parents": 0
+      },
+      "raw_J": {
+        "parent_count": 11,
+        "gain": 0.06330810750269161,
+        "parent_gains": {
+          "01e20f9a675916ab11ea82a82ce0e672de42e4fe16f12a1404c012ea84c012a1": {
+            "candidate_parent_mean": 154.97925469136666,
+            "control_parent_mean": 172.24935300426662,
+            "gain": 0.10026219554201855
+          },
+          "037b0cbfa934e2ef6e37809b88654aa708aa90b68954b8d09e4404b894f053e2": {
+            "candidate_parent_mean": 160.2003216734,
+            "control_parent_mean": 171.0018685291667,
+            "gain": 0.06316625045488523
+          },
+          "041ffabade66b9bc3e6e1fed0389dedc16e3e4c34c5104608e30fc73f588ae1e": {
+            "candidate_parent_mean": 184.82360354620002,
+            "control_parent_mean": 201.83641786493334,
+            "gain": 0.08429011225376633
+          },
+          "04d0fac4982fd2d68a362df6d2a57f3ed8b828ff02de7f9bc9e409977fce3328": {
+            "candidate_parent_mean": 144.71783813726665,
+            "control_parent_mean": 163.03542219046665,
+            "gain": 0.11235340030463084
+          },
+          "0ace278cd20cb712d6033a0a061f775892578bfbbd046203605e76a9149794de": {
+            "candidate_parent_mean": 120.842332199,
+            "control_parent_mean": 131.7715123779333,
+            "gain": 0.08294038659575655
+          },
+          "0f6752683a15c6a1194e672d9f8c3069c0d98b327ffc08f366b2e195907c3e52": {
+            "candidate_parent_mean": 151.16733289048332,
+            "control_parent_mean": 151.56249573208333,
+            "gain": 0.0026072600592335214
+          },
+          "185ea83132a2858d21388cfc813b0132069479f2bc2afa648feff8f64a19e194": {
+            "candidate_parent_mean": 133.19040465008334,
+            "control_parent_mean": 134.55762559755,
+            "gain": 0.010160858155716022
+          },
+          "2206d4444e6c7e4133773de0629b8717c098ea4b7d535922a5f6626a48b2c0c3": {
+            "candidate_parent_mean": 137.07054872683332,
+            "control_parent_mean": 142.06980711359998,
+            "gain": 0.03518874621100326
+          },
+          "7121d28aadf8d4426b92fece4fde66bc7322b527403192aefed4c40178eb225a": {
+            "candidate_parent_mean": 153.10796457448336,
+            "control_parent_mean": 161.77919540628332,
+            "gain": 0.05359917145108498
+          },
+          "72ee5a3e580bd7f8653dd82f00fe44172abae7b84317a984a687db2bce805588": {
+            "candidate_parent_mean": 217.10800974851665,
+            "control_parent_mean": 241.34974716208333,
+            "gain": 0.10044235678144983
+          },
+          "f23ed849729f34fdec26bd8eb195e92c6e56806e54720b64b53412fd69706b15": {
+            "candidate_parent_mean": 169.52309921529996,
+            "control_parent_mean": 178.70466707376667,
+            "gain": 0.051378444720062574
+          }
+        },
+        "positive_parents": 11,
+        "negative_parents": 0
+      }
+    }
+  },
+  "route_changes_4096_vs_FrozenSL": {
+    "raw": {
+      "stop_set_changed": 66,
+      "visit_order_changed": 66,
+      "same_set_order_changed": 0
+    },
+    "H": {
+      "stop_set_changed": 66,
+      "visit_order_changed": 66,
+      "same_set_order_changed": 0
+    }
+  },
+  "data_admission": {
+    "full": 96,
+    "local": 256,
+    "old_label_hashes_match": true,
+    "full_label_saved_replay_and_validation_match": true,
+    "cross_seed_exposure_multisets_identical": true,
+    "same_per_seed_schedule_in_code": true
+  },
+  "stream_updates": {
+    "D5-PG": {
+      "actual_updates": 4096,
+      "logical_cursor_unique": true,
+      "weight_chain_continuous": true,
+      "episodes_per_update": 8,
+      "initial_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "final_tensor_sha": "669c86f736f2d08531634e4500ba7b1e144044445a37f8ccdaaf2122ce977c65"
+    },
+    "D5-SL": {
+      "actual_updates": 4096,
+      "logical_cursor_unique": true,
+      "weight_chain_continuous": true,
+      "episodes_per_update": 8,
+      "initial_tensor_sha": "1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e",
+      "final_tensor_sha": "f4847f230b718f468f9f2e37a4a16934d96c9ce18c83a12c2b747116387120a8"
+    }
+  },
+  "evaluation_exposure": {
+    "trained_parent_new_tasks_exposed_selection": {
+      "tasks": 48,
+      "parents": 8,
+      "parents_overlap_training": 8,
+      "exposed_for_development_selection": true
+    },
+    "independent_parent_exposed_development": {
+      "tasks": 18,
+      "parents": 3,
+      "parents_overlap_training": 0,
+      "exposed_for_development_selection": true
+    }
+  },
+  "P1_recomputed": {
+    "passed": false,
+    "status": "NO_DEVELOPMENT_SIGNAL"
+  },
+  "limitations": [
+    "Saved validation certificates were checked for internal consistency; geometry/mask replay was not rerun.",
+    "Actual PG task-to-schedule and all 32768 masks are covered by the separate saved-output audit, not independently reexecuted here.",
+    "Full-request times are observed development measurements with unequal input cache warmth, not deployment latency comparisons."
+  ]
+}

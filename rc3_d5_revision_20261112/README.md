@@ -2,7 +2,9 @@
 
 本目录是从`20478a4dde2888f86abb9526c9d39ab71a27ee52`建立的独立执行版本，run ID为`d5-data-revision-20261112-r1`。旧`rc3_decoder_program_20261111`的技术停止和P1—P5 NOT_RUN原字节保留。本目录的状态不能回填为旧版本已经执行。
 
-当前数据阶段已完成：96条新增完整10×10强教师覆盖96个训练物理父布局，旧256条局部教师文件不变；352个问题均通过当前Environment的完整动作重放。三seed各有4096×8共同日程，每批4完整、4局部，同seed的D5-PG、Full-PG和D5-SL读取同一日程。正式P1正在运行，完整结果以本目录最终报告和实际状态为准。
+当前数据阶段已完成：96条新增完整10×10强教师覆盖96个训练物理父布局，旧256条局部教师文件不变；352个问题均通过当前Environment的完整动作重放。三seed各有4096×8共同日程，每批4完整、4局部，同seed的D5-PG、Full-PG和D5-SL读取同一日程。**P1已完成：PG4096、SL-U4096；原固定终点门槛未通过，NO_DEVELOPMENT_SIGNAL→P6。** H后J父配对收益对FrozenSL为−2.6431%、对匹配SL-U为−3.7371%，SEL8/DEV3均负。P2—P5均NOT_RUN，本身份已封闭。
+
+[完整报告](EXPERIMENT_REPORT.md) · [给老师的短材料](TEACHER_DECISION_BRIEF.md) · [结果到主张](RESULT_TO_CLAIM.md) · [阶段状态](STAGE_RESULTS.json) · [模型索引](MODEL_INDEX.json) · [逐请求表](tables/COMPLETE_TASK_RESULTS.csv) · [资源账](RESOURCE_ACCOUNTING.json) · [独立复核](INDEPENDENT_NUMERICAL_AUDIT.json)
 
 ## 来源与参数
 

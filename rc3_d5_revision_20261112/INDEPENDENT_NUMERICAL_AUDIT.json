@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "checks": 449149,
+  "full_teachers_checked": 96,
+  "physical_full_parents": 96,
+  "old256_hashes_unchanged": true,
+  "unique_joint_tasks": 352,
+  "same_task_schedule_per_seed": true,
+  "actual_streams": {
+    "2026111101:D5-PG": {
+      "updates": 4096,
+      "complete": true,
+      "actual_trajectory_records": 32768,
+      "duplicate_actual_optimizer_updates": 0
+    },
+    "2026111101:D5-SL": {
+      "updates": 4096,
+      "complete": true,
+      "actual_trajectory_records": 0,
+      "duplicate_actual_optimizer_updates": 0
+    }
+  },
+  "actual_evaluation_grids": {
+    "2026111101_D5-PG_1024.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "2026111101_D5-PG_2048.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "2026111101_D5-PG_4096.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "2026111101_D5-SL-U_1024.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "2026111101_D5-SL-U_2048.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "2026111101_D5-SL-U_4096.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "baseline_Detour16.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "baseline_Fixed3.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    },
+    "baseline_FrozenSL.json": {
+      "requests": 66,
+      "valid": 66,
+      "physical_parents": 11
+    }
+  },
+  "actual_actor_exports": {
+    "streams/2026111101/D5-PG/step00000.actor.json": {
+      "role": "D5-PG",
+      "changed_tensors": [],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-PG/step01024.actor.json": {
+      "role": "D5-PG",
+      "changed_tensors": [
+        "key.weight",
+        "dynamic.weight",
+        "nav.weight",
+        "query.weight",
+        "query.bias"
+      ],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-PG/step02048.actor.json": {
+      "role": "D5-PG",
+      "changed_tensors": [
+        "key.weight",
+        "dynamic.weight",
+        "nav.weight",
+        "query.weight",
+        "query.bias"
+      ],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-PG/step04096.actor.json": {
+      "role": "D5-PG",
+      "changed_tensors": [
+        "key.weight",
+        "dynamic.weight",
+        "nav.weight",
+        "query.weight",
+        "query.bias"
+      ],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-SL/step00000.actor.json": {
+      "role": "D5-SL",
+      "changed_tensors": [],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-SL/step01024.actor.json": {
+      "role": "D5-SL",
+      "changed_tensors": [
+        "key.weight",
+        "dynamic.weight",
+        "nav.weight",
+        "query.weight",
+        "query.bias"
+      ],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-SL/step02048.actor.json": {
+      "role": "D5-SL",
+      "changed_tensors": [
+        "key.weight",
+        "dynamic.weight",
+        "nav.weight",
+        "query.weight",
+        "query.bias"
+      ],
+      "engineering_only": false
+    },
+    "streams/2026111101/D5-SL/step04096.actor.json": {
+      "role": "D5-SL",
+      "changed_tensors": [
+        "key.weight",
+        "dynamic.weight",
+        "nav.weight",
+        "query.weight",
+        "query.bias"
+      ],
+      "engineering_only": false
+    }
+  },
+  "actual_event_counts": {
+    "request_attempt": 33939,
+    "request_complete": 33938,
+    "optimizer_attempt": 8197,
+    "stream_optimizer_attempt": 8197,
+    "request_failure": 1
+  },
+  "new_forward_calls": 0,
+  "new_optimizer_attempts": 0,
+  "new_planning_or_H_or_native": 0,
+  "new_navigation_or_teacher": 0,
+  "scope": "New saved evidence only; no old historical CSV audit, original60 or oldS3 semantics",
+  "wall_s": 713.6535279000018
+}
