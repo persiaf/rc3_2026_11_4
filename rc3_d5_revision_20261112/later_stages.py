@@ -103,7 +103,7 @@ def deployment(budget):
     fast_budget(budget)
     if not read(HOME/'P3_DECISION.json')['passed']:raise PermissionError('P3 not passed')
     pool=Pool(budget);entries=methods();timing=timing_grid(budget,pool,entries,'development')
-    source=read(HOME/'SCIENTIFIC_SOURCE_BINDING.json')
+    source=read(HOME/read(HOME/'ACTIVE_EXECUTION_SOURCE.json')['binding']) if (HOME/'ACTIVE_EXECUTION_SOURCE.json').exists() else read(HOME/'SCIENTIFIC_SOURCE_BINDING.json')
     frozen=dict(identity=identity(),models=entries,source_sha256=source['source_sha256'],protocol_sha256=sha(HOME/'REVISION_PROTOCOL.json'),
         statistics=dict(bootstrap=20000,seed=2026111199),deployment_seed=2026111101,checkpoint=4096,
         optimization_rounds=0,reason='Production common immutable-input cache/model residency already implemented; no additional method-changing optimization',

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\worker.py", line 63, in <module>
+    p=argparse.ArgumentParser();p.add_argument('phase',choices=['data','joint-data','acceptance','reference','science','deployment','confirmation','final']);a=p.parse_args();main(a.phase)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\worker.py", line 55, in main
+    else:{'joint-data':science.validate_joint,'acceptance':science.acceptance,'reference':science.references,'science':science.pipeline}[phase](budget)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\science.py", line 76, in acceptance
+    b=policy_request(budget,pool,tid,f'acceptance:resume:restored:{slot}',clone.actor,purpose='engineering',folder='acceptance/records',generator=clone.sampling,seed=seed)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\runtime.py", line 38, in policy_request
+    tick=budget.begin_request(purpose,rid);stats=Counter();internal=None
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 80, in begin_request
+    if self.pool=='engineering' and self.counts['engineering_requests']>=60:raise RuntimeError('Remaining P0 request quota exhausted')
+RuntimeError: Remaining P0 request quota exhausted

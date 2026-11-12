@@ -5,18 +5,19 @@ from pathlib import Path
 from .common import ROOT,HOME,RUN,read,put,sha,state,Budget
 
 def main(phase):
-    binding_file=HOME/('DATA_SOURCE_BINDING.json' if phase=='data' else 'SCIENTIFIC_SOURCE_BINDING.json')
+    active=read(HOME/'ACTIVE_EXECUTION_SOURCE.json') if (HOME/'ACTIVE_EXECUTION_SOURCE.json').exists() else None
+    binding_file=HOME/('DATA_SOURCE_BINDING.json' if phase=='data' else active['binding'] if active else 'SCIENTIFIC_SOURCE_BINDING.json')
     b=read(binding_file)
     if not read(HOME/'AUTHORIZATION.json')['authorized'] or sha(HOME/'REVISION_PROTOCOL.json')!=read(HOME/'AUTHORIZATION.json')['protocol_sha256']:
         raise PermissionError('Revision authorization identity')
     if phase!='data':
-        authorization=read(HOME/'SCIENTIFIC_AUTHORIZATION.json')
+        authorization=read(HOME/active['authorization']) if active else read(HOME/'SCIENTIFIC_AUTHORIZATION.json')
         if not authorization['authorized'] or authorization['source_binding_sha256']!=sha(binding_file) or authorization['scientific_identity']!=b['scientific_identity']:
             raise PermissionError('Scientific source/authorization identity')
         for name,expected in b['revision_artifacts'].items():
             if sha(HOME/name)!=expected:raise ValueError('Scientific artifact identity changed: '+name)
         if phase not in ('joint-data',) and read(HOME/'JOINT_DATA_ADMISSION.json')['status']!='PASS':raise PermissionError('Joint data not admitted')
-        if phase not in ('joint-data','acceptance') and read(HOME/'TARGETED_ACCEPTANCE.json')['status']!='PASS':raise PermissionError('Remaining-P0 acceptance not passed')
+        if phase not in ('joint-data','acceptance','reference') and read(HOME/'TARGETED_ACCEPTANCE.json')['status']!='PASS':raise PermissionError('Remaining-P0 acceptance not passed')
         if phase=='science' and read(HOME/'REFERENCE_MANIFEST.json')['status']!='PASS':raise PermissionError('Frozen reference table not completed')
     for name,digest in b['source_sha256'].items():
         if name.startswith(HOME.name+'/') and sha(ROOT/name)!=digest:raise ValueError('Frozen revision source changed '+name)

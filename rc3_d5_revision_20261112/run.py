@@ -10,7 +10,8 @@ def launch(phase):
     limit=min(limit,345600-resource['wall']['total_s'])
     if limit<=40:raise RuntimeError('Insufficient approved remaining pool time')
     if phase!='data' and read(HOME/'FULL_TEACHER_MANIFEST.json')['status']!='PASS':raise PermissionError('Data not admitted')
-    if phase in ('reference','science') and read(HOME/'TARGETED_ACCEPTANCE.json')['status']!='PASS':raise PermissionError('Acceptance not passed')
+    if phase=='reference' and read(HOME/'JOINT_DATA_ADMISSION.json')['status']!='PASS':raise PermissionError('Joint data not admitted')
+    if phase=='science' and read(HOME/'TARGETED_ACCEPTANCE.json')['status']!='PASS':raise PermissionError('Acceptance not passed')
     if phase=='science' and read(HOME/'REFERENCE_MANIFEST.json')['status']!='PASS':raise PermissionError('Complete frozen-reference table required before P1')
     jobs=HOME/'controls';jobs.mkdir(exist_ok=True);attempt=len(list(jobs.glob(phase+'-*')))+1;job=f'{phase}-{attempt:02}'
     previous=read(HOME/'STATUS.json').get('active_job')
@@ -38,6 +39,8 @@ def advance():
         if not (HOME/'FULL_TEACHER_MANIFEST.json').exists() or read(HOME/'FULL_TEACHER_MANIFEST.json')['status']!='PASS':launch('data');continue
         if not (HOME/'SCIENTIFIC_SOURCE_BINDING.json').exists():raise RuntimeError('Scientific source must be frozen before targeted optimizer/scientific execution')
         if not (HOME/'JOINT_DATA_ADMISSION.json').exists():launch('joint-data');continue
+        if (HOME/'RECOVERY_ACCEPTANCE_PROTOCOL.json').exists() and (not (HOME/'REFERENCE_MANIFEST.json').exists() or read(HOME/'REFERENCE_MANIFEST.json')['status']!='PASS'):
+            launch('reference');continue
         if not (HOME/'TARGETED_ACCEPTANCE.json').exists():launch('acceptance');continue
         if read(HOME/'TARGETED_ACCEPTANCE.json')['status']!='PASS':print(read(HOME/'TARGETED_ACCEPTANCE.json'));return
         if not (HOME/'REFERENCE_MANIFEST.json').exists() or read(HOME/'REFERENCE_MANIFEST.json')['status']!='PASS':launch('reference');continue

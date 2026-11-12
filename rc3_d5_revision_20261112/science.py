@@ -35,6 +35,9 @@ def validate_joint(budget):
     budget.save();state(phase='ENGINEERING',status='JOINT352_ADMITTED',next_action='Targeted full8/resampled8 acceptance')
 
 def acceptance(budget):
+    if (HOME/'RECOVERY_ACCEPTANCE_PROTOCOL.json').exists():
+        from .recover_acceptance import run
+        return run(budget)
     if read(HOME/'JOINT_DATA_ADMISSION.json')['status']!='PASS':raise PermissionError('Joint352 labels not admitted')
     fast_budget(budget);pool=Pool(budget);seed=2026111101;ids=read(HOME/'schedules'/f'{seed}.json')['batches'][0]
     if read(HOME/'TARGETED_ACCEPTANCE_PROTOCOL.json')['new_request_cap']!=40:raise ValueError('Exact targeted protocol')

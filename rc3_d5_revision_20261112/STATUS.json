@@ -1,19 +1,22 @@
 {
   "run_id": "d5-data-revision-20261112-r1",
   "phase": "ENGINEERING",
-  "status": "DATA_PASS",
+  "status": "TECHNICAL_FAILURE_PRESERVED",
   "base_commit": "20478a4dde2888f86abb9526c9d39ab71a27ee52",
   "old_v1_status": "P6_TECHNICAL_DATA_INCOMPLETE",
   "old_v1_scientific_stages": "NOT_RUN",
   "new_execution": true,
-  "next_action": "Bind scientific sources and run targeted remaining-P0 acceptance",
+  "next_action": "Targeted full8/resampled8 acceptance",
   "scientific_result": null,
   "active_job": null,
-  "active_phase": "data",
-  "controller_pid": 24856,
+  "active_phase": "acceptance",
+  "controller_pid": 28976,
   "completed_full_teachers": 96,
   "current_task": "F095",
   "full_physical_parents": 96,
-  "last_job": "data-01",
-  "last_job_status": "COMPLETE"
+  "last_job": "acceptance-01",
+  "last_job_status": "WORKER_FAILED",
+  "failed_phase": "acceptance",
+  "failed_job": "acceptance-01",
+  "error": "RuntimeError('Remaining P0 request quota exhausted')"
 }
