@@ -41,7 +41,11 @@ write('EXPERIMENT_REPORT.md',f'''# D5完整教师修订：P1已完成，固定�
 
 正式起点为准确base-only SL256，文件SHA256 `60f5aa4e59983e92d565f0599823b710965cf2c96a041e7eb483d23a8eb0556c`，tensor SHA256 `1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e`。两流独立从该起点克隆，未使用P0或固定32诊断权重。五张量25152/65088标量可训练，其余39936冻结；Adam1e-4、clip1、batch8、熵0、完整gamma=1回报、H/mask/J不变，无Critic/A1幅度/永久贴近SL guard。原输入和评分路径可微，重建受影响key/cache。
 
+可学习评分改变合法候选的相对排序、采样和冻结后的贪心选择，进而改变停靠集合及访问顺序。F/A/D、任务转移、覆盖mask、端点与完成规则、导航来源和确定性H流程固定；冻结表示的参数不等于冻结随动作变化的前缀状态。评分训练不能修改这些约束或代替完整任务验证。
+
 PG真实在线采样32768条完整轨迹；SL-U使用同问题的32768条已有标签重放。更新共8192次。0/1024/2048/4096均保留实际Actor导出，0点质量复用准确SL256同期基线，没有挑中间模型。
+
+本机Ryzen7 7745HX（8核16逻辑），GPU为RTX4070Laptop8GB但本版未启用。实际科学环境为Python3.10.20、Torch2.12.1+cu126、NumPy2.2.6，device=cpu、Torch单线程、deterministic_algorithms=true；真实Torch来源检查GO，见[jobs/science-03/ENVIRONMENT.json](jobs/science-03/ENVIRONMENT.json)。没有购买或调用额外算力。
 
 工程初次计数器用途/阶段重名失败、P1 step740 Windows文件替换失败、step1771后的系统睡眠时钟维护均保留。最终工程为累计59请求、10次Actor尝试（包含旧15/5），未超原60/24。恢复精确继承模型、Adam、RNG、采样流、游标和预算，共复用11条同Actor完整轨迹；无跨Actor轨迹共享。真实多扣的失败请求与睡眠2363.847163秒不退款。R02/R03/R04B仅修计账、I/O和时钟接口，科学公式、数据与门槛未变。细节见[来源与计账口径](PROVENANCE_AND_ACCOUNTING_NOTES.md)、[740恢复](R03_ACTUAL_RECOVERY_RECEIPT.json)、[1771恢复](R04_ACTUAL_RECOVERY_RECEIPT.json)。
 

@@ -42,3 +42,11 @@ P1第一seed分别完成D5-PG4096、D5-SL-U4096，固定0/1024/2048/4096导出�
 ```
 
 它只核对本次新增产物，不重做历史大CSV审计。Git/LFS发布收据在本轮交付时绑定实际远端SHA与新增对象，不把缓存清理作为科学条件。
+
+## 发布验收
+
+本轮数据/模型结果提交为`a7b471bf62768cd9eadc1e377f2c9a942e280c7c`，科学运行源码提交为`f31cf3a71d2d28b6a5fe9b2c8f5fde7bc97afe09`。已从远端向全新独立缓存下载并逐一核对542个本轮新增LFS对象、1,153,742,108字节，含3个仅存在于中间提交的版本；当前树539个。主分支未合并，旧v1/关闭支线及用户文件未提交改动。
+
+[发布收据](PUBLICATION_RECEIPT.json) · [逐对象远端核对](LFS_REMOTE_READBACK.json) · [新增对象清单](LFS_NEW_OBJECT_INVENTORY.json) · [原字节/提交范围](PRESERVATION_CHECK.json) · [缓存维护记录](CACHE_MAINTENANCE_RECORD.json) · [最终资源结账](DELIVERY_ACCOUNTING_FINAL.json)。最后的发布元数据提交沿用同一组模型/LFS对象；其远端SHA在本轮最终答复核对。
+
+总墙钟账含科学实耗、全部中断和睡眠、后处理完整日历窗口及并行独立审查窗口。最终120秒元数据收尾按保守上界计费，明确区别于已实测运行；最早未测读取和未持久化细项继续UNKNOWN。未用缓存删除换取准入。
