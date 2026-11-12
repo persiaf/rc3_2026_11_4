@@ -1,0 +1,29 @@
+{
+  "schema": "targeted-D5-production-acceptance-r1",
+  "seed": 2026111101,
+  "new_request_cap": 40,
+  "new_Actor_attempt_cap": 4,
+  "carried_requests": 15,
+  "carried_Actor_attempts": 5,
+  "measured_PG_batch_size": 8,
+  "SL_batch_size": 8,
+  "restored_next_scheduled_batch_size": 8,
+  "checks": [
+    "new joint full/local teacher loader",
+    "one full8 PG batch including actual update and checkpoint",
+    "full8 SL gradient/frozen bytes",
+    "restore then independently sample the next scheduled8 on both branches, exact actions/masks/logprobs/raw/H",
+    "exact next full8 Adam update",
+    "fresh formal initialization role; no P0 weights",
+    "actual32-40 requests and4 optimizer accounting",
+    "measured4096 throughput fits8h"
+  ],
+  "initial_reference_requests": 8,
+  "resume_reference_requests_max": 8,
+  "online_initial_requests": 8,
+  "online_resumed_requests": 16,
+  "scope": "All inside remaining45 request/19 Actor P0 quota; no old P0 rerun or teacherTop1 gate",
+  "numerical_tolerance": "Actions/masks/logprobs/routes/metrics/weights/Adam/sampler exact; reward sum vs-J tolerance1e-7",
+  "checkpoint_timing": "Training timer includes required checkpoint/C export. Pure timing receipt own write excluded from stream matching, still charged in pool wall.",
+  "source_revision": "Production stages extend the registered data source; original data producer20bf35f40 and its binding remain archived"
+}

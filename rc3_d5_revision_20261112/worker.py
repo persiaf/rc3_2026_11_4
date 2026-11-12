@@ -9,9 +9,19 @@ def main(phase):
     b=read(binding_file)
     if not read(HOME/'AUTHORIZATION.json')['authorized'] or sha(HOME/'REVISION_PROTOCOL.json')!=read(HOME/'AUTHORIZATION.json')['protocol_sha256']:
         raise PermissionError('Revision authorization identity')
+    if phase!='data':
+        authorization=read(HOME/'SCIENTIFIC_AUTHORIZATION.json')
+        if not authorization['authorized'] or authorization['source_binding_sha256']!=sha(binding_file) or authorization['scientific_identity']!=b['scientific_identity']:
+            raise PermissionError('Scientific source/authorization identity')
+        for name,expected in b['revision_artifacts'].items():
+            if sha(HOME/name)!=expected:raise ValueError('Scientific artifact identity changed: '+name)
+        if phase not in ('joint-data',) and read(HOME/'JOINT_DATA_ADMISSION.json')['status']!='PASS':raise PermissionError('Joint data not admitted')
+        if phase not in ('joint-data','acceptance') and read(HOME/'TARGETED_ACCEPTANCE.json')['status']!='PASS':raise PermissionError('Remaining-P0 acceptance not passed')
+        if phase=='science' and read(HOME/'REFERENCE_MANIFEST.json')['status']!='PASS':raise PermissionError('Frozen reference table not completed')
     for name,digest in b['source_sha256'].items():
         if name.startswith(HOME.name+'/') and sha(ROOT/name)!=digest:raise ValueError('Frozen revision source changed '+name)
-    budget=Budget('data' if phase=='data' else 'engineering' if phase=='acceptance' else 'reference' if phase=='reference' else 'science',os.environ['D5_JOB_ID'])
+    pool_name='data' if phase in ('data','joint-data') else 'engineering' if phase=='acceptance' else 'reference' if phase=='reference' else 'deployment' if phase=='deployment' else 'independent' if phase in ('confirmation','final') else 'science'
+    budget=Budget(pool_name,os.environ['D5_JOB_ID'])
     try:
         from rc3_r04_m1_real_20261111.provenance_use import ScientificTracedProvenance,verify_real_environment
         trace=ScientificTracedProvenance(ROOT,budget.path,b,budget.check,RUN+'-'+phase);trace.install_import_guard()
@@ -39,7 +49,10 @@ def main(phase):
             if phase=='data':data.run_data(budget)
             else:
                 from . import science
-                {'acceptance':science.acceptance,'reference':science.references,'science':science.pipeline}[phase](budget)
+                if phase in ('deployment','confirmation','final'):
+                    from . import later_stages
+                    {'deployment':later_stages.deployment,'confirmation':later_stages.confirmation,'final':later_stages.final}[phase](budget)
+                else:{'joint-data':science.validate_joint,'acceptance':science.acceptance,'reference':science.references,'science':science.pipeline}[phase](budget)
         trace.check_loaded_modules();put(budget.path/'ACTUAL_DEPENDENCY_VERIFICATION.json',trace.summary())
         budget.close();print(dict(phase=phase,status='COMPLETE',job_wall_s=budget.elapsed(),counts=dict(budget.counts)),flush=True)
     except BaseException as exc:
@@ -47,4 +60,4 @@ def main(phase):
         state(status='TECHNICAL_FAILURE_PRESERVED',failed_phase=phase,failed_job=budget.job,error=repr(exc));raise
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('phase',choices=['data','acceptance','reference','science']);a=p.parse_args();main(a.phase)
+    p=argparse.ArgumentParser();p.add_argument('phase',choices=['data','joint-data','acceptance','reference','science','deployment','confirmation','final']);a=p.parse_args();main(a.phase)

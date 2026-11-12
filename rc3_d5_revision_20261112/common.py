@@ -43,6 +43,12 @@ class Budget:
         self.pool=pool;self.job=job;self.stage=pool;self.path=HOME/'jobs'/job;self.path.mkdir(parents=True,exist_ok=True)
         self.base=read(HOME/'RESOURCE_ACCOUNTING.json');self.counts=Counter(self.base['counts'])
         self.start_m=time.monotonic();self.start_w=time.time();self.ids=set();self.status='RUNNING'
+        events=HOME/'EVENTS.jsonl'
+        if events.exists():
+            with events.open(encoding='utf8') as f:
+                for line in f:
+                    e=json.loads(line)
+                    if e.get('event')=='request_attempt':self.ids.add(e['request_id'])
         self.check();self.save()
     def elapsed(self):return max(time.monotonic()-self.start_m,time.time()-self.start_w)
     def check(self):
@@ -72,7 +78,7 @@ class Budget:
     def begin_request(self,purpose,rid):
         if purpose not in ('teacher','reference','train','eval','engineering','deployment','confirmation','final'):raise ValueError('Exact request purpose')
         if self.pool=='engineering' and self.counts['engineering_requests']>=60:raise RuntimeError('Remaining P0 request quota exhausted')
-        self.debit('requests',limit=300000);self.counts[purpose+'_requests']+=1
+        self.debit('requests',limit=300000);self.counts[purpose+'_requests']+=1;self.ids.add(rid)
         if self.pool=='engineering':self.counts['engineering_requests']+=1
         self.event('request_attempt',request_id=rid,purpose=purpose,attempt_number=self.counts['requests']);self.save();return time.perf_counter()
     def complete(self,purpose,rid,record,tick,folder):

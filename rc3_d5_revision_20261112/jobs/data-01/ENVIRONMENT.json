@@ -1,0 +1,37 @@
+{
+  "actual_stage": "data",
+  "environment": {
+    "python": "3.10.20",
+    "torch": "2.12.1+cu126",
+    "numpy": "2.2.6",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "real_Torch_classifier": {
+    "status": "GO",
+    "used_for_scientific_attempt": true,
+    "classifier_revision": "ModuleSpec_SourceFileLoader_v1",
+    "virtual_namespaces": [
+      {
+        "module": "torch.ops",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      },
+      {
+        "module": "torch.classes",
+        "kind": "skip",
+        "reason": "virtual_or_non_source_namespace_without_ModuleSpec"
+      }
+    ],
+    "project_sources": [
+      {
+        "module": "data",
+        "path": "rc3_d5_revision_20261112/data.py",
+        "sha256": "a8440a1df40e238f1e4c44e361aa4edf58f07bf450e21cf30765735a8177a1b0",
+        "classification_reason": "real_ModuleSpec_SourceFileLoader_consistent_source"
+      }
+    ]
+  },
+  "note": "Inherited used_for_scientific_attempt classifier flag is generic; actual role is actual_stage"
+}
