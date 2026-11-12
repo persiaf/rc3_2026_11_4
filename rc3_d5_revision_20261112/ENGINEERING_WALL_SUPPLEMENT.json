@@ -1,0 +1,40 @@
+{
+  "schema": "d5-manual-engineering-wall-supplement-r1",
+  "status": "REGISTERED_PENDING_MERGE_AFTER_ACTIVE_WORKER_EXIT",
+  "interval_start_utc": "2026-11-12T01:53:13.090533+00:00",
+  "interval_end_utc": "2026-11-12T03:08:11.500633+00:00",
+  "elapsed_s": 4498.410099983215,
+  "already_charged_supervised_s": 618.5818753242493,
+  "engineering_s_to_add": 3879.828224658966,
+  "supervised_receipts": [
+    {
+      "job": "acceptance-01",
+      "excluded_already_charged_s": 23.596238136291504,
+      "receipt_sha256": "e85c5d43ad90028fd3f2aae3e6a58e10e7fc29253ca5033821d375e5667d0675"
+    },
+    {
+      "job": "acceptance-02",
+      "excluded_already_charged_s": 24.564046144485474,
+      "receipt_sha256": "e2c4f7de80acf48c3ac59acb5bec260b25e76808b8ffb85916af38d43e7d8760"
+    },
+    {
+      "job": "data-01",
+      "excluded_already_charged_s": 114.64608001708984,
+      "receipt_sha256": "b94beccbab0478715afc233e7c270a411261c6a6f54c06ec8eedeb1a9142a0c3"
+    },
+    {
+      "job": "joint-data-01",
+      "excluded_already_charged_s": 218.82129788398743,
+      "receipt_sha256": "e2b483eb7ba85542cd1c92858d46cc3a949f0b982b9a1cd482acf4f3bdc3e6cb"
+    },
+    {
+      "job": "reference-01",
+      "excluded_already_charged_s": 236.95421314239502,
+      "receipt_sha256": "6759ea93db2682addf7c7adfff2fba409c69a26f4c4737d03770f5bb92546597"
+    }
+  ],
+  "method": "Conservative full elapsed setup interval from earliest persisted new source until science supervisor creation, excluding supervisor intervals already charged. Earlier unrecorded preliminary read time is UNKNOWN, not zero.",
+  "does_not_change_any_actor_or_scientific_time_target": true,
+  "global_wall_limit_unchanged_s": 345600,
+  "engineering_wall_limit_unchanged_s": 21600
+}

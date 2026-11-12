@@ -1,0 +1,42 @@
+{
+  "status": "REGISTERED_BEFORE_IO_TEST_AND_SCIENCE_RESUME",
+  "root_cause": "Windows sharing denial of atomic replace; exact committed740 checkpoint and3 saved same-actor trajectories survive",
+  "same_root_repair_number": 1,
+  "max_same_root_repairs": 2,
+  "source_before_sha256": {
+    "common.py": "72571225fb0b5a0e064d2a8e61264d4998a9f4fc069b32e26e3ae8459564ca41",
+    "worker.py": "a2321bbc95da2e3244c679c944764036abb1f9936efad17b5d5ac5580ff7da9a"
+  },
+  "primitive": "Same fsynced pending JSON only; atomic os.replace, original destination preserved until success",
+  "delays_s": [
+    0,
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.16,
+    0.32
+  ],
+  "retry_only_winerrors": [
+    5,
+    32,
+    33
+  ],
+  "no_ACL_or_permission_override": true,
+  "io_test": {
+    "wall_limit_s": 10,
+    "new_requests": 0,
+    "new_Actor": 0,
+    "new_forward": 0,
+    "new_H": 0,
+    "real_Windows_read_share_conflict": true
+  },
+  "failed_request_kept": true,
+  "new_failed_requests": 1,
+  "actual_Actor_attempts_before": 750,
+  "actual_scientific_updates": 740,
+  "restore": "Same original scientific identity, model, Adam, all RNG, cursor740 and saved same-actor3 traces. Retry only missing scheduled slots; no free attempts or wall refund.",
+  "original8h_stream_and96h300000_limits_unchanged": true,
+  "scientific_method_protocol_schedule_and_thresholds_unchanged": true,
+  "historical_failure_snapshot": "rc3_d5_revision_20261112/source_revisions/io_failure01"
+}

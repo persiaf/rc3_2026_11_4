@@ -16,7 +16,19 @@ def put(p,v,replace=False):
     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True);tmp=p.with_name(p.name+'.pending') if replace else p
     with tmp.open('w' if replace else 'x',encoding='utf8',newline='\n') as f:
         json.dump(v,f,ensure_ascii=False,indent=2,allow_nan=False,default=_json_default);f.write('\n');f.flush();os.fsync(f.fileno())
-    if replace:os.replace(tmp,p)
+    if replace:
+        # A concurrent Windows reader can briefly deny delete sharing. Keep the
+        # atomic destination intact and retry this exact completed write only.
+        delays=(0.,.01,.02,.04,.08,.16,.32)
+        for attempt,delay in enumerate(delays):
+            if delay:time.sleep(delay)
+            try:
+                os.replace(tmp,p)
+                break
+            except OSError as exc:
+                if getattr(exc,'winerror',None) not in (5,32,33) or attempt==len(delays)-1:raise
+                append(HOME/'ATOMIC_IO_RETRIES.jsonl',dict(path=p.relative_to(ROOT).as_posix(),attempt=attempt+1,
+                    winerror=exc.winerror,next_delay_s=delays[attempt+1],wall_unix_s=time.time(),operation='replace_same_fsynced_pending_file'))
 def append(p,v):
     p=Path(p);p.parent.mkdir(parents=True,exist_ok=True)
     with p.open('a',encoding='utf8',newline='\n') as f:f.write(json.dumps(v,ensure_ascii=False,allow_nan=False,default=_json_default)+'\n');f.flush();os.fsync(f.fileno())

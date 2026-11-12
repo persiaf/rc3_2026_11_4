@@ -1,0 +1,58 @@
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 32, 'train_s': 168.881, 'compute_s': 413.179}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 64, 'train_s': 340.646, 'compute_s': 584.944}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 96, 'train_s': 481.497, 'compute_s': 725.795}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 128, 'train_s': 580.713, 'compute_s': 825.011}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 160, 'train_s': 671.54, 'compute_s': 915.838}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 192, 'train_s': 759.455, 'compute_s': 1003.753}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 224, 'train_s': 848.494, 'compute_s': 1092.792}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 256, 'train_s': 939.965, 'compute_s': 1184.263}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 288, 'train_s': 1020.56, 'compute_s': 1264.858}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 320, 'train_s': 1099.933, 'compute_s': 1344.231}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 352, 'train_s': 1179.565, 'compute_s': 1423.863}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 384, 'train_s': 1278.024, 'compute_s': 1522.322}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 416, 'train_s': 1362.612, 'compute_s': 1606.91}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 448, 'train_s': 1444.154, 'compute_s': 1688.452}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 480, 'train_s': 1529.566, 'compute_s': 1773.864}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 512, 'train_s': 1621.557, 'compute_s': 1865.855}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 544, 'train_s': 1722.496, 'compute_s': 1966.794}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 576, 'train_s': 1819.772, 'compute_s': 2064.07}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 608, 'train_s': 1908.967, 'compute_s': 2153.265}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 640, 'train_s': 1991.513, 'compute_s': 2235.811}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 672, 'train_s': 2068.56, 'compute_s': 2312.858}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 704, 'train_s': 2150.74, 'compute_s': 2395.038}
+{'phase': 'TRAIN', 'seed': 2026111101, 'role': 'D5-PG', 'update': 736, 'train_s': 2227.782, 'compute_s': 2472.08}
+Traceback (most recent call last):
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\worker.py", line 56, in main
+    else:{'joint-data':science.validate_joint,'acceptance':science.acceptance,'reference':science.references,'science':science.pipeline}[phase](budget)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\science.py", line 252, in pipeline
+    pg=train_stream(budget,pool,'D5-PG',seed)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\science.py", line 215, in train_stream
+    out=policy_request(budget,pool,tid,f'{seed}:{role}:{op}:{slot}',t.actor,purpose='train',folder=f'streams/{seed}/{role}',generator=gen,seed=seed)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\runtime.py", line 38, in policy_request
+    tick=budget.begin_request(purpose,rid);stats=Counter();internal=None
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 85, in begin_request
+    self.event('request_attempt',request_id=rid,purpose=purpose,attempt_number=self.counts['requests']);self.save();return time.perf_counter()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 68, in save
+    put(HOME/'RESOURCE_ACCOUNTING.json',value,True)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 19, in put
+    if replace:os.replace(tmp,p)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_d5_revision_20261112\\RESOURCE_ACCOUNTING.json.pending' -> 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_d5_revision_20261112\\RESOURCE_ACCOUNTING.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\worker.py", line 64, in <module>
+    p=argparse.ArgumentParser();p.add_argument('phase',choices=['data','joint-data','acceptance','reference','science','deployment','confirmation','final']);a=p.parse_args();main(a.phase)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\worker.py", line 60, in main
+    budget.close('FAILED_PRESERVED');put(budget.path/'FAILURE.json',dict(error=repr(exc),traceback=traceback.format_exc(),resources=budget.snapshot()))
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 98, in close
+    def close(self,status='COMPLETE'):self.status=status;self.save()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 68, in save
+    put(HOME/'RESOURCE_ACCOUNTING.json',value,True)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_d5_revision_20261112\common.py", line 19, in put
+    if replace:os.replace(tmp,p)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_d5_revision_20261112\\RESOURCE_ACCOUNTING.json.pending' -> 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_d5_revision_20261112\\RESOURCE_ACCOUNTING.json'
