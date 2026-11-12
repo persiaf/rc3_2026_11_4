@@ -21,12 +21,12 @@ class Trainer(OriginalTrainer):
     def __init__(self,actor,budget,seed,sampling,engineering=False):
         super().__init__(actor,budget,identity());self.seed=seed;self.sampling=sampling;self.engineering=engineering
         self.ledger=StreamLedger(budget,seed,actor.role,engineering,self)
-        self.train_s=0.;self.extra_attempts=0
+        self.train_s=0.;self.training_awake_s=0.;self.extra_attempts=0
     def save_current(self,folder,keep=False):
         folder.mkdir(parents=True,exist_ok=True)
         payload=dict(schema='d5-revision-training-r1',identity=self.identity,role=self.actor.role,seed=self.seed,engineering_only=self.engineering,
             model=copy.deepcopy(self.actor.state_dict()),optimizer=copy.deepcopy(self.optimizer.state_dict()),revision=self.actor.revision,
-            cursor=self.cursor,used=sorted(self.used),rng=rng(),sampling_state=generator_text(self.sampling),train_s=self.train_s,
+            cursor=self.cursor,used=sorted(self.used),rng=rng(),sampling_state=generator_text(self.sampling),train_s=self.train_s,training_awake_s=self.training_awake_s,
             counts=copy.deepcopy(dict(self.ledger.counts)),request_ids=sorted(self.ledger.ids),extra_attempts=self.extra_attempts)
         pointer=folder/'LATEST.json';prior=read(pointer) if pointer.exists() else None
         slot=1 if prior and Path(prior['path']).name=='LATEST_0.pt' else 0
@@ -51,10 +51,16 @@ class Trainer(OriginalTrainer):
         if not set(p['request_ids'])<=self.ledger.ids:raise ValueError('Checkpoint query history absent from durable attempt journal')
         self.actor.load_state_dict(p['model']);self.actor.revision=p['revision'];self.actor.cache_epoch+=1
         self.optimizer.load_state_dict(p['optimizer']);self.actor.validate_optimizer(self.optimizer)
-        self.cursor=p['cursor'];self.used=set(p['used']);self.train_s=p['train_s'];self.extra_attempts=p['extra_attempts'];set_rng(p['rng']);restore_generator(self.sampling,p['sampling_state'])
+        self.cursor=p['cursor'];self.used=set(p['used']);self.train_s=p['train_s'];self.training_awake_s=p.get('training_awake_s');self.extra_attempts=p['extra_attempts'];set_rng(p['rng']);restore_generator(self.sampling,p['sampling_state'])
         timer=path.parent/'TRAINING_TIME.json'
         if timer.exists():
             ts=read(timer)
-            if ts['cursor']==self.cursor and ts.get('checkpoint_sha256')==entry['sha256']:self.train_s=ts['train_s']
+            if ts['cursor']==self.cursor and ts.get('checkpoint_sha256')==entry['sha256']:
+                self.train_s=ts['train_s'];self.training_awake_s=ts.get('training_awake_s',self.training_awake_s)
+        if self.training_awake_s is None:
+            migration=read(HOME/'R04_TIMING_MIGRATION_RECEIPT.json')
+            if migration['checkpoint_sha256']!=entry['sha256'] or migration['cursor']!=self.cursor or abs(migration['original_stream_wall_s']-self.train_s)>1e-8:
+                raise ValueError('Legacy checkpoint needs exact registered timing migration; no guessed refund')
+            self.training_awake_s=self.train_s-migration['official_historical_sleep_s']
         if not self.actor.full and self.actor.frozen_digest()!=self.actor.initial_frozen_digest:raise ValueError('Restored frozen representation')
         return p

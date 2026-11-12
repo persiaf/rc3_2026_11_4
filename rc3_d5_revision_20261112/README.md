@@ -9,7 +9,7 @@
 - [登记协议](REVISION_PROTOCOL.json)、[96问题身份](FULL_TASK_REGISTRATION.json)、[完整教师来源](FULL_TEACHER_MANIFEST.json)、[联合索引](JOINT_DATA_INDEX.json)、[共同日程和使用次数](SCHEDULE_EXPOSURE.json)。教师为原Detour16强教师加固定公共H；PG不读取教师动作作为提示。
 - D5只更新`key.weight`、`dynamic.weight`、`nav.weight`、`query.weight`、`query.bias`，25152/65088个标量。表示和prefix GRU冻结；使用原Actor输入、评分和mask，不使用detached206残差入口。
 - 正式流从准确SL256独立克隆。Adam学习率1e-4、裁剪1、每批8条、完整gamma=1回报、熵权重0；没有A1幅度/永久SL guard或Critic。五张量PG损失为`mean(detach(J_sample_H-J_FrozenSL_same_problem_H) * sum(logpi))`，同问题FrozenSL参考永久冻结。
-- [原始科学身份](SCIENTIFIC_IDENTITY.json)与[当前执行源码](ACTIVE_EXECUTION_SOURCE.json)分开保存。R02仅修复用途/阶段计数器重名，不修改模型、更新公式、数据、日程或门槛。原失败、错误计数原件和[无退款核正收据](COUNTER_CORRECTION_RECEIPT.json)保留。
+- [原始科学身份](SCIENTIFIC_IDENTITY.json)与[当前执行源码](ACTIVE_EXECUTION_SOURCE.json)分开保存。R02修复用途/阶段计数器重名，R03修复Windows原子文件替换，R04B分开累计墙钟和SL-C活跃计算匹配时钟并兼容系统事件时间戳。模型、更新公式、数据、日程和质量门槛不变。原失败、错误计数原件和[无退款核正收据](COUNTER_CORRECTION_RECEIPT.json)保留；系统睡眠不从总账或8h流预算退款。
 
 ## 实际命令与恢复
 

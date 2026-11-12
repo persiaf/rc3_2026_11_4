@@ -1,0 +1,16 @@
+{
+  "status": "FROZEN_BEFORE_CLOCK_TEST_AND_RESUME",
+  "scope": "Only timing metadata and exact recovery; inherited optimizer update math unchanged",
+  "registered_maintenance_stop_sha256": "c1859a9c76cd64bb032b1458cef2dd40f20675302e58a28f06222de3898f4c51",
+  "clock_test_wall_limit_s": 10,
+  "awake_measurement": "Windows QueryUnbiasedInterruptTime; includes awake I/O and processing, excludes system low power",
+  "interrupted_batch_time": "Exact previous batch UTC start to confirmed supervisor exit minus union of official sleep-event overlaps; metadata query failure means INCOMPLETE, not assumed zero",
+  "all_budget_guards": "Original total96h, pools and per-stream8h continue using all elapsed wall including sleep, without refund",
+  "matching": "Only SL-C target/selection use awake training wall plus unchanged exact same-task reference allocation; original2% tolerance",
+  "recovered_current_actor_episodes": 8,
+  "repeated_teacher_or_navigation": 0,
+  "new_optimizer_configuration": false,
+  "new_forward_or_optimizer_for_clock_test": 0,
+  "incomplete_forward_backward_tail_after_maintenance": "UNKNOWN; completed optimizer attempts and all wall charged, never filled with zero",
+  "no_quality_gate_endpoint_model_data_schedule_reward_mask_H_change": true
+}

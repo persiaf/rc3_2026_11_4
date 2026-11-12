@@ -144,12 +144,12 @@ def save_C_candidate(t,folder):
     return dict(path=slot.relative_to(ROOT).as_posix(),sha256=sha(slot),role=t.actor.role,engineering_only=False,cursor=t.cursor)
 
 def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
+    from .clocking import awake_clock,prior_batch_awake_s
     schedule=read(HOME/'schedules'/f'{seed}.json')['batches'];base=HOME/'streams'/str(seed)/role;base.mkdir(parents=True,exist_ok=True)
-    setup_start=time.perf_counter();setup_wall=time.time()
+    setup_start=time.perf_counter();setup_wall=time.time();setup_awake=awake_clock()
     gen=sample_generator(seed);t=Trainer(new_actor(role,budget),budget,seed,gen,False);latest=base/'LATEST.json'
     if latest.exists():t.restore_current(read(latest))
     else:t.save_current(base,True)
-    setup_s=max(time.perf_counter()-setup_start,time.time()-setup_wall)
     pending_file=base/'ACTIVE_BATCH.json'
     if pending_file.exists():
         pending=read(pending_file)
@@ -162,13 +162,23 @@ def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
                 ended=datetime.datetime.fromisoformat(receipt['finish_utc'].replace('Z','+00:00')).timestamp()
                 charges[old_job]=max(0.,ended-pending['batch_started_wall_s'])
                 pending['recovery_training_s']=charges;put(pending_file,pending,True)
-            if pending['op']>t.cursor:t.train_s+=sum(charges.values())
+            awake_charges=pending.get('recovery_awake_s',{})
+            if set(charges)-set(awake_charges)-{old_job}:raise RuntimeError('Older interrupted batch lacks exact awake-time evidence; matching INCOMPLETE')
+            if old_job not in awake_charges:
+                ended=datetime.datetime.fromisoformat(receipt['finish_utc'].replace('Z','+00:00')).timestamp()
+                awake_charges[old_job]=prior_batch_awake_s(pending['batch_started_wall_s'],ended,budget.path/('RECOVERY_SLEEP_'+old_job+'.json'))
+                pending['recovery_awake_s']=awake_charges;put(pending_file,pending,True)
+            if pending['op']>t.cursor:
+                t.train_s+=sum(charges.values());t.training_awake_s+=sum(awake_charges.values())
             elif pending['op']==t.cursor:
                 timer=read(base/'TRAINING_TIME.json') if (base/'TRAINING_TIME.json').exists() else {}
                 if timer.get('cursor')!=t.cursor or timer.get('checkpoint_sha256')!=read(latest)['sha256']:
                     t.train_s=max(t.train_s,pending['stream_before_s']+charges[old_job])
+                    if 'stream_before_awake_s' not in pending:raise RuntimeError('Committed legacy batch lacks precise awake-timer recovery')
+                    t.training_awake_s=max(t.training_awake_s,pending['stream_before_awake_s']+awake_charges[old_job])
     refs=None if role=='D5-SL' else References(pool,budget)
     summaryfile=base/'STREAM_SUMMARY.json';summary=read(summaryfile) if summaryfile.exists() else dict(role=role,seed=seed,updates=0,reference_allocation_s=0 if refs is None else reference_allocation(),endpoints={},SL_C=None)
+    setup_s=max(time.perf_counter()-setup_start,time.time()-setup_wall);setup_awake_s=awake_clock()-setup_awake
     # A crash at an evaluation point must finish that exact point before any
     # later optimizer opportunity; never silently skip a registered endpoint.
     for point in (1024,2048,4096):
@@ -182,7 +192,7 @@ def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
             summary['endpoints'][str(point)]=e;put(summaryfile,summary,summaryfile.exists())
         evaluation.evaluate(budget,pool,'D5-SL-U' if role=='D5-SL' else role,seed,point,entry=e)
     if summary.get('complete') and (role!='D5-SL' or not until_C or summary.get('C_complete')):return summary
-    t.train_s+=setup_s
+    t.train_s+=setup_s;t.training_awake_s+=setup_awake_s
     if t.cursor==0 and '0' not in summary['endpoints']:
         summary['endpoints']['0']=save_export(t,base,'step00000');put(summaryfile,summary,summaryfile.exists())
     max_updates=16384 if role=='D5-SL' and until_C else 4096
@@ -190,9 +200,9 @@ def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
     activefile=base/'ACTIVE_BATCH.json';cstatefile=base/'SL_C_TIME_STATE.json';cstate=read(cstatefile) if cstatefile.exists() else dict(entry=summary.get('SL_C'),train_s=None)
     prior_C=cstate['entry']
     while t.cursor<max_updates:
-        if role=='D5-SL' and t.cursor>=4096 and t.train_s>=sl_time_target:break
+        if role=='D5-SL' and t.cursor>=4096 and t.training_awake_s>=sl_time_target:break
         if t.train_s+summary['reference_allocation_s']>=28780:raise TimeoutError('Per-stream8h cumulative boundary with mandatory closeout reserve')
-        op=t.cursor+1;ids=schedule[(op-1)%4096];start=time.perf_counter();start_w=time.time();before_hash=tensor_digest(t.actor.state_dict())
+        op=t.cursor+1;ids=schedule[(op-1)%4096];start=time.perf_counter();start_w=time.time();start_awake=awake_clock();before_hash=tensor_digest(t.actor.state_dict())
         root_check=budget.check;prior_stream_s=t.train_s
         def stream_check():
             root_check()
@@ -203,7 +213,7 @@ def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
         if active and (active['op']!=op or active['actor_tensor_sha256']!=before_hash or active['task_ids']!=ids):raise ValueError('Active batch identity mismatch')
         if active is None:
             active=dict(op=op,actor_tensor_sha256=before_hash,task_ids=ids,episodes=[],sampling_before=generator_text(gen),recovery_training_s={})
-        active.update(job=budget.job,batch_started_wall_s=time.time(),stream_before_s=t.train_s);put(activefile,active,activefile.exists())
+        active.update(job=budget.job,batch_started_wall_s=time.time(),stream_before_s=t.train_s,stream_before_awake_s=t.training_awake_s);put(activefile,active,activefile.exists())
         episodes=[]
         if role=='D5-SL':
             for slot,tid in enumerate(ids):episodes.append(teacher_episode(budget,pool,t.actor,tid,f'{seed}:{role}:{op}:{slot}'))
@@ -217,16 +227,19 @@ def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
                 ep['reference_J_H']=refs.get(tid);episodes.append(ep)
         # Actual replayed optimizer attempts beyond a committed cursor are charged;
         # data collection is not repeated when the source-matched episode survived.
-        prior_time=t.train_s;t.update(episodes);t.train_s=prior_time+max(time.perf_counter()-start,time.time()-start_w)
+        prior_time=t.train_s;prior_awake=t.training_awake_s;t.update(episodes);t.train_s=prior_time+max(time.perf_counter()-start,time.time()-start_w)
+        t.training_awake_s=prior_awake+awake_clock()-start_awake
         cp=t.save_current(base,keep=t.cursor%128==0)
-        candidate=save_C_candidate(t,base) if role=='D5-SL' and prior_time<=sl_time_target else None
+        candidate=save_C_candidate(t,base) if role=='D5-SL' and prior_awake<=sl_time_target else None
         t.train_s=prior_time+max(time.perf_counter()-start,time.time()-start_w)
-        if candidate is not None and t.train_s<=sl_time_target:
-            prior_C=candidate;cstate=dict(entry=candidate,train_s=t.train_s);put(cstatefile,cstate,cstatefile.exists())
+        t.training_awake_s=prior_awake+awake_clock()-start_awake
+        if candidate is not None and t.training_awake_s<=sl_time_target:
+            prior_C=candidate;cstate=dict(entry=candidate,train_s=t.training_awake_s,stream_wall_s=t.train_s);put(cstatefile,cstate,cstatefile.exists())
         # Persist timer including checkpoint cost; tensor/Adam state is unchanged.
-        put(base/'TRAINING_TIME.json',dict(cursor=t.cursor,checkpoint_sha256=cp['sha256'],train_s=t.train_s,reference_allocation_s=summary['reference_allocation_s'],
+        put(base/'TRAINING_TIME.json',dict(cursor=t.cursor,checkpoint_sha256=cp['sha256'],train_s=t.train_s,training_awake_s=t.training_awake_s,reference_allocation_s=summary['reference_allocation_s'],
             boundary='Preparation,own collection/teacher replay,backward,clip,Adam,LATEST checkpoint and C candidate export. Timing receipt own write is research logging, in pool wall.'), (base/'TRAINING_TIME.json').exists())
-        summary.update(updates=t.cursor,train_s=t.train_s,training_compute_s=t.train_s+summary['reference_allocation_s'],SL_C=prior_C)
+        stream_check()
+        summary.update(updates=t.cursor,train_s=t.train_s,training_awake_s=t.training_awake_s,training_compute_s=t.training_awake_s+summary['reference_allocation_s'],SL_C=prior_C)
         budget.check=root_check
         if t.cursor in (1024,2048,4096):
             entry=save_export(t,base,f'step{t.cursor:05}');summary['endpoints'][str(t.cursor)]=entry;put(summaryfile,summary,summaryfile.exists())
@@ -236,14 +249,14 @@ def train_stream(budget,pool,role,seed,*,sl_time_target=None,until_C=False):
             put(summaryfile,summary,summaryfile.exists());state(phase=phase,
                 status='TRAINING',seed=seed,role=role,update=t.cursor,train_s=t.train_s,training_compute_s=summary['training_compute_s'])
             print(dict(phase='TRAIN',seed=seed,role=role,update=t.cursor,train_s=round(t.train_s,3),compute_s=round(summary['training_compute_s'],3)),flush=True)
-    summary.update(complete=t.cursor>=4096,updates=t.cursor,train_s=t.train_s,training_compute_s=t.train_s+summary['reference_allocation_s'],SL_C=prior_C)
+    summary.update(complete=t.cursor>=4096,updates=t.cursor,train_s=t.train_s,training_awake_s=t.training_awake_s,training_compute_s=t.training_awake_s+summary['reference_allocation_s'],SL_C=prior_C)
     if role=='D5-SL':
         if prior_C is not None:
             # C selection follows elapsed training time only, not quality.
             ctime=cstate['train_s']
             summary['compute_ratio']=ctime/sl_time_target;summary['compute_matched']=abs(ctime/sl_time_target-1)<=.02
         else:summary.update(compute_ratio=None,compute_matched=False)
-        summary['C_complete']=t.train_s>=sl_time_target or t.cursor>=16384
+        summary['C_complete']=t.training_awake_s>=sl_time_target or t.cursor>=16384
     put(summaryfile,summary,summaryfile.exists());return summary
 
 def pipeline(budget):

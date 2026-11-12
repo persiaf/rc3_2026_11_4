@@ -16,6 +16,8 @@ def main(phase):
             raise PermissionError('Scientific source/authorization identity')
         if authorization.get('requires_R03_IO_acceptance_PASS') and read(HOME/'R03_IO_ACCEPTANCE.json')['status']!='PASS':
             raise PermissionError('R03 bounded real IO acceptance has not passed')
+        if authorization.get('requires_R04_clock_acceptance_PASS') and read(HOME/'R04_CLOCK_ACCEPTANCE.json')['status']!='PASS':
+            raise PermissionError('R04 actual clock acceptance has not passed')
         for name,expected in b['revision_artifacts'].items():
             if sha(HOME/name)!=expected:raise ValueError('Scientific artifact identity changed: '+name)
         if phase not in ('joint-data',) and read(HOME/'JOINT_DATA_ADMISSION.json')['status']!='PASS':raise PermissionError('Joint data not admitted')
