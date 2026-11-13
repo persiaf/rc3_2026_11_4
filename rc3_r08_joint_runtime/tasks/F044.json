@@ -1,0 +1,749 @@
+{
+  "task": {
+    "id": "F044",
+    "parent": 44,
+    "spec": {
+      "case": 44,
+      "parent": 44,
+      "map_seed": 10000000044,
+      "task_seed": 11000000352,
+      "width": 10,
+      "height": 10,
+      "x0": 0,
+      "y0": 0,
+      "endpoints": "closed_depot",
+      "A_condition": 2,
+      "role": "train",
+      "mode": "mixed"
+    },
+    "physical_key": "65ca4fa85a6f5d56e8479809a8647e7648113d16be4be73203e572d371c5046f",
+    "expected_parent_identity": "6ff9745a685579915ecbc9a1c55844cf20514c32c0832123681a7cd615155555",
+    "input_files": {
+      "arrays": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000044_11000000352_A2/arrays.npz",
+        "sha256": "2cda2ba367644efa96b4ea044f1962c8ecb9ea0cc6ecfaf512d4407cb8f4c1ea"
+      },
+      "navigation": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/65ca4fa85a6f5d56e8479809a8647e7648113d16be4be73203e572d371c5046f.npz",
+        "sha256": "c102d41cc7f4933cc6f72a328278f5dc73437a95185c9ce9d2d50a77bc6eb95c"
+      },
+      "navigation_receipt": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/65ca4fa85a6f5d56e8479809a8647e7648113d16be4be73203e572d371c5046f.json",
+        "sha256": "cb3e4708a19c3d54e81f980c215722d57e83bc9c689040d0d0b598ded4311e70"
+      },
+      "receipt": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000044_11000000352_A2/receipt.json",
+        "sha256": "8f314a52b7b912855eb9197fdcf892577deef8a844fcdf969ef9d61f2b9b5a25"
+      },
+      "scene": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000044_11000000352_A2/scene.json",
+        "sha256": "22c21e260cc867ec3d3333c1a082f630faf0ef89cc408a1232136a5a195f345c"
+      }
+    },
+    "selection": "Minimum original teacher index within each registered training parent; no cost used",
+    "source_teacher_metadata_index": 44,
+    "size": "10x10"
+  },
+  "anchor": {
+    "record": {
+      "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+      "offset": 11731202,
+      "compressed_bytes": 38203,
+      "raw_sha256": "1aa02138cb526adc4fe43f0af4b64e29694e957c540ab4ee84a66e1f046abe38"
+    },
+    "full_request_s": 1.1441504999966128
+  },
+  "menu_sha256": "b76e566d31668517b8861a39f7bba8687d2b331c4bd21d6a213b321e1d53aff1",
+  "menu_build_s": 0.13452390000020387,
+  "results": [
+    {
+      "action": {
+        "menu_index": 1,
+        "drop": [
+          0
+        ],
+        "add": [
+          2
+        ],
+        "net_joint": false,
+        "block": [
+          0,
+          1
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          0,
+          1
+        ],
+        "pool_global_ids": [
+          1,
+          3,
+          0,
+          4,
+          7,
+          5,
+          2
+        ],
+        "canonical_signature": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11769405,
+        "compressed_bytes": 35130,
+        "raw_sha256": "2a3707a9ecc1cbd2eb7ff6207acc6a84f18e5bf0a0d06c87711bc7ceaa24931a"
+      },
+      "full_request_s": 0.1980831000037142
+    },
+    {
+      "action": {
+        "menu_index": 2,
+        "drop": [
+          0
+        ],
+        "add": [
+          3
+        ],
+        "net_joint": false,
+        "block": [
+          0,
+          1
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          0,
+          1
+        ],
+        "pool_global_ids": [
+          1,
+          3,
+          0,
+          4,
+          7,
+          5,
+          2
+        ],
+        "canonical_signature": [
+          [
+            0
+          ],
+          [
+            3
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11804535,
+        "compressed_bytes": 35135,
+        "raw_sha256": "67c8094140c61026c9972a7a7b60665110b9003b96cdfc930d3df00430b0553b"
+      },
+      "full_request_s": 0.20697359999758191
+    },
+    {
+      "action": {
+        "menu_index": 3,
+        "drop": [
+          122
+        ],
+        "add": [
+          120
+        ],
+        "net_joint": false,
+        "block": [
+          122,
+          123
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          31,
+          32
+        ],
+        "pool_global_ids": [
+          123,
+          120,
+          121,
+          122,
+          125,
+          127,
+          124
+        ],
+        "canonical_signature": [
+          [
+            122
+          ],
+          [
+            120
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11839670,
+        "compressed_bytes": 35172,
+        "raw_sha256": "50a0ffa93a09bc1ea7b958ff4083864d72dc68b04276df97e3a0a228844bb87d"
+      },
+      "full_request_s": 0.1886612999951467
+    },
+    {
+      "action": {
+        "menu_index": 4,
+        "drop": [
+          122,
+          123
+        ],
+        "add": [
+          120
+        ],
+        "net_joint": true,
+        "block": [
+          122,
+          123
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          31,
+          32
+        ],
+        "pool_global_ids": [
+          123,
+          120,
+          121,
+          122,
+          125,
+          127,
+          124
+        ],
+        "canonical_signature": [
+          [
+            122,
+            123
+          ],
+          [
+            120
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11874842,
+        "compressed_bytes": 35158,
+        "raw_sha256": "2df0fbbe6cf09bdaa04d37a34b229c49a230a4ed00b07a96150a848e2d17ca4c"
+      },
+      "full_request_s": 0.18947380000463454
+    },
+    {
+      "action": {
+        "menu_index": 5,
+        "drop": [
+          1
+        ],
+        "add": [
+          3
+        ],
+        "net_joint": false,
+        "block": [
+          1,
+          12
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          0,
+          3
+        ],
+        "pool_global_ids": [
+          1,
+          12,
+          7,
+          13,
+          8,
+          3,
+          9
+        ],
+        "canonical_signature": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11910000,
+        "compressed_bytes": 35254,
+        "raw_sha256": "4de5094c9cc3c74205685de8fa21b44b1a8e3bfb678532e05b45155df9ddd156"
+      },
+      "full_request_s": 0.19110869999713032
+    },
+    {
+      "action": {
+        "menu_index": 6,
+        "drop": [
+          1
+        ],
+        "add": [
+          7
+        ],
+        "net_joint": false,
+        "block": [
+          1,
+          12
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          0,
+          3
+        ],
+        "pool_global_ids": [
+          1,
+          12,
+          7,
+          13,
+          8,
+          3,
+          9
+        ],
+        "canonical_signature": [
+          [
+            1
+          ],
+          [
+            7
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11945254,
+        "compressed_bytes": 35274,
+        "raw_sha256": "397925dfc1565d82e40f1d7a952e54c0b099957feadcef734f165a0839598283"
+      },
+      "full_request_s": 0.1872086000003037
+    },
+    {
+      "action": {
+        "menu_index": 7,
+        "drop": [
+          185
+        ],
+        "add": [
+          184
+        ],
+        "net_joint": false,
+        "block": [
+          185,
+          189
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          51,
+          52,
+          53
+        ],
+        "pool_global_ids": [
+          185,
+          189,
+          188,
+          184,
+          186,
+          187,
+          190,
+          191
+        ],
+        "canonical_signature": [
+          [
+            185
+          ],
+          [
+            184
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 11980528,
+        "compressed_bytes": 35274,
+        "raw_sha256": "236d667703e4395cc04d9e8ca3310c5e3d18643b1a37226f08de954e03bcbf17"
+      },
+      "full_request_s": 0.2491946999944048
+    },
+    {
+      "action": {
+        "menu_index": 8,
+        "drop": [
+          189
+        ],
+        "add": [
+          186
+        ],
+        "net_joint": false,
+        "block": [
+          185,
+          189
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          51,
+          52,
+          53
+        ],
+        "pool_global_ids": [
+          185,
+          189,
+          188,
+          184,
+          186,
+          187,
+          190,
+          191
+        ],
+        "canonical_signature": [
+          [
+            189
+          ],
+          [
+            186
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12015802,
+        "compressed_bytes": 35260,
+        "raw_sha256": "28466b6951ecb3557ff2b4694bb78d634cae928f4b1136af4b0f85b8de37ef7e"
+      },
+      "full_request_s": 0.22747199999867007
+    },
+    {
+      "action": {
+        "menu_index": 9,
+        "drop": [
+          10
+        ],
+        "add": [
+          9
+        ],
+        "net_joint": false,
+        "block": [
+          10,
+          11
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          2,
+          4
+        ],
+        "pool_global_ids": [
+          9,
+          10,
+          11,
+          15,
+          14
+        ],
+        "canonical_signature": [
+          [
+            10
+          ],
+          [
+            9
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12051062,
+        "compressed_bytes": 35014,
+        "raw_sha256": "0a9828a1d533b52d22458e74ebeaa83402e074519cea3e2f82d112872672990f"
+      },
+      "full_request_s": 0.1944350999983726
+    },
+    {
+      "action": {
+        "menu_index": 10,
+        "drop": [
+          10,
+          11
+        ],
+        "add": [
+          9
+        ],
+        "net_joint": true,
+        "block": [
+          10,
+          11
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          2,
+          4
+        ],
+        "pool_global_ids": [
+          9,
+          10,
+          11,
+          15,
+          14
+        ],
+        "canonical_signature": [
+          [
+            10,
+            11
+          ],
+          [
+            9
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12086076,
+        "compressed_bytes": 34999,
+        "raw_sha256": "00e14cd61327342737e41edb4cfb8b76c6546f64671e227b40ac4fc04f6da31f"
+      },
+      "full_request_s": 0.18884539999999106
+    },
+    {
+      "action": {
+        "menu_index": 11,
+        "drop": [
+          200
+        ],
+        "add": [
+          202
+        ],
+        "net_joint": false,
+        "block": [
+          200,
+          206
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          58
+        ],
+        "pool_global_ids": [
+          200,
+          206,
+          205,
+          203,
+          202
+        ],
+        "canonical_signature": [
+          [
+            200
+          ],
+          [
+            202
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12121075,
+        "compressed_bytes": 35147,
+        "raw_sha256": "26d9ff200ce52ccae434d92e9c73e8f656a4e96b2208e410c86592772603c0c0"
+      },
+      "full_request_s": 0.19327679999696556
+    },
+    {
+      "action": {
+        "menu_index": 12,
+        "drop": [
+          206
+        ],
+        "add": [
+          202
+        ],
+        "net_joint": false,
+        "block": [
+          200,
+          206
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          58
+        ],
+        "pool_global_ids": [
+          200,
+          206,
+          205,
+          203,
+          202
+        ],
+        "canonical_signature": [
+          [
+            206
+          ],
+          [
+            202
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12156222,
+        "compressed_bytes": 35185,
+        "raw_sha256": "ffe9cf170579b74fcaa5a7ddd46272039cda132003ef5b6bbe1eaea6d22a18c1"
+      },
+      "full_request_s": 0.19537380000110716
+    },
+    {
+      "action": {
+        "menu_index": 13,
+        "drop": [
+          88
+        ],
+        "add": [
+          89
+        ],
+        "net_joint": false,
+        "block": [
+          10,
+          88
+        ],
+        "block_kind": "adjacent",
+        "uncovered_task_ids": [
+          2,
+          23,
+          24,
+          25
+        ],
+        "pool_global_ids": [
+          88,
+          89,
+          92,
+          93,
+          94,
+          95,
+          91,
+          10
+        ],
+        "canonical_signature": [
+          [
+            88
+          ],
+          [
+            89
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12191407,
+        "compressed_bytes": 35223,
+        "raw_sha256": "6c4f79081e81b64382ff9389c35cbd099132a0ca16316bfe9d6ff1e89c827ec1"
+      },
+      "full_request_s": 0.18985800000518793
+    },
+    {
+      "action": {
+        "menu_index": 14,
+        "drop": [
+          273
+        ],
+        "add": [
+          272
+        ],
+        "net_joint": false,
+        "block": [
+          273,
+          275
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          75,
+          76
+        ],
+        "pool_global_ids": [
+          275,
+          277,
+          273,
+          274,
+          272,
+          276
+        ],
+        "canonical_signature": [
+          [
+            273
+          ],
+          [
+            272
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12226630,
+        "compressed_bytes": 35011,
+        "raw_sha256": "7687de4cd3946b46bd2612b8cbb6d1ea4a4214d69130620b75e54ab34496d9d3"
+      },
+      "full_request_s": 0.18934789999912027
+    },
+    {
+      "action": {
+        "menu_index": 15,
+        "drop": [
+          273
+        ],
+        "add": [
+          274
+        ],
+        "net_joint": false,
+        "block": [
+          273,
+          275
+        ],
+        "block_kind": "coverage_overlap_nonadjacent",
+        "uncovered_task_ids": [
+          75,
+          76
+        ],
+        "pool_global_ids": [
+          275,
+          277,
+          273,
+          274,
+          272,
+          276
+        ],
+        "canonical_signature": [
+          [
+            273
+          ],
+          [
+            274
+          ]
+        ],
+        "legal": true
+      },
+      "record": {
+        "path": "rc3_r08_joint_runtime/rollouts/REQUESTS.jsonl.gz",
+        "offset": 12261641,
+        "compressed_bytes": 35221,
+        "raw_sha256": "2a959956d47746e8910aea6c5204072c3240502037127e81bdb250afb2c4a2eb"
+      },
+      "full_request_s": 0.18788969999877736
+    }
+  ]
+}

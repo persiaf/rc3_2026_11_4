@@ -93,3 +93,10 @@ claim_supported=no（机会足够进入学习），confidence=high。48训练父
 claim_supported=partial，confidence=high，A交付supported，未来DRL收益NOT_TESTED。352教师—SL/96父、D5/D6固定终点、R07原144状态共3550结构比较/137汇总独立一致。观察集合/责任/顺序共同差异，不作独立因果分解。一个联合编辑候选与B—E预算/条件计划已完成；本轮只A，B—E未授权。论文写作provisional；不启动新实验。
 
 [导师材料](rc3_r08_joint_decision_design_20261113/TEACHER_DECISION_BRIEF.md) · [结果到主张](rc3_r08_joint_decision_design_20261113/RESULT_TO_CLAIM.md) · [独立审查](paper/review-traces/experiment-result-to-claim/20261113_r08_run01/RAW_REVIEW.md)。
+
+
+## 2026-11-13 R08-B固定联合菜单机会
+
+claim_supported=no，高置信度；719请求完整、失败0，Actor/Critic0，H719。19/48有≥1%改善，但oracle1.195478%及净双配置改善11/74两项原门槛失败，OPPORTUNITY_INSUFFICIENT。下层/H整体作用不能独立归joint，时间预测通过不抵消机会失败。关闭固定邻域，不进C/D/E，不扩大候选或训练。论文主张provisional。
+
+[报告](rc3_r08_joint_runtime/EXPERIMENT_REPORT.md) · [判读](rc3_r08_joint_runtime/RESULT_TO_CLAIM.md) · [独立审查](paper/review-traces/experiment-result-to-claim/20261113_r08_b_run01/RAW_REVIEW.md)。

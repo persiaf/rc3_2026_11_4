@@ -1,0 +1,962 @@
+{
+  "task": {
+    "id": "F041",
+    "parent": 41,
+    "spec": {
+      "case": 41,
+      "parent": 41,
+      "map_seed": 10000000041,
+      "task_seed": 11000000328,
+      "width": 10,
+      "height": 10,
+      "x0": 0,
+      "y0": 0,
+      "endpoints": "closed_depot",
+      "A_condition": 2,
+      "role": "train",
+      "mode": "blocked"
+    },
+    "physical_key": "54f58c5e9121bd52cb72ae0a2c216eed1f8e8c9c081784769bd496c47f1a00e7",
+    "expected_parent_identity": "1cf99ba6627c6036895975deb9e5e43e24b537a5b19fa109485bc2a237054e2a",
+    "input_files": {
+      "arrays": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000041_11000000328_A2/arrays.npz",
+        "sha256": "31859014415ffb361e4b04e6ad968b91ad18c88f3af4292c3a5f127264d796c1"
+      },
+      "navigation": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/54f58c5e9121bd52cb72ae0a2c216eed1f8e8c9c081784769bd496c47f1a00e7.npz",
+        "sha256": "f6258a15a1ad55d4de74bee57f15a6313cd68855c974df73159f7cb8cbd8d638"
+      },
+      "navigation_receipt": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/54f58c5e9121bd52cb72ae0a2c216eed1f8e8c9c081784769bd496c47f1a00e7.json",
+        "sha256": "d6f403c0872790f9728afefdfa986892f673eb06d6c60a4f2cab9afa15e7d661"
+      },
+      "receipt": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000041_11000000328_A2/receipt.json",
+        "sha256": "2e4e6f4aa7092ecb093af30f770fee1f42a8f70a9f5d901e6fb8cca0b7eca775"
+      },
+      "scene": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000041_11000000328_A2/scene.json",
+        "sha256": "ea3bffbf1e5c0361420a76e0d07665df9c6da985a24ca8859446adaf5d325be5"
+      }
+    },
+    "selection": "Minimum original teacher index within each registered training parent; no cost used",
+    "source_teacher_metadata_index": 41,
+    "size": "10x10"
+  },
+  "problem_identity": "e85d362fbab783cedbec3746cec382315e5edc1a2c646de9ffca21f727b21e4c",
+  "actions": [
+    {
+      "menu_index": 1,
+      "drop": [
+        2
+      ],
+      "add": [
+        3
+      ],
+      "net_joint": false,
+      "block": [
+        2,
+        93
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        0,
+        9
+      ],
+      "pool_global_ids": [
+        2,
+        93,
+        3,
+        90,
+        7,
+        91
+      ],
+      "canonical_signature": [
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 2,
+      "drop": [
+        2
+      ],
+      "add": [
+        7
+      ],
+      "net_joint": false,
+      "block": [
+        2,
+        93
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        0,
+        9
+      ],
+      "pool_global_ids": [
+        2,
+        93,
+        3,
+        90,
+        7,
+        91
+      ],
+      "canonical_signature": [
+        [
+          2
+        ],
+        [
+          7
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 3,
+      "drop": [
+        242
+      ],
+      "add": [
+        246
+      ],
+      "net_joint": false,
+      "block": [
+        242,
+        244
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        22
+      ],
+      "pool_global_ids": [
+        242,
+        244,
+        247,
+        246
+      ],
+      "canonical_signature": [
+        [
+          242
+        ],
+        [
+          246
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 4,
+      "drop": [
+        244
+      ],
+      "add": [
+        246
+      ],
+      "net_joint": false,
+      "block": [
+        242,
+        244
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        22
+      ],
+      "pool_global_ids": [
+        242,
+        244,
+        247,
+        246
+      ],
+      "canonical_signature": [
+        [
+          244
+        ],
+        [
+          246
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 5,
+      "drop": [
+        13
+      ],
+      "add": [
+        8
+      ],
+      "net_joint": false,
+      "block": [
+        13,
+        290
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        1,
+        31
+      ],
+      "pool_global_ids": [
+        13,
+        290,
+        12,
+        291,
+        8,
+        295,
+        9,
+        289
+      ],
+      "canonical_signature": [
+        [
+          13
+        ],
+        [
+          8
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 6,
+      "drop": [
+        13
+      ],
+      "add": [
+        9
+      ],
+      "net_joint": false,
+      "block": [
+        13,
+        290
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        1,
+        31
+      ],
+      "pool_global_ids": [
+        13,
+        290,
+        12,
+        291,
+        8,
+        295,
+        9,
+        289
+      ],
+      "canonical_signature": [
+        [
+          13
+        ],
+        [
+          9
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 7,
+      "drop": [
+        408
+      ],
+      "add": [
+        409
+      ],
+      "net_joint": false,
+      "block": [
+        408,
+        413
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        43,
+        44
+      ],
+      "pool_global_ids": [
+        408,
+        409,
+        413,
+        414,
+        415
+      ],
+      "canonical_signature": [
+        [
+          408
+        ],
+        [
+          409
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 8,
+      "drop": [
+        408,
+        413
+      ],
+      "add": [
+        409
+      ],
+      "net_joint": true,
+      "block": [
+        408,
+        413
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        43,
+        44
+      ],
+      "pool_global_ids": [
+        408,
+        409,
+        413,
+        414,
+        415
+      ],
+      "canonical_signature": [
+        [
+          408,
+          413
+        ],
+        [
+          409
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 9,
+      "drop": [
+        28
+      ],
+      "add": [
+        24
+      ],
+      "net_joint": false,
+      "block": [
+        28,
+        29
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        2,
+        3
+      ],
+      "pool_global_ids": [
+        28,
+        26,
+        24,
+        29,
+        27
+      ],
+      "canonical_signature": [
+        [
+          28
+        ],
+        [
+          24
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 10,
+      "drop": [
+        28,
+        29
+      ],
+      "add": [
+        24
+      ],
+      "net_joint": true,
+      "block": [
+        28,
+        29
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        2,
+        3
+      ],
+      "pool_global_ids": [
+        28,
+        26,
+        24,
+        29,
+        27
+      ],
+      "canonical_signature": [
+        [
+          28,
+          29
+        ],
+        [
+          24
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 11,
+      "drop": [
+        488
+      ],
+      "add": [
+        489
+      ],
+      "net_joint": false,
+      "block": [
+        488,
+        492
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        54,
+        55
+      ],
+      "pool_global_ids": [
+        488,
+        492,
+        489,
+        494,
+        495
+      ],
+      "canonical_signature": [
+        [
+          488
+        ],
+        [
+          489
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 12,
+      "drop": [
+        492
+      ],
+      "add": [
+        489
+      ],
+      "net_joint": false,
+      "block": [
+        488,
+        492
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        54,
+        55
+      ],
+      "pool_global_ids": [
+        488,
+        492,
+        489,
+        494,
+        495
+      ],
+      "canonical_signature": [
+        [
+          492
+        ],
+        [
+          489
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 13,
+      "drop": [
+        28
+      ],
+      "add": [
+        26
+      ],
+      "net_joint": false,
+      "block": [
+        28,
+        117
+      ],
+      "block_kind": "adjacent",
+      "uncovered_task_ids": [
+        2,
+        12
+      ],
+      "pool_global_ids": [
+        28,
+        117,
+        24,
+        26,
+        112,
+        115,
+        113,
+        119
+      ],
+      "canonical_signature": [
+        [
+          28
+        ],
+        [
+          26
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 14,
+      "drop": [
+        552
+      ],
+      "add": [
+        553
+      ],
+      "net_joint": false,
+      "block": [
+        552,
+        557
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        64
+      ],
+      "pool_global_ids": [
+        552,
+        553,
+        555,
+        559,
+        557,
+        554
+      ],
+      "canonical_signature": [
+        [
+          552
+        ],
+        [
+          553
+        ]
+      ],
+      "legal": true
+    },
+    {
+      "menu_index": 15,
+      "drop": [
+        552,
+        557
+      ],
+      "add": [
+        553
+      ],
+      "net_joint": true,
+      "block": [
+        552,
+        557
+      ],
+      "block_kind": "coverage_overlap_nonadjacent",
+      "uncovered_task_ids": [
+        64
+      ],
+      "pool_global_ids": [
+        552,
+        553,
+        555,
+        559,
+        557,
+        554
+      ],
+      "canonical_signature": [
+        [
+          552,
+          557
+        ],
+        [
+          553
+        ]
+      ],
+      "legal": true
+    }
+  ],
+  "blocks": [
+    {
+      "block": [
+        2,
+        93
+      ],
+      "U": [
+        0,
+        9
+      ],
+      "assigned_tasks": [
+        0,
+        9
+      ],
+      "pool": [
+        2,
+        93,
+        3,
+        90,
+        7,
+        91
+      ],
+      "legal_net_candidates": 8,
+      "first_two_before_global_dedup": [
+        [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            2
+          ],
+          [
+            7
+          ]
+        ]
+      ],
+      "appended_indices": [
+        1,
+        2
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        242,
+        244
+      ],
+      "U": [
+        22
+      ],
+      "assigned_tasks": [
+        22,
+        23
+      ],
+      "pool": [
+        242,
+        244,
+        247,
+        246
+      ],
+      "legal_net_candidates": 4,
+      "first_two_before_global_dedup": [
+        [
+          [
+            242
+          ],
+          [
+            246
+          ]
+        ],
+        [
+          [
+            244
+          ],
+          [
+            246
+          ]
+        ]
+      ],
+      "appended_indices": [
+        3,
+        4
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        13,
+        290
+      ],
+      "U": [
+        1,
+        31
+      ],
+      "assigned_tasks": [
+        1,
+        31
+      ],
+      "pool": [
+        13,
+        290,
+        12,
+        291,
+        8,
+        295,
+        9,
+        289
+      ],
+      "legal_net_candidates": 15,
+      "first_two_before_global_dedup": [
+        [
+          [
+            13
+          ],
+          [
+            8
+          ]
+        ],
+        [
+          [
+            13
+          ],
+          [
+            9
+          ]
+        ]
+      ],
+      "appended_indices": [
+        5,
+        6
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        408,
+        413
+      ],
+      "U": [
+        43,
+        44
+      ],
+      "assigned_tasks": [
+        43,
+        44
+      ],
+      "pool": [
+        408,
+        409,
+        413,
+        414,
+        415
+      ],
+      "legal_net_candidates": 9,
+      "first_two_before_global_dedup": [
+        [
+          [
+            408
+          ],
+          [
+            409
+          ]
+        ],
+        [
+          [
+            408,
+            413
+          ],
+          [
+            409
+          ]
+        ]
+      ],
+      "appended_indices": [
+        7,
+        8
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        28,
+        29
+      ],
+      "U": [
+        2,
+        3
+      ],
+      "assigned_tasks": [
+        2,
+        3
+      ],
+      "pool": [
+        28,
+        26,
+        24,
+        29,
+        27
+      ],
+      "legal_net_candidates": 10,
+      "first_two_before_global_dedup": [
+        [
+          [
+            28
+          ],
+          [
+            24
+          ]
+        ],
+        [
+          [
+            28,
+            29
+          ],
+          [
+            24
+          ]
+        ]
+      ],
+      "appended_indices": [
+        9,
+        10
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        488,
+        492
+      ],
+      "U": [
+        54,
+        55
+      ],
+      "assigned_tasks": [
+        54,
+        55
+      ],
+      "pool": [
+        488,
+        492,
+        489,
+        494,
+        495
+      ],
+      "legal_net_candidates": 6,
+      "first_two_before_global_dedup": [
+        [
+          [
+            488
+          ],
+          [
+            489
+          ]
+        ],
+        [
+          [
+            492
+          ],
+          [
+            489
+          ]
+        ]
+      ],
+      "appended_indices": [
+        11,
+        12
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        28,
+        117
+      ],
+      "U": [
+        2,
+        12
+      ],
+      "assigned_tasks": [
+        2,
+        12
+      ],
+      "pool": [
+        28,
+        117,
+        24,
+        26,
+        112,
+        115,
+        113,
+        119
+      ],
+      "legal_net_candidates": 14,
+      "first_two_before_global_dedup": [
+        [
+          [
+            28
+          ],
+          [
+            24
+          ]
+        ],
+        [
+          [
+            28
+          ],
+          [
+            26
+          ]
+        ]
+      ],
+      "appended_indices": [
+        13
+      ],
+      "rejection_reasons": {}
+    },
+    {
+      "block": [
+        552,
+        557
+      ],
+      "U": [
+        64
+      ],
+      "assigned_tasks": [
+        64,
+        65
+      ],
+      "pool": [
+        552,
+        553,
+        555,
+        559,
+        557,
+        554
+      ],
+      "legal_net_candidates": 16,
+      "first_two_before_global_dedup": [
+        [
+          [
+            552
+          ],
+          [
+            553
+          ]
+        ],
+        [
+          [
+            552,
+            557
+          ],
+          [
+            553
+          ]
+        ]
+      ],
+      "appended_indices": [
+        14,
+        15
+      ],
+      "rejection_reasons": {}
+    }
+  ],
+  "stop_legal": true,
+  "missing_slots": 1,
+  "operationalization": "Adjacent-first alternating sorted block classes; U-empty deletion only; net-add count then add IDs then drop IDs; per-block first2 before global dedup; duplicates not backfilled",
+  "menu_sha256": "eb23871c49d82958306c1931e6df151f2c615ad23c89b01c11e70fbc32e189ed",
+  "menu_build_s": 0.03111209999769926
+}

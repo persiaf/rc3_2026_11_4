@@ -1,0 +1,1 @@
+R08-B独立结果到主张审查。只读本次协议、菜单/下层/执行源码、48任务JSON、671CSV、资源/计时/前缀统计及少量精确归档成员；核原R08-A门槛、净动作arity、source/validation、oracle与完整成本、预算预测。禁止新前向/规划/H/native/navigation/teacher/scene/optimizer，禁止Git与封存任务。主张为足够进入C，不是算法性能；按原门槛判读，不增加实验。随后复读主报告/下一步决定作对齐。

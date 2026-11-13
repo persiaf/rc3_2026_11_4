@@ -1,3 +1,9 @@
+# R08-B 已完成：联合编辑机会不足，固定邻域关闭
+
+48训练父、719完整处理（48SL锚点+671编辑），失败0。oracle1.195478%<1.5%，净双配置实质改善11/74<50%，未过原门槛；不进C/D/E。
+
+[实际报告](rc3_r08_joint_runtime/EXPERIMENT_REPORT.md) · [逐动作证据](rc3_r08_joint_runtime/ACTION_RESULTS.csv) · [查询曲线](rc3_r08_joint_runtime/PREFIX_SUMMARY.csv) · [资源](rc3_r08_joint_runtime/RESOURCE_ACCOUNTING.json) · [停止决定](rc3_r08_joint_runtime/NEXT_STEP_DECISION.md)
+
 # R08-A 已完成：联合决策设计，未启动新训练
 
 352训练配对/96物理父、D5/D6固定终点与R07保存路线共3550结构比较；12项接口单测PASS，新前向/训练/规划/H/教师/导航均0。下一步仅R08-B机会提案，B—E未授权。
