@@ -163,7 +163,11 @@ T_{plan}=T_{input}+T_{model/feature}+T_{decode}
 提交范围仅本目录三文件、根README入口和`project_management/GIT_MANIFEST.json`的新增材料条目。用户论文不提交；历史数据/源码/权重/账/停止决定不变。独立分支推送后核远端SHA和新增LFS对象，main不合并。发布核对结果在本节追加实际事实，不把文档发布说成科学结果。
 
 <!-- PUBLICATION_FACTS_BEGIN -->
-待本轮文档检查、提交与远端核对完成后记录实际发布状态；这不是待执行研究阶段。
+材料主体提交 `0c5f4e9fc3e88929d1adced0805a913a7a6f2dda` 已推送至 `origin/codex/rc3-chapter5-decision-closeout-20261113`。2026-11-13本轮实际 `ls-remote` 回读与该SHA一致；main仍为 `5d5fe25754ffa032f97937a3fb54f15901c2fb7d`，没有合并。
+
+相对指定基准仅新增三份主文件并维护README/Git清单，共5个路径；历史研究源码、结果、停止文件及权重没有提交差异。两份只读论文SHA前后一致，其他用户文件未暂存。检查覆盖文档链接、公式与保存表的数值转录；原53行表保留，未重跑历史全量审计。
+
+实际新增LFS对象0、字节0：逐个检查本轮变更Git blob，无LFS指针，也未改变`.gitattributes`。该结论只核本轮新增，不重复全历史LFS审计。本节与清单为主体提交后的发布事实补记；最终分支SHA以本轮最终远端回读及交付答复为准。
 <!-- PUBLICATION_FACTS_END -->
 
 交付完成后停止，不自动训练方案A或B，也不启动R08-C/D/E。
