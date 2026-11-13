@@ -1,3 +1,11 @@
+<!-- CH5_LEARNING_PLAN_20261113_BEGIN -->
+# 第五章下一轮：导航—覆盖关系构造DRL计划
+
+结合最新D5/D6/R07/R08负结果、MATLAB固定集合最优顺序证书和CSP/BaSeNet原始研究，提出显式D/E关系策略、完整回报训练及一seed优先的验证方案。当前是候选计划，模型未实施，科学消费0；MATLAB与RC3成本分开，旧停止和封存边界保持。
+
+[完整计划与数值目标](rc3_ch5_learning_plan_20261113/EXPERIMENT_PLAN.md) · [文献与MATLAB代码](rc3_ch5_learning_plan_20261113/LITERATURE_AND_CODE.md) · [跟踪表](rc3_ch5_learning_plan_20261113/EXPERIMENT_TRACKER.md) · [全部材料](rc3_ch5_learning_plan_20261113/README.md)
+<!-- CH5_LEARNING_PLAN_20261113_END -->
+
 <!-- CHAPTER5_EVIDENCE_CLOSEOUT_BEGIN -->
 # 研究内容三成果整合与第五章主方案决策
 
