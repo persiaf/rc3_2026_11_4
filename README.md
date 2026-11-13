@@ -1,7 +1,9 @@
 <!-- RELATION_M2_SCIENCE_20261113_BEGIN -->
-# 研究内容三M2正式科学执行
+# M2已停止：初始化SL238，技术未完成
 
-用户已批准准确冻结协议并授权M2a SL512；M2a完整成功后按条件授权进入M2b DRL2048/继续SL2048。当前状态与实际结果以[本轮执行入口](rc3_relation_m2_20261113/README.md)及[状态](rc3_relation_m2_20261113/CURRENT_STAGE_STATUS.json)为准。旧M1/计划状态保留为历史快照，不改冻结源码、协议或封存边界。
+原冻结M2a完成238次科学SL更新、1910次教师请求扣账，资源账原子替换发生Windows拒绝访问异常。无SL512 COMPLETE，M2b和0/512/2048评价全部未运行；未改源码或补跑。
+
+[实际报告](rc3_relation_m2_20261113/EXPERIMENT_REPORT.md) · [原始数据与部分模型](rc3_relation_m2_20261113/DATA_AND_MODEL_INDEX.md) · [图表/资源/独立审查入口](rc3_relation_m2_20261113/README.md) · [停止决定](rc3_relation_m2_20261113/NEXT_STEP_DECISION.md)
 <!-- RELATION_M2_SCIENCE_20261113_END -->
 
 <!-- RELATION_M0_M1_20261113_BEGIN -->

@@ -1,3 +1,14 @@
+# 研究内容三M2：TECHNICAL_INCOMPLETE
+
+M2a完成238/512次科学SL更新，在资源账原子替换时发生Windows拒绝访问异常。1910请求已扣，最后同一请求先complete后failed；原账保留。没有SL512完成收据，M2b及全部评价端点未运行。本轮已停止。
+
+- [实际报告与错误证据](EXPERIMENT_REPORT.md) · [原始数据和部分模型](DATA_AND_MODEL_INDEX.md)
+- [实际资源账汇总](RESOURCE_ACCOUNTING.json) · [部分状态审计](M2A_PARTIAL_AUDIT.json)
+- [图表与CSV](figures/README.md) · [结果到主张审查](RESULT_TO_CLAIM.md)
+- [停止决定](NEXT_STEP_DECISION.md) · [Git交付](GIT_DELIVERY.md)
+
+以下为本轮开始时登记的授权与范围。
+
 # 研究内容三 M2正式科学执行
 
 准确协议和源码由用户基于`9c878928e7f619bce25ddd00792757431ca705a1`批准。稳定科学ID：`relation_navcover_m2_v1_20261113`。本目录是新授权、状态和报告入口；原M1及冻结协议保留原字节。

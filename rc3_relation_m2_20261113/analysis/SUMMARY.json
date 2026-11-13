@@ -1,0 +1,102 @@
+{
+  "scientific_id": "relation_navcover_m2_v1_20261113",
+  "generated_utc": "2026-11-13T16:08:11.338419+00:00",
+  "protocol_sha256": "7ca20d48177b156ef4183f8d58f8354f20198513ecad66e161ff4d0b5e41a445",
+  "stages": {
+    "init": {
+      "status": "SUPERVISOR_STOPPED",
+      "resource": {
+        "identity": "M2:relation_navcover_m2_v1_20261113:init",
+        "limits": {
+          "request_attempts": 4096,
+          "optimizer_attempts": 512,
+          "wall_s": 14400
+        },
+        "elapsed_s": 2221.312,
+        "counts": {
+          "immutable_input_preparations": 352,
+          "request_attempts": 1910,
+          "encode_calls": 1910,
+          "score_calls": 112478,
+          "teacher_replays": 1910,
+          "request_completed": 1910,
+          "backward_calls": 1909,
+          "optimizer_attempts": 238,
+          "optimizer_completed": 238,
+          "immutable_input_cache_hits": 1558,
+          "request_failed": 1
+        },
+        "pending": {},
+        "status": "SUPERVISOR_STOPPED",
+        "scientific_updates": 238
+      },
+      "complete": null,
+      "supervisor_receipts": [
+        {
+          "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/controls/attempt_0001/SUPERVISOR_RECEIPT.json",
+          "sha256": "ee12c859b8e6f0489f367e33a3d554e165da3684a18b780103831b9ef871feee",
+          "elapsed_s": 2221.2883129119873,
+          "status": "WORKER_FAILED"
+        }
+      ],
+      "request_event_reconciliation": {
+        "unique_complete_ids": 1910,
+        "unique_failed_ids": 1,
+        "overlap_ids": [
+          "init_0239_teacher_5"
+        ],
+        "exclusive_success_ids": 1909,
+        "interpretation": "Derived only; original journal and ledger counters preserved verbatim"
+      }
+    },
+    "paired": {
+      "status": "NOT_RUN"
+    }
+  },
+  "evaluations": [
+    {
+      "endpoint": 0,
+      "status": "NOT_RUN",
+      "processed": 0,
+      "complete": false
+    },
+    {
+      "endpoint": 512,
+      "status": "NOT_RUN",
+      "processed": 0,
+      "complete": false
+    },
+    {
+      "endpoint": 2048,
+      "status": "NOT_RUN",
+      "processed": 0,
+      "complete": false
+    }
+  ],
+  "model_forwards": 0,
+  "optimizer_calls": 0,
+  "new_planning_or_H": 0,
+  "verdict": "TECHNICAL_INCOMPLETE",
+  "exact_terminal_status": "SUPERVISOR_STOPPED",
+  "total_resources": {
+    "request_attempts": 1910,
+    "request_completed": 1910,
+    "request_failed": 1,
+    "optimizer_attempts": 238,
+    "optimizer_completed": 238,
+    "optimizer_failed": 0
+  },
+  "recorded_updates": 238,
+  "failures": [
+    {
+      "stage": "init",
+      "event": "failed",
+      "elapsed_s": 2194.2945413589478,
+      "kind": "request",
+      "id": "init_0239_teacher_5",
+      "error": "PermissionError(13, '拒绝访问。')"
+    }
+  ],
+  "elapsed_stage_wall_s": 2221.312,
+  "interpretation": "Exposed LOCAL66 and training-parent FULL12 kept separate; no heldout/new-parent/physical claim"
+}

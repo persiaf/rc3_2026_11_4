@@ -1,0 +1,82 @@
+{
+  "schema": "relation-M2-delivery-resource-v1",
+  "status": "TECHNICAL_INCOMPLETE",
+  "scientific_id": "relation_navcover_m2_v1_20261113",
+  "scientific": {
+    "init_raw_ledger": {
+      "identity": "M2:relation_navcover_m2_v1_20261113:init",
+      "limits": {
+        "request_attempts": 4096,
+        "optimizer_attempts": 512,
+        "wall_s": 14400
+      },
+      "elapsed_s": 2221.312,
+      "counts": {
+        "immutable_input_preparations": 352,
+        "request_attempts": 1910,
+        "encode_calls": 1910,
+        "score_calls": 112478,
+        "teacher_replays": 1910,
+        "request_completed": 1910,
+        "backward_calls": 1909,
+        "optimizer_attempts": 238,
+        "optimizer_completed": 238,
+        "immutable_input_cache_hits": 1558,
+        "request_failed": 1
+      },
+      "pending": {},
+      "status": "SUPERVISOR_STOPPED",
+      "scientific_updates": 238
+    },
+    "paired": "NOT_RUN",
+    "RL_updates": 0,
+    "continued_SL_updates": 0,
+    "SL_initialization_updates": 238,
+    "teacher_request_attempts": 1910,
+    "teacher_complete_events": 1910,
+    "teacher_failed_events": 1,
+    "teacher_complete_without_failed": 1909,
+    "overlap_id": "init_0239_teacher_5",
+    "budget_consumed_requests": 1910,
+    "budget_consumed_optimizers": 238,
+    "new_teacher_queries": 0,
+    "new_H_calls": 0,
+    "native_solves": 0,
+    "online_RL_trajectories": 0,
+    "evaluation_requests": 0
+  },
+  "timing": {
+    "stage_outer_cumulative_wall_s": 2221.312,
+    "supervisor_receipt_elapsed_s": 2221.2883129119873,
+    "worker_last_failed_event_elapsed_s": 2194.2945413589478,
+    "clock_domains": "Worker ledger and outer supervisor have different origins. Do not sum clocks or interpret their difference as closeout time.",
+    "limit_init_wall_s": 14400,
+    "timeout_triggered": false
+  },
+  "recovery": {
+    "last_committed_update": 238,
+    "checkpoint_consumed_requests": 1904,
+    "paid_after_checkpoint": 6,
+    "automatic_restore_allowed": false,
+    "checkpoint": {
+      "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/current_slot0.pt",
+      "sha256": "e6b7672a3184b9e65e90805c8773fcbdd473df0f0b837967f040e41c6f721c9e",
+      "cursor": 238,
+      "model_sha256": "e4002cd07a31430d76ce391a7f5915e4a127093bccc2a94a5194a6b24462a3d9",
+      "optimizer_sha256": "ecfd3e0cf37515825db61f863b427c717a9bb5dbcc5b4605fd93d896e9bd649d",
+      "rng_sha256": "6d044dcf2e2a9fae4a761ff34131e9dadbf872b289fc5e1f57c9a190fdf567ae"
+    }
+  },
+  "actual_gpu": "NVIDIA GeForce RTX 4070 Laptop GPU; exact runtime checked by original runner",
+  "M2_peak_GPU_memory": "NOT_RECORDED; M1 peak is not reused as current measurement",
+  "postprocessing": {
+    "checkpoint_CPU_reads": true,
+    "model_constructions": 0,
+    "model_forwards": 0,
+    "optimizer_calls": 0,
+    "H_or_teacher_or_planning_calls": 0,
+    "scope": "Read-only source/result audit, CSV extraction and plotting; separate from the original immutable stage ledger"
+  },
+  "original60_and_oldS3": "SEALED",
+  "no_budget_reset": true
+}

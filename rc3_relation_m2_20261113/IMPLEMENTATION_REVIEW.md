@@ -1,3 +1,5 @@
+执行后结论：**TECHNICAL_INCOMPLETE**。执行前GO、用户批准及98项准确绑定保留；M2a在资源账原子替换处异常退出，未达到SL512，M2b条件未满足。详见[实际报告](EXPERIMENT_REPORT.md)。以下保留执行前审查。
+
 # M2正式执行实施审查
 
 基准：`9c878928e7f619bce25ddd00792757431ca705a1`；稳定科学ID：`relation_navcover_m2_v1_20261113`。

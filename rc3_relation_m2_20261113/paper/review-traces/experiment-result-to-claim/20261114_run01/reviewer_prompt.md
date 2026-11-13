@@ -1,0 +1,3 @@
+按 experiment-result-to-claim 与 paper-figure 技能要求，担任独立 paper architect/reviewer，只读评价本次正式科学实验与图表计划。工作区 D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件。用户批准原冻结M2协议（基准9c878928e7f619bce25ddd00792757431ca705a1），要求技术错误立即停，不改源码/协议，不自动恢复，不进新种子/消融/其他实验。当前 M2a 已因 Windows资源账原子替换 PermissionError WinError5 停止，未完成SL512，M2b未运行。请独立读取原协议、STATE、资源账、EVENTS尾部、worker日志、监督收据、本轮SUMMARY及FIGURE_PLAN。238更新；1910请求begin，最后同一ID先complete后failed，原账completed1910与failed1重叠；原账不可改写。最后checkpoint238覆盖1904教师，后续6请求已扣。请审查主科学分类、支持/不支持主张、缺口与停止边界，不能把技术失败当机制负结果，不认定具体锁持有者；监控读取可能相关但无句柄取证。评价F1/F4图表及未运行F2/F3跳过。输出结构化结论和caption。禁止任何模型/优化器/H/教师/规划/工程探针，禁止封存语义与用户论文读取，不改现有文件。唯一允许新文件是本trace内reviewer_response.md。
+
+后续已补充M2A_PARTIAL_AUDIT及F1/F4 PNG路径，要求独立图面查看、区分worker与外层监督计时域。

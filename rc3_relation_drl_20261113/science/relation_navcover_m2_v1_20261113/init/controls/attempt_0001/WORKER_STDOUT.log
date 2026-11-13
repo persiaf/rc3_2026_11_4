@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "D:\tools\anocaonda\envs\mobile_dual_arm_planning\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\m2.py", line 427, in <module>
+    main()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\m2.py", line 421, in main
+    result = (_init(protocol, authorization, args.authorization, args.protocol) if args.stage == 'init' else
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\m2.py", line 210, in _init
+    sl_update(actor, opt, row['tasks'], pool, ledger, f'init_{update:04}')
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\runtime.py", line 147, in sl_update
+    lp=replay(actor,p,actions,ledger,f'{rid}_teacher_{i}',teacher_source=source)
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\runtime.py", line 103, in replay
+    request_record(ledger,rid,dict(request_id=rid,purpose='teacher_replay' if terminal_J is None else 'gradient_replay',
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\runtime.py", line 33, in request_record
+    ledger.complete('request',rid,tick,record=path.relative_to(ROOT).as_posix(),sha256=sha(path))
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\common.py", line 66, in complete
+    self.event('complete',kind=kind,id=rid,wall_s=time.perf_counter()-tick,**fields);self.save()
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\common.py", line 54, in save
+    put(self.path,dict(identity=self.identity,limits=self.limits,elapsed_s=self.elapsed(),counts=dict(self.counts),pending=self.pending,status=self.status,scientific_updates=0 if self.identity.startswith('M1:') else self.counts['optimizer_completed']))
+  File "D:\file_used\西柚\实验室_任务\硕士论文相关\大论文\chatgpt生成文件\rc3_relation_drl_20261113\common.py", line 19, in put
+    os.replace(pending,path)
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_relation_drl_20261113\\science\\relation_navcover_m2_v1_20261113\\init\\RESOURCE_ACCOUNTING.json.pending' -> 'D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_relation_drl_20261113\\science\\relation_navcover_m2_v1_20261113\\init\\RESOURCE_ACCOUNTING.json'
