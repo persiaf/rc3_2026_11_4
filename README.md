@@ -1,3 +1,9 @@
+<!-- D6_CURRENT_BEGIN -->
+## 当前：D6完整路线对照完成，因果剩余成本候选结束
+
+[D6实际交付](rc3_d6_20261113/README.md) · [完整路线报告](rc3_d6_20261113/EXPERIMENT_REPORT.md) · [给老师的短材料](rc3_d6_20261113/TEACHER_DECISION_BRIEF.md)。32768旧轨迹成本分解PASS；A/B/匹配SL各256真实更新、4096新在线轨迹、792同期评价全部完成。B在256主终点对FrozenSL、SL的父等权H-J收益−1.2305%、−1.5834%，对A+0.7985%，SEL/DEV对两个主对照均负，按原门槛NO_DEVELOPMENT_SIGNAL结束。累计新4888请求、Actor768、重放2048、Critic0，失败0；9个实际模型与逐请求/资源/独立审查保存。旧D5负结果及封存边界保持，不合并main。
+<!-- D6_CURRENT_END -->
+
 <!-- D5_REVISION_CURRENT_BEGIN -->
 ## 当前：完整教师与科学驱动完成，D5固定P1负结果收口
 

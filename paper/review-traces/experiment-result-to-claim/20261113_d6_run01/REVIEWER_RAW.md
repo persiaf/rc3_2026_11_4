@@ -1,0 +1,42 @@
+# Independent D6 result-to-claim review
+
+Verdict: **no**, high confidence for the registered development claim. Provisional for downstream paper writing: paper/PAPER_CLAIM_AUDIT.json is unavailable. pending_external_review=false: this is the requested independent reviewer judgment.
+
+I independently decoded and SHA-checked all 792 saved evaluation records, verified twelve complete grids of 66 identical case IDs with eleven parents and six requests per parent, and recomputed parent-paired gains from row metrics rather than using the quality-gate aggregates. For each parent, gain is (sum control cost - sum B cost)/sum control cost, then parents receive equal weight. Positive is better for B.
+
+| Fixed endpoint | B versus FrozenSL HJ | B versus matched SL HJ | B versus A HJ | B versus FrozenSL raw J | B versus SL raw J | B versus A raw J |
+|---|---:|---:|---:|---:|---:|---:|
+| 128 descriptive | -0.494343404785% | -1.163353540869% | +2.679652253278% | -1.429912706753% | -3.110564393561% | +11.859335805448% |
+| 256 sole primary | -1.230478747617% | -1.583449962645% | +0.798505425850% | -3.821489350608% | -6.281716747001% | -0.214169406857% |
+
+At 256, SEL/DEV HJ gains versus FrozenSL are -1.122647448402%/-1.518028878857%; versus matched SL they are -1.682853689911%/-1.318373356603%; versus A they are +1.567066587971%/-1.250991006472%. At 128, SEL/DEV versus FrozenSL are -0.968834065052%/+0.770965022594%; versus SL -1.513697478195%/-0.229103041332%; versus A +2.083794255172%/+4.268606914894%. Both main 256 comparisons are below the predeclared +0.5% floor, and both SEL and DEV regress against both main controls. Consequently the intended useful full-route development gain is not supported. The descriptive 128 endpoint does not rescue the claim. B's aggregate HJ improvement over A is real in this saved grid, but DEV reverses its sign and raw J at 256 is slightly worse than A. An A-only success claim would misrepresent the registered gate.
+
+## Mathematics and implementation
+
+The baseline proof is valid for the ideal pre-clipping score-function estimator: prefix_before_t and remaining_before_t/initial_task_count are measurable before the current action, and FrozenSL same-problem J_H is fixed with respect to that action and trainable parameters. Subtracting this state/history-only baseline preserves expected pre-clip score gradient for the complete terminal H objective. This proof does not establish an unbiased clipped gradient or Adam parameter update, nor reduced variance or improved routes. The report and any paper should state this boundary explicitly; the current mathematics text states score-function validity but should not be read as a guarantee about clip1+Adam.
+
+Source inspection confirms: the only division by initial task count is q; B weights are detached; PG sums action terms and averages eight episodes; A preserves the old float32 scalar factor and reduction order; SL uses mean-action CE per episode. Prefix excludes the current action, terminal exit and H correction. The final raw increment includes the exit; the final H increment adds J_H-J_raw once. Negative tails are permitted, as required when H shortens a route substantially. The saved old 32768-trajectory decomposition receipt reports max error 2.955857780762e-12 and the old per-action audit reports max cost-plus-reward error 4.547473508865e-13, with zero new science. I did not reread the old large archive. Its scalar loss-share diagnosis is not a per-size parameter-gradient attribution.
+
+The original network, five trainable tensors (25152 of 65088 parameters), masks, endpoints, complete J=L+0.75K, common H and Adam1e-4 are retained. The exact SL256 loader validates base-only actor role, source seed/update, tensor digest and upstream source hashes. All three new step0 export sidecars bind the same SL tensor digest 1817f58aa6506456ff12f0c5fe0a914e156aef8af319f4687dde90782f55a63e. Each stream creates its own actor and fresh Adam; resumed 256 jobs restore their own saved model/Adam/RNG/sampler/cursor. Internal D5-PG/D5-SL network roles are historical class configurations; D6 scientific A/B/SL identities are bound separately by stream, D6 schema/identity and export digest. There is no evidence that B was initialized from a D5 trained endpoint.
+
+I independently read all 768 saved update records: A/B/SL each have cursors 1..256, eight episodes per update, finite losses/norms, and one recorded restoration from cursor128. All A and B updates clipped. Mean pre-clip gradient norms were A=846.114226937294 and B=5043.241063356400. These norms are a descriptive observation, not a variance-reduction test; baseline algebra does not guarantee smaller realized gradients. No new model forward, optimizer, H or planner was run for this review.
+
+## Saved-plan and resource evidence
+
+All 792 saved final and raw plan certificates pass coverage, endpoint and proxy navigation validity, with zero reported collisions; independent scalar/leg/polyline checks have maximum error 5.684341886081e-13. Certificates expressly do not certify IK, arm swept paths or physical joint trajectories. For native Fixed3/Detour16, raw and final are the same original native-final output, including their internal search; they are not neural no-H ablations. Their times and metrics must retain that semantic distinction.
+
+The independent event recount finds exactly 4888 requests attempted/completed, zero request failures, and 768 optimizer attempts. Frozen science ledger agrees: 4096 fresh A/B on-policy train requests, 792 current eval requests, A/B/SL256 updates each, 2048 existing teacher replays, Critic0 and new teacher/navigation/scenes0; no technical reserve was spent. Nine completed supervisor receipts report exit0 and no timeout. Saved resume events at A/B/SL cursor128 bind the previous checkpoints and explicitly restore Adam/RNG/sampler/cursor and resource state. Old D5 costs remain separately preserved. The science-final wall snapshot is 4921.116168737s; total cycle time must additionally include the ongoing read-only audit, review and Git closeout, so this snapshot must not be presented as the final cycle wall.
+
+Timing is actual current request timing through compressed archival completion, excluding model-grid preload and resource/pointer/event tail logging. Immutable input snapshots are cached and methods run in a fixed sequence, so cache state is unequal. Input preparation/model decode/H/export/validation observations and job totals can be reported with this scope. No fair deployment speedup or cold-start comparison follows. Missing uninstrumented timing subdivisions should remain NOT_RUN/null rather than zero.
+
+## Supported claim and routing
+
+Supported: this bounded single-seed causal-baseline implementation completed the registered A/B/SL256 comparison, retained valid proxy plans, and produced the exact negative development result above. It improved aggregate after-H cost versus old-loss A at 256 but failed against FrozenSL and continuing SL and regressed on exposed DEV versus A. The mathematical estimator construction is valid before clip/Adam.
+
+Unsupported: useful gain versus the two registered controls; independent held-out generalization; variance reduction; fair deployment acceleration; real robot/IK/joint-trajectory certification; a broader conclusion that all DRL or all causal baselines fail.
+
+Missing evidence for broader positive claims: independent retained generalization data, multiple seeds/statistical uncertainty, equal-cache/cold-start timing and physical validation were not part of this authorized cycle and were not run. No paper claim audit is available. The executor's separate source-bound full numerical audit and final model index/report were still being generated at review time; this review independently establishes the saved-grid negative decision and does not label those pending artifacts PASS.
+
+Suggested claim revision: Under the frozen D6 single-seed protocol at 256 updates, the causal remaining-cost baseline failed the development quality gate: parent-equal after-H cost increased by 1.2305% against FrozenSL and 1.5834% against matched continuing SL, despite a 0.7985% improvement over the old-loss A control.
+
+Routing: close this recipe as a negative result and preserve evidence; narrow the claim to the registered result. No additional experiment, seed, endpoint, algorithm, diagnostic or budget is proposed or authorized here. next_experiments_needed=[].

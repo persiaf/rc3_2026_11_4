@@ -33,10 +33,36 @@ def independent_credit(p,r):
     assert q==r['credit']['q_before']
     steps[-1]+=exit_cost;steps[-1]+=HJ-rawJ
     assert abs(math.fsum(steps)-HJ)<1e-7
+    assert np.max(np.abs(np.asarray(steps)+np.asarray(r['rewards'])))<1e-7
+    assert np.max(np.abs((HJ-np.asarray(prefix))+np.cumsum(np.asarray(r['rewards'])[::-1])[::-1]))<1e-7
     return prefix,q,HJ
 
+def old_per_action_check(ro):
+    target=HOME/'OLD_PER_ACTION_COST_AUDIT.json'
+    if target.exists():
+        old=read(target);assert old['status']=='PASS';return
+    count=0;step_error=0.;tail_error=0.
+    # Work1 already checked every saved navigation leg against its actual D.
+    # This independent pass checks the per-action reward log rather than
+    # repeating scene/F/A/mask reconstruction or an old historical CSV audit.
+    for line in (D5/'streams/2026111101/D5-PG/REQUEST_POINTERS.jsonl').open(encoding='utf-8'):
+        ro.check();r=unarchive(json.loads(line)['record']);legs=np.asarray(r['raw_plan']['route_leg_costs_m'],dtype=np.float64)
+        m=len(r['actions']);assert len(legs)==m+1
+        raw_increment=legs[:-1]+.75;prefix=np.r_[0.,np.cumsum(raw_increment[:-1])]
+        corrected=raw_increment.copy();corrected[-1]+=legs[-1]+r['metrics']['J']-r['metrics']['raw_J']
+        rewards=np.asarray(r['rewards'],dtype=np.float64)
+        step_error=max(step_error,float(np.max(np.abs(corrected+rewards))))
+        tail_error=max(tail_error,float(np.max(np.abs(r['metrics']['J']-prefix+np.cumsum(rewards[::-1])[::-1]))))
+        count+=1
+    assert count==32768 and max(step_error,tail_error)<1e-7
+    put(target,dict(status='PASS',trajectories=count,max_per_action_cost_plus_reward_error=step_error,
+        max_tail_plus_logged_future_rewards_error=tail_error,prior_D_link_validation_sha256=sha(HOME/'COST_DECOMPOSITION_VALIDATION.json'),
+        new_forward_optimizer_H_native_navigation_teacher=0))
+
 def main():
+    torch.set_num_threads(1);torch.set_num_interop_threads(1);torch.use_deterministic_algorithms(True)
     started=time.time();ro=ReadOnly();pool=Pool(ro);refcache={};checks=0;updates={};models=[];rawrows=[];aggregates=[];paired=[];routechanges=[];creditrows=[]
+    old_per_action_check(ro)
     mf=read(D5/'REFERENCE_MANIFEST.json')
     def reference(tid):
         if tid not in refcache:
@@ -48,6 +74,7 @@ def main():
     all_reports={}
     for p in (HOME/'evaluations/development').glob('*.json'):
         rep=read(p);key=(p.stem.rsplit('_',1)[0],rep['endpoint']);all_reports[key]=rep
+        assert len(rep['rows'])==66 and {r['case_id'] for r in rep['rows']}=={r['id'] for r in pool.cases}
         for row in rep['rows']:
             ro.check();r=unarchive(row['record']);problem,evidence=pool.get(row['case_id'])
             assert r['problem_identity']==problem.identity and row['physical_key']==evidence['physical_key']
@@ -102,6 +129,7 @@ def main():
         for f in sorted(path.glob('step*.actor.json')):
             entry=read(f);assert sha(ROOT/entry['path'])==entry['sha256'];p=torch.load(ROOT/entry['path'],map_location='cpu',weights_only=True)
             assert p['identity']==read(HOME/'SCIENTIFIC_IDENTITY.json')['identity'] and p['stream']==stream and not p['engineering_only']
+            assert p['role']==('D5-SL' if stream=='SL' else 'D5-PG')
             assert tensor_digest(p['model'])==entry['tensor_sha256']
             changed=[k for k in base if not torch.equal(base[k],p['model'][k])]
             assert set(changed)<=set(read(HOME/'PROTOCOL.json')['allowlist'])
@@ -163,9 +191,9 @@ def make_report(reports,resource,models):
     primary=read(HOME/'QUALITY_GATE_256.json') if (HOME/'QUALITY_GATE_256.json').exists() else None
     summary += ['\n## 范围、时间与决定\n',
         'Fixed3/Detour16的raw/H两栏是同一原生final口径，不是神经无H消融。六方法在两终点均重新评价，未借用旧D5耗时；完整请求时间含本轮输入准备、特征、构造、H、导出验证及归档写入，随后日志尾部计入总墙钟。神经模型在网格开始时加载并常驻，加载费用计入作业总账，不在每请求p50/p95中；这不是含启动的冷服务计时。缓存冷热与执行顺序不同，不宣称公平部署加速。成功率是完整代理模型约束证书范围，不是实机IK/关节轨迹认证。\n',
-        '各尺寸、SEL/DEV、raw/H分量与两聚合的全表见[AGGREGATE_RESULTS.csv](AGGREGATE_RESULTS.csv)，每父配对见[PARENT_PAIRED_GAINS.csv](PARENT_PAIRED_GAINS.csv)，停靠集合及访问顺序变化见[STOP_SET_ORDER_CHANGES.csv](STOP_SET_ORDER_CHANGES.csv)。路线变化和正负系数比例不替代任务收益。\n',
+        'SL匹配更新机会、批次和任务序列，不称等算力。各尺寸、SEL/DEV、raw/H分量与两聚合的全表见[AGGREGATE_RESULTS.csv](AGGREGATE_RESULTS.csv)，每父配对见[PARENT_PAIRED_GAINS.csv](PARENT_PAIRED_GAINS.csv)，停靠集合及访问顺序变化见[STOP_SET_ORDER_CHANGES.csv](STOP_SET_ORDER_CHANGES.csv)。路线变化和正负系数比例不替代任务收益。\n',
         f"实际资源：{resource['counts'].get('requests',0)}次完整请求，Actor尝试{resource['counts'].get('actor_optimizer_attempts',0)}、标签重放{resource['counts'].get('teacher_replays',0)}，Critic0。工程optimizer0。最终完整墙钟包含准备、统计、科学、审查与发布，以最终资源账为准；旧D5消费通过原账hash保留，不清零或覆写。\n",
-        'B的状态依赖基线在数学上保持完整终端目标的score-function期望，不能据此宣称有限样本方差降低、训练更快或已实现独立泛化。没有读取原60、旧S3或确认/最终集合，没有新教师、场景或导航。\n']
+        'B的状态依赖基线在数学上保持裁剪前、完整终端目标的score-function期望；裁剪和Adam后的实际更新不附带无偏或收敛保证，不能据此宣称有限样本方差降低、训练更快或已实现独立泛化。没有读取原60、旧S3或确认/最终集合，没有新教师、场景或导航。\n']
     decision=primary['status'] if primary else 'TECHNICAL_INCOMPLETE'
     summary.append(f'主决定：**{decision}**。本次固定256预算结束；不自动增加学习率、宽度、次数、种子或恢复关闭支线。')
     (HOME/'EXPERIMENT_REPORT.md').write_text('\n'.join(summary)+'\n',encoding='utf-8')

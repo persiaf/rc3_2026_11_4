@@ -1,0 +1,104 @@
+{
+  "schema": "D6-new-budget-with-old-ledger-preserved",
+  "limits": {
+    "requests": 4920,
+    "actor": 768,
+    "teacher_replay": 2048,
+    "wall_s": 7200
+  },
+  "counts": {
+    "requests": 4888,
+    "requests_completed": 4888,
+    "requests_failed": 0,
+    "actor_optimizer_attempts": 768,
+    "actor_optimizer_completed": 768,
+    "teacher_replays": 2048,
+    "critic_optimizer_attempts": 0,
+    "new_scenes": 0,
+    "navigation_solves": 0,
+    "new_teacher_requests": 0,
+    "original60_reads": 0,
+    "oldS3_reads": 0,
+    "confirmation_requests": 0,
+    "final_requests": 0,
+    "immutable_input_preparations": 2410,
+    "immutable_input_cache_hits": 38931,
+    "reference_cache_reads": 36865,
+    "old_D5_trajectories_cost_checked": 32768,
+    "train_requests": 4096,
+    "encode_calls": 10768,
+    "encode_s": 192.16764480006168,
+    "cache_rebuilds": 10768,
+    "score_calls": 779763,
+    "score_s": 663.1766978981032,
+    "full_H_calls": 4624,
+    "internal_construct_calls": 792,
+    "internal_two_opt_calls": 20812,
+    "internal_joint_search_calls": 5416,
+    "internal_recipe_calls": 792,
+    "internal_construct_inclusive_s": 1.5126930000187713,
+    "internal_two_opt_inclusive_s": 22.995122399781394,
+    "internal_joint_search_inclusive_s": 12.561490699994465,
+    "internal_recipe_inclusive_s": 4.241036399947916,
+    "internal_construct_exclusive_s": 1.5126930000187713,
+    "internal_two_opt_exclusive_s": 22.995122399781394,
+    "internal_joint_search_exclusive_s": 9.93210920009733,
+    "internal_recipe_exclusive_s": 0.5062004998981138,
+    "backward_calls": 6144,
+    "optimizer_A": 256,
+    "optimizer_B": 256,
+    "scientific_teacher_replays": 2048,
+    "optimizer_SL": 256,
+    "eval_requests": 792,
+    "native_requests": 264
+  },
+  "wall": {
+    "total_s": 4921.1161687374115
+  },
+  "jobs": {
+    "diagnose": {
+      "status": "COMPLETE",
+      "elapsed_s": 672.3590660095215
+    },
+    "A_128": {
+      "status": "COMPLETE",
+      "elapsed_s": 482.5538229942322
+    },
+    "B_128": {
+      "status": "COMPLETE",
+      "elapsed_s": 469.84210753440857
+    },
+    "SL_128": {
+      "status": "COMPLETE",
+      "elapsed_s": 298.7099041938782
+    },
+    "eval128": {
+      "status": "COMPLETE",
+      "elapsed_s": 70.0067880153656
+    },
+    "A_256": {
+      "status": "COMPLETE",
+      "elapsed_s": 468.87563920021057
+    },
+    "B_256": {
+      "status": "COMPLETE",
+      "elapsed_s": 472.0651304721832
+    },
+    "SL_256": {
+      "status": "COMPLETE",
+      "elapsed_s": 493.262734413147
+    },
+    "eval256": {
+      "status": "COMPLETE",
+      "elapsed_s": 197.86863088607788
+    }
+  },
+  "prior_D5": {
+    "path": "rc3_d5_revision_20261112/RESOURCE_ACCOUNTING.json",
+    "sha256": "dec2505b78e440a5e74b95a700cd3529d9d79c5cceb200aef14889bec935a89d",
+    "requests": 33954,
+    "Actor": 8202,
+    "not_reset_or_overwritten": true,
+    "not_part_of_new_D6_caps": true
+  }
+}

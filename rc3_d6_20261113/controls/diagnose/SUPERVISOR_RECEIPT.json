@@ -1,0 +1,77 @@
+{
+  "schema": "rc3-process-tree-supervision-v1",
+  "run_id": "rc3-d6-causal-tail-20261113-r1-diagnose",
+  "supervisor_pid": 8252,
+  "command": [
+    "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_learning\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "rc3_d6_20261113.worker",
+    "diagnose"
+  ],
+  "start_utc": "2026-11-13T01:40:58.837868+00:00",
+  "wall_limit_s": 5341.164133310318,
+  "closeout_reserve_s": 20.0,
+  "force_termination_at_s": 5321.164133310318,
+  "termination_tolerance_s": 2.0,
+  "poll_interval_s": 0.05,
+  "root_pid": 9296,
+  "worker_exit_code": 0,
+  "root_exit_confirmed": true,
+  "job_active_processes_at_end": 0,
+  "assigned_before_resume": true,
+  "timeout_triggered": false,
+  "job_termination_requested": false,
+  "status": "COMPLETE",
+  "events": [
+    {
+      "event": "private_job_created",
+      "elapsed_s": 0.014999999999417923,
+      "utc": "2026-11-13T01:40:58.841064+00:00",
+      "job_name": "RC3_M1_b2dd0b4e9334073ddc7ec4ae9e92eecb"
+    },
+    {
+      "event": "worker_created_suspended",
+      "elapsed_s": 0.014999999999417923,
+      "utc": "2026-11-13T01:40:58.846579+00:00",
+      "pid": 9296
+    },
+    {
+      "event": "worker_resumed",
+      "elapsed_s": 0.014999999999417923,
+      "utc": "2026-11-13T01:40:58.846579+00:00"
+    },
+    {
+      "event": "root_exit_observed",
+      "elapsed_s": 676.0469999999987,
+      "utc": "2026-11-13T01:52:14.882938+00:00",
+      "exit_code": 0,
+      "active_processes": 0
+    },
+    {
+      "event": "entire_experiment_tree_exit_confirmed",
+      "elapsed_s": 676.0469999999987,
+      "utc": "2026-11-13T01:52:14.882938+00:00"
+    }
+  ],
+  "receipt_write_errors": [],
+  "worker_last_heartbeat": null,
+  "arbitrary_process_enumeration": false,
+  "unrelated_process_termination": false,
+  "temporary_system_sleep_prevention_requested": true,
+  "sleep_prevention_scope": "Temporary thread ES_SYSTEM_REQUIRED; does not override explicit user/system suspension or alter power settings",
+  "heartbeat_writer_still_blocked_at_close": true,
+  "temporary_system_sleep_prevention_restored": true,
+  "termination_started_s": null,
+  "entire_tree_exit_confirmed_s": 676.0469999999987,
+  "termination_elapsed_s": null,
+  "actual_deadline_overshoot_s": 0.0,
+  "monotonic_elapsed_s": 676.155999999999,
+  "utc_wall_elapsed_s": 676.1566290855408,
+  "elapsed_s": 676.1566290855408,
+  "finish_utc": "2026-11-13T01:52:14.994497+00:00",
+  "execution_wall_violation": false,
+  "receipt_path": "D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_d6_20261113\\controls\\diagnose\\SUPERVISOR_RECEIPT.json"
+}
