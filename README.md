@@ -1,3 +1,9 @@
+<!-- RELATION_M2_SCIENCE_20261113_BEGIN -->
+# 研究内容三M2正式科学执行
+
+用户已批准准确冻结协议并授权M2a SL512；M2a完整成功后按条件授权进入M2b DRL2048/继续SL2048。当前状态与实际结果以[本轮执行入口](rc3_relation_m2_20261113/README.md)及[状态](rc3_relation_m2_20261113/CURRENT_STAGE_STATUS.json)为准。旧M1/计划状态保留为历史快照，不改冻结源码、协议或封存边界。
+<!-- RELATION_M2_SCIENCE_20261113_END -->
+
 <!-- RELATION_M0_M1_20261113_BEGIN -->
 # 第五章关系DRL：M0/M1工程PASS
 

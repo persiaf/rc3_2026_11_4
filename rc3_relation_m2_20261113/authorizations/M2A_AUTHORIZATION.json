@@ -1,0 +1,36 @@
+{
+  "schema": "relation-M2-stage-authorization-v1",
+  "status": "APPROVED",
+  "stage": "init",
+  "stage_authorization_id": "relation_navcover_m2_v1_20261113_M2a_user_20261113",
+  "scientific_id": "relation_navcover_m2_v1_20261113",
+  "protocol_sha256": "7ca20d48177b156ef4183f8d58f8354f20198513ecad66e161ff4d0b5e41a445",
+  "execution_source_binding_sha256": "103a7a63bdacfc900fce92e8614560f49846cef02360e101c5326e3d50dcb0fa",
+  "protocol_approval": {
+    "path": "rc3_relation_m2_20261113/authorizations/PROTOCOL_APPROVAL.json",
+    "sha256": "3b02f232608402e86f2726ccae292db99fea4e95bfb685fc7e7a95a51c14e4ef"
+  },
+  "base_commit": "9c878928e7f619bce25ddd00792757431ca705a1",
+  "recorded_utc": "2026-11-13T15:22:01.777553+00:00",
+  "authority": "Explicit user M2a authorization; original receipt required for any same-stage continuation",
+  "user_authorization": {
+    "path": "rc3_relation_m2_20261113/USER_AUTHORIZATION.md",
+    "sha256": "eb9e41b8753d03c4989a11e2401e13c561c14eb8229a8214f0e66b9cf82b2944"
+  },
+  "limits": {
+    "request_attempts": 4096,
+    "optimizer_attempts": 512,
+    "wall_s": 14400
+  },
+  "random_initialization": {
+    "path": "rc3_relation_drl_20261113/M2_RANDOM_INIT.pt",
+    "sha256": "3eab66bfab1664504b6227ef168e372c5c539b4690c737de6d630acc4cb65686",
+    "model_sha256": "247771201d7ed42b96c00dded5f7052eae38ca8fd41acbb727726e61b1442d73",
+    "engineering_only": false
+  },
+  "schedule": {
+    "path": "rc3_relation_drl_20261113/M2_DATA_SCHEDULE.json",
+    "sha256": "5442be75b09fbce4f827505ee854f1127add0c6b8aed8da3b01f6a608dfbc698"
+  },
+  "failure_action": "Stop according to frozen protocol; no sample/teacher replacement or automatic retry"
+}
