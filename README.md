@@ -1,3 +1,9 @@
+# R08-A 已完成：联合决策设计，未启动新训练
+
+352训练配对/96物理父、D5/D6固定终点与R07保存路线共3550结构比较；12项接口单测PASS，新前向/训练/规划/H/教师/导航均0。下一步仅R08-B机会提案，B—E未授权。
+
+[导师短材料](rc3_r08_joint_decision_design_20261113/TEACHER_DECISION_BRIEF.md) · [路线分析](rc3_r08_joint_decision_design_20261113/ROUTE_GAP_ANALYSIS.md) · [完整计划](rc3_r08_joint_decision_design_20261113/R08_MASTER_PLAN.md) · [全部交付](rc3_r08_joint_decision_design_20261113/README.md)
+
 # RC3-R07 已完成：动作反事实机会不足
 
 48个互异训练父布局、144个状态，304次完整请求（含16复测），Actor/Critic更新0。≥0.5%改善23/144，局部5/48，未过预登记机会门槛；不启动新训练。

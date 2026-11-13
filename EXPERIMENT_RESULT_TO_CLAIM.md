@@ -86,3 +86,10 @@ conservative_paired_11622026_v1：claim_supported=no，confidence=high仅限当�
 claim_supported=no（机会足够进入学习），confidence=high。48训练父布局/144状态，H后≥0.5%改善23/144、局部5/48，未过预设联合门槛。存在可复现条件成本差异；oracle0.5218%不是学习收益。H会改写原前缀，证据限离线完整路线构造。结束本配置机会方向，不启动新训练。paper_claim_audit=unavailable，writing=provisional。
 
 [报告](rc3_r07_20261113/EXPERIMENT_REPORT.md) · [判定](rc3_r07_20261113/RESULT_TO_CLAIM.md) · [独立审查](paper/review-traces/experiment-result-to-claim/20261113_r07_run01/RAW_REVIEW.md)。
+
+
+## 2026-11-13 R08-A联合决策设计
+
+claim_supported=partial，confidence=high，A交付supported，未来DRL收益NOT_TESTED。352教师—SL/96父、D5/D6固定终点、R07原144状态共3550结构比较/137汇总独立一致。观察集合/责任/顺序共同差异，不作独立因果分解。一个联合编辑候选与B—E预算/条件计划已完成；本轮只A，B—E未授权。论文写作provisional；不启动新实验。
+
+[导师材料](rc3_r08_joint_decision_design_20261113/TEACHER_DECISION_BRIEF.md) · [结果到主张](rc3_r08_joint_decision_design_20261113/RESULT_TO_CLAIM.md) · [独立审查](paper/review-traces/experiment-result-to-claim/20261113_r08_run01/RAW_REVIEW.md)。
