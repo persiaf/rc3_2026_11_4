@@ -308403,7 +308403,7 @@
       "bytes": 347
     },
     "rc3_r08_joint_runtime/DELIVERY_SOURCE_BINDING.json": {
-      "sha256": "25c784ea1bf026178d5970d5f07ab6be138215dfee5b8b6cb05ea9e8d87f82ed",
+      "sha256": "1ce7f6cebb7d097b117a5f7e2389217f3d98e694afb14a7fc67d9d71ae82fed1",
       "bytes": 1329
     },
     "rc3_r08_joint_runtime/EVENTS.jsonl": {
@@ -308459,8 +308459,8 @@
       "bytes": 50173
     },
     "rc3_r08_joint_runtime/RESOURCE_ACCOUNTING.json": {
-      "sha256": "420835409d07f8b0c582b3cd4a1cc4f9747fdbd91c1156c4cf6403b7b2162728",
-      "bytes": 2405
+      "sha256": "718352847a395acb8589184f3b59ea0cf6563e68a9e4d2280f6a869c2fb31056",
+      "bytes": 2720
     },
     "rc3_r08_joint_runtime/RESOURCE_SCIENTIFIC_FINAL_RAW.json": {
       "sha256": "8bbf40e2ef76b5bfc85c7ce929f6df416450544965fea0202f9213523b9e0da0",
@@ -308973,6 +308973,34 @@
     "rc3_r08_joint_runtime/PUBLICATION_MAINTENANCE.json": {
       "sha256": "fee8549dcb55c546655d0aecdc70d9c9bc655b72ae959885266bb6422d888fdc",
       "bytes": 308
+    },
+    "rc3_r08_joint_runtime/CACHE_MAINTENANCE_RECORD.json": {
+      "sha256": "4d048e6360d41a7dfd5cb8c91b90970b67703544bc44fd5b47d5512690c28956",
+      "bytes": 428
+    },
+    "rc3_r08_joint_runtime/LFS_NEW_OBJECT_INVENTORY.json": {
+      "sha256": "d2e70a9df698df6effe4052d4c0d7d762977df79d0e5619eb3f64398aca868d8",
+      "bytes": 977
+    },
+    "rc3_r08_joint_runtime/LFS_READBACK_REGISTRATION.json": {
+      "sha256": "96d3baf89db659432cbfa13842328ac1660f8cf372fc36eed701f78b566bfb8c",
+      "bytes": 1296
+    },
+    "rc3_r08_joint_runtime/LFS_READBACK_STDOUT.txt": {
+      "sha256": "a5d55b22223ec00a78f927cbf39b7c5021002e8cae25f6aaa451939d3810b28e",
+      "bytes": 120
+    },
+    "rc3_r08_joint_runtime/LFS_REMOTE_READBACK.json": {
+      "sha256": "a5a086ed3d5dff2d6f219336df3de50f7562e3b6e7f6a170bb481db6f7505076",
+      "bytes": 714
+    },
+    "rc3_r08_joint_runtime/PRESERVATION_CHECK.json": {
+      "sha256": "e16b2db9d3565b644b14c712815b70860a4e6eb05e2057b37a35a46770eff038",
+      "bytes": 393
+    },
+    "rc3_r08_joint_runtime/PUBLICATION_RECEIPT.json": {
+      "sha256": "b42bfe7483bbce80aeb91f1242c6625a2e302c5fb4eff2b79afc490a060b22a4",
+      "bytes": 1007
     }
   },
   "excluded_self_referential_metadata": [
@@ -309548,7 +309576,7 @@
   "R08_B": {
     "base_commit": "27deb2daf46f091cc2b9a7e3c475b7242eb2753e",
     "branch": "codex/rc3-r08-b-joint-opportunity-20261113",
-    "status": "OPPORTUNITY_INSUFFICIENT",
+    "status": "PAYLOAD_REMOTE_AND_REAL_NEW_LFS_VERIFIED",
     "requests": 719,
     "anchors": 48,
     "edits": 671,
@@ -309563,6 +309591,23 @@
     "old_evidence_and_user_files_preserved": true,
     "main_merged": false,
     "report": "rc3_r08_joint_runtime/EXPERIMENT_REPORT.md",
-    "resource": "rc3_r08_joint_runtime/RESOURCE_ACCOUNTING.json"
+    "resource": "rc3_r08_joint_runtime/RESOURCE_ACCOUNTING.json",
+    "payload_commit": "09b7ee455a7fdd450110a708e9e65337855df03c",
+    "actual_remote_payload_sha": "09b7ee455a7fdd450110a708e9e65337855df03c",
+    "remote_main_sha": "5d5fe25754ffa032f97937a3fb54f15901c2fb7d",
+    "actual_new_LFS_objects": 1,
+    "actual_new_LFS_bytes": 14729319,
+    "remote_downloaded_hash_verified": true,
+    "intermediate_versions_included": true,
+    "verification_receipt": "LFS_REMOTE_READBACK.json",
+    "no_main_merge": true,
+    "no_force_push": true,
+    "user_files_excluded": true,
+    "old_D5_D6_bytes_unchanged": true,
+    "verification_cache_preserved": true,
+    "cache_cleanup_not_a_scientific_gate": true,
+    "metadata_followup": "Publication receipts and final resource/manifest commit only; no new model/LFS objects",
+    "elapsed_s": 16.82800000000134,
+    "utc": "2026-11-13T07:38:24.412105+00:00"
   }
 }
