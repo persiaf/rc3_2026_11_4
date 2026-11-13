@@ -1,0 +1,99 @@
+{
+  "schema": "rc3-D6-causal-tail-v1",
+  "run_id": "rc3-d6-causal-tail-20261113-r1",
+  "base_commit": "539ead5ff52cb110a91736d6550cb988171d4d9b",
+  "origin_unix_s": 1794532800.0,
+  "deadline_unix_s": 1794540000.0,
+  "origin_scope": "Conservative timestamp before first task read; includes preparation,diagnostics,training,evaluation,audit,review,Git and waiting; no reset on resume",
+  "request_limit": 4920,
+  "actor_optimizer_limit": 768,
+  "teacher_replay_limit": 2048,
+  "critic_updates": 0,
+  "new_scene_navigation_teacher": 0,
+  "planned_requests": {
+    "train": 4096,
+    "eval": 792,
+    "total": 4888,
+    "technical_same_input_reserve": 32
+  },
+  "engineering_optimizer": 0,
+  "roles": {
+    "A": "Exact D5 full-trajectory scalar-cost PG",
+    "B": "D6 causal remaining-cost PG",
+    "SL": "Matched five-tensor continuing SL"
+  },
+  "network": "Original D5 five tensors25152/65088; all other original tensors frozen; no architecture/input change",
+  "allowlist": [
+    "key.weight",
+    "dynamic.weight",
+    "nav.weight",
+    "query.weight",
+    "query.bias"
+  ],
+  "initialization": "Exact legal SL256 independently cloned; never D5 endpoints/engineering/diagnostic weights",
+  "optimizer": {
+    "algorithm": "Adam",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "clip_grad_norm": 1.0,
+    "batch": 8,
+    "epochs": 1,
+    "entropy": 0
+  },
+  "A_loss": "mean_episode((J_H-J_FrozenSL_same_problem_H).detach()*sum_t(logpi_t))",
+  "B_loss": "mean_episode(sum_t((J_H-raw_prefix_cost_before_t-q_t*J_FrozenSL_same_problem_H).detach()*logpi_t))",
+  "q": "remaining_before_t / initial_task_count; only division by initial_task_count, no other return/task normalization",
+  "SL_loss": "mean_episode(mean_action(masked CE))",
+  "gamma": 1,
+  "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+  "mask_cost_and_endpoints": "Unchanged",
+  "sampling": {
+    "seed": 2026111101,
+    "convention": "Exact D5 SHA256-derived torch.Generator start for each independent A/B instance; separate on-policy draws and independently saved RNG; no trajectory sharing"
+  },
+  "schedule": "First256 batches of D5 seed2026111101: each4 full10x10 +4 local; identical task order for A/B/SL",
+  "endpoints": [
+    0,
+    128,
+    256
+  ],
+  "primary_endpoint": 256,
+  "step0": "Actual three zero-update exports; quality reused from current exact FrozenSL128 grid; no extra step0 requests or separate timing",
+  "evaluation": "66 exposed SEL8+DEV3, six methods freshly run at128 and256; native-final and neural raw/H separate; no fair deployment speed claim from unequal caches",
+  "quality_gate": {
+    "HJ_parent_equal_gain_vs_FrozenSL_min": 0.005,
+    "HJ_parent_equal_gain_vs_matched_SL_min": 0.005,
+    "SEL_and_DEV_each_nonnegative_vs_both": true,
+    "all66_proxy_valid": true,
+    "B_vs_A": "Report paired difference; no substitution for the two required controls",
+    "endpoint128": "Fixed descriptive screen only; no early weight selection or tuning",
+    "endpoint256": "Sole primary decision; no extension or seed changes"
+  },
+  "cost_validation": {
+    "trajectories": 32768,
+    "raw_terminal_exit": true,
+    "H_correction_once": true,
+    "float64_abs_tolerance": 1e-07,
+    "no_new_H": true,
+    "old_trajectory_use": "Statistics/decomposition only, never new Actor optimizer data"
+  },
+  "stop": "Cost/source/mask/finite failure stops before subsequent optimization; preserve consumed resources. Missing fixed256 is technical INCOMPLETE, not scientific failure. Main gate failure ends recipe.",
+  "recovery": "All streams checkpoint model/Adam/globalRNG/sampling/cursor/own active episodes/resources; actual process resume at128. Ambiguous uncheckpointed optimizer attempt stops, no free repeat.",
+  "forbidden": [
+    "original60 semantics",
+    "oldS3 semantics",
+    "confirmation/final retained sets",
+    "fixed32",
+    "A1/Critic reopen",
+    "new teacher",
+    "new scene",
+    "new navigation",
+    "main merge",
+    "history rewrite"
+  ]
+}
