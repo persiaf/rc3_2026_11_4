@@ -21,3 +21,7 @@ A/B/匹配SL各256完成，4888请求/768 Actor/2048标签重放，失败0。主
 [完整路线报告](EXPERIMENT_REPORT.md) · [数学与实现](MATHEMATICS.md) · [9个实际模型](MODEL_INDEX.json) · [792请求表](COMPLETE_TASK_RESULTS.csv) · [两聚合/分尺寸](AGGREGATE_RESULTS.csv) · [父配对](PARENT_PAIRED_GAINS.csv) · [停靠与顺序](STOP_SET_ORDER_CHANGES.csv) · [成本分解](COST_DECOMPOSITION_VALIDATION.json) · [逐动作复核](OLD_PER_ACTION_COST_AUDIT.json) · [旧规模损失/裁剪](D5_TRAJECTORY_CREDIT.csv) · [新在线参考诊断](ONLINE_CREDIT_DIAGNOSTICS.csv) · [数值复核](INDEPENDENT_NUMERICAL_AUDIT.json) · [研究决定](NEXT_STEP_DECISION.md) · [结果到主张](RESULT_TO_CLAIM.md) · [给老师的短材料](TEACHER_DECISION_BRIEF.md)。
 
 首算前协议/源码提交c0e3cd08897615a4137c9efeecc2c5860fd104fe。正式A/B/SL只读同一个COMMON_SCHEDULE，当前A前256的模型和损失与旧D5前缀精确一致，但实际进行了新的采样和更新。没有借用旧D5轨迹训练。当前候选不提升为生产默认。
+
+## 远端发布核验
+
+实际payload提交e04bc30c837e36bb33caa898fbbd9139fb0ac836，新增27个LFS对象、149973365字节已从远端下载并逐一核对SHA256和大小。详见[发布收据](PUBLICATION_RECEIPT.json)、[远端LFS逐对象核对](LFS_REMOTE_READBACK.json)、[冻结文件保持](PRESERVATION_CHECK.json)与[最终墙钟结账](FINAL_WALL_ACCOUNTING.json)。最终元数据提交不改变已核对的模型和轨迹。
