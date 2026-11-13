@@ -79,3 +79,10 @@
 conservative_paired_11622026_v1：claim_supported=no，confidence=high仅限当前配置；provisional，paper_claim_audit=unavailable。已真实执行ON/OFF及匹配继续监督各128机会，64/128终点六方法×66视图；ON/OFF全部raw/H路线及J/L/K与冻结SL相同，完整时间无优势，Critic value MSE连续高于warm固定常数。按两条预注册规则在128终闭合，256未开始，不增加轮数求正。2376请求完成/0失败，384 Actor/320 Critic尝试，累计正式含保存后分析3733.860712秒；工程另账。
 
 [独立判读](rc3_conservative_refinement/integration_20261110/INDEPENDENT_FORMAL_REVIEW.md)、[事实报告](rc3_conservative_refinement/integration_20261110/FORMAL_EXPERIMENT_REPORT.md)、[研究发现](rc3_conservative_refinement/integration_20261110/findings.md)、[下一步](rc3_conservative_refinement/integration_20261110/NEXT_STEP_DECISION.md)。固定DRL研究目标和原60/旧S3封存保持；只路由保存证据诊断与新协议评审，不声称当前方法有效或DRL目标不可能。
+
+
+## 2026-11-13 R07动作反事实机会
+
+claim_supported=no（机会足够进入学习），confidence=high。48训练父布局/144状态，H后≥0.5%改善23/144、局部5/48，未过预设联合门槛。存在可复现条件成本差异；oracle0.5218%不是学习收益。H会改写原前缀，证据限离线完整路线构造。结束本配置机会方向，不启动新训练。paper_claim_audit=unavailable，writing=provisional。
+
+[报告](rc3_r07_20261113/EXPERIMENT_REPORT.md) · [判定](rc3_r07_20261113/RESULT_TO_CLAIM.md) · [独立审查](paper/review-traces/experiment-result-to-claim/20261113_r07_run01/RAW_REVIEW.md)。

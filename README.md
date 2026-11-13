@@ -1,3 +1,9 @@
+# RC3-R07 已完成：动作反事实机会不足
+
+48个互异训练父布局、144个状态，304次完整请求（含16复测），Actor/Critic更新0。≥0.5%改善23/144，局部5/48，未过预登记机会门槛；不启动新训练。
+
+[报告](rc3_r07_20261113/EXPERIMENT_REPORT.md) · [双路线证据](rc3_r07_20261113/rollouts/REQUEST_POINTERS.jsonl) · [研究决定](rc3_r07_20261113/NEXT_STEP_DECISION.md) · [资源](rc3_r07_20261113/RESOURCE_ACCOUNTING.json)
+
 <!-- D6_CURRENT_BEGIN -->
 ## 当前：D6完整路线对照完成，因果剩余成本候选结束
 
