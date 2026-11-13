@@ -18,7 +18,7 @@ def main():
     for n,v in source['source_sha256'].items():
         if n.startswith(H.name+'/'):assert digest(ROOT/n)==v,n
     old=read(H/'RESOURCE_SCIENTIFIC_FINAL_RAW.json');r=read(H/'RESOURCE_ACCOUNTING.json');assert r['counts']==old['counts']
-    final='--final' in sys.argv;upper=120 if final else 0
+    final='--final' in sys.argv;upper=180 if final else 0
     protocol=read(H/'PROTOCOL.json');now=time.time();wall=now-protocol['origin_unix_s']
     assert wall+upper<=7200,'Original D6 wall cap reached'
     r['wall']['total_s']=wall+upper
