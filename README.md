@@ -1,3 +1,13 @@
+<!-- CHAPTER5_EVIDENCE_CLOSEOUT_BEGIN -->
+# 研究内容三成果整合与第五章主方案决策
+
+只读核对11月6日初稿、真实代码及各轮固定终点，统一静态完整任务模型。工程链路成立，DRL完整任务收益尚未达标；推荐审议显式导航关系与覆盖耦合的构造式DRL，地图CNN八动作DDQN仍是新待实施研究。本轮前向/训练/教师/规划/H/新父评价均0，历史停止及用户论文保持。
+
+[全部成果与负结果](rc3_chapter5_evidence_20261113/RESEARCH_CONTENT3_FINAL_SUMMARY.md) · [第五章5.1—5.6证据与统一公式](rc3_chapter5_evidence_20261113/THESIS_CHAPTER5_EVIDENCE_MAP.md) · [A/B方案取舍、接口及最小实验矩阵](rc3_chapter5_evidence_20261113/CHAPTER5_NEXT_METHOD_DECISION.md)
+
+本轮交付后停止，不启动A/B新训练或R08-C/D/E。以下为按创建时点保留的历史记录。
+<!-- CHAPTER5_EVIDENCE_CLOSEOUT_END -->
+
 # R08-B 已完成：联合编辑机会不足，固定邻域关闭
 
 48训练父、719完整处理（48SL锚点+671编辑），失败0。oracle1.195478%<1.5%，净双配置实质改善11/74<50%，未过原门槛；不进C/D/E。
