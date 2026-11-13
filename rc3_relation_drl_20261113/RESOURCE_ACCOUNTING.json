@@ -1,0 +1,173 @@
+{
+  "schema": "relation-M0-M1-delivery-resource-summary-v1",
+  "date": "2026-11-13",
+  "status": "ENGINEERING_PASS_M2_NOT_RUN",
+  "scope": "Actual current engineering ledger and saved supervisor receipts; independent of frozen historical scientific accounts",
+  "engineering": {
+    "cases": 8,
+    "nonempty_training_cases": 6,
+    "derived_empty_cases": 2,
+    "limits": {
+      "request_attempts": 128,
+      "optimizer_attempts": 32,
+      "wall_s": 7200
+    },
+    "request_attempts": 126,
+    "request_completed": 126,
+    "request_failures": 0,
+    "optimizer_attempts": 14,
+    "optimizer_completed": 14,
+    "optimizer_failures": 0,
+    "optimizer_by_kind": {
+      "RL": 7,
+      "SL": 7
+    },
+    "request_breakdown": {
+      "nonempty_sampled_policy": 64,
+      "frozen_equivalence": 4,
+      "empty_terminal_fast_path": 8,
+      "gradient_replay": 40,
+      "teacher_replay": 10
+    },
+    "request_purpose_raw_receipts": {
+      "gradient_replay": 40,
+      "policy": 76,
+      "teacher_replay": 10
+    },
+    "nonempty_H_calls": 68,
+    "empty_terminal_calls_excluded_from_H_counter": 8,
+    "new_teacher_queries": 0,
+    "counters_as_recorded": {
+      "unit_suite_attempts": 1,
+      "synthetic_encode_calls": 12,
+      "synthetic_score_calls": 14,
+      "unit_suite_completed": 1,
+      "request_attempts": 126,
+      "immutable_input_preparations": 12,
+      "encode_calls": 94,
+      "score_calls": 10669,
+      "H_calls": 68,
+      "request_completed": 126,
+      "immutable_input_cache_hits": 92,
+      "gradient_replays": 40,
+      "backward_calls": 20,
+      "optimizer_attempts": 14,
+      "optimizer_completed": 14,
+      "teacher_replays": 10
+    },
+    "active_worker_elapsed_s": 161.34126447898257,
+    "supervised_elapsed_s": 206.49750052452077,
+    "supervised_elapsed_by_session_s": {
+      "first": 66.89650630950928,
+      "second": 84.7349999999999,
+      "batch4": 54.8659942150116
+    },
+    "time_semantics": "Supervisor totals include worker startup/exit; active worker time is contained, not additive. They do not measure the whole documentation/Git turn.",
+    "pending": {},
+    "all_supervisors_complete": true,
+    "engineered_checkpoint": {
+      "path": "rc3_relation_drl_20261113/engineering/M1_production_batch.pt",
+      "sha256": "579c7e427232265c6a07a29e54dc2c283847bfcfeb0fb0296204c590cfd6502f",
+      "cursor": {
+        "closed": true,
+        "stage": "M1_batch4"
+      },
+      "model_sha256": "05e114db53ab1b0ad5b6054a2e00143f2e1f50e3ee84c6c8e2835366e799fe59",
+      "optimizer_sha256": "76e5b2a3cb5934361cec2672d35a78e80d3fc72752bad39cff3839a76a89b628",
+      "rng_sha256": "3c3a8fa7269752aad8b8052101b662f4a041aeddc52a61b9a5e74e81f3e2b680"
+    },
+    "recovery_passed": true,
+    "engineering_models_for_science": false
+  },
+  "M0_tests": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "synthetic_only": true,
+    "optimizer_calls": 0,
+    "complete_planning_requests": 0,
+    "backward_calls": 1,
+    "synthetic_manual_parameter_mutations": 1
+  },
+  "M2_protocol_logic_tests": {
+    "tests": 6,
+    "passed": true,
+    "model_forwards": 0,
+    "optimizer_calls": 0,
+    "complete_requests": 0,
+    "evidence": "M2_PROTOCOL_TEST_RESULT.json",
+    "rerun_for_report": false
+  },
+  "batch4_engineering": {
+    "tasks": [
+      "F012",
+      "F039",
+      "L030",
+      "L245"
+    ],
+    "new_request_counts": {
+      "online": 16,
+      "gradient_replay": 16,
+      "teacher_replay": 4
+    },
+    "new_optimizer_calls": 2,
+    "timing_s": {
+      "collection_s": 23.34278029999996,
+      "RL_update_s": 14.17660079999996,
+      "SL_update_s": 4.95380810000006
+    },
+    "total_timing_s": 42.47318919999998,
+    "memory_bytes": {
+      "peak_allocated": 4177412096,
+      "peak_reserved": 4196401152
+    },
+    "single_batch_is_training_time_prediction": false
+  },
+  "scientific": {
+    "stage_status": "FROZEN_NOT_AUTHORIZED",
+    "M2_executed": false,
+    "random_initial_models_constructed": 1,
+    "random_initialization_forwards": 0,
+    "SL_initialization_updates": 0,
+    "DRL_updates": 0,
+    "continued_SL_updates": 0,
+    "online_trajectories": 0,
+    "gradient_replays": 0,
+    "teacher_replays": 0,
+    "development_evaluations": 0,
+    "reserved_task_semantic_reads": 0,
+    "new_parent_tests": 0
+  },
+  "M2_frozen_budget_not_actual_consumption": {
+    "init_wall_s": 14400,
+    "paired_wall_s": 115200,
+    "init_updates": 512,
+    "DRL_updates": 2048,
+    "continued_SL_updates": 2048,
+    "optimizer_total": 4608,
+    "online_trajectories": 32768,
+    "DRL_gradient_replays": 32768,
+    "SL_teacher_replays": 12288,
+    "planned_evaluation_requests": 1404,
+    "evaluation_and_technical_disposition_cap": 2000,
+    "technical_disposition_remainder": 596,
+    "technical_remainder_auto_authorized": false,
+    "full_processing_cap": 79824
+  },
+  "evidence": {
+    "worker_ledger": "engineering/RESOURCE_ACCOUNTING.json",
+    "final_result": "engineering/M1_FINAL_RESULT.json",
+    "prior_closed_result": "engineering/ENGINEERING_RESULT.json",
+    "supervisor_receipts": [
+      "engineering/controls/first/SUPERVISOR_RECEIPT.json",
+      "engineering/controls/second/SUPERVISOR_RECEIPT.json",
+      "engineering/controls/batch4/SUPERVISOR_RECEIPT.json"
+    ],
+    "requests": "engineering/requests",
+    "updates": "engineering/updates",
+    "recovery": "engineering/RECOVERY_RESULT.json"
+  },
+  "historical_ledgers_modified": false,
+  "scientific_performance_claim": false
+}

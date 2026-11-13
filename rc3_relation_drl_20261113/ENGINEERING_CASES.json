@@ -1,0 +1,212 @@
+{
+  "schema": "relation-engineering-cases-v1",
+  "cases": [
+    "F012",
+    "F039",
+    "L030",
+    "L245",
+    "L170",
+    "L164",
+    "EMPTY_CLOSED",
+    "EMPTY_OPEN"
+  ],
+  "training_cases": {
+    "F012": {
+      "id": "F012",
+      "parent": 12,
+      "spec": {
+        "case": 12,
+        "parent": 12,
+        "map_seed": 10000000012,
+        "task_seed": 11000000096,
+        "width": 10,
+        "height": 10,
+        "x0": 0,
+        "y0": 0,
+        "endpoints": "closed_depot",
+        "A_condition": 0,
+        "role": "train",
+        "mode": "mixed"
+      },
+      "physical_key": "bcf3ea858034490de2ab7111b1c0eebe58a8541d6cf182aea52c95c9827ad3c5",
+      "expected_parent_identity": "06f35c429554f946fb113210cb01348fda1b22dd119099f8e50427c5eb1fb0ba",
+      "input_files": {
+        "arrays": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000012_11000000096_A0/arrays.npz",
+          "sha256": "c72976215a6710bb77aea1c4a12b6131bc8147f1bc2ac0c4aa4f17c4d593e1e9"
+        },
+        "navigation": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/bcf3ea858034490de2ab7111b1c0eebe58a8541d6cf182aea52c95c9827ad3c5.npz",
+          "sha256": "02d1f2da56c751069d7452948f478c1ad09e48955d1ed31e31281541e955f7e9"
+        },
+        "navigation_receipt": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/bcf3ea858034490de2ab7111b1c0eebe58a8541d6cf182aea52c95c9827ad3c5.json",
+          "sha256": "ccf94d2122b1b42d0b23b47f45cb116dbc98f54b7915ae17f70c328a53c174bc"
+        },
+        "receipt": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000012_11000000096_A0/receipt.json",
+          "sha256": "be8246fc3a8318eb591d3664555fa4f850a1d5813b2bb07c2034ce20cdedd164"
+        },
+        "scene": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000012_11000000096_A0/scene.json",
+          "sha256": "65e2dc4b8ba856418eafcf9afca55b6e799525a6cb3c34392ad68877989d910b"
+        }
+      },
+      "selection": "Minimum original teacher index within each registered training parent; no cost used",
+      "source_teacher_metadata_index": 12
+    },
+    "F039": {
+      "id": "F039",
+      "parent": 39,
+      "spec": {
+        "case": 39,
+        "parent": 39,
+        "map_seed": 10000000039,
+        "task_seed": 11000000312,
+        "width": 10,
+        "height": 10,
+        "x0": 0,
+        "y0": 0,
+        "endpoints": "closed_depot",
+        "A_condition": 0,
+        "role": "train",
+        "mode": "blocked"
+      },
+      "physical_key": "f3ce94159699c4a5fe60a22458b8dbf73363ebc00a649641ddff54b663d6a7f2",
+      "expected_parent_identity": "71e3c8886fa0aee4191e8c046e63ae1fc131c3a30a30e56588b6287ac739757b",
+      "input_files": {
+        "arrays": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000039_11000000312_A0/arrays.npz",
+          "sha256": "d4c1509a98fb5416e7c89105090cbc94e0bfd0ae846e6c8c840b066594f2fa07"
+        },
+        "navigation": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/f3ce94159699c4a5fe60a22458b8dbf73363ebc00a649641ddff54b663d6a7f2.npz",
+          "sha256": "022d4a9cf31ffb60611fc2922bf4f5624d120632555ef9c874591716ad65c091"
+        },
+        "navigation_receipt": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/navigation/f3ce94159699c4a5fe60a22458b8dbf73363ebc00a649641ddff54b663d6a7f2.json",
+          "sha256": "c1361fae88872b77dc03aa56b5930682e91dafe3b81ff98a7dce225301bc5344"
+        },
+        "receipt": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000039_11000000312_A0/receipt.json",
+          "sha256": "e03302abbd43a6dbe36759bcd9212c2d28193f5e1fe1dbadb629d095b1cfc28a"
+        },
+        "scene": {
+          "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/data/task_draws/10000000039_11000000312_A0/scene.json",
+          "sha256": "396dd43c99cac36e095f3e27035dadc0c35a865369aaffe1c67d1c5e4c318fc7"
+        }
+      },
+      "selection": "Minimum original teacher index within each registered training parent; no cost used",
+      "source_teacher_metadata_index": 39
+    },
+    "L030": {
+      "id": "L030",
+      "teacher_index": 30,
+      "spec": {
+        "case": 30,
+        "parent": 30,
+        "map_seed": 10000000030,
+        "task_seed": 11000000240,
+        "width": 4,
+        "height": 3,
+        "x0": 6,
+        "y0": 6,
+        "endpoints": "open_first_last_connected",
+        "A_condition": 0,
+        "role": "train",
+        "mode": "mixed"
+      },
+      "physical_key": "f919fb3be2acce51c8abc83141198b79700317142dff3352bb4c289856315bb5",
+      "source": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/teachers256/label_030.json",
+        "sha256": "024c626f72453084a28fe14d39008aa83b10270dccf0a326d9878d93ff816356"
+      },
+      "view_identity": "b3d27d4d8431962d7fcb3d3021ae1e23b3a103a6b6990945ddf7285c5e234b7a"
+    },
+    "L245": {
+      "id": "L245",
+      "teacher_index": 245,
+      "spec": {
+        "case": 245,
+        "parent": 53,
+        "map_seed": 10000000053,
+        "task_seed": 11000000426,
+        "width": 6,
+        "height": 6,
+        "x0": 0,
+        "y0": 0,
+        "endpoints": "closed_depot",
+        "A_condition": 1,
+        "role": "train",
+        "mode": "blocked"
+      },
+      "physical_key": "9d32f1e91cb7f5512c142c71dcdd8de1df6007753d0b36dafcfa8912ad5255b7",
+      "source": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/teachers256/label_245.json",
+        "sha256": "dfa8fb5d1f7bd74769bacd7930b687a8207d761911e3b14386c67032eb13b48c"
+      },
+      "view_identity": "b277d7d02eca595018c47e758389284876026e6f79a82adab060c412b20182c1"
+    },
+    "L170": {
+      "id": "L170",
+      "teacher_index": 170,
+      "spec": {
+        "case": 170,
+        "parent": 74,
+        "map_seed": 10000000074,
+        "task_seed": 11000000593,
+        "width": 8,
+        "height": 8,
+        "x0": 0,
+        "y0": 1,
+        "endpoints": "closed_depot",
+        "A_condition": 0,
+        "role": "train",
+        "mode": "mixed"
+      },
+      "physical_key": "e61827760e36dd1298202d2ad38bd7e24e80b5196f8c463cd84bb44e749f80e4",
+      "source": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/teachers256/label_170.json",
+        "sha256": "9946e1d3bd05aa3f9472b3aab056b43c122f6e65a5b962a5d3a4411bc1cdffe8"
+      },
+      "view_identity": "c55c8a5f473a86984a149e7651f85e93168937c3c4e7f3e2c2aee60cb2411162"
+    },
+    "L164": {
+      "id": "L164",
+      "teacher_index": 164,
+      "spec": {
+        "case": 164,
+        "parent": 68,
+        "map_seed": 10000000068,
+        "task_seed": 11000000545,
+        "width": 8,
+        "height": 8,
+        "x0": 0,
+        "y0": 1,
+        "endpoints": "open_first_last_connected",
+        "A_condition": 0,
+        "role": "train",
+        "mode": "mixed"
+      },
+      "physical_key": "6d5ba07822774fdd4ec0cd6059d5bc9e43ac42f096f7fca67f67a1f5d5ada1ab",
+      "source": {
+        "path": "rc3_global_local_execution_v3/runs/rc3_v3_global_local_20261106_01/teachers256/label_164.json",
+        "sha256": "2b92d197f39edf39a16bc783a2f3cd4b0bb9b75c96787bd64f48dd82e52999e9"
+      },
+      "view_identity": "649f23bee2664c46ea712e6dc7a7883974a50eb17d21be98a80c4250be5faf8e"
+    }
+  },
+  "boundary_cases": {
+    "EMPTY_CLOSED": {
+      "source": "F012",
+      "task_ids": [],
+      "endpoints": "closed_depot"
+    },
+    "EMPTY_OPEN": {
+      "source": "L030",
+      "task_ids": [],
+      "endpoints": "original_open"
+    }
+  },
+  "selection": "Metadata only: maximum candidates full mixed and blocked; all three local sizes and both endpoints. No cost selection."
+}

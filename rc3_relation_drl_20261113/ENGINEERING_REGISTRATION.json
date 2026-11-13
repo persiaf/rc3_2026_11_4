@@ -1,0 +1,60 @@
+{
+  "schema": "relation-M0-M1-registration-v1",
+  "status": "REGISTERED_BEFORE_EXECUTION",
+  "authorization": {
+    "scope": "M0_M1_ONLY",
+    "source": "Current user message: 第五章导航—覆盖关系DRL方案：实施前修订与工程启动",
+    "approved": "Plan revision, unique relation Actor, M0/M1 bounded engineering and freeze M2 protocol",
+    "M2_execution_authorized": false
+  },
+  "seed": 2026111391,
+  "sampling_seed": 2026111392,
+  "device": "cuda",
+  "cases": [
+    "F012",
+    "F039",
+    "L030",
+    "L245",
+    "L170",
+    "L164",
+    "EMPTY_CLOSED",
+    "EMPTY_OPEN"
+  ],
+  "limits": {
+    "request_attempts": 128,
+    "optimizer_attempts": 32,
+    "wall_s": 7200
+  },
+  "planned": {
+    "nonempty_cases": 6,
+    "empty_boundary_cases": 2,
+    "policy_requests": 48,
+    "gradient_full_replays": 24,
+    "teacher_full_replays": 6,
+    "empty_requests": 8,
+    "frozen_equivalence_requests": 4,
+    "total_requests": 90,
+    "optimizer_calls": 12
+  },
+  "tolerance": {
+    "cost_reward_abs": 1e-07,
+    "logprob_atol": 2e-05,
+    "logprob_rtol": 1e-05,
+    "mask_exact": true,
+    "frozen_routes_exact": true,
+    "restored_weight_Adam_RNG_bytes_exact": true
+  },
+  "source_binding_sha256": "154a7c4a4d0d5e65cd6547dd484d6de30a63ffff8aea208ef8ea2159948156bf",
+  "environment_sha256": "314e23b73252c1dfd65cb3f2531a6a79a61021af7c0180f469f2515ae23467d6",
+  "synthetic_unit_tests": {
+    "count": 10,
+    "complete_requests": 0,
+    "optimizer_calls": 0,
+    "backward_calls": 1,
+    "manual_parameter_mutations": 1
+  },
+  "recovery": "Two separate worker processes at closed case3 checkpoint; no resource reset; dirty requests/updates block free replay",
+  "engineering_models_for_science": false,
+  "original60_oldS3_fixed32_semantic_reads": 0,
+  "supervisor": "Exact existing Windows JobObject supervisor, hard cumulative7200s including worker startup"
+}

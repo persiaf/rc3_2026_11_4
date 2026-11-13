@@ -1,3 +1,13 @@
+<!-- RELATION_M0_M1_20261113_BEGIN -->
+# 第五章关系DRL：M0/M1工程PASS
+
+唯一导航—覆盖关系Actor已实施。固定8案例完成126次完整处理、14次工程更新，0失败；最大732候选252任务，B4G4峰值显存约3.89 GiB。M2源码、独立随机起点、日程、评价及预算已冻结，正式科学训练未执行。
+
+[源码与交付入口](rc3_relation_drl_20261113/README.md) · [实际报告](rc3_relation_drl_20261113/EXPERIMENT_REPORT.md) · [M2正式协议](rc3_relation_drl_20261113/M2_PROTOCOL.md) · [资源与停止决定](rc3_relation_drl_20261113/NEXT_STEP_DECISION.md) · [修订计划v2](rc3_ch5_learning_plan_20261113/EXPERIMENT_PLAN.md)
+
+本轮只支持工程可用性，尚无DRL收益结论。以下区块保留各历史交付时点的状态。
+<!-- RELATION_M0_M1_20261113_END -->
+
 <!-- CH5_LEARNING_PLAN_20261113_BEGIN -->
 # 第五章下一轮：导航—覆盖关系构造DRL计划
 

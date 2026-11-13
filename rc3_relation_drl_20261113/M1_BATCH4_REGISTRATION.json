@@ -1,0 +1,32 @@
+{
+  "scope": "Supplementary M1 production B4G4 assembly, same user authorization and original resource ledger; no science",
+  "status": "REGISTERED_BEFORE_CALL",
+  "source_sha256": "7aac6b4b1df579fb2d4597c2d9adf733c5e39564a88c6597215f0c427a14e9e3",
+  "prior_result_sha256": "8db66fdd6917be50ae3759eb9e65cd1eca695343ed7d45c102bf15cacc4d952a",
+  "tasks": [
+    "F012",
+    "F039",
+    "L030",
+    "L245"
+  ],
+  "limits": {
+    "request_attempts": 128,
+    "optimizer_attempts": 32,
+    "wall_s": 7200
+  },
+  "prior_counts": {
+    "requests": 90,
+    "optimizer": 12
+  },
+  "new_plan": {
+    "online": 16,
+    "gradient_replay": 16,
+    "teacher_replay": 4,
+    "optimizer": 2
+  },
+  "expected_cumulative": {
+    "requests": 126,
+    "optimizer": 14
+  },
+  "rationale": "Validate actual M2 B4G4 gradient accumulation and peak memory, not only earlier B1G4"
+}

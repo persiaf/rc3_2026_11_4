@@ -1,11 +1,10 @@
-# 第五章下一轮DRL计划
+# 第五章导航—覆盖关系DRL：实施入口
 
-推荐学习**完整停靠集合与导航顺序**，以显式导航D、逐臂任务支持E和动态剩余覆盖的轻量关系策略展开一轮新机制实验。最近MATLAB的选位收益证书提供问题依据；CSP与BaSeNet提供训练对象参考。新模型尚未实施，效果尚未验证。
+本轮修订已实施唯一RelationActor，M0/M1工程PASS；完整M2科学协议已冻结，本轮未执行正式训练。旧Actor本就联合决定集合与顺序并使用完整H后回报，新增假设只限显式D与动态剩余覆盖表示。
 
-- [完整计划、目标与预算](EXPERIMENT_PLAN.md)
-- [文献与MATLAB准确代码](LITERATURE_AND_CODE.md)
-- [实验跟踪表](EXPERIMENT_TRACKER.md)
-- [实施审查](IMPLEMENTATION_REVIEW.md) · [本轮报告](EXPERIMENT_REPORT.md) · [结果与主张](RESULT_TO_CLAIM.md)
-- [下一步](NEXT_STEP_DECISION.md) · [资源](RESOURCE_ACCOUNTING.json) · [证据身份](SOURCE_BINDING.json) · [Git发布记录](GIT_DELIVERY.md)
+- [当前计划v2](EXPERIMENT_PLAN.md) · [当前跟踪表](EXPERIMENT_TRACKER.md)
+- [实际源码、工程结果及正式科学协议](../rc3_relation_drl_20261113/README.md)
+- [v1原计划](EXPERIMENT_PLAN_20261113_v1.md) · [v1原跟踪表](EXPERIMENT_TRACKER_20261113_v1.md)
+- [原文献与MATLAB代码依据](LITERATURE_AND_CODE.md)
 
-最先完成R001新模型和接口，R002合法初始化，R003一seed DRL/SL配对。原停止和封存边界保持，未执行任何新的训练或保留测试。
+以下文件保留v1创建时点的状态，不能作为当前工程状态：IMPLEMENTATION_REVIEW.md、EXPERIMENT_REPORT.md、RESULT_TO_CLAIM.md、RESOURCE_ACCOUNTING.json、NEXT_STEP_DECISION.md、SOURCE_BINDING.json、GIT_DELIVERY.md。当前对应材料见新实施目录。
