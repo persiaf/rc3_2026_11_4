@@ -307359,8 +307359,8 @@
       "bytes": 258
     },
     "rc3_r07_20261113/DELIVERY_SOURCE_BINDING.json": {
-      "sha256": "c98abdbeae1a201e15d363aeee50b725c78a96c36b646b7c161239f2ba4c05ff",
-      "bytes": 475
+      "sha256": "140c91ba8d4ad9ad0599fd12636465f735e1d1b42bc0a80053d141c86364853d",
+      "bytes": 552
     },
     "rc3_r07_20261113/EVENTS.jsonl": {
       "sha256": "b38bc834eb204ed3af147295ce58d5b200119d01e5c786ecc79fd3844d313864",
@@ -307419,8 +307419,8 @@
       "bytes": 11284
     },
     "rc3_r07_20261113/RESOURCE_ACCOUNTING.json": {
-      "sha256": "dfb013b8f265ba7c7bc8dd8d04583e7f866ffa86b3549b0c4b732d3e95cd2750",
-      "bytes": 1985
+      "sha256": "dbd0ad40007b18c2486f5ccfbb6e3a88d8739a3cc8ff9ba3d244ce4e11549ebe",
+      "bytes": 2782
     },
     "rc3_r07_20261113/RESOURCE_SCIENTIFIC_FINAL_RAW.json": {
       "sha256": "d8565077e65345707cddee52b69fef828e5be6fbb4e7812c4251848072ca2479",
@@ -307455,8 +307455,8 @@
       "bytes": 52042
     },
     "rc3_r07_20261113/STATUS.json": {
-      "sha256": "4695cd3f853eb57f82a5162bfb8b95d3e269f73621272f289bed78ecc2fd1211",
-      "bytes": 161
+      "sha256": "92decb4065d42e9fa61b140763c1f66ab7a134b7ca66138ce0658683eb4caa49",
+      "bytes": 294
     },
     "rc3_r07_20261113/TASKS.json": {
       "sha256": "97b6410f14be03af8ce2b98fd1f631a6c822eb487a75af17ce7f1cce381dabea",
@@ -308121,6 +308121,42 @@
     "rc3_r07_20261113/worker.py": {
       "sha256": "b18f64490c2fb29a1d16a48196f80af5f34190218b06976b431cbc4fe4e42b73",
       "bytes": 2989
+    },
+    "rc3_r07_20261113/CACHE_MAINTENANCE_RECORD.json": {
+      "sha256": "4d2811e45168f1ec419b01ad472f513302cc67d9bc11882080174aa2956df653",
+      "bytes": 702
+    },
+    "rc3_r07_20261113/GIT_CLOSEOUT_OBSERVED.json": {
+      "sha256": "5f1a1a3584a66ba998d6906f553e77ccc5cb55daf8d8d70f8323be5d79213515",
+      "bytes": 792
+    },
+    "rc3_r07_20261113/LFS_NEW_OBJECT_INVENTORY.json": {
+      "sha256": "f9b3868e02a651151bf9cedf512a86a5e629973f715d394fe7a8a0a6c32b1747",
+      "bytes": 965
+    },
+    "rc3_r07_20261113/LFS_READBACK_REGISTRATION.json": {
+      "sha256": "a152ea34e588bff3333ba4f8bdc37e32408a5fc2f3ab7ef0dd7e925c65ba0cd4",
+      "bytes": 1277
+    },
+    "rc3_r07_20261113/LFS_READBACK_STDOUT.txt": {
+      "sha256": "c4a1d68fb517bc2fe365a1d8e427c99887acf0434f0e2676532c9c9a87f5ac2a",
+      "bytes": 120
+    },
+    "rc3_r07_20261113/LFS_REMOTE_READBACK.json": {
+      "sha256": "e745c4a7d8955d7bac94b8bff738cb65095b898417924374bb749f0fe5553a81",
+      "bytes": 708
+    },
+    "rc3_r07_20261113/PRESERVATION_CHECK.json": {
+      "sha256": "82e97bc5973f50c4a4733082d92d1e4b7d40fe50ae4fcacc25f39bd81b0a45ff",
+      "bytes": 393
+    },
+    "rc3_r07_20261113/PUBLICATION_RECEIPT.json": {
+      "sha256": "ac1ca340d3828fd8b0b0d779d4fbc30a5ab89d1c9d83c665d240aed388905335",
+      "bytes": 1003
+    },
+    "rc3_r07_20261113/closeout.py": {
+      "sha256": "424cc2c04f5008c7deda2fdaae7daba871cbfc75ccbdb5b0b0044ed4e48f5424",
+      "bytes": 4567
     }
   },
   "excluded_self_referential_metadata": [
@@ -308627,7 +308663,7 @@
     "base_commit": "fed8296a8e5481a6920c18e9a5e908b23f2266cb",
     "branch": "codex/rc3-r07-action-rollouts-20261113",
     "preregistration_commit": "9ae6f6e199211cc1f7069f1118fa57252c1d8bb2",
-    "status": "OPPORTUNITY_INSUFFICIENT",
+    "status": "PAYLOAD_REMOTE_AND_REAL_NEW_LFS_VERIFIED",
     "physical_training_parents": 48,
     "states": 144,
     "requests": 304,
@@ -308638,6 +308674,23 @@
     "user_files_not_refreshed": true,
     "main_merged": false,
     "report": "rc3_r07_20261113/EXPERIMENT_REPORT.md",
-    "resource": "rc3_r07_20261113/RESOURCE_ACCOUNTING.json"
+    "resource": "rc3_r07_20261113/RESOURCE_ACCOUNTING.json",
+    "payload_commit": "d33332bb19aab461b17def157b7eb5c58923cd90",
+    "actual_remote_payload_sha": "d33332bb19aab461b17def157b7eb5c58923cd90",
+    "remote_main_sha": "5d5fe25754ffa032f97937a3fb54f15901c2fb7d",
+    "actual_new_LFS_objects": 1,
+    "actual_new_LFS_bytes": 6770727,
+    "remote_downloaded_hash_verified": true,
+    "intermediate_versions_included": true,
+    "verification_receipt": "LFS_REMOTE_READBACK.json",
+    "no_main_merge": true,
+    "no_force_push": true,
+    "user_files_excluded": true,
+    "old_D5_D6_bytes_unchanged": true,
+    "verification_cache_preserved": true,
+    "cache_cleanup_not_a_scientific_gate": true,
+    "metadata_followup": "Publication receipts and final resource/manifest commit only; no new model/LFS objects",
+    "elapsed_s": 12.062999999998283,
+    "utc": "2026-11-13T03:46:41.781168+00:00"
   }
 }
