@@ -19,7 +19,10 @@
       "post_run_audit": "PASS_CLOSED_RECOVERY_AUDIT",
       "M2b_source_qualification": "PASS",
       "M2b_admission": "REVISE_RECOVERED_RECEIPT_ADAPTER_REQUIRED",
-      "next_action": "STOP_AFTER_GITHUB_DELIVERY"
+      "next_action": "STOP_THIS_AUTHORIZED_STAGE",
+      "publication": "PAYLOAD_PUSHED_REMOTE_VERIFIED",
+      "payload_commit": "fbdd4ebc0723c02b6e07e80dc8d961511c805bfd",
+      "publication_receipt": "PUBLICATION_RECEIPT.json"
     },
     "historical_files_unchanged": true,
     "user_files_excluded": true,
@@ -148,6 +151,10 @@
   "schema": "rc3-git-content-manifest-v1",
   "version": "2026.11.14-m2a-recovery-execution",
   "files": {
+    "rc3_relation_recovery_run_20261114/PUBLICATION_RECEIPT.json": {
+      "sha256": "ed7f7c5a786f85af28371a839f4c7eb49fdd0394c0e2bc138282376400e1405b",
+      "bytes": 1645
+    },
     "rc3_relation_recovery_run_20261114/DELIVERY_CHECKS.json": {
       "sha256": "5ab88e5497d57fe414d3f25d30ba844614f1a0dbd786c35771affe74b18db023",
       "bytes": 1418
@@ -19985,8 +19992,8 @@
       "bytes": 2818
     },
     "rc3_relation_recovery_run_20261114/GIT_DELIVERY.md": {
-      "sha256": "7ad0a236f1d7aff363688bc81b75090372546b563dd539f406ee938333c4a099",
-      "bytes": 1057
+      "sha256": "dff332b0bcfef8f9e5f0e1a8aa2fdcaedaa8ba0966acd26cfa0a6e1d2a026649",
+      "bytes": 1500
     },
     "rc3_relation_recovery_run_20261114/M2B_ADMISSION_REVIEW.md": {
       "sha256": "1170fca4d974fb47b355b036dbdd0fa72f6ffa556c0d51e5980b82ee8b58c2d9",
@@ -20041,8 +20048,8 @@
       "bytes": 1501
     },
     "rc3_relation_recovery_run_20261114/CURRENT_STAGE_STATUS.json": {
-      "sha256": "376364bcac9116d42e2025b96ce8e7fa115769c942b521c18d8e61515e0de17d",
-      "bytes": 595
+      "sha256": "9028227a32894dd34a3bcbe3eee4578907c6b827e43fb4c8acf5e0616809597a",
+      "bytes": 763
     },
     "rc3_relation_recovery_run_20261114/IMPLEMENTATION_REVIEW.md": {
       "sha256": "53ff24e54018a2e79796ecf33361b339636d7d4318500f1d5b69108caecf7f94",
@@ -339075,8 +339082,8 @@
     "project_management/gl_v5_delivery/PUBLICATION_RECEIPT.json",
     "rc3_conservative_refinement/PUBLICATION_RECEIPT.json"
   ],
-  "file_count": 84729,
-  "total_bytes": 16741873299,
+  "file_count": 84730,
+  "total_bytes": 16741875555,
   "scope": "Original LFS working-tree bytes retained. Current repair/paid-recovery status is S3_persistence_recovery; older phase objects retain their creation-time statuses. Unrelated live Word release entries are not refreshed.",
   "research_extension": {
     "branch": "codex/global-local-s0",
