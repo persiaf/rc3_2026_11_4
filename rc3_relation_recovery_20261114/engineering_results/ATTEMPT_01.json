@@ -1,0 +1,197 @@
+{
+  "tests": 27,
+  "failures": 0,
+  "errors": 1,
+  "success": false,
+  "transcript": "test_01_plain_reader_reproduces_windows_denial (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_02_live_reader_release_allows_bounded_retry (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_03_transient_injection_retries_only_replace (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_04_persistent_denial_leaves_destination (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_05_real_readonly_destination_stops (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_06_complete_then_snapshot_failure_rebuilds_once (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_07_record_before_completion_needs_explicit_reconcile (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_08_duplicate_completion_is_idempotent (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_09_duplicate_debit_and_conflicting_completion_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ERROR\ntest_10_uncertain_append_is_never_retried (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_11_torn_journal_refuses_without_truncating (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_12_hash_tampering_is_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_13_second_writer_is_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_14_immutable_monitor_handle_never_blocks_active_ledger (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_15_monitor_has_no_active_fallback (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_16_optimizer_complete_cannot_advance_cursor_alone (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_17_state_replace_failure_does_not_advance_cursor (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_18_optimizer_failed_cannot_commit_checkpoint (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_19_origin_budget_is_carried_and_not_reset (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_20_new_budget_enforced (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_21_nonaccess_error_not_retried (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_22_no_recovery_permission_from_old_or_draft (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_23_reconcile_rejects_wrong_record_identity (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_24_durable_state_before_journal_does_not_advance_cursor (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_25_checkpoint_event_before_snapshot_reconstructs_cursor (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_26_completed_record_corruption_stops_reconstruction (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_27_uncertain_complete_append_reloads_without_fail_append (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\n\n======================================================================\nERROR: test_09_duplicate_debit_and_conflicting_completion_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_relation_recovery_20261114\\test_persistence.py\", line 235, in test_09_duplicate_debit_and_conflicting_completion_rejected\n    ledger.complete('request', 'r1', tick, record='changed')\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_relation_recovery_20261114\\persistence.py\", line 294, in complete\n    if not record.is_relative_to(self.folder.resolve()) or sha(record) != fields['sha256']:\n  File \"D:\\file_used\\西柚\\实验室_任务\\硕士论文相关\\大论文\\chatgpt生成文件\\rc3_relation_recovery_20261114\\persistence.py\", line 36, in sha\n    return hashlib.sha256(Path(path).read_bytes()).hexdigest()\n  File \"D:\\tools\\anocaonda\\envs\\mobile_dual_arm_planning\\lib\\pathlib.py\", line 1126, in read_bytes\n    with self.open(mode='rb') as f:\n  File \"D:\\tools\\anocaonda\\envs\\mobile_dual_arm_planning\\lib\\pathlib.py\", line 1119, in open\n    return self._accessor.open(self, mode, buffering, encoding, errors,\nFileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\file_used\\\\西柚\\\\实验室_任务\\\\硕士论文相关\\\\大论文\\\\chatgpt生成文件\\\\rc3_relation_recovery_20261114\\\\.engineering_tmp\\\\case_q37gdu10\\\\changed'\n\n----------------------------------------------------------------------\nRan 27 tests in 1.637s\n\nFAILED (errors=1)\n",
+  "evidence": [
+    {
+      "case": "test_01_plain_reader_reproduces_windows_denial",
+      "known_reader": {
+        "pid": 36424,
+        "method": "Path.open(r, encoding=utf8)",
+        "bytes": 13
+      },
+      "observed_winerror": 5,
+      "wall_s": 0.16319480000674957
+    },
+    {
+      "case": "test_02_live_reader_release_allows_bounded_retry",
+      "known_reader": {
+        "pid": 33892,
+        "method": "Path.open(r, encoding=utf8)",
+        "bytes": 13
+      },
+      "replace_attempts": [
+        {
+          "attempt": 1,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 2,
+          "success": true
+        }
+      ],
+      "wall_s": 0.1613532000046689
+    },
+    {
+      "case": "test_03_transient_injection_retries_only_replace",
+      "replace_calls": 4,
+      "sleeps": [
+        0.02
+      ],
+      "computed_requests": 1,
+      "wall_s": 0.036984900005336385
+    },
+    {
+      "case": "test_04_persistent_denial_leaves_destination",
+      "attempts": 6,
+      "retry_sleep_s": 0.6200000000000001,
+      "destination_preserved": true,
+      "wall_s": 0.010855799999262672
+    },
+    {
+      "case": "test_05_real_readonly_destination_stops",
+      "attempts": [
+        {
+          "attempt": 1,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 2,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 3,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 4,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 5,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 6,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        }
+      ],
+      "wall_s": 0.0061266000047908165
+    },
+    {
+      "case": "test_06_complete_then_snapshot_failure_rebuilds_once",
+      "requests": 1,
+      "completed": 1,
+      "failed": 0,
+      "persistence_failed": 1,
+      "cursor": 0,
+      "wall_s": 0.03499020000163
+    },
+    {
+      "case": "test_07_record_before_completion_needs_explicit_reconcile",
+      "wall_s": 0.03126370000245515
+    },
+    {
+      "case": "test_08_duplicate_completion_is_idempotent",
+      "wall_s": 0.025224199998774566
+    },
+    {
+      "case": "test_09_duplicate_debit_and_conflicting_completion_rejected",
+      "wall_s": 0.01685709999583196
+    },
+    {
+      "case": "test_10_uncertain_append_is_never_retried",
+      "wall_s": 0.01899279999634018
+    },
+    {
+      "case": "test_11_torn_journal_refuses_without_truncating",
+      "wall_s": 0.012730700000247452
+    },
+    {
+      "case": "test_12_hash_tampering_is_rejected",
+      "wall_s": 0.018848499996238388
+    },
+    {
+      "case": "test_13_second_writer_is_rejected",
+      "wall_s": 0.013574099997640587
+    },
+    {
+      "case": "test_14_immutable_monitor_handle_never_blocks_active_ledger",
+      "held_publication": "status_00000001_e3192d4509604ec3b5388185aed3f84d.json",
+      "concurrent_transactions": 40,
+      "wall_s": 0.7693900000012945
+    },
+    {
+      "case": "test_15_monitor_has_no_active_fallback",
+      "wall_s": 0.0005018000010750256
+    },
+    {
+      "case": "test_16_optimizer_complete_cannot_advance_cursor_alone",
+      "wall_s": 0.044773699999495875
+    },
+    {
+      "case": "test_17_state_replace_failure_does_not_advance_cursor",
+      "wall_s": 0.02946009999868693
+    },
+    {
+      "case": "test_18_optimizer_failed_cannot_commit_checkpoint",
+      "wall_s": 0.014385099995706696
+    },
+    {
+      "case": "test_19_origin_budget_is_carried_and_not_reset",
+      "historical": 1910,
+      "new": 1,
+      "cumulative": 1911,
+      "wall_s": 0.02877989999979036
+    },
+    {
+      "case": "test_20_new_budget_enforced",
+      "wall_s": 0.015466699995158706
+    },
+    {
+      "case": "test_21_nonaccess_error_not_retried",
+      "wall_s": 0.0020846999977948144
+    },
+    {
+      "case": "test_22_no_recovery_permission_from_old_or_draft",
+      "wall_s": 6.809999467805028e-05
+    },
+    {
+      "case": "test_23_reconcile_rejects_wrong_record_identity",
+      "wall_s": 0.01862470000196481
+    },
+    {
+      "case": "test_24_durable_state_before_journal_does_not_advance_cursor",
+      "wall_s": 0.041776199999731034
+    },
+    {
+      "case": "test_25_checkpoint_event_before_snapshot_reconstructs_cursor",
+      "wall_s": 0.0274273999966681
+    },
+    {
+      "case": "test_26_completed_record_corruption_stops_reconstruction",
+      "wall_s": 0.026845599997614045
+    },
+    {
+      "case": "test_27_uncertain_complete_append_reloads_without_fail_append",
+      "wall_s": 0.025473900001088623
+    }
+  ],
+  "synthetic_begin_calls": 62
+}

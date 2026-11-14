@@ -1,0 +1,234 @@
+{
+  "tests": 36,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "transcript": "test_01_plain_reader_reproduces_windows_denial (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_02_live_reader_release_allows_bounded_retry (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_03_transient_injection_retries_only_replace (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_04_persistent_denial_leaves_destination (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_05_real_readonly_destination_stops (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_06_complete_then_snapshot_failure_rebuilds_once (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_07_record_before_completion_needs_explicit_reconcile (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_08_duplicate_completion_is_idempotent (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_09_duplicate_debit_and_conflicting_completion_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_10_uncertain_append_is_never_retried (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_11_torn_journal_refuses_without_truncating (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_12_hash_tampering_is_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_13_second_writer_is_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_14_immutable_monitor_handle_never_blocks_active_ledger (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_15_monitor_has_no_active_fallback (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_16_optimizer_complete_cannot_advance_cursor_alone (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_17_state_replace_failure_does_not_advance_cursor (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_18_optimizer_failed_cannot_commit_checkpoint (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_19_origin_budget_is_carried_and_not_reset (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_20_new_budget_enforced (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_21_nonaccess_error_not_retried (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_22_no_recovery_permission_from_old_or_draft (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_23_reconcile_rejects_wrong_record_identity (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_24_durable_state_before_journal_does_not_advance_cursor (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_25_checkpoint_event_before_snapshot_reconstructs_cursor (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_26_completed_record_corruption_stops_reconstruction (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_27_uncertain_complete_append_reloads_without_fail_append (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_28_versioned_runtime_outer_except_is_idempotent (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_29_pending_publication_is_never_observed (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_30_state_tamper_after_committed_checkpoint_is_rejected (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_31_restoration_guard_precedes_any_model_access (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_32_checkpoint_bytes_tamper_does_not_advance_after_restart (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_33_recovery_runner_refuses_without_new_approvals (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_34_scientific_loss_and_optimizer_remain_identical (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_35_two_inactive_checkpoint_slots_survive_prior_overwrite (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\ntest_36_computation_failure_remains_a_single_charged_failure (rc3_relation_recovery_20261114.test_persistence.PersistenceTests) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 3.542s\n\nOK\n",
+  "evidence": [
+    {
+      "case": "test_01_plain_reader_reproduces_windows_denial",
+      "known_reader": {
+        "pid": 39396,
+        "method": "Path.open(r, encoding=utf8)",
+        "bytes": 13
+      },
+      "observed_winerror": 5,
+      "wall_s": 0.13562960000126623
+    },
+    {
+      "case": "test_02_live_reader_release_allows_bounded_retry",
+      "known_reader": {
+        "pid": 38352,
+        "method": "Path.open(r, encoding=utf8)",
+        "bytes": 13
+      },
+      "replace_attempts": [
+        {
+          "attempt": 1,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 2,
+          "success": true
+        }
+      ],
+      "wall_s": 0.16001839999807999
+    },
+    {
+      "case": "test_03_transient_injection_retries_only_replace",
+      "replace_calls": 5,
+      "sleeps": [
+        0.02,
+        0.04
+      ],
+      "computed_requests": 1,
+      "wall_s": 0.023217900001327507
+    },
+    {
+      "case": "test_04_persistent_denial_leaves_destination",
+      "attempts": 6,
+      "retry_sleep_s": 0.6200000000000001,
+      "destination_preserved": true,
+      "wall_s": 0.005292900001222733
+    },
+    {
+      "case": "test_05_real_readonly_destination_stops",
+      "attempts": [
+        {
+          "attempt": 1,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 2,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 3,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 4,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 5,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 6,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        }
+      ],
+      "wall_s": 0.005398799999966286
+    },
+    {
+      "case": "test_06_complete_then_snapshot_failure_rebuilds_once",
+      "requests": 1,
+      "completed": 1,
+      "failed": 0,
+      "persistence_failed": 1,
+      "cursor": 0,
+      "wall_s": 0.024626799997349735
+    },
+    {
+      "case": "test_07_record_before_completion_needs_explicit_reconcile",
+      "wall_s": 0.022154799997224472
+    },
+    {
+      "case": "test_08_duplicate_completion_is_idempotent",
+      "wall_s": 0.017103900005167816
+    },
+    {
+      "case": "test_09_duplicate_debit_and_conflicting_completion_rejected",
+      "wall_s": 0.015667899999243673
+    },
+    {
+      "case": "test_10_uncertain_append_is_never_retried",
+      "wall_s": 0.014442799998505507
+    },
+    {
+      "case": "test_11_torn_journal_refuses_without_truncating",
+      "wall_s": 0.011651199994958006
+    },
+    {
+      "case": "test_12_hash_tampering_is_rejected",
+      "wall_s": 0.0156661000000895
+    },
+    {
+      "case": "test_13_second_writer_is_rejected",
+      "wall_s": 0.01280389999737963
+    },
+    {
+      "case": "test_14_immutable_monitor_handle_never_blocks_active_ledger",
+      "held_publication": "status_00000001_44593f3a614c41b485bceb0ad2e3e305.json",
+      "concurrent_transactions": 40,
+      "wall_s": 0.5141856999980519
+    },
+    {
+      "case": "test_15_monitor_has_no_active_fallback",
+      "wall_s": 0.0004684999948949553
+    },
+    {
+      "case": "test_16_optimizer_complete_cannot_advance_cursor_alone",
+      "wall_s": 0.03336380000109784
+    },
+    {
+      "case": "test_17_state_replace_failure_does_not_advance_cursor",
+      "wall_s": 0.02250320000166539
+    },
+    {
+      "case": "test_18_optimizer_failed_cannot_commit_checkpoint",
+      "wall_s": 0.014195600000675768
+    },
+    {
+      "case": "test_19_origin_budget_is_carried_and_not_reset",
+      "historical": 1910,
+      "new": 1,
+      "cumulative": 1911,
+      "wall_s": 0.02109569999447558
+    },
+    {
+      "case": "test_20_new_budget_enforced",
+      "wall_s": 0.015531400000327267
+    },
+    {
+      "case": "test_21_nonaccess_error_not_retried",
+      "wall_s": 0.0020645999975386076
+    },
+    {
+      "case": "test_22_no_recovery_permission_from_old_or_draft",
+      "wall_s": 8.689999958733097e-05
+    },
+    {
+      "case": "test_23_reconcile_rejects_wrong_record_identity",
+      "wall_s": 0.01159159999951953
+    },
+    {
+      "case": "test_24_durable_state_before_journal_does_not_advance_cursor",
+      "wall_s": 0.031556000001728535
+    },
+    {
+      "case": "test_25_checkpoint_event_before_snapshot_reconstructs_cursor",
+      "wall_s": 0.0277053000027081
+    },
+    {
+      "case": "test_26_completed_record_corruption_stops_reconstruction",
+      "wall_s": 0.025060300002223812
+    },
+    {
+      "case": "test_27_uncertain_complete_append_reloads_without_fail_append",
+      "wall_s": 0.020792100003745873
+    },
+    {
+      "case": "test_28_versioned_runtime_outer_except_is_idempotent",
+      "wall_s": 2.0634381999989273
+    },
+    {
+      "case": "test_29_pending_publication_is_never_observed",
+      "wall_s": 0.015809500000614207
+    },
+    {
+      "case": "test_30_state_tamper_after_committed_checkpoint_is_rejected",
+      "wall_s": 0.03628570000000764
+    },
+    {
+      "case": "test_31_restoration_guard_precedes_any_model_access",
+      "wall_s": 0.0011064999998779967
+    },
+    {
+      "case": "test_32_checkpoint_bytes_tamper_does_not_advance_after_restart",
+      "wall_s": 0.03223219999927096
+    },
+    {
+      "case": "test_33_recovery_runner_refuses_without_new_approvals",
+      "wall_s": 0.002057600002444815
+    },
+    {
+      "case": "test_34_scientific_loss_and_optimizer_remain_identical",
+      "wall_s": 0.016891600003873464
+    },
+    {
+      "case": "test_35_two_inactive_checkpoint_slots_survive_prior_overwrite",
+      "wall_s": 0.10585649999848101
+    },
+    {
+      "case": "test_36_computation_failure_remains_a_single_charged_failure",
+      "wall_s": 0.01186990000132937
+    }
+  ],
+  "synthetic_begin_calls": 69
+}
