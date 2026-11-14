@@ -1,4 +1,23 @@
 {
+  "relation_m2a_recovery_execution_20261114": {
+    "base_commit": "d7b76b5e4329c1ca1aaa41f51c8d90a4237a4306",
+    "branch": "codex/rc3-m2a-sl238-recovery-execution-20261114",
+    "entry": "rc3_relation_recovery_run_20261114/README.md",
+    "status": {
+      "status": "AUTHORIZED_ADMITTED_NOT_STARTED",
+      "scientific_id": "relation_navcover_m2_v1_20261113",
+      "recovery_id": "relation_navcover_m2a_recovery_v1_20261114",
+      "original_science": "TECHNICAL_INCOMPLETE",
+      "proposal_bytes_unchanged": true,
+      "protocol_approval_sha256": "e0b2d18582f4b25b03ee1ad8bcf46b9ce64d89eeff64129e2e83c565882f0065",
+      "stage_authorization_sha256": "148093dd586e13dc33e7cdd28f3ef5c72409cd3ca1fe16dc4d9efcb0200a9ea1",
+      "M2b_authorized": false,
+      "registration_remote_verified": false
+    },
+    "historical_files_unchanged": true,
+    "user_files_excluded": true,
+    "main_merged": false
+  },
   "relation_m2a_recovery_review_20261114": {
     "base_commit": "527c31c0911796d01c47723264f97ce80e31b0e0",
     "branch": "codex/rc3-m2a-persistence-recovery-20261114",
@@ -120,8 +139,52 @@
     "publication_receipt": "rc3_relation_drl_20261113/PUBLICATION_RECEIPT.json"
   },
   "schema": "rc3-git-content-manifest-v1",
-  "version": "2026.11.14-m2a-persistence-recovery-review",
+  "version": "2026.11.14-m2a-recovery-execution",
   "files": {
+    "rc3_relation_recovery_run_20261114/__init__.py": {
+      "sha256": "1c55686124d510340ebab99d4a4951a3f1fc4df5f284fce3adf4ef4c5d6dd096",
+      "bytes": 85
+    },
+    "rc3_relation_recovery_run_20261114/ADMISSION_CHECK.json": {
+      "sha256": "d0a23972cdb4db64c3a99d58360e3a8ba552f39dcffd0b273383fa4619c7b9df",
+      "bytes": 1255
+    },
+    "rc3_relation_recovery_run_20261114/authorizations/M2A_RECOVERY_AUTHORIZATION.json": {
+      "sha256": "148093dd586e13dc33e7cdd28f3ef5c72409cd3ca1fe16dc4d9efcb0200a9ea1",
+      "bytes": 1978
+    },
+    "rc3_relation_recovery_run_20261114/authorizations/PROTOCOL_APPROVAL.json": {
+      "sha256": "e0b2d18582f4b25b03ee1ad8bcf46b9ce64d89eeff64129e2e83c565882f0065",
+      "bytes": 1501
+    },
+    "rc3_relation_recovery_run_20261114/CURRENT_STAGE_STATUS.json": {
+      "sha256": "1c3fe964b3c2eb700a51716d93433ea75dcedd1530e1e387fb8e6a93712930f9",
+      "bytes": 516
+    },
+    "rc3_relation_recovery_run_20261114/IMPLEMENTATION_REVIEW.md": {
+      "sha256": "53ff24e54018a2e79796ecf33361b339636d7d4318500f1d5b69108caecf7f94",
+      "bytes": 1432
+    },
+    "rc3_relation_recovery_run_20261114/observe.py": {
+      "sha256": "ea52d10845b98cddce029722d34bba3327f1cb0f4f040a742c9337565b5547c3",
+      "bytes": 1167
+    },
+    "rc3_relation_recovery_run_20261114/README.md": {
+      "sha256": "89db71054eca91b9421a7ba1fe4a7500da7e3d06c56b5fc280cd03f14bf52b0f",
+      "bytes": 779
+    },
+    "rc3_relation_recovery_run_20261114/register_admission.py": {
+      "sha256": "bb8e057438050f6bf271680e5f7d554483fdf4c36d6a6b61af235ca9fc379a54",
+      "bytes": 7570
+    },
+    "rc3_relation_recovery_run_20261114/sync_manifest.py": {
+      "sha256": "c74c4804742f4b81b772ae24dd89013ad2ebe24668223372e974f0021b8b7b48",
+      "bytes": 3284
+    },
+    "rc3_relation_recovery_run_20261114/USER_AUTHORIZATION.md": {
+      "sha256": "410da328b8b9838c7dcbfc1fa9a29f828285428783a6f19c14c791f8a8970389",
+      "bytes": 1186
+    },
     "rc3_relation_recovery_20261114/PUBLICATION_RECEIPT.json": {
       "sha256": "6d324826d14d47c0eee33066926e81496b2b0217506ea6e1727f8fc1384b5197",
       "bytes": 1494
@@ -10139,8 +10202,8 @@
       "bytes": 39287
     },
     "README.md": {
-      "sha256": "fa9598da8e344f0f00443f672e8da908487b214913e906206ddc1dd7518f79ff",
-      "bytes": 40192
+      "sha256": "dec02d8096915ddf3fa21510b4e0162fa3fb72231ac11c1de021a3da303ef06d",
+      "bytes": 40653
     },
     "chatgpt生成文件.zip": {
       "sha256": "8f544e2a684f60bbaa594bb49532166210d6b589fbb9d0f6209e5adfb60c1806",
@@ -319129,8 +319192,8 @@
     "project_management/gl_v5_delivery/PUBLICATION_RECEIPT.json",
     "rc3_conservative_refinement/PUBLICATION_RECEIPT.json"
   ],
-  "file_count": 79749,
-  "total_bytes": 16570727406,
+  "file_count": 79760,
+  "total_bytes": 16570748620,
   "scope": "Original LFS working-tree bytes retained. Current repair/paid-recovery status is S3_persistence_recovery; older phase objects retain their creation-time statuses. Unrelated live Word release entries are not refreshed.",
   "research_extension": {
     "branch": "codex/global-local-s0",

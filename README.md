@@ -1,3 +1,11 @@
+<!-- RELATION_M2A_RECOVERY_EXECUTION_20261114_BEGIN -->
+# M2a SL238受控恢复：本轮已授权
+
+用户已批准准确恢复协议及一次M2a_recovery执行；从SL238继续原239—512日程，累计上限4102教师请求、512 optimizer尝试、14400秒。历史中断与6次额外消费保留，M2b不在授权范围。
+
+[授权、准入及实际状态](rc3_relation_recovery_run_20261114/README.md)
+<!-- RELATION_M2A_RECOVERY_EXECUTION_20261114_END -->
+
 <!-- RELATION_M2A_RECOVERY_REVIEW_20261114_BEGIN -->
 # M2a持久化修复：ENGINEERING_PASS，恢复提案待批准
 
