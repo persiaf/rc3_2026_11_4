@@ -1,0 +1,197 @@
+{
+  "schema": "relation-M2a-recovery-proposal-v1",
+  "status": "DRAFT_NOT_APPROVED",
+  "scientific_id": "relation_navcover_m2_v1_20261113",
+  "recovery_id": "relation_navcover_m2a_recovery_v1_20261114",
+  "interrupted_commit": "527c31c0911796d01c47723264f97ce80e31b0e0",
+  "implementation_commit": "d6dd4ff603762d36058e96cc540ad29405dc61e6",
+  "original_protocol": {
+    "path": "rc3_relation_drl_20261113/M2_PROTOCOL.json",
+    "sha256": "7ca20d48177b156ef4183f8d58f8354f20198513ecad66e161ff4d0b5e41a445"
+  },
+  "original_source_binding": {
+    "path": "rc3_relation_drl_20261113/SCIENTIFIC_SOURCE_BINDING.json",
+    "sha256": "103a7a63bdacfc900fce92e8614560f49846cef02360e101c5326e3d50dcb0fa"
+  },
+  "original_stage_authorization": {
+    "path": "rc3_relation_m2_20261113/authorizations/M2A_AUTHORIZATION.json",
+    "sha256": "eb41aae5423e987159bc2b013bc039f011c28b7fe65dee3d541f77040e9d48d0"
+  },
+  "original_initialization_lineage": {
+    "seed": 2026111301,
+    "random_export": {
+      "path": "rc3_relation_drl_20261113/M2_RANDOM_INIT.pt",
+      "sha256": "3eab66bfab1664504b6227ef168e372c5c539b4690c737de6d630acc4cb65686",
+      "model_sha256": "247771201d7ed42b96c00dded5f7052eae38ca8fd41acbb727726e61b1442d73",
+      "engineering_only": false
+    },
+    "steps": 512,
+    "batch": 8,
+    "paired_start": "Exact init COMPLETE.json export; identical weights and independently fresh Adam for each stream"
+  },
+  "original_schedule": {
+    "path": "rc3_relation_drl_20261113/M2_DATA_SCHEDULE.json",
+    "sha256": "5442be75b09fbce4f827505ee854f1127add0c6b8aed8da3b01f6a608dfbc698"
+  },
+  "original_optimizer": {
+    "name": "Adam",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "grad_clip_norm": 1.0,
+    "entropy": 0
+  },
+  "retained_problem": {
+    "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+    "objective": "J = L + 0.75 K",
+    "navigation": "original undirected RC3",
+    "mask": "original positive coverage",
+    "validation": "original complete independent raw/H validation"
+  },
+  "new_source_binding": {
+    "path": "rc3_relation_recovery_20261114/NEW_SOURCE_BINDING.json",
+    "sha256": "5ddb480588861679d9aa5398b963fe3f292c1f4f52d7de3cefa62f525e1e3d3c"
+  },
+  "sl238_audit": {
+    "path": "rc3_relation_recovery_20261114/SL238_RECOVERY_AUDIT.json",
+    "sha256": "e7bb2386c8d6f6edc54f60c1297c119f4ca66e5fdb6d665afced14feb23f72c1"
+  },
+  "historical_binding": {
+    "path": "rc3_relation_recovery_20261114/HISTORICAL_BINDING.json",
+    "sha256": "eb8f1a159783c5c920fd7fe39609b08c33caf9901955e0499a2471bcf405246f"
+  },
+  "recovery_schedule": {
+    "path": "rc3_relation_recovery_20261114/RECOVERY_SCHEDULE.json",
+    "sha256": "796500032264101c6938a22e961aafb53db17bbdc7dcecc14569e88133a23ea8"
+  },
+  "checkpoint": {
+    "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/current_slot0.pt",
+    "sha256": "e6b7672a3184b9e65e90805c8773fcbdd473df0f0b837967f040e41c6f721c9e",
+    "cursor": 238,
+    "model_sha256": "e4002cd07a31430d76ce391a7f5915e4a127093bccc2a94a5194a6b24462a3d9",
+    "optimizer_sha256": "ecfd3e0cf37515825db61f863b427c717a9bb5dbcc5b4605fd93d896e9bd649d",
+    "rng_sha256": "6d044dcf2e2a9fae4a761ff34131e9dadbf872b289fc5e1f57c9a190fdf567ae"
+  },
+  "model_Adam_RNG_hashes": {
+    "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/current_slot0.pt",
+    "sha256": "e6b7672a3184b9e65e90805c8773fcbdd473df0f0b837967f040e41c6f721c9e",
+    "cursor": 238,
+    "model_sha256": "e4002cd07a31430d76ce391a7f5915e4a127093bccc2a94a5194a6b24462a3d9",
+    "optimizer_sha256": "ecfd3e0cf37515825db61f863b427c717a9bb5dbcc5b4605fd93d896e9bd649d",
+    "rng_sha256": "6d044dcf2e2a9fae4a761ff34131e9dadbf872b289fc5e1f57c9a190fdf567ae"
+  },
+  "canonical_recovery_folder": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114",
+  "historical_consumption": {
+    "request_attempts": 1910,
+    "optimizer_attempts": 238,
+    "wall_s": 2221.312
+  },
+  "remaining_limits": {
+    "request_attempts": 2192,
+    "optimizer_attempts": 274,
+    "wall_s": 12178.688
+  },
+  "cumulative_limits": {
+    "request_attempts": 4102,
+    "optimizer_attempts": 512,
+    "wall_s": 14400
+  },
+  "technical_recompute_increment": 6,
+  "historical_paid_uncommitted": [
+    "init_0239_teacher_0",
+    "init_0239_teacher_1",
+    "init_0239_teacher_2",
+    "init_0239_teacher_3",
+    "init_0239_teacher_4",
+    "init_0239_teacher_5"
+  ],
+  "batch239_tasks": [
+    "F079",
+    "F033",
+    "F045",
+    "F037",
+    "L045",
+    "L170",
+    "L194",
+    "L175"
+  ],
+  "first_recovery_update": 239,
+  "last_recovery_update": 512,
+  "later_batches": 273,
+  "tasks_per_update": 8,
+  "recompute_entire_batch239": true,
+  "lost_graph_reuse": false,
+  "historical_complete_failed_overlap_preserved": true,
+  "ledger_origin": "Original 1910 debits, 238 optimizer calls, all2148 IDs,2221.312s; original counts retained including raw complete/failed overlap",
+  "new_request_id_pattern": "recovery_v1_init_{update:04}_teacher_{slot}",
+  "optimizer_id_pattern": "init_{update:04}",
+  "restore": "Exact SL238 model/Adam/RNG; construct objects before RNG restore; fresh empty gradients; no old graph reuse",
+  "training_rule": "Original SL loss/gradient/optimizer/mask/teacher identity and validation; only I/O and attempt identities changed",
+  "persistence": {
+    "authority": "fsynced hash-chained EVENTS.v2.jsonl",
+    "snapshot": "derived only",
+    "replace_attempts": 6,
+    "retry_delays_s": [
+      0.02,
+      0.04,
+      0.08,
+      0.16,
+      0.32
+    ],
+    "retry_scope": "os.replace only",
+    "uncertain_append": "STOP; no retry/truncation",
+    "monitor": "immutable published status; never active ledger",
+    "cursor": "checkpoint bytes + STATE + checkpoint_commit event"
+  },
+  "supervision": {
+    "source": "rc3_r04_m1_recovery_20261111/supervisor.py",
+    "wall_limit_s": 12178.688,
+    "closeout_reserve_s": 10,
+    "termination_tolerance_s": 2,
+    "tolerance_adds_budget": false,
+    "outer_clock_starts_before_admission": true,
+    "actual_wall_receipt": "OUTER_ACCOUNTING.json",
+    "parent_consumption_added_once": true
+  },
+  "failure_policy": {
+    "technical_error": "STOP_TECHNICAL_INCOMPLETE",
+    "source_or_data_mismatch": "STOP",
+    "illegal_teacher_or_nonfinite": "STOP",
+    "wall_or_resource_limit": "STOP",
+    "replacement_samples": false,
+    "second_recovery_attempt_allowed": false,
+    "automatic_replay": false
+  },
+  "completion": {
+    "required_counts": {
+      "request_attempts": 4102,
+      "request_completed_raw": 4102,
+      "historical_request_failed_raw": 1,
+      "optimizer_attempts": 512,
+      "optimizer_completed": 512
+    },
+    "optimized_training_slots": 4096,
+    "raw_compute_requests": 4102,
+    "receipt": "RECOVERY_COMPLETE.json",
+    "preserves_old_TECHNICAL_INCOMPLETE": true,
+    "overwrite_original_COMPLETE": false
+  },
+  "authorization_requirements": {
+    "new_protocol_approval": true,
+    "new_stage_authorization": true,
+    "stage": "M2a_recovery",
+    "binds": "canonical JSON SHA256 of this entire proposal plus exact original authorization reference",
+    "old_M2a_authorization_sufficient": false
+  },
+  "scientific_updates_this_turn": 0,
+  "formal_teacher_replays_this_turn": 0,
+  "M2b_authorized": false,
+  "engineering_acceptance": {
+    "path": "rc3_relation_recovery_20261114/engineering_results/ATTEMPT_04.json",
+    "sha256": "741ceaef96b295c9e6e14dc0174de850d2c19c592b245478f19d173ba7b35cc1"
+  }
+}

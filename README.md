@@ -1,3 +1,11 @@
+<!-- RELATION_M2A_RECOVERY_REVIEW_20261114_BEGIN -->
+# M2a持久化修复：ENGINEERING_PASS，恢复提案待批准
+
+最终36项独立工程测试通过，已复现并修复Windows替换冲突的处理及重复终态问题。SL238模型/Adam/RNG和原1910消费只读审计通过；恢复提案登记2192次剩余回放、4102次累计上限及12178.688秒剩余墙钟。本轮正式训练、教师回放、DRL和新父测试均0，原TECHNICAL_INCOMPLETE保留。
+
+[诊断/修复/测试入口](rc3_relation_recovery_20261114/README.md) · [SL238恢复审计](rc3_relation_recovery_20261114/SL238_RECOVERY_AUDIT.json) · [新恢复协议草案](rc3_relation_recovery_20261114/RECOVERY_PROTOCOL_DRAFT.md) · [停止决定](rc3_relation_recovery_20261114/NEXT_STEP_DECISION.md)
+<!-- RELATION_M2A_RECOVERY_REVIEW_20261114_END -->
+
 <!-- RELATION_M2_SCIENCE_20261113_BEGIN -->
 # M2已停止：初始化SL238，技术未完成
 

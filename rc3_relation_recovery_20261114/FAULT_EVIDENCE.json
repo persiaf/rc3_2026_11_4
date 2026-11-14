@@ -1,0 +1,96 @@
+{
+  "historical_failure": {
+    "path": "rc3_relation_m2_20261113/FAILED_REQUEST_DETAIL.json",
+    "sha256": "e47840764e6a5ab94ba9cd68913a2f714f088948131a1cc0943706b4a230623b"
+  },
+  "actual_historical_lock_owner": "UNKNOWN_NO_HISTORICAL_HANDLE_TRACE",
+  "old_monitor_source": {
+    "path": "rc3_relation_m2_20261113/observe.py",
+    "sha256": "47073437a3d9354a4b4bdb13e055127830a4b474708c5518b94ac866e0459434"
+  },
+  "current_file_permission_observation": {
+    "date_local": "2026-11-14",
+    "target": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/RESOURCE_ACCOUNTING.json",
+    "attributes": "Archive",
+    "read_only": false,
+    "directory_Administrators": "FullControl",
+    "directory_Authenticated_Users": "Modify",
+    "method": "PowerShell Get-Acl/Get-Item read-only",
+    "historical_ACL_state_proven": false
+  },
+  "independent_windows_reproductions": [
+    {
+      "case": "test_01_plain_reader_reproduces_windows_denial",
+      "known_reader": {
+        "pid": 39396,
+        "method": "Path.open(r, encoding=utf8)",
+        "bytes": 13
+      },
+      "observed_winerror": 5,
+      "wall_s": 0.13562960000126623
+    },
+    {
+      "case": "test_02_live_reader_release_allows_bounded_retry",
+      "known_reader": {
+        "pid": 38352,
+        "method": "Path.open(r, encoding=utf8)",
+        "bytes": 13
+      },
+      "replace_attempts": [
+        {
+          "attempt": 1,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 2,
+          "success": true
+        }
+      ],
+      "wall_s": 0.16001839999807999
+    },
+    {
+      "case": "test_05_real_readonly_destination_stops",
+      "attempts": [
+        {
+          "attempt": 1,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 2,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 3,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 4,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 5,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        },
+        {
+          "attempt": 6,
+          "success": false,
+          "errno": 13,
+          "winerror": 5
+        }
+      ],
+      "wall_s": 0.005398799999966286
+    }
+  ]
+}
