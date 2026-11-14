@@ -1,9 +1,9 @@
 <!-- RELATION_M2A_RECOVERY_EXECUTION_20261114_BEGIN -->
-# M2a SL238受控恢复：本轮已授权
+# M2a恢复完成：SL512_RECOVERED已生成并通过审计
 
-用户已批准准确恢复协议及一次M2a_recovery执行；从SL238继续原239—512日程，累计上限4102教师请求、512 optimizer尝试、14400秒。历史中断与6次额外消费保留，M2b不在授权范围。
+唯一恢复执行成功，新增2192次教师请求及274次更新，累计4102/512、墙钟4773.906秒，无新增失败。最终模型、Adam、RNG、检查点与恢复收据核对通过，历史中断与6次额外消费保留。M2b模型来源资格PASS，入口准入REVISE；尚未授权或运行M2b。
 
-[授权、准入及实际状态](rc3_relation_recovery_run_20261114/README.md)
+[实际报告与交付](rc3_relation_recovery_run_20261114/README.md) · [SL512模型与数据](rc3_relation_recovery_run_20261114/MODEL_AND_DATA_INDEX.md) · [M2b准入评审](rc3_relation_recovery_run_20261114/M2B_ADMISSION_REVIEW.md)
 <!-- RELATION_M2A_RECOVERY_EXECUTION_20261114_END -->
 
 <!-- RELATION_M2A_RECOVERY_REVIEW_20261114_BEGIN -->

@@ -1,0 +1,178 @@
+{
+  "schema": "M2b-recovered-initialization-qualification-v1",
+  "status": "SOURCE_QUALIFIED_NOT_AUTHORIZATION",
+  "scientific_id": "relation_navcover_m2_v1_20261113",
+  "qualification_audit": {
+    "path": "rc3_relation_recovery_run_20261114/CLOSED_RUN_AUDIT.json",
+    "sha256": "338dae2fd2836fa62614237b87368a2e906de625896ad771086006628d2c33cc"
+  },
+  "original_M2_protocol": {
+    "path": "rc3_relation_drl_20261113/M2_PROTOCOL.json",
+    "sha256": "7ca20d48177b156ef4183f8d58f8354f20198513ecad66e161ff4d0b5e41a445"
+  },
+  "recovered_completion": {
+    "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114/RECOVERY_COMPLETE.json",
+    "sha256": "3fc63dce0c19d637c5c2a3f325045a62201c9f038ee23d250cd56a619d28be6f"
+  },
+  "recovered_SL512_export": {
+    "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114/SL512_RECOVERED.export.pt",
+    "sha256": "fca6974737e97d045977dbb4d8e5bf2a0511c3e38bab21690434497bd13223e9",
+    "model_sha256": "e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041",
+    "engineering_only": false
+  },
+  "exact_model_sha256": "e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041",
+  "origin_checkpoint": {
+    "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114/current_slot0.pt",
+    "sha256": "7d46be504a74478a06c52666c7390069e4aa4c5696c599cacd888e2ee8a9457e",
+    "cursor": 512,
+    "model_sha256": "e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041",
+    "optimizer_sha256": "16cec53918a148402f5070207a02e04f4d9862b6fcf39e39802e32b6fc30e6e1",
+    "rng_sha256": "6d044dcf2e2a9fae4a761ff34131e9dadbf872b289fc5e1f57c9a190fdf567ae"
+  },
+  "original_Adam_state_verified_step": 512,
+  "stream_initialization": {
+    "RelationRL": {
+      "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114/SL512_RECOVERED.export.pt",
+      "sha256": "fca6974737e97d045977dbb4d8e5bf2a0511c3e38bab21690434497bd13223e9",
+      "model_sha256": "e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041",
+      "engineering_only": false
+    },
+    "RelationSL": {
+      "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114/SL512_RECOVERED.export.pt",
+      "sha256": "fca6974737e97d045977dbb4d8e5bf2a0511c3e38bab21690434497bd13223e9",
+      "model_sha256": "e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041",
+      "engineering_only": false
+    },
+    "RelationInit": {
+      "path": "rc3_relation_drl_20261113/science/relation_navcover_m2_v1_20261113/init/recovery_v1_20261114/SL512_RECOVERED.export.pt",
+      "sha256": "fca6974737e97d045977dbb4d8e5bf2a0511c3e38bab21690434497bd13223e9",
+      "model_sha256": "e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041",
+      "engineering_only": false
+    },
+    "both_streams_identical_model_parameters": true,
+    "separately_fresh_Adam_required": true,
+    "reuse_SL512_Adam_for_M2b": false,
+    "optimizer_specification": {
+      "name": "Adam",
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "grad_clip_norm": 1.0,
+      "entropy": 0
+    },
+    "stream_setup_seed": 2026111303
+  },
+  "original_schedule": {
+    "path": "rc3_relation_drl_20261113/M2_DATA_SCHEDULE.json",
+    "sha256": "5442be75b09fbce4f827505ee854f1127add0c6b8aed8da3b01f6a608dfbc698"
+  },
+  "original_evaluation_cases": {
+    "path": "rc3_relation_drl_20261113/M2_EVALUATION_CASES.json",
+    "sha256": "6e8654141202bda6709a3e88c2873f991510bbd8bfad82f3a303b05fd183e8eb"
+  },
+  "original_evaluation_grid": {
+    "path": "rc3_relation_drl_20261113/M2_EVALUATION_GRID.json",
+    "sha256": "a8d623fabb0f17cde3a560d1f9a0cb3073a0d4646b0f72811c09c3eb7888c646"
+  },
+  "original_training": {
+    "RL_steps": 2048,
+    "SL_steps": 2048,
+    "tasks_per_update": 4,
+    "trajectories_per_task": 4,
+    "baseline": "same-task leave-one-out",
+    "loss": "mean_B_G ((J_H - mean_other_J_H)/max(saved_FrozenSL_J_H,1)) * sum_logprob",
+    "online_trajectories": 32768,
+    "gradient_full_replays": 32768,
+    "continued_SL_full_replays": 8192,
+    "SL_loss": "mean_task negative mean_action logprob",
+    "empty_training_case": "technical failure; no substitution"
+  },
+  "original_evaluation": {
+    "endpoints": [
+      0,
+      512,
+      2048
+    ],
+    "methods": [
+      "FrozenSL",
+      "RelationInit",
+      "RelationSL",
+      "RelationRL",
+      "Fixed3",
+      "Detour16"
+    ],
+    "LOCAL66": 66,
+    "FULL12": 12,
+    "full_ids": [
+      "F000",
+      "F001",
+      "F002",
+      "F003",
+      "F004",
+      "F005",
+      "F006",
+      "F007",
+      "F008",
+      "F009",
+      "F010",
+      "F011"
+    ],
+    "populations_separate": true,
+    "all_exposed": true,
+    "aggregation": "within-parent mean J, relative reference gain, then equal mean over parents",
+    "cold_setup": "reported separately from resident full-request latency; each request includes output persistence"
+  },
+  "original_gates": {
+    "endpoint_512": "Stop if either population overall gain vs RelationInit < -0.03",
+    "endpoint_2048": {
+      "LOCAL66_vs_FrozenSL_min": 0.01,
+      "LOCAL66_vs_RelationInit_min": 0.005,
+      "LOCAL66_vs_RelationSL_min": 0.005,
+      "LOCAL66_SEL_DEV_each_scale_vs_Init_and_SL_min": 0.0,
+      "FULL12_vs_FrozenSL_Init_SL_min": 0.0,
+      "all_complete_valid": true
+    },
+    "incomplete": "INSUFFICIENT; never success-subset averages",
+    "failure": "NO_DEVELOPMENT_SIGNAL at fixed full endpoint; no extension"
+  },
+  "paired_limits": {
+    "request_attempts": 75728,
+    "optimizer_attempts": 4096,
+    "wall_s": 115200
+  },
+  "original_problem": {
+    "H_identity": "5db67cacc1128b6143c7a04b9b84a70c37bdc0ab917a0eebae0b8aca132c4d14",
+    "objective": "J = L + 0.75 K",
+    "navigation": "original undirected RC3",
+    "mask": "original positive coverage",
+    "validation": "original complete independent raw/H validation"
+  },
+  "unchanged_training_gate_digest": "0897f61f221c02c777527ec389633c9accbc9c5a962fa43b17b12c8872b69151",
+  "current_loader_accepts_recovered_receipt": false,
+  "loader_incompatibility": {
+    "original_required_status": "COMPLETE",
+    "actual_status": "COMPLETE_RECOVERED",
+    "original_required_stage": "init",
+    "actual_stage": "M2a_recovery",
+    "original_required_cursor": "top-level cursor=512",
+    "actual_cursor": "checkpoint.cursor=512",
+    "original_required_protocol_sha256": "original M2 protocol hash",
+    "actual_protocol_reference": "recovery proposal digest and upstream binding"
+  },
+  "required_new_admission": {
+    "recovered_receipt_adapter_source_binding": true,
+    "explicit_initialization_provenance_amendment": true,
+    "new_M2b_protocol_approval": true,
+    "separate_M2b_stage_authorization": true,
+    "no_relabeling_of_old_COMPLETE": true
+  },
+  "M2b_implementation_verdict": "REVISE_RECOVERED_RECEIPT_ADMISSION_REQUIRED",
+  "M2b_execution_authorized": false,
+  "M2b_optimizer_calls": 0,
+  "M2b_trajectory_calls": 0,
+  "additional_seeds_or_ablations_authorized": false
+}

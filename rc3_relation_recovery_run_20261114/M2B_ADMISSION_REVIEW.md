@@ -1,0 +1,13 @@
+# M2b阶段准入评审
+
+**模型来源资格：PASS。当前M2b执行准入：REVISE，尚未授权。**
+
+经[CLOSED_RUN_AUDIT.json](CLOSED_RUN_AUDIT.json)核对，恢复模型准确来自SL238及原239—512日程，累计512次更新、4102次请求。最终模型张量哈希为`e32121ee54985863aecd2b281534b546411567f79cf76c05c0fd916f87ed2041`。模型、Adam(step512)、RNG、游标、导出和完整恢复收据相互匹配。原TECHNICAL_INCOMPLETE及6次历史消费保留。
+
+准确初始化来源见[M2B_INITIALIZATION_MAPPING.json](M2B_INITIALIZATION_MAPPING.json)：RelationInit、RelationRL和RelationSL均指向同一SL512_RECOVERED导出；RL和继续SL必须各建一个新Adam，不能继续使用SL512的Adam动量。M2b随机种子、2048+2048更新、原配对日程及0/512/2048评价点保持不变。
+
+当前原m2.py的authorize严格要求上游收据status=COMPLETE、stage=init、顶层cursor=512及原protocol_sha256。真实恢复收据为COMPLETE_RECOVERED/M2a_recovery，并通过恢复协议和checkpoint记录来源，因此不能直接冒充旧收据。此差异使旧入口暂不具备恢复结果准入能力，不能靠复制或改名原COMPLETE绕过。
+
+下一阶段应单独绑定一个明确识别恢复收据的新准入适配版本及初始化来源修订，然后取得M2b协议批准和阶段执行授权。该修订仅处理真实来源映射，不改变训练算法、目标、数据、loss、H或质量门槛。本轮没有实施或运行M2b训练分支。
+
+原科学门槛完整保留在机器映射中：LOCAL66与FULL12分别统计，六方法对照保持；512严重退化停止，2048未满足全部门槛为NO_DEVELOPMENT_SIGNAL；不加种子、不延长训练、不开展消融或新父测试。当前M2a成功不支持DRL收益结论。
